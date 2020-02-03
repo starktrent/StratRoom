@@ -1,0 +1,26 @@
+xaxis         , yaxis        , number
+rare          , insignificant, 30
+rare          , minor        , 95
+rare          , moderate     , 22
+rare          , major        , 14
+rare          , catastrophic , 59
+unlikely      , insignificant, 37
+unlikely      , minor        , 50
+unlikely      , moderate     , 81
+unlikely      , major        , 79
+unlikely      , catastrophic , 84
+possible      , insignificant, 96
+possible      , minor        , 13
+possible      , moderate     , 98
+possible      , major        , 10
+possible      , catastrophic , 86
+likely        , insignificant, 75
+likely        , minor        , 18
+likely        , moderate     , 92
+likely        , major        , 43
+likely        , catastrophic , 16
+almost certain, insignificant, 44
+almost certain, minor        , 29
+almost certain, moderate     , 58
+almost certain, major        , 55
+almost certain, catastrophic , 65

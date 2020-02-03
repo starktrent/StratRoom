@@ -1,0 +1,745 @@
+/*
+ * jQuery OrgChart Plugin
+ * https://github.com/dabeng/OrgChart
+ *
+ * Copyright 2016, dabeng
+ * https://github.com/dabeng
+ *
+ * Licensed under the MIT license:
+ * http://www.opensource.org/licenses/MIT
+ */
+
+ .orgchart {
+    box-sizing: border-box;
+    display: inline-block;
+    min-height: 202px;
+    min-width: 202px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: linear-gradient(90deg, rgba(200, 0, 0, 0.15) 10%, rgba(0, 0, 0, 0) 10%), linear-gradient(rgba(200, 0, 0, 0.15) 10%, rgba(0, 0, 0, 0) 10%);
+    background-size: 10px 10px;
+    border: 1px dashed rgba(0, 0, 0, 0);
+    padding: 20px;
+}
+
+.orgchart .hidden,
+.orgchart~.hidden {
+    display: none;
+}
+
+.orgchart.b2t {
+    transform: rotate(180deg);
+}
+
+.orgchart.l2r {
+    position: absolute;
+    transform: rotate(-90deg) rotateY(180deg);
+    transform-origin: left top;
+}
+
+.orgchart .verticalNodes ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 18px;
+    text-align: left;
+}
+
+.orgchart .verticalNodes ul:first-child {
+    margin-top: 2px;
+}
+
+.orgchart .verticalNodes>td::before {
+    content: '';
+    border: 1px solid grey;
+}
+
+.orgchart .verticalNodes>td>ul>li:first-child::before {
+    box-sizing: border-box;
+    top: -4px;
+    height: 30px;
+    width: calc(50% - 2px);
+    border-width: 2px 0 0 2px;
+}
+
+.orgchart .verticalNodes ul>li {
+    position: relative;
+}
+
+.orgchart .verticalNodes ul>li::before,
+.orgchart .verticalNodes ul>li::after {
+    box-sizing: border-box;
+    content: '';
+    position: absolute;
+    left: -6px;
+    border-color: grey;
+    border-style: solid;
+    border-width: 0 0 2px 2px;
+}
+
+.orgchart .verticalNodes ul>li::before {
+    top: -4px;
+    height: 30px;
+    width: 11px;
+}
+
+.orgchart .verticalNodes ul>li::after {
+    top: 1px;
+    height: 100%;
+}
+
+.orgchart .verticalNodes ul>li:first-child::after {
+    box-sizing: border-box;
+    top: 24px;
+    width: 11px;
+    border-width: 2px 0 0 2px;
+}
+
+.orgchart .verticalNodes ul>li:last-child::after {
+    box-sizing: border-box;
+    border-width: 2px 0 0;
+}
+
+.orgchart.r2l {
+    position: absolute;
+    transform: rotate(90deg);
+    transform-origin: left top;
+}
+
+.orgchart>.spinner {
+    font-size: 100px;
+    margin-top: 30px;
+    color: rgba(68, 157, 68, 0.8);
+}
+
+.orgchart table {
+    border-spacing: 0;
+    border-collapse: separate;
+}
+
+.orgchart>table:first-child {
+    margin: 20px auto;
+}
+
+.orgchart td {
+    text-align: center;
+    vertical-align: top;
+    padding: 0;
+}
+
+.orgchart .lines:nth-child(3) td {
+    box-sizing: border-box;
+    height: 20px;
+}
+
+.orgchart .lines .topLine {
+    border-top: 2px solid #ababab;
+}
+
+.orgchart .lines .rightLine {
+    border-right: 1px solid #ababab;
+    float: none;
+    border-radius: 0;
+}
+
+.orgchart .lines .leftLine {
+    position: relative;
+    border-left: 1px solid #ababab;
+    float: none;
+    border-radius: 0;
+}
+
+.orgchart .lines .leftLine::after {
+    content: " ";
+    position: absolute;
+    background-color: #ffff;
+    height: 14px;
+    width: 14px;
+    top: 18px;
+    border-radius: 50%;
+    left: -8px;
+    z-index: -1;
+    border: 2px solid #ababab;
+}
+
+.orgchart .lines .downLine {
+    position: relative;
+    background-color: #ababab;
+    margin: 0 auto;
+    height: 20px;
+    width: 2px;
+    float: none;
+}
+
+.orgchart .lines .downLine::before {
+    content: " ";
+    position: absolute;
+    background-color: #ababab;
+    height: 14px;
+    width: 14px;
+    top: -12px;
+    border-radius: 50%;
+    left: -6px;
+    z-index: -1;
+}
+
+
+/* node styling */
+
+.orgchart .node {
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    padding: 3px;
+    border: 2px dashed transparent;
+    text-align: center;
+    width: 210px;
+}
+
+.orgchart.l2r .node,
+.orgchart.r2l .node {
+    /* width: 50px; */
+    height: 200px;/*140*/
+    transform: rotate(-90deg) rotateY(180deg);
+    margin: 4px 0 4px 0;
+    padding-top: 42px;
+    padding-left: 4px;
+}
+
+.orgchart .node>.spinner {
+    position: absolute;
+    top: calc(50% - 15px);
+    left: calc(50% - 15px);
+    vertical-align: middle;
+    font-size: 30px;
+    color: rgba(68, 157, 68, 0.8);
+}
+
+.orgchart .node:hover {
+    /* background-color: rgba(238, 217, 54, 0.5); */
+    background: none;
+    transition: .5s;
+    cursor: default;
+    z-index: 20;
+}
+
+.orgchart .node.focused {
+    /* background-color: rgba(238, 217, 54, 0.5); */
+    background: none;
+}
+
+.orgchart .ghost-node {
+    position: fixed;
+    left: -10000px;
+    top: -10000px;
+}
+
+.orgchart .ghost-node rect {
+    fill: #ffffff;
+    stroke: #bf0000;
+}
+
+.orgchart .node.allowedDrop {
+    border-color: rgba(68, 157, 68, 0.9);
+}
+
+
+/* .orgchart .node .title {
+    box-sizing: border-box;
+    padding: 2px;
+    width: 130px;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-color: grey;
+    color: #fff;
+    border-radius: 4px 4px 0 0;
+} */
+
+.orgchart.b2t .node .title {
+    transform: rotate(-180deg);
+    transform-origin: center bottom;
+}
+
+.orgchart.l2r .node .title {
+    transform: rotate(-90deg) translate(-45px, -45px) rotateY(180deg);
+    transform-origin: bottom center;
+}
+
+.orgchart.r2l .node .title {
+    transform: rotate(-90deg) translate(-45px, -45px);
+    transform-origin: bottom center;
+}
+
+.orgchart .node .title .symbol {
+    float: left;
+    margin-top: 4px;
+    margin-left: 2px;
+}
+
+.orgchart .node .content {
+    box-sizing: border-box;
+    padding: 2px;
+    height: 20px;
+    font-size: 0.625rem;
+    /* border: 1px solid grey;
+  border-radius: 0 0 4px 4px; */
+    text-align: center;
+    background-color: #fff;
+    color: #333;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: auto;
+}
+
+.orgchart.b2t .node .content {
+    transform: rotate(180deg);
+    transform-origin: center top;
+}
+
+.orgchart.l2r .node .content {
+    transform: rotate(-90deg) translate(-45px, -45px) rotateY(180deg);
+    transform-origin: top center;
+    width: 130px;
+}
+
+.orgchart.r2l .node .content {
+    transform: rotate(-90deg) translate(-45px, -45px);
+    transform-origin: top center;
+    width: 130px;
+}
+
+.orgchart .node .edge {
+    font-size: 15px;
+    position: absolute;
+    color: rgba(68, 157, 68, 0.5);
+    cursor: default;
+    transition: .2s;
+}
+
+.orgchart.noncollapsable .node .edge {
+    display: none;
+}
+
+.orgchart .edge:hover {
+    color: #449d44;
+    cursor: pointer;
+}
+
+.orgchart .node .verticalEdge {
+    width: calc(100% - 10px);
+    width: -webkit-calc(100% - 10px);
+    width: -moz-calc(100% - 10px);
+    left: 5px;
+}
+
+.orgchart .node .topEdge {
+    top: -4px;
+}
+
+.orgchart .node .bottomEdge {
+    bottom: -4px;
+}
+
+.orgchart .node .horizontalEdge {
+    width: 15px;
+    height: calc(100% - 10px);
+    height: -webkit-calc(100% - 10px);
+    height: -moz-calc(100% - 10px);
+    top: 5px;
+}
+
+.orgchart .node .rightEdge {
+    right: -4px;
+}
+
+.orgchart .node .leftEdge {
+    left: -4px;
+}
+
+.orgchart .node .horizontalEdge::before {
+    position: absolute;
+    top: calc(50% - 7px);
+}
+
+.orgchart .node .rightEdge::before {
+    right: 3px;
+}
+
+.orgchart .node .leftEdge::before {
+    left: 3px;
+}
+
+.orgchart .node .toggleBtn {
+    position: absolute;
+    left: 5px;
+    bottom: -2px;
+    color: rgba(68, 157, 68, 0.6);
+}
+
+.orgchart .node .toggleBtn:hover {
+    color: rgba(68, 157, 68, 0.8);
+}
+
+.oc-export-btn {
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    color: #fff;
+    background-color: #5cb85c;
+    border: 1px solid transparent;
+    border-color: #4cae4c;
+    border-radius: 4px;
+}
+
+.oc-export-btn[disabled] {
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: 0.3;
+}
+
+.oc-export-btn:hover,
+.oc-export-btn:focus,
+.oc-export-btn:active {
+    background-color: #449d44;
+    border-color: #347a34;
+}
+
+.orgchart~.mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.orgchart~.mask .spinner {
+    position: absolute;
+    top: calc(50% - 54px);
+    left: calc(50% - 54px);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 108px;
+}
+
+.orgchart .node {
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.orgchart .slide-down {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.orgchart.l2r .node.slide-down,
+.orgchart.r2l .node.slide-down {
+    transform: translateY(130px);
+}
+
+.orgchart .slide-up {
+    opacity: 0;
+    transform: translateY(-40px);
+}
+
+.orgchart.l2r .node.slide-up,
+.orgchart.r2l .node.slide-up {
+    transform: translateY(-130px);
+}
+
+.orgchart .slide-right {
+    opacity: 0;
+    transform: translateX(130px);
+}
+
+.orgchart.l2r .node.slide-right,
+.orgchart.r2l .node.slide-right {
+    transform: translateX(40px);
+}
+
+.orgchart .slide-left {
+    opacity: 0;
+    transform: translateX(-130px);
+}
+
+.orgchart.l2r .node.slide-left,
+.orgchart.r2l .node.slide-left {
+    transform: translateX(-40px);
+}
+
+.orgiz_structure_div {
+    position: relative;
+    border: 2px solid #ababab;
+    background: #ffffff;
+    border-radius: 3px;
+    padding-top: 5px;
+    font-size: 11px;
+    text-align: left;
+}
+
+.org_box_top {
+    margin: 3px;
+}
+
+.org_box_top_content {
+    padding: 0 0 0 3px;
+    -ms-flex: 1;
+    -webkit-box-flex: 1;
+    flex: 1;
+}
+
+.org_box_bottom {
+    padding: 3px;
+    border-top: 1px solid #ababab;
+}
+
+.orgiz_add {
+    position: absolute;
+    top: -9px;
+    right: 39px;
+    /* background: #fff;
+    border-radius: 50%; */
+}
+
+.orgiz_edit {
+    position: absolute;
+    top: -9px;
+    right: 22px;
+    /* background: #fff;
+    border-radius: 50%; */
+}
+
+.orgiz_delete {
+    position: absolute;
+    top: -9px;
+    right: 5px;
+    /* background: #fff;
+    border-radius: 50%; */
+}
+
+.orgiz_btn_appraisal{
+    border: none;
+    border-radius: 50%;
+    margin-right: 3px;
+    color: #ffffff;
+}
+
+.orgiz_btn_appraisal:hover span {
+    display: none;
+}
+
+.orgiz_btn_appraisal:hover::after {
+    content: "Appraisal";
+    margin-right: 3px;
+    color: #ffffff;
+}
+
+.orgiz_btn_scorecard {
+    border: none;
+    border-radius: 50%;
+    margin-right: 3px;
+    color: #ffffff;
+}
+
+.orgiz_btn_scorecard:hover span {
+    display: none;
+}
+
+.orgiz_btn_scorecard:hover::after {
+    content: "Scorecard";
+    margin-right: 3px;
+    color: #ffffff;
+}
+
+.orgiz_btn_kpi {
+    border: none;
+    border-radius: 50%;
+    margin-right: 3px;
+    color: #ffffff;
+}
+
+.orgiz_btn_kpi:hover span {
+    display: none;
+}
+
+.orgiz_btn_kpi:hover::after {
+    content: "KPI";
+    margin-right: 3px;
+    color: #ffffff;
+}
+
+.orgiz_btn_init {
+    border: none;
+    border-radius: 50%;    
+    /* height: 17px;
+    width: 17px; */
+    margin-right: 3px;
+    color: #ffffff;
+    padding: 1px 8px;
+}
+
+
+.orgiz_btn_init:hover span {
+    display: none;
+}
+
+.orgiz_btn_init:hover::after {
+    content: "Initiative";
+    margin-right: 3px;
+    color: #ffffff;
+}
+
+.orgiz_name{
+    font-size: 11px;
+    font-weight: 600;
+}
+.orgiz_title, .orgiz_department, .orgiz_kpi_name{
+    font-size: 10px;
+}
+/* .orgiz_btns_all{
+    border: none;
+    border-radius: 50%;
+    height: 17px;
+    width: 17px;
+    margin-right: 3px;
+    color: #ffffff;
+} */
+.org_struct_save_btn, .org_struct_add_btn {
+    padding: 5px 30px;
+    font-size: 12px;
+    background-color: black;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+}
+
+.green_color {
+    background-color: #1aa243 !important;
+}
+
+.orange_color {
+    background-color: #ff6f00 !important;
+}
+
+.yellow_color {
+    background-color: #ffd500 !important;
+}
+
+.orgiz_structure_Kpi_div{    
+    position: relative;
+    /* border: 1px solid #ababab; */
+    background: #ffffff;
+    border-radius: 3px;
+    padding: 5px 4px 5px 4px;
+    font-size: 11px;
+    text-align: left;
+}
+
+.node .kpi_green_border{
+    border: 2px solid #1aa243 !important;
+}
+
+.org_kpi_description{
+    padding-bottom: 5px;
+}
+.org_kpi_deparment{
+    padding-bottom: 5px;
+    font-weight: 700;
+}
+.org_kpi_actual, .org_kpi_target{    
+    color: #b5b6b7;
+}
+.org_kpi_actual_value, .org_kpi_target_value{    
+    font-weight: 700;
+}
+
+.org_kpi_div_actual{
+    border: 1px solid #9c9c9c; 
+    text-align: center;
+    border-top-left-radius: 4px;   
+    border-bottom-left-radius: 4px;    
+    padding: 0 6px;
+    background: #f7f5f4;
+    flex: 1;
+}
+
+.org_kpi_div_target{
+    border: 1px solid #9c9c9c; 
+    text-align: center; 
+    padding: 0 6px;
+    margin-left: -1px;
+    background: #f7f5f4;
+    flex: 1;
+}
+
+.org_kpi_div_gap{
+    border: 1px solid #9c9c9c; 
+    text-align: center;
+    border-top-right-radius: 4px;   
+    border-bottom-right-radius: 4px;   
+    padding: 0 6px;
+    margin-left: -1px;
+    background: #f7f5f4;
+    flex: 1;
+}
+
+.add_org_structure-sidebar {
+    width: 280px;
+    height: calc(100vh - 60px);
+    position: fixed;
+    right: -300px;
+    top: 60px;
+    background: #fdfdfd;
+    z-index: 1030 !important;
+    -webkit-box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    -moz-transition: .5s;
+    -o-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+    overflow: overlay !important;
+}
+
+.edit_org_structure-sidebar {
+    width: 280px;
+    height: calc(100vh - 60px);
+    position: fixed;
+    right: -300px;
+    top: 60px;
+    background: #fdfdfd;
+    z-index: 1030 !important;
+    -webkit-box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    -moz-transition: .5s;
+    -o-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+    overflow: overlay !important;
+}

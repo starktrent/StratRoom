@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<a lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <title>StratRoom</title>
+        <!-- Favicon-->
+        <!-- <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon"> -->
+        <!-- Plugins Core Css -->
+		 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+		   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="../../assets/css/app.min.css" rel="stylesheet">
+        <!-- Custom Css -->
+        <link href="../../assets/css/style.css" rel="stylesheet" />
+		 <link href="../../assets/css/custom.css" rel="stylesheet" />
+        <link href="../../assets/css/initatives.css" rel="stylesheet" />
+        <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" />
+        <!-- You can choose a theme from css/styles instead of get all themes -->
+        <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
+        <!-- <link href="../../assets/css/table-view.css" rel="stylesheet" /> -->
+        <!-- <link rel="stylesheet" href="../../assets/daterangepicker.css"> -->
+        <!-- <link rel="stylesheet" href="../../assets/datepickerair.css"> -->
+        <link href="../../assets/jquery-ui.min.css" rel="stylesheet">
+        <!-- <link href="../../assets/daterangepicker/daterangepicker.min.css" rel="stylesheet"> -->
+        <link href="../../assets/css/employee.css" rel="stylesheet" />
+        <!-- <link href="../../assets/bootstrap-datepicker.min.css" rel="stylesheet" /> -->
+		
+		  
+		      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">			    <link rel="stylesheet" id="main-stylesheet" data-version="1.1.0" href="css/shards-dashboards.1.1.0.min.css">
+
+			  
+			  
+			  
+			  <link href="assets/daterangepicker/daterangepicker.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+	
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+	
+        <style>
+            .orientation-right {
+                top: 60px !important;
+                right: 0 !important;
+                left: auto !important;
+                position: fixed;
+            }
+	
+        </style>
+
+    </head>
+
+    <body class="light">
+   <!-- Page Loader -->
+        <div class="page-loader-wrapper">
+            <div class="loader">
+                <div class="m-t-30">
+                    <img width="100" src="../../assets/images/logo_1.gif" alt="admin">
+                </div>
+                <p>Please wait...</p>
+            </div>
+        </div>
+        <!-- <div>
+            <img src="../../assets/images/SP_Bg.png" alt="">
+        </div> -->
+        <!-- #END# Page Loader -->
+        <!-- Overlay For Sidebars -->
+        <div class="overlay"></div>
+        <!-- #END# Overlay For Sidebars -->
+        <!-- Top Bar -->
+        <nav class="navbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a href="#" onClick="return false;" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                    <a href="#" onClick="return false;" class="bars"></a>
+                    <a href="#" onClick="return false;" class="bar_nav sidemenu-collapse"><i class="nav-hdr-btn ti-menu" style="color: #000"></i></a>
+                    <a class="navbar-brand nav_float" href="#">
+                        <img src="../../assets/images/Startroom_Final logo-01_1.png" alt="">
+                        <!-- <span class="logo-name">Img</span> -->
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="fullscreen" style="padding: 4px;left: -14px;">
+                            <ul class="list-unstyled order-list">
+                                <li class="avatar avatar-sm">
+                                    <img class="rounded-circle" src="../../assets/images/user/user7.jpg" alt="user">
+                                </li>
+                                <li class="avatar avatar-sm">
+                                    <img class="rounded-circle" src="../../assets/images/user/user8.jpg" alt="user">
+                                </li>
+                                <li class="avatar avatar-sm">
+                                    <img class="rounded-circle" src="../../assets/images/user/user9.jpg" alt="user">
+                                </li>
+                                <li class="avatar avatar-sm">
+                                    <img class="rounded-circle" src="../../assets/images/user/user9.jpg" alt="user">
+                                </li>
+                                <li _ngcontent-hhc-c5="" class="avatar avatar-sm"><span _ngcontent-hhc-c5="" class="badge">+3</span></li>
+                            </ul>
+                        </li>
+                        <li class="fullscreen">
+                            <form class="form-header" action="" method="POST">
+                                <input class="au-input au-input--xl" style="min-width: 20%" type="text" name="search" placeholder="Search">
+                                <button class="au-btn--submit" type="submit">
+                            <i class="fa fa-search" style="color:gray"></i>
+                            </button>
+                            </form>
+                        </li>
+                        <li class="fullscreen">
+                            <!-- <i class="nav-hdr-btn ti-calendar" style="color: gray"></i> -->
+                            <input class="daterangepicker-field top_datepicker"></input>
+                        </li>
+                        <!-- #END# Full Screen Button -->
+                        <!-- #START# Notifications-->
+                        <li class="dropdown">
+                            <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                                <i class="nav-hdr-btn ti-bell" style="color: gray"></i>
+                                <span class="notify"></span>
+                                <span class="heartbeat"></span>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                                <i class="nav-hdr-btn ti-settings" style="color: gray"></i>
+                                <span class="notify"></span>
+                                <span class="heartbeat"></span>
+                            </a>
+                        </li>
+                        <!-- #END# Notifications-->
+                        <li class="">
+                            <a href="#" onclick="return false;" class=" dropdown-toggle js-right-sidebar" data-close="true">
+                                <!-- <img src="../../assets/images/user.jpg" alt="user"> -->
+                                <i class="fas fa-user-circle"></i> </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- #Top Bar -->
+      
+	  <div>
+            <!-- Left Sidebar -->
+            <aside id="leftsidebar" class="sidebar">
+                <!-- Menu -->
+                <div class="menu">
+                    <ul class="list">
+                        <li class="active">
+                            <a href="#" onClick="return false;" class="">
+                                <i class="menu-icon fa fa-home font_icon"></i>
+                                <span>Organisation Structure</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" onClick="return false;" class="menu-toggle">
+                                <i class="menu-icon fa fa-dashboard font_icon"></i>
+                                <span>Dashboards</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li>
+                                    <a href="#">BSC Dashboard</a>
+                                </li>
+                                <li>
+                                    <a href="#">Strategy Map</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="#" onClick="return false;" class="">
+                                <i class="menu-icon fa fa-bar-chart font_icon"></i>
+                                <span>Charts</span>
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="#" onClick="return false;" class="">
+                                <i class="menu-icon fa fa-key font_icon"></i>
+                                <span>Users & Access</span>
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="#" onClick="return false;" class="">
+                                <i class="menu-icon fa fa-sitemap font_icon"></i>
+                                <span>Workflows</span>
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="#" onClick="return false;" class="">
+                                <i class="menu-icon fa fa-bell font_icon"></i>
+                                <span>Notifications & Alerts</span>
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="#" onClick="return false;" class="">
+                                <i class="menu-icon fa fa-database font_icon"></i>
+                                <span>Data Management</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" onClick="return false;" class="menu-toggle">
+                                <i class="menu-icon fa fa-laptop font_icon"></i>
+                                <span>Template Management</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li>
+                                    <a href="#" id="sub-menu" onClick="return false;" class="menu-toggle">
+                                            Scorecard Layouts
+                                        </a>
+                                    <ul class="ml-menu">
+                                        <li><a href="#">Standard BSC View</a></li>
+                                        <li><a href="#">Dashboard View</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" id="sub-menu" onClick="return false;" class="menu-toggle">
+                                        Initiative
+                                        </a>
+                                    <ul class="ml-menu">
+                                        <li><a href="#">Sub Initiatives</a></li>
+                                        <li><a href="#">Tasks</a></li>
+                                        <li><a href="#">Activities</a></li>
+                                        <li><a href="#">Milestones</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Reports Table</a>
+                                </li>
+                                <li>
+                                    <a href="#" id="sub-menu" onClick="return false;" class="menu-toggle">
+                                        Comments
+                                        </a>
+                                    <ul class="ml-menu">
+                                        <li><a href="#">Comments & Observations</a></li>
+                                        <li><a href="#">Proof of Evidence</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Employee Layout</a>
+                                </li>
+                                <li>
+                                    <a href="#">Appraisal</a>
+                                </li>
+                                <li>
+                                    <a href="#" data-toggle="modal" data-target=".data_collection_form">Data Collection Form</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="#" onClick="return false;" class="">
+                                <i class="menu-icon fa fa-columns font_icon"></i>
+                                <span>Widget Management</span>
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="#" onClick="return false;" class="">
+                                <i class="menu-icon fa fa-pie-chart font_icon"></i>
+                                <span>Reports</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- #Menu -->
+            </aside>
+			</div>
+            <!-- #END# Left Sidebar -->
+			
+			            <!-- Right Sidebar -->
+            <aside id="rightsidebar" class="right-sidebar open">
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane in active in active stretchLeft" id="skins">
+                        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto;">
+                            <div class="demo-skin" style="overflow: hidden; width: auto; height: auto;">
+                                <div class="rightSetting">
+                                    <p class="left">Profile</p>
+                                    <a href="#">
+                                        <p class="right editProfile">Edit</p>
+                                        <p class="right editProfile"></p>
+                                    </a>
+                                    <ul class="setting-list profile-default list-unstyled m-t-20 center">
+                                        <!-- <li class="center">
+                                                <i class="fas fa-user-circle" style="font-size: 110px"></i>
+                                            </li> -->
+                                        <li _ngcontent-hhc-c5="" class="center avatar avatar-sm" style="width:85px">
+                                            <img _ngcontent-hhc-c5="" alt="user" width="110" class="rounded-circle" src="../../assets/images/user/usrbig7.jpg">
+                                        </li>
+                                        <li>
+                                            <p class="center name">Karthick, C001</p>
+                                        </li>
+                                        <li>
+                                            <p class="center grey1">Manager, Chennai, TN, India</p>
+                                        </li>
+                                        <li>
+                                            <p class="center grey1">karthick@stratroom.com</p>
+                                        </li>
+                                    </ul>
+                                    <ul class="setting-list profile-replace list-unstyled m-t-20" style="display: none">
+                                        <li class="center">
+                                            <form id="profileForm">
+                                                <div class="form-group">
+                                                    <div class="form-line profile-pic">
+                                                        <!-- <i  class="fas fa-user-circle" style="font-size: 100px; opacity:0.5"></i> -->
+                                                        <li id="profileImage" _ngcontent-hhc-c5="" class="center avatar avatar-sm" style="width:85px; z-index:-1">
+                                                            <img _ngcontent-hhc-c5="" alt="user" width="110" class="rounded-circle" src="../../assets/images/user/usrbig7.jpg">
+                                                        </li>
+                                                        <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" required="" capture="">
+                                                        <div class="edit"><a href="#"><i class="fa fa-pencil-alt"></i></a></div>
+                                                    </div>
+                                                    <div class="form-line">
+                                                        <label for="name" class="left">Name</label>
+                                                        <input type="text" name="name" class="form-control">
+                                                    </div>
+                                                    <div class="form-line">
+                                                        <label for="id" class="left">Employee ID</label>
+                                                        <input type="text" name="id" class="form-control">
+                                                    </div>
+
+                                                    <div class="form-line">
+                                                        <label for="title" class="left">Title</label>
+                                                        <input type="text" name="title" class="form-control">
+                                                    </div>
+
+                                                    <div class="form-line">
+                                                        <label for="email" class="left">Email</label>
+                                                        <input type="email" name="email" class="form-control">
+                                                    </div>
+
+                                                    <div class="form-line">
+                                                        <label for="location" class="left">Location</label>
+                                                        <input type="text" name="location" class="form-control">
+                                                    </div>
+
+                                                    <div class="form-line center">
+                                                        <button class="btn-default1 btn cancelEditProfile" value="Cancel">Cancel</button>
+                                                        <button class="initative_save_btn" value="Submit">Submit</button>
+                                                    </div>
+
+                                                </div>
+                                            </form>
+                                        </li>
+                                        <li>
+                                            <!-- <p class="center name">Karthick</p> -->
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="row clearfix">
+                                    <!-- Basic Examples -->
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="">
+                                            <div class="body">
+                                                <div class="row clearfix">
+                                                    <div class="col-xs-12 ol-sm-12 col-md-12 col-lg-12">
+                                                        <div class="panel-group" id="accordion_1" role="tablist" aria-multiselectable="true">
+                                                            <div class="panel">
+                                                                <div class="panel-heading profile_report" role="tab" id="headingOne_1">
+                                                                    <h4 class="panel-title">
+                                                                        <a role="button" data-toggle="collapse" data-parent="#accordion_1" href="#collapseOne_1" aria-expanded="true" aria-controls="collapseOne_1">
+                                                                                Reporting To
+                                                                            </a>
+                                                                    </h4>
+                                                                </div>
+                                                                <div id="collapseOne_1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_1">
+                                                                    <div class="panel-body profile_edit">
+                                                                        <div class="rightSetting">
+                                                                            <!-- <p class="left">Reporting To</p> -->
+                                                                            <a href="#" id="reportingAdd">
+                                                                                <p class="right">Add</p>
+                                                                            </a>
+                                                                            <ul class="setting-list reporting-default list-unstyled m-t-20">
+                                                                                <li class="row reportingRow">
+                                                                                    <div class="col-md-3 p-b-10">
+                                                                                        <!-- <li id="profileImage" _ngcontent-hhc-c5="" class="center avatar avatar-sm" style="width:85px; z-index:-1"> -->
+                                                                                        <img _ngcontent-hhc-c5="" alt="user" width="110" class="rounded-circle" src="../../assets/images/user/usrbig7.jpg">
+                                                                                        <!-- </li> -->
+                                                                                    </div>
+                                                                                    <div class="col-md-7 p-t-5">
+                                                                                        <p class="center name">Arun</p>
+                                                                                        <p class="center grey1">Developer</p>
+
+                                                                                    </div>
+                                                                                    <div class="col-md-1" style="float: right;">
+                                                                                        <a href="#" class="reportingEdit"><i class="fas fa-pencil-alt" style="font-size: 14px"></i></a>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="row reportingRow">
+                                                                                    <div class="col-md-3 p-b-10">
+                                                                                        <img _ngcontent-hhc-c5="" alt="user" width="110" class="rounded-circle" src="../../assets/images/user/usrbig8.jpg">
+                                                                                    </div>
+                                                                                    <div class="col-md-7 p-t-5">
+                                                                                        <p class="center name">Santhosh</p>
+                                                                                        <p class="center grey1">CTO</p>
+                                                                                    </div>
+                                                                                    <div class="col-md-1" style="float: right;">
+                                                                                        <a href="#" class="reportingEdit"><i class="fas fa-pencil-alt" style="font-size: 14px"></i></a>
+                                                                                    </div>
+                                                                                </li>
+                                                                            </ul>
+                                                                            <ul class="setting-list reporting-replace-add list-unstyled m-t-20" style="display:none">
+                                                                                <li class="row">
+                                                                                    <form id="reportingAddForm">
+                                                                                        <div class="form-group">
+                                                                                            <div class="form-line center profile-pic">
+                                                                                                <img _ngcontent-hhc-c5="" alt="user" width="60" class="rounded-circle" src="../../assets/images/user/usrbig7.jpg">
+                                                                                                <input id="reportingImageUpload" type="file" name="profile_photo1" placeholder="Photo" required="" capture="">
+                                                                                                <div class="edit1"><a href="#"><i class="fa fa-pencil-alt"></i></a></div>
+                                                                                            </div>
+                                                                                            <div class="form-line">
+                                                                                                <label for="name" class="left">Name</label>
+                                                                                                <input type="text" name="name" class="form-control">
+                                                                                            </div>
+                                                                                            <div class="form-line">
+                                                                                                <label for="title" class="left">Title</label>
+                                                                                                <input type="text" name="title" class="form-control">
+                                                                                            </div>
+
+                                                                                            <div class="form-line center">
+                                                                                                <button class="btn-default1 btn canceladdReporting" value="Cancel">Cancel</button>
+                                                                                                <button class="initative_save_btn" value="Submit">Submit</button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </form>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+                                    <!-- Basic Examples -->
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="">
+                                            <div class="body">
+                                                <div class="row clearfix">
+                                                    <div class="col-xs-12 ol-sm-12 col-md-12 col-lg-12">
+                                                        <div class="panel-group" id="accordion_2" role="tablist" aria-multiselectable="true">
+                                                            <div class="panel">
+                                                                <div class="panel-heading profile_direct" role="tab" id="headingOne_2">
+                                                                    <h4 class="panel-title">
+                                                                        <a role="button" data-toggle="collapse" data-parent="#accordion_2" href="#collapseOne_2" aria-expanded="true" aria-controls="collapseOne_2">
+                                                                                Direct Reportees
+                                                                            </a>
+                                                                    </h4>
+                                                                </div>
+                                                                <div id="collapseOne_2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_2">
+                                                                    <div class="panel-body profile_edit">
+                                                                        <div class="rightSetting">
+                                                                            <!-- <p class="left">Direct Reportees</p> -->
+                                                                            <a href="#" id="directAdd">
+                                                                                <p class="right">Add</p>
+                                                                            </a>
+                                                                            <ul class="setting-list direct-default list-unstyled m-t-20">
+                                                                                <li class="row reportingRow">
+                                                                                    <div class="col-md-3 p-b-10">
+                                                                                        <img _ngcontent-hhc-c5="" alt="user" width="110" class="rounded-circle" src="../../assets/images/user/usrbig6.jpg">
+                                                                                    </div>
+                                                                                    <div class="col-md-7 p-t-5">
+                                                                                        <p class="center name">Karthick</p>
+                                                                                        <p class="center grey1">Manager</p>
+
+                                                                                    </div>
+                                                                                    <div class="col-md-1" style="float: right;">
+                                                                                        <a href="#" class="directEdit"><i class="fas fa-pencil-alt" style="font-size: 14px"></i></a>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="row reportingRow">
+                                                                                    <div class="col-md-3 p-b-10">
+                                                                                        <img _ngcontent-hhc-c5="" alt="user" width="110" class="rounded-circle" src="../../assets/images/user/usrbig9.jpg">
+                                                                                    </div>
+                                                                                    <div class="col-md-7 p-t-5">
+                                                                                        <p class="center name">Naren</p>
+                                                                                        <p class="center grey1">Designer</p>
+
+                                                                                    </div>
+                                                                                    <div class="col-md-1" style="float: right;">
+                                                                                        <a href="#" class="directEdit"><i class="fas fa-pencil-alt" style="font-size: 14px"></i></a>
+                                                                                    </div>
+                                                                                </li>
+                                                                            </ul>
+                                                                            <ul class="setting-list direct-replace-add list-unstyled m-t-20" style="display:none">
+                                                                                <li class="row">
+                                                                                    <form id="directAddForm">
+                                                                                        <div class="form-group">
+                                                                                            <div class="form-line center profile-pic">
+                                                                                                <img _ngcontent-hhc-c5="" alt="user" width="60" class="rounded-circle" src="../../assets/images/user/usrbig7.jpg">
+                                                                                                <input id="directImageUpload" type="file" name="profile_photo1" placeholder="Photo" required="" capture="">
+                                                                                                <div class="edit1"><a href="#"><i class="fa fa-pencil-alt"></i></a></div>
+
+                                                                                            </div>
+                                                                                            <div class="form-line">
+                                                                                                <label for="name" class="left">Name</label>
+                                                                                                <input type="text" name="name" class="form-control">
+                                                                                            </div>
+                                                                                            <div class="form-line">
+                                                                                                <label for="title" class="left">Title</label>
+                                                                                                <input type="text" name="title" class="form-control">
+                                                                                            </div>
+
+                                                                                            <div class="form-line center">
+                                                                                                <button class="btn-default1 btn canceladdDirect" value="Cancel">Cancel</button>
+                                                                                                <button class="initative_save_btn" value="Submit">Submit</button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </form>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+                                    <!-- Basic Examples -->
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="">
+                                            <div class="body">
+                                                <div class="row clearfix">
+                                                    <div class="col-xs-12 ol-sm-12 col-md-12 col-lg-12">
+                                                        <div class="panel-group" id="accordion_3" role="tablist" aria-multiselectable="true">
+                                                            <div class="panel">
+                                                                <div class="panel-heading profile_responsilities" role="tab" id="headingOne_3">
+                                                                    <h4 class="panel-title">
+                                                                        <a role="button" data-toggle="collapse" data-parent="#accordion_3" href="#collapseOne_3" aria-expanded="true" aria-controls="collapseOne_3">
+                                                                                My Responsibilities
+                                                                            </a>
+                                                                    </h4>
+                                                                </div>
+                                                                <div id="collapseOne_3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_3">
+                                                                    <div class="panel-body profile_edit">
+                                                                        <ul class="ml-menu profile_accordion">
+                                                                            <li>
+                                                                                <a href="#">My KPI's</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">My Initiatives</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">My Activities</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">My Tasks</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">My Forms</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="slimScrollBar" style="background: rgba(0, 0, 0, 0.5); width: 6px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 0px; z-index: 99; right: 1px; height: 482px;"></div>
+                                <div class="slimScrollRail" style="width: 6px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 0px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div> -->
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!-- #END# Right Sidebar -->
+			
+			
+            
+			
+			
+			
+			
+			
+			
+			
+			
+			 <section class="content" id="">
+					  
+		   <div class="page-header row no-gutters py-4">
+              <div class="col-12 col-sm-12 text-center text-sm-left mb-0">
+                <span class="text-uppercase page-subtitle">Overview</span>
+                <h3 class="page-title"> Strategy Formulation</h3>
+              </div>
+            </div>
+			
+				
+            <!-- Default Light Table -->
+			<div class="card card-small">
+			<div class="card-body p-0 pb-3 text-center">
+            <div class="row mt-2" >
+			
+            <div class="col-lg-4 col-md-6 col-sm-12 well_head_last">
+                <div class="well"><h6> <b>Strategic Plan Period</b></h6></div>
+				<br/>
+				<div id="blog-overview-date-range" class="input-daterange input-group input-group-sm my-auto ml-auto mr-auto ml-sm-auto mr-sm-0 p-2 pl-4" style="max-width: 350px;">
+                          <input type="text"  class="input-sm form-control" name="start" placeholder="Start Date" id="startdate">
+	<script>
+        $('#startdate').datepicker();
+    </script>
+                          <input type="text" class="input-sm form-control" name="end" placeholder="End Date" id="enddate">
+	<script>
+        $('#enddate').datepicker();
+    </script>
+                </div>
+                
+			</div>
+			
+			<div class="col-lg-3 col-md-6 col-sm-12 well_head">
+                <div class="well"><h6><b>Plan Type</b></h6></div>
+				<form class="p-4"> 
+				<select class="form-control">
+				<option value=""> Long Term</option>
+				<option value=""> Medium Term</option>
+				<option value=""> Small Term</option>
+				</select>
+				
+				</form>
+			</div>
+			<div class="col-lg-5 col-md-12 col-sm-12 p-2 well_head_last">
+                <div class="well"><h6><b> Formulation Team</b></h6></div>
+				<div class="p-2">Add Employee :</div>
+ <div class="d-flex flex-column" style="padding-left:150px;">
+                                                        <ul class="list-unstyled order-list d-flex">
+                                                            <li class="avatar avatar-sm">
+                                                                <img class="rounded-circle sub_init_img" src="../../assets/images/user/user9.jpg" alt="user" width="50">
+                                                            </li>
+															  <li class="avatar avatar-sm">
+                                                                <img class="rounded-circle sub_init_img" src="../../assets/images/user/user8.jpg" alt="user" width="50">
+                                                            </li>
+                                                           
+                                                            <li class="avatar avatar-sm">
+                                                                <span _ngcontent-hhc-c5="" class="badge">+3</span>
+                                                            </li>
+															  <div class="image-upload">
+                               <label for="file-input">
+                                <li _ngcontent-hhc-c5="" class="avatar avatar-sm"><a href="#" class="favgs" data-toggle="modal" data-target="#addpeople"> <span _ngcontent-hhc-c5="" class="badge">+<span id="count"> </span></span></a></li>
+								</label>
+							
+							</div>
+                                                        </ul>
+                                                    </div>
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+	<br/>	
+<div class="col-lg-12 col-md-12 col-sm-12 " > 
+	<div class="p-2"> Approved By </div>
+<div class="avatar-wrapper col-md-6 avatar-wrapper-overlap float-left">
+    <div class="avatar-icon-wrapper avatar-icon-sm">
+       <div class="avatar-icon"><img src="images/avatars/0.jpg" alt=""></div>
+    </div>
+	
+    <div class="avatar-icon-wrapper avatar-icon-sm avatar-icon-add">
+		<div class="avatar-icon add_icon">
+			<div class="image-upload">
+				<label for="file-input">
+				<i>+</i>
+				</label>
+	
+				<input id="file-input" type="file"/>
+			</div>
+		</div>
+	</div>	
+</div>
+
+<input type="text" class="input-sm col-md-6 form-control" name="approved" placeholder="Approved Date" id="approveddate">
+	<script>
+        $('#approveddate').datepicker();
+    </script>
+
+</div>
+	
+			</div>
+			
+                </div>
+              </div>
+            </div>
+            <!-- End Default Light Table -->
+			
+			
+ 
+ <div class="page-header row no-gutters py-4">
+              <div class="col-12 col-sm-12 text-center text-sm-left mb-0">
+                <span class="text-uppercase page-subtitle">Overview</span>
+                <h3 class="page-title">Corporate Strategy</h3>
+				<!--a href="#" class="btn btn-success float-right"><b> Save </b></a-->
+              </div>
+            </div>
+            <!-- End Page Header -->
+				
+
+
+				
+					<div class="row container-fluid">
+					<div class="col-lg-12">
+					
+                        <ul class="nav nav-tabs" id="tabs">
+							<li class="nabti"><button class="" onclick="addTab('#content');"> <i class="fa fa-save"></i>  </button></li>
+							
+							<li class="nabti"><button class="" onclick="addTab('#content');"> <i class="fa fa-plus"></i>  </button></li>
+							
+						
+                            <li class="nav-item">
+                                <a class="nav-link active" onclick="active();" data-toggle="tab" href="#finance"><input class="" type="text" value="Finance"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" onclick="active();" data-toggle="tab" href="#business"><input class="" type="text" value="Business"></a>
+                            </li>
+                          
+							
+                        </ul></div>
+						<!--div class="card col-lg-1 ">
+						<ul class="nav">
+						
+						<li class="p-1 float-left"><button class="form-control rounded-circle" onclick="addTab('#content');"> <i class="fa fa-plus"></i>  </button></li>
+							<li class="p-1 float-right"><button class="form-control rounded-circle" onclick="addTab('#content');"> <i class="fa fa-save"></i>  </button></li>	
+                        </ul></div-->
+						
+					
+						
+						
+		<script> 
+		function active(){
+		$("#tabs li").removeClass("active");
+		$(".tab-content .tab-pane").removeClass("active");
+		}
+		function addTab(link) {
+    // hide other tabs
+    $("#tabs li").removeClass("active");
+     
+    // add new tab and related content
+    $("#tabs").append("<li class='nav-item '><a class='nav-link' data-toggle='tab' href='#content'> <input class='' type='text' value='New Tab'> </a></li>");
+    
+}
+
+		//$("#" + contentname).show();
+
+		</script>				
+                    </div>
+		
+		<div class="tab-content" id="tab-content"> <div class="tab-pane body" id="content"> 
+
+		<div class="card card-small objective">
+			
+			<div class="card-body p-0 pb-3 text-center" id="objective_extra">
+	 <div class="row">	
+	<div class="col-lg-12 pt-4 text-center">
+	
+	<div class="float-right p-1 pr-4"><button class="form-control" data-toggle="modal" data-target="#max"> <i class="fa fa-external-link"></i> </a></div>
+		<div class="float-right p-1"><button id="add_objective" onclick="objective_extra('objective_extra')" class="form-control"> <i class="fa fa-plus"></i> </a></div>
+		
+	</div></div>
+
+            <div class="row mt-2" id="row_objective">
+				<div class="col-lg-4 col-md-12 col-sm-12" >
+				<div class="well_head_first">
+                <div class="well">
+				<ul class="nav"><li class="col-lg-6"><h6><b> Objectives</b></h6></li>
+				<li><button id="btn_copy" onclick="initiative('obj_extra')" class="form-control rounded-circle"> <i class="fa fa-plus"></i> </button></li></ul>
+				</div>
+				<form class="p-1 pl-2">
+				<div id="obj_extra">
+	<div class="float-left pt-4" >
+		<textarea type="text" class="form-control" cols="35" rows="2"> </textarea>
+	</div>
+	<div class="avatar-wrapper avatar-wrapper-overlap float-left pt-4 pl-1">
+    <div class="avatar-icon-wrapper avatar-icon-sm">
+       <div class="avatar-icon"><img src="images/avatars/0.jpg" alt=""></div>
+    </div>
+	
+    <div class="avatar-icon-wrapper avatar-icon-sm avatar-icon-add">
+		<div class="avatar-icon add_icon">
+			<div class="image-upload">
+				<label for="file-input">
+				<i>+</i>
+				</label>
+	
+				<input id="file-input" type="file"/>
+			</div>
+		</div>
+	</div>	
+</div></div>
+<!--div class="float-left col-lg-6">
+	<br/>
+		<a href="#" class="form-control btn_control"> <i class="fa fa-save"></i> Save </a>
+	</div-->
+</form>
+			</div></div>
+			<div class="col-lg-4 col-md-12 col-sm-12 well_head">
+                <div class="well">
+				
+				<ul class="nav"><li class="col-lg-10"><h6><b> Proposed KPI'S </b></h6></li>
+				
+				<li><button id="btn_copy" onclick="kpi('kpi_extra')" class="form-control rounded-circle"><i class="fa fa-plus"></i> </button></li></ul>
+				
+				</div>
+				
+				<form class="p-2 pb-0"> 
+				<div class="text-left pb-1"> List of KPI'S </div>
+				<div class="float-left" id="kpi_extra">
+				<textarea  cols="50" rows="2" class="form-control mb-2"> </textarea>
+				</div>
+	<!--div class="float-left col-lg-6">
+	<br/>
+		<a href="#" class="form-control btn_control"> <i class="fa fa-save"></i> Save </a>
+	</div-->
+	
+				</form>
+	
+		
+	
+			</div>
+			<div class="col-lg-4 col-md-12 col-sm-12">
+			<div class="well col-md-12">
+			<ul class="nav"><li class="col-lg-7"><h6><b> Proposed Initiative</b></h6></li>
+			<li><button onclick="initiative('initiative_extra');" class="form-control rounded-circle" ><i class="fa fa-plus"></i> </button></li></ul></div>
+			<br/>
+			<form class="p-1 pl-2" > 
+	<div class="col-lg-12" id="initiative_extra">
+		<div class="float-left  pt-1" >
+		<textarea type="text" class="form-control" cols="35" rows="2"> </textarea>
+	</div>
+	<div class="avatar-wrapper avatar-wrapper-overlap float-left pt-1 pl-1">
+    <div class="avatar-icon-wrapper avatar-icon-sm">
+       <div class="avatar-icon"><img src="images/avatars/0.jpg" alt=""></div>
+    </div>
+	
+    <div class="avatar-icon-wrapper avatar-icon-sm avatar-icon-add">
+		<div class="avatar-icon add_icon">
+			<div class="image-upload">
+				<label for="file-input">
+				<i>+</i>
+				</label>
+	
+				<input id="file-input" type="file"/>
+			</div>
+		</div>
+	</div>	
+</div>
+
+
+</div>
+
+
+<!--div class="float-left col-lg-6 ">
+	<br/>
+		<a href="#" class="form-control btn_control"><i class="fa fa-save"></i> Save </a>
+	</div-->
+
+				</form>
+				
+	
+			</div>
+		
+			</div></div></div>
+		
+		</div>
+ <div class="tab-content" id="tab-content">
+        <div class="tab-pane body active" id="finance"> 
+		
+		              <!-- Default Light Table -->
+			<div class="card card-small objective">
+			
+			<div class="card-body p-0 pb-3 text-center" id="objective_first">
+	<div class="row">	
+	<div class="col-lg-12 pt-4 text-center">
+	
+	<div class="float-right p-1 pr-4"><button class="form-control" data-toggle="modal" data-target="#max"> <i class="fa fa-external-link"></i> </a></div>
+		<div class="float-right p-1 "><button id="add_objective" onclick="objective_first('objective_first')" class="form-control"> <i class="fa fa-plus"></i>  </a></div>
+		
+	</div></div>
+
+            <div class="row mt-2" id="row_objective">
+				<div class="col-lg-4 col-md-12 col-sm-12 " >
+				<div class="well_head_first">
+				
+                <div class="well">
+				<ul class="nav"><li class="col-lg-6"><h6><b> Objectives</b></h6></li>
+				<li><button id="btn_copy" onclick="initiative('obj_first')" class="form-control rounded-circle"> <i class="fa fa-plus"></i> </button></li></ul>
+				</div>
+				<form class="p-1 pl-2">
+	<div id="obj_first">
+	<div class="float-left  pt-4" >
+		<textarea type="text" class="form-control" cols="35" rows="2"> </textarea>
+	</div>
+	<div class="avatar-wrapper avatar-wrapper-overlap float-left pt-4 pl-1">
+    <div class="avatar-icon-wrapper avatar-icon-sm">
+       <div class="avatar-icon"><img src="images/avatars/0.jpg" alt=""></div>
+    </div>
+	
+    <div class="avatar-icon-wrapper avatar-icon-sm avatar-icon-add">
+		<div class="avatar-icon add_icon">
+			<div class="image-upload">
+				<label for="file-input">
+				<i>+</i>
+				</label>
+	
+				<input id="file-input" type="file"/>
+			</div>
+		</div>
+	</div>	
+</div></div>
+<!--div class="float-left col-lg-6">
+	<br/>
+		<a href="#" class="form-control btn_control"> <i class="fa fa-save"></i> Save </a>
+	</div-->
+</form>
+			</div>
+			</div>
+			<div class="col-lg-4 col-md-12 col-sm-12 well_head">
+                <div class="well">
+				<ul class="nav"><li class="col-lg-6">
+				<h6><b> Proposed KPI'S </b></h6></li>
+				<li><button id="btn_copy" onclick="kpi('kpi_first')" class="form-control rounded-circle"> <i class="fa fa-plus"></i> </button></li></ul>
+				
+				</div>
+				
+				<form class="p-2 pb-0"> 
+				<div class="text-left pb-1"> List of KPI'S </div>
+				<div class="float-left" id="kpi_first">
+				<textarea  cols="50" rows="2" class="form-control mb-2"> </textarea>
+				</div>
+	<!--div class="float-left col-lg-6">
+	<br/>
+		<a href="#" class="form-control btn_control"> <i class="fa fa-save"></i> Save </a>
+	</div-->
+	
+				</form>
+	
+			</div>
+			<div class="col-lg-4 col-md-12 col-sm-12">
+			<div class="well col-md-12">
+			<ul class="nav"><li class="col-lg-7"><h6><b> Proposed Initiative</b></h6></li>
+			<li><button onclick="initiative('initiative_first');" class="form-control rounded-circle" ><i class="fa fa-plus"></i> </button></li></ul>
+			</div>
+			<br/>
+			<form class="p-1 pl-2" > 
+	<div class="col-lg-12" id="initiative_first">
+	<div class="float-left  pt-1" >
+		<textarea type="text" class="form-control" cols="35" rows="2"> </textarea>
+	</div>
+	<div class="avatar-wrapper avatar-wrapper-overlap float-left pt-1 pl-1">
+    <div class="avatar-icon-wrapper avatar-icon-sm">
+       <div class="avatar-icon"><img src="images/avatars/0.jpg" alt=""></div>
+    </div>
+	
+    <div class="avatar-icon-wrapper avatar-icon-sm avatar-icon-add">
+		<div class="avatar-icon add_icon">
+			<div class="image-upload">
+				<label for="file-input">
+				<i>+</i>
+				</label>
+	
+				<input id="file-input" type="file"/>
+			</div>
+		</div>
+	</div>	
+</div>
+</div>
+
+
+<!--div class="float-left col-lg-6 ">
+	<br/>
+		<a href="#" class="form-control btn_control"><i class="fa fa-save"></i> Save </a>
+	</div-->
+
+				</form>
+			</div>
+		
+			</div></div></div>
+		
+		
+		</div>
+		<div class="tab-pane body" id="business"> 
+		
+		              <!-- Default Light Table -->
+			<div class="card card-small objective">
+			
+			<div class="card-body p-0 pb-3 text-center" id="objective">
+	<div class="row">		
+	<div class="col-lg-12 p-4 text-center">
+	<div class="float-right p-1 pr-4"><button class="form-control" data-toggle="modal" data-target="#max"> <i class="fa fa-external-link"></i> </a></div>
+		<div class="float-right p-1"><button id="add_objective" onclick="objective('objective')" class="form-control"> <i class="fa fa-plus"></i> </a></div>
+		
+	</div></div>
+
+            <div class="row mt-2" id="row_objective">
+				<div class="col-lg-4 col-md-12 col-sm-12" >
+				<div class="well_head_first">
+                <div class="well">
+				<ul class="nav"><li class="col-lg-6"><h6><b> Objectives</b></h6></li>
+				<li><button id="btn_copy" onclick="initiative('busi_obj')" class="form-control rounded-circle"> <i class="fa fa-plus"></i> </button></li></ul>
+				</div>
+				<form class="p-1 pl-2">
+	<div id="busi_obj"><div class="float-left pt-4" >
+		<textarea type="text" class="form-control" cols="35" rows="2"> </textarea>
+	</div>
+	<div class="avatar-wrapper avatar-wrapper-overlap float-left pt-4 pl-1">
+    <div class="avatar-icon-wrapper avatar-icon-sm">
+       <div class="avatar-icon"><img src="images/avatars/0.jpg" alt=""></div>
+    </div>
+	
+    <div class="avatar-icon-wrapper avatar-icon-sm avatar-icon-add">
+		<div class="avatar-icon add_icon">
+			<div class="image-upload">
+				<label for="file-input">
+				<i>+</i>
+				</label>
+	
+				<input id="file-input" type="file"/>
+			</div>
+		</div>
+	</div>	
+</div></div>
+<!--div class="float-left col-lg-6">
+	<br/>
+		<a href="#" class="form-control btn_control"> <i class="fa fa-save"></i> Save </a>
+	</div-->
+</form>
+			</div></div>
+			<div class="col-lg-4 col-md-12 col-sm-12 well_head">
+                <div class="well">
+				<ul class="nav"><li class="col-lg-6">
+				<h6><b> Proposed KPI'S </b></h6></li>
+				<li><button id="btn_copy" onclick="kpi('kpi')" class="form-control rounded-circle"> <i class="fa fa-plus"></i> </button></li></ul>
+				</div>
+				
+				<form class="p-2 pb-0"> 
+				<div class="text-left pb-1"> List of KPI'S </div>
+				<div class="float-left" id="kpi">
+				<textarea  cols="50" rows="2" class="form-control mb-2"> </textarea>
+				</div>
+	<!--div class="float-left col-lg-6">
+	<br/>
+		<a href="#" class="form-control btn_control"> <i class="fa fa-save"></i> Save </a>
+	</div-->
+	
+				</form>
+			</div>
+			<div class="col-lg-4 col-md-12 col-sm-12">
+			<div class="well col-md-12">
+			<ul class="nav"><li class="col-lg-7"><h6><b> Proposed Initiative</b></h6></li>
+			<li><button onclick="initiative('initiative');" class="form-control rounded-circle" ><i class="fa fa-plus"></i> </button></li></ul>
+			</div>
+			<br/>
+			<form class="p-0 pb-4" > 
+	<div class="col-lg-12" id="initiative">
+		<div class="float-left  pt-1" >
+		<textarea type="text" class="form-control" cols="35" rows="2"> </textarea>
+	</div>
+	<div class="avatar-wrapper avatar-wrapper-overlap float-left pt-1 pl-1">
+    <div class="avatar-icon-wrapper avatar-icon-sm">
+       <div class="avatar-icon"><img src="images/avatars/0.jpg" alt=""></div>
+    </div>
+	
+    <div class="avatar-icon-wrapper avatar-icon-sm avatar-icon-add">
+		<div class="avatar-icon add_icon">
+			<div class="image-upload">
+				<label for="file-input">
+				<i>+</i>
+				</label>
+	
+				<input id="file-input" type="file"/>
+			</div>
+		</div>
+	</div>	
+</div>
+
+
+</div>
+
+
+<!--div class="float-left col-lg-6 ">
+	<br/>
+		<a href="#" class="form-control btn_control"><i class="fa fa-save"></i> Save </a>
+	</div-->
+
+				</form>
+			</div>
+		
+			</div></div></div>
+		</div>
+		
+		
+		
+		<!--div class="tab-pane body" id="documents"><h5>Documents</h5></div>
+ <div class="tab-pane body" id="appraisal"><h5>appraisal</h5></div-->
+
+</div>
+					
+			
+				
+				
+  <!-- Modal -->
+<div id="addpeople" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content" >
+      <div class="modal-header">
+        <!--button type="button" class="close pull-right" data-dismiss="modal">&times;</button-->
+        <h4> Add People</h4>
+      </div>
+      <div class="modal-body">
+	  
+ <p>Press Shift Key to select multiple</p>
+	  
+	  <select multiple data-style=" " class="" style="height:200px;">
+                <option>Name 1</option>
+                <option>Name 2</option>
+                <option>Name 3</option>
+                <option>Name 4</option>
+                <option>Name 5</option>
+            </select>
+			
+			
+			
+		<button type="button" class="form-control green_form add"> Save </button>
+	</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+	
+
+ <!-- Modal -->
+<div id="max" class="modal fade" role="dialog">
+  <div class="modal-dialog" style="left:250px;position:absolute">
+
+    <!-- Modal content-->
+    <div class="modal-content" style="width:1100px;">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        
+      </div>
+      <div class="modal-body">
+           <!-- Default Light Table -->
+			<div class="card card-small">
+			
+			<div class="card-body p-0 pb-3 text-center" id="objective">
+		
+	<!--div class="col-lg-12 p-4 bglight text-center">
+	<div class="float-right p-4"><button class="form-control" data-toggle="modal" data-target="#max"> <i class="fa fa-external-link"></i> </a></div>
+		<div class="col-lg-3 float-right p-4"><button id="add_objective" onclick="objective('objective')" class="form-control"> + Add Objective </a></div>
+		
+	</div-->
+
+	<div class="col-lg-12 p-4 bglight text-center">
+	<div class="p-4"><h4><font color="#fff"> View Objectives</font></h4></div>
+		
+		
+	</div>
+
+            <div class="row mt-2" id="row_objective">
+				<div class="col-lg-4 col-md-12 col-sm-12" >
+                <div class="well"><ul class="nav"><li class="col-lg-6"><h6><b> Objectives</b></h6></li>
+				<li><button id="btn_copy" onclick="initiative('busi_model')" class="form-control rounded-circle"> <i class="fa fa-plus"></i> </button></li></ul></div>
+				<form class="p-1 pl-2">
+	<div id='busi_model'><div class="float-left pt-4" >
+		<textarea type="text" class="form-control" cols="35" rows="2"> </textarea>
+	</div>
+	<div class="avatar-wrapper avatar-wrapper-overlap float-left pt-4 pl-1">
+    <div class="avatar-icon-wrapper avatar-icon-sm">
+       <div class="avatar-icon"><img src="images/avatars/0.jpg" alt=""></div>
+    </div>
+	
+    <div class="avatar-icon-wrapper avatar-icon-sm avatar-icon-add">
+		<div class="avatar-icon add_icon">
+			<div class="image-upload">
+				<label for="file-input">
+				<i>+</i>
+				</label>
+	
+				<input id="file-input" type="file"/>
+			</div>
+		</div>
+	</div>	
+</div></div>
+<!--div class="float-left col-lg-6">
+	<br/>
+		<a href="#" class="form-control btn_control"> <i class="fa fa-save"></i> Save </a>
+	</div-->
+</form>
+			</div>
+			<div class="col-lg-4 col-md-12 col-sm-12 well_head">
+                <div class="well"><ul class="nav"><li class="col-lg-7"><h6><b> Proposed KPI's</b></h6></li>
+			<li><button onclick="kpi('kpi_model');" class="form-control rounded-circle" ><i class="fa fa-plus"></i> </button></li></ul></div>
+				
+				<form class="p-2 pb-0"> 
+				<div class="text-left pb-1"> List of KPI'S </div>
+				<div class="float-left pb-1" id="kpi_model">
+				<textarea  cols="50" rows="2" class="form-control"> </textarea>
+				</div>
+	<!--div class="float-left col-lg-6">
+	<br/>
+		<a href="#" class="form-control btn_control"> <i class="fa fa-save"></i> Save </a>
+	</div-->
+	
+				</form>
+	<!--div class="float-right col-lg-6">
+	<br/>
+		<button id="btn_copy" onclick="kpi('kpi')" class="form-control btn_control btn-copy"> + Add kpi </button>
+	</div-->
+			</div>
+			<div class="col-lg-4 col-md-12 col-sm-12">
+			<div class="well col-md-12"><ul class="nav"><li class="col-lg-7"><h6><b> Proposed Initiative</b></h6></li>
+			<li><button onclick="initiative('initiative_model');" class="form-control rounded-circle" ><i class="fa fa-plus"></i> </button></li></ul></div>
+			<br/>
+			<form class="p-0 pb-4" > 
+	<div class="col-lg-12" id="initiative_model">
+			<div class="col-md-8 float-left pl-0 pb-1 pt-2">
+                
+			<textarea class="form-control" cols="35" rows="2"> </textarea>
+			</div>
+
+<div class="avatar-wrapper col-md-4 avatar-wrapper-overlap float-right pl-0 pt-2" >
+    <div class="avatar-icon-wrapper avatar-icon-sm">
+       <div class="avatar-icon"><img src="images/avatars/0.jpg" alt=""></div>
+    </div>
+	
+    <div class="avatar-icon-wrapper avatar-icon-sm avatar-icon-add">
+		<div class="avatar-icon add_icon">
+			<div class="image-upload">
+				<label for="file-input">
+				<i>+</i>
+				</label>
+	
+				<input id="file-input" type="file"/>
+			</div>
+		</div>
+	</div>	
+</div>
+</div>
+
+
+<!--div class="float-left col-lg-6 ">
+	<br/>
+		<a href="#" class="form-control btn_control"><i class="fa fa-save"></i> Save </a>
+	</div-->
+
+				</form>
+				
+	<!--div class="float-right col-lg-6 ">
+	<br/>
+		<button onclick="initiative('initiative');" class="form-control btn_control" > + Add Initiative </a>
+	</div-->
+			</div>
+		
+			</div></div></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+  
+  <!--INPUT type="button" value="Add Row" onclick="addRow('dataTable')" />
+
+	<INPUT type="button" value="Delete Row" onclick="deleteRow('dataTable')" />
+
+	<TABLE id="dataTable" width="350px" border="1">
+		<TR>
+			<TD><INPUT type="checkbox" name="chk"/></TD>
+			<TD> 1 </TD>
+			<TD> <INPUT type="text" /> </TD>
+		</TR>
+	</TABLE-->
+  <!-- Modal -->
+<div id="notes" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <!--button type="button" class="close pull-right" data-dismiss="modal">&times;</button-->
+        <h4> Notes / Minutes</h4>
+      </div>
+      <div class="modal-body">
+	  
+        <table class="table table-bordered">
+			<thead class="bg-light"><tr>
+			<th>Notes</th>
+			<th>Responsible</th>
+			</tr></thead>
+			<tbody>
+			<tr>
+			<td> Note 1</td>
+			<td> <div class="avatar-wrapper avatar-wrapper-overlap">
+    <div class="avatar-icon-wrapper avatar-icon-sm">
+       <div class="avatar-icon"><img src="images/avatars/0.jpg" alt=""></div>
+    </div>
+	<div class="avatar-icon-wrapper avatar-icon-sm">
+        <div class="avatar-icon"><img src="images/avatars/0.jpg" alt=""></div>
+    </div>
+    
+</div>	
+	</td>
+			</tr>
+			<tr>
+			<td> Note 2</td>
+			<td> <div class="avatar-wrapper avatar-wrapper-overlap">
+    <div class="avatar-icon-wrapper avatar-icon-sm">
+       <div class="avatar-icon"><img src="images/avatars/0.jpg" alt=""></div>
+    </div>
+	<div class="avatar-icon-wrapper avatar-icon-sm">
+        <div class="avatar-icon"><img src="images/avatars/0.jpg" alt=""></div>
+    </div>
+    
+</div>	
+	</td>
+			</tr>
+			</tbody>
+		</table>
+		
+	</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+ <!-- Modal -->
+<div id="action" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <!--button type="button" class="close pull-right" data-dismiss="modal">&times;</button-->
+        <h4> Actions </h4>
+      </div>
+      <div class="modal-body">
+	  
+        <table class="table table-bordered">
+			<thead class="bg-light"><tr>
+			<th>Actions</th>
+			<th>By Date</th>
+			<th>Responsible</th>
+			<th>Status</th>
+			</tr></thead>
+			<tbody>
+			<tr>
+			<td> Action 1</td>
+			<td> <input type="text" class="form-control" value="01-01-2020" readonly></td>
+			<td> <div class="avatar-wrapper avatar-wrapper-overlap">
+    <div class="avatar-icon-wrapper avatar-icon-sm">
+       <div class="avatar-icon"><img src="images/avatars/0.jpg" alt=""></div>
+    </div>
+	
+</div>	
+	</td>
+	<td> <i class="fa fa-check" aria-hidden="true"></i></td>
+			</tr>
+						<tr>
+			<td> Action 1</td>
+			<td> <input type="text" class="form-control" value="01-01-2020" readonly></td>
+			<td> <div class="avatar-wrapper avatar-wrapper-overlap">
+    <div class="avatar-icon-wrapper avatar-icon-sm">
+       <div class="avatar-icon"><img src="images/avatars/0.jpg" alt=""></div>
+    </div>
+	
+</div>	
+	</td>
+	<td> <i class="fa fa-times" aria-hidden="true"></i></td>
+			</tr>
+			
+			</tbody>
+		</table>
+		
+	</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+  
+  
+          </div>
+          
+		  
+		
+     
+         
+		  
+		  </section>
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+           
+           
+            <!-- Plugins Js -->
+            <script src="../../assets/js/app.min.js"></script>
+            <!-- Custom Js -->
+            <script src="../../assets/js/admin.js"></script>
+            <script src="../../assets/js/bundles/amcharts4/core.js"></script>
+            <script src="../../assets/js/bundles/amcharts4/charts.js"></script>
+            <script src="../../assets/js/bundles/amcharts4/animated.js"></script>
+            <!-- Knob Js -->
+            <script src="../../assets/jquery-ui.min.js"></script>
+            <script src="../../assets/moment.js"></script>
+            <script src="../../assets/js/pages/core.js"></script>
+            <script src="../../assets/js/pages/charts.js"></script>
+            <script src="../../assets/js/pages/spiritedaway.js"></script>
+            <script src="../../assets/js/pages/animated.js"></script>
+            <script src="../../assets/jquery.editable.min.js"></script>
+            <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+            <script src="../../assets/pickr.es5.min.js"></script>
+            <script src="../../assets/datepickerair.js"></script>
+            <script src="../../assets/datepicker.en.js"></script>
+            <script src="../../assets/js/widgets.js"></script>
+            <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
+            <script src="../../assets/knockout-3.5.0.js"></script>
+            <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
+            <script>
+                $(".daterangepicker-field").daterangepicker({
+                    forceUpdate: true,
+                    callback: function(startDate, endDate, period) {
+                        var title = startDate.format('L') + ' – ' + endDate.format('L');
+                        $(this).val(title)
+                    }
+                });
+            </script>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+	
+	   
+       <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
+    <script src="js/extras.1.1.0.min.js"></script>
+    <script src="js/shards-dashboards.1.1.0.min.js"></script>
+	<script src="assets/knockout-3.5.0.js"></script>
+    <script src="assets/daterangepicker/daterangepicker.min.js"></script>
+	
+        <script>
+            $(".daterangepicker-field").daterangepicker({
+                forceUpdate: true,
+                callback: function(startDate, endDate, period) {
+                    var title = startDate.format('L') + ' – ' + endDate.format('L');
+                    $(this).val(title)
+                }
+            });
+			
+  $(document).ready(function(){
+        $('#my_id').change(function(e){
+            var files = $(this)[0].files;
+            var fileName = files.length
+            alert('The file "' + fileName +  '" has been selected.');
+        });
+    });
+        </script>
+	<SCRIPT language="javascript">
+		function addRow(tableID) {
+
+			var table = document.getElementById(tableID);
+
+			var rowCount = table.rows.length;
+			var row = table.insertRow(rowCount);
+
+			var cell1 = row.insertCell(0);
+			var element1 = document.createElement("input");
+			element1.type = "checkbox";
+			element1.name="chkbox[]";
+			cell1.appendChild(element1);
+
+			var cell2 = row.insertCell(1);
+			var factor = rowCount;
+			cell2.innerHTML = " <input style='width:180px;height:60px' type='text' placeholder='Meeting' class='form-control'>";
+			
+			var cell3 = row.insertCell(2);
+			//var element2 = document.createElement("input");
+			cell3.innerHTML = "<div class='avatar-wrapper avatar-wrapper-overlap'><div class='avatar-icon-wrapper avatar-icon-sm'><div class='avatar-icon'><img src='images/avatars/0.jpg' alt=''></div></div> </div>	";
+			//cell3.appendChild(element2);
+			
+			var cell4 = row.insertCell(3);
+			cell4.innerHTML ="<input class='form-control' id='datepicker_pop' style='width:80px;float:left' /><i class='fa fa-calendar-o' style='width:30px;height:30px'></i>";
+			$('#datepicker_pop').datepicker();
+			
+			var cell5 = row.insertCell(4);
+			cell5.innerHTML ="<input type='time' class='form-control' id='timepicker_pop' style='width:70px;float:left' /><i class='fa fa-clock-o' style='width:30px;height:30px'></i>"; 
+			
+			
+			//var cell5 = row.insertCell(4);
+			//cell5.innerHTML = " ";
+			
+			
+			var cell6 = row.insertCell(5);
+			cell6.innerHTML =' <div class="fullscreen"> <ul class="list-unstyled order-list"> <li class="avatar avatar-sm"> <img class="rounded-circle" src="assets/images/user/user7.jpg" alt="user"> </li><li class="avatar avatar-sm"> <img class="rounded-circle" src="assets/images/user/user8.jpg" alt="user"> </li><div class="image-upload"> <label for="file-input"> <li _ngcontent-hhc-c5="" class="avatar avatar-sm"><span _ngcontent-hhc-c5="" class="badge">+3</span></li></label><input id="file-input" type="file"/></div></ul> </div>';
+			
+			var cell7 = row.insertCell(6);
+			cell7.innerHTML ="<textarea style='width:180px' rows='2' class='form-control'> </textarea> ";
+			
+			var cell8 = row.insertCell(7);
+			cell8.innerHTML =" <a href='#' class='btn-add1 strength' data-toggle='modal' data-target='#notes'> <i class='fa fa-clone' aria-hidden='true'></i> </a> ";
+			
+			var cell9 = row.insertCell(8);
+			cell9.innerHTML ="<a href='#' class='btn-add2 strength' data-toggle='modal' data-target='#action'> <i class='fa fa-bolt' aria-hidden='true'></i>  </a>";
+			
+			var cell10 = row.insertCell(9);
+			cell10.innerHTML ="<label for='file-input1'><span class='btn-add1 strength'><i class='fa fa-paperclip' style='font-size:20px' aria-hidden='true'></i></span></label> <input id='file-input1' style='display:none' type='file'/>";
+			
+			var cell11 = row.insertCell(10);
+			cell11.innerHTML ="<select class='form-control'> <option value='Completed'> Completed</option><option value='Not Completed'> Not Completed</option><option value='Reschedule'> Reschedule</option><option value='Over Due'> Over Due</option></select>";
+
+		}
+
+		function deleteRow(tableID) {
+			try {
+			var table = document.getElementById(tableID);
+			var rowCount = table.rows.length;
+
+			for(var i=0; i<rowCount; i++) {
+				var row = table.rows[i];
+				var chkbox = row.cells[0].childNodes[0];
+				if(null != chkbox && true == chkbox.checked) {
+					table.deleteRow(i);
+					rowCount--;
+					i--;
+				}
+
+
+			}
+			}catch(e) {
+				alert(e);
+			}
+		}
+
+	function notes(tableID) {
+
+			var table = document.getElementById(tableID);
+
+			var rowCount = table.rows.length;
+			var row = table.insertRow(rowCount);
+
+			var cell1 = row.insertCell(0);
+			cell1.innerHTML = '<textarea class="form-control" cols="5" rows="5" > </textarea>';
+			
+			var cell2 = row.insertCell(1);
+			cell2.innerHTML ='<div class="fullscreen"> <ul class="list-unstyled order-list"> <li class="avatar avatar-sm"> <img class="rounded-circle" src="assets/images/user/user7.jpg" alt="user"> </li><li class="avatar avatar-sm"> <img class="rounded-circle" src="assets/images/user/user8.jpg" alt="user"> </li><div class="image-upload"> <label for="file-input"> <li _ngcontent-hhc-c5="" class="avatar avatar-sm"><span _ngcontent-hhc-c5="" class="badge">+</span></li></label><input id="file-input" type="file"/></div></ul> </div>';
+		
+		}
+
+		function notes_del(tableID) {
+			try {
+			var table = document.getElementById(tableID);
+			var rowCount = table.rows.length;
+
+			for(var i=0; i<rowCount; i++) {
+				var row = table.rows[i];
+				var chkbox = row.cells[0].childNodes[0];
+				if(null != chkbox && true == chkbox.checked) {
+					table.deleteRow(i);
+					rowCount--;
+					i--;
+				}
+
+
+			}
+			}catch(e) {
+				alert(e);
+			}
+		}
+    
+	
+	function action(tableID) {
+
+			var table = document.getElementById(tableID);
+
+			var rowCount = table.rows.length;
+			var row = table.insertRow(rowCount);
+
+			var cell1 = row.insertCell(0);
+			var factor = rowCount;
+			cell1.innerHTML = '<textarea class="form-control" cols="5" rows="5" > </textarea>';
+			
+			var cell2 = row.insertCell(1);
+			cell2.innerHTML ='<input type="date" class="form-control" >';
+			
+			var cell3 = row.insertCell(2);
+			cell3.innerHTML ='<ul class="list-unstyled order-list"> <li class="avatar avatar-sm"> <img class="rounded-circle" src="assets/images/user/user7.jpg" alt="user"> </li><div class="image-upload"> <label for="file-input"> <li _ngcontent-hhc-c5="" class="avatar avatar-sm"><span _ngcontent-hhc-c5="" class="badge">+</span></li></label><input id="file-input" type="file"/></div></ul>';
+		
+			var cell4 = row.insertCell(3);
+			cell4.innerHTML ='<input type="checkbox"  >';
+		}
+
+		function action_del(tableID) {
+			try {
+			var table = document.getElementById(tableID);
+			var rowCount = table.rows.length;
+
+			for(var i=0; i<rowCount; i++) {
+				var row = table.rows[i];
+				var chkbox = row.cells[0].childNodes[0];
+				if(null != chkbox && true == chkbox.checked) {
+					table.deleteRow(i);
+					rowCount--;
+					i--;
+				}
+
+
+			}
+			}catch(e) {
+				alert(e);
+			}
+		}
+    
+        
+    
+	</SCRIPT>
+	<script>$('#timepicker_pop').timepicker();</script>
+	<script>
+	
+	
+	
+$(function() {
+  $('input[name="date"]').daterangepicker({
+    singleDatePicker: true,
+    showDropdowns: true,
+    minYear: 1901,
+    maxYear: parseInt(moment().format('YYYY'),10)
+  }, function(start, end, label) {
+    var years = moment().diff(start, 'years');
+    alert("You are " + years + " years old!");
+  });
+});
+</script>
+	  <script type="text/javascript">
+    function cloneRow() {
+      var row = document.getElementById("rowToClone"); // find row to copy
+      var table = document.getElementById("tableToModify"); // find table to append to
+      var clone = row.cloneNode(true); // copy children too
+      clone.id = "newID"; // change id or other attributes/contents
+      table.appendChild(clone); // add new row to end of table
+    }
+
+    function createRow() {
+      var row = document.createElement('tr'); // create row node
+      var col = document.createElement('td'); // create column node
+      var col2 = document.createElement('td'); // create second column node
+      row.appendChild(col); // append first column to row
+
+      row.appendChild(col2); // append second column to row
+      col.innerHTML = "Impact <button class='btn btn-primary'> <i class='fa fa-plus' aria-hidden='true'></i>  Add </button>"; // put data in first column
+      col2.innerHTML = "<label for='file-input'><img src='images/plus.png' width='50px' height='50px'></label><input style='display:none' id='file-input' type='file'/> "; // put data in second column
+      var table = document.getElementById("tableToModify"); // find table to append to
+      table.appendChild(row); // append row to table
+    }
+  </script>
+ 
+	
+    </body>
