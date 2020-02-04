@@ -6699,7 +6699,7 @@ textarea.materialize-textarea {
 
 [type="checkbox"]:not(:checked),
 [type="checkbox"]:checked {
-   /* position: absolute;
+    /* position: absolute;
     opacity: 0;
     pointer-events: none */
 }
@@ -6718,7 +6718,8 @@ textarea.materialize-textarea {
     user-select: none
 }
 
-[type="checkbox"]+span:not(.lever):before,
+
+/* [type="checkbox"]+span:not(.lever):before,
 [type="checkbox"]:not(.filled-in)+span:not(.lever):after {
     content: '';
     position: absolute;
@@ -6732,7 +6733,7 @@ textarea.materialize-textarea {
     margin-top: 3px;
     -webkit-transition: .2s;
     transition: .2s
-}
+} */
 
 [type="checkbox"]:not(.filled-in)+span:not(.lever):after {
     border: 0;
@@ -27221,4 +27222,3 @@ a.fc-more:hover {
 .noUi-vertical .noUi-active .noUi-tooltip span {
     opacity: 1
 }
-

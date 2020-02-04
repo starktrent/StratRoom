@@ -23,14 +23,9 @@
         <link rel="stylesheet" href="../../assets/nano.min.css">
         <link rel="stylesheet" href="../../assets/monolith.min.css">
         <link rel="stylesheet" href="../../assets/classic.min.css">
-		
+
         <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-        <link
-        rel="stylesheet"
-        href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-        crossorigin="anonymous"
-        />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- <link href="../../assets/daterangepicker/daterangepicker.min.css" rel="stylesheet"> -->
@@ -682,7 +677,7 @@
             <div class="modal fade scorecard_description_popup" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
-                        <div class="modal-header">
+                        <div class="modal-header" style="background-color: #3A6596; color: #fff;">
                             <h6 class="modal-title" id="myLargeModalLabel">Scorecard Description</h6>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -691,27 +686,29 @@
                         <div class="modal-body">
                             <form id="objectiveForm">
                                 <div class="form-row">
-                                    <div class="form-group col-md-2">
+                                    <div class="form-group col-md-3">
                                         <label for="objective_id">ID</label>
                                         <input type="text" class="form-control browser-default" name="objective_id" id="objective_id" placeholder="">
                                     </div>
-                                    <div class="form-group col-md-10">
+                                    <div class="form-group col-md-9">
                                         <label for="objective_name">Name</label>
                                         <input type="text" class="form-control browser-default" name="objective_name" id="objective_name" placeholder="">
                                     </div>
                                 </div>
+                                <hr>
                                 <div class="form-group mt--10">
                                     <label for="objective_description">Description</label>
-                                    <textarea class="form-control browser-default" name="objective_description" id="objective_description" placeholder="" cols="" rows="1"></textarea>
+                                    <textarea class="form-control browser-default" name="objective_description" id="objective_description" placeholder="" cols="" rows="6"></textarea>
                                 </div>
+                                <hr>
                                 <div class="form-row">
                                     <div class="form-group browser-default col-md-6">
                                         <label for="objective_owner">Owner</label>
-                                        <select id="objective_owner" name="objective_owner" class="form-control mt-1">
-                                            <option>Choose</option>
-                                            <option value="">Option 1</option>
-                                            <option value="">Option 2</option>
-                                            <option value="">Option 3</option>
+                                        <select id="objective_owner" name="" class="select_all" multiple style="display: none;">
+                                            <option value="" disabled>Choose your option</option>
+                                            <option value="1">Option 1</option>
+                                            <option value="2">Option 2</option>
+                                            <option value="3">Option 3</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
@@ -720,6 +717,7 @@
                                         <!-- <input type="text" class="form-control browser-default date_pickers" name="objective_start_end_date" id="objective_start_end_date"> -->
                                     </div>
                                 </div>
+                                <hr>
                                 <div class="form-row mt-2">
                                     <label for="kpi_fields" class="ml-2 mr-3">Scorecard Fields </label>
                                     <ul class="d-flex flex-row flex-wrap ml-2">
@@ -803,9 +801,14 @@
                                         </li>
                                     </ul>
                                 </div>
+                                <hr>
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
                                         <label for="objective_weight">Weight</label>
+                                        <input type="text" class="form-control browser-default" name="objective_weight" id="objective_weight">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="objective_weight">Sub Weight</label>
                                         <input type="text" class="form-control browser-default" name="objective_weight" id="objective_weight">
                                     </div>
                                     <div class="form-group col-md-4">
@@ -820,11 +823,8 @@
                                             <option value="fourth">Fourth</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-4">
-                                        <label for="objective_start_end_date">Attachment</label>
-                                        <input type="file" class="mt-1" id="">
-                                    </div>
                                 </div>
+                                <hr>
                                 <div class="form-line right">
                                     <button type="button" class="btn-default1 btn" data-dismiss="modal" aria-label="Close">Cancel</button>
                                     <button class="scorecard_save_btn" value="Save">Save</button>
@@ -860,7 +860,7 @@
             <div class="modal fade perspectives_description_popup" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
-                        <div class="modal-header">
+                        <div class="modal-header" style="background-color: #3A6596; color: #fff;">
                             <h6 class="modal-title" id="myLargeModalLabel">Perspective Description</h6>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -869,38 +869,129 @@
                         <div class="modal-body">
                             <form id="objectiveForm">
                                 <div class="form-row">
-                                    <div class="form-group col-md-2">
+                                    <div class="form-group col-md-3">
                                         <label for="objective_id">ID</label>
                                         <input type="text" class="form-control browser-default" name="objective_id" id="objective_id" placeholder="">
                                     </div>
-                                    <div class="form-group col-md-10">
+                                    <div class="form-group col-md-9">
                                         <label for="objective_name">Name</label>
                                         <input type="text" class="form-control browser-default" name="objective_name" id="objective_name" placeholder="">
                                     </div>
                                 </div>
+                                <hr>
                                 <div class="form-group mt--10">
                                     <label for="objective_description">Description</label>
-                                    <textarea class="form-control browser-default" name="objective_description" id="objective_description" placeholder="" cols="" rows="1"></textarea>
+                                    <textarea class="form-control browser-default" name="objective_description" id="objective_description" placeholder="" cols="" rows="6"></textarea>
                                 </div>
+                                <hr>
                                 <div class="form-row">
                                     <div class="form-group browser-default col-md-6">
                                         <label for="objective_owner">Owner</label>
-                                        <select id="objective_owner" name="objective_owner" class="form-control mt-1">
-                                            <option>Choose</option>
-                                            <option value="">Option 1</option>
-                                            <option value="">Option 2</option>
-                                            <option value="">Option 3</option>
+                                        <select id="objective_owner" name="" class="select_all" multiple style="display: none;">
+                                            <option value="" disabled>Choose your option</option>
+                                            <option value="1">Option 1</option>
+                                            <option value="2">Option 2</option>
+                                            <option value="3">Option 3</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="kpi_start_end_date">Start/End Date</label>
-                                        <input type="text" class="form-control browser-default datepicker-here date_pickers" data-range="true" data-multiple-dates-separator=" - " data-language="en" id="air-date-pers" />
+                                        <input type="text" class="form-control browser-default date_pickers" data-range="true" data-multiple-dates-separator=" - " data-language="en" class="datepicker-here date_pickers" id="air-date-score" />
                                         <!-- <input type="text" class="form-control browser-default date_pickers" name="objective_start_end_date" id="objective_start_end_date"> -->
                                     </div>
                                 </div>
+                                <hr>
+                                <div class="form-row mt-2">
+                                    <label for="kpi_fields" class="ml-2 mr-3">Scorecard Fields </label>
+                                    <ul class="d-flex flex-row flex-wrap ml-2">
+                                        <li>
+                                            <div class="form-check">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        Actual
+                                                        <span class="form-check-sign">
+                                                            <span class="check"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        Target
+                                                        <span class="form-check-sign">
+                                                            <span class="check"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        Budget
+                                                        <span class="form-check-sign">
+                                                            <span class="check"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        Forecast
+                                                        <span class="form-check-sign">
+                                                            <span class="check"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        Trend
+                                                        <span class="form-check-sign">
+                                                            <span class="check"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        Risk
+                                                        <span class="form-check-sign">
+                                                            <span class="check"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <hr>
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
                                         <label for="objective_weight">Weight</label>
+                                        <input type="text" class="form-control browser-default" name="objective_weight" id="objective_weight">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="objective_weight">Sub Weight</label>
                                         <input type="text" class="form-control browser-default" name="objective_weight" id="objective_weight">
                                     </div>
                                     <div class="form-group col-md-4">
@@ -915,11 +1006,8 @@
                                             <option value="fourth">Fourth</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-4">
-                                        <label for="objective_start_end_date">Attachment</label>
-                                        <input type="file" class="" id="">
-                                    </div>
                                 </div>
+                                <hr>
                                 <div class="form-line right">
                                     <button type="button" class="btn-default1 btn" data-dismiss="modal" aria-label="Close">Cancel</button>
                                     <button class="scorecard_save_btn" value="Save">Save</button>
@@ -956,7 +1044,7 @@
             <div class="modal fade objective_description_popup" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
-                        <div class="modal-header">
+                        <div class="modal-header" style="background-color: #3A6596; color: #fff;">
                             <h6 class="modal-title" id="myLargeModalLabel">Objective Description</h6>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -965,38 +1053,129 @@
                         <div class="modal-body">
                             <form id="objectiveForm">
                                 <div class="form-row">
-                                    <div class="form-group col-md-2">
+                                    <div class="form-group col-md-3">
                                         <label for="objective_id">ID</label>
                                         <input type="text" class="form-control browser-default" name="objective_id" id="objective_id" placeholder="">
                                     </div>
-                                    <div class="form-group col-md-10">
+                                    <div class="form-group col-md-9">
                                         <label for="objective_name">Name</label>
                                         <input type="text" class="form-control browser-default" name="objective_name" id="objective_name" placeholder="">
                                     </div>
                                 </div>
+                                <hr>
                                 <div class="form-group mt--10">
                                     <label for="objective_description">Description</label>
-                                    <textarea class="form-control browser-default" name="objective_description" id="objective_description" placeholder="" cols="" rows="1"></textarea>
+                                    <textarea class="form-control browser-default" name="objective_description" id="objective_description" placeholder="" cols="" rows="6"></textarea>
                                 </div>
+                                <hr>
                                 <div class="form-row">
                                     <div class="form-group browser-default col-md-6">
                                         <label for="objective_owner">Owner</label>
-                                        <select id="objective_owner" name="objective_owner" class="form-control mt-1">
-                                            <option>Choose</option>
-                                            <option value="">Option 1</option>
-                                            <option value="">Option 2</option>
-                                            <option value="">Option 3</option>
+                                        <select id="objective_owner" name="" class="select_all" multiple style="display: none;">
+                                            <option value="" disabled>Choose your option</option>
+                                            <option value="1">Option 1</option>
+                                            <option value="2">Option 2</option>
+                                            <option value="3">Option 3</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="kpi_start_end_date">Start/End Date</label>
-                                        <input type="text" class="form-control browser-default datepicker-here date_pickers" data-range="true" data-multiple-dates-separator=" - " data-language="en" id="air-date-object" />
+                                        <input type="text" class="form-control browser-default date_pickers" data-range="true" data-multiple-dates-separator=" - " data-language="en" class="datepicker-here date_pickers" id="air-date-score" />
                                         <!-- <input type="text" class="form-control browser-default date_pickers" name="objective_start_end_date" id="objective_start_end_date"> -->
                                     </div>
                                 </div>
+                                <hr>
+                                <div class="form-row mt-2">
+                                    <label for="kpi_fields" class="ml-2 mr-3">Scorecard Fields </label>
+                                    <ul class="d-flex flex-row flex-wrap ml-2">
+                                        <li>
+                                            <div class="form-check">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        Actual
+                                                        <span class="form-check-sign">
+                                                            <span class="check"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        Target
+                                                        <span class="form-check-sign">
+                                                            <span class="check"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        Budget
+                                                        <span class="form-check-sign">
+                                                            <span class="check"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        Forecast
+                                                        <span class="form-check-sign">
+                                                            <span class="check"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        Trend
+                                                        <span class="form-check-sign">
+                                                            <span class="check"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        Risk
+                                                        <span class="form-check-sign">
+                                                            <span class="check"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <hr>
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
                                         <label for="objective_weight">Weight</label>
+                                        <input type="text" class="form-control browser-default" name="objective_weight" id="objective_weight">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="objective_weight">Sub Weight</label>
                                         <input type="text" class="form-control browser-default" name="objective_weight" id="objective_weight">
                                     </div>
                                     <div class="form-group col-md-4">
@@ -1011,11 +1190,8 @@
                                             <option value="fourth">Fourth</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-4">
-                                        <label for="objective_start_end_date">Attachment</label>
-                                        <input type="file" class="" id="">
-                                    </div>
                                 </div>
+                                <hr>
                                 <div class="form-line right">
                                     <button type="button" class="btn-default1 btn" data-dismiss="modal" aria-label="Close">Cancel</button>
                                     <button class="scorecard_save_btn" value="Save">Save</button>
@@ -1800,7 +1976,7 @@
                                         <ul class="header-dropdown m-r--5">
                                             <li class="dropdown m-t--10">
                                                 <a href="#" onclick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
-                                                    <i class="material-icons">more_vert</i>
+                                                    <i class="material-icons" style="color: #fff;">more_vert</i>
                                                 </a>
                                                 <ul class="dropdown-menu pull-right" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);">
                                                     <li>
@@ -2075,7 +2251,7 @@
                                         <ul class="header-dropdown m-r--5">
                                             <li class="dropdown m-t--10">
                                                 <a href="#" onclick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
-                                                    <i class="material-icons">more_vert</i>
+                                                    <i class="material-icons" style="color: #fff;">more_vert</i>
                                                 </a>
                                                 <ul class="dropdown-menu pull-right" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);">
                                                     <li>
@@ -2352,7 +2528,7 @@
                                         <ul class="header-dropdown m-r--5">
                                             <li class="dropdown m-t--10">
                                                 <a href="#" onclick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
-                                                    <i class="material-icons">more_vert</i>
+                                                    <i class="material-icons" style="color: #fff;">more_vert</i>
                                                 </a>
                                                 <ul class="dropdown-menu pull-right" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);">
                                                     <li>
@@ -2628,7 +2804,7 @@
                                         <ul class="header-dropdown m-r--5">
                                             <li class="dropdown m-t--10">
                                                 <a href="#" onclick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
-                                                    <i class="material-icons">more_vert</i>
+                                                    <i class="material-icons" style="color: #fff;">more_vert</i>
                                                 </a>
                                                 <ul class="dropdown-menu pull-right" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);">
                                                     <li>
@@ -2930,6 +3106,22 @@
                     var title = startDate.format('L') + ' – ' + endDate.format('L');
                     $(this).val(title)
                 }
+            });
+
+            $(document).ready(function() {
+                // $('select').val([1]);
+                $('select').formSelect();
+                $('select.select_all').siblings('ul').prepend('<li id=sm_select_all><span>Select All</span></li>');
+                $('li#sm_select_all').on('click', function() {
+                    var jq_elem = $(this),
+                        jq_elem_span = jq_elem.find('span'),
+                        select_all = jq_elem_span.text() == 'Select All',
+                        set_text = select_all ? 'Select None' : 'Select All';
+                    jq_elem_span.text(set_text);
+                    jq_elem.siblings('li').filter(function() {
+                        return $(this).find('input').prop('checked') != select_all;
+                    }).click();
+                });
             });
         </script>
     </body>

@@ -1,7 +1,6 @@
 @charset "UTF-8";
 @import url(../fonts/themify-icons/themify-icons.css);
 @import url(../fonts/simple-line-icons/css/simple-line-icons.css);
-
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -4918,12 +4917,20 @@ table .checkbox [type="checkbox"]+label {
         display: none
     }
 }
-.daterangepicker select { padding: 2px 0 !important; }
-input:not([type]){ border-bottom: 1px solid #ece9ef !important; color: #7f7886 !important; }
+
+.daterangepicker select {
+    padding: 2px 0 !important;
+}
+
+input:not([type]) {
+    border-bottom: 1px solid #ece9ef !important;
+    color: #7f7886 !important;
+}
+
 @media(max-width:420px) {
     .navbar>.container .navbar-brand,
     .navbar>.container-fluid .navbar-brand {
-        width: 65% /*79*/
+        width: 65%/*79*/
     }
     .navbar-brand {
         float: left;
@@ -10188,8 +10195,8 @@ input:not([type]){ border-bottom: 1px solid #ece9ef !important; color: #7f7886 !
     position: relative;
     cursor: pointer;
     background-color: transparent;
-    border: 0;
-    border-bottom: 1px solid #9e9e9e !important;
+    border: 1px solid rgb(206, 212, 218) !important;
+    /* border-bottom: 1px solid #9e9e9e !important; */
     outline: 0;
     height: 3rem;
     line-height: 3rem;
@@ -12599,7 +12606,8 @@ input:not([type]){ border-bottom: 1px solid #ece9ef !important; color: #7f7886 !
 
 .form-check,
 label {
-    font-size: 12px; /*14*/
+    font-size: 12px;
+    /*14*/
     line-height: 1.42857;
     color: #414244;
     font-weight: 400
@@ -12749,9 +12757,9 @@ label {
 
 .form-group .form-control {
     width: 100%;
-    border: 0;
+    border: 2;
     box-shadow: none;
-    border-bottom: 1px solid #9e9e9e;
+    /* border-bottom: 1px solid #9e9e9e; */
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     -ms-border-radius: 0;
@@ -13453,9 +13461,7 @@ fieldset[disabled] .form-control {
     width: 230px;
     /* 260, 245*/
     /*overflow: hidden;*/
-	overflow: scroll;
-	
-	
+    overflow: scroll;
     display: inline-block;
     height: calc(100vh - 60px);
     position: fixed;
@@ -13464,20 +13470,19 @@ fieldset[disabled] .form-control {
     border: 1px solid #e9ecef;
     z-index: 1030 !important
 }
+
 .sidebar::-webkit-scrollbar {
-  width: 1em;
+    width: 1em;
 }
- 
+
 .sidebar::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
- 
+
 .sidebar::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
 }
-
-
 
 .sidebar .user-info {
     padding: 13px 15px 12px 15px;
@@ -13597,8 +13602,6 @@ fieldset[disabled] .form-control {
     background: rgba(146, 144, 144, 0.28)
 }
 
-
-
 .sidebar .menu .list .menu-toggle:after,
 .sidebar .menu .list .menu-toggle:before {
     position: absolute;
@@ -13661,14 +13664,18 @@ fieldset[disabled] .form-control {
     line-height: 1;
     padding: 10px 4px 10px 10px;
     margin: 0px 0 0 0;
-	border-bottom:1px solid #cccccc;
-	border-left: 4px solid #ffffff;
+    border-bottom: 1px solid #cccccc;
+    border-left: 4px solid #ffffff;
 }
-.sidebar .menu .list a:hover, .sidebar .menu .list li.active{
-border-left: 4px solid #3A6596;
-background-color: #f5f5f5;
+
+.sidebar .menu .list a:hover,
+.sidebar .menu .list li.active {
+    border-left: 4px solid #3A6596;
+    background-color: #f5f5f5;
 }
-.sidebar .menu .list .active .menu-icon, .sidebar .menu .list a:hover .menu-icon {
+
+.sidebar .menu .list .active .menu-icon,
+.sidebar .menu .list a:hover .menu-icon {
     color: #3A6596;
 }
 
@@ -13677,7 +13684,6 @@ background-color: #f5f5f5;
 .sidebar .menu .list a:focus {
     text-decoration: none !important;
     background-color: rgba(0, 0, 0, 0.03)
-	
 }
 
 .sidebar .menu .list a small {
@@ -13709,7 +13715,7 @@ background-color: #f5f5f5;
     padding-left: 50px;
     padding-top: 10px;
     padding-bottom: 10px;
-	color:#333!important;
+    color: #333!important;
 }
 
 .sidebar .menu .list .ml-menu li a:before {
@@ -15434,7 +15440,8 @@ nav.navbar {
     left: 0;
     width: 100%;
     height: 0;
-    border-bottom: 2px solid #3A6596;;
+    border-bottom: 2px solid #3A6596;
+    ;
     bottom: 2px;
     -moz-transform: scaleX(0);
     -ms-transform: scaleX(0);
@@ -15456,7 +15463,7 @@ nav.navbar {
 .nav-tabs li a.active {
     color: #3A6596 !important;
     font-weight: 600;
-	/* border-bottom-color:#3A6596 !important; */
+    /* border-bottom-color:#3A6596 !important; */
 }
 
 .nav-tabs li a.active:hover,
@@ -18899,6 +18906,7 @@ header h1 {
 .table tbody tr td,
 .table tbody tr th {
     padding: 0px;
+    padding-top: 1%;
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
     vertical-align: middle
@@ -21253,7 +21261,8 @@ span.badge {
 
 .modal .modal-header {
     border: 0;
-    padding: 10px
+    padding: 10px;
+    margin: -10px -10px 1px -10px;
 }
 
 .modal .modal-header .modal-title {
@@ -21265,7 +21274,8 @@ span.badge {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     -ms-border-radius: 0;
-    border-radius: 10px;/* 0 */
+    border-radius: 10px;
+    /* 0 */
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.31) !important;
     border: 0;
     padding: 10px
@@ -23233,28 +23243,34 @@ html.ie11 .bs-searchbox .form-control {
     width: 90%
 }
 
+
 /* File Upload styles */
+
 #formdiv {
     text-align: center;
-  }
-  #file {
+}
+
+#file {
     color: green;
     padding: 5px;
     border: 1px dashed #123456;
     background-color: #f9ffe5;
-  }
-  #img {
+}
+
+#img {
     width: 17px;
     border: none;
     height: 17px;
     margin-left: -20px;
     margin-bottom: 191px;
-  }
-  .upload {
+}
+
+.upload {
     width: 100%;
     height: 30px;
-  }
-  .previewBox {
+}
+
+.previewBox {
     text-align: center;
     position: relative;
     width: 150px;
@@ -23262,21 +23278,23 @@ html.ie11 .bs-searchbox .form-control {
     margin-right: 10px;
     margin-bottom: 20px;
     float: left;
-  }
-  .previewBox img {
+}
+
+.previewBox img {
     height: 150px;
     width: 150px;
     padding: 5px;
     border: 1px solid rgb(232, 222, 189);
-  }
-  .delete {
+}
+
+.delete {
     color: red;
     font-weight: bold;
     position: absolute;
     top: 0;
     cursor: pointer;
     width: 20px;
-    height:  20px;
+    height: 20px;
     border-radius: 50%;
     background: #ccc;
-  }
+}

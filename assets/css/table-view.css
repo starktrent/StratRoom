@@ -1,5 +1,5 @@
 select {
-    display: block !important;
+    /* display: block !important; */
     height: 2rem !important;
 }
 
@@ -55,7 +55,7 @@ strong {
     margin: 1.0rem -12px 1rem -10px !important;
 }
 
-.flex-row .flex-column .color_pickers_1{
+.flex-row .flex-column .color_pickers_1 {
     border: 1px solid #e9ecef;
     height: 15px;
     margin-bottom: 0px;
@@ -64,7 +64,7 @@ strong {
     text-align: center;
 }
 
-.flex-row .flex-column .color_pickers_2{
+.flex-row .flex-column .color_pickers_2 {
     border: 1px solid #e9ecef;
     height: 15px;
     margin-bottom: 0px;
@@ -73,7 +73,7 @@ strong {
     text-align: center;
 }
 
-.flex-row .flex-column .color_pickers_3{
+.flex-row .flex-column .color_pickers_3 {
     border: 1px solid #e9ecef;
     height: 15px;
     margin-bottom: 0px;
@@ -81,18 +81,24 @@ strong {
     font-size: 9px;
     text-align: center;
 }
+
 .modal .modal-header .modal-title {
     font-weight: bold;
     font-size: 12px !important;
 }
-label{ font-size: 12px; }
 
-.form-control::-webkit-input-placeholder { /* Edge */
+label {
+    font-size: 12px;
+}
+
+.form-control::-webkit-input-placeholder {
+    /* Edge */
     padding-left: 14px;
     font-size: 12px !important;
 }
 
-.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+.form-control:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
     padding-left: 14px;
     font-size: 12px !important;
 }
@@ -101,9 +107,12 @@ label{ font-size: 12px; }
     padding-left: 14px;
     font-size: 12px !important;
 }
-button{ font-size: 12px; }
 
-a.nav-link{
+button {
+    font-size: 12px;
+}
+
+a.nav-link {
     font-size: 14px !important;
 }
 
@@ -114,7 +123,7 @@ a.nav-link{
     z-index: 99999;
 }
 
-.scorecard_status{
+.scorecard_status {
     font-size: 11px;
     vertical-align: middle;
     background-color: #1aa243;
@@ -124,7 +133,7 @@ a.nav-link{
     margin: 0 10px;
 }
 
-.scorecard_save_btn{
+.scorecard_save_btn {
     padding: 5px 30px;
     font-size: 12px;
     background-color: black;
@@ -138,7 +147,7 @@ a.nav-link{
     border-radius: 5px !important;
 }
 
-.tableview .card .header {    
+.tableview .card .header {
     background: #3A6596 !important;
     border-top-left-radius: 5px !important;
     border-top-right-radius: 5px !important;
