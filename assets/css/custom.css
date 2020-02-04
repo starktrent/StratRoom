@@ -8,11 +8,11 @@ color: #fff !important;}
 {color:#111111 !important;}
 
 .savebt{color:#07a089 !important; font-size:24px !important;}
-.theme-black .nav > li > a{max-width:200px; overflow:hidden;}
+.theme-black .nav > li > a{max-width:200px; overflow:hidden; margin-bottom: -12px;}
 .nav-tabs > li{background:#fff;}
 .nabti{padding:16px 10px 0px 10px;}
-.nav-tabs li a{}
-.nav-tabs li a.active{border-bottom:2px solid #3A6596 !important;}
+.nav-tabs li a{ }
+/* .nav-tabs li a.active{border-bottom:2px solid #3A6596 !important;} */
 
 .tplla{}
 .tplla th{background:#f5f5f5; font-weight:500 !important; }

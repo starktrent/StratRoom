@@ -401,7 +401,7 @@ a.nav-link {
 .ini_thrid_row_datafiled .employee_info,
 .ini_side_depart_bar .employee_info,
 .ini_side_due .employee_info {
-    color: #666666;
+    color: #fff;
 }
 
 
@@ -432,6 +432,7 @@ a.nav-link {
     flex-direction: row;
     flex: 1 1 auto;
     justify-content: space-around;
+    margin-top: 1%;
     border-right: 1px solid #e9ecef;
 }
 
@@ -889,9 +890,10 @@ input[type=number]::-webkit-outer-spin-button {
     /* display: flex; */
     border-top: 2px solid #e9ecef;
     border-bottom: 1px solid #e9ecef;
-    /* margin: 0 -15px; */
-    /* justify-content: space-around; */
+    justify-content: space-around;
     padding-top: 5px;
+    background-color: #3A6596;
+    color: #fff;
 }
 
 .number_font {
@@ -1083,4 +1085,4 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 0 3px !important;
     margin-left: 3px !important;
     border-radius: 50%;
-}.badge_risk_title 
+}

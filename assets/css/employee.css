@@ -108,6 +108,7 @@
     border-bottom: 2px solid #e9ecef;
     border-left: 1px solid #e9ecef;
     border-right: 1px solid #e9ecef;
+    background-color: #3A6596;
     /* justify-content: space-around; */
 }
 
@@ -251,10 +252,10 @@
 }
 
 .theme-black .nav-tabs>li>a:before {
-    border-bottom: 4px solid #343d45;
+    border-bottom: 5px solid #3A6596;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    margin-bottom: -9px;
+    margin-bottom: -3px;
 }
 
 #dashboard>.row-padding,
@@ -283,7 +284,7 @@
     min-height: 24px !important;
 }
 .employee_section .nav-tabs .nav-item {
-    margin-bottom: -8px;
+    margin-bottom: -19px;
 }
 /*********  Appraisal **********/
 
