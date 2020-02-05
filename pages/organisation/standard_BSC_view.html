@@ -1072,7 +1072,6 @@
                                     <div class="form-group browser-default col-md-6">
                                         <label for="objective_owner">Owner</label>
                                         <select id="objective_owner" name="" class="select_all" multiple style="display: none;">
-                                            <option value="" disabled>Choose your option</option>
                                             <option value="1">Option 1</option>
                                             <option value="2">Option 2</option>
                                             <option value="3">Option 3</option>
@@ -1228,69 +1227,68 @@
             <div class="modal fade kpi_description_popup" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
-                        <div class="modal-header">
+                        <div class="modal-header" style="background-color: #3A6596; color: #fff;">
                             <h6 class="modal-title" id="myLargeModalLabel">KPI Description</h6>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form id="kpiForm">
+                            <form id="objectiveForm">
                                 <div class="form-row">
                                     <div class="form-group col-md-2">
-                                        <label for="kpi_id">ID</label>
-                                        <input type="text" class="form-control browser-default" name="kpi_id" id="kpi_id" placeholder="">
+                                        <label for="objective_id">ID</label>
+                                        <input type="text" class="form-control browser-default" name="objective_id" id="objective_id" placeholder="">
                                     </div>
                                     <div class="form-group col-md-8">
-                                        <label for="kpi_name">Name</label>
-                                        <input type="text" class="form-control browser-default" name="kpi_name" id="kpi_name" placeholder="">
+                                        <label for="objective_name">Name</label>
+                                        <input type="text" class="form-control browser-default" name="objective_name" id="objective_name" placeholder="">
                                     </div>
-                                    <div class="form-group browser-default col-md-2">
-                                        <label for="kpi_type">KPI Type</label>
-                                        <select id="kpi_type" name="kpi_type" class="form-control mt-1">
+                                    <div class="form-group col-md-2">
+                                        <label for="objective_start_end_date">KPI Type</label>
+                                        <select id="inputState" name="" class="form-control browser-default">
                                             <option>Choose</option>
-                                            <option value="lead">Lead</option>
-                                            <option value="lag">Lag</option>
+                                            <option value="manual">Lead</option>
+                                            <option value="weighted">Lag</option>
                                         </select>
                                     </div>
                                 </div>
+                                <hr>
                                 <div class="form-group mt--10">
-                                    <label for="kpi_description">Description</label>
-                                    <textarea class="form-control browser-default" name="kpi_description" id="kpi_description" placeholder="" cols="" rows="1"></textarea>
+                                    <label for="objective_description">Description</label>
+                                    <textarea class="form-control browser-default" name="objective_description" id="objective_description" placeholder="" cols="" rows="6"></textarea>
                                 </div>
+                                <hr>
                                 <div class="form-row">
                                     <div class="form-group browser-default col-md-4">
-                                        <label for="kpi_measurement">Measurement Frequency</label>
-                                        <select id="kpi_measurement" name="kpi_measurement" class="form-control mt-1">
-                                            <option>Choose</option>
-                                            <option value="daily">Daily</option>
-                                            <option value="weekly">Weekly</option>
-                                            <option value="monthly">Monthly</option>
-                                            <option value="quarter">Quarter</option>
-                                            <option value="half year">Half Year</option>
-                                            <option value="annual">Annual</option>
+                                        <label for="objective_owner">Measurement Frequency</label>
+                                        <select id="inputState" name="" class="form-control browser-default">
+                                            <option value="">Choose</option>
+                                            <option value="1">Weekly</option>
+                                            <option value="2">Daily</option>
                                         </select>
                                     </div>
                                     <div class="form-group browser-default col-md-4">
-                                        <label for="kpi_owner">Owner</label>
-                                        <select id="kpi_owner" name="kpi_owner" class="form-control mt-1">
-                                            <option>Choose</option>
-                                            <option value="">Option 1</option>
-                                            <option value="">Option 2</option>
-                                            <option value="">Option 3</option>
+                                        <label for="objective_owner">Owner</label>
+                                        <select id="objective_owner" name="" class="select_all" multiple style="display: none;">
+                                            <option value="" disabled>Choose your option</option>
+                                            <option value="1">Tony Stark</option>
+                                            <option value="2">Bruce Banner</option>
+                                            <option value="3">Steve Rogers</option>
                                         </select>
                                     </div>
                                     <div class="form-group browser-default col-md-4">
-                                        <label for="kpi_datasource">Data Source</label>
-                                        <select id="kpi_datasource" name="kpi_datasource" class="form-control mt-1">
-                                            <option>Choose</option>
-                                            <option value="manual">Manual</option>
-                                            <option value="source">Source</option>
+                                        <label for="objective_owner">Data Source</label>
+                                        <select id="inputState" name="" class="form-control browser-default">
+                                            <option value="">Choose your option</option>
+                                            <option value="1">Manual</option>
+                                            <option value="2">Source</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-row mt-2">
-                                    <label for="kpi_fields" class="ml-2 mr-3">KPI Fields </label>
+                                <hr>
+                                <div class="form-row mt-4">
+                                    <label for="kpi_fields" class="ml-2 mr-3">Scorecard Fields </label>
                                     <ul class="d-flex flex-row flex-wrap ml-2">
                                         <li>
                                             <div class="form-check">
@@ -1344,129 +1342,67 @@
                                                 </div>
                                             </div>
                                         </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        Trend
+                                                        <span class="form-check-sign">
+                                                            <span class="check"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        Risk
+                                                        <span class="form-check-sign">
+                                                            <span class="check"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </li>
                                     </ul>
                                 </div>
+                                <hr>
                                 <div class="form-row">
-                                    <div class="form-group col-md-4">
-                                        <label for="inputState">KPI Formula</label>
-                                        <input type="text" class="form-control browser-default" name="kpi_formula" id="kpi_formula" readonly>
-                                        <a href="#" id="kpi_trigger" data-toggle="modal" data-target=".kpi_formula_popup"></a>
-                                    </div>
-
-                                    <div class="form-group col-md-4">
-                                        <label for="kpi_threshold">Threshold</label>
-                                        <select id="kpi_threshold" class="form-control browser-default mt-1">
-                                            <option>Choose</option>
-                                            <option value="option_1">Option 1</option>
-                                            <option value="option_2">Option 2</option>
-                                            <option value="option_3">Option 3</option>
+                                    <div class="form-group browser-default col-md-4">
+                                        <label for="objective_owner">Threshold</label>
+                                        <select id="inputState" name="" class="form-control browser-default">
+                                            <option value="">Choose your option</option>
+                                            <option value="1">Option 1</option>
+                                            <option value="2">Option 2</option>
+                                            <option value="3">Option 3</option>
                                         </select>
                                     </div>
-
-                                    <div class="form-group col-md-2 color_picks_1" style="display: none;">
-                                        <div class="input-group m-t-24">
-                                            <input type="text" class="form-control browser-default">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text pickr"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group col-md-2 color_picks_1" style="display: none;">
-                                        <div class="input-group m-t-24">
-                                            <input type="text" class="form-control browser-default">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text pickr"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="form-group col-md-4 color_picks_2" style="display: none;">
-                                        <div class="input-group m-t-24">
-                                            <input type="text" class="form-control browser-default">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text pickr"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group col-md-4 color_picks_2" style="display: none;">
-                                        <div class="input-group m-t-24">
-                                            <input type="text" class="form-control browser-default">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text pickr"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group col-md-4 color_picks_2" style="display: none;">
-                                        <div class="input-group m-t-24">
-                                            <input type="text" class="form-control browser-default">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text pickr"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="form-group col-md-4 color_picks_3" style="display: none;">
-                                        <div class="input-group m-t-24">
-                                            <input type="text" class="form-control browser-default">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text pickr"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group col-md-3 color_picks_3" style="display: none;">
-                                        <div class="input-group m-t-24">
-                                            <input type="text" class="form-control browser-default">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text pickr"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group col-md-3 color_picks_3" style="display: none;">
-                                        <div class="input-group m-t-24">
-                                            <input type="text" class="form-control browser-default">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text pickr"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group col-md-3 color_picks_3" style="display: none;">
-                                        <div class="input-group m-t-24">
-                                            <input type="text" class="form-control browser-default">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text pickr"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group col-md-3 color_picks_3" style="display: none;">
-                                        <div class="input-group m-t-24">
-                                            <input type="text" class="form-control browser-default">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text pickr"></span>
-                                            </div>
-                                        </div>
+                                    <div class="form-group browser-default col-md-8">
+                                        <label for="objective_owner">KPI Formula</label>
+                                        <input type="text" class="form-control browser-default" name="objective_weight" id="objective_weight">
                                     </div>
                                 </div>
+                                <hr>
                                 <div class="form-row">
-                                    <div class="form-group col-md-3">
-                                        <label for="kpi_start_end_date">Start/End Date</label>
-                                        <input type="text" class="form-control browser-default datepicker-here date_pickers" data-range="true" data-multiple-dates-separator=" - " data-language="en" id="air-date" />
+                                    <div class="form-group browser-default col-md-3">
+                                        <label for="objective_owner">Start/End Date</label>
+                                        <input type="text" class="form-control browser-default date_pickers" data-range="true" data-multiple-dates-separator=" - " data-language="en" class="datepicker-here date_pickers" id="air-date-score" />
                                     </div>
                                     <div class="form-group col-md-3">
-                                        <label for="kpi_weight">Weight</label>
-                                        <input type="text" class="form-control browser-default" name="kpi_weight" id="kpi_weight">
+                                        <label for="objective_weight">Weight</label>
+                                        <input type="text" class="form-control browser-default" name="objective_weight" id="objective_weight">
                                     </div>
                                     <div class="form-group col-md-3">
-                                        <label for="kpi_start_end_date">Status</label>
-                                        <select id="inputState" class="form-control browser-default mt-1">
+                                        <label for="objective_weight">Sub Weight</label>
+                                        <input type="text" class="form-control browser-default" name="objective_weight" id="objective_weight">
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="objective_start_end_date">Status</label>
+                                        <select id="inputState" name="" class="form-control browser-default">
                                             <option>Choose</option>
                                             <option value="manual">Manual</option>
                                             <option value="weighted">Weighted</option>
@@ -1476,13 +1412,11 @@
                                             <option value="fourth">Fourth</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-3">
-                                        <label for="objective_start_end_date">Attachment</label>
-                                        <input type="file" class="" id="">
-                                    </div>
                                 </div>
+                                <hr>
                                 <div class="form-line right">
-                                    <button type="button" class="btn-default1 btn" data-dismiss="modal" aria-label="Close">Cancel</button>
+                                    <button type="button" class="btn-default1" 
+                                    data-dismiss="modal" aria-label="Close" style="background-color: transparent;">Cancel</button>
                                     <button class="scorecard_save_btn" value="Save">Save</button>
                                 </div>
                             </form>
