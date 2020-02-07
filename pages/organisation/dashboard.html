@@ -14,7 +14,7 @@
         <link href="../../assets/css/style.css" rel="stylesheet" />
         <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" />
         <link href="../../assets/css/charts.css" rel="stylesheet" />
-        <link href="../../assets/css/circle.css" rel="stylesheet" />
+        <link href="../../assets/css/progressbar/jQuery-plugin-progressbar.css" rel="stylesheet" />
         <!-- You can choose a theme from css/styles instead of get all themes -->
         <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
         <link href="../../assets/css/table-view.css" rel="stylesheet" />
@@ -26,6 +26,11 @@
         <link rel="stylesheet" href="../../assets/monolith.min.css">
         <link rel="stylesheet" href="../../assets/classic.min.css">
         <link href="../../assets/select2.min.css" rel="stylesheet">
+
+        <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+
+        <!-- FontAwsome icons -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
 
         <!-- <link href="../../assets/daterangepicker/daterangepicker.min.css" rel="stylesheet"> -->
 
@@ -717,8 +722,22 @@
                             <div class="chart-box">
                             </div>
                             <div class="chart_kpi_chart_box chart_kpi_box_size">
-                                <div id="chartdiv_init999" class="divResize" style="height: 55vh;"></div>
-                                <div id="tag"></div>
+                                <div class="row" style="padding-top: 3%;">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-10" style="margin-bottom: 16px;">
+                                        <select name="" id="" class="form-control">
+                                            <option value="KPI-1">KPI-1</option>
+                                            <option value="KPI-2">KPI-2</option>
+                                            <option value="KPI-3">KPI-3</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-8" style="cursor: pointer !important; margin-bottom: 8%; margin-left: -9%;" data-toggle="modal" data-target=".all_chart_popup">
+                                        <div class="progress-bar" data-percent="40" data-duration="1000"></div>
+                                    </div>
+                                    <div class="col-md-2"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -728,83 +747,188 @@
 
             <section class="content">
                 <div class="container-fluid">
-                    <div class="m-t--65">
-                        <h5 class="m-b-10">Charts</h5>
+                    <div class="m-t--45">
+                        <h5 class="m-b-40">KPI Description</h5>
                     </div>
                     <div class="row blockContainer">
                         <div class="col-lg-3 col-md-3 col-sm-12 chartBlock" id="template" style="display:none">
                             <div class="chart_container_bg">
-                                <div>
-                                    aaa
-                                </div>
-                                <div class="chart_top_menu">
-                                    <div class="chart_top_menu_left"><i class="fas fa-flag chart_kpi_flag" aria-hidden="true"></i></div>
+                                <div class="chart_top_menu" 
+                                style="background-color: #3A6596; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                                    <div class="chart_top_menu_left">
+                                        <!-- <i class="fas fa-flag chart_kpi_flag" aria-hidden="true"></i> -->
+                                    </div>
                                     <div class="chart_top_menu_right">
                                         <ul class="header-dropdown m-r--2 pt-2 d-flex">
                                             <li class="dropdown m-t--5">
-                                                <!-- <i class="fa fa-info-circle" aria-hidden="true" data-toggle="modal" data-target="#viewModal"></i> -->
+                                                <i class="fas fa-expand-arrows-alt" aria-hidden="true" data-toggle="modal" data-target="#viewModal"
+                                                style=" font-size: 13px; color: #e7e7e7; padding-right: 10px; margin-top: 10px; margin-bottom: -10px;"></i>
                                                 <a href="#" onclick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
-                                                    <i class="fa fa-cog" style=" font-size: 10px; color: #e7e7e7;" aria-hidden="true"></i>
+                                                    <i class="fa fa-cog" 
+                                                    style=" font-size: 13px; color: #e7e7e7; padding-right: 5px; margin-top: 10px; margin-bottom: -10px;" aria-hidden="true"></i>
                                                 </a>
                                                 <ul class="dropdown-menu pull-right" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);">
                                                     <li>
-                                                        <div class="removeBlock"> Remove </div>
+                                                        <div class="">
+                                                            <div class="form-group m-t-10">
+                                                                <label for="kpi_start_end_date" class="mt-3">Data field</label>
+                                                                <select class="form-control browser-default mt-1 paramList1" name="params[]" multiple="multiple">
+                                                                    <!-- <option value="">Choose</option>                                                                     -->
+                                                                    <option value="1">Actual</option>
+                                                                    <option value="2">Target</option>
+                                                                    <option value="3">Budget</option>
+                                                                    <option value="4">Forecast</option>                        
+                                                                    <option value="5">Gap</option>                        
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="removeBlock mt-4">
+                                                            <button class="btn form-control" style="color: #fff; background-color: #E51B1B;">Remove Block</button>
+                                                        </div>
                                                     </li>
                                                 </ul>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
+                                <div class="chart_kpi_boxs m-t-10">
+                                    <div class="chart_kpi_parameter param-actual">
+                                        <div class="" style="font-weight: 600;">Actual</div>
+                                        <div class="">10.56</div>
+                                    </div>
+                                    <div class="chart_kpi_parameter param-budget">
+                                        <div class="" style="font-weight: 600;">Budget</div>
+                                        <div class="">8.31</div>
+                                    </div>
+                                    <div class="chart_kpi_parameter param-target">
+                                        <div class="" style="font-weight: 600;">Target</div>
+                                        <div class="">88.7</div>
+                                    </div>
+                                    <div class="chart_kpi_parameter param-forecast">
+                                        <div class="" style="font-weight: 600;">Forecast</div>
+                                        <div class="">12.6</div>
+                                    </div>
+                                    <div class="chart_kpi_parameter param-gap">
+                                        <div class="" style="font-weight: 600;">Gap</div>
+                                        <div class="">10.5</div>
+                                    </div>
+                                </div>
                                 <input type="hidden" class="selectVal" />
-                                
+                                <div class="chart_kpi_chart_box chart_kpi_box_size" aria-hidden="true">
+                                    <div class="row" style="padding-top: 3%;">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-10" style="margin-bottom: 16px;">
+                                            <select name="" id="" class="form-control">
+                                                <option value="KPI-1">KPI-1</option>
+                                                <option value="KPI-2">KPI-2</option>
+                                                <option value="KPI-3">KPI-3</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-8" style="cursor: pointer !important; margin-bottom: 8%; margin-left: -9%;" data-toggle="modal" data-target=".all_chart_popup">
+                                            <div class="progress-bar" data-percent="75" data-duration="1000"></div>
+                                        </div>
+                                        <div class="col-md-2"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <div class="col-lg-3 col-md-3 col-sm-12 chartBlock">
                             <div class="chart_container_bg">
-
-                                <div class="chart_top_menu">
-                                    <div class="chart_top_menu_left"><i class="fas fa-flag chart_kpi_flag" aria-hidden="true"></i></div>
+                                <div class="chart_top_menu" 
+                                style="background-color: #3A6596; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                                    <div class="chart_top_menu_left">
+                                        <!-- <i class="fas fa-flag chart_kpi_flag" aria-hidden="true"></i> -->
+                                    </div>
                                     <div class="chart_top_menu_right">
                                         <ul class="header-dropdown m-r--2 pt-2 d-flex">
                                             <li class="dropdown m-t--5">
-                                                <!-- <i class="fa fa-info-circle" aria-hidden="true" data-toggle="modal" data-target="#viewModal"></i> -->
+                                                <i class="fas fa-expand-arrows-alt" aria-hidden="true" data-toggle="modal" data-target="#viewModal"
+                                                style=" font-size: 13px; color: #e7e7e7; padding-right: 10px; margin-top: 10px; margin-bottom: -10px;"></i>
                                                 <a href="#" onclick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
-                                                    <i class="fa fa-cog" style=" font-size: 10px; color: #e7e7e7;" aria-hidden="true"></i>
+                                                    <i class="fa fa-cog" 
+                                                    style=" font-size: 13px; color: #e7e7e7; padding-right: 5px; margin-top: 10px; margin-bottom: -10px;" aria-hidden="true"></i>
                                                 </a>
                                                 <ul class="dropdown-menu pull-right" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);">
                                                     <li>
-                                                        <div class="removeBlock"> Remove </div>
+                                                        <div class="">
+                                                            <div class="form-group m-t-10">
+                                                                <label for="kpi_start_end_date" class="mt-3">Data field</label>
+                                                                <select class="form-control browser-default mt-1 paramList" name="params[]" multiple="multiple">
+                                                                    <!-- <option value="">Choose</option>                                                                     -->
+                                                                    <option value="1">Actual</option>
+                                                                    <option value="2">Target</option>
+                                                                    <option value="3">Budget</option>
+                                                                    <option value="4">Forecast</option>                        
+                                                                    <option value="5">Gap</option>                        
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="removeBlock mt-4">
+                                                            <button class="btn form-control" style="color: #fff; background-color: #E51B1B;">Remove Block</button>
+                                                        </div>
                                                     </li>
                                                 </ul>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
+                                <div class="chart_kpi_boxs m-t-10">
+                                    <div class="chart_kpi_parameter param-actual">
+                                        <div class="" style="font-weight: 600;">Actual</div>
+                                        <div class="">10.56</div>
+                                    </div>
+                                    <div class="chart_kpi_parameter param-budget">
+                                        <div class="" style="font-weight: 600;">Budget</div>
+                                        <div class="">8.31</div>
+                                    </div>
+                                    <div class="chart_kpi_parameter param-target">
+                                        <div class="" style="font-weight: 600;">Target</div>
+                                        <div class="">88.7</div>
+                                    </div>
+                                    <div class="chart_kpi_parameter param-forecast">
+                                        <div class="" style="font-weight: 600;">Forecast</div>
+                                        <div class="">12.6</div>
+                                    </div>
+                                    <div class="chart_kpi_parameter param-gap">
+                                        <div class="" style="font-weight: 600;">Gap</div>
+                                        <div class="">10.5</div>
+                                    </div>
+                                </div>
                                 <input type="hidden" class="selectVal" />
-                                <div class="clearfix">
-
-                                    <div class="c100 p50">
-                                        <span>50%</span>
-                                        <div class="slice">
-                                            <div class="bar"></div>
-                                            <div class="fill"></div>
+                                <div class="chart_kpi_chart_box chart_kpi_box_size" aria-hidden="true">
+                                    <div class="row" style="padding-top: 3%;">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-10" style="margin-bottom: 16px;">
+                                            <select name="" id="" class="form-control">
+                                                <option value="KPI-1">KPI-1</option>
+                                                <option value="KPI-2">KPI-2</option>
+                                                <option value="KPI-3">KPI-3</option>
+                                            </select>
                                         </div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-8" style="cursor: pointer !important; margin-bottom: 8%; margin-left: -9%;" data-toggle="modal" data-target=".all_chart_popup">
+                                            <div class="progress-bar" data-percent="40" data-duration="1000"></div>
+                                        </div>
+                                        <div class="col-md-2"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-12 chartBlock">
-                            <a href="#" class="add-block">Add New Block</a>
+                            <button class="btn add-block" style="background-color: #3A6596; color: #fff;">Add New Block</button>
+                            <!-- <a href="#" class="add-block">Add New Block</a> -->
                         </div>
                     </div>
                 </div>
-
-                
             </section>
         </div>
         <!-- Plugins Js -->
         <script src="../../assets/js/app.min.js"></script>
+        <script src="../../assets/css/progressbar/jQuery-plugin-progressbar.js"></script>
         <!-- Custom Js -->
         <script src="../../assets/js/admin.js"></script>
         <script src="../../assets/js/bundles/amcharts4/core.js"></script>
@@ -841,6 +965,12 @@
         <script src="../../assets/loader.js"></script>
         <!-- <script src="../../assets/js/pages/widgets/chart-widget.js"></script> -->
         <script src="../../assets/select2.min.js"></script>
+        <script>
+            $(".progress-bar").loading();
+            $('input').on('click', function () {
+                 $(".progress-bar").loading();
+            });
+        </script>
         <script>
             $(".daterangepicker-field").daterangepicker({
                 forceUpdate: true,
@@ -2354,6 +2484,19 @@
 
             });
 
+
+            // $('#viewModal').on('show.bs.modal', function(event) {
+            //     var button = $(event.relatedTarget);
+            //     var curEl = $(button).parents().eq(4).clone();
+            //     var selId = $(curEl).find('.chart-selection').val();
+
+            //     $(curEl).find('.divResize').removeAttr('id');
+            //     $(curEl).find('.form_kpi').prop('disabled', true);
+            //     $(curEl).find('.fa-info-circle').hide();
+            //     $(curEl).find('.fa-cog').hide();
+            //     $(this).find('.modal-body').html(curEl);
+
+            // });
 
             $('.all_chart_popup').on('show.bs.modal', function(event) {
                 var kpiBox = $(event.relatedTarget).parent().find('.chart_kpi_boxs').clone();

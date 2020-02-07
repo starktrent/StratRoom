@@ -5019,7 +5019,7 @@ small {
     height: 36px;
     line-height: 36px;
     padding: 0 16px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     vertical-align: middle;
     -webkit-tap-highlight-color: transparent
 }
@@ -14698,10 +14698,10 @@ a.badge-dark.focus {
     -ms-flex-pack: center;
     -webkit-box-pack: center;
     justify-content: center;
-    color: #fff;
+    color: #333;
     text-align: center;
     white-space: nowrap;
-    background-color: #007bff;
+    /* background-color: #007bff; */
     -webkit-transition: width .6s ease;
     transition: width .6s ease
 }

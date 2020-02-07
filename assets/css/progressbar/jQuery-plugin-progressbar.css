@@ -1,0 +1,72 @@
+.position {
+  /* margin: 100px 20px; */
+}
+
+.progress-bar {
+  position: relative;
+  height: 200px;
+  width: 200px;
+}
+
+.progress-bar div {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.progress-bar div span {
+  position: absolute;
+  font-family: Arial;
+  font-size: 25px;
+  line-height: 125px;
+  height: 125px;
+  width: 125px;
+  left: 36.5px;
+  top: 36.5px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.progress-bar .background {
+  background-color: #b3cef6;
+}
+
+.progress-bar .rotate {
+  clip: rect(0 100px 200px 0);
+  background-color: #4b86db;
+}
+
+.progress-bar .left {
+  clip: rect(0 100px 200px 0);
+  opacity: 1;
+  background-color: #b3cef6;
+}
+
+.progress-bar .right {
+  clip: rect(0 100px 200px 0);
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  opacity: 0;
+  background-color: #4b86db;
+}
+
+@-webkit-keyframes toggle {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes toggle {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=jQuery-plugin-progressbar.css.map */

@@ -539,7 +539,7 @@ div.edit1 {
 
 .btn {
     box-shadow: none !important;
-    text-transform: lowercase !important;
+    /* text-transform: lowercase !important; */
 }
 
 .btn-black {
