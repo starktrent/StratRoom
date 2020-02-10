@@ -978,6 +978,12 @@ tr {
     border: none !important;
 }
 
+.dashboard-table tbody tr td,
+.dashboard-table tbody tr th {
+    border: 2px solid #888888 !important;
+    padding: 10px 5px 10px 5px ;
+}
+
 table thead th {
     font-size: 13px;
 }

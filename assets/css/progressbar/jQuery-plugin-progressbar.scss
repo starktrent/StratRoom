@@ -1,4 +1,4 @@
-$circle-size: 100px;
+$circle-size: 150px;
 $background-color: #b3cef6; 
 $progress-color: #4b86db;
 $percent: 75;
@@ -19,12 +19,12 @@ $duration: 2s;
 			span {
 				position: absolute;
 				font-family: Arial;
-				font-size: $circle-size / 4;
-				line-height: $circle-size / 4 * 3;
-				height: $circle-size / 4 * 3;
-				width: $circle-size / 4 * 3;
-				left: $circle-size / 8;
-				top: $circle-size / 8;
+				font-size: $circle-size / 8;
+				line-height: $circle-size / 4 * 2.5;
+				height: $circle-size / 4 * 2.5;
+				width: $circle-size / 4 * 2.5;
+				left: $circle-size / 5.2;
+				top: $circle-size / 5.2;
 				text-align: center;
 				border-radius: 50%;
 				background-color: white;
