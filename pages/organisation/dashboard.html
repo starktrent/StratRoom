@@ -27,10 +27,10 @@
         <link rel="stylesheet" href="../../assets/classic.min.css">
         <link href="../../assets/select2.min.css" rel="stylesheet">
 
-        <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<!-- FontAwsome icons -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />        <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 
-        <!-- FontAwsome icons -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+        
 
         <!-- <link href="../../assets/daterangepicker/daterangepicker.min.css" rel="stylesheet"> -->
 
@@ -709,13 +709,140 @@
 
             <!--#TABLE Popup -->
             <div class="modal fade" id="bigTable" tabindex="-1" role="dialog" aria-labelledby="bigTable" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg" style="max-width: 90% !important;">
+                <div class="modal-dialog modal-dialog-centered modal-lg" style="max-width: 100% !important;">
                     <div class="modal-content">
                         <div class="modal-header chart_kpi_title" style="background-color: #3A6596;">
                             <h4 style="color: #fff; margin-top: 3px; margin-left: 5px;">Heading</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: #fff;">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
                         <div class="modal-body">
                             <div class="row">
+                                <div class="col-md-3">
+                                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                        View Chart
+                                    </button>
+                                </div>
+                                <div class="col-md-9"></div>
+                                <div class="col-md-12">
+                                    <div class="collapse" id="collapseExample">
+                                        <div class="card card-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="">
+                                                        <div class="form-group kpi_create_initives mb-0 m-t-5">
+                                                            <label for="kpi_start_end_date">Chart Size</label>
+                                                            <select id="1" name="sub_initative_desc" class="mr-4 chart-selection" style="display: block;">
+                                                                <option value="">--Chart Select--</option>
+                                                                <option value="1">Standard Chart</option>
+                                                                <option value="2">Bar Chart</option>
+                                                                <option value="3">Line Chart</option>
+                                                                <option value="4">Bar-Line Chart</option>
+                                                                <option value="5">Pie Chart</option>
+                                                                <option value="6">Area Chart</option>
+                                                                <option value="7">Radar Chart</option>
+                                                                <option value="8">Polar Chart</option>
+                                                                <option value="9">Waterfall Chart</option>
+                                                                <option value="10">Risk Chart</option>
+                                                                <option value="11">Gantt Chart</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="settings_axis">
+                                                        <div class="chart_size">X-axis</div>
+                                                        <div class="chart_size">
+                                                            <div class="form-group kpi_create_initives">
+                                                                <select id="chart-selection-x" name="sub_initative_desc" style="display: block;">
+                                                                    <option value="1">1</option>
+                                                                    <option value="2">2</option>
+                                                                    <option value="3">3</option>
+                                                                    <option value="4">4</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="chart_size">
+                                                            <div class="form-group color_picks_1">
+                                                                <div class="input-group">
+                                                                    <div class="input-group-append">
+                                                                        <span class="input-group-text pickr xAxisColor"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="settings_axis p-0 m-t--10">
+                                                        <div class="chart_size">Y-axis</div>
+                                                        <div class="chart_size">
+                                                            <div class="form-group kpi_create_initives">
+                                                                <select id="chart-selection-y" name="sub_initative_desc" style="display: block;">
+                                                                    <option value="A">A</option>
+                                                                    <option value="B">B</option>
+                                                                    <option value="C">C</option>
+                                                                    <option value="D">D</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="chart_size">
+                                                            <div class="form-group color_picks_1">
+                                                                <div class="input-group">
+                                                                    <div class="input-group-append">
+                                                                        <span class="input-group-text pickr yAxisColor"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="">
+                                                        <div class="form-group m-t--10">
+                                                            <label for="kpi_start_end_date" class="m-0">Data field</label>
+                                                            <select class="form-control browser-default mt-1 paramList" name="params[]" multiple="multiple">
+                                                                <!-- <option value="">Choose</option>                                                                     -->
+                                                                <option value="1">Actual</option>
+                                                                <option value="2">Target</option>
+                                                                <option value="3">Budget</option>
+                                                                <option value="4">Forecast</option>                        
+                                                                <option value="5">Gap</option>                        
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="chart_kpi_boxs">
+                                                        <div class="chart_kpi_parameter param-actual">
+                                                            <div class="">Actual</div>
+                                                            <div class="">10.56</div>
+                                                        </div>
+                                                        <div class="chart_kpi_parameter param-budget">
+                                                            <div class="">Budget</div>
+                                                            <div class="">8.31</div>
+                                                        </div>
+                                                        <div class="chart_kpi_parameter param-target">
+                                                            <div class="">Target</div>
+                                                            <div class="">88.7</div>
+                                                        </div>
+                                                        <div class="chart_kpi_parameter param-forecast">
+                                                            <div class="">Forecast</div>
+                                                            <div class="">12.6</div>
+                                                        </div>
+                                                        <div class="chart_kpi_parameter param-gap">
+                                                            <div class="">Gap</div>
+                                                            <div class="">10.5</div>
+                                                        </div>
+                                                    </div>
+                                                    <input type="hidden" class="selectVal" />
+                                                    <div class="chart_kpi_chart_box chart_kpi_box_size">
+                                                        <div id="chartdiv_init1" class="divResize" style="height: 25vh;"></div>
+                                                        <div id="tag"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="col-lg-12 col-md-12">
                                     <div class="card">
                                         <div class="header" style="background-color: #888888;">
@@ -723,19 +850,333 @@
                                                 <div class="col-md-10"></div>
                                                 <div class="col-md-2">
                                                     <select id="objective_owner" name="" class="form-control">
-                                                        <option value="">Choose Time Period</option>
+                                                        <!-- <option value="">Choose Time Period</option> -->
                                                         <!-- <option value="Day">Day</option>
-                                                        <option value="Week">Week</option>
-                                                        <option value="Month">Month</option> -->
-                                                        <option value="Quarter Year">Quarter Year</option>
-                                                        <option value="Half Year">Half Year</option>
+                                                        <option value="Week">Week</option> -->
+                                                        <option value="Month">Month</option>
+                                                        <option value="QuarterYear">Quarter Year</option>
+                                                        <option value="HalfYear">Half Year</option>
                                                         <option value="Annual">Annual</option>
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="tableBody">
-                                            <div class="table-responsive">
+                                            <div class="table-responsive Month box" style="display: none;">
+                                                <table class="table dashboard-task-infos align-center dashboard-table" id="table1" style="margin-bottom: 0px !important;">
+                                                    <tr>
+                                                        <th rowspan="2">
+                                                            <i class="fas fa-arrow-up"></i>
+                                                            <i class="fas fa-arrow-down"></i>
+                                                        </th>
+                                                        <th rowspan="2" style="padding: 0 10px;">
+                                                            <select id="objective_owner" name="" class="form-control" style="margin-right: 300px;">
+                                                                <option value="">KPI Description</option>
+                                                                <option value="Option - 1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </option>
+                                                                <option value="Option - 2">Option - 2</option>
+                                                            </select>
+                                                        </th>
+                                                        <th colspan="3" style="font-weight: bold; color: #3A6596;">January</th>
+                                                        <th colspan="3" style="font-weight: bold; color: #3A6596;">February</th>
+                                                        <th colspan="3" style="font-weight: bold; color: #3A6596;">March</th>
+                                                        <th colspan="3" style="font-weight: bold; color: #3A6596;">April</th>
+                                                        <th colspan="3" style="font-weight: bold; color: #3A6596;">May</th>
+                                                        <th colspan="3" style="font-weight: bold; color: #3A6596;">June</th>
+                                                        <th colspan="3" style="font-weight: bold; color: #3A6596;">July</th>
+                                                        <th colspan="3" style="font-weight: bold; color: #3A6596;">August</th>
+                                                        <th colspan="3" style="font-weight: bold; color: #3A6596;">September</th>
+                                                        <th colspan="3" style="font-weight: bold; color: #3A6596;">October</th>
+                                                        <th colspan="3" style="font-weight: bold; color: #3A6596;">November</th>
+                                                        <th colspan="3" style="font-weight: bold; color: #3A6596;">December</th>
+                                                       </tr>
+                                                       <tr>
+                                                        <th>Actual</th>
+                                                        <th>Target</th>
+                                                        <th>Gap</th>
+
+                                                        <th>Actual</th>
+                                                        <th>Target</th>
+                                                        <th>Gap</th>
+
+                                                        <th>Actual</th>
+                                                        <th>Target</th>
+                                                        <th>Gap</th>
+
+                                                        <th>Actual</th>
+                                                        <th>Target</th>
+                                                        <th>Gap</th>
+                                                        
+                                                        <th>Actual</th>
+                                                        <th>Target</th>
+                                                        <th>Gap</th>
+                                                        
+                                                        <th>Actual</th>
+                                                        <th>Target</th>
+                                                        <th>Gap</th>
+                                                        
+                                                        <th>Actual</th>
+                                                        <th>Target</th>
+                                                        <th>Gap</th>
+                                                        
+                                                        <th>Actual</th>
+                                                        <th>Target</th>
+                                                        <th>Gap</th>
+                                                        
+                                                        <th>Actual</th>
+                                                        <th>Target</th>
+                                                        <th>Gap</th>
+                                                        
+                                                        <th>Actual</th>
+                                                        <th>Target</th>
+                                                        <th>Gap</th>
+                                                        
+                                                        <th>Actual</th>
+                                                        <th>Target</th>
+                                                        <th>Gap</th>
+                                                        
+                                                        <th>Actual</th>
+                                                        <th>Target</th>
+                                                        <th>Gap</th>
+                                                       </tr>
+                                                       <tr>
+                                                           <th></th>
+                                                           <th></th>
+                                                           <td>28%</td>
+                                                           <td>24%</td>
+                                                           <td>38%</td>
+
+                                                           <td>35%</td>
+                                                           <td>21%</td>
+                                                           <td>48%</td>
+
+                                                           <td>28%</td>
+                                                           <td>24%</td>
+                                                           <td>38%</td>
+
+                                                           <td>35%</td>
+                                                           <td>21%</td>
+                                                           <td>48%</td>
+                                                           
+                                                           <td>35%</td>
+                                                           <td>21%</td>
+                                                           <td>48%</td>
+                                                           
+                                                           <td>35%</td>
+                                                           <td>21%</td>
+                                                           <td>48%</td>
+                                                           
+                                                           <td>35%</td>
+                                                           <td>21%</td>
+                                                           <td>48%</td>
+                                                           
+                                                           <td>35%</td>
+                                                           <td>21%</td>
+                                                           <td>48%</td>
+                                                           
+                                                           <td>35%</td>
+                                                           <td>21%</td>
+                                                           <td>48%</td>
+                                                           
+                                                           <td>35%</td>
+                                                           <td>21%</td>
+                                                           <td>48%</td>
+                                                           
+                                                           <td>35%</td>
+                                                           <td>21%</td>
+                                                           <td>48%</td>
+                                                           
+                                                           <td>35%</td>
+                                                           <td>21%</td>
+                                                           <td>48%</td>
+                                                       </tr>
+                                                       <tr>
+                                                        <th></th>
+                                                        <th></th>
+                                                        <td>28%</td>
+                                                        <td>24%</td>
+                                                        <td>38%</td>
+
+                                                        <td>35%</td>
+                                                        <td>21%</td>
+                                                        <td>48%</td>
+
+                                                        <td>28%</td>
+                                                        <td>24%</td>
+                                                        <td>38%</td>
+
+                                                        <td>35%</td>
+                                                        <td>21%</td>
+                                                        <td>48%</td>
+                                                        
+                                                        <td>35%</td>
+                                                        <td>21%</td>
+                                                        <td>48%</td>
+                                                        
+                                                        <td>35%</td>
+                                                        <td>21%</td>
+                                                        <td>48%</td>
+                                                        
+                                                        <td>35%</td>
+                                                        <td>21%</td>
+                                                        <td>48%</td>
+                                                        
+                                                        <td>35%</td>
+                                                        <td>21%</td>
+                                                        <td>48%</td>
+                                                        
+                                                        <td>35%</td>
+                                                        <td>21%</td>
+                                                        <td>48%</td>
+                                                        
+                                                        <td>35%</td>
+                                                        <td>21%</td>
+                                                        <td>48%</td>
+                                                        
+                                                        <td>35%</td>
+                                                        <td>21%</td>
+                                                        <td>48%</td>
+                                                        
+                                                        <td>35%</td>
+                                                        <td>21%</td>
+                                                        <td>48%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th></th>
+                                                        <td>28%</td>
+                                                        <td>24%</td>
+                                                        <td>38%</td>
+
+                                                        <td>35%</td>
+                                                        <td>21%</td>
+                                                        <td>48%</td>
+
+                                                        <td>28%</td>
+                                                        <td>24%</td>
+                                                        <td>38%</td>
+
+                                                        <td>35%</td>
+                                                        <td>21%</td>
+                                                        <td>48%</td>
+                                                        
+                                                        <td>35%</td>
+                                                        <td>21%</td>
+                                                        <td>48%</td>
+                                                        
+                                                        <td>35%</td>
+                                                        <td>21%</td>
+                                                        <td>48%</td>
+                                                        
+                                                        <td>35%</td>
+                                                        <td>21%</td>
+                                                        <td>48%</td>
+                                                        
+                                                        <td>35%</td>
+                                                        <td>21%</td>
+                                                        <td>48%</td>
+                                                        
+                                                        <td>35%</td>
+                                                        <td>21%</td>
+                                                        <td>48%</td>
+                                                        
+                                                        <td>35%</td>
+                                                        <td>21%</td>
+                                                        <td>48%</td>
+                                                        
+                                                        <td>35%</td>
+                                                        <td>21%</td>
+                                                        <td>48%</td>
+                                                        
+                                                        <td>35%</td>
+                                                        <td>21%</td>
+                                                        <td>48%</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="table-responsive QuarterYear box" style="display: none;">
+                                                <table class="table dashboard-task-infos align-center dashboard-table" id="table1" style="margin-bottom: 0px !important;">
+                                                    <tr>
+                                                        <th rowspan="2">
+                                                            <i class="fas fa-arrow-up"></i>
+                                                            <i class="fas fa-arrow-down"></i>
+                                                        </th>
+                                                        <th rowspan="2" style="padding: 0 10px;">
+                                                            <select id="objective_owner" name="" class="form-control">
+                                                                <option value="">KPI Description</option>
+                                                                <option value="Option - 1">Option - 1</option>
+                                                                <option value="Option - 2">Option - 2</option>
+                                                            </select>
+                                                        </th>
+                                                        <th colspan="3" style="font-weight: bold; color: #3A6596;">Quarter Year - 1</th>
+                                                        <th colspan="3" style="font-weight: bold; color: #3A6596;">Quarter Year - 2</th>
+                                                        <th colspan="3" style="font-weight: bold; color: #3A6596;">Quarter Year - 3</th>
+                                                        <th colspan="3" style="font-weight: bold; color: #3A6596;">Quarter Year - 4</th>
+                                                       </tr>
+                                                       <tr>
+                                                        <th>Actual</th>
+                                                        <th>Target</th>
+                                                        <th>Gap</th>
+                                                        <th>Actual</th>
+                                                        <th>Target</th>
+                                                        <th>Gap</th>
+                                                        <th>Actual</th>
+                                                        <th>Target</th>
+                                                        <th>Gap</th>
+                                                        <th>Actual</th>
+                                                        <th>Target</th>
+                                                        <th>Gap</th>
+                                                       </tr>
+                                                       <tr>
+                                                           <th></th>
+                                                           <th></th>
+                                                           <td>28%</td>
+                                                           <td>24%</td>
+                                                           <td>38%</td>
+                                                           <td>35%</td>
+                                                           <td>21%</td>
+                                                           <td>48%</td>
+                                                           <td>28%</td>
+                                                           <td>24%</td>
+                                                           <td>38%</td>
+                                                           <td>35%</td>
+                                                           <td>21%</td>
+                                                           <td>48%</td>
+                                                       </tr>
+                                                       <tr>
+                                                           <th></th>
+                                                           <th></th>
+                                                           <td>28%</td>
+                                                           <td>24%</td>
+                                                           <td>38%</td>
+                                                           <td>35%</td>
+                                                           <td>21%</td>
+                                                           <td>48%</td>
+                                                           <td>28%</td>
+                                                           <td>24%</td>
+                                                           <td>38%</td>
+                                                           <td>35%</td>
+                                                           <td>21%</td>
+                                                           <td>48%</td>
+                                                       </tr>
+                                                       <tr>
+                                                        <th></th>
+                                                        <th></th>
+                                                        <td>28%</td>
+                                                        <td>24%</td>
+                                                        <td>38%</td>
+                                                        <td>35%</td>
+                                                        <td>21%</td>
+                                                        <td>48%</td>
+                                                        <td>28%</td>
+                                                        <td>24%</td>
+                                                        <td>38%</td>
+                                                        <td>35%</td>
+                                                        <td>21%</td>
+                                                        <td>48%</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="table-responsive HalfYear box" style="display: none;">
                                                 <table class="table dashboard-task-infos align-center dashboard-table" id="table1" style="margin-bottom: 0px !important;">
                                                     <tr>
                                                         <th rowspan="2">
@@ -752,7 +1193,7 @@
                                                         <th colspan="3" style="font-weight: bold; color: #3A6596;">Half Year - 1</th>
                                                         <th colspan="3" style="font-weight: bold; color: #3A6596;">Half Year - 2</th>
                                                        </tr>
-                                                       <tr style="font-weight: 600;">
+                                                       <tr>
                                                         <th>Actual</th>
                                                         <th>Target</th>
                                                         <th>Gap</th>
@@ -792,6 +1233,50 @@
                                                     </tr>
                                                 </table>
                                             </div>
+                                            <div class="table-responsive Annual box" style="display: none;">
+                                                <table class="table dashboard-task-infos align-center dashboard-table" id="table1" style="margin-bottom: 0px !important;">
+                                                    <tr>
+                                                        <th rowspan="2">
+                                                            <i class="fas fa-arrow-up"></i>
+                                                            <i class="fas fa-arrow-down"></i>
+                                                        </th>
+                                                        <th rowspan="2" style="padding: 0 10px;">
+                                                            <select id="objective_owner" name="" class="form-control">
+                                                                <option value="">KPI Description</option>
+                                                                <option value="Option - 1">Option - 1</option>
+                                                                <option value="Option - 2">Option - 2</option>
+                                                            </select>
+                                                        </th>
+                                                        <th colspan="3" style="font-weight: bold; color: #3A6596;">Annual</th>
+                                                       </tr>
+                                                       <tr>
+                                                        <th>Actual</th>
+                                                        <th>Target</th>
+                                                        <th>Gap</th>
+                                                       </tr>
+                                                       <tr>
+                                                           <th></th>
+                                                           <th></th>
+                                                           <td>28%</td>
+                                                           <td>24%</td>
+                                                           <td>38%</td>
+                                                       </tr>
+                                                       <tr>
+                                                           <th></th>
+                                                           <th></th>
+                                                           <td>28%</td>
+                                                           <td>24%</td>
+                                                           <td>38%</td>
+                                                       </tr>
+                                                       <tr>
+                                                        <th></th>
+                                                        <th></th>
+                                                        <td>28%</td>
+                                                        <td>24%</td>
+                                                        <td>38%</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -821,11 +1306,11 @@
                                 <div class="row" style="padding-top: 3%;">
                                     <div class="col-md-1"></div>
                                     <div class="col-md-10" style="margin-bottom: 16px;">
-                                        <select name="" id="" class="form-control">
+                                        <!-- <select name="" id="" class="form-control">
                                             <option value="KPI-1">KPI-1</option>
                                             <option value="KPI-2">KPI-2</option>
                                             <option value="KPI-3">KPI-3</option>
-                                        </select>
+                                        </select> -->
                                     </div>
                                     <div class="col-md-1"></div>
                                     <div class="col-md-4"></div>
@@ -859,11 +1344,11 @@
                                 <div class="row" style="padding-top: 3%;">
                                     <div class="col-md-1"></div>
                                     <div class="col-md-10" style="margin-bottom: 16px;">
-                                        <select name="" id="" class="form-control">
+                                        <!-- <select name="" id="" class="form-control">
                                             <option value="KPI-1">KPI-1</option>
                                             <option value="KPI-2">KPI-2</option>
                                             <option value="KPI-3">KPI-3</option>
-                                        </select>
+                                        </select> -->
                                     </div>
                                     <div class="col-md-1"></div>
                                     <div class="col-md-4"></div>
@@ -930,10 +1415,9 @@
                                     <div class="row" style="padding-top: 3%;">
                                         <div class="col-md-1"></div>
                                         <div class="col-md-10" style="margin-bottom: 16px;">
-                                            <select name="" id="" class="form-control">
-                                                <option value="KPI-1">KPI-1</option>
-                                                <option value="KPI-2">KPI-2</option>
-                                                <option value="KPI-3">KPI-3</option>
+                                            <select class="form-control browser-default mt-1 paramList1" name="params[]">
+                                                <option value="KPI-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</option>
+                                                <option value="KPI-2">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</option>                    
                                             </select>
                                         </div>
                                         <!-- <div class="col-md-1"></div> -->
@@ -1014,10 +1498,9 @@
                                     <div class="row" style="padding-top: 4%;">
                                         <div class="col-md-1"></div>
                                         <div class="col-md-10" style="margin-bottom: 16px;">
-                                            <select name="" id="" class="form-control">
-                                                <option value="KPI-1">KPI-1</option>
-                                                <option value="KPI-2">KPI-2</option>
-                                                <option value="KPI-3">KPI-3</option>
+                                            <select class="form-control browser-default mt-1 paramList" name="params[]">
+                                                <option value="KPI-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</option>
+                                                <option value="KPI-2">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</option>                       
                                             </select>
                                         </div>
                                         <div class="col-md-3"></div>
@@ -1099,6 +1582,19 @@
         <!-- <script src="../../assets/js/pages/widgets/chart-widget.js"></script> -->
         <script src="../../assets/select2.min.js"></script>
         <script>
+            $(document).ready(function(){
+                $("#objective_owner").change(function(){
+                    $(this).find("option:selected").each(function(){
+                        var optionValue = $(this).attr("value");
+                        if(optionValue){
+                            $(".box").not("." + optionValue).hide();
+                            $("." + optionValue).show();
+                        } else{
+                            $(".box").hide();
+                        }
+                    });
+                }).change();
+            });
             $(".progress-bar").loading();
             $('input').on('click', function () {
                  $(".progress-bar").loading();

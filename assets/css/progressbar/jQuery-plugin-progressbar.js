@@ -2,8 +2,8 @@
 (function ($) {
 	$.fn.loading = function () {
 		var DEFAULTS = {
-			backgroundColor: '#b3cef6',
-			progressColor: '#4b86db',
+			backgroundColor: '#fde497',
+			progressColor: '#ffc107',
 			percent: 75,
 			duration: 2000
 		};	
