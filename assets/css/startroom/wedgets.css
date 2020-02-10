@@ -981,7 +981,7 @@ tr {
 .dashboard-table tbody tr th {
     font-weight: 700 !important;
     color: #333;
-    background-color: #829dbd;
+    /* background-color: #829dbd; */
 }
 
 .dashboard-table tbody tr td {
@@ -991,7 +991,7 @@ tr {
 
 .dashboard-table tbody tr td,
 .dashboard-table tbody tr th {
-    border: 2px solid #444444 !important;
+    border: 1px solid #ececec !important;
     padding: 10px 5px 10px 5px ;
 }
 
