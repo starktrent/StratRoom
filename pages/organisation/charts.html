@@ -729,18 +729,26 @@
             <!--#END Chart Popup -->
 
             <section class="content">
-                <div class="container-fluid">
-                    <div class="m-t--65">
-                        <h5 class="m-b-10">Charts</h5>
+                <!-- Page Header -->
+                <div class="page-header row no-gutters py-4 m-t--70" style="background-color: #3A6596;">
+                    <div class="col-lg-6 col-md-6 text-center text-sm-left pt-2 mb-0 ml-4" style="color: #fff;">
+                        <h3 class="page-title" style="font-weight: 600;">Charts</h3>
                     </div>
-                    <div class="row blockContainer">
+                </div>
+                <!-- End Page Header -->
+                <div class="container-fluid">
+                    
+                    <div class="row blockContainer" style="margin-top: 2%;">
                         <div class="col-lg-3 col-md-3 col-sm-12 chartBlock" id="template" style="display:none">
                             <div class="chart_container_bg">
-                                <div class="chart_top_menu">
-                                    <div class="chart_top_menu_left"><i class="fas fa-flag chart_kpi_flag" aria-hidden="true"></i></div>
+                                <div class="chart_top_menu"
+                                style="background-color: #3A6596; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                                    <div class="chart_top_menu_left">
+                                        <!-- <i class="fas fa-flag chart_kpi_flag" aria-hidden="true"></i> -->
+                                    </div>
                                     <div class="chart_top_kpi_dropdown">
-                                        <div class="">
-                                            <select id="attachment" name="attachment" class="form_dropdown_text form_kpi" style="display: block;">
+                                        <div class="" style="margin-top: 5px;">
+                                            <select id="attachment" name="attachment" class="form_dropdown_text form_kpi" style="display: block; background-color: transparent;">
                                                 <option>Implement formal compliance x result</option>
                                                 <option>Implement formal compliance y result</option>
                                                 <option>Implement formal compliance z result</option>
@@ -752,7 +760,8 @@
                                             <li class="dropdown m-t--5">
                                                 <!-- <i class="fa fa-info-circle" aria-hidden="true" data-toggle="modal" data-target="#viewModal"></i> -->
                                                 <a href="#" onclick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
-                                                    <i class="fa fa-cog" style=" font-size: 10px; color: #e7e7e7;" aria-hidden="true"></i>
+                                                    <i class="fa fa-cog" 
+                                                    style=" font-size: 13px; color: #e7e7e7; padding-right: 5px; margin-top: 10px; margin-bottom: -10px;" aria-hidden="true"></i>
                                                 </a>
                                                 <ul class="dropdown-menu pull-right" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);">
                                                     <li>
@@ -781,10 +790,11 @@
                                                             <div class="chart_size">
                                                                 <div class="form-group kpi_create_initives">
                                                                     <select id="chart-selection-x" name="sub_initative_desc" style="display: block;">
-                                                                        <option value="1">1</option>
-                                                                        <option value="2">2</option>
-                                                                        <option value="3">3</option>
-                                                                        <option value="4">4</option>
+                                                                        <option value="1">Actual</option>
+                                                                        <option value="2">Target</option>
+                                                                        <option value="3">Budget</option>
+                                                                        <option value="4">Forecast</option>                        
+                                                                        <option value="5">Gap</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -804,10 +814,11 @@
                                                             <div class="chart_size">
                                                                 <div class="form-group kpi_create_initives">
                                                                     <select id="chart-selection-y" name="sub_initative_desc" style="display: block;">
-                                                                        <option value="A">A</option>
-                                                                        <option value="B">B</option>
-                                                                        <option value="C">C</option>
-                                                                        <option value="D">D</option>
+                                                                        <option value="1">Actual</option>
+                                                                        <option value="2">Target</option>
+                                                                        <option value="3">Budget</option>
+                                                                        <option value="4">Forecast</option>                        
+                                                                        <option value="5">Gap</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -826,7 +837,6 @@
                                                             <div class="form-group">
                                                                 <label for="kpi_start_end_date" class="m-0">Data field</label>
                                                                 <select class="form-control browser-default mt-1 paramList1" name="params[]" multiple="multiple">
-                                                                    <!-- <!-- <option value="">Choose</option> --> -->
                                                                     <option value="1">Actual</option>
                                                                     <option value="2">Target</option>
                                                                     <option value="3">Budget</option>
@@ -843,25 +853,13 @@
                                     </div>
                                 </div>
                                 <div class="chart_kpi_boxs">
-                                    <div class="chart_kpi_parameter param-actual">
-                                        <div class="">Actual</div>
-                                        <div class="">10.56</div>
-                                    </div>
                                     <div class="chart_kpi_parameter param-budget">
-                                        <div class="">Budget</div>
+                                        <div class="" style="font-weight: 600;">Budget</div>
                                         <div class="">8.31</div>
                                     </div>
-                                    <div class="chart_kpi_parameter param-target">
-                                        <div class="">Target</div>
-                                        <div class="">88.7</div>
-                                    </div>
                                     <div class="chart_kpi_parameter param-forecast">
-                                        <div class="">Forecast</div>
+                                        <div class="" style="font-weight: 600;">Forecast</div>
                                         <div class="">12.6</div>
-                                    </div>
-                                    <div class="chart_kpi_parameter param-gap">
-                                        <div class="">Gap</div>
-                                        <div class="">10.5</div>
                                     </div>
                                 </div>
                                 <input type="hidden" class="selectVal" />
@@ -869,16 +867,33 @@
                                     <div class="chart-area divResize" style="height:25vh;"></div>
                                     <div id="tag"></div>
                                 </div>
+                                <div class="chart_kpi_boxs" style="margin-top: -15px;">
+                                    <div class="chart_kpi_parameter param-actual">
+                                        <div class="" style="font-weight: 600;">Actual</div>
+                                        <div class="">10.56</div>
+                                    </div>
+                                    <div class="chart_kpi_parameter param-target">
+                                        <div class="" style="font-weight: 600;">Target</div>
+                                        <div class="">88.7</div>
+                                    </div>
+                                    <div class="chart_kpi_parameter param-gap">
+                                        <div class="" style="font-weight: 600;">Gap</div>
+                                        <div class="">10.5</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <div class="col-lg-3 col-md-3 col-sm-12 chartBlock">
                             <div class="chart_container_bg">
-                                <div class="chart_top_menu">
-                                    <div class="chart_top_menu_left"><i class="fas fa-flag chart_kpi_flag" aria-hidden="true"></i></div>
+                                <div class="chart_top_menu"style="background-color: #3A6596; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                                    <div class="chart_top_menu_left">
+                                        <!-- <i class="fas fa-flag chart_kpi_flag" aria-hidden="true"
+                                        ></i> -->
+                                    </div>
                                     <div class="chart_top_kpi_dropdown">
-                                        <div class="">
-                                            <select id="attachment" name="attachment" class="form_dropdown_text form_kpi"  style="display: block;">
+                                        <div class="" style="margin-top: 5px;">
+                                            <select id="attachment" name="attachment" class="form_dropdown_text form_kpi"  style="display: block; background-color: transparent;">
                                                 <option>Implement formal compliance x result</option>
                                                 <option>Implement formal compliance y result</option>
                                                 <option>Implement formal compliance z result</option>
@@ -890,7 +905,8 @@
                                             <li class="dropdown m-t--5">
                                                 <!-- <i class="fa fa-info-circle" aria-hidden="true" data-toggle="modal" data-target="#viewModal"></i> -->
                                                 <a href="#" onclick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
-                                                    <i class="fa fa-cog" style=" font-size: 10px; color: #e7e7e7;" aria-hidden="true"></i>
+                                                    <i class="fa fa-cog" 
+                                                    style=" font-size: 13px; color: #e7e7e7; padding-right: 5px; margin-top: 10px; margin-bottom: -10px;" aria-hidden="true"></i>
                                                 </a>
                                                 <ul class="dropdown-menu pull-right" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);">
                                                     <li>
@@ -919,10 +935,11 @@
                                                             <div class="chart_size">
                                                                 <div class="form-group kpi_create_initives">
                                                                     <select id="chart-selection-x" name="sub_initative_desc" style="display: block;">
-                                                                        <option value="1">1</option>
-                                                                        <option value="2">2</option>
-                                                                        <option value="3">3</option>
-                                                                        <option value="4">4</option>
+                                                                        <option value="1">Actual</option>
+                                                                        <option value="2">Target</option>
+                                                                        <option value="3">Budget</option>
+                                                                        <option value="4">Forecast</option>                        
+                                                                        <option value="5">Gap</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -942,10 +959,11 @@
                                                             <div class="chart_size">
                                                                 <div class="form-group kpi_create_initives">
                                                                     <select id="chart-selection-y" name="sub_initative_desc" style="display: block;">
-                                                                        <option value="A">A</option>
-                                                                        <option value="B">B</option>
-                                                                        <option value="C">C</option>
-                                                                        <option value="D">D</option>
+                                                                        <option value="1">Actual</option>
+                                                                        <option value="2">Target</option>
+                                                                        <option value="3">Budget</option>
+                                                                        <option value="4">Forecast</option>                        
+                                                                        <option value="5">Gap</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -981,25 +999,13 @@
                                     </div>
                                 </div>
                                 <div class="chart_kpi_boxs">
-                                    <div class="chart_kpi_parameter param-actual">
-                                        <div class="">Actual</div>
-                                        <div class="">10.56</div>
-                                    </div>
                                     <div class="chart_kpi_parameter param-budget">
-                                        <div class="">Budget</div>
+                                        <div class="" style="font-weight: 600;">Budget</div>
                                         <div class="">8.31</div>
                                     </div>
-                                    <div class="chart_kpi_parameter param-target">
-                                        <div class="">Target</div>
-                                        <div class="">88.7</div>
-                                    </div>
                                     <div class="chart_kpi_parameter param-forecast">
-                                        <div class="">Forecast</div>
+                                        <div class="" style="font-weight: 600;">Forecast</div>
                                         <div class="">12.6</div>
-                                    </div>
-                                    <div class="chart_kpi_parameter param-gap">
-                                        <div class="">Gap</div>
-                                        <div class="">10.5</div>
                                     </div>
                                 </div>
                                 <input type="hidden" class="selectVal" />
@@ -1007,10 +1013,25 @@
                                     <div id="chartdiv_init1" class="divResize" style="height: 25vh;"></div>
                                     <div id="tag"></div>
                                 </div>
+                                <div class="chart_kpi_boxs" style="margin-top: -15px;">
+                                    <div class="chart_kpi_parameter param-actual">
+                                        <div class="" style="font-weight: 600;">Actual</div>
+                                        <div class="">10.56</div>
+                                    </div>
+                                    <div class="chart_kpi_parameter param-target">
+                                        <div class="" style="font-weight: 600;">Target</div>
+                                        <div class="">88.7</div>
+                                    </div>
+                                    <div class="chart_kpi_parameter param-gap">
+                                        <div class="" style="font-weight: 600;">Gap</div>
+                                        <div class="">10.5</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-12 chartBlock">
-                            <a href="#" class="add-block">Add New Block</a>
+                            <button class="btn add-block" style="background-color: #3A6596; color: #fff;">Add New Block</button>
+                            <!-- <a href="#" class="add-block">Add New Block</a> -->
                         </div>
                     </div>
                 </div>
