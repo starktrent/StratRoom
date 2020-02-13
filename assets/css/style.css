@@ -15318,8 +15318,8 @@ nav.navbar {
 .side-closed.submenu-closed .navbar-header .navbar-brand {
     padding-right: 0;
     padding-left: 0;
-    /*margin: 0*/
-    padding: 14px 35px 12px 0px;
+    margin-top: -5px;
+    padding: 0px 35px 12px 0px;
 }
 
 .side-closed.submenu-closed .navbar-header .navbar-brand span {

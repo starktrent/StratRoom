@@ -1028,7 +1028,8 @@ table thead th {
 }
 
 .navbar>.container-fluid .navbar-brand {
-    margin-left: 0 !important;
+    margin-top: -13px !important;
+    padding: 0px !important;
 }
 
 [class^="ti-"],

@@ -28,7 +28,7 @@
 }
 
 .theme-black .nav>li>a {
-    max-width: 200px;
+    max-width: 120px;
     overflow: hidden;
     margin-bottom: -12px;
 }
