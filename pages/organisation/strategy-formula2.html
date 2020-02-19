@@ -811,12 +811,14 @@
 
                         <li class="nav-item">
                             <a class="nav-link active" onclick="active();" data-toggle="tab" href="#finance">
-                                <input class="" type="text" value="Finance" style="font-weight: 600;">
+                                <input class="" type="text" value="Finance"
+                                    style="font-weight: 600; text-transform: uppercase;">
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" onclick="active();" data-toggle="tab" href="#business">
-                                <input class="" type="text" value="Business" style="font-weight: 600;">
+                                <input class="" type="text" value="Business"
+                                    style="font-weight: 600; text-transform: uppercase;">
                             </a>
                         </li>
 
@@ -834,7 +836,7 @@
                         $("#tabs li").removeClass("active");
 
                         // add new tab and related content
-                        $("#tabs").append("<li class='nav-item '><a class='nav-link' data-toggle='tab' href='#content'> <input class='' type='text' value='New Tab' style='font-weight: 600'> </a></li>");
+                        $("#tabs").append("<li class='nav-item '><a class='nav-link' data-toggle='tab' href='#content'> <input class='' type='text' value='New Tab' style='font-weight: 600; text-transform: uppercase;'> </a></li>");
 
                     }
 
@@ -1028,9 +1030,9 @@
                         <div class="form-row mt-4" id="obj_first">
                             <div class="col-md-2 form-group">
                                 <input type="text" class="form-control browser-default" placeholder="ID"
-                                    style="width: 69px; height: 47px;">
+                                    style="height: 47px;">
                             </div>
-                            <div class="col-md-10" style="margin-bottom: 12px;">
+                            <div class="col-md-10 form-group">
                                 <textarea class="form-control browser-default" placeholder="" cols=""
                                     rows="2"></textarea>
                             </div>
@@ -1048,18 +1050,17 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="row mt-4" id="kpi_first">
+                        <div class="form-row mt-4" id="kpi_first">
                             <div class="col-md-1 form-group">
                                 <input type="text" class="form-control browser-default" placeholder="ID"
-                                    style="width: 72px; height: 47px; text-align: center;">
+                                    style="height: 47px;">
                             </div>
                             <div class="col-md-5 form-group">
-                                <textarea class="form-control browser-default"
-                                    style="margin-bottom: 12px; width: 364px;" placeholder="" cols="2"
+                                <textarea class="form-control browser-default" placeholder="" cols="2"
                                     rows="2"></textarea>
                             </div>
                             <div class="col-md-2 form-group">
-                                <select id="plan_type" class="form-control" style="width: 145px; height: 47px;">
+                                <select id="plan_type" class="form-control" style="height: 47px;">
                                     <option value=""> Frequency</option>
                                     <option value=""> Daily</option>
                                     <option value=""> Weekly</option>
@@ -1069,7 +1070,7 @@
                             </div>
                             <div class="col-md-2 form-group">
                                 <input type="text" class="form-control browser-default" placeholder="Target"
-                                    style="width: 120px; height: 47px;">
+                                    style="height: 47px;">
                             </div>
                             <div class="col-md-2 form-group" style="margin-top: 10px;">
                                 <ul class="list-unstyled order-list d-flex">
