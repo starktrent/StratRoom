@@ -706,21 +706,27 @@
 
             <!--#START Chart Popup -->
             <div class="modal fade all_chart_popup" tabindex="-1" role="dialog" aria-labelledby="all_chart_popup" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-dialog modal-dialog-centered modal-lg" style="max-width: 80% !important;">
                     <div class="modal-content">
-                        <div class="modal-header chart_kpi_title">
+                        <div class="modal-header chart_kpi_title" style="background-color: #3A6596; color: #fff;">
                             <div class="top-box">
                             </div>
                             <div class="span-text"></div>
                         </div>
                         <div class="modal-body">
-                            <div class="kpi-box">
-                            </div>
-                            <div class="chart-box">
-                            </div>
-                            <div class="chart_kpi_chart_box chart_kpi_box_size">
-                                <div id="chartdiv_init999" class="divResize" style="height: 55vh;"></div>
-                                <div id="tag"></div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="kpi-box">
+                                    </div>
+                                    <div class="chart-box">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="chart_kpi_chart_box chart_kpi_box_size">
+                                        <div id="chartdiv_init999" class="divResize" style="height: 55vh;"></div>
+                                        <div id="tag"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -730,7 +736,7 @@
 
             <section class="content">
                 <!-- Page Header -->
-                <div class="page-header row no-gutters py-4 m-t--70" style="background-color: #3A6596;">
+                <div class="page-header row no-gutters py-2 m-t--70" style="background-color: #3A6596;">
                     <div class="col-lg-6 col-md-6 text-center text-sm-left pt-2 mb-0 ml-4" style="color: #fff;">
                         <h3 class="page-title" style="font-weight: 600;">Charts</h3>
                     </div>
@@ -738,7 +744,7 @@
                 <!-- End Page Header -->
                 <div class="container-fluid">
                     
-                    <div class="row blockContainer" style="margin-top: 2%;">
+                    <div class="row blockContainer" style="margin-top: 1%;">
                         <div class="col-lg-3 col-md-3 col-sm-12 chartBlock" id="template" style="display:none">
                             <div class="chart_container_bg">
                                 <div class="chart_top_menu"
@@ -748,10 +754,10 @@
                                     </div>
                                     <div class="chart_top_kpi_dropdown">
                                         <div class="" style="margin-top: 5px;">
-                                            <select id="attachment" name="attachment" class="form_dropdown_text form_kpi" style="display: block; background-color: transparent;">
-                                                <option>Implement formal compliance x result</option>
-                                                <option>Implement formal compliance y result</option>
-                                                <option>Implement formal compliance z result</option>
+                                            <select id="attachment" name="attachment" class="form_dropdown_text form_kpi" style="display: block; background-color: transparent; color: #fff; margin-right: 100px;">
+                                                <option style="color: #444;">Implement formal compliance x result</option>
+                                                <option style="color: #444;">Implement formal compliance y result</option>
+                                                <option style="color: #444;">Implement formal compliance z result</option>
                                             </select>
                                         </div>
                                     </div>
@@ -767,7 +773,7 @@
                                                     <li>
                                                         <div class="">
                                                             <div class="form-group kpi_create_initives mb-0 m-t-5">
-                                                                <label for="kpi_start_end_date">Chart Size</label>
+                                                                <label for="kpi_start_end_date">Chart Type</label>
                                                                 <select name="sub_initative_desc" class="mr-4 chart-selection" style="display: block;">
                                                                     <option value="">--Chart Select--</option>
                                                                     <option value="1">Standard Chart</option>
@@ -893,10 +899,10 @@
                                     </div>
                                     <div class="chart_top_kpi_dropdown">
                                         <div class="" style="margin-top: 5px;">
-                                            <select id="attachment" name="attachment" class="form_dropdown_text form_kpi"  style="display: block; background-color: transparent;">
-                                                <option>Implement formal compliance x result</option>
-                                                <option>Implement formal compliance y result</option>
-                                                <option>Implement formal compliance z result</option>
+                                            <select id="attachment" name="attachment" class="form_dropdown_text form_kpi" style="display: block; background-color: transparent; color: #fff; margin-right: 100px;">
+                                                <option style="color: #444;">Implement formal compliance x result</option>
+                                                <option style="color: #444;">Implement formal compliance y result</option>
+                                                <option style="color: #444;">Implement formal compliance z result</option>
                                             </select>
                                         </div>
                                     </div>
@@ -912,7 +918,7 @@
                                                     <li>
                                                         <div class="">
                                                             <div class="form-group kpi_create_initives mb-0 m-t-5">
-                                                                <label for="kpi_start_end_date">Chart Size</label>
+                                                                <label for="kpi_start_end_date">Chart Type</label>
                                                                 <select id="1" name="sub_initative_desc" class="mr-4 chart-selection" style="display: block;">
                                                                     <option value="">--Chart Select--</option>
                                                                     <option value="1">Standard Chart</option>

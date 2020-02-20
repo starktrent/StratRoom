@@ -111,7 +111,7 @@
                         </li>
                         <li class="fullscreen">
                             <!-- <i class="nav-hdr-btn ti-calendar" style="color: gray"></i> -->
-                            <input class="daterangepicker-field top_datepicker"></input>
+                            <input class="daterangepicker-field top_datepicker">
                         </li>
                         <!-- #END# Full Screen Button -->
                         <!-- #START# Notifications-->
@@ -669,7 +669,7 @@
             <div class="page-header row no-gutters py-4" style="background-color: #3A6596;">
                 <div class="col-lg-6 col-md-6 text-center text-sm-left pt-3 mb-0 ml-4" style="color: #fff;">
                     <span class="text-uppercase page-subtitle">Overview</span>
-                    <h3 class="page-title" style="font-weight: 600;">Strategy Formulation</h3>
+                    <h3 class="page-title" style="font-weight: 600; text-transform: uppercase;">Strategy Formulation</h3>
                 </div>
             </div>
             <!-- End Page Header -->
@@ -847,146 +847,114 @@
             <div class="tab-content" id="tab-content">
                 <div class="tab-pane body" id="content">
 
-                    <div class="card card-small  crdbg objective">
+                    <div class="card card-small  crdbg objective"style="margin: 0 !important;">
 
-                        <div class="card-body p-0 pb-3 text-center" id="objective_extra">
-                            <div class="row">
-                                <div class="col-lg-12 pt-4 text-center">
+                        <div class="card-body p-0 pb-3" id="objective_extra">
+                            <div class="row" style="background-color: #dee2e6;">
+                                <div class="col-lg-12 pt-2 pb-2">
 
                                     <div class="float-right p-1 pr-4">
                                         <button class="form-control" data-toggle="modal" data-target="#max"> <i
-                                                class="fa fa-external-link"></i>
-</a>
-</div>
-<div class="float-right p-1">
-    <button id="add_objective" onclick="objective_extra('objective_extra')" class="form-control"> <i
-            class="fa fa-plus"></i> </a>
-</div>
+                                                class="fa fa-external-link"></i> </button>
+                                    </div>
+                                    <div class="float-right p-1 ">
+                                        <button id="add_objective" onclick="objective_extra('objective_extra')"
+                                            class="form-control"> <i class="fa fa-plus"></i> </button>
+                                    </div>
 
-</div>
-</div>
-
-<div class="row mt-2" id="row_objective">
-    <div class="col-lg-4 col-md-12 col-sm-12">
-        <div class="well_head_first">
-            <div class="well">
-                <ul class="nav">
-                    <li class="col-lg-6">
-                        <h6><b> Objectives</b></h6>
-                    </li>
-                    <li>
-                        <button id="btn_copy" onclick="initiative('obj_extra')" class="form-control rounded-circle"> <i
-                                class="fa fa-plus"></i> </button>
-                    </li>
-                </ul>
-            </div>
-            <form class="p-1 pl-2">
-                <div id="obj_extra">
-                    <div class="float-left pt-4">
-                        <textarea type="text" class="form-control" cols="35" rows="2"> </textarea>
-                    </div>
-                    <div class="avatar-wrapper avatar-wrapper-overlap float-left pt-4 pl-1">
-                        <div class="avatar-icon-wrapper avatar-icon-sm">
-                            <div class="avatar-icon"><img src="images/avatars/0.jpg" alt=""></div>
-                        </div>
-
-                        <div class="avatar-icon-wrapper avatar-icon-sm avatar-icon-add">
-                            <div class="avatar-icon add_icon">
-                                <div class="image-upload">
-                                    <label for="file-input">
-                                        <i>+</i>
-                                    </label>
-
-                                    <input id="file-input" type="file" />
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <!--div class="float-left col-lg-6">
-	<br/>
-		<a href="#" class="form-control btn_control"> <i class="fa fa-save"></i> Save </a>
-	</div-->
-            </form>
+
+<div class="row mt-4 ml-4" id="row_objective">
+
+    <div class="col-md-4">
+        <div class="row">
+            <div class="col-md-10">
+                <label for="plan_type" style="font-size: 15px; color: #222;">Objectives</label>
+            </div>
+            <div class="col-md-2">
+                <button id="btn_copy" onclick="initiative('obj_extra')" class="form-control"
+                    style="border: none;">
+                    <i class="fas fa-plus-circle pull-right" style="font-size: 18px; color:#3A6596"></i>
+                </button>
+            </div>
+        </div>
+        <div class="form-row mt-4" id="obj_first">
+            <div class="col-md-2 form-group">
+                <input type="text" class="form-control browser-default" placeholder="ID"
+                    style="height: 47px;">
+            </div>
+            <div class="col-md-10 form-group">
+                <textarea class="form-control browser-default" placeholder="" cols=""
+                    rows="2"></textarea>
+            </div>
         </div>
     </div>
-    <div class="col-lg-4 col-md-12 col-sm-12 well_head">
-        <div class="well">
-
-            <ul class="nav">
-                <li class="col-lg-10">
-                    <h6><b> Proposed KPI'S </b></h6>
-                </li>
-
-                <li>
-                    <button id="btn_copy" onclick="kpi('kpi_extra')" class="form-control rounded-circle"><i
-                            class="fa fa-plus"></i> </button>
-                </li>
-            </ul>
-
-        </div>
-
-        <form class="p-2 pb-0">
-            <div class="text-left pb-1"> List of KPI'S </div>
-            <div class="float-left" id="kpi_extra">
-                <textarea cols="50" rows="2" class="form-control mb-2"> </textarea>
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-10">
+                <label for="plan_type" style="font-size: 15px; color: #222;">KPI'S</label>
             </div>
-            <!--div class="float-left col-lg-6">
-	<br/>
-		<a href="#" class="form-control btn_control"> <i class="fa fa-save"></i> Save </a>
-	</div-->
-
-        </form>
-
-    </div>
-    <div class="col-lg-4 col-md-12 col-sm-12">
-        <div class="well col-md-12">
-            <ul class="nav">
-                <li class="col-lg-7">
-                    <h6><b> Proposed Initiative</b></h6>
-                </li>
-                <li>
-                    <button onclick="initiative('initiative_extra');" class="form-control rounded-circle"><i
-                            class="fa fa-plus"></i> </button>
-                </li>
-            </ul>
-        </div>
-        <br />
-        <form class="p-1 pl-2">
-            <div class="col-lg-12" id="initiative_extra">
-                <div class="float-left  pt-1">
-                    <textarea type="text" class="form-control" cols="35" rows="2"> </textarea>
-                </div>
-                <div class="avatar-wrapper avatar-wrapper-overlap float-left pt-1 pl-1">
-                    <div class="avatar-icon-wrapper avatar-icon-sm">
-                        <div class="avatar-icon"><img src="images/avatars/0.jpg" alt=""></div>
-                    </div>
-
-                    <div class="avatar-icon-wrapper avatar-icon-sm avatar-icon-add">
-                        <div class="avatar-icon add_icon">
-                            <div class="image-upload">
-                                <label for="file-input">
-                                    <i>+</i>
-                                </label>
-
-                                <input id="file-input" type="file" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="col-md-2">
+                <button id="btn_copy" onclick="kpi('kpi_extra')" class="form-control"
+                    style="border: none;">
+                    <i class="fas fa-plus-circle" style="font-size: 18px; color:#3A6596"></i>
+                </button>
             </div>
+        </div>
+        <div class="form-row mt-4" id="kpi_first">
+            <div class="col-md-1 form-group">
+                <input type="text" class="form-control browser-default" placeholder="ID"
+                    style="height: 47px;">
+            </div>
+            <div class="col-md-5 form-group">
+                <textarea class="form-control browser-default" placeholder="" cols="2"
+                    rows="2"></textarea>
+            </div>
+            <div class="col-md-2 form-group">
+                <select id="plan_type" class="form-control" style="height: 47px;">
+                    <option value=""> Frequency</option>
+                    <option value=""> Daily</option>
+                    <option value=""> Weekly</option>
+                    <option value=""> Monthly</option>
+                    <option value=""> Annual</option>
+                </select>
+            </div>
+            <div class="col-md-2 form-group">
+                <input type="text" class="form-control browser-default" placeholder="Target"
+                    style="height: 47px;">
+            </div>
+            <div class="col-md-2 form-group" style="margin-top: 10px;">
+                <ul class="list-unstyled order-list d-flex">
+                    <li class="avatar avatar-sm">
+                        <img class="rounded-circle sub_init_img"
+                            src="../../assets/images/user/user9.jpg" alt="user" width="50">
+                    </li>
+                    <li class="avatar avatar-sm">
+                        <img class="rounded-circle sub_init_img"
+                            src="../../assets/images/user/user8.jpg" alt="user" width="50">
+                    </li>
 
-            <!--div class="float-left col-lg-6 ">
-	<br/>
-		<a href="#" class="form-control btn_control"><i class="fa fa-save"></i> Save </a>
-	</div-->
-
-        </form>
-
+                    <li class="avatar avatar-sm">
+                        <span _ngcontent-hhc-c5="" class="badge">+3</span>
+                    </li>
+                    <div class="image-upload">
+                        <label for="file-input">
+                            <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                                <a href="#" class="favgs" data-toggle="modal" data-target="#addpeople">
+                                    <span _ngcontent-hhc-c5="" class="badge">+<span id="count">
+                                        </span></span>
+                                </a>
+                            </li>
+                        </label>
+                    </div>
+                </ul>
+            </div>
+        </div>
     </div>
 
 </div>
+
 </div>
 </div>
 
@@ -1003,11 +971,11 @@
 
                         <div class="float-right p-1 pr-4">
                             <button class="form-control" data-toggle="modal" data-target="#max"> <i
-                                    class="fa fa-external-link"></i> </a>
+                                    class="fa fa-external-link"></i> </button>
                         </div>
                         <div class="float-right p-1 ">
                             <button id="add_objective" onclick="objective_first('objective_first')"
-                                class="form-control"> <i class="fa fa-plus"></i> </a>
+                                class="form-control"> <i class="fa fa-plus"></i> </button>
                         </div>
 
                     </div>
@@ -1118,11 +1086,11 @@
 
                         <div class="float-right p-1 pr-4">
                             <button class="form-control" data-toggle="modal" data-target="#max"> <i
-                                    class="fa fa-external-link"></i> </a>
+                                    class="fa fa-external-link"></i> </button>
                         </div>
                         <div class="float-right p-1 ">
                             <button id="add_objective" onclick="objective_first('objective_first')"
-                                class="form-control"> <i class="fa fa-plus"></i> </a>
+                                class="form-control"> <i class="fa fa-plus"></i> </button>
                         </div>
 
                     </div>
@@ -1144,16 +1112,16 @@
                         </div>
                         <div class="form-row mt-4" id="busi_obj">
                             <div class="col-md-2 form-group">
-                                <input type="text" class="form-control browser-default" placeholder="ID">
+                                <input type="text" class="form-control browser-default" placeholder="ID"
+                                    style="height: 47px;">
                             </div>
-                            <div class="col-md-10">
+                            <div class="col-md-10 form-group">
                                 <textarea class="form-control browser-default" placeholder="" cols=""
-                                    rows="4"></textarea>
+                                    rows="2"></textarea>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-1"></div>
-                    <div class="col-md-7">
+                    <div class="col-md-8">
                         <div class="row">
                             <div class="col-md-10">
                                 <label for="plan_type" style="font-size: 15px; color: #222;">KPI'S</label>
@@ -1164,17 +1132,17 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="row mt-4" id="kpi">
+                        <div class="form-row mt-4" id="kpi">
                             <div class="col-md-1 form-group">
                                 <input type="text" class="form-control browser-default" placeholder="ID"
-                                    style="width: 50px; text-align: center;">
+                                    style="height: 47px;">
                             </div>
-                            <div class="col-md-4 form-group">
-                                <textarea class="form-control browser-default" placeholder="" cols="" rows="4"
-                                    style="width: 230px;"></textarea>
+                            <div class="col-md-5 form-group">
+                                <textarea class="form-control browser-default" placeholder="" cols="2"
+                                    rows="2"></textarea>
                             </div>
                             <div class="col-md-2 form-group">
-                                <select id="plan_type" class="form-control" style="width: 110px;">
+                                <select id="plan_type" class="form-control" style="height: 47px;">
                                     <option value=""> Frequency</option>
                                     <option value=""> Daily</option>
                                     <option value=""> Weekly</option>
@@ -1184,9 +1152,9 @@
                             </div>
                             <div class="col-md-2 form-group">
                                 <input type="text" class="form-control browser-default" placeholder="Target"
-                                    style="width: 100px;">
+                                    style="height: 47px;">
                             </div>
-                            <div class="col-md-3 form-group">
+                            <div class="col-md-2 form-group" style="margin-top: 10px;">
                                 <ul class="list-unstyled order-list d-flex">
                                     <li class="avatar avatar-sm">
                                         <img class="rounded-circle sub_init_img"
@@ -1235,81 +1203,27 @@
                     <!--button type="button" class="close pull-right" data-dismiss="modal">&times;</button-->
                     <h4> Add People</h4>
                 </div>
-                <div class="modal-body" style="">
-                    <!-- Search form -->
-                    <input class="searchf-addp" type="text" placeholder="Search" aria-label="Search">
-                    <p>&nbsp;</p>
-
-                    <div class="modal-cnt">
-
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="">Ramkumar</label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="">Satheesh</label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="">Ramkumar</label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="">Satheesh</label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="">Ramkumar</label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="">Satheesh</label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="">Ramkumar</label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="">Satheesh</label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="">Ramkumar</label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="">Satheesh</label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="">Ramkumar</label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="">Satheesh</label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="">Ramkumar</label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="">Satheesh</label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="">Ramkumar</label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="">Satheesh</label>
-                        </div>
-
-                    </div>
-
-                    <button type="button" class="form-control green_form add"> Save </button>
+                <div class="modal-body">
+                    <label for="objective_owner">People</label>
+                    <select
+                      id="objective_owner"
+                      name=""
+                      class="select_all"
+                      multiple
+                      style="display: none !important;"
+                    >
+                      <option value="1">Option 1</option>
+                      <option value="2">Option 2</option>
+                      <option value="3">Option 3</option>
+                    </select>
+        
+                    <button
+                      type="button"
+                      class="form-control add"
+                      style="background-color: #3A6596; color: #fff;"
+                    >
+                      Save
+                    </button>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -1828,5 +1742,31 @@
         table.appendChild(row); // append row to table
     }
 </script>
+<script>
+    $(document).ready(function() {
+      // $('select').val([1]);
+      $("#objective_owner").formSelect();
+      $("select.select_all")
+        .siblings("ul")
+        .prepend("<li id=sm_select_all><span>Select All</span></li>");
+      $("li#sm_select_all").on("click", function() {
+        var jq_elem = $(this),
+          jq_elem_span = jq_elem.find("span"),
+          select_all = jq_elem_span.text() == "Select All",
+          set_text = select_all ? "Select None" : "Select All";
+        jq_elem_span.text(set_text);
+        jq_elem
+          .siblings("li")
+          .filter(function() {
+            return (
+              $(this)
+                .find("input")
+                .prop("checked") != select_all
+            );
+          })
+          .click();
+      });
+    });
+  </script>
 
 </body>
