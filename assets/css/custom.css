@@ -531,3 +531,74 @@ ul.gj-list-md li {
 .sticky-top {
   z-index: 0 !important;
 }
+
+.idea-box {
+  width: 100%;
+  height: auto;
+  /* background-color: #fff; */
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.idea-header {
+  background-color: #fff;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.idea-body {
+  background-color: #fff;
+  padding: 10px;
+}
+
+.header-line {
+  height: 5px;
+  background-color: #ffe479;
+}
+
+.idea-header img {
+  display: block;
+  margin: auto;
+  width: 70%;
+  height: auto;
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.idea-header input {
+  font-weight: bold !important;
+  font-size: 15px !important;
+  margin-top: 8% !important;
+}
+
+.idea-header select {
+  max-width: 50%;
+  font-size: 12px;
+  height: 1.7rem;
+  margin-top: -4% !important;
+  padding-top: 0px;
+}
+
+.idea-header i {
+  font-size: 14px;
+  color: #808080;
+  top: 28%;
+  position: absolute;
+  left: 85%;
+}
+
+.idea-footer {
+  background-color: #f7d54c;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.idea-footer-icon i {
+  font-size: 22px;
+  color: #fff;
+}

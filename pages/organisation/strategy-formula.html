@@ -1570,16 +1570,6 @@
 <script src="../../assets/knockout-3.5.0.js"></script>
 <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
 
-<script>
-    $(".daterangepicker-field").daterangepicker({
-        forceUpdate: true,
-        callback: function (startDate, endDate, period) {
-            var title = startDate.format('L') + ' – ' + endDate.format('L');
-            $(this).val(title)
-        }
-    });
-</script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
     integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
