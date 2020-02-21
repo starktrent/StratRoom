@@ -978,7 +978,7 @@
           style="color: #fff;"
         >
           <span class="text-uppercase page-subtitle">Overview</span>
-          <h3 class="page-title" style="font-weight: 600;">PESTEL ANALYSIS</h3>
+          <h4 class="page-title" style="font-weight: 600;">PESTEL ANALYSIS</h4>
         </div>
         <div class="col-lg-6 col-md-6 employe_head_info_icon pr-4 pt-4">
           <i
@@ -1415,31 +1415,34 @@
         <div class="modal-dialog">
           <!-- Modal content-->
           <div class="modal-content">
-            <div class="modal-header" style="background-color: #3A6596; color: #fff;">
+            <div
+              class="modal-header"
+              style="background-color: #3A6596; color: #fff;"
+            >
               <!--button type="button" class="close pull-right" data-dismiss="modal">&times;</button-->
               <h4>Add People</h4>
             </div>
             <div class="modal-body">
               <label for="objective_owner">People</label>
-            <select
-              id="objective_owner"
-              name=""
-              class="select_all"
-              multiple
-              style="display: none !important;"
-            >
-              <option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-              <option value="3">Option 3</option>
-            </select>
+              <select
+                id="objective_owner"
+                name=""
+                class="select_all"
+                multiple
+                style="display: none !important;"
+              >
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+              </select>
 
-            <button
-              type="button"
-              class="form-control add"
-              style="background-color: #3A6596; color: #fff;"
-            >
-              Save
-            </button>
+              <button
+                type="button"
+                class="form-control add"
+                style="background-color: #3A6596; color: #fff;"
+              >
+                Save
+              </button>
             </div>
             <div class="modal-footer">
               <button
@@ -2418,30 +2421,31 @@
       }
     </script>
 
-<script>
-  $(document).ready(function() {
-    // $('select').val([1]);
-    $("#objective_owner").formSelect();
-    $("select.select_all")
-      .siblings("ul")
-      .prepend("<li id=sm_select_all><span>Select All</span></li>");
-    $("li#sm_select_all").on("click", function() {
-      var jq_elem = $(this),
-        jq_elem_span = jq_elem.find("span"),
-        select_all = jq_elem_span.text() == "Select All",
-        set_text = select_all ? "Select None" : "Select All";
-      jq_elem_span.text(set_text);
-      jq_elem
-        .siblings("li")
-        .filter(function() {
-          return (
-            $(this)
-              .find("input")
-              .prop("checked") != select_all
-          );
-        })
-        .click();
-    });
-  });
-</script>
+    <script>
+      $(document).ready(function() {
+        // $('select').val([1]);
+        $("#objective_owner").formSelect();
+        $("select.select_all")
+          .siblings("ul")
+          .prepend("<li id=sm_select_all><span>Select All</span></li>");
+        $("li#sm_select_all").on("click", function() {
+          var jq_elem = $(this),
+            jq_elem_span = jq_elem.find("span"),
+            select_all = jq_elem_span.text() == "Select All",
+            set_text = select_all ? "Select None" : "Select All";
+          jq_elem_span.text(set_text);
+          jq_elem
+            .siblings("li")
+            .filter(function() {
+              return (
+                $(this)
+                  .find("input")
+                  .prop("checked") != select_all
+              );
+            })
+            .click();
+        });
+      });
+    </script>
   </body>
+</a>

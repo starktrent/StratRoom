@@ -536,7 +536,7 @@ ul.gj-list-md li {
   width: 100%;
   height: auto;
   /* background-color: #fff; */
-  margin: 10px;
+  margin-bottom: 20px;
   border-radius: 5px;
 }
 
@@ -577,9 +577,10 @@ ul.gj-list-md li {
 .idea-header select {
   max-width: 50%;
   font-size: 12px;
-  height: 1.7rem;
+  height: 1.7rem !important;
   margin-top: -4% !important;
   padding-top: 0px;
+  display: block !important;
 }
 
 .idea-header i {
