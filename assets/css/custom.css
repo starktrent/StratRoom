@@ -710,6 +710,15 @@ ul.gj-list-md li {
   text-align: center;
 }
 
+.sponsor_list {
+  display: flex !important;
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: normal !important;
+  flex-direction: row !important;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
 .idea-footer-icon i {
   font-size: 22px;
   color: #fff;
