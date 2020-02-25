@@ -1,335 +1,418 @@
 <!DOCTYPE html>
 <a lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>StratRoom</title>
+    <!-- Favicon-->
+    <!-- <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon"> -->
+    <!-- Plugins Core Css -->
+    <link href="../../assets/css/app.min.css" rel="stylesheet" />
+    <!-- Custom Css -->
+    <link href="../../assets/css/style.css" rel="stylesheet" />
+    <link href="../../assets/css/custom.css" rel="stylesheet" />
+    <link href="../../assets/css/initatives.css" rel="stylesheet" />
+    <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" />
+    <!-- You can choose a theme from css/styles instead of get all themes -->
+    <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
+    <!-- <link href="../../assets/css/table-view.css" rel="stylesheet" /> -->
+    <!-- <link rel="stylesheet" href="../../assets/daterangepicker.css"> -->
+    <link rel="stylesheet" href="../../assets/datepickerair.css" />
+    <link href="../../assets/jquery-ui.min.css" rel="stylesheet" />
+    <link
+      href="../../assets/daterangepicker/daterangepicker.min.css"
+      rel="stylesheet"
+    />
+    <link href="../../assets/css/employee.css" rel="stylesheet" />
+    <!-- <link href="../../assets/bootstrap-datepicker.min.css" rel="stylesheet" /> -->
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <title>StratRoom</title>
-        <!-- Favicon-->
-        <!-- <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon"> -->
-        <!-- Plugins Core Css -->
-        <link href="../../assets/css/app.min.css" rel="stylesheet" />
-        <!-- Custom Css -->
-        <link href="../../assets/css/style.css" rel="stylesheet" />
-        <link href="../../assets/css/custom.css" rel="stylesheet" />
-        <link href="../../assets/css/initatives.css" rel="stylesheet" />
-        <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" />
-        <!-- You can choose a theme from css/styles instead of get all themes -->
-        <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
-        <!-- <link href="../../assets/css/table-view.css" rel="stylesheet" /> -->
-        <!-- <link rel="stylesheet" href="../../assets/daterangepicker.css"> -->
-        <link rel="stylesheet" href="../../assets/datepickerair.css" />
-        <link href="../../assets/jquery-ui.min.css" rel="stylesheet" />
-        <link href="../../assets/daterangepicker/daterangepicker.min.css" rel="stylesheet" />
-        <link href="../../assets/css/employee.css" rel="stylesheet" />
-        <!-- <link href="../../assets/bootstrap-datepicker.min.css" rel="stylesheet" /> -->
+    <!-- Gantt Chart -->
+    <script src="https://cdn.dhtmlx.com/gantt/edge/dhtmlxgantt.js"></script>
+    <link
+      href="https://cdn.dhtmlx.com/gantt/edge/dhtmlxgantt.css"
+      rel="stylesheet"
+    />
 
-        <!-- Gantt Chart -->
-        <script src="https://cdn.dhtmlx.com/gantt/edge/dhtmlxgantt.js"></script>
-        <link href="https://cdn.dhtmlx.com/gantt/edge/dhtmlxgantt.css" rel="stylesheet">
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      .orientation-right {
+        top: 60px !important;
+        right: 0 !important;
+        left: auto !important;
+        position: fixed;
+      }
 
-        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" />
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-        <style>
-            .orientation-right {
-                top: 60px !important;
-                right: 0 !important;
-                left: auto !important;
-                position: fixed;
-            }
+      .theme-black .swot-nav > li > a {
+        max-width: 160px;
+        overflow: hidden;
+        margin-bottom: -10px;
+      }
 
-            .theme-black .swot-nav>li>a {
-                max-width: 160px;
-                overflow: hidden;
-                margin-bottom: -10px;
-            }
+      .dashboard-table tbody tr th {
+        font-weight: 700 !important;
+        color: #333;
+        background-color: #f7f7f7;
+        font-size: 12px;
+      }
 
-            .dashboard-table tbody tr th {
-                font-weight: 700 !important;
-                color: #333;
-                background-color: #f7f7f7;
-                font-size: 12px;
-            }
+      .dashboard-table tbody tr td {
+        font-weight: 500 !important;
+        color: #333;
+        font-size: 12px !important;
+      }
 
-            .dashboard-table tbody tr td {
-                font-weight: 500 !important;
-                color: #333;
-                font-size: 12px !important;
-            }
+      .dashboard-table tbody tr td,
+      .dashboard-table tbody tr th {
+        border: 1px solid #ececec !important;
+        padding: 10px 5px 10px 5px;
+      }
 
-            .dashboard-table tbody tr td,
-            .dashboard-table tbody tr th {
-                border: 1px solid #ececec !important;
-                padding: 10px 5px 10px 5px;
-            }
+      .dashboard-task-infos .progress {
+        height: 16px;
+        position: relative;
+        top: 6px;
+        border-radius: 4px;
+        width: 90%;
+        display: block;
+        margin: auto;
+      }
 
-            .dashboard-task-infos .progress {
-                height: 16px;
-                position: relative;
-                top: 6px;
-                border-radius: 4px;
-                width: 90%;
-                display: block;
-                margin: auto;
-            }
+      .progress-bar {
+        color: #fff;
+      }
+    </style>
+  </head>
 
-            .progress-bar {
-                color: #fff;
-            }
-        </style>
-    </head>
-
-    <body class="light">
-        <!-- Page Loader -->
-        <div class="page-loader-wrapper">
-            <div class="loader">
-                <div class="m-t-30">
-                    <img width="100" src="../../assets/images/logo_1.gif" alt="admin" />
-                </div>
-                <p>Please wait...</p>
-            </div>
+  <body class="light">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+      <div class="loader">
+        <div class="m-t-30">
+          <img width="100" src="../../assets/images/logo_1.gif" alt="admin" />
         </div>
-        <!-- <div>
+        <p>Please wait...</p>
+      </div>
+    </div>
+    <!-- <div>
             <img src="../../assets/images/SP_Bg.png" alt="">
         </div> -->
-        <!-- #END# Page Loader -->
-        <!-- Overlay For Sidebars -->
-        <div class="overlay"></div>
-        <!-- #END# Overlay For Sidebars -->
-        <!-- Top Bar -->
-        <nav class="navbar">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a href="#" onClick="return false;" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#navbar-collapse" aria-expanded="false"></a>
-                    <a href="#" onClick="return false;" class="bars"></a>
-                    <a href="#" onClick="return false;" class="bar_nav sidemenu-collapse"><i class="nav-hdr-btn ti-menu"
-                            style="color: #000"></i></a>
-                    <a class="navbar-brand nav_float" href="#">
-                        <img src="../../assets/images/Startroom_Final logo-01_1.png" alt="" />
-                        <!-- <span class="logo-name">Img</span> -->
-                    </a>
-                </div>
-                <div class="collapse navbar-collapse" id="navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="fullscreen" style="padding: 4px;left: -14px;">
-                            <ul class="list-unstyled order-list">
-                                <li class="avatar avatar-sm">
-                                    <img class="rounded-circle" src="../../assets/images/user/user7.jpg" alt="user" />
-                                </li>
-                                <li class="avatar avatar-sm">
-                                    <img class="rounded-circle" src="../../assets/images/user/user8.jpg" alt="user" />
-                                </li>
-                                <li class="avatar avatar-sm">
-                                    <img class="rounded-circle" src="../../assets/images/user/user9.jpg" alt="user" />
-                                </li>
-                                <li class="avatar avatar-sm">
-                                    <img class="rounded-circle" src="../../assets/images/user/user9.jpg" alt="user" />
-                                </li>
-                                <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
-                                    <span _ngcontent-hhc-c5="" class="badge">+3</span>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="fullscreen">
-                            <form class="form-header" action="" method="POST">
-                                <input class="au-input au-input--xl" style="min-width: 20%" type="text" name="search"
-                                    placeholder="Search" />
-                                <button class="au-btn--submit" type="submit">
-                                    <i class="fa fa-search" style="color:gray"></i>
-                                </button>
-                            </form>
-                        </li>
-                        <li class="fullscreen">
-                            <!-- <i class="nav-hdr-btn ti-calendar" style="color: gray"></i> -->
-                            <input class="daterangepicker-field top_datepicker" />
-                        </li>
-                        <!-- #END# Full Screen Button -->
-                        <!-- #START# Notifications-->
-                        <li class="dropdown">
-                            <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown"
-                                role="button">
-                                <i class="nav-hdr-btn ti-bell" style="color: gray"></i>
-                                <span class="notify"></span>
-                                <span class="heartbeat"></span>
-                            </a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown"
-                                role="button">
-                                <i class="nav-hdr-btn ti-settings" style="color: gray"></i>
-                                <span class="notify"></span>
-                                <span class="heartbeat"></span>
-                            </a>
-                        </li>
-                        <!-- #END# Notifications-->
-                        <li class="">
-                            <a href="#" onclick="return false;" class=" dropdown-toggle js-right-sidebar"
-                                data-close="true">
-                                <!-- <img src="../../assets/images/user.jpg" alt="user"> -->
-                                <i class="fas fa-user-circle"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- #Top Bar -->
-
-        <div>
-            <!-- Left Sidebar -->
-            <aside id="leftsidebar" class="sidebar">
-                <!-- Menu -->
-                <div class="menu">
-                    <ul class="list">
-                        <li class="active">
-                            <a href="#" onClick="return false;" class="">
-                                <i class="menu-icon fa fa-home font_icon"></i>
-                                <span>Organisation Structure</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#" onClick="return false;" class="menu-toggle">
-                                <i class="menu-icon fa fa-dashboard font_icon"></i>
-                                <span>Dashboards</span>
-                            </a>
-                            <ul class="ml-menu">
-                                <li>
-                                    <a href="#">BSC Dashboard</a>
-                                </li>
-                                <li>
-                                    <a href="#">Strategy Map</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="">
-                            <a href="#" onClick="return false;" class="">
-                                <i class="menu-icon fa fa-bar-chart font_icon"></i>
-                                <span>Charts</span>
-                            </a>
-                        </li>
-
-                        <li class="">
-                            <a href="#" onClick="return false;" class="">
-                                <i class="menu-icon fa fa-key font_icon"></i>
-                                <span>Users & Access</span>
-                            </a>
-                        </li>
-
-                        <li class="">
-                            <a href="#" onClick="return false;" class="">
-                                <i class="menu-icon fa fa-sitemap font_icon"></i>
-                                <span>Workflows</span>
-                            </a>
-                        </li>
-
-                        <li class="">
-                            <a href="#" onClick="return false;" class="">
-                                <i class="menu-icon fa fa-bell font_icon"></i>
-                                <span>Notifications & Alerts</span>
-                            </a>
-                        </li>
-
-                        <li class="">
-                            <a href="#" onClick="return false;" class="">
-                                <i class="menu-icon fa fa-database font_icon"></i>
-                                <span>Data Management</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#" onClick="return false;" class="menu-toggle">
-                                <i class="menu-icon fa fa-laptop font_icon"></i>
-                                <span>Template Management</span>
-                            </a>
-                            <ul class="ml-menu">
-                                <li>
-                                    <a href="#" id="sub-menu" onClick="return false;" class="menu-toggle">
-                                        Scorecard Layouts
-                                    </a>
-                                    <ul class="ml-menu">
-                                        <li><a href="#">Standard BSC View</a></li>
-                                        <li><a href="#">Dashboard View</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#" id="sub-menu" onClick="return false;" class="menu-toggle">
-                                        Initiative
-                                    </a>
-                                    <ul class="ml-menu">
-                                        <li><a href="#">Sub Initiatives</a></li>
-                                        <li><a href="#">Tasks</a></li>
-                                        <li><a href="#">Activities</a></li>
-                                        <li><a href="#">Milestones</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Reports Table</a>
-                                </li>
-                                <li>
-                                    <a href="#" id="sub-menu" onClick="return false;" class="menu-toggle">
-                                        Comments
-                                    </a>
-                                    <ul class="ml-menu">
-                                        <li><a href="#">Comments & Observations</a></li>
-                                        <li><a href="#">Proof of Evidence</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Employee Layout</a>
-                                </li>
-                                <li>
-                                    <a href="#">Appraisal</a>
-                                </li>
-                                <li>
-                                    <a href="#" data-toggle="modal" data-target=".data_collection_form">Data Collection
-                                        Form</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="">
-                            <a href="#" onClick="return false;" class="">
-                                <i class="menu-icon fa fa-columns font_icon"></i>
-                                <span>Widget Management</span>
-                            </a>
-                        </li>
-
-                        <li class="">
-                            <a href="#" onClick="return false;" class="">
-                                <i class="menu-icon fa fa-pie-chart font_icon"></i>
-                                <span>Reports</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- #Menu -->
-            </aside>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a
+            href="#"
+            onClick="return false;"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#navbar-collapse"
+            aria-expanded="false"
+          ></a>
+          <a href="#" onClick="return false;" class="bars"></a>
+          <a href="#" onClick="return false;" class="bar_nav sidemenu-collapse"
+            ><i class="nav-hdr-btn ti-menu" style="color: #000"></i
+          ></a>
+          <a class="navbar-brand nav_float" href="#">
+            <img
+              src="../../assets/images/Startroom_Final logo-01_1.png"
+              alt=""
+            />
+            <!-- <span class="logo-name">Img</span> -->
+          </a>
         </div>
-        <!-- #END# Left Sidebar -->
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="fullscreen" style="padding: 4px;left: -14px;">
+              <ul class="list-unstyled order-list">
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user7.jpg"
+                    alt="user"
+                  />
+                </li>
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user8.jpg"
+                    alt="user"
+                  />
+                </li>
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user9.jpg"
+                    alt="user"
+                  />
+                </li>
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user9.jpg"
+                    alt="user"
+                  />
+                </li>
+                <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                  <span _ngcontent-hhc-c5="" class="badge">+3</span>
+                </li>
+              </ul>
+            </li>
+            <li class="fullscreen">
+              <form class="form-header" action="" method="POST">
+                <input
+                  class="au-input au-input--xl"
+                  style="min-width: 20%"
+                  type="text"
+                  name="search"
+                  placeholder="Search"
+                />
+                <button class="au-btn--submit" type="submit">
+                  <i class="fa fa-search" style="color:gray"></i>
+                </button>
+              </form>
+            </li>
+            <li class="fullscreen">
+              <!-- <i class="nav-hdr-btn ti-calendar" style="color: gray"></i> -->
+              <input class="daterangepicker-field top_datepicker" />
+            </li>
+            <!-- #END# Full Screen Button -->
+            <!-- #START# Notifications-->
+            <li class="dropdown">
+              <a
+                href="#"
+                onClick="return false;"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+              >
+                <i class="nav-hdr-btn ti-bell" style="color: gray"></i>
+                <span class="notify"></span>
+                <span class="heartbeat"></span>
+              </a>
+            </li>
+            <li class="dropdown">
+              <a
+                href="#"
+                onClick="return false;"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+              >
+                <i class="nav-hdr-btn ti-settings" style="color: gray"></i>
+                <span class="notify"></span>
+                <span class="heartbeat"></span>
+              </a>
+            </li>
+            <!-- #END# Notifications-->
+            <li class="">
+              <a
+                href="#"
+                onclick="return false;"
+                class=" dropdown-toggle js-right-sidebar"
+                data-close="true"
+              >
+                <!-- <img src="../../assets/images/user.jpg" alt="user"> -->
+                <i class="fas fa-user-circle"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- #Top Bar -->
 
-        <!-- Content Start -->
-        <section class="content">
-            <!-- Page Header -->
-            <div class="page-header row no-gutters py-2 m-t--70" style="background-color: #3A6596;">
-                <div class="col-lg-6 col-md-6 text-center text-sm-left pt-2 mb-0 ml-4" style="color: #fff;">
-                    <h4 class="page-title" style="font-weight: 600; text-transform: uppercase;">
-                        Budget
-                    </h4>
-                </div>
-            </div>
-            <!-- End Page Header -->
+    <div>
+      <!-- Left Sidebar -->
+      <aside id="leftsidebar" class="sidebar">
+        <!-- Menu -->
+        <div class="menu">
+          <ul class="list">
+            <li class="active">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon fa fa-home font_icon"></i>
+                <span>Organisation Structure</span>
+              </a>
+            </li>
 
-            <!-- Page Body -->
-            <div class="container-fluid">
-                <!-- COl -->
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12">
-                        <!-- <div class="card">
+            <li>
+              <a href="#" onClick="return false;" class="menu-toggle">
+                <i class="menu-icon fa fa-dashboard font_icon"></i>
+                <span>Dashboards</span>
+              </a>
+              <ul class="ml-menu">
+                <li>
+                  <a href="#">BSC Dashboard</a>
+                </li>
+                <li>
+                  <a href="#">Strategy Map</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon fa fa-bar-chart font_icon"></i>
+                <span>Charts</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon fa fa-key font_icon"></i>
+                <span>Users & Access</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon fa fa-sitemap font_icon"></i>
+                <span>Workflows</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon fa fa-bell font_icon"></i>
+                <span>Notifications & Alerts</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon fa fa-database font_icon"></i>
+                <span>Data Management</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" onClick="return false;" class="menu-toggle">
+                <i class="menu-icon fa fa-laptop font_icon"></i>
+                <span>Template Management</span>
+              </a>
+              <ul class="ml-menu">
+                <li>
+                  <a
+                    href="#"
+                    id="sub-menu"
+                    onClick="return false;"
+                    class="menu-toggle"
+                  >
+                    Scorecard Layouts
+                  </a>
+                  <ul class="ml-menu">
+                    <li><a href="#">Standard BSC View</a></li>
+                    <li><a href="#">Dashboard View</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    id="sub-menu"
+                    onClick="return false;"
+                    class="menu-toggle"
+                  >
+                    Initiative
+                  </a>
+                  <ul class="ml-menu">
+                    <li><a href="#">Sub Initiatives</a></li>
+                    <li><a href="#">Tasks</a></li>
+                    <li><a href="#">Activities</a></li>
+                    <li><a href="#">Milestones</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Reports Table</a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    id="sub-menu"
+                    onClick="return false;"
+                    class="menu-toggle"
+                  >
+                    Comments
+                  </a>
+                  <ul class="ml-menu">
+                    <li><a href="#">Comments & Observations</a></li>
+                    <li><a href="#">Proof of Evidence</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Employee Layout</a>
+                </li>
+                <li>
+                  <a href="#">Appraisal</a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target=".data_collection_form"
+                    >Data Collection Form</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon fa fa-columns font_icon"></i>
+                <span>Widget Management</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon fa fa-pie-chart font_icon"></i>
+                <span>Reports</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- #Menu -->
+      </aside>
+    </div>
+    <!-- #END# Left Sidebar -->
+
+    <!-- Content Start -->
+    <section class="content">
+      <!-- Page Header -->
+      <div
+        class="page-header row no-gutters py-2 m-t--70"
+        style="background-color: #3A6596;"
+      >
+        <div
+          class="col-lg-6 col-md-6 text-center text-sm-left pt-2 mb-0 ml-4"
+          style="color: #fff;"
+        >
+          <h4
+            class="page-title"
+            style="font-weight: 600; text-transform: uppercase;"
+          >
+            Budget
+          </h4>
+        </div>
+      </div>
+      <!-- End Page Header -->
+
+      <!-- Page Body -->
+      <div class="container-fluid">
+        <!-- COl -->
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <!-- <div class="card">
               <div class="row">
                 <div class="col-md-4 form-group">
                   <input
@@ -340,190 +423,256 @@
                 </div>
               </div>
             </div> -->
-                        <div class="card">
-                            <div class="col-md-12">
-                                <ul class="swot-nav nav nav-tabs">
-                                    <li class="nav-item m-l-10">
-                                        <a class="nav-link active" data-toggle="tab" href="#all_budgets">All Budgets</a>
-                                    </li>
-                                    <li class="nav-item m-l-10">
-                                        <a class="nav-link" data-toggle="tab" href="#cost_budgets">Cost Budgets</a>
-                                    </li>
-                                    <li class="nav-item m-l-10">
-                                        <a class="nav-link" data-toggle="tab" href="#usage_budgets">Usage Budgets</a>
-                                    </li>
-                                    <li class="nav-item m-l-10">
-                                        <a class="nav-link" data-toggle="tab" href="#reservation_budgets">Reservation
-                                            Budgets</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-sm-12">
-                        <div class="card" style="margin-top: -14px !important;">
-                            <div class="col-md-12">
-                                <div class="tab-content">
-                                    <div class="tab-pane body active" id="all_budgets">
-                                        <div class="table-responsive">
-                                            <table class="table dashboard-task-infos align-center dashboard-table"
-                                                id="table" style="margin-bottom: 0px !important;">
-                                                <tr>
-                                                    <th>Budget Name</th>
-                                                    <th>Budget Type</th>
-                                                    <th>Current</th>
-                                                    <th>Budgeted</th>
-                                                    <th>Forcasted</th>
-                                                    <th>Current vs Budgeted</th>
-                                                    <th>Forcasted vs Budgeted</th>
-                                                    <th>Action</th>
-                                                </tr>
-                                                <tr>
-                                                    <td>Project cost Budget</td>
-                                                    <td>Cost</td>
-                                                    <td>$45.90</td>
-                                                    <td>$32.92</td>
-                                                    <td>$59.78</td>
-                                                    <td>
-                                                        <div class="progress">
-                                                            <div class="progress-bar progress-bar-info"
-                                                                role="progressbar" aria-valuenow="70" aria-valuemin="0"
-                                                                aria-valuemax="100" style="width:70%">
-                                                                70%
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="progress">
-                                                            <div class="progress-bar progress-bar-danger"
-                                                                role="progressbar" aria-valuenow="50" aria-valuemin="0"
-                                                                aria-valuemax="100" style="width:50%;">
-                                                                50%
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <i class="fas fa-ellipsis-h"></i>
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td>Project cost Budget</td>
-                                                    <td>Cost</td>
-                                                    <td>$45.90</td>
-                                                    <td>$32.92</td>
-                                                    <td>$59.78</td>
-                                                    <td>
-                                                        <div class="progress">
-                                                            <div class="progress-bar progress-bar-info"
-                                                                role="progressbar" aria-valuenow="70" aria-valuemin="0"
-                                                                aria-valuemax="100" style="width:70%">
-                                                                70%
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="progress">
-                                                            <div class="progress-bar progress-bar-danger"
-                                                                role="progressbar" aria-valuenow="50" aria-valuemin="0"
-                                                                aria-valuemax="100" style="width:50%;">
-                                                                50%
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <i class="fas fa-ellipsis-h"></i>
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td>Project cost Budget</td>
-                                                    <td>Cost</td>
-                                                    <td>$45.90</td>
-                                                    <td>$32.92</td>
-                                                    <td>$59.78</td>
-                                                    <td>
-                                                        <div class="progress">
-                                                            <div class="progress-bar progress-bar-info"
-                                                                role="progressbar" aria-valuenow="70" aria-valuemin="0"
-                                                                aria-valuemax="100" style="width:70%">
-                                                                70%
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="progress">
-                                                            <div class="progress-bar progress-bar-danger"
-                                                                role="progressbar" aria-valuenow="50" aria-valuemin="0"
-                                                                aria-valuemax="100" style="width:50%;">
-                                                                50%
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <i class="fas fa-ellipsis-h"></i>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane body" id="cost_budgets">
-                                        <div id="gantt_here" style='width:100%; height:500px !important;'></div>
-                                        <script type="text/javascript">
-                                            var tasks = {
-                                                data: [
-                                                    { id: 1, text: "Project #1", start_date: "01-04-2013", duration: 18 },
-                                                    { id: 2, text: "Task #1", start_date: "02-04-2013", duration: 8, parent: 1 },
-                                                    { id: 3, text: "Task #2", start_date: "11-04-2013", duration: 8, parent: 1 }
-                                                ]
-                                            };
-                                            gantt.init("gantt_here");
-                                            gantt.parse(tasks);
-                                        </script>
-                                    </div>
-                                    <div class="tab-pane body" id="usage_budgets"></div>
-                                    <div class="tab-pane body" id="reservation_budgets"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="card">
+              <div class="col-md-12">
+                <ul class="swot-nav nav nav-tabs">
+                  <li class="nav-item m-l-10">
+                    <a
+                      class="nav-link active"
+                      data-toggle="tab"
+                      href="#all_budgets"
+                      >All Budgets</a
+                    >
+                  </li>
+                  <li class="nav-item m-l-10">
+                    <a class="nav-link" data-toggle="tab" href="#cost_budgets"
+                      >Cost Budgets</a
+                    >
+                  </li>
+                  <li class="nav-item m-l-10">
+                    <a class="nav-link" data-toggle="tab" href="#usage_budgets"
+                      >Usage Budgets</a
+                    >
+                  </li>
+                  <li class="nav-item m-l-10">
+                    <a
+                      class="nav-link"
+                      data-toggle="tab"
+                      href="#reservation_budgets"
+                      >Reservation Budgets</a
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
-            <!-- End Page Body -->
-        </section>
-        <!-- Content Start -->
+          </div>
+          <div class="col-md-12 col-sm-12">
+            <div class="card" style="margin-top: -14px !important;">
+              <div class="col-md-12">
+                <div class="tab-content">
+                  <div class="tab-pane body active" id="all_budgets">
+                    <div class="table-responsive">
+                      <table
+                        class="table dashboard-task-infos align-center dashboard-table"
+                        id="table"
+                        style="margin-bottom: 0px !important;"
+                      >
+                        <tr>
+                          <th>Budget Name</th>
+                          <th>Budget Type</th>
+                          <th>Current</th>
+                          <th>Budgeted</th>
+                          <th>Forcasted</th>
+                          <th>Current vs Budgeted</th>
+                          <th>Forcasted vs Budgeted</th>
+                          <th>Action</th>
+                        </tr>
+                        <tr>
+                          <td>Project cost Budget</td>
+                          <td>Cost</td>
+                          <td>$45.90</td>
+                          <td>$32.92</td>
+                          <td>$59.78</td>
+                          <td>
+                            <div class="progress">
+                              <div
+                                class="progress-bar progress-bar-info"
+                                role="progressbar"
+                                aria-valuenow="70"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                style="width:70%"
+                              >
+                                70%
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="progress">
+                              <div
+                                class="progress-bar progress-bar-danger"
+                                role="progressbar"
+                                aria-valuenow="50"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                style="width:50%;"
+                              >
+                                50%
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <i class="fas fa-ellipsis-h"></i>
+                          </td>
+                        </tr>
 
-        <!-- Plugins Js -->
-        <script src="../../assets/js/app.min.js"></script>
-        <!-- Custom Js -->
-        <script src="../../assets/js/admin.js"></script>
-        <script src="../../assets/js/bundles/amcharts4/core.js"></script>
-        <script src="../../assets/js/bundles/amcharts4/charts.js"></script>
-        <script src="../../assets/js/bundles/amcharts4/animated.js"></script>
-        <!-- Knob Js -->
-        <script src="../../assets/jquery-ui.min.js"></script>
-        <script src="../../assets/moment.js"></script>
-        <script src="../../assets/js/pages/core.js"></script>
-        <script src="../../assets/js/pages/charts.js"></script>
-        <script src="../../assets/js/pages/spiritedaway.js"></script>
-        <script src="../../assets/js/pages/animated.js"></script>
-        <script src="../../assets/jquery.editable.min.js"></script>
-        <script src="../../assets/js/bootstrap.bundle.min.js"></script>
-        <script src="../../assets/pickr.es5.min.js"></script>
-        <script src="../../assets/datepickerair.js"></script>
-        <script src="../../assets/datepicker.en.js"></script>
-        <script src="../../assets/js/widgets.js"></script>
-        <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
-        <script src="../../assets/knockout-3.5.0.js"></script>
-        <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
-        <script>
-            $(".daterangepicker-field").daterangepicker({
-                forceUpdate: true,
-                callback: function (startDate, endDate, period) {
-                    var title = startDate.format("L") + " – " + endDate.format("L");
-                    $(this).val(title);
-                }
-            });
-        </script>
-    </body>
+                        <tr>
+                          <td>Project cost Budget</td>
+                          <td>Cost</td>
+                          <td>$45.90</td>
+                          <td>$32.92</td>
+                          <td>$59.78</td>
+                          <td>
+                            <div class="progress">
+                              <div
+                                class="progress-bar progress-bar-info"
+                                role="progressbar"
+                                aria-valuenow="70"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                style="width:70%"
+                              >
+                                70%
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="progress">
+                              <div
+                                class="progress-bar progress-bar-danger"
+                                role="progressbar"
+                                aria-valuenow="50"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                style="width:50%;"
+                              >
+                                50%
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <i class="fas fa-ellipsis-h"></i>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>Project cost Budget</td>
+                          <td>Cost</td>
+                          <td>$45.90</td>
+                          <td>$32.92</td>
+                          <td>$59.78</td>
+                          <td>
+                            <div class="progress">
+                              <div
+                                class="progress-bar progress-bar-info"
+                                role="progressbar"
+                                aria-valuenow="70"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                style="width:70%"
+                              >
+                                70%
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="progress">
+                              <div
+                                class="progress-bar progress-bar-danger"
+                                role="progressbar"
+                                aria-valuenow="50"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                style="width:50%;"
+                              >
+                                50%
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <i class="fas fa-ellipsis-h"></i>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="tab-pane body" id="cost_budgets">
+                    <div
+                      id="gantt_here"
+                      style="width:100%; height:500px !important;"
+                    ></div>
+                    <script type="text/javascript">
+                      var tasks = {
+                        data: [
+                          {
+                            id: 1,
+                            text: "Project #1",
+                            start_date: "01-04-2013",
+                            duration: 18
+                          },
+                          {
+                            id: 2,
+                            text: "Task #1",
+                            start_date: "02-04-2013",
+                            duration: 8,
+                            parent: 1
+                          },
+                          {
+                            id: 3,
+                            text: "Task #2",
+                            start_date: "11-04-2013",
+                            duration: 8,
+                            parent: 1
+                          }
+                        ]
+                      };
+                      gantt.init("gantt_here");
+                      gantt.parse(tasks);
+                    </script>
+                  </div>
+                  <div class="tab-pane body" id="usage_budgets"></div>
+                  <div class="tab-pane body" id="reservation_budgets"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Page Body -->
+    </section>
+    <!-- Content Start -->
+
+    <!-- Plugins Js -->
+    <script src="../../assets/js/app.min.js"></script>
+    <!-- Custom Js -->
+    <script src="../../assets/js/admin.js"></script>
+    <script src="../../assets/js/bundles/amcharts4/core.js"></script>
+    <script src="../../assets/js/bundles/amcharts4/charts.js"></script>
+    <script src="../../assets/js/bundles/amcharts4/animated.js"></script>
+    <!-- Knob Js -->
+    <script src="../../assets/jquery-ui.min.js"></script>
+    <script src="../../assets/moment.js"></script>
+    <script src="../../assets/js/pages/core.js"></script>
+    <script src="../../assets/js/pages/charts.js"></script>
+    <script src="../../assets/js/pages/spiritedaway.js"></script>
+    <script src="../../assets/js/pages/animated.js"></script>
+    <script src="../../assets/jquery.editable.min.js"></script>
+    <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/pickr.es5.min.js"></script>
+    <script src="../../assets/datepickerair.js"></script>
+    <script src="../../assets/datepicker.en.js"></script>
+    <script src="../../assets/js/widgets.js"></script>
+    <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
+    <script src="../../assets/knockout-3.5.0.js"></script>
+    <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
+    <script>
+      $(".daterangepicker-field").daterangepicker({
+        forceUpdate: true,
+        callback: function(startDate, endDate, period) {
+          var title = startDate.format("L") + " – " + endDate.format("L");
+          $(this).val(title);
+        }
+      });
+    </script>
+  </body>
 </a>
