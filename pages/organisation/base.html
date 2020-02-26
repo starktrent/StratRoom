@@ -12,7 +12,7 @@
         <link href="../../assets/css/app.min.css" rel="stylesheet">
         <!-- Custom Css -->
         <link href="../../assets/css/style.css" rel="stylesheet" />
-		 <link href="../../assets/css/custom.css" rel="stylesheet" />
+        <link href="../../assets/css/custom.css" rel="stylesheet" />
         <link href="../../assets/css/initatives.css" rel="stylesheet" />
         <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" />
         <!-- You can choose a theme from css/styles instead of get all themes -->
@@ -24,9 +24,13 @@
         <link href="../../assets/daterangepicker/daterangepicker.min.css" rel="stylesheet">
         <link href="../../assets/css/employee.css" rel="stylesheet" />
         <!-- <link href="../../assets/bootstrap-datepicker.min.css" rel="stylesheet" /> -->
-		
-		   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-		   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- Color -->
+        <link rel="stylesheet" href="#" id="colors">
+
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
             .orientation-right {
                 top: 60px !important;
@@ -34,13 +38,12 @@
                 left: auto !important;
                 position: fixed;
             }
-	
         </style>
 
     </head>
 
     <body class="light">
-   <!-- Page Loader -->
+        <!-- Page Loader -->
         <div class="page-loader-wrapper">
             <div class="loader">
                 <div class="m-t-30">
@@ -60,9 +63,11 @@
         <nav class="navbar">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a href="#" onClick="return false;" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                    <a href="#" onClick="return false;" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#navbar-collapse" aria-expanded="false"></a>
                     <a href="#" onClick="return false;" class="bars"></a>
-                    <a href="#" onClick="return false;" class="bar_nav sidemenu-collapse"><i class="nav-hdr-btn ti-menu" style="color: #000"></i></a>
+                    <a href="#" onClick="return false;" class="bar_nav sidemenu-collapse"><i class="nav-hdr-btn ti-menu"
+                            style="color: #000"></i></a>
                     <a class="navbar-brand nav_float" href="#">
                         <img src="../../assets/images/Startroom_Final logo-01_1.png" alt="">
                         <!-- <span class="logo-name">Img</span> -->
@@ -84,15 +89,17 @@
                                 <li class="avatar avatar-sm">
                                     <img class="rounded-circle" src="../../assets/images/user/user9.jpg" alt="user">
                                 </li>
-                                <li _ngcontent-hhc-c5="" class="avatar avatar-sm"><span _ngcontent-hhc-c5="" class="badge">+3</span></li>
+                                <li _ngcontent-hhc-c5="" class="avatar avatar-sm"><span _ngcontent-hhc-c5=""
+                                        class="badge">+3</span></li>
                             </ul>
                         </li>
                         <li class="fullscreen">
                             <form class="form-header" action="" method="POST">
-                                <input class="au-input au-input--xl" style="min-width: 20%" type="text" name="search" placeholder="Search">
+                                <input class="au-input au-input--xl" style="min-width: 20%" type="text" name="search"
+                                    placeholder="Search">
                                 <button class="au-btn--submit" type="submit">
-                            <i class="fa fa-search" style="color:gray"></i>
-                            </button>
+                                    <i class="fa fa-search" style="color:gray"></i>
+                                </button>
                             </form>
                         </li>
                         <li class="fullscreen">
@@ -102,14 +109,16 @@
                         <!-- #END# Full Screen Button -->
                         <!-- #START# Notifications-->
                         <li class="dropdown">
-                            <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown"
+                                role="button">
                                 <i class="nav-hdr-btn ti-bell" style="color: gray"></i>
                                 <span class="notify"></span>
                                 <span class="heartbeat"></span>
                             </a>
                         </li>
                         <li class="dropdown">
-                            <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            <a href="#" onClick="return false;" data-toggle="modal" data-target="#settings"
+                                role="button">
                                 <i class="nav-hdr-btn ti-settings" style="color: gray"></i>
                                 <span class="notify"></span>
                                 <span class="heartbeat"></span>
@@ -117,7 +126,8 @@
                         </li>
                         <!-- #END# Notifications-->
                         <li class="">
-                            <a href="#" onclick="return false;" class=" dropdown-toggle js-right-sidebar" data-close="true">
+                            <a href="#" onclick="return false;" class=" dropdown-toggle js-right-sidebar"
+                                data-close="true">
                                 <!-- <img src="../../assets/images/user.jpg" alt="user"> -->
                                 <i class="fas fa-user-circle"></i> </a>
                         </li>
@@ -126,8 +136,8 @@
             </div>
         </nav>
         <!-- #Top Bar -->
-      
-	  <div>
+
+        <div>
             <!-- Left Sidebar -->
             <aside id="leftsidebar" class="sidebar">
                 <!-- Menu -->
@@ -198,8 +208,8 @@
                             <ul class="ml-menu">
                                 <li>
                                     <a href="#" id="sub-menu" onClick="return false;" class="menu-toggle">
-                                            Scorecard Layouts
-                                        </a>
+                                        Scorecard Layouts
+                                    </a>
                                     <ul class="ml-menu">
                                         <li><a href="#">Standard BSC View</a></li>
                                         <li><a href="#">Dashboard View</a></li>
@@ -208,7 +218,7 @@
                                 <li>
                                     <a href="#" id="sub-menu" onClick="return false;" class="menu-toggle">
                                         Initiative
-                                        </a>
+                                    </a>
                                     <ul class="ml-menu">
                                         <li><a href="#">Sub Initiatives</a></li>
                                         <li><a href="#">Tasks</a></li>
@@ -222,7 +232,7 @@
                                 <li>
                                     <a href="#" id="sub-menu" onClick="return false;" class="menu-toggle">
                                         Comments
-                                        </a>
+                                    </a>
                                     <ul class="ml-menu">
                                         <li><a href="#">Comments & Observations</a></li>
                                         <li><a href="#">Proof of Evidence</a></li>
@@ -235,7 +245,8 @@
                                     <a href="#">Appraisal</a>
                                 </li>
                                 <li>
-                                    <a href="#" data-toggle="modal" data-target=".data_collection_form">Data Collection Form</a>
+                                    <a href="#" data-toggle="modal" data-target=".data_collection_form">Data Collection
+                                        Form</a>
                                 </li>
                             </ul>
                         </li>
@@ -258,41 +269,282 @@
                 </div>
                 <!-- #Menu -->
             </aside>
-			</div>
-            <!-- #END# Left Sidebar -->
-            <!-- Right Sidebar -->
-           
-           
-            <!-- Plugins Js -->
-            <script src="../../assets/js/app.min.js"></script>
-            <!-- Custom Js -->
-            <script src="../../assets/js/admin.js"></script>
-            <script src="../../assets/js/bundles/amcharts4/core.js"></script>
-            <script src="../../assets/js/bundles/amcharts4/charts.js"></script>
-            <script src="../../assets/js/bundles/amcharts4/animated.js"></script>
-            <!-- Knob Js -->
-            <script src="../../assets/jquery-ui.min.js"></script>
-            <script src="../../assets/moment.js"></script>
-            <script src="../../assets/js/pages/core.js"></script>
-            <script src="../../assets/js/pages/charts.js"></script>
-            <script src="../../assets/js/pages/spiritedaway.js"></script>
-            <script src="../../assets/js/pages/animated.js"></script>
-            <script src="../../assets/jquery.editable.min.js"></script>
-            <script src="../../assets/js/bootstrap.bundle.min.js"></script>
-            <script src="../../assets/pickr.es5.min.js"></script>
-            <script src="../../assets/datepickerair.js"></script>
-            <script src="../../assets/datepicker.en.js"></script>
-            <script src="../../assets/js/widgets.js"></script>
-            <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
-            <script src="../../assets/knockout-3.5.0.js"></script>
-            <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
-            <script>
-                $(".daterangepicker-field").daterangepicker({
-                    forceUpdate: true,
-                    callback: function(startDate, endDate, period) {
-                        var title = startDate.format('L') + ' – ' + endDate.format('L');
-                        $(this).val(title)
-                    }
-                });
-            </script>
+        </div>
+        <!-- #END# Left Sidebar -->
+
+        <!-- Settings Modal -->
+        <div id="settings" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>Settings</h4>
+                        <button type="button" class="close pull-right" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-row">
+                            <div class="form-group col-md-12" style="margin-bottom: 15px;">
+                                <label for="objective_start_end_date">Language</label>
+                                <select id="inputState" name="" class="form-control browser-default mt-1">
+                                    <option value="English">English</option>
+                                    <option value="Arabic">Arabic</option>
+                                    <option value="Amharic">Amharic</option>
+                                    <option value="Vietnamese">Vietnamese</option>
+                                    <option value="French">French</option>
+                                    <option value="German">German</option>
+                                    <option value="Portuguese">Portuguese</option>
+                                    <option value="Spanish">Spanish</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-12" style="margin-bottom: 15px;">
+                                <label for="objective_start_end_date">Currency</label>
+                                <select id="inputState" name="" class="form-control browser-default mt-1">
+                                    <<option selected value="">Select currency</option>
+                                        <option value="America (United States) Dollars - USD">America (United States)
+                                            Dollars – USD</option>
+                                        <option value="Afghanistan Afghanis - AFN">Afghanistan Afghanis – AFN
+                                        </option>
+                                        <option value="Albania Leke - ALL">Albania Leke – ALL</option>
+                                        <option value="Algeria Dinars - DZD">Algeria Dinars – DZD</option>
+                                        <option value="Argentina Pesos - ARS">Argentina Pesos – ARS</option>
+                                        <option value="Australia Dollars - AUD">Australia Dollars – AUD</option>
+                                        <option value="Austria Schillings - ATS">Austria Schillings – ATS</option>
+
+                                        <option value="Bahamas Dollars - BSD">Bahamas Dollars – BSD</option>
+                                        <option value="Bahrain Dinars - BHD">Bahrain Dinars – BHD</option>
+                                        <option value="Bangladesh Taka - BDT">Bangladesh Taka – BDT</option>
+                                        <option value="Barbados Dollars - BBD">Barbados Dollars – BBD</option>
+                                        <option value="Belgium Francs - BEF">Belgium Francs – BEF</option>
+                                        <option value="Bermuda Dollars - BMD">Bermuda Dollars – BMD</option>
+
+                                        <option value="Brazil Reais - BRL">Brazil Reais – BRL</option>
+                                        <option value="Bulgaria Leva - BGN">Bulgaria Leva – BGN</option>
+                                        <option value="Canada Dollars - CAD">Canada Dollars – CAD</option>
+                                        <option value="CFA BCEAO Francs - XOF">CFA BCEAO Francs – XOF</option>
+                                        <option value="CFA BEAC Francs - XAF">CFA BEAC Francs – XAF</option>
+                                        <option value="Chile Pesos - CLP">Chile Pesos – CLP</option>
+
+                                        <option value="China Yuan Renminbi - CNY">China Yuan Renminbi – CNY</option>
+                                        <option value="RMB (China Yuan Renminbi) - CNY">RMB (China Yuan Renminbi) – CNY
+                                        </option>
+                                        <option value="Colombia Pesos - COP">Colombia Pesos – COP</option>
+                                        <option value="CFP Francs - XPF">CFP Francs – XPF</option>
+                                        <option value="Costa Rica Colones - CRC">Costa Rica Colones – CRC</option>
+                                        <option value="Croatia Kuna - HRK">Croatia Kuna – HRK</option>
+
+                                        <option value="Cyprus Pounds - CYP">Cyprus Pounds – CYP</option>
+                                        <option value="Czech Republic Koruny - CZK">Czech Republic Koruny – CZK
+                                        </option>
+                                        <option value="Denmark Kroner - DKK">Denmark Kroner – DKK</option>
+                                        <option value="Deutsche (Germany) Marks - DEM">Deutsche (Germany) Marks – DEM
+                                        </option>
+                                        <option value="Dominican Republic Pesos - DOP">Dominican Republic Pesos – DOP
+                                        </option>
+                                        <option value="Dutch (Netherlands) Guilders - NLG">Dutch (Netherlands) Guilders
+                                            – NLG</option>
+
+                                        <option value="Eastern Caribbean Dollars - XCD">Eastern Caribbean Dollars – XCD
+                                        </option>
+                                        <option value="Egypt Pounds - EGP">Egypt Pounds – EGP</option>
+                                        <option value="Estonia Krooni - EEK">Estonia Krooni – EEK</option>
+                                        <option value="Euro - EUR">Euro – EUR</option>
+                                        <option value="Fiji Dollars - FJD">Fiji Dollars – FJD</option>
+                                        <option value="Finland Markkaa - FIM">Finland Markkaa – FIM</option>
+
+                                        <option value="France Francs - FRF*">France Francs – FRF*</option>
+                                        <option value="Germany Deutsche Marks - DEM">Germany Deutsche Marks – DEM
+                                        </option>
+                                        <option value="Gold Ounces - XAU">Gold Ounces – XAU</option>
+                                        <option value="Greece Drachmae - GRD">Greece Drachmae – GRD</option>
+                                        <option value="Guatemalan Quetzal - GTQ">Guatemalan Quetzal – GTQ</option>
+                                        <option value="Holland (Netherlands) Guilders - NLG">Holland (Netherlands)
+                                            Guilders – NLG</option>
+                                        <option value="Hong Kong Dollars - HKD">Hong Kong Dollars – HKD</option>
+
+                                        <option value="Hungary Forint - HUF">Hungary Forint – HUF</option>
+                                        <option value="Iceland Kronur - ISK">Iceland Kronur – ISK</option>
+                                        <option value="IMF Special Drawing Right - XDR">IMF Special Drawing Right – XDR
+                                        </option>
+                                        <option value="India Rupees - INR">India Rupees – INR</option>
+                                        <option value="Indonesia Rupiahs - IDR">Indonesia Rupiahs – IDR</option>
+                                        <option value="Iran Rials - IRR">Iran Rials – IRR</option>
+
+                                        <option value="Iraq Dinars - IQD">Iraq Dinars – IQD</option>
+                                        <option value="Ireland Pounds - IEP*">Ireland Pounds – IEP*</option>
+                                        <option value="Israel New Shekels - ILS">Israel New Shekels – ILS</option>
+                                        <option value="Italy Lire - ITL*">Italy Lire – ITL*</option>
+                                        <option value="Jamaica Dollars - JMD">Jamaica Dollars – JMD</option>
+                                        <option value="Japan Yen - JPY">Japan Yen – JPY</option>
+
+                                        <option value="Jordan Dinars - JOD">Jordan Dinars – JOD</option>
+                                        <option value="Kenya Shillings - KES">Kenya Shillings – KES</option>
+                                        <option value="Korea (South) Won - KRW">Korea (South) Won – KRW</option>
+                                        <option value="Kuwait Dinars - KWD">Kuwait Dinars – KWD</option>
+                                        <option value="Lebanon Pounds - LBP">Lebanon Pounds – LBP</option>
+                                        <option value="Luxembourg Francs - LUF">Luxembourg Francs – LUF</option>
+
+                                        <option value="Malaysia Ringgits - MYR">Malaysia Ringgits – MYR</option>
+                                        <option value="Malta Liri - MTL">Malta Liri – MTL</option>
+                                        <option value="Mauritius Rupees - MUR">Mauritius Rupees – MUR</option>
+                                        <option value="Mexico Pesos - MXN">Mexico Pesos – MXN</option>
+                                        <option value="Morocco Dirhams - MAD">Morocco Dirhams – MAD</option>
+                                        <option value="Netherlands Guilders - NLG">Netherlands Guilders – NLG
+                                        </option>
+
+                                        <option value="New Zealand Dollars - NZD">New Zealand Dollars – NZD</option>
+                                        <option value="Norway Kroner - NOK">Norway Kroner – NOK</option>
+                                        <option value="Oman Rials - OMR">Oman Rials – OMR</option>
+                                        <option value="Pakistan Rupees - PKR">Pakistan Rupees – PKR</option>
+                                        <option value="Palladium Ounces - XPD">Palladium Ounces – XPD</option>
+                                        <option value="Peru Nuevos Soles - PEN">Peru Nuevos Soles – PEN</option>
+
+                                        <option value="Philippines Pesos - PHP">Philippines Pesos – PHP</option>
+                                        <option value="Platinum Ounces - XPT">Platinum Ounces – XPT</option>
+                                        <option value="Poland Zlotych - PLN">Poland Zlotych – PLN</option>
+                                        <option value="Portugal Escudos - PTE">Portugal Escudos – PTE</option>
+                                        <option value="Qatar Riyals - QAR">Qatar Riyals – QAR</option>
+                                        <option value="Romania New Lei - RON">Romania New Lei – RON</option>
+
+                                        <option value="Romania Lei - ROL">Romania Lei – ROL</option>
+                                        <option value="Russia Rubles - RUB">Russia Rubles – RUB</option>
+                                        <option value="Saudi Arabia Riyals - SAR">Saudi Arabia Riyals – SAR</option>
+                                        <option value="Silver Ounces - XAG">Silver Ounces – XAG</option>
+                                        <option value="Singapore Dollars - SGD">Singapore Dollars – SGD</option>
+                                        <option value="Slovakia Koruny - SKK">Slovakia Koruny – SKK</option>
+
+                                        <option value="Slovenia Tolars - SIT">Slovenia Tolars – SIT</option>
+                                        <option value="South Africa Rand - ZAR">South Africa Rand – ZAR</option>
+                                        <option value="South Korea Won - KRW">South Korea Won – KRW</option>
+                                        <option value="Spain Pesetas - ESP">Spain Pesetas – ESP</option>
+                                        <option value="Special Drawing Rights (IMF) - XDR">Special Drawing Rights (IMF)
+                                            – XDR</option>
+                                        <option value="Sri Lanka Rupees - LKR">Sri Lanka Rupees – LKR</option>
+
+                                        <option value="Sudan Dinars - SDD">Sudan Dinars – SDD</option>
+                                        <option value="Sweden Kronor - SEK">Sweden Kronor – SEK</option>
+                                        <option value="Switzerland Francs - CHF">Switzerland Francs – CHF</option>
+                                        <option value="Taiwan New Dollars - TWD">Taiwan New Dollars – TWD</option>
+                                        <option value="Thailand Baht - THB">Thailand Baht – THB</option>
+                                        <option value="Trinidad and Tobago Dollars - TTD">Trinidad and Tobago Dollars –
+                                            TTD</option>
+
+                                        <option value="Tunisia Dinars - TND">Tunisia Dinars – TND</option>
+                                        <option value="Turkey New Lira - TRY">Turkey New Lira – TRY</option>
+                                        <option value="United Arab Emirates Dirhams - AED">United Arab Emirates Dirhams
+                                            – AED</option>
+                                        <option value="United Kingdom Pounds - GBP">United Kingdom Pounds – GBP
+                                        </option>
+                                        <option value="United States Dollars - USD">United States Dollars – USD
+                                        </option>
+                                        <option value="Venezuela Bolivares - VEB">Venezuela Bolivares – VEB</option>
+
+                                        <option value="Vietnam Dong - VND">Vietnam Dong – VND</option>
+                                        <option value="Zambia Kwacha - ZMK">Zambia Kwacha – ZMK</option>
+                                </select>
+                            </div>
+                            <br />
+                            <div class="form-group col-md-12" style="margin-bottom: 25px;">
+                                <label for="objective_start_end_date">Choose Theme</label><br />
+                                <div class="color1"
+                                    style="height: 30px; width: 30px; background-color: #9e579d; border-radius: 50%; margin-right: 10px; display: inline-block;">
+                                </div>
+                                <div
+                                    style="height: 30px; width: 30px; background-color: #43dde6; border-radius: 50%; margin-right: 10px; display: inline-block;">
+                                </div>
+                                <div
+                                    style="height: 30px; width: 30px; background-color: #3d5af1; border-radius: 50%; margin-right: 10px; display: inline-block;">
+                                </div>
+                                <div
+                                    style="height: 30px; width: 30px; background-color: #cb3b3b; border-radius: 50%; margin-right: 10px; display: inline-block;">
+                                </div>
+                                <div
+                                    style="height: 30px; width: 30px; background-color: #fc5c9c; border-radius: 50%; margin-right: 10px; display: inline-block;">
+                                </div>
+                                <div
+                                    style="height: 30px; width: 30px; background-color: #002651; border-radius: 50%; margin-right: 10px; display: inline-block;">
+                                </div>
+                                <div
+                                    style="height: 30px; width: 30px; background-color: #1f4287; border-radius: 50%; margin-right: 10px; display: inline-block;">
+                                </div>
+                                <div
+                                    style="height: 30px; width: 30px; background-color: #b31e6f; border-radius: 50%; margin-right: 10px; display: inline-block;">
+                                </div>
+                                <div
+                                    style="height: 30px; width: 30px; background-color: #30e3ca; border-radius: 50%; margin-right: 10px; display: inline-block;">
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <hr>
+                            </div>
+                            <div class="form-group col-md-4"></div>
+                            <div class="form-group col-md-4">
+                                <button type="button" class="btn form-control modal-save-btn">
+                                    <i class="fas fa-check"></i> Save
+                                </button>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <button type="button" class="btn form-control modal-close-btn" data-dismiss="modal">
+                                    <i class="fas fa-ban"></i> Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="content">
+            <!-- Page Header -->
+            <div class="page-header row no-gutters py-2 m-t--70">
+                <div class="col-lg-6 col-md-6 text-center text-sm-left pt-2 mb-0 ml-4">
+                    <h4 class="page-title">
+                        Base
+                    </h4>
+                </div>
+            </div>
+            <!-- End Page Header -->
+        </section>
+
+        <!-- Plugins Js -->
+        <script src="../../assets/js/app.min.js"></script>
+        <!-- Custom Js -->
+        <script src="../../assets/js/admin.js"></script>
+        <script src="../../assets/js/bundles/amcharts4/core.js"></script>
+        <script src="../../assets/js/bundles/amcharts4/charts.js"></script>
+        <script src="../../assets/js/bundles/amcharts4/animated.js"></script>
+        <!-- Knob Js -->
+        <script src="../../assets/jquery-ui.min.js"></script>
+        <script src="../../assets/moment.js"></script>
+        <script src="../../assets/js/pages/core.js"></script>
+        <script src="../../assets/js/pages/charts.js"></script>
+        <script src="../../assets/js/pages/spiritedaway.js"></script>
+        <script src="../../assets/js/pages/animated.js"></script>
+        <script src="../../assets/jquery.editable.min.js"></script>
+        <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../../assets/pickr.es5.min.js"></script>
+        <script src="../../assets/datepickerair.js"></script>
+        <script src="../../assets/datepicker.en.js"></script>
+        <script src="../../assets/js/widgets.js"></script>
+        <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
+        <script src="../../assets/knockout-3.5.0.js"></script>
+        <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
+        <script src="../../assets/js/colors.js"></script>
+        <script>
+            $(".daterangepicker-field").daterangepicker({
+                forceUpdate: true,
+                callback: function (startDate, endDate, period) {
+                    var title = startDate.format('L') + ' – ' + endDate.format('L');
+                    $(this).val(title)
+                }
+            });
+
+            // $(document).ready(function () {
+
+
+            //     $(".color1").click(function () {
+            //         $("#colors").attr("href", "../../assets/css/colors/color1.css");
+            //         return false;
+            //     });
+            // })
+        </script>
     </body>

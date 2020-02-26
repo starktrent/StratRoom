@@ -532,7 +532,7 @@ div.edit1 {
 .btn:hover,
 .btn-large:hover,
 .btn-small:hover {
-  background-color: initial !important;
+  /* background-color: initial !important; */
 }
 
 .btn {
@@ -714,7 +714,7 @@ button {
 
 .theme-black .sidebar .menu .list li.active {
   background-color: #dcdcdc;
-  border-left: 4px solid #313131;
+  border-left: 4px solid #3a6596;
 }
 
 table * {
