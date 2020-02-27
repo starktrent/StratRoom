@@ -18,6 +18,16 @@
   color: #fff !important;
 }
 
+.page-header {
+  background-color: #3a6596;
+}
+
+.page-title {
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
 .initiative_profile_details .employee_info {
   color: #111111 !important;
 }
@@ -512,6 +522,25 @@ ul.gj-list-md li {
   transition: border 0.3s, -webkit-box-shadow 0.3s;
   transition: box-shadow 0.3s, border 0.3s;
   transition: box-shadow 0.3s, border 0.3s, -webkit-box-shadow 0.3s;
+}
+
+.modal .modal-save-btn {
+  background-color: #3a6596;
+  color: #fff;
+}
+
+.modal .modal-save-btn i {
+  font-size: 14px !important;
+}
+
+.modal .modal-close-btn {
+  background: #fff;
+  color: #454545;
+  border: 1px solid #cecece !important;
+}
+
+.modal .modal-close-btn i {
+  font-size: 14px !important;
 }
 
 .top_datepicker {

@@ -1,0 +1,42 @@
+span.notify,
+.colfp,
+.page-header,
+.modal .modal-header,
+.modal .modal-save-btn,
+.theme-black .sidebar .menu .list li.active {
+  background-color: #9e579d;
+}
+
+.theme-black .sidebar .menu .list li.active {
+  background-color: #dcdcdc;
+}
+
+.nav-tabs li a.active,
+.sidebar .menu .list .active .menu-icon,
+.sidebar .menu .list a:hover .menu-icon,
+.rc-tgrn i,
+.rc-tgrn,
+.favgs {
+  color: #9e579d !important;
+}
+
+.page-title,
+.modal .modal-save-btn,
+.modal .modal-header {
+  color: #ffffff;
+}
+
+.swot-nav > li > a:before,
+.nav-tabs > li > a:before {
+  border-bottom: 2px solid #9e579d;
+}
+
+.sidebar .menu .list a:hover,
+.sidebar .menu .list li.active,
+.theme-black .sidebar .menu .list li.active {
+  border-left: 4px solid #9e579d;
+}
+
+.heartbeat {
+  border-color: #9e579d;
+}
