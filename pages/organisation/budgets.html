@@ -27,6 +27,13 @@
     <link href="../../assets/css/employee.css" rel="stylesheet" />
     <!-- <link href="../../assets/bootstrap-datepicker.min.css" rel="stylesheet" /> -->
 
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../assets/js/dist/jquery-simple-tree-table.js"></script>
+
     <!-- Gantt Chart -->
     <script src="https://cdn.dhtmlx.com/gantt/edge/dhtmlxgantt.js"></script>
     <link
@@ -87,6 +94,15 @@
 
       .progress-bar {
         color: #fff;
+      }
+
+      .download-btn-dropdown {
+        position: absolute;
+        will-change: transform;
+        top: 120% !important;
+        left: 7% !important;
+        width: 100%;
+        transform: translate3d(0px, 36px, 0px);
       }
     </style>
   </head>
@@ -602,6 +618,62 @@
                       style="width:100%; height:500px !important;"
                     ></div>
                     <script type="text/javascript">
+                      gantt.config.columns = [
+                        {
+                          name: "text",
+                          label: "Task name",
+                          tree: true,
+                          width: "*"
+                        },
+                        {
+                          name: "start_date",
+                          label: "Start time",
+                          align: "center"
+                        },
+                        {
+                          name: "duration",
+                          label: "Duration",
+                          align: "center"
+                        },
+                        {
+                          name: "priority",
+                          label: "Priority",
+                          width: 80,
+                          align: "center",
+                          template: function(item) {
+                            if (item.priority == 1) return "High";
+                            if (item.priority == 2) return "Normal";
+                            return "Low";
+                          }
+                        },
+                        {
+                          name: "assigned",
+                          label: "Assigned to",
+                          template: function(item) {
+                            if (!item.users) return "Nobody";
+                            return item.users.join(", ");
+                          }
+                        },
+                        { name: "add", width: 44 }
+                      ];
+                      gantt.locale.labels.section_owner = "Owner";
+                      gantt.config.lightbox.sections = [
+                        {
+                          name: "description",
+                          height: 38,
+                          map_to: "text",
+                          type: "textarea",
+                          focus: true
+                        },
+                        {
+                          name: "owner",
+                          height: 60,
+                          type: "multiselect",
+                          options: gantt.serverList("people"),
+                          map_to: "owners"
+                        },
+                        { name: "time", type: "duration", map_to: "auto" }
+                      ];
                       var tasks = {
                         data: [
                           {
@@ -630,7 +702,112 @@
                       gantt.parse(tasks);
                     </script>
                   </div>
-                  <div class="tab-pane body" id="usage_budgets"></div>
+                  <div class="tab-pane body" id="usage_budgets">
+                    <div class="row">
+                      <div class="col-md-4"></div>
+                      <div class="col-md-4"></div>
+                      <div class="col-md-2 form-group">
+                        <div class="dropdown">
+                          <button
+                            class="btn btn-primary dropdown-toggle form-control"
+                            type="button"
+                            data-toggle="dropdown"
+                          >
+                            <i
+                              class="fas fa-download"
+                              style="font-size: 14px;"
+                            ></i>
+                            Download
+                            <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu download-btn-dropdown">
+                            <li><a href="#">Download CSV</a></li>
+                            <li><a href="#">Download EXCEL</a></li>
+                            <li><a href="#">Download PDF</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-md-2 form-group">
+                        <button class="btn form-control btn-sr-theme">
+                          <i class="far fa-file" style="font-size: 14px;"></i>
+                          Create Budget
+                        </button>
+                      </div>
+                    </div>
+                    <div class="table-responsive">
+                      <table
+                        class="table dashboard-task-infos align-center dashboard-table"
+                        id="basic"
+                        border="1"
+                      >
+                        <tr>
+                          <th>Budget Name</th>
+                          <th>Budget Type</th>
+                          <th>Current</th>
+                          <th>Budgeted</th>
+                          <th>Forcasted</th>
+                          <th>Current vs Budgeted</th>
+                          <th>Forcasted vs Budgeted</th>
+                          <th>Action</th>
+                        </tr>
+                        <tr data-node-id="1">
+                          <td>Project cost Budget</td>
+                          <td>Cost</td>
+                          <td>$45.90</td>
+                          <td>$32.92</td>
+                          <td>$59.78</td>
+                          <td>70%</td>
+                          <td>70%</td>
+                          <td>
+                            <i class="fas fa-ellipsis-h"></i>
+                          </td>
+                        </tr>
+                        <tr data-node-id="1.1" data-node-pid="1">
+                          <td>Project cost Budget</td>
+                          <td>Cost</td>
+                          <td>$45.90</td>
+                          <td>$32.92</td>
+                          <td>$59.78</td>
+                          <td>70%</td>
+                          <td>70%</td>
+                          <td>
+                            <i class="fas fa-ellipsis-h"></i>
+                          </td>
+                        </tr>
+                        <tr data-node-id="1.1.1" data-node-pid="1.1">
+                          <td>Project cost Budget</td>
+                          <td>Cost</td>
+                          <td>$45.90</td>
+                          <td>$32.92</td>
+                          <td>$59.78</td>
+                          <td>70%</td>
+                          <td>70%</td>
+                          <td>
+                            <i class="fas fa-ellipsis-h"></i>
+                          </td>
+                        </tr>
+                      </table>
+
+                      <script>
+                        $("#basic").simpleTreeTable({
+                          expander: $("#expander"),
+                          collapser: $("#collapser"),
+                          store: "session",
+                          storeKey: "simple-tree-table-basic"
+                        });
+                        $("#open1").on("click", function() {
+                          $("#basic")
+                            .data("simple-tree-table")
+                            .openByID("1");
+                        });
+                        $("#close1").on("click", function() {
+                          $("#basic")
+                            .data("simple-tree-table")
+                            .closeByID("1");
+                        });
+                      </script>
+                    </div>
+                  </div>
                   <div class="tab-pane body" id="reservation_budgets"></div>
                 </div>
               </div>
@@ -672,6 +849,33 @@
           var title = startDate.format("L") + " – " + endDate.format("L");
           $(this).val(title);
         }
+      });
+
+      $("table.detail").each(function() {
+        var $table = $(this);
+        $childRows = $(".child, .subchild, .subsubchild");
+        $table.find("button.hide").click(function() {
+          $childRows.hide();
+        });
+        $table.find("button.show").click(function() {
+          $childRows.show();
+        });
+
+        $table.find("tbody tr").click(function(event) {
+          var $tgt = $(event.target);
+          event.stopPropagation();
+          var closestRow = $tgt.closest("tr");
+          closestRow
+            .find("tbody")
+            .eq(0)
+            .children()
+            .toggle();
+        });
+      });
+    </script>
+    <script>
+      $("#icon_pos").simpleTreeTable({
+        iconPosition: "td:last-child > span"
       });
     </script>
   </body>
