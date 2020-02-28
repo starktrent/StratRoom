@@ -2452,7 +2452,7 @@ nav,
     0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* .z-depth-1-half,
+.z-depth-1-half,
 .btn:hover,
 .btn-large:hover,
 .btn-small:hover,
@@ -5128,7 +5128,7 @@ small {
 .btn-small:focus,
 .btn-floating:focus {
   background-color: #1d7d74;
-}
+} */
 
 .btn,
 .btn-large,
@@ -5147,7 +5147,7 @@ small {
 .btn-large:hover,
 .btn-small:hover {
   background-color: #2bbbad;
-}
+} */
 
 .btn-floating {
   display: inline-block;
@@ -5987,10 +5987,10 @@ select:focus {
   outline: 1px solid #c9f3ef;
 }
 
-button:focus {
+/* button:focus {
   outline: 0;
   background-color: #2ab7a9;
-}
+} */
 
 label {
   font-size: 0.8rem;
@@ -11075,22 +11075,13 @@ pre code {
 }
 
 .form-control:focus {
-  color: #495057;
+  /* color: #495057;
   background-color: #fff;
-  border-color: #80bdff;
+  border-color: #80bdff; */
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
-
-/* .form-control:focus {
-  color: #495057;
-  background-color: #fff;
-  border-color: #80bdff;
-  outline: 0;
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-} */
 
 .form-control::-webkit-input-placeholder {
   color: #6c757d;
@@ -11701,17 +11692,17 @@ textarea.form-control.is-invalid {
   }
 }
 
-.btn:hover {
+/* .btn:hover {
   color: #212529;
   text-decoration: none;
-}
+} */
 
-.btn:focus,
+/* .btn:focus,
 .btn.focus {
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
+} */
 
 .btn.disabled,
 .btn:disabled {
@@ -15298,7 +15289,9 @@ a.badge-dark.focus {
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1;
-  color: #fff;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.5;
 }
 
 .close:hover {
@@ -15306,10 +15299,10 @@ a.badge-dark.focus {
   text-decoration: none;
 }
 
-/* .close:not(:disabled):not(.disabled):hover,
+.close:not(:disabled):not(.disabled):hover,
 .close:not(:disabled):not(.disabled):focus {
-    opacity: .75
-} */
+  opacity: 0.75;
+}
 
 button.close {
   padding: 0;
