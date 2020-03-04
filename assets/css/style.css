@@ -15642,7 +15642,7 @@ nav.navbar {
 }
 
 .nav-tabs li a.active {
-  color: #3a6596 !important;
+  color: #333333 !important;
   font-weight: 600;
   /* border-bottom-color:#3A6596 !important; */
 }
@@ -21533,7 +21533,7 @@ span.badge {
   border: 0;
   padding: 10px;
   margin: -10px -10px 1px -10px;
-  background-color: #3A6596; 
+  background-color: #3a6596;
   color: #fff;
 }
 
