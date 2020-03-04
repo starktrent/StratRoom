@@ -443,9 +443,9 @@ a :hover {
   font-weight: normal;
 }
 
-.form-control:focus {
+/* .form-control:focus {
   border-color: grey !important;
-}
+} */
 
 input[name="new"] {
   width: 85% !important;
@@ -529,7 +529,7 @@ div.edit1 {
   left: 56%;
 }
 
-.btn:hover,
+/* .btn:hover,
 .btn-large:hover,
 .btn-small:hover {
   /* background-color: initial !important; */

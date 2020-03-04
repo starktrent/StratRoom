@@ -604,7 +604,7 @@ ul.gj-list-md li {
 }
 
 .idea-header h4 {
-  margin-top: 10%;
+  margin-top: 14%;
   text-align: left;
   font-family: Ubuntu;
   font-weight: 500;
@@ -713,6 +713,20 @@ ul.gj-list-md li {
   color: rgb(12, 88, 243);
 }
 
+.idea-body .idea_timeline h4 {
+  font-family: Ubuntu;
+  font-weight: 500;
+  font-size: 16px;
+  color: rgba(92, 93, 93, 1);
+}
+
+.idea-body .idea_timeline span {
+  font-family: Ubuntu;
+  font-weight: 500;
+  font-size: 13px;
+  color: #222;
+}
+
 .idea-body .idea_sponsor h4 {
   font-family: Ubuntu;
   font-weight: 500;
@@ -750,5 +764,10 @@ ul.gj-list-md li {
 
 .idea-footer-icon i {
   font-size: 22px;
+  color: #fff;
+}
+
+.btn-sr-theme {
+  background-color: #3a6596;
   color: #fff;
 }
