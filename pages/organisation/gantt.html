@@ -24,22 +24,22 @@
       href="../../assets/daterangepicker/daterangepicker.min.css"
       rel="stylesheet"
     />
-    <link href="../../assets/css/employee.css" rel="stylesheet" />
-    <!-- <link href="../../assets/bootstrap-datepicker.min.css" rel="stylesheet" /> -->
 
+    <!-- Tree Table -->
     <script
       src="https://code.jquery.com/jquery-1.12.4.min.js"
       integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
       crossorigin="anonymous"
     ></script>
-    <script src="../../assets/js/dist/jquery-simple-tree-table.js"></script>
-
-    <!-- Gantt Chart -->
-    <script src="https://cdn.dhtmlx.com/gantt/edge/dhtmlxgantt.js"></script>
+    <link rel="stylesheet" href="../../assets/treeable/jquery.treetable.css" />
     <link
-      href="https://cdn.dhtmlx.com/gantt/edge/dhtmlxgantt.css"
       rel="stylesheet"
+      href="../../assets/treeable/jquery.treetable.theme.default.css"
     />
+
+    <!-- Frappe Gantt Chart -->
+    <script src="../../assets/Gantt/frappe-gantt.min.js"></script>
+    <link rel="stylesheet" href="../../assets/Gantt/frappe-gantt.css" />
 
     <link
       href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
@@ -49,62 +49,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <style>
-      .orientation-right {
-        top: 60px !important;
-        right: 0 !important;
-        left: auto !important;
-        position: fixed;
-      }
-
-      .theme-black .swot-nav > li > a {
-        max-width: 160px;
-        overflow: hidden;
-        margin-bottom: -10px;
-      }
-
-      .dashboard-table tbody tr th {
-        font-weight: 700 !important;
-        color: #333;
-        background-color: #f7f7f7;
-        font-size: 12px;
-      }
-
-      .dashboard-table tbody tr td {
-        font-weight: 500 !important;
-        color: #333;
-        font-size: 12px !important;
-      }
-
-      .dashboard-table tbody tr td,
-      .dashboard-table tbody tr th {
-        border: 1px solid #ececec !important;
-        padding: 10px 5px 10px 5px;
-      }
-
-      .dashboard-task-infos .progress {
-        height: 16px;
-        position: relative;
-        top: 6px;
-        border-radius: 4px;
-        width: 90%;
-        display: block;
-        margin: auto;
-      }
-
-      .progress-bar {
-        color: #fff;
-      }
-
-      .download-btn-dropdown {
-        position: absolute;
-        will-change: transform;
-        top: 120% !important;
-        left: 7% !important;
-        width: 100%;
-        transform: translate3d(0px, 36px, 0px);
-      }
-    </style>
   </head>
 
   <body class="light">
@@ -429,38 +373,182 @@
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="card">
-              <div
-                id="gantt_here"
-                style="width:100%; height:600px !important;"
-              ></div>
-              <script type="text/javascript">
-                var tasks = {
-                  data: [
-                    {
-                      id: 1,
-                      text: "Project #1",
-                      start_date: "01-04-2013",
-                      duration: 18
-                    },
-                    {
-                      id: 2,
-                      text: "Task #1",
-                      start_date: "02-04-2013",
-                      duration: 8,
-                      parent: 1
-                    },
-                    {
-                      id: 3,
-                      text: "Task #2",
-                      start_date: "11-04-2013",
-                      duration: 8,
-                      parent: 1
-                    }
-                  ]
-                };
-                gantt.init("gantt_here");
-                gantt.parse(tasks);
-              </script>
+              <div class="form-row" style="padding: 16px;">
+                <div class="col-md-2 form-group">
+                  <button
+                    id="menu-toggle"
+                    class="btn btn-primary"
+                    data-toggle="tooltip"
+                    data-placement="right"
+                    title="collapse Table"
+                  >
+                    <i id="toggleIcon" class="fa fa-angle-double-left"></i>
+                  </button>
+                </div>
+                <div class="col-md-5"></div>
+                <div class="col-md-1">
+                  <button
+                    class="btn btn-primary pull-right"
+                    onclick="return false;"
+                    class="dropdown-toggle"
+                    data-toggle="dropdown"
+                    role="button"
+                    aria-haspopup="true"
+                    aria-expanded="true"
+                  >
+                    <i class="fas fa-cog" style="font-size: 14px;"></i>
+                  </button>
+                  <ul
+                    class="dropdown-menu pull-right"
+                    x-placement="bottom-ent"
+                    style="width: 200px;"
+                  >
+                    <li>
+                      <a
+                        href="#"
+                        data-toggle="modal"
+                        data-target="#budget_type_modal"
+                        >Add Budget type</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" data-toggle="modal" data-target="#"
+                        >Other Settings</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-2">
+                  <div
+                    id="control-view"
+                    class="btn-group"
+                    role="group"
+                    aria-label="Basic example"
+                    style="width: 100%;"
+                  >
+                    <button
+                      type="button"
+                      class="btn btn-secondary active"
+                      data-value="Day"
+                    >
+                      Day
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-value="Week"
+                    >
+                      Week
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-value="Month"
+                    >
+                      Month
+                    </button>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <button
+                    class="btn btn-sr-theme"
+                    data-toggle="modal"
+                    data-target="#create_tasks"
+                    style="font-weight: 600; font-size: 14px !important; width: 100%;"
+                  >
+                    <i class="fas fa-plus" style="font-size: 12px;"></i>
+                    Add Task
+                  </button>
+                </div>
+              </div>
+              <div class="form-row" style="padding: 16px;">
+                <div class="col-md-6">
+                  <div class="table-responsive">
+                    <table
+                      id="example-basic"
+                      class="table align-center dashboard-table dashboard-task-infos"
+                    >
+                      <thead>
+                        <tr>
+                          <th>Task Name</th>
+                          <th>Start Date</th>
+                          <th>End Date</th>
+                          <th>Progress</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr data-tt-id="1">
+                          <td>Redesign website</td>
+                          <td>Mar 9</td>
+                          <td>Jun 5</td>
+                          <td>60%</td>
+                        </tr>
+                        <tr data-tt-id="1.1" data-tt-parent-id="1">
+                          <td>Redesign website</td>
+                          <td>Mar 9</td>
+                          <td>Jun 5</td>
+                          <td>60%</td>
+                        </tr>
+                        <tr data-tt-id="1.1.1" data-tt-parent-id="1.1">
+                          <td>Redesign website</td>
+                          <td>Mar 9</td>
+                          <td>Jun 5</td>
+                          <td>60%</td>
+                        </tr>
+                        <tr data-tt-id="1.1.2" data-tt-parent-id="1.1">
+                          <td>Redesign website</td>
+                          <td>Mar 9</td>
+                          <td>Jun 5</td>
+                          <td>60%</td>
+                        </tr>
+                        <tr data-tt-id="2">
+                          <td>Redesign website</td>
+                          <td>Mar 9</td>
+                          <td>Jun 5</td>
+                          <td>60%</td>
+                        </tr>
+                        <tr data-tt-id="2.1" data-tt-parent-id="2">
+                          <td>Redesign website</td>
+                          <td>Mar 9</td>
+                          <td>Jun 5</td>
+                          <td>60%</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <svg id="gantt"></svg>
+                </div>
+              </div>
+              <div id="wrapper">
+                <!-- Sidebar -->
+                <div id="sidebar-wrapper">
+                  <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                      <a href="#">
+                        Start Bootstrap
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">Dashboard</a>
+                    </li>
+                    <li>
+                      <a href="#">Shortcuts</a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- sidebar-wrapper -->
+
+                <!-- Page Content -->
+
+                <div id="page-content-wrapper" style="border: 2px solid #444;">
+                  <svg id="gantt"></svg>
+                </div>
+                <!-- page-content-wrapper -->
+              </div>
+              <!-- wrapper -->
             </div>
           </div>
         </div>
@@ -489,6 +577,8 @@
     <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
     <script src="../../assets/knockout-3.5.0.js"></script>
     <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
+
+    <script src="../../assets/treeable/jquery.treetable.js"></script>
     <script>
       $(".daterangepicker-field").daterangepicker({
         forceUpdate: true,
@@ -497,6 +587,78 @@
           $(this).val(title);
         }
       });
+    </script>
+    <script>
+      $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        var isIE11 = !!navigator.userAgent.match(/Trident.*rv\:11\./);
+
+        $("#toggleIcon").toggleClass(
+          "fa fa-angle-double-left fa fa-angle-double-right"
+        );
+        $("#wrapper").toggleClass("toggled");
+
+        if (isIE11) {
+          if ($("#wrapper").hasClass("toggled")) {
+            $("#sidebar-wrapper").css("margin-left", "-268px");
+          } else {
+            $("#sidebar-wrapper").css("margin-left", "-250px");
+          }
+        }
+      });
+    </script>
+    <script>
+      var tasks = [
+        {
+          id: "Task 1",
+          name: "Redesign website",
+          start: "2016-12-28",
+          end: "2016-12-31",
+          progress: 20,
+          assignedBy: "James"
+        },
+        {
+          id: "Task 2",
+          name: "Redesign website",
+          start: "2016-12-31",
+          end: "2017-01-5",
+          progress: 20,
+          dependencies: "Task 1"
+        }
+      ];
+      var gantt = new Gantt("#gantt", tasks, {
+        header_height: 50,
+        column_width: 30,
+        step: 24,
+        view_modes: ["Quarter Day", "Half Day", "Day", "Week", "Month"],
+        bar_height: 20,
+        bar_corner_radius: 3,
+        arrow_curve: 5,
+        padding: 18,
+        view_mode: "Day",
+        date_format: "YYYY-MM-DD",
+        custom_popup_html: null
+      });
+
+      $("#control-view").on("click", "button", function(e) {
+        var mode = this.dataset.value;
+        gantt.change_view_mode(mode);
+        $(this)
+          .parent()
+          .find("button")
+          .removeClass("active");
+        $(this).addClass("active");
+      });
+    </script>
+
+    <script>
+      $("#example-basic").treetable({ expandable: true });
+
+      $("#example-basic-static").treetable();
+
+      $("#example-basic-expandable").treetable({ expandable: true });
+
+      $("#example-advanced").treetable({ expandable: true });
     </script>
   </body>
 </a>

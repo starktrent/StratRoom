@@ -12711,6 +12711,7 @@ input[type="button"].btn-block {
 .btn-group-vertical > .btn:active,
 .btn-group-vertical > .btn.active {
   z-index: 1;
+  background-color: #343d45;
 }
 
 .btn-toolbar {
