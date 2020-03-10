@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <a lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
@@ -14,42 +15,41 @@
     <link href="../../assets/css/custom.css" rel="stylesheet" />
     <link href="../../assets/css/initatives.css" rel="stylesheet" />
     <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" />
+    <link href="../../assets/css/employee.css" rel="stylesheet" />
     <!-- You can choose a theme from css/styles instead of get all themes -->
     <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
-    <!-- <link href="../../assets/css/table-view.css" rel="stylesheet" /> -->
-    <!-- <link rel="stylesheet" href="../../assets/daterangepicker.css"> -->
+    <link href="../../assets/css/icheck-bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../../assets/datepickerair.css" />
     <link href="../../assets/jquery-ui.min.css" rel="stylesheet" />
-    <link
-      href="../../assets/daterangepicker/daterangepicker.min.css"
-      rel="stylesheet"
-    />
+    <link href="../../assets/daterangepicker/daterangepicker.min.css" rel="stylesheet" />
 
     <!-- Tree Table -->
-    <script
-      src="https://code.jquery.com/jquery-1.12.4.min.js"
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
       integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../assets/treeable/jquery.treetable.css" />
-    <link
-      rel="stylesheet"
-      href="../../assets/treeable/jquery.treetable.theme.default.css"
-    />
+    <link rel="stylesheet" href="../../assets/treeable/jquery.treetable.theme.default.css" />
 
     <!-- Frappe Gantt Chart -->
     <script src="../../assets/Gantt/frappe-gantt.min.js"></script>
     <link rel="stylesheet" href="../../assets/Gantt/frappe-gantt.css" />
 
-    <link
-      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   </head>
+  <style>
+    .table-responsive {
+      margin-top: -4px;
+    }
+
+    .table thead tr th {
+      padding: 23px 10px;
+    }
+
+    .dashboard-table tbody tr td {
+      padding: 13px 5px;
+    }
+  </style>
 
   <body class="light">
     <!-- Page Loader -->
@@ -72,23 +72,13 @@
     <nav class="navbar">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a
-            href="#"
-            onClick="return false;"
-            class="navbar-toggle collapsed"
-            data-toggle="collapse"
-            data-target="#navbar-collapse"
-            aria-expanded="false"
-          ></a>
+          <a href="#" onClick="return false;" class="navbar-toggle collapsed" data-toggle="collapse"
+            data-target="#navbar-collapse" aria-expanded="false"></a>
           <a href="#" onClick="return false;" class="bars"></a>
-          <a href="#" onClick="return false;" class="bar_nav sidemenu-collapse"
-            ><i class="nav-hdr-btn ti-menu" style="color: #000"></i
-          ></a>
+          <a href="#" onClick="return false;" class="bar_nav sidemenu-collapse"><i class="nav-hdr-btn ti-menu"
+              style="color: #000"></i></a>
           <a class="navbar-brand nav_float" href="#">
-            <img
-              src="../../assets/images/Startroom_Final logo-01_1.png"
-              alt=""
-            />
+            <img src="../../assets/images/Startroom_Final logo-01_1.png" alt="" />
             <!-- <span class="logo-name">Img</span> -->
           </a>
         </div>
@@ -97,32 +87,16 @@
             <li class="fullscreen" style="padding: 4px;left: -14px;">
               <ul class="list-unstyled order-list">
                 <li class="avatar avatar-sm">
-                  <img
-                    class="rounded-circle"
-                    src="../../assets/images/user/user7.jpg"
-                    alt="user"
-                  />
+                  <img class="rounded-circle" src="../../assets/images/user/user7.jpg" alt="user" />
                 </li>
                 <li class="avatar avatar-sm">
-                  <img
-                    class="rounded-circle"
-                    src="../../assets/images/user/user8.jpg"
-                    alt="user"
-                  />
+                  <img class="rounded-circle" src="../../assets/images/user/user8.jpg" alt="user" />
                 </li>
                 <li class="avatar avatar-sm">
-                  <img
-                    class="rounded-circle"
-                    src="../../assets/images/user/user9.jpg"
-                    alt="user"
-                  />
+                  <img class="rounded-circle" src="../../assets/images/user/user9.jpg" alt="user" />
                 </li>
                 <li class="avatar avatar-sm">
-                  <img
-                    class="rounded-circle"
-                    src="../../assets/images/user/user9.jpg"
-                    alt="user"
-                  />
+                  <img class="rounded-circle" src="../../assets/images/user/user9.jpg" alt="user" />
                 </li>
                 <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
                   <span _ngcontent-hhc-c5="" class="badge">+3</span>
@@ -131,13 +105,8 @@
             </li>
             <li class="fullscreen">
               <form class="form-header" action="" method="POST">
-                <input
-                  class="au-input au-input--xl"
-                  style="min-width: 20%"
-                  type="text"
-                  name="search"
-                  placeholder="Search"
-                />
+                <input class="au-input au-input--xl" style="min-width: 20%" type="text" name="search"
+                  placeholder="Search" />
                 <button class="au-btn--submit" type="submit">
                   <i class="fa fa-search" style="color:gray"></i>
                 </button>
@@ -150,26 +119,14 @@
             <!-- #END# Full Screen Button -->
             <!-- #START# Notifications-->
             <li class="dropdown">
-              <a
-                href="#"
-                onClick="return false;"
-                class="dropdown-toggle"
-                data-toggle="dropdown"
-                role="button"
-              >
+              <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button">
                 <i class="nav-hdr-btn ti-bell" style="color: gray"></i>
                 <span class="notify"></span>
                 <span class="heartbeat"></span>
               </a>
             </li>
             <li class="dropdown">
-              <a
-                href="#"
-                onClick="return false;"
-                class="dropdown-toggle"
-                data-toggle="dropdown"
-                role="button"
-              >
+              <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button">
                 <i class="nav-hdr-btn ti-settings" style="color: gray"></i>
                 <span class="notify"></span>
                 <span class="heartbeat"></span>
@@ -177,12 +134,7 @@
             </li>
             <!-- #END# Notifications-->
             <li class="">
-              <a
-                href="#"
-                onclick="return false;"
-                class=" dropdown-toggle js-right-sidebar"
-                data-close="true"
-              >
+              <a href="#" onclick="return false;" class=" dropdown-toggle js-right-sidebar" data-close="true">
                 <!-- <img src="../../assets/images/user.jpg" alt="user"> -->
                 <i class="fas fa-user-circle"></i>
               </a>
@@ -263,12 +215,7 @@
               </a>
               <ul class="ml-menu">
                 <li>
-                  <a
-                    href="#"
-                    id="sub-menu"
-                    onClick="return false;"
-                    class="menu-toggle"
-                  >
+                  <a href="#" id="sub-menu" onClick="return false;" class="menu-toggle">
                     Scorecard Layouts
                   </a>
                   <ul class="ml-menu">
@@ -277,12 +224,7 @@
                   </ul>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    id="sub-menu"
-                    onClick="return false;"
-                    class="menu-toggle"
-                  >
+                  <a href="#" id="sub-menu" onClick="return false;" class="menu-toggle">
                     Initiative
                   </a>
                   <ul class="ml-menu">
@@ -296,12 +238,7 @@
                   <a href="#">Reports Table</a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    id="sub-menu"
-                    onClick="return false;"
-                    class="menu-toggle"
-                  >
+                  <a href="#" id="sub-menu" onClick="return false;" class="menu-toggle">
                     Comments
                   </a>
                   <ul class="ml-menu">
@@ -316,12 +253,7 @@
                   <a href="#">Appraisal</a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    data-toggle="modal"
-                    data-target=".data_collection_form"
-                    >Data Collection Form</a
-                  >
+                  <a href="#" data-toggle="modal" data-target=".data_collection_form">Data Collection Form</a>
                 </li>
               </ul>
             </li>
@@ -346,21 +278,241 @@
     </div>
     <!-- #END# Left Sidebar -->
 
+    <!-- Create Budget Modal -->
+    <div id="add_tasks" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="max-width: 60%;margin-top: 4%;">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Add Task</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-row">
+              <div class="form-group mt-n2 col-md-2">
+                <label for="kpi_id">ID</label>
+                <input type="text" class="form-control browser-default" name="kpi_id" id="kpi_id" placeholder="" />
+              </div>
+              <div class="form-group mt-n2 col-md-10">
+                <label for="kpi_name">Name</label>
+                <input type="text" class="form-control browser-default" name="kpi_name" id="kpi_name" placeholder="" />
+              </div>
+            </div>
+            <hr />
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="kpi_description">Description</label>
+                <textarea class="form-control browser-default" name="kpi_description" id="kpi_description"
+                  placeholder="" cols="" rows="6"></textarea>
+              </div>
+            </div>
+            <hr />
+            <div class="form-row">
+              <div class="form-group browser-default col-md-6">
+                <label for="kpi_owner">Owner</label>
+                <select id="objective_owner" name="" class="select_all" multiple style="display: none !important;">
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+              </div>
+
+              <div class="form-group browser-default col-md-6">
+                <label for="impact">Impact</label>
+                <select id="objective_owner" name="" class="form-control select_all" multiple
+                  style="display: none !important;">
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+              </div>
+            </div>
+            <hr />
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="kpi_start_end_date">Planned Start Date/End Date</label>
+                <input type="text" class="form-control browser-default date_pickers datepicker-here" data-range="true"
+                  data-multiple-dates-separator=" - " data-language="en" id="air-date-sub-init" />
+              </div>
+              <div class="form-group col-md-6">
+                <label for="kpi_start_end_date">Actual Start Date/End Date</label>
+                <input type="text" class="form-control browser-default date_pickers datepicker-here" data-range="true"
+                  data-multiple-dates-separator=" - " data-language="en" id="air-date-sub-init" />
+              </div>
+            </div>
+            <hr />
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="">Status</label>
+              </div>
+              <div class="form-group col-md-4">
+                <div class="radio icheck-success">
+                  <input type="radio" id="primary1" checked name="primary" />
+                  <label for="primary1"></label>
+                </div>
+              </div>
+              <div class="form-group col-md-4">
+                <div class="radio icheck-warning">
+                  <input type="radio" id="primary2" name="primary" />
+                  <label for="primary2"></label>
+                </div>
+              </div>
+              <div class="form-group col-md-4">
+                <div class="radio icheck-danger">
+                  <input type="radio" id="primary3" name="primary" />
+                  <label for="primary3"></label>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="kpi_start_end_date">Status</label>
+                <select id="inputState" class="form-control browser-default">
+                  <option>Choose</option>
+                  <option value="manual">Manual</option>
+                  <option value="weighted">Weighted</option>
+                  <option value="first">First</option>
+                  <option value="second">Second</option>
+                  <option value="third">Third</option>
+                  <option value="fourth">Fourth</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="kpi_name">Progress (%)</label>
+                <input type="number" min="0" class="form-control browser-default" name="kpi_name" id="kpi_name"
+                  placeholder="" />
+              </div>
+            </div>
+            <hr />
+            <div class="form-row mt-2">
+              <label for="kpi_fields" class="ml-2 mr-3">Data Fields </label>
+              <ul class="d-flex flex-row flex-wrap ml-2">
+                <li>
+                  <div class="form-check">
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="" />
+                        Actual
+                        <span class="form-check-sign">
+                          <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="form-check">
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="" />
+                        Target
+                        <span class="form-check-sign">
+                          <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="form-check">
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="" />
+                        Budget
+                        <span class="form-check-sign">
+                          <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="form-check">
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="" />
+                        Forecast
+                        <span class="form-check-sign">
+                          <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="form-row mt-2">
+              <label for="kpi_fields" class="ml-2 mr-3">Amount</label>
+              <ul class="d-flex flex-row flex-wrap ml-2">
+                <li>
+                  <div class="form-check">
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="" />
+                        Budget
+                        <span class="form-check-sign">
+                          <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="form-check">
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="" />
+                        Utillized
+                        <span class="form-check-sign">
+                          <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="form-check">
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="" />
+                        Balance
+                        <span class="form-check-sign">
+                          <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="form-group col-md-8"></div>
+              <div class="form-group col-md-2">
+                <button type="button" style="width: 100%;" class="btn modal-save-btn">
+                  <i class="fas fa-check"></i> Save
+                </button>
+              </div>
+              <div class="form-group col-md-2">
+                <button type="button" style="width: 100%;" class="btn modal-close-btn" data-dismiss="modal">
+                  <i class="fas fa-ban"></i> Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Content Start -->
     <section class="content">
       <!-- Page Header -->
-      <div
-        class="page-header row no-gutters py-2 m-t--70"
-        style="background-color: #3A6596;"
-      >
-        <div
-          class="col-lg-6 col-md-6 text-center text-sm-left pt-2 mb-0 ml-4"
-          style="color: #fff;"
-        >
-          <h4
-            class="page-title"
-            style="font-weight: 600; text-transform: uppercase;"
-          >
+      <div class="page-header row no-gutters py-2 m-t--70" style="background-color: #3A6596;">
+        <div class="col-lg-6 col-md-6 text-center text-sm-left pt-2 mb-0 ml-4" style="color: #fff;">
+          <h4 class="page-title" style="font-weight: 600; text-transform: uppercase;">
             Gantt Chart
           </h4>
         </div>
@@ -375,99 +527,51 @@
             <div class="card">
               <div class="form-row" style="padding: 16px;">
                 <div class="col-md-2 form-group">
-                  <button
-                    id="menu-toggle"
-                    class="btn btn-primary"
-                    data-toggle="tooltip"
-                    data-placement="right"
-                    title="collapse Table"
-                  >
+                  <button onclick="menuToggle()" class="btn btn-primary" data-toggle="tooltip" data-placement="right"
+                    title="collapse Table">
                     <i id="toggleIcon" class="fa fa-angle-double-left"></i>
                   </button>
                 </div>
                 <div class="col-md-5"></div>
                 <div class="col-md-1">
-                  <button
-                    class="btn btn-primary pull-right"
-                    onclick="return false;"
-                    class="dropdown-toggle"
-                    data-toggle="dropdown"
-                    role="button"
-                    aria-haspopup="true"
-                    aria-expanded="true"
-                  >
+                  <button class="btn btn-primary pull-right" onclick="return false;" class="dropdown-toggle"
+                    data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
                     <i class="fas fa-cog" style="font-size: 14px;"></i>
                   </button>
-                  <ul
-                    class="dropdown-menu pull-right"
-                    x-placement="bottom-ent"
-                    style="width: 200px;"
-                  >
+                  <ul class="dropdown-menu pull-right" x-placement="bottom-ent" style="width: 200px;">
                     <li>
-                      <a
-                        href="#"
-                        data-toggle="modal"
-                        data-target="#budget_type_modal"
-                        >Add Budget type</a
-                      >
+                      <a href="#" data-toggle="modal" data-target="#budget_type_modal">Add Budget type</a>
                     </li>
                     <li>
-                      <a href="#" data-toggle="modal" data-target="#"
-                        >Other Settings</a
-                      >
+                      <a href="#" data-toggle="modal" data-target="#">Other Settings</a>
                     </li>
                   </ul>
                 </div>
                 <div class="col-md-2">
-                  <div
-                    id="control-view"
-                    class="btn-group"
-                    role="group"
-                    aria-label="Basic example"
-                    style="width: 100%;"
-                  >
-                    <button
-                      type="button"
-                      class="btn btn-secondary active"
-                      data-value="Day"
-                    >
+                  <div id="control-view" class="btn-group" role="group" aria-label="Basic example" style="width: 100%;">
+                    <button type="button" class="btn btn-secondary active" data-value="Day">
                       Day
                     </button>
-                    <button
-                      type="button"
-                      class="btn btn-secondary"
-                      data-value="Week"
-                    >
+                    <button type="button" class="btn btn-secondary" data-value="Week">
                       Week
                     </button>
-                    <button
-                      type="button"
-                      class="btn btn-secondary"
-                      data-value="Month"
-                    >
+                    <button type="button" class="btn btn-secondary" data-value="Month">
                       Month
                     </button>
                   </div>
                 </div>
                 <div class="col-md-2">
-                  <button
-                    class="btn btn-sr-theme"
-                    data-toggle="modal"
-                    data-target="#create_tasks"
-                    style="font-weight: 600; font-size: 14px !important; width: 100%;"
-                  >
+                  <button class="btn btn-sr-theme" data-toggle="modal" data-target="#add_tasks"
+                    style="font-weight: 600; font-size: 14px !important; width: 100%;">
                     <i class="fas fa-plus" style="font-size: 12px;"></i>
                     Add Task
                   </button>
                 </div>
               </div>
-              <div class="form-row" style="padding: 16px;">
-                <div class="col-md-6">
+              <div class="form-row" style="padding: 16px; margin-top: -20px;">
+                <div class="col-md-4" id="TreeTable">
                   <div class="table-responsive">
-                    <table
-                      id="example-basic"
-                      class="table align-center dashboard-table dashboard-task-infos"
-                    >
+                    <table id="example-basic" class="table align-center dashboard-table dashboard-task-infos">
                       <thead>
                         <tr>
                           <th>Task Name</th>
@@ -518,37 +622,10 @@
                     </table>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-8" id="FrappeGantt" style="border: 2px solid #e0e0e0;">
                   <svg id="gantt"></svg>
                 </div>
               </div>
-              <div id="wrapper">
-                <!-- Sidebar -->
-                <div id="sidebar-wrapper">
-                  <ul class="sidebar-nav">
-                    <li class="sidebar-brand">
-                      <a href="#">
-                        Start Bootstrap
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">Dashboard</a>
-                    </li>
-                    <li>
-                      <a href="#">Shortcuts</a>
-                    </li>
-                  </ul>
-                </div>
-                <!-- sidebar-wrapper -->
-
-                <!-- Page Content -->
-
-                <div id="page-content-wrapper" style="border: 2px solid #444;">
-                  <svg id="gantt"></svg>
-                </div>
-                <!-- page-content-wrapper -->
-              </div>
-              <!-- wrapper -->
             </div>
           </div>
         </div>
@@ -563,16 +640,10 @@
     <script src="../../assets/js/admin.js"></script>
     <!-- Knob Js -->
     <script src="../../assets/jquery-ui.min.js"></script>
-    <script src="../../assets/moment.js"></script>
-    <script src="../../assets/js/pages/core.js"></script>
-    <script src="../../assets/js/pages/charts.js"></script>
-    <script src="../../assets/js/pages/spiritedaway.js"></script>
-    <script src="../../assets/js/pages/animated.js"></script>
-    <script src="../../assets/jquery.editable.min.js"></script>
-    <script src="../../assets/js/bootstrap.bundle.min.js"></script>
-    <script src="../../assets/pickr.es5.min.js"></script>
+    <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
     <script src="../../assets/datepickerair.js"></script>
     <script src="../../assets/datepicker.en.js"></script>
+    <script src="../../assets/jquery-ui.min.js"></script>
     <script src="../../assets/js/widgets.js"></script>
     <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
     <script src="../../assets/knockout-3.5.0.js"></script>
@@ -582,30 +653,51 @@
     <script>
       $(".daterangepicker-field").daterangepicker({
         forceUpdate: true,
-        callback: function(startDate, endDate, period) {
+        callback: function (startDate, endDate, period) {
           var title = startDate.format("L") + " – " + endDate.format("L");
           $(this).val(title);
         }
       });
+
+      $(document).ready(function () {
+        // $('select').val([1]);
+        $("select").formSelect();
+        $("select.select_all")
+          .siblings("ul")
+          .prepend("<li id=sm_select_all><span>Select All</span></li>");
+        $("li#sm_select_all").on("click", function () {
+          var jq_elem = $(this),
+            jq_elem_span = jq_elem.find("span"),
+            select_all = jq_elem_span.text() == "Select All",
+            set_text = select_all ? "Select None" : "Select All";
+          jq_elem_span.text(set_text);
+          jq_elem
+            .siblings("li")
+            .filter(function () {
+              return (
+                $(this)
+                  .find("input")
+                  .prop("checked") != select_all
+              );
+            })
+            .click();
+        });
+      });
     </script>
     <script>
-      $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        var isIE11 = !!navigator.userAgent.match(/Trident.*rv\:11\./);
+      function menuToggle() {
+        var t = document.getElementById("TreeTable");
+        var g = document.getElementById("FrappeGantt");
 
-        $("#toggleIcon").toggleClass(
-          "fa fa-angle-double-left fa fa-angle-double-right"
-        );
-        $("#wrapper").toggleClass("toggled");
-
-        if (isIE11) {
-          if ($("#wrapper").hasClass("toggled")) {
-            $("#sidebar-wrapper").css("margin-left", "-268px");
-          } else {
-            $("#sidebar-wrapper").css("margin-left", "-250px");
-          }
+        if (!t.hidden) {
+          t.hidden = true;
+          g.setAttribute("class", "col-md-12");
+        } else {
+          t.hidden = false;
+          g.setAttribute("class", "col-md-8")
         }
-      });
+
+      }
     </script>
     <script>
       var tasks = [
@@ -622,6 +714,30 @@
           name: "Redesign website",
           start: "2016-12-31",
           end: "2017-01-5",
+          progress: 80,
+          dependencies: "Task 1"
+        },
+        {
+          id: "Task 3",
+          name: "Redesign website",
+          start: "2016-12-31",
+          end: "2017-01-5",
+          progress: 20,
+          dependencies: "Task 1"
+        },
+        {
+          id: "Task 4",
+          name: "Redesign website",
+          start: "2016-12-31",
+          end: "2017-01-5",
+          progress: 20,
+          dependencies: "Task 1"
+        },
+        {
+          id: "Task 5",
+          name: "Redesign website",
+          start: "2016-12-31",
+          end: "2017-01-5",
           progress: 20,
           dependencies: "Task 1"
         }
@@ -631,7 +747,7 @@
         column_width: 30,
         step: 24,
         view_modes: ["Quarter Day", "Half Day", "Day", "Week", "Month"],
-        bar_height: 20,
+        bar_height: 25,
         bar_corner_radius: 3,
         arrow_curve: 5,
         padding: 18,
@@ -640,7 +756,7 @@
         custom_popup_html: null
       });
 
-      $("#control-view").on("click", "button", function(e) {
+      $("#control-view").on("click", "button", function (e) {
         var mode = this.dataset.value;
         gantt.change_view_mode(mode);
         $(this)
