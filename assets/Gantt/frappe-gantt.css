@@ -89,7 +89,7 @@
   fill: #a9b5c1;
 }
 .gantt .bar-wrapper:hover .bar-progress {
-  fill: #8a8aff;
+  fill: #686872;
 }
 .gantt .bar-wrapper:hover .handle {
   visibility: visible;
@@ -148,4 +148,24 @@
   margin: 0 0 0 -5px;
   border: 5px solid transparent;
   border-top-color: rgba(0, 0, 0, 0.8);
+}
+.details-container {
+  width: 200px;
+  height: auto;
+  padding: 10px;
+}
+.gantt-popup-heading h5 {
+  font-size: 12px;
+  margin: 13px 0px;
+}
+.details-container img {
+  border-radius: 50%;
+}
+
+.details-container hr {
+  margin: 10px 5px;
+  width: 100%;
+  background-color: #8a8aff;
+  height: 3px;
+  border: none;
 }
