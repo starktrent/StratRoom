@@ -656,7 +656,7 @@
                 </div>
                 <div class="col-md-5"></div>
                 <div class="col-md-1">
-                  <button
+                  <!-- <button
                     class="btn btn-primary pull-right"
                     onclick="return false;"
                     class="dropdown-toggle"
@@ -685,7 +685,7 @@
                         >Other Settings</a
                       >
                     </li>
-                  </ul>
+                  </ul> -->
                 </div>
                 <div class="col-md-2">
                   <div
@@ -926,7 +926,10 @@
           name: "Redesign website",
           id: "Task 0",
           owner: "https://uinames.com/api/photos/female/12.jpg",
-          progress: 60
+          progress: 60,
+          budget: "$ 5,00,000",
+          utillized: "$ 2,00,000",
+          balance: "$ 3,00,000"
         },
         {
           start: "2018-10-03",
@@ -935,6 +938,9 @@
           id: "Task 1",
           owner: "https://uinames.com/api/photos/female/22.jpg",
           progress: 20,
+          budget: "$ 5,00,000",
+          utillized: "$ 2,00,000",
+          balance: "$ 3,00,000",
           dependencies: "Task 0"
         },
         {
@@ -944,6 +950,9 @@
           id: "Task 2",
           owner: "https://uinames.com/api/photos/male/7.jpg",
           progress: 30,
+          budget: "$ 5,00,000",
+          utillized: "$ 2,00,000",
+          balance: "$ 3,00,000",
           dependencies: "Task 1"
         },
         {
@@ -953,6 +962,9 @@
           id: "Task 3",
           owner: "https://uinames.com/api/photos/male/16.jpg",
           progress: 35,
+          budget: "$ 5,00,000",
+          utillized: "$ 2,00,000",
+          balance: "$ 3,00,000",
           dependencies: "Task 2"
         },
         {
@@ -962,6 +974,9 @@
           id: "Task 4",
           owner: "https://uinames.com/api/photos/female/21.jpg",
           progress: 20,
+          budget: "$ 5,00,000",
+          utillized: "$ 2,00,000",
+          balance: "$ 3,00,000",
           dependencies: "Task 2"
         },
         {
@@ -971,6 +986,9 @@
           id: "Task 5",
           owner: "https://uinames.com/api/photos/male/20.jpg",
           progress: 10,
+          budget: "$ 5,00,000",
+          utillized: "$ 2,00,000",
+          balance: "$ 3,00,000",
           dependencies: "Task 4",
           custom_class: "bar-milestone"
         }
@@ -997,9 +1015,31 @@
                 <img src="${task.owner}" alt="owner">
               </div>
               <hr />
-              <div class="col-12">
+            </div>
+            <div class="row gantt-popup-body">
+              <div class="col-6">
+                <span>Budget</span>
+                <span class="pull-right"> - </span>
+              </div>
+              <div class="col-6">
+                <p>${task.budget}</p>
+              </div>
+              <div class="col-6">
+                <span>Utillized</span>
+                <span class="pull-right"> - </span>
+              </div>
+              <div class="col-6">
+                <p>${task.utillized}</p>
+              </div>
+              <div class="col-6">
+                <span>Balance</span>
+                <span class="pull-right"> - </span>
+              </div>
+              <div class="col-6">
+                <p>${task.balance}</p>
+              </div>
+              <div class="col-12" style="margin-top: 8px;">
                 <p>${task.progress}% completed!</p>
-                <p style="margin-top: -5px;">Expected to finish by ${task.end}</p>
               </div>
             </div>
         </div>`;
@@ -1028,5 +1068,3 @@
     </script>
   </body>
 </a>
-<!-- <img src="${task.owner}" alt="owner"> -->
-<!-- <h5>${task.name}</h5> -->

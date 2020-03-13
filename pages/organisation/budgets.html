@@ -67,16 +67,28 @@
         font-size: 12px;
       }
 
-      .dashboard-table tbody tr td {
+      table.treetable tbody tr td {
+        cursor: default;
         font-weight: 500 !important;
-        color: #333;
-        font-size: 12px !important;
+        color: #555;
+        font-size: 13px !important;
       }
 
-      .dashboard-table tbody tr td,
-      .dashboard-table tbody tr th {
+      .table thead tr th {
+        padding: 16px 10px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .dashboard-table tbody tr td {
         border: 1px solid #ececec !important;
-        padding: 10px 5px 10px 5px;
+        padding: 10px 5px;
+      }
+
+      .dashboard-table tbody tr td img {
+        width: 30px;
+        height: auto;
+        border-radius: 50%;
+        float: left;
       }
 
       .dashboard-task-infos .progress {
@@ -109,7 +121,7 @@
       }
 
       .theme-black .nav > li > a {
-        max-width: 160px;
+        max-width: 120px;
         overflow: hidden;
         margin-bottom: -12px;
       }
@@ -710,12 +722,12 @@
                       class="nav-link active"
                       onclick="active();"
                       data-toggle="tab"
-                      href="#all_budgets"
+                      href="#dashboard"
                     >
                       <input
                         class=""
                         type="text"
-                        value="All Budgets"
+                        value="Dashboard"
                         style="font-weight: 600; text-transform: uppercase;"
                       />
                     </a>
@@ -725,17 +737,17 @@
                       class="nav-link"
                       onclick="active();"
                       data-toggle="tab"
-                      href="#cost_budgets"
+                      href="#summary"
                     >
                       <input
                         class=""
                         type="text"
-                        value="Cost Budgets"
+                        value="Summary"
                         style="font-weight: 600; text-transform: uppercase;"
                       />
                     </a>
                   </li>
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                     <a
                       class="nav-link"
                       onclick="active();"
@@ -749,22 +761,7 @@
                         style="font-weight: 600; text-transform: uppercase;"
                       />
                     </a>
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link"
-                      onclick="active();"
-                      data-toggle="tab"
-                      href="#reservation_budgets"
-                    >
-                      <input
-                        class=""
-                        type="text"
-                        value="Reservation Budgets"
-                        style="font-weight: 600; text-transform: uppercase;"
-                      />
-                    </a>
-                  </li>
+                  </li> -->
                 </ul>
 
                 <script>
@@ -790,12 +787,13 @@
             <div class="card" style="margin-top: -14px !important;">
               <div class="col-md-12">
                 <div class="tab-content">
-                  <div class="tab-pane body active" id="all_budgets">
+                  <div class="tab-pane body active" id="summary">
                     <div class="row">
                       <div class="col-md-4">
                         <input
                           type="text"
-                          class="form-control browser-default"
+                          class="browser-default"
+                          style="width: 100%; height: 36px;"
                           name="filter"
                           id="filter"
                           placeholder="Search ..."
@@ -803,8 +801,8 @@
                       </div>
                       <div class="col-md-3"></div>
                       <div class="col-md-1">
-                        <a
-                          href="#"
+                        <button
+                          class="btn btn-primary pull-left"
                           onclick="return false;"
                           class="dropdown-toggle"
                           data-toggle="dropdown"
@@ -812,11 +810,8 @@
                           aria-haspopup="true"
                           aria-expanded="true"
                         >
-                          <i
-                            class="fas fa-cog pull-right"
-                            style="font-size: 14px; margin-top: 8px;"
-                          ></i>
-                        </a>
+                          <i class="fas fa-cog" style="font-size: 14px;"></i>
+                        </button>
                         <ul
                           class="dropdown-menu pull-right"
                           x-placement="bottom-ent"
@@ -836,12 +831,16 @@
                             >
                           </li>
                         </ul>
+                        <button class="btn btn-primary pull-right">
+                          <i class="fas fa-filter" style="font-size: 14px;"></i>
+                        </button>
                       </div>
-                      <div class="col-md-2 form-group">
+                      <div class="col-md-2">
                         <div class="dropdown">
                           <button
-                            class="btn btn-primary dropdown-toggle form-control"
+                            class="btn btn-primary dropdown-toggle"
                             type="button"
+                            style="width: 100%;"
                             data-toggle="dropdown"
                           >
                             <i
@@ -858,10 +857,11 @@
                           </ul>
                         </div>
                       </div>
-                      <div class="col-md-2 form-group">
+                      <div class="col-md-2">
                         <button
-                          class="btn form-control btn-sr-theme"
+                          class="btn btn-sr-theme"
                           data-toggle="modal"
+                          style="font-weight: 600; font-size: 14px !important; width: 100%;"
                           data-target="#create_budget"
                         >
                           <i class="far fa-file" style="font-size: 14px;"></i>
@@ -877,9 +877,8 @@
                         <thead>
                           <tr>
                             <th>Budget Name</th>
-                            <th>
-                              Budget Type
-                            </th>
+                            <th>Department</th>
+                            <th>Budget Type</th>
                             <th>Current</th>
                             <th>Budgeted</th>
                             <th>Forcasted</th>
@@ -891,7 +890,15 @@
 
                         <tbody>
                           <tr data-tt-id="1">
-                            <td>Project-1 cost Budget</td>
+                            <td style="text-align: left;">
+                              Project-1 cost Budget
+                            </td>
+                            <td>
+                              <img
+                                src="https://uinames.com/api/photos/female/12.jpg"
+                                alt="department"
+                              />
+                            </td>
                             <td>Cost</td>
                             <td>$45.90</td>
                             <td>$32.92</td>
@@ -969,7 +976,15 @@
                             </td>
                           </tr>
                           <tr data-tt-id="1.1" data-tt-parent-id="1">
-                            <td>Project Material Cost</td>
+                            <td style="text-align: left;">
+                              Project Material Cost
+                            </td>
+                            <td>
+                              <img
+                                src="https://uinames.com/api/photos/male/2.jpg"
+                                alt="department"
+                              />
+                            </td>
                             <td>Cost</td>
                             <td>$45.90</td>
                             <td>$32.92</td>
@@ -1047,7 +1062,13 @@
                             </td>
                           </tr>
                           <tr data-tt-id="1.1.1" data-tt-parent-id="1.1">
-                            <td>Aurdino Board</td>
+                            <td style="text-align: left;">Aurdino Board</td>
+                            <td>
+                              <img
+                                src="https://uinames.com/api/photos/female/3.jpg"
+                                alt="department"
+                              />
+                            </td>
                             <td>Cost</td>
                             <td>$45.90</td>
                             <td>$32.92</td>
@@ -1125,7 +1146,13 @@
                             </td>
                           </tr>
                           <tr data-tt-id="1.1.2" data-tt-parent-id="1.1">
-                            <td>Connecting Wires</td>
+                            <td style="text-align: left;">Connecting Wires</td>
+                            <td>
+                              <img
+                                src="https://uinames.com/api/photos/female/6.jpg"
+                                alt="department"
+                              />
+                            </td>
                             <td>Cost</td>
                             <td>$45.90</td>
                             <td>$32.92</td>
@@ -1203,7 +1230,15 @@
                             </td>
                           </tr>
                           <tr data-tt-id="2">
-                            <td>Project cost Budget</td>
+                            <td style="text-align: left;">
+                              Project cost Budget
+                            </td>
+                            <td>
+                              <img
+                                src="https://uinames.com/api/photos/male/7.jpg"
+                                alt="department"
+                              />
+                            </td>
                             <td>Cost</td>
                             <td>$45.90</td>
                             <td>$32.92</td>
@@ -1281,7 +1316,15 @@
                             </td>
                           </tr>
                           <tr data-tt-id="2.1" data-tt-parent-id="2">
-                            <td>Project Material Budget</td>
+                            <td style="text-align: left;">
+                              Project Material Budget
+                            </td>
+                            <td>
+                              <img
+                                src="https://uinames.com/api/photos/female/8.jpg"
+                                alt="department"
+                              />
+                            </td>
                             <td>Cost</td>
                             <td>$45.90</td>
                             <td>$32.92</td>
@@ -1362,141 +1405,57 @@
                       </table>
                     </div>
                   </div>
-                  <div class="tab-pane body" id="cost_budgets">
+                  <div class="tab-pane body" id="dashboard">
                     <div class="row">
                       <div class="col-md-4">
                         <input
                           type="text"
-                          class="form-control browser-default"
+                          class="browser-default"
+                          style="width: 100%; height: 36px;"
                           name="filter"
                           id="filter"
                           placeholder="Search ..."
                         />
                       </div>
-                      <div class="col-md-4"></div>
-                      <div class="col-md-2 form-group">
-                        <div class="dropdown">
-                          <button
-                            class="btn btn-primary dropdown-toggle form-control"
-                            type="button"
-                            data-toggle="dropdown"
-                          >
-                            <i
-                              class="fas fa-download"
-                              style="font-size: 14px;"
-                            ></i>
-                            Download
-                            <span class="caret"></span>
-                          </button>
-                          <ul class="dropdown-menu download-btn-dropdown">
-                            <li><a href="#">Download CSV</a></li>
-                            <li><a href="#">Download EXCEL</a></li>
-                            <li><a href="#">Download PDF</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="col-md-2 form-group">
+                      <div class="col-md-3"></div>
+                      <div class="col-md-1">
                         <button
-                          class="btn form-control btn-sr-theme"
-                          data-toggle="modal"
-                          data-target="#create_budget"
+                          class="btn btn-primary pull-right"
+                          onclick="return false;"
+                          class="dropdown-toggle"
+                          data-toggle="dropdown"
+                          role="button"
+                          aria-haspopup="true"
+                          aria-expanded="true"
                         >
-                          <i class="far fa-file" style="font-size: 14px;"></i>
-                          Create Budget
+                          <i class="fas fa-cog" style="font-size: 14px;"></i>
                         </button>
-                      </div>
-                    </div>
-                    <table
-                      class="table align-center dashboard-table dashboard-task-infos"
-                    >
-                      <tr>
-                        <th>Budget Name</th>
-                        <th>Budget Type</th>
-                        <th>Current</th>
-                        <th>Budgeted</th>
-                        <th>Forcasted</th>
-                        <th>Current vs Budgeted</th>
-                        <th>Forcasted vs Budgeted</th>
-                        <th>Action</th>
-                      </tr>
-                    </table>
-                  </div>
-                  <div class="tab-pane body" id="usage_budgets">
-                    <div class="row">
-                      <div class="col-md-4">
-                        <input
-                          type="text"
-                          class="form-control browser-default"
-                          name="filter"
-                          id="filter"
-                          placeholder="Search ..."
-                        />
-                      </div>
-                      <div class="col-md-4"></div>
-                      <div class="col-md-2 form-group">
-                        <div class="dropdown">
-                          <button
-                            class="btn btn-primary dropdown-toggle form-control"
-                            type="button"
-                            data-toggle="dropdown"
-                          >
-                            <i
-                              class="fas fa-download"
-                              style="font-size: 14px;"
-                            ></i>
-                            Download
-                            <span class="caret"></span>
-                          </button>
-                          <ul class="dropdown-menu download-btn-dropdown">
-                            <li><a href="#">Download CSV</a></li>
-                            <li><a href="#">Download EXCEL</a></li>
-                            <li><a href="#">Download PDF</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="col-md-2 form-group">
-                        <button
-                          class="btn form-control btn-sr-theme"
-                          data-toggle="modal"
-                          data-target="#create_budget"
+                        <ul
+                          class="dropdown-menu pull-right"
+                          x-placement="bottom-ent"
+                          style="width: 200px;"
                         >
-                          <i class="far fa-file" style="font-size: 14px;"></i>
-                          Create Budget
-                        </button>
+                          <li>
+                            <a
+                              href="#"
+                              data-toggle="modal"
+                              data-target="#budget_type_modal"
+                              >Add Budget type</a
+                            >
+                          </li>
+                          <li>
+                            <a href="#" data-toggle="modal" data-target="#"
+                              >Other Settings</a
+                            >
+                          </li>
+                        </ul>
                       </div>
-                    </div>
-                    <table
-                      class="table align-center dashboard-table dashboard-task-infos"
-                    >
-                      <tr>
-                        <th>Budget Name</th>
-                        <th>Budget Type</th>
-                        <th>Current</th>
-                        <th>Budgeted</th>
-                        <th>Forcasted</th>
-                        <th>Current vs Budgeted</th>
-                        <th>Forcasted vs Budgeted</th>
-                        <th>Action</th>
-                      </tr>
-                    </table>
-                  </div>
-                  <div class="tab-pane body" id="reservation_budgets">
-                    <div class="row">
-                      <div class="col-md-4">
-                        <input
-                          type="text"
-                          class="form-control browser-default"
-                          name="filter"
-                          id="filter"
-                          placeholder="Search ..."
-                        />
-                      </div>
-                      <div class="col-md-4"></div>
-                      <div class="col-md-2 form-group">
+                      <div class="col-md-2">
                         <div class="dropdown">
                           <button
-                            class="btn btn-primary dropdown-toggle form-control"
+                            class="btn btn-primary dropdown-toggle"
                             type="button"
+                            style="width: 100%;"
                             data-toggle="dropdown"
                           >
                             <i
@@ -1513,69 +1472,11 @@
                           </ul>
                         </div>
                       </div>
-                      <div class="col-md-2 form-group">
+                      <div class="col-md-2">
                         <button
-                          class="btn form-control btn-sr-theme"
+                          class="btn btn-sr-theme"
                           data-toggle="modal"
-                          data-target="#create_budget"
-                        >
-                          <i class="far fa-file" style="font-size: 14px;"></i>
-                          Create Budget
-                        </button>
-                      </div>
-                    </div>
-                    <table
-                      class="table align-center dashboard-table dashboard-task-infos"
-                    >
-                      <tr>
-                        <th>Budget Name</th>
-                        <th>Budget Type</th>
-                        <th>Current</th>
-                        <th>Budgeted</th>
-                        <th>Forcasted</th>
-                        <th>Current vs Budgeted</th>
-                        <th>Forcasted vs Budgeted</th>
-                        <th>Action</th>
-                      </tr>
-                    </table>
-                  </div>
-                  <div class="tab-pane body" id="content">
-                    <div class="row">
-                      <div class="col-md-4">
-                        <input
-                          type="text"
-                          class="form-control browser-default"
-                          name="filter"
-                          id="filter"
-                          placeholder="Search ..."
-                        />
-                      </div>
-                      <div class="col-md-4"></div>
-                      <div class="col-md-2 form-group">
-                        <div class="dropdown">
-                          <button
-                            class="btn btn-primary dropdown-toggle form-control"
-                            type="button"
-                            data-toggle="dropdown"
-                          >
-                            <i
-                              class="fas fa-download"
-                              style="font-size: 14px;"
-                            ></i>
-                            Download
-                            <span class="caret"></span>
-                          </button>
-                          <ul class="dropdown-menu download-btn-dropdown">
-                            <li><a href="#">Download CSV</a></li>
-                            <li><a href="#">Download EXCEL</a></li>
-                            <li><a href="#">Download PDF</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="col-md-2 form-group">
-                        <button
-                          class="btn form-control btn-sr-theme"
-                          data-toggle="modal"
+                          style="font-weight: 600; font-size: 14px !important; width: 100%;"
                           data-target="#create_budget"
                         >
                           <i class="far fa-file" style="font-size: 14px;"></i>
