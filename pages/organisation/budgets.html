@@ -88,7 +88,7 @@
         width: 30px;
         height: auto;
         border-radius: 50%;
-        float: left;
+        float: center;
       }
 
       .dashboard-task-infos .progress {
@@ -451,24 +451,19 @@
             </button>
           </div>
           <div class="modal-body">
-            <div class="row">
+            <div class="row" style="margin-top: 2%;">
               <div class="col-md-7 form-group">
                 <label for="budgetname">Budget Name</label>
                 <input
                   type="text"
-                  class="form-control browser-default"
+                  class="modal-custom-input"
                   name="budgetname"
                   id="budgetname"
-                  placeholder=""
                 />
               </div>
               <div class="col-md-5 form-group">
                 <label for="budget_type">Budget Type</label>
-                <select
-                  id="budget_type"
-                  name=""
-                  class="form-control browser-default"
-                >
+                <select id="budget_type" name="" class="modal-custom-input">
                   <option value="1">Option 1</option>
                   <option value="2">Option 2</option>
                   <option value="3">Option 3</option>
@@ -478,30 +473,27 @@
                 <label for="current">Current</label>
                 <input
                   type="text"
-                  class="form-control browser-default"
+                  class="modal-custom-input"
                   name="current"
                   id="current"
-                  placeholder=""
                 />
               </div>
               <div class="col-md-4 form-group">
                 <label for="budgeted">Budgeted</label>
                 <input
                   type="text"
-                  class="form-control browser-default"
+                  class="modal-custom-input"
                   name="budgeted"
                   id="budgeted"
-                  placeholder=""
                 />
               </div>
               <div class="col-md-4 form-group">
                 <label for="forecasted">Forecasted</label>
                 <input
                   type="text"
-                  class="form-control browser-default"
+                  class="modal-custom-input"
                   name="forecasted"
                   id="forecasted"
-                  placeholder=""
                 />
               </div>
               <div class="form-group col-md-12">
@@ -509,17 +501,20 @@
               </div>
               <div class="form-group col-md-8"></div>
               <div class="form-group col-md-2">
-                <button type="button" class="btn form-control modal-save-btn">
-                  <i class="fas fa-check"></i> Save
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-secondary"
+                  data-dismiss="modal"
+                >
+                  <i class="fas fa-ban"></i> Close
                 </button>
               </div>
               <div class="form-group col-md-2">
                 <button
                   type="button"
-                  class="btn form-control modal-close-btn"
-                  data-dismiss="modal"
+                  class="btn custom-form-control btn-custom-primary"
                 >
-                  <i class="fas fa-ban"></i> Close
+                  <i class="fas fa-check"></i> Save
                 </button>
               </div>
             </div>
@@ -543,12 +538,12 @@
             </button>
           </div>
           <div class="modal-body">
-            <div class="row">
+            <div class="row" style="margin-top: 2%;">
               <div class="col-md-7 form-group">
                 <label for="budgetname">Budget Name</label>
                 <input
                   type="text"
-                  class="form-control browser-default"
+                  class="modal-custom-input"
                   name="budgetname"
                   id="budgetname"
                   value="Project cost Budget"
@@ -556,11 +551,7 @@
               </div>
               <div class="col-md-5 form-group">
                 <label for="budget_type">Budget Type</label>
-                <select
-                  id="budget_type"
-                  name=""
-                  class="form-control browser-default"
-                >
+                <select id="budget_type" name="" class="modal-custom-input">
                   <option value="1">Option 1</option>
                   <option value="2">Option 2</option>
                   <option value="3">Option 3</option>
@@ -570,7 +561,7 @@
                 <label for="current">Current</label>
                 <input
                   type="text"
-                  class="form-control browser-default"
+                  class="modal-custom-input"
                   name="current"
                   id="current"
                   value="$59.78"
@@ -580,7 +571,7 @@
                 <label for="budgeted">Budgeted</label>
                 <input
                   type="text"
-                  class="form-control browser-default"
+                  class="modal-custom-input"
                   name="budgeted"
                   id="budgeted"
                   value="$45.90"
@@ -590,7 +581,7 @@
                 <label for="forecasted">Forecasted</label>
                 <input
                   type="text"
-                  class="form-control browser-default"
+                  class="modal-custom-input"
                   name="forecasted"
                   id="forecasted"
                   value="$32.92"
@@ -601,17 +592,20 @@
               </div>
               <div class="form-group col-md-8"></div>
               <div class="form-group col-md-2">
-                <button type="button" class="btn form-control modal-save-btn">
-                  <i class="fas fa-check"></i> Save
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-secondary"
+                  data-dismiss="modal"
+                >
+                  <i class="fas fa-ban"></i> Close
                 </button>
               </div>
               <div class="form-group col-md-2">
                 <button
                   type="button"
-                  class="btn form-control modal-close-btn"
-                  data-dismiss="modal"
+                  class="btn custom-form-control btn-custom-primary"
                 >
-                  <i class="fas fa-ban"></i> Close
+                  <i class="fas fa-check"></i> Save
                 </button>
               </div>
             </div>
@@ -638,7 +632,7 @@
                 <select
                   id="budget_type_select"
                   name=""
-                  class="select_all"
+                  class="select_all custom-input"
                   multiple
                   style="display: none !important;"
                 >
@@ -652,17 +646,20 @@
               </div>
               <div class="form-group col-md-6"></div>
               <div class="form-group col-md-3">
-                <button type="button" class="btn form-control modal-save-btn">
-                  <i class="fas fa-check"></i> Save
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-secondary"
+                  data-dismiss="modal"
+                >
+                  <i class="fas fa-ban"></i> Close
                 </button>
               </div>
               <div class="form-group col-md-3">
                 <button
                   type="button"
-                  class="btn form-control modal-close-btn"
-                  data-dismiss="modal"
+                  class="btn custom-form-control btn-custom-primary"
                 >
-                  <i class="fas fa-ban"></i> Close
+                  <i class="fas fa-check"></i> Save
                 </button>
               </div>
             </div>
@@ -787,85 +784,54 @@
             <div class="card" style="margin-top: -14px !important;">
               <div class="col-md-12">
                 <div class="tab-content">
-                  <div class="tab-pane body active" id="summary">
+                  <div class="tab-pane body active" id="dashboard"></div>
+                  <div class="tab-pane body" id="summary">
                     <div class="row">
-                      <div class="col-md-4">
+                      <div class="col-md-3">
                         <input
                           type="text"
-                          class="browser-default"
-                          style="width: 100%; height: 36px;"
-                          name="filter"
-                          id="filter"
-                          placeholder="Search ..."
+                          class="custom-input"
+                          placeholder="Find Budget"
+                          onfocus="this.placeholder = ''"
+                          onblur="this.placeholder = 'Find Budget'"
                         />
                       </div>
-                      <div class="col-md-3"></div>
-                      <div class="col-md-1">
+                      <div class="col-md-5"></div>
+                      <div class="col-md-2 custom-space-even">
                         <button
-                          class="btn btn-primary pull-left"
-                          onclick="return false;"
-                          class="dropdown-toggle"
-                          data-toggle="dropdown"
-                          role="button"
-                          aria-haspopup="true"
-                          aria-expanded="true"
+                          class="btn btn-custom-secondary"
+                          data-toggle="modal"
+                          data-target="#budget_type_modal"
                         >
                           <i class="fas fa-cog" style="font-size: 14px;"></i>
                         </button>
-                        <ul
-                          class="dropdown-menu pull-right"
-                          x-placement="bottom-ent"
-                          style="width: 200px;"
-                        >
-                          <li>
-                            <a
-                              href="#"
-                              data-toggle="modal"
-                              data-target="#budget_type_modal"
-                              >Add Budget type</a
-                            >
-                          </li>
-                          <li>
-                            <a href="#" data-toggle="modal" data-target="#"
-                              >Other Settings</a
-                            >
-                          </li>
-                        </ul>
-                        <button class="btn btn-primary pull-right">
+                        <button class="btn btn-custom-secondary">
                           <i class="fas fa-filter" style="font-size: 14px;"></i>
                         </button>
-                      </div>
-                      <div class="col-md-2">
                         <div class="dropdown">
                           <button
-                            class="btn btn-primary dropdown-toggle"
+                            class="btn btn-custom-secondary dropdown-toggle"
                             type="button"
-                            style="width: 100%;"
                             data-toggle="dropdown"
                           >
-                            <i
-                              class="fas fa-download"
-                              style="font-size: 14px;"
-                            ></i>
-                            Download
-                            <span class="caret"></span>
+                            <i class="fas fa-download"></i>
+                            <span class="caret" style="margin-top: 6px;"></span>
                           </button>
                           <ul class="dropdown-menu download-btn-dropdown">
-                            <li><a href="#">Download CSV</a></li>
-                            <li><a href="#">Download EXCEL</a></li>
-                            <li><a href="#">Download PDF</a></li>
+                            <li><a href="#">CSV</a></li>
+                            <li><a href="#">EXCEL</a></li>
+                            <li><a href="#">PDF</a></li>
                           </ul>
                         </div>
                       </div>
                       <div class="col-md-2">
                         <button
-                          class="btn btn-sr-theme"
+                          class="btn btn-custom-primary custom-form-control"
                           data-toggle="modal"
-                          style="font-weight: 600; font-size: 14px !important; width: 100%;"
                           data-target="#create_budget"
                         >
-                          <i class="far fa-file" style="font-size: 14px;"></i>
-                          Create Budget
+                          <i class="fas fa-plus"></i>
+                          Budget
                         </button>
                       </div>
                     </div>
@@ -892,6 +858,12 @@
                           <tr data-tt-id="1">
                             <td style="text-align: left;">
                               Project-1 cost Budget
+                              <a
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#create_budget"
+                                ><i class="fas fa-plus"></i
+                              ></a>
                             </td>
                             <td>
                               <img
@@ -934,50 +906,21 @@
                             <td>
                               <a
                                 href="#"
-                                onclick="return false;"
-                                class="dropdown-toggle"
-                                data-toggle="dropdown"
-                                role="button"
-                                aria-haspopup="true"
-                                aria-expanded="true"
-                              >
-                                <i class="fas fa-ellipsis-h"></i>
-                              </a>
-                              <ul
-                                class="dropdown-menu pull-right"
-                                x-placement="bottom-ent"
-                              >
-                                <li>
-                                  <a
-                                    href="#"
-                                    data-toggle="modal"
-                                    data-target="#create_budget"
-                                    >Add Child</a
-                                  >
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    data-toggle="modal"
-                                    data-target="#edit_budget"
-                                    >Edit</a
-                                  >
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    onclick="return false;"
-                                    class="delete-row"
-                                    style="color: rgb(212, 22, 22) !important;"
-                                    >Delete</a
-                                  >
-                                </li>
-                              </ul>
+                                data-toggle="modal"
+                                data-target="#edit_budget"
+                                ><i class="fas fa-edit"></i
+                              ></a>
                             </td>
                           </tr>
                           <tr data-tt-id="1.1" data-tt-parent-id="1">
                             <td style="text-align: left;">
                               Project Material Cost
+                              <a
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#create_budget"
+                                ><i class="fas fa-plus"></i
+                              ></a>
                             </td>
                             <td>
                               <img
@@ -1020,49 +963,22 @@
                             <td>
                               <a
                                 href="#"
-                                onclick="return false;"
-                                class="dropdown-toggle"
-                                data-toggle="dropdown"
-                                role="button"
-                                aria-haspopup="true"
-                                aria-expanded="true"
-                              >
-                                <i class="fas fa-ellipsis-h"></i>
-                              </a>
-                              <ul
-                                class="dropdown-menu pull-right"
-                                x-placement="bottom-ent"
-                              >
-                                <li>
-                                  <a
-                                    href="#"
-                                    data-toggle="modal"
-                                    data-target="#create_budget"
-                                    >Add Child</a
-                                  >
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    data-toggle="modal"
-                                    data-target="#edit_budget"
-                                    >Edit</a
-                                  >
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    onclick="return false;"
-                                    class="delete-row"
-                                    style="color: rgb(212, 22, 22) !important;"
-                                    >Delete</a
-                                  >
-                                </li>
-                              </ul>
+                                data-toggle="modal"
+                                data-target="#edit_budget"
+                                ><i class="fas fa-edit"></i
+                              ></a>
                             </td>
                           </tr>
                           <tr data-tt-id="1.1.1" data-tt-parent-id="1.1">
-                            <td style="text-align: left;">Aurdino Board</td>
+                            <td style="text-align: left;">
+                              Aurdino Board
+                              <a
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#create_budget"
+                                ><i class="fas fa-plus"></i
+                              ></a>
+                            </td>
                             <td>
                               <img
                                 src="https://uinames.com/api/photos/female/3.jpg"
@@ -1104,49 +1020,22 @@
                             <td>
                               <a
                                 href="#"
-                                onclick="return false;"
-                                class="dropdown-toggle"
-                                data-toggle="dropdown"
-                                role="button"
-                                aria-haspopup="true"
-                                aria-expanded="true"
-                              >
-                                <i class="fas fa-ellipsis-h"></i>
-                              </a>
-                              <ul
-                                class="dropdown-menu pull-right"
-                                x-placement="bottom-ent"
-                              >
-                                <li>
-                                  <a
-                                    href="#"
-                                    data-toggle="modal"
-                                    data-target="#create_budget"
-                                    >Add Child</a
-                                  >
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    data-toggle="modal"
-                                    data-target="#edit_budget"
-                                    >Edit</a
-                                  >
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    onclick="return false;"
-                                    class="delete-row"
-                                    style="color: rgb(212, 22, 22) !important;"
-                                    >Delete</a
-                                  >
-                                </li>
-                              </ul>
+                                data-toggle="modal"
+                                data-target="#edit_budget"
+                                ><i class="fas fa-edit"></i
+                              ></a>
                             </td>
                           </tr>
                           <tr data-tt-id="1.1.2" data-tt-parent-id="1.1">
-                            <td style="text-align: left;">Connecting Wires</td>
+                            <td style="text-align: left;">
+                              Connecting Wires
+                              <a
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#create_budget"
+                                ><i class="fas fa-plus"></i
+                              ></a>
+                            </td>
                             <td>
                               <img
                                 src="https://uinames.com/api/photos/female/6.jpg"
@@ -1188,50 +1077,21 @@
                             <td>
                               <a
                                 href="#"
-                                onclick="return false;"
-                                class="dropdown-toggle"
-                                data-toggle="dropdown"
-                                role="button"
-                                aria-haspopup="true"
-                                aria-expanded="true"
-                              >
-                                <i class="fas fa-ellipsis-h"></i>
-                              </a>
-                              <ul
-                                class="dropdown-menu pull-right"
-                                x-placement="bottom-ent"
-                              >
-                                <li>
-                                  <a
-                                    href="#"
-                                    data-toggle="modal"
-                                    data-target="#create_budget"
-                                    >Add Child</a
-                                  >
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    data-toggle="modal"
-                                    data-target="#edit_budget"
-                                    >Edit</a
-                                  >
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    onclick="return false;"
-                                    class="delete-row"
-                                    style="color: rgb(212, 22, 22) !important;"
-                                    >Delete</a
-                                  >
-                                </li>
-                              </ul>
+                                data-toggle="modal"
+                                data-target="#edit_budget"
+                                ><i class="fas fa-edit"></i
+                              ></a>
                             </td>
                           </tr>
                           <tr data-tt-id="2">
                             <td style="text-align: left;">
                               Project cost Budget
+                              <a
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#create_budget"
+                                ><i class="fas fa-plus"></i
+                              ></a>
                             </td>
                             <td>
                               <img
@@ -1274,50 +1134,21 @@
                             <td>
                               <a
                                 href="#"
-                                onclick="return false;"
-                                class="dropdown-toggle"
-                                data-toggle="dropdown"
-                                role="button"
-                                aria-haspopup="true"
-                                aria-expanded="true"
-                              >
-                                <i class="fas fa-ellipsis-h"></i>
-                              </a>
-                              <ul
-                                class="dropdown-menu pull-right"
-                                x-placement="bottom-ent"
-                              >
-                                <li>
-                                  <a
-                                    href="#"
-                                    data-toggle="modal"
-                                    data-target="#create_budget"
-                                    >Add Child</a
-                                  >
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    data-toggle="modal"
-                                    data-target="#edit_budget"
-                                    >Edit</a
-                                  >
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    onclick="return false;"
-                                    class="delete-row"
-                                    style="color: rgb(212, 22, 22) !important;"
-                                    >Delete</a
-                                  >
-                                </li>
-                              </ul>
+                                data-toggle="modal"
+                                data-target="#edit_budget"
+                                ><i class="fas fa-edit"></i
+                              ></a>
                             </td>
                           </tr>
                           <tr data-tt-id="2.1" data-tt-parent-id="2">
                             <td style="text-align: left;">
                               Project Material Budget
+                              <a
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#create_budget"
+                                ><i class="fas fa-plus"></i
+                              ></a>
                             </td>
                             <td>
                               <img
@@ -1360,144 +1191,15 @@
                             <td>
                               <a
                                 href="#"
-                                onclick="return false;"
-                                class="dropdown-toggle"
-                                data-toggle="dropdown"
-                                role="button"
-                                aria-haspopup="true"
-                                aria-expanded="true"
-                              >
-                                <i class="fas fa-ellipsis-h"></i>
-                              </a>
-                              <ul
-                                class="dropdown-menu pull-right"
-                                x-placement="bottom-ent"
-                              >
-                                <li>
-                                  <a
-                                    href="#"
-                                    data-toggle="modal"
-                                    data-target="#create_budget"
-                                    >Add Child</a
-                                  >
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    data-toggle="modal"
-                                    data-target="#edit_budget"
-                                    >Edit</a
-                                  >
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    onclick="return false;"
-                                    class="delete-row"
-                                    style="color: rgb(212, 22, 22) !important;"
-                                    >Delete</a
-                                  >
-                                </li>
-                              </ul>
+                                data-toggle="modal"
+                                data-target="#edit_budget"
+                                ><i class="fas fa-edit"></i
+                              ></a>
                             </td>
                           </tr>
                         </tbody>
                       </table>
                     </div>
-                  </div>
-                  <div class="tab-pane body" id="dashboard">
-                    <div class="row">
-                      <div class="col-md-4">
-                        <input
-                          type="text"
-                          class="browser-default"
-                          style="width: 100%; height: 36px;"
-                          name="filter"
-                          id="filter"
-                          placeholder="Search ..."
-                        />
-                      </div>
-                      <div class="col-md-3"></div>
-                      <div class="col-md-1">
-                        <button
-                          class="btn btn-primary pull-right"
-                          onclick="return false;"
-                          class="dropdown-toggle"
-                          data-toggle="dropdown"
-                          role="button"
-                          aria-haspopup="true"
-                          aria-expanded="true"
-                        >
-                          <i class="fas fa-cog" style="font-size: 14px;"></i>
-                        </button>
-                        <ul
-                          class="dropdown-menu pull-right"
-                          x-placement="bottom-ent"
-                          style="width: 200px;"
-                        >
-                          <li>
-                            <a
-                              href="#"
-                              data-toggle="modal"
-                              data-target="#budget_type_modal"
-                              >Add Budget type</a
-                            >
-                          </li>
-                          <li>
-                            <a href="#" data-toggle="modal" data-target="#"
-                              >Other Settings</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="col-md-2">
-                        <div class="dropdown">
-                          <button
-                            class="btn btn-primary dropdown-toggle"
-                            type="button"
-                            style="width: 100%;"
-                            data-toggle="dropdown"
-                          >
-                            <i
-                              class="fas fa-download"
-                              style="font-size: 14px;"
-                            ></i>
-                            Download
-                            <span class="caret"></span>
-                          </button>
-                          <ul class="dropdown-menu download-btn-dropdown">
-                            <li><a href="#">Download CSV</a></li>
-                            <li><a href="#">Download EXCEL</a></li>
-                            <li><a href="#">Download PDF</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="col-md-2">
-                        <button
-                          class="btn btn-sr-theme"
-                          data-toggle="modal"
-                          style="font-weight: 600; font-size: 14px !important; width: 100%;"
-                          data-target="#create_budget"
-                        >
-                          <i class="far fa-file" style="font-size: 14px;"></i>
-                          Create Budget
-                        </button>
-                      </div>
-                    </div>
-                    <table
-                      class="table align-center dashboard-table dashboard-task-infos"
-                    >
-                      <tr>
-                        <th>Budget Name</th>
-                        <th>Budget Type</th>
-                        <th>Current</th>
-                        <th>Budgeted</th>
-                        <th>Forcasted</th>
-                        <th>Current vs Budgeted</th>
-                        <th>Forcasted vs Budgeted</th>
-                        <th>Action</th>
-                      </tr>
-                    </table>
                   </div>
                 </div>
               </div>
