@@ -646,7 +646,7 @@
                 <div class="col-md-2 form-group">
                   <button
                     onclick="menuToggle()"
-                    class="btn btn-primary"
+                    class="btn btn-custom-secondary"
                     data-toggle="tooltip"
                     data-placement="right"
                     title="collapse Table"
@@ -654,79 +654,45 @@
                     <i id="toggleIcon" class="fa fa-angle-double-left"></i>
                   </button>
                 </div>
-                <div class="col-md-5"></div>
-                <div class="col-md-1">
-                  <!-- <button
-                    class="btn btn-primary pull-right"
-                    onclick="return false;"
-                    class="dropdown-toggle"
-                    data-toggle="dropdown"
-                    role="button"
-                    aria-haspopup="true"
-                    aria-expanded="true"
-                  >
-                    <i class="fas fa-cog" style="font-size: 14px;"></i>
-                  </button>
-                  <ul
-                    class="dropdown-menu pull-right"
-                    x-placement="bottom-ent"
-                    style="width: 200px;"
-                  >
-                    <li>
-                      <a
-                        href="#"
-                        data-toggle="modal"
-                        data-target="#budget_type_modal"
-                        >Add Budget type</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" data-toggle="modal" data-target="#"
-                        >Other Settings</a
-                      >
-                    </li>
-                  </ul> -->
-                </div>
-                <div class="col-md-2">
+                <div class="col-md-8"></div>
+                <div class="col-md-2 custom-space-even">
                   <div
                     id="control-view"
                     class="btn-group"
                     role="group"
                     aria-label="Basic example"
-                    style="width: 100%;"
+                    style="width: 80%;"
                   >
                     <button
                       type="button"
-                      class="btn btn-secondary active"
+                      class="btn btn-custom-secondary active"
                       data-value="Day"
+                      style="border-top-left-radius: 4px;border-bottom-left-radius: 4px;"
                     >
-                      Day
+                      D
                     </button>
                     <button
                       type="button"
-                      class="btn btn-secondary"
+                      class="btn btn-custom-secondary"
                       data-value="Week"
                     >
-                      Week
+                      W
                     </button>
                     <button
                       type="button"
-                      class="btn btn-secondary"
+                      class="btn btn-custom-secondary"
                       data-value="Month"
+                      style="border-top-right-radius: 4px;border-bottom-right-radius: 4px;"
                     >
-                      Month
+                      M
                     </button>
                   </div>
-                </div>
-                <div class="col-md-2">
                   <button
-                    class="btn btn-sr-theme"
+                    class="btn btn-custom-secondary"
                     data-toggle="modal"
                     data-target="#create_task"
-                    style="font-weight: 600; font-size: 14px !important; width: 100%;"
                   >
-                    <i class="fas fa-plus" style="font-size: 12px;"></i>
-                    Add Task
+                    <i class="fas fa-plus"></i>
                   </button>
                 </div>
               </div>

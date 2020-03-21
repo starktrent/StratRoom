@@ -1,5 +1,5 @@
 .colfp {
-  background: #3a6596;
+  background: #181818;
   color: #fff;
   padding: 20px 0px;
 }
@@ -19,7 +19,7 @@
 }
 
 .page-header {
-  background-color: #3a6596;
+  background-color: #181818;
 }
 
 .page-title {
@@ -76,7 +76,7 @@
 }
 
 .favgs {
-  color: #3a6596 !important;
+  color: #181818 !important;
   font-size: 1.1rem !important;
 }
 
@@ -92,13 +92,13 @@
 
 .rc-tgrn {
   /* background-color: #07a089; */
-  color: #3a6596;
+  color: #181818;
   padding: 9px 6px 6px 7px;
   margin-right: 4px;
 }
 
 .rc-tgrn i {
-  color: #3a6596;
+  color: #181818;
   font-size: 16px !important;
   font-weight: 400 !important;
 }
@@ -525,7 +525,7 @@ ul.gj-list-md li {
 }
 
 .modal .modal-save-btn {
-  background-color: #3a6596;
+  background-color: #181818;
   color: #fff;
 }
 
@@ -768,7 +768,7 @@ ul.gj-list-md li {
 }
 
 .btn-sr-theme {
-  background-color: #3a6596;
+  background-color: #181818;
   color: #fff;
 }
 
@@ -879,9 +879,9 @@ ul.gj-list-md li {
 }
 
 .custom-input:focus {
-  box-shadow: 0 0 3px #3a6596 !important;
+  box-shadow: 0 0 3px #181818 !important;
   padding: 0 8px !important;
-  border: 1px solid #3a6596 !important;
+  border: 1px solid #181818 !important;
 }
 
 .modal-custom-input {
@@ -898,9 +898,24 @@ ul.gj-list-md li {
 }
 
 .modal-custom-input:focus {
-  box-shadow: 0 0 3px #3a6596 !important;
+  box-shadow: 0 0 3px #181818 !important;
   padding: 0 8px !important;
-  border: 1px solid #3a6596 !important;
+  border: 1px solid #181818 !important;
+}
+
+.modal-custom-select {
+  border: 1px solid #e5e5e5 !important;
+  border-radius: 4px !important;
+  width: 106% !important;
+  height: 65% !important;
+  padding: 4px 8px !important;
+  font-size: 14px !important;
+}
+
+.modal-custom-select:focus {
+  box-shadow: 0 0 3px #181818 !important;
+  padding: 0 8px !important;
+  border: 1px solid #181818 !important;
 }
 
 .custom-form-control {
@@ -908,8 +923,7 @@ ul.gj-list-md li {
 }
 
 .btn-custom-primary {
-  background-color: #3a6596;
-  border: 1px solid #264c77;
+  background-color: #181818;
   color: #fff;
   font-size: 14px;
   border-radius: 4px;
@@ -917,8 +931,9 @@ ul.gj-list-md li {
 }
 
 .btn-custom-primary:hover {
-  background-color: #264c77;
-  border: 1px solid #1f4066;
+  background-color: #fff;
+  border: 2px solid #181818;
+  color: #181818;
   box-shadow: none;
 }
 

@@ -12711,7 +12711,7 @@ input[type="button"].btn-block {
 .btn-group-vertical > .btn:active,
 .btn-group-vertical > .btn.active {
   z-index: 1;
-  background-color: #343d45;
+  background-color: #f0f0f0;
 }
 
 .btn-toolbar {
@@ -15290,9 +15290,7 @@ a.badge-dark.focus {
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1;
-  color: #000;
-  text-shadow: 0 1px 0 #fff;
-  opacity: 0.5;
+  color: #fff;
 }
 
 .close:hover {
@@ -15392,7 +15390,7 @@ a.close.disabled {
 .modal-dialog {
   position: relative;
   width: auto;
-  margin: 0.5rem;
+  padding: 0 10px;
   pointer-events: none;
 }
 
