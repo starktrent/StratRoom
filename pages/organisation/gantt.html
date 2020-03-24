@@ -361,58 +361,48 @@
 
     <!-- Create Budget Modal -->
     <div id="create_task" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" style="max-width: 60%;margin-top: 3%;">
+      <div class="modal-dialog modal-lg" style="margin-top: 3%;">
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
-            <h4>Create New Task</h4>
+            <h4>Add New Task</h4>
             <button type="button" class="close pull-right" data-dismiss="modal">
               &times;
             </button>
           </div>
           <div class="modal-body">
-            <div class="form-row mt-4">
-              <div class="form-group mt-n2 col-md-2">
-                <label for="kpi_id">Task ID</label>
-                <input
-                  type="text"
-                  class="form-control browser-default"
-                  name="kpi_id"
-                  id="kpi_id"
-                  placeholder=""
-                />
+            <div class="row">
+              <div class="form-group col-md-2">
+                <label for="">Task ID</label>
+                <input type="text" class="modal-custom-input" placeholder="" />
               </div>
-              <div class="form-group mt-n2 col-md-10">
-                <label for="kpi_name">Task Name</label>
-                <input
-                  type="text"
-                  class="form-control browser-default"
-                  name="kpi_name"
-                  id="kpi_name"
-                  placeholder=""
-                />
+
+              <div class="form-group col-md-10">
+                <label for="">Task Name</label>
+                <input type="text" class="modal-custom-input" placeholder="" />
               </div>
-            </div>
-            <hr />
-            <div class="form-row">
+
               <div class="form-group col-md-12">
-                <label for="kpi_description">Task Description</label>
+                <hr />
+              </div>
+
+              <div class="form-group col-md-12">
+                <label for="">Task Description</label>
                 <textarea
-                  class="form-control browser-default"
-                  name="kpi_description"
-                  id="kpi_description"
+                  class="modal-custom-textarea"
                   placeholder=""
-                  cols=""
                   rows="6"
                 ></textarea>
               </div>
-            </div>
-            <hr />
-            <div class="form-row">
-              <div class="form-group browser-default col-md-6">
+
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+
+              <div class="form-group col-md-6">
                 <label for="kpi_owner">Owner</label>
                 <select
-                  id="objective_owner"
+                  id="owner"
                   name=""
                   class="select_all"
                   multiple
@@ -427,24 +417,11 @@
               </div>
 
               <div class="form-group col-md-6">
-                <label for="kpi_name">Budget</label>
-                <input
-                  type="text"
-                  class="form-control browser-default"
-                  name="kpi_name"
-                  id="kpi_name"
-                  placeholder=""
-                />
-              </div>
-            </div>
-            <hr />
-            <div class="form-row">
-              <div class="form-group browser-default col-md-4">
                 <label for="impact">Impact</label>
                 <select
-                  id="objective_owner"
+                  id="impact"
                   name=""
-                  class="form-control select_all"
+                  class="select_all"
                   multiple
                   style="display: none !important;"
                 >
@@ -453,35 +430,48 @@
                   <option value="3">Option 3</option>
                 </select>
               </div>
+
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="kpi_name">Budget</label>
+                <input type="text" class="modal-custom-input" />
+              </div>
+
               <div class="form-group col-md-4">
                 <label for="kpi_start_end_date"
                   >Planned Start Date/End Date</label
                 >
                 <input
                   type="text"
-                  class="form-control browser-default date_pickers datepicker-here"
+                  class="modal-custom-input date_pickers datepicker-here"
                   data-range="true"
                   data-multiple-dates-separator=" - "
                   data-language="en"
                   id="air-date-sub-init"
                 />
               </div>
+
               <div class="form-group col-md-4">
                 <label for="kpi_start_end_date"
                   >Actual Start Date/End Date</label
                 >
                 <input
                   type="text"
-                  class="form-control browser-default date_pickers datepicker-here"
+                  class="modal-custom-input date_pickers datepicker-here"
                   data-range="true"
                   data-multiple-dates-separator=" - "
                   data-language="en"
                   id="air-date-sub-init"
                 />
               </div>
-            </div>
-            <hr />
-            <div class="form-row">
+
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+
               <div class="form-group col-md-12">
                 <label for="">Status</label>
               </div>
@@ -503,12 +493,13 @@
                   <label for="primary3"></label>
                 </div>
               </div>
-            </div>
-            <hr />
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="kpi_start_end_date">Status</label>
-                <select id="inputState" class="form-control browser-default">
+
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+              <div class="col-md-6 form-group">
+                <label for="budget_type">Status</label>
+                <select id="budget_type" name="" class="modal-custom-select">
                   <option>Choose</option>
                   <option value="manual">Manual</option>
                   <option value="weighted">Weighted</option>
@@ -518,18 +509,24 @@
                   <option value="fourth">Fourth</option>
                 </select>
               </div>
+
               <div class="form-group col-md-6">
                 <label for="kpi_name">Progress (%)</label>
                 <input
                   type="number"
                   min="0"
-                  class="form-control browser-default"
+                  class="modal-custom-input"
                   name="kpi_name"
                   id="kpi_name"
                   placeholder=""
                 />
               </div>
-              <div class="form-group mt-4 col-md-12">
+
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+
+              <div class="form-group col-md-12">
                 <label for="kpi_fields" class="ml-2 mr-3">Amount</label>
                 <ul class="d-flex flex-row flex-wrap ml-2">
                   <li>
@@ -585,28 +582,27 @@
                   </li>
                 </ul>
               </div>
-            </div>
-            <div class="form-row mt-2"></div>
-            <hr />
-            <div class="row">
-              <div class="form-group col-md-8"></div>
-              <div class="form-group col-md-2">
-                <button
-                  type="button"
-                  style="width: 100%;"
-                  class="btn modal-save-btn"
-                >
-                  <i class="fas fa-check"></i> Save
-                </button>
+
+              <div class="form-group col-md-12">
+                <hr />
               </div>
-              <div class="form-group col-md-2">
+
+              <div class="form-group col-lg-8 col-md-4 col-sm-12"></div>
+              <div class="form-group col-lg-2 col-md-4 col-sm-6">
                 <button
                   type="button"
-                  style="width: 100%;"
-                  class="btn modal-close-btn"
+                  class="btn custom-form-control btn-custom-secondary"
                   data-dismiss="modal"
                 >
                   <i class="fas fa-ban"></i> Close
+                </button>
+              </div>
+              <div class="form-group col-lg-2 col-md-4 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-primary"
+                >
+                  <i class="fas fa-check"></i> Save
                 </button>
               </div>
             </div>
@@ -646,7 +642,7 @@
                     class="btn btn-custom-secondary"
                     data-toggle="tooltip"
                     data-placement="right"
-                    title="collapse Table"
+                    title="Collapse Table"
                   >
                     <i id="toggleIcon" class="fa fa-angle-double-left"></i>
                   </button>
@@ -844,7 +840,7 @@
 
       $(document).ready(function() {
         // $('select').val([1]);
-        $("select").formSelect();
+        $("#impact, #owner").formSelect();
         $("select.select_all")
           .siblings("ul")
           .prepend("<li id=sm_select_all><span>Select All</span></li>");

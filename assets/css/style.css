@@ -15638,7 +15638,6 @@ nav.navbar {
 .nav-tabs li a.active {
   color: #333333 !important;
   font-weight: 600;
-  /* border-bottom-color:#3A6596 !important; */
 }
 
 .nav-tabs li a.active:hover,
