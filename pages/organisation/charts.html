@@ -12,6 +12,7 @@
         <link href="../../assets/css/app.min.css" rel="stylesheet">
         <!-- Custom Css -->
         <link href="../../assets/css/style.css" rel="stylesheet" />
+        <link href="../../assets/css/custom.css" rel="stylesheet" />
         <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" />
         <link href="../../assets/css/charts.css" rel="stylesheet" />
         <!-- You can choose a theme from css/styles instead of get all themes -->
@@ -708,11 +709,14 @@
             <div class="modal fade all_chart_popup" tabindex="-1" role="dialog" aria-labelledby="all_chart_popup" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg" style="max-width: 80% !important;">
                     <div class="modal-content">
-                        <div class="modal-header chart_kpi_title" style="background-color: #3A6596; color: #fff;">
+                        <div class="modal-header chart_kpi_title">
                             <div class="top-box">
                             </div>
                             <div class="span-text"></div>
-                        </div>
+                            <button type="button" class="close pull-right" data-dismiss="modal">
+                              &times;
+                            </button>
+                          </div>
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-md-12">
@@ -736,19 +740,24 @@
 
             <section class="content">
                 <!-- Page Header -->
-                <div class="page-header row no-gutters py-2 m-t--70" style="background-color: #3A6596;">
-                    <div class="col-lg-6 col-md-6 text-center text-sm-left pt-2 mb-0 ml-4" style="color: #fff;">
-                        <h4 class="page-title" style="font-weight: 600;">Charts</h4>
-                    </div>
-                </div>
-                <!-- End Page Header -->
+      <div class="page-header row no-gutters py-2 m-t--70">
+        <div class="col-lg-6 col-md-6 text-center text-sm-left pt-2 mb-0 ml-4">
+          <h4
+            class="page-title"
+            style="font-weight: 600; text-transform: uppercase;"
+          >
+            Charts
+          </h4>
+        </div>
+      </div>
+      <!-- End Page Header -->
+
                 <div class="container-fluid">
-                    
                     <div class="row blockContainer" style="margin-top: 1%;">
                         <div class="col-lg-3 col-md-3 col-sm-12 chartBlock" id="template" style="display:none">
                             <div class="chart_container_bg">
                                 <div class="chart_top_menu"
-                                style="background-color: #3A6596; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                                style="background-color: #181818; border-top-left-radius: 10px; border-top-right-radius: 10px;">
                                     <div class="chart_top_menu_left">
                                         <!-- <i class="fas fa-flag chart_kpi_flag" aria-hidden="true"></i> -->
                                     </div>
@@ -892,7 +901,7 @@
 
                         <div class="col-lg-3 col-md-3 col-sm-12 chartBlock">
                             <div class="chart_container_bg">
-                                <div class="chart_top_menu"style="background-color: #3A6596; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                                <div class="chart_top_menu"style="background-color: #181818; border-top-left-radius: 10px; border-top-right-radius: 10px;">
                                     <div class="chart_top_menu_left">
                                         <!-- <i class="fas fa-flag chart_kpi_flag" aria-hidden="true"
                                         ></i> -->
@@ -1036,7 +1045,7 @@
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-12 chartBlock">
-                            <button class="btn add-block" style="background-color: #3A6596; color: #fff;">Add New Block</button>
+                            <button class="btn add-block" style="background-color: #181818; color: #fff;">Add New Block</button>
                             <!-- <a href="#" class="add-block">Add New Block</a> -->
                         </div>
                     </div>
