@@ -995,3 +995,8 @@ label {
   font-size: 14px;
   font-weight: 600;
 }
+
+.scorecard-title {
+  background-color: #fff;
+  margin-top: -5%;
+}

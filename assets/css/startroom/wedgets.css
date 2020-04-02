@@ -779,7 +779,7 @@ a :hover {
 }
 
 .mb_bcrumb {
-  margin-bottom: -35px !important;
+  margin-bottom: 0 !important;
 }
 
 table td {
@@ -919,17 +919,17 @@ table td {
 }
 
 .nestedRed {
-  background-color: #dcdcdc;
+  background-color: #696969;
   border-left: 16px solid red;
 }
 
 .nestedRed > h2 > strong {
-  color: #000000 !important;
+  color: #fff !important;
   font-size: 13px;
 }
 
 .nestedGreen {
-  background-color: #dcdcdc;
+  background-color: #696969;
   border-left: 16px solid #1aa243;
 }
 
@@ -939,7 +939,7 @@ table td {
 }
 
 .nestedYellow {
-  background-color: #dcdcdc;
+  background-color: #696969;
   border-left: 16px solid #ffd500;
 }
 
@@ -949,7 +949,7 @@ table td {
 }
 
 .nestedViolet {
-  background-color: #dcdcdc;
+  background-color: #696969;
   border-left: 16px solid #e84343;
 }
 
