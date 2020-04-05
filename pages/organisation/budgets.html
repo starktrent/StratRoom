@@ -176,7 +176,7 @@
           ></a>
           <a href="#" onClick="return false;" class="bars"></a>
           <a href="#" onClick="return false;" class="bar_nav sidemenu-collapse"
-            ><i class="nav-hdr-btn ti-menu" style="color: #000"></i
+            ><i class="nav-hdr-btn ti-menu" style="color: #000;"></i
           ></a>
           <a class="navbar-brand nav_float" href="#">
             <img
@@ -188,7 +188,7 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="fullscreen" style="padding: 4px;left: -14px;">
+            <li class="fullscreen" style="padding: 4px; left: -14px;">
               <ul class="list-unstyled order-list">
                 <li class="avatar avatar-sm">
                   <img
@@ -227,13 +227,13 @@
               <form class="form-header" action="" method="POST">
                 <input
                   class="au-input au-input--xl"
-                  style="min-width: 20%"
+                  style="min-width: 20%;"
                   type="text"
                   name="search"
                   placeholder="Search"
                 />
                 <button class="au-btn--submit" type="submit">
-                  <i class="fa fa-search" style="color:gray"></i>
+                  <i class="fa fa-search" style="color: gray;"></i>
                 </button>
               </form>
             </li>
@@ -251,7 +251,7 @@
                 data-toggle="dropdown"
                 role="button"
               >
-                <i class="nav-hdr-btn ti-bell" style="color: gray"></i>
+                <i class="nav-hdr-btn ti-bell" style="color: gray;"></i>
                 <span class="notify"></span>
                 <span class="heartbeat"></span>
               </a>
@@ -264,7 +264,7 @@
                 data-toggle="dropdown"
                 role="button"
               >
-                <i class="nav-hdr-btn ti-settings" style="color: gray"></i>
+                <i class="nav-hdr-btn ti-settings" style="color: gray;"></i>
                 <span class="notify"></span>
                 <span class="heartbeat"></span>
               </a>
@@ -274,7 +274,7 @@
               <a
                 href="#"
                 onclick="return false;"
-                class=" dropdown-toggle js-right-sidebar"
+                class="dropdown-toggle js-right-sidebar"
                 data-close="true"
               >
                 <!-- <img src="../../assets/images/user.jpg" alt="user"> -->
@@ -686,1627 +686,1326 @@
         <!-- COl -->
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12">
-            <!-- <div class="card">
-              <div class="row">
-                <div class="col-md-4 form-group">
-                  <input
-                    type="text"
-                    class="form-control browser-default"
-                    placeholder="search"
-                  />
-                </div>
-              </div>
-            </div> -->
-            <div class="card">
-              <div class="col-md-12">
-                <ul class="nav nav-tabs" id="tabs">
-                  <li class="nabti">
-                    <button class="" onclick="addTab('#content');">
-                      <i class="fa fa-plus"></i>
+            <div class="card" style="padding: 16px;">
+              <div class="row" style="margin-bottom: 16px !important;">
+                <div class="col-md-12">
+                  <button
+                    class="btn btn-custom-secondary"
+                    onclick="addBtn('#content');"
+                    style="margin-right: 2px;"
+                  >
+                    <i class="fas fa-plus"></i>
+                  </button>
+                  <div
+                    id="custom-tab"
+                    class="btn-group custom-tab-control"
+                    role="group"
+                    aria-label="Custom Tab"
+                  >
+                    <button
+                      type="button"
+                      class="btn btn-custom-secondary active"
+                      data-value="Dashboard"
+                    >
+                      Dashboard
                     </button>
-                  </li>
-
-                  <li class="nav-item">
-                    <a
-                      class="nav-link active"
-                      onclick="active();"
-                      data-toggle="tab"
-                      href="#dashboard"
+                    <button
+                      type="button"
+                      class="btn btn-custom-secondary"
+                      data-value="Summary"
                     >
-                      <input
-                        class=""
-                        type="text"
-                        value="Dashboard"
-                        style="font-weight: 600; text-transform: uppercase;"
-                      />
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link"
-                      onclick="active();"
-                      data-toggle="tab"
-                      href="#summary"
-                    >
-                      <input
-                        class=""
-                        type="text"
-                        value="Summary"
-                        style="font-weight: 600; text-transform: uppercase;"
-                      />
-                    </a>
-                  </li>
-                  <!-- <li class="nav-item">
-                    <a
-                      class="nav-link"
-                      onclick="active();"
-                      data-toggle="tab"
-                      href="#usage_budgets"
-                    >
-                      <input
-                        class=""
-                        type="text"
-                        value="Usage Budgets"
-                        style="font-weight: 600; text-transform: uppercase;"
-                      />
-                    </a>
-                  </li> -->
-                </ul>
+                      Summary
+                    </button>
+                  </div>
+                </div>
 
                 <script>
-                  function active() {
-                    $("#tabs li").removeClass("active");
-                    $(".tab-content .tab-pane").removeClass("active");
-                  }
-
-                  function addTab(link) {
+                  function addBtn(link) {
                     // hide other tabs
-                    $("#tabs li").removeClass("active");
+                    // $("#custom-tab button").removeClass("active");
 
                     // add new tab and related content
-                    $("#tabs").append(
-                      `<li class='nav-item '><a class='nav-link' data-toggle='tab' href='#newTab'> <input class='' type='text' value='New Tab' style='font-weight: 600; text-transform: uppercase;'> </a></li>`
+                    $("#custom-tab").append(
+                      `<button
+                        type="button"
+                        class="btn btn-custom-secondary"
+                        data-value="NewTab"
+                      >
+                        New Tab
+                      </button>`
                     );
                   }
                 </script>
               </div>
-            </div>
-          </div>
-          <div class="col-md-12 col-sm-12">
-            <div class="card" style="margin-top: -14px !important;">
-              <div class="col-md-12">
-                <div class="tab-content">
-                  <div class="tab-pane body active" id="dashboard"></div>
-                  <div class="tab-pane body" id="summary">
-                    <div class="row">
-                      <div class="col-md-3">
+
+              <div class="row">
+                <div class="col-md-12 customTabContent Dashboard"></div>
+                <div
+                  class="col-md-12 customTabContent Summary"
+                  style="display: none;"
+                >
+                  <div class="row" style="margin-bottom: 12px !important;">
+                    <div class="col-md-3">
+                      <input
+                        type="text"
+                        class="custom-input"
+                        placeholder="Find Budget"
+                        onfocus="this.placeholder = ''"
+                        onblur="this.placeholder = 'Find Budget'"
+                      />
+                    </div>
+                    <div class="col-md-5"></div>
+                    <div class="col-md-2">
+                      <div
+                        id="control-view"
+                        class="btn-group"
+                        role="group"
+                        aria-label="Basic example"
+                        style="width: 100%;"
+                      >
+                        <button
+                          type="button"
+                          class="btn btn-custom-secondary active"
+                          data-value="Month"
+                          style="
+                            border-top-left-radius: 20px;
+                            border-bottom-left-radius: 20px;
+                          "
+                        >
+                          M
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-custom-secondary"
+                          data-value="QuarterYear"
+                        >
+                          Q
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-custom-secondary"
+                          data-value="HalfYear"
+                        >
+                          H
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-custom-secondary"
+                          data-value="Annual"
+                          style="
+                            border-top-right-radius: 20px;
+                            border-bottom-right-radius: 20px;
+                          "
+                        >
+                          A
+                        </button>
+                      </div>
+                    </div>
+                    <div class="col-md-2 custom-space-even">
+                      <button
+                        class="btn btn-custom-secondary"
+                        data-toggle="modal"
+                        data-target="#budget_type_modal"
+                      >
+                        <i class="fas fa-cog" style="font-size: 14px;"></i>
+                      </button>
+
+                      <button class="btn btn-custom-secondary">
+                        <i class="fas fa-filter" style="font-size: 14px;"></i>
+                      </button>
+
+                      <div class="dropdown">
+                        <button
+                          class="btn btn-custom-secondary dropdown-toggle"
+                          type="button"
+                          data-toggle="dropdown"
+                          data-toggle="tooltip"
+                          data-placement="down"
+                          title="Download"
+                        >
+                          <i class="fas fa-download"></i>
+                          <span class="caret" style="margin-top: 6px;"></span>
+                        </button>
+                        <ul class="dropdown-menu download-btn-dropdown">
+                          <li><a href="#">CSV</a></li>
+                          <li><a href="#">EXCEL</a></li>
+                          <li><a href="#">PDF</a></li>
+                        </ul>
+                      </div>
+
+                      <div>
                         <input
-                          type="text"
-                          class="custom-input"
-                          placeholder="Find Budget"
-                          onfocus="this.placeholder = ''"
-                          onblur="this.placeholder = 'Find Budget'"
+                          type="file"
+                          id="imgupload"
+                          style="display: none;"
                         />
-                      </div>
-                      <div class="col-md-5"></div>
-                      <div class="col-md-2">
-                        <div
-                          id="control-view"
-                          class="btn-group"
-                          role="group"
-                          aria-label="Basic example"
-                          style="width: 100%;"
-                        >
-                          <button
-                            type="button"
-                            class="btn btn-custom-secondary active"
-                            data-value="Month"
-                            style="border-top-left-radius: 4px;border-bottom-left-radius: 4px;"
-                          >
-                            M
-                          </button>
-                          <button
-                            type="button"
-                            class="btn btn-custom-secondary"
-                            data-value="QuarterYear"
-                          >
-                            Q
-                          </button>
-                          <button
-                            type="button"
-                            class="btn btn-custom-secondary"
-                            data-value="HalfYear"
-                          >
-                            H
-                          </button>
-                          <button
-                            type="button"
-                            class="btn btn-custom-secondary"
-                            data-value="Annual"
-                            style="border-top-right-radius: 4px;border-bottom-right-radius: 4px;"
-                          >
-                            A
-                          </button>
-                        </div>
-                      </div>
-                      <div class="col-md-2 custom-space-even">
                         <button
                           class="btn btn-custom-secondary"
-                          data-toggle="modal"
-                          data-target="#budget_type_modal"
+                          id="OpenImgUpload"
                         >
-                          <i class="fas fa-cog" style="font-size: 14px;"></i>
+                          <i class="fas fa-upload"></i>
                         </button>
-
-                        <button class="btn btn-custom-secondary">
-                          <i class="fas fa-filter" style="font-size: 14px;"></i>
-                        </button>
-
-                        <div class="dropdown">
-                          <button
-                            class="btn btn-custom-secondary dropdown-toggle"
-                            type="button"
-                            data-toggle="dropdown"
-                            data-toggle="tooltip"
-                            data-placement="down"
-                            title="Download"
-                          >
-                            <i class="fas fa-download"></i>
-                            <span class="caret" style="margin-top: 6px;"></span>
-                          </button>
-                          <ul class="dropdown-menu download-btn-dropdown">
-                            <li><a href="#">CSV</a></li>
-                            <li><a href="#">EXCEL</a></li>
-                            <li><a href="#">PDF</a></li>
-                          </ul>
-                        </div>
-
-                        <div>
-                          <input
-                            type="file"
-                            id="imgupload"
-                            style="display:none"
-                          />
-                          <button
-                            class="btn btn-custom-secondary"
-                            id="OpenImgUpload"
-                          >
-                            <i class="fas fa-upload"></i>
-                          </button>
-                          <script>
-                            $("#OpenImgUpload").click(function() {
-                              $("#imgupload").trigger("click");
-                            });
-                          </script>
-                        </div>
-
-                        <button
-                          class="btn btn-custom-secondary"
-                          data-toggle="modal"
-                          data-target="#create_budget"
-                        >
-                          <i class="fas fa-plus"></i>
-                        </button>
+                        <script>
+                          $("#OpenImgUpload").click(function () {
+                            $("#imgupload").trigger("click");
+                          });
+                        </script>
                       </div>
-                    </div>
 
-                    <!-- Month -->
-                    <div class="table-responsive budgetTable Month">
-                      <table
-                        id="table1"
-                        class="table align-center dashboard-table dashboard-task-infos"
+                      <button
+                        class="btn btn-custom-secondary"
+                        data-toggle="modal"
+                        data-target="#create_budget"
                       >
-                        <tr>
-                          <th colspan="3"></th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            January
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            February
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            March
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            April
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            May
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            June
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            June
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            July
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            August
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            September
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            October
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            November
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            December
-                          </th>
-                          <th></th>
-                        </tr>
-                        <tr>
-                          <th style="width: auto;">Budget Name</th>
-                          <th>Department</th>
-                          <th>Budget Type</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Action</th>
-                        </tr>
-                        <tr>
-                          <td style="text-align: left;" rowspan="2">
-                            Project Material Budget
-                          </td>
-                          <td rowspan="2">
-                            <img
-                              src="https://pbs.twimg.com/profile_images/1055263632861343745/vIqzOHXj.jpg"
-                              alt="department"
-                            />
-                          </td>
-                          <td rowspan="2">Cost</td>
-                          <td>$45.90</td>
-                          <td colspan="2">$32.92</td>
-                          <td>$59.78</td>
-                          <td>$45.90</td>
-                          <td colspan="2">$32.92</td>
-                          <td>$59.78</td>
-                          <td>$45.90</td>
-                          <td colspan="2">$32.92</td>
-                          <td>$59.78</td>
-                          <td>$45.90</td>
-                          <td colspan="2">$32.92</td>
-                          <td>$59.78</td>
-                          <td>$45.90</td>
-                          <td colspan="2">$32.92</td>
-                          <td>$59.78</td>
-                          <td>$45.90</td>
-                          <td colspan="2">$32.92</td>
-                          <td>$59.78</td>
-                          <td>$45.90</td>
-                          <td colspan="2">$32.92</td>
-                          <td>$59.78</td>
-                          <td>$45.90</td>
-                          <td colspan="2">$32.92</td>
-                          <td>$59.78</td>
-                          <td>$45.90</td>
-                          <td colspan="2">$32.92</td>
-                          <td>$59.78</td>
-                          <td>$45.90</td>
-                          <td colspan="2">$32.92</td>
-                          <td>$59.78</td>
-                          <td>$45.90</td>
-                          <td colspan="2">$32.92</td>
-                          <td>$59.78</td>
-                          <td>$45.90</td>
-                          <td colspan="2">$32.92</td>
-                          <td>$59.78</td>
-                          <td>$45.90</td>
-                          <td colspan="2">$32.92</td>
-                          <td>$59.78</td>
-                          <td rowspan="2">
-                            <a
-                              href="#"
-                              data-toggle="modal"
-                              data-target="#edit_budget"
-                              ><i class="fas fa-edit"></i
-                            ></a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-info"
-                                role="progressbar"
-                                aria-valuenow="70"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:70%;"
-                              >
-                                70%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-danger"
-                                role="progressbar"
-                                aria-valuenow="50"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:50%;"
-                              >
-                                50%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-info"
-                                role="progressbar"
-                                aria-valuenow="70"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:70%;"
-                              >
-                                70%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-danger"
-                                role="progressbar"
-                                aria-valuenow="50"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:50%;"
-                              >
-                                50%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-info"
-                                role="progressbar"
-                                aria-valuenow="70"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:70%;"
-                              >
-                                70%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-danger"
-                                role="progressbar"
-                                aria-valuenow="50"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:50%;"
-                              >
-                                50%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-info"
-                                role="progressbar"
-                                aria-valuenow="70"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:70%;"
-                              >
-                                70%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-danger"
-                                role="progressbar"
-                                aria-valuenow="50"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:50%;"
-                              >
-                                50%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-info"
-                                role="progressbar"
-                                aria-valuenow="70"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:70%;"
-                              >
-                                70%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-danger"
-                                role="progressbar"
-                                aria-valuenow="50"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:50%;"
-                              >
-                                50%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-info"
-                                role="progressbar"
-                                aria-valuenow="70"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:70%;"
-                              >
-                                70%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-danger"
-                                role="progressbar"
-                                aria-valuenow="50"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:50%;"
-                              >
-                                50%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-info"
-                                role="progressbar"
-                                aria-valuenow="70"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:70%;"
-                              >
-                                70%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-danger"
-                                role="progressbar"
-                                aria-valuenow="50"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:50%;"
-                              >
-                                50%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-info"
-                                role="progressbar"
-                                aria-valuenow="70"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:70%;"
-                              >
-                                70%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-danger"
-                                role="progressbar"
-                                aria-valuenow="50"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:50%;"
-                              >
-                                50%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-info"
-                                role="progressbar"
-                                aria-valuenow="70"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:70%;"
-                              >
-                                70%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-danger"
-                                role="progressbar"
-                                aria-valuenow="50"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:50%;"
-                              >
-                                50%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-info"
-                                role="progressbar"
-                                aria-valuenow="70"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:70%;"
-                              >
-                                70%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-danger"
-                                role="progressbar"
-                                aria-valuenow="50"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:50%;"
-                              >
-                                50%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-info"
-                                role="progressbar"
-                                aria-valuenow="70"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:70%;"
-                              >
-                                70%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-danger"
-                                role="progressbar"
-                                aria-valuenow="50"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:50%;"
-                              >
-                                50%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-info"
-                                role="progressbar"
-                                aria-valuenow="70"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:70%;"
-                              >
-                                70%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-danger"
-                                role="progressbar"
-                                aria-valuenow="50"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:50%;"
-                              >
-                                50%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-info"
-                                role="progressbar"
-                                aria-valuenow="70"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:70%;"
-                              >
-                                70%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-danger"
-                                role="progressbar"
-                                aria-valuenow="50"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:50%;"
-                              >
-                                50%
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
-                      </table>
-                    </div>
-
-                    <!-- Quarter Year -->
-                    <div
-                      class="table-responsive budgetTable QuarterYear"
-                      style="display: none;"
-                    >
-                      <table
-                        id="table1"
-                        class="table align-center dashboard-table dashboard-task-infos"
-                      >
-                        <tr>
-                          <th colspan="3"></th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            Q1
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            Q2
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            Q3
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            Q4
-                          </th>
-                          <th></th>
-                        </tr>
-                        <tr>
-                          <th>Budget Name</th>
-                          <th>Department</th>
-                          <th>Budget Type</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Action</th>
-                        </tr>
-                        <tr>
-                          <td style="text-align: left;" rowspan="2">
-                            Project Material Budget
-                          </td>
-                          <td rowspan="2">
-                            <img
-                              src="https://pbs.twimg.com/profile_images/1055263632861343745/vIqzOHXj.jpg"
-                              alt="department"
-                            />
-                          </td>
-                          <td rowspan="2">Cost</td>
-                          <td>$45.90</td>
-                          <td colspan="2">$32.92</td>
-                          <td>$59.78</td>
-                          <td>$45.90</td>
-                          <td colspan="2">$32.92</td>
-                          <td>$59.78</td>
-                          <td>$45.90</td>
-                          <td colspan="2">$32.92</td>
-                          <td>$59.78</td>
-                          <td>$45.90</td>
-                          <td colspan="2">$32.92</td>
-                          <td>$59.78</td>
-                          <td rowspan="2">
-                            <a
-                              href="#"
-                              data-toggle="modal"
-                              data-target="#edit_budget"
-                              ><i class="fas fa-edit"></i
-                            ></a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-info"
-                                role="progressbar"
-                                aria-valuenow="70"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:70%;"
-                              >
-                                70%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-danger"
-                                role="progressbar"
-                                aria-valuenow="50"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:50%;"
-                              >
-                                50%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-info"
-                                role="progressbar"
-                                aria-valuenow="70"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:70%;"
-                              >
-                                70%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-danger"
-                                role="progressbar"
-                                aria-valuenow="50"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:50%;"
-                              >
-                                50%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-info"
-                                role="progressbar"
-                                aria-valuenow="70"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:70%;"
-                              >
-                                70%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-danger"
-                                role="progressbar"
-                                aria-valuenow="50"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:50%;"
-                              >
-                                50%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-info"
-                                role="progressbar"
-                                aria-valuenow="70"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:70%;"
-                              >
-                                70%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-danger"
-                                role="progressbar"
-                                aria-valuenow="50"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:50%;"
-                              >
-                                50%
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
-                      </table>
-                    </div>
-
-                    <!-- Half Year -->
-                    <div
-                      class="table-responsive budgetTable HalfYear"
-                      style="display: none;"
-                    >
-                      <table
-                        id="table1"
-                        class="table align-center dashboard-table dashboard-task-infos"
-                      >
-                        <tr>
-                          <th colspan="3"></th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            HY - 1
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            HY - 2
-                          </th>
-                          <th></th>
-                        </tr>
-                        <tr>
-                          <th>Budget Name</th>
-                          <th>Department</th>
-                          <th>Budget Type</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Action</th>
-                        </tr>
-                        <tr>
-                          <td style="text-align: left;" rowspan="2">
-                            Project Material Budget
-                          </td>
-                          <td rowspan="2">
-                            <img
-                              src="https://pbs.twimg.com/profile_images/1055263632861343745/vIqzOHXj.jpg"
-                              alt="department"
-                            />
-                          </td>
-                          <td rowspan="2">Cost</td>
-                          <td>$45.90</td>
-                          <td colspan="2">$32.92</td>
-                          <td>$59.78</td>
-                          <td>$45.90</td>
-                          <td colspan="2">$32.92</td>
-                          <td>$59.78</td>
-                          <td rowspan="2">
-                            <a
-                              href="#"
-                              data-toggle="modal"
-                              data-target="#edit_budget"
-                              ><i class="fas fa-edit"></i
-                            ></a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-info"
-                                role="progressbar"
-                                aria-valuenow="70"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:70%;"
-                              >
-                                70%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-danger"
-                                role="progressbar"
-                                aria-valuenow="50"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:50%;"
-                              >
-                                50%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-info"
-                                role="progressbar"
-                                aria-valuenow="70"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:70%;"
-                              >
-                                70%
-                              </div>
-                            </div>
-                          </td>
-                          <td colspan="2">
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-danger"
-                                role="progressbar"
-                                aria-valuenow="50"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:50%;"
-                              >
-                                50%
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
-                      </table>
-                    </div>
-
-                    <!-- Annual -->
-                    <div
-                      class="table-responsive budgetTable Annual"
-                      style="display: none;"
-                    >
-                      <table
-                        id="budget-table"
-                        class="table align-center dashboard-table dashboard-task-infos"
-                      >
-                        <tr>
-                          <th colspan="3"></th>
-                          <th
-                            colspan="5"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            Annual
-                          </th>
-                          <th></th>
-                        </tr>
-                        <tr>
-                          <th>Budget Name</th>
-                          <th>Department</th>
-                          <th>Budget Type</th>
-                          <th>Current</th>
-                          <th>Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Forcasted</th>
-                          <th>Forcasted</th>
-                          <th>Action</th>
-                        </tr>
-                        <tr data-tt-id="1">
-                          <td style="text-align: left;">
-                            Project Material Budget
-                            <span class="pull-right">
-                              <i
-                                class="fas fa-plus"
-                                data-toggle="modal"
-                                data-target="#create_budget"
-                              ></i>
-                            </span>
-                          </td>
-                          <td>
-                            <img
-                              src="https://pbs.twimg.com/profile_images/1055263632861343745/vIqzOHXj.jpg"
-                              alt="department"
-                            />
-                          </td>
-                          <td>Cost</td>
-                          <td>$45.90</td>
-                          <td>$32.92</td>
-                          <td>$59.78</td>
-                          <td>
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-info"
-                                role="progressbar"
-                                aria-valuenow="70"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:70%;"
-                              >
-                                70%
-                              </div>
-                            </div>
-                          </td>
-                          <td>
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-danger"
-                                role="progressbar"
-                                aria-valuenow="50"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:50%;"
-                              >
-                                50%
-                              </div>
-                            </div>
-                          </td>
-                          <td>
-                            <a
-                              href="#"
-                              data-toggle="modal"
-                              data-target="#edit_budget"
-                              ><i class="fas fa-edit"></i
-                            ></a>
-                          </td>
-                        </tr>
-                        <tr data-tt-id="1.1" data-tt-parent-id="1">
-                          <td style="text-align: left;">
-                            Project Material Budget
-                            <span class="pull-right">
-                              <i
-                                class="fas fa-plus"
-                                data-toggle="modal"
-                                data-target="#create_budget"
-                              ></i>
-                            </span>
-                          </td>
-                          <td>
-                            <img
-                              src="https://pbs.twimg.com/profile_images/1055263632861343745/vIqzOHXj.jpg"
-                              alt="department"
-                            />
-                          </td>
-                          <td>Cost</td>
-                          <td>$45.90</td>
-                          <td>$32.92</td>
-                          <td>$59.78</td>
-                          <td>
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-info"
-                                role="progressbar"
-                                aria-valuenow="70"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:70%;"
-                              >
-                                70%
-                              </div>
-                            </div>
-                          </td>
-                          <td>
-                            <div class="progress">
-                              <div
-                                class="progress-bar progress-bar-danger"
-                                role="progressbar"
-                                aria-valuenow="50"
-                                aria-valuemin="0"
-                                aria-valuemax="100"
-                                style="width:50%;"
-                              >
-                                50%
-                              </div>
-                            </div>
-                          </td>
-                          <td>
-                            <a
-                              href="#"
-                              data-toggle="modal"
-                              data-target="#edit_budget"
-                              ><i class="fas fa-edit"></i
-                            ></a>
-                          </td>
-                        </tr>
-                      </table>
+                        <i class="fas fa-plus"></i>
+                      </button>
                     </div>
                   </div>
-                  <div class="tab-pane body" id="newTab">
-                    <div class="row">
-                      <div class="col-md-3">
-                        <input
-                          type="text"
-                          class="custom-input"
-                          placeholder="Find Budget"
-                          onfocus="this.placeholder = ''"
-                          onblur="this.placeholder = 'Find Budget'"
-                        />
-                      </div>
-                      <div class="col-md-5"></div>
-                      <div class="col-md-2">
-                        <div
-                          id="control-view-new"
-                          class="btn-group"
-                          role="group"
-                          aria-label="Basic example"
-                          style="width: 100%;"
+
+                  <!-- Month -->
+                  <div class="table-responsive budgetTable Month">
+                    <table
+                      id="table1"
+                      class="table align-center dashboard-table dashboard-task-infos"
+                    >
+                      <tr>
+                        <th colspan="3"></th>
+                        <th
+                          colspan="4"
+                          style="font-weight: bold; color: #1e252d;"
                         >
-                          <button
-                            type="button"
-                            class="btn btn-custom-secondary active"
-                            data-value="Month"
-                            style="border-top-left-radius: 4px;border-bottom-left-radius: 4px;"
-                          >
-                            M
-                          </button>
-                          <button
-                            type="button"
-                            class="btn btn-custom-secondary"
-                            data-value="QuarterYear"
-                          >
-                            Q
-                          </button>
-                          <button
-                            type="button"
-                            class="btn btn-custom-secondary"
-                            data-value="HalfYear"
-                          >
-                            H
-                          </button>
-                          <button
-                            type="button"
-                            class="btn btn-custom-secondary"
-                            data-value="Annual"
-                            style="border-top-right-radius: 4px;border-bottom-right-radius: 4px;"
-                          >
-                            A
-                          </button>
-                        </div>
-                      </div>
-                      <div class="col-md-2 custom-space-even">
-                        <button
-                          class="btn btn-custom-secondary"
-                          data-toggle="modal"
-                          data-target="#budget_type_modal"
+                          January
+                        </th>
+                        <th
+                          colspan="4"
+                          style="font-weight: bold; color: #1e252d;"
                         >
-                          <i class="fas fa-cog" style="font-size: 14px;"></i>
-                        </button>
-
-                        <button class="btn btn-custom-secondary">
-                          <i class="fas fa-filter" style="font-size: 14px;"></i>
-                        </button>
-
-                        <div class="dropdown">
-                          <button
-                            class="btn btn-custom-secondary dropdown-toggle"
-                            type="button"
-                            data-toggle="dropdown"
-                            data-toggle="tooltip"
-                            data-placement="down"
-                            title="Download"
-                          >
-                            <i class="fas fa-download"></i>
-                            <span class="caret" style="margin-top: 6px;"></span>
-                          </button>
-                          <ul class="dropdown-menu download-btn-dropdown">
-                            <li><a href="#">CSV</a></li>
-                            <li><a href="#">EXCEL</a></li>
-                            <li><a href="#">PDF</a></li>
-                          </ul>
-                        </div>
-
-                        <div>
-                          <input
-                            type="file"
-                            id="imgupload"
-                            style="display:none"
+                          February
+                        </th>
+                        <th
+                          colspan="4"
+                          style="font-weight: bold; color: #1e252d;"
+                        >
+                          March
+                        </th>
+                        <th
+                          colspan="4"
+                          style="font-weight: bold; color: #1e252d;"
+                        >
+                          April
+                        </th>
+                        <th
+                          colspan="4"
+                          style="font-weight: bold; color: #1e252d;"
+                        >
+                          May
+                        </th>
+                        <th
+                          colspan="4"
+                          style="font-weight: bold; color: #1e252d;"
+                        >
+                          June
+                        </th>
+                        <th
+                          colspan="4"
+                          style="font-weight: bold; color: #1e252d;"
+                        >
+                          June
+                        </th>
+                        <th
+                          colspan="4"
+                          style="font-weight: bold; color: #1e252d;"
+                        >
+                          July
+                        </th>
+                        <th
+                          colspan="4"
+                          style="font-weight: bold; color: #1e252d;"
+                        >
+                          August
+                        </th>
+                        <th
+                          colspan="4"
+                          style="font-weight: bold; color: #1e252d;"
+                        >
+                          September
+                        </th>
+                        <th
+                          colspan="4"
+                          style="font-weight: bold; color: #1e252d;"
+                        >
+                          October
+                        </th>
+                        <th
+                          colspan="4"
+                          style="font-weight: bold; color: #1e252d;"
+                        >
+                          November
+                        </th>
+                        <th
+                          colspan="4"
+                          style="font-weight: bold; color: #1e252d;"
+                        >
+                          December
+                        </th>
+                        <th></th>
+                      </tr>
+                      <tr>
+                        <th style="width: auto;">Budget Name</th>
+                        <th>Department</th>
+                        <th>Budget Type</th>
+                        <th>Current</th>
+                        <th colspan="2">Budgeted</th>
+                        <th>Forcasted</th>
+                        <th>Current</th>
+                        <th colspan="2">Budgeted</th>
+                        <th>Forcasted</th>
+                        <th>Current</th>
+                        <th colspan="2">Budgeted</th>
+                        <th>Forcasted</th>
+                        <th>Current</th>
+                        <th colspan="2">Budgeted</th>
+                        <th>Forcasted</th>
+                        <th>Current</th>
+                        <th colspan="2">Budgeted</th>
+                        <th>Forcasted</th>
+                        <th>Current</th>
+                        <th colspan="2">Budgeted</th>
+                        <th>Forcasted</th>
+                        <th>Current</th>
+                        <th colspan="2">Budgeted</th>
+                        <th>Forcasted</th>
+                        <th>Current</th>
+                        <th colspan="2">Budgeted</th>
+                        <th>Forcasted</th>
+                        <th>Current</th>
+                        <th colspan="2">Budgeted</th>
+                        <th>Forcasted</th>
+                        <th>Current</th>
+                        <th colspan="2">Budgeted</th>
+                        <th>Forcasted</th>
+                        <th>Current</th>
+                        <th colspan="2">Budgeted</th>
+                        <th>Forcasted</th>
+                        <th>Current</th>
+                        <th colspan="2">Budgeted</th>
+                        <th>Forcasted</th>
+                        <th>Current</th>
+                        <th colspan="2">Budgeted</th>
+                        <th>Forcasted</th>
+                        <th>Action</th>
+                      </tr>
+                      <tr>
+                        <td style="text-align: left;" rowspan="2">
+                          Project Material Budget
+                        </td>
+                        <td rowspan="2">
+                          <img
+                            src="https://pbs.twimg.com/profile_images/1055263632861343745/vIqzOHXj.jpg"
+                            alt="department"
                           />
-                          <button
-                            class="btn btn-custom-secondary"
-                            id="OpenImgUpload"
-                          >
-                            <i class="fas fa-upload"></i>
-                          </button>
-                          <script>
-                            $("#OpenImgUpload").click(function() {
-                              $("#imgupload").trigger("click");
-                            });
-                          </script>
-                        </div>
+                        </td>
+                        <td rowspan="2">Cost</td>
+                        <td>$45.90</td>
+                        <td colspan="2">$32.92</td>
+                        <td>$59.78</td>
+                        <td>$45.90</td>
+                        <td colspan="2">$32.92</td>
+                        <td>$59.78</td>
+                        <td>$45.90</td>
+                        <td colspan="2">$32.92</td>
+                        <td>$59.78</td>
+                        <td>$45.90</td>
+                        <td colspan="2">$32.92</td>
+                        <td>$59.78</td>
+                        <td>$45.90</td>
+                        <td colspan="2">$32.92</td>
+                        <td>$59.78</td>
+                        <td>$45.90</td>
+                        <td colspan="2">$32.92</td>
+                        <td>$59.78</td>
+                        <td>$45.90</td>
+                        <td colspan="2">$32.92</td>
+                        <td>$59.78</td>
+                        <td>$45.90</td>
+                        <td colspan="2">$32.92</td>
+                        <td>$59.78</td>
+                        <td>$45.90</td>
+                        <td colspan="2">$32.92</td>
+                        <td>$59.78</td>
+                        <td>$45.90</td>
+                        <td colspan="2">$32.92</td>
+                        <td>$59.78</td>
+                        <td>$45.90</td>
+                        <td colspan="2">$32.92</td>
+                        <td>$59.78</td>
+                        <td>$45.90</td>
+                        <td colspan="2">$32.92</td>
+                        <td>$59.78</td>
+                        <td>$45.90</td>
+                        <td colspan="2">$32.92</td>
+                        <td>$59.78</td>
+                        <td rowspan="2">
+                          <a
+                            href="#"
+                            data-toggle="modal"
+                            data-target="#edit_budget"
+                            ><i class="fas fa-edit"></i
+                          ></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-info"
+                              role="progressbar"
+                              aria-valuenow="70"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 70%;"
+                            >
+                              70%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-danger"
+                              role="progressbar"
+                              aria-valuenow="50"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 50%;"
+                            >
+                              50%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-info"
+                              role="progressbar"
+                              aria-valuenow="70"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 70%;"
+                            >
+                              70%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-danger"
+                              role="progressbar"
+                              aria-valuenow="50"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 50%;"
+                            >
+                              50%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-info"
+                              role="progressbar"
+                              aria-valuenow="70"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 70%;"
+                            >
+                              70%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-danger"
+                              role="progressbar"
+                              aria-valuenow="50"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 50%;"
+                            >
+                              50%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-info"
+                              role="progressbar"
+                              aria-valuenow="70"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 70%;"
+                            >
+                              70%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-danger"
+                              role="progressbar"
+                              aria-valuenow="50"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 50%;"
+                            >
+                              50%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-info"
+                              role="progressbar"
+                              aria-valuenow="70"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 70%;"
+                            >
+                              70%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-danger"
+                              role="progressbar"
+                              aria-valuenow="50"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 50%;"
+                            >
+                              50%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-info"
+                              role="progressbar"
+                              aria-valuenow="70"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 70%;"
+                            >
+                              70%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-danger"
+                              role="progressbar"
+                              aria-valuenow="50"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 50%;"
+                            >
+                              50%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-info"
+                              role="progressbar"
+                              aria-valuenow="70"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 70%;"
+                            >
+                              70%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-danger"
+                              role="progressbar"
+                              aria-valuenow="50"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 50%;"
+                            >
+                              50%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-info"
+                              role="progressbar"
+                              aria-valuenow="70"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 70%;"
+                            >
+                              70%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-danger"
+                              role="progressbar"
+                              aria-valuenow="50"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 50%;"
+                            >
+                              50%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-info"
+                              role="progressbar"
+                              aria-valuenow="70"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 70%;"
+                            >
+                              70%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-danger"
+                              role="progressbar"
+                              aria-valuenow="50"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 50%;"
+                            >
+                              50%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-info"
+                              role="progressbar"
+                              aria-valuenow="70"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 70%;"
+                            >
+                              70%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-danger"
+                              role="progressbar"
+                              aria-valuenow="50"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 50%;"
+                            >
+                              50%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-info"
+                              role="progressbar"
+                              aria-valuenow="70"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 70%;"
+                            >
+                              70%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-danger"
+                              role="progressbar"
+                              aria-valuenow="50"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 50%;"
+                            >
+                              50%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-info"
+                              role="progressbar"
+                              aria-valuenow="70"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 70%;"
+                            >
+                              70%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-danger"
+                              role="progressbar"
+                              aria-valuenow="50"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 50%;"
+                            >
+                              50%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-info"
+                              role="progressbar"
+                              aria-valuenow="70"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 70%;"
+                            >
+                              70%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-danger"
+                              role="progressbar"
+                              aria-valuenow="50"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 50%;"
+                            >
+                              50%
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
 
+                  <!-- Quarter Year -->
+                  <div
+                    class="table-responsive budgetTable QuarterYear"
+                    style="display: none;"
+                  >
+                    <table
+                      id="table1"
+                      class="table align-center dashboard-table dashboard-task-infos"
+                    >
+                      <tr>
+                        <th colspan="3"></th>
+                        <th
+                          colspan="4"
+                          style="font-weight: bold; color: #1e252d;"
+                        >
+                          Q1
+                        </th>
+                        <th
+                          colspan="4"
+                          style="font-weight: bold; color: #1e252d;"
+                        >
+                          Q2
+                        </th>
+                        <th
+                          colspan="4"
+                          style="font-weight: bold; color: #1e252d;"
+                        >
+                          Q3
+                        </th>
+                        <th
+                          colspan="4"
+                          style="font-weight: bold; color: #1e252d;"
+                        >
+                          Q4
+                        </th>
+                        <th></th>
+                      </tr>
+                      <tr>
+                        <th>Budget Name</th>
+                        <th>Department</th>
+                        <th>Budget Type</th>
+                        <th>Current</th>
+                        <th colspan="2">Budgeted</th>
+                        <th>Forcasted</th>
+                        <th>Current</th>
+                        <th colspan="2">Budgeted</th>
+                        <th>Forcasted</th>
+                        <th>Current</th>
+                        <th colspan="2">Budgeted</th>
+                        <th>Forcasted</th>
+                        <th>Current</th>
+                        <th colspan="2">Budgeted</th>
+                        <th>Forcasted</th>
+                        <th>Action</th>
+                      </tr>
+                      <tr>
+                        <td style="text-align: left;" rowspan="2">
+                          Project Material Budget
+                        </td>
+                        <td rowspan="2">
+                          <img
+                            src="https://pbs.twimg.com/profile_images/1055263632861343745/vIqzOHXj.jpg"
+                            alt="department"
+                          />
+                        </td>
+                        <td rowspan="2">Cost</td>
+                        <td>$45.90</td>
+                        <td colspan="2">$32.92</td>
+                        <td>$59.78</td>
+                        <td>$45.90</td>
+                        <td colspan="2">$32.92</td>
+                        <td>$59.78</td>
+                        <td>$45.90</td>
+                        <td colspan="2">$32.92</td>
+                        <td>$59.78</td>
+                        <td>$45.90</td>
+                        <td colspan="2">$32.92</td>
+                        <td>$59.78</td>
+                        <td rowspan="2">
+                          <a
+                            href="#"
+                            data-toggle="modal"
+                            data-target="#edit_budget"
+                            ><i class="fas fa-edit"></i
+                          ></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-info"
+                              role="progressbar"
+                              aria-valuenow="70"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 70%;"
+                            >
+                              70%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-danger"
+                              role="progressbar"
+                              aria-valuenow="50"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 50%;"
+                            >
+                              50%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-info"
+                              role="progressbar"
+                              aria-valuenow="70"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 70%;"
+                            >
+                              70%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-danger"
+                              role="progressbar"
+                              aria-valuenow="50"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 50%;"
+                            >
+                              50%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-info"
+                              role="progressbar"
+                              aria-valuenow="70"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 70%;"
+                            >
+                              70%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-danger"
+                              role="progressbar"
+                              aria-valuenow="50"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 50%;"
+                            >
+                              50%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-info"
+                              role="progressbar"
+                              aria-valuenow="70"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 70%;"
+                            >
+                              70%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-danger"
+                              role="progressbar"
+                              aria-valuenow="50"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 50%;"
+                            >
+                              50%
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+
+                  <!-- Half Year -->
+                  <div
+                    class="table-responsive budgetTable HalfYear"
+                    style="display: none;"
+                  >
+                    <table
+                      id="table1"
+                      class="table align-center dashboard-table dashboard-task-infos"
+                    >
+                      <tr>
+                        <th colspan="3"></th>
+                        <th
+                          colspan="4"
+                          style="font-weight: bold; color: #1e252d;"
+                        >
+                          HY - 1
+                        </th>
+                        <th
+                          colspan="4"
+                          style="font-weight: bold; color: #1e252d;"
+                        >
+                          HY - 2
+                        </th>
+                        <th></th>
+                      </tr>
+                      <tr>
+                        <th>Budget Name</th>
+                        <th>Department</th>
+                        <th>Budget Type</th>
+                        <th>Current</th>
+                        <th colspan="2">Budgeted</th>
+                        <th>Forcasted</th>
+                        <th>Current</th>
+                        <th colspan="2">Budgeted</th>
+                        <th>Forcasted</th>
+                        <th>Action</th>
+                      </tr>
+                      <tr>
+                        <td style="text-align: left;" rowspan="2">
+                          Project Material Budget
+                        </td>
+                        <td rowspan="2">
+                          <img
+                            src="https://pbs.twimg.com/profile_images/1055263632861343745/vIqzOHXj.jpg"
+                            alt="department"
+                          />
+                        </td>
+                        <td rowspan="2">Cost</td>
+                        <td>$45.90</td>
+                        <td colspan="2">$32.92</td>
+                        <td>$59.78</td>
+                        <td>$45.90</td>
+                        <td colspan="2">$32.92</td>
+                        <td>$59.78</td>
+                        <td rowspan="2">
+                          <a
+                            href="#"
+                            data-toggle="modal"
+                            data-target="#edit_budget"
+                            ><i class="fas fa-edit"></i
+                          ></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-info"
+                              role="progressbar"
+                              aria-valuenow="70"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 70%;"
+                            >
+                              70%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-danger"
+                              role="progressbar"
+                              aria-valuenow="50"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 50%;"
+                            >
+                              50%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-info"
+                              role="progressbar"
+                              aria-valuenow="70"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 70%;"
+                            >
+                              70%
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="2">
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-danger"
+                              role="progressbar"
+                              aria-valuenow="50"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 50%;"
+                            >
+                              50%
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+
+                  <!-- Annual -->
+                  <div
+                    class="table-responsive budgetTable Annual"
+                    style="display: none;"
+                  >
+                    <table
+                      id="budget-table"
+                      class="table align-center dashboard-table dashboard-task-infos"
+                    >
+                      <tr>
+                        <th colspan="3"></th>
+                        <th
+                          colspan="5"
+                          style="font-weight: bold; color: #1e252d;"
+                        >
+                          Annual
+                        </th>
+                        <th></th>
+                      </tr>
+                      <tr>
+                        <th>Budget Name</th>
+                        <th>Department</th>
+                        <th>Budget Type</th>
+                        <th>Current</th>
+                        <th>Budgeted</th>
+                        <th>Forcasted</th>
+                        <th>Forcasted</th>
+                        <th>Forcasted</th>
+                        <th>Action</th>
+                      </tr>
+                      <tr data-tt-id="1">
+                        <td style="text-align: left;">
+                          Project Material Budget
+                          <span class="pull-right">
+                            <i
+                              class="fas fa-plus"
+                              data-toggle="modal"
+                              data-target="#create_budget"
+                            ></i>
+                          </span>
+                        </td>
+                        <td>
+                          <img
+                            src="https://pbs.twimg.com/profile_images/1055263632861343745/vIqzOHXj.jpg"
+                            alt="department"
+                          />
+                        </td>
+                        <td>Cost</td>
+                        <td>$45.90</td>
+                        <td>$32.92</td>
+                        <td>$59.78</td>
+                        <td>
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-info"
+                              role="progressbar"
+                              aria-valuenow="70"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 70%;"
+                            >
+                              70%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-danger"
+                              role="progressbar"
+                              aria-valuenow="50"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 50%;"
+                            >
+                              50%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <a
+                            href="#"
+                            data-toggle="modal"
+                            data-target="#edit_budget"
+                            ><i class="fas fa-edit"></i
+                          ></a>
+                        </td>
+                      </tr>
+                      <tr data-tt-id="1.1" data-tt-parent-id="1">
+                        <td style="text-align: left;">
+                          Project Material Budget
+                          <span class="pull-right">
+                            <i
+                              class="fas fa-plus"
+                              data-toggle="modal"
+                              data-target="#create_budget"
+                            ></i>
+                          </span>
+                        </td>
+                        <td>
+                          <img
+                            src="https://pbs.twimg.com/profile_images/1055263632861343745/vIqzOHXj.jpg"
+                            alt="department"
+                          />
+                        </td>
+                        <td>Cost</td>
+                        <td>$45.90</td>
+                        <td>$32.92</td>
+                        <td>$59.78</td>
+                        <td>
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-info"
+                              role="progressbar"
+                              aria-valuenow="70"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 70%;"
+                            >
+                              70%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="progress">
+                            <div
+                              class="progress-bar progress-bar-danger"
+                              role="progressbar"
+                              aria-valuenow="50"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              style="width: 50%;"
+                            >
+                              50%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <a
+                            href="#"
+                            data-toggle="modal"
+                            data-target="#edit_budget"
+                            ><i class="fas fa-edit"></i
+                          ></a>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+
+                <div
+                  class="col-md-12 customTabContent NewTab"
+                  style="display: none;"
+                >
+                  <div class="row" style="margin-bottom: 12px !important;">
+                    <div class="col-md-3">
+                      <input
+                        type="text"
+                        class="custom-input"
+                        placeholder="Find Budget"
+                        onfocus="this.placeholder = ''"
+                        onblur="this.placeholder = 'Find Budget'"
+                      />
+                    </div>
+                    <div class="col-md-5"></div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2 custom-space-even">
+                      <button
+                        class="btn btn-custom-secondary"
+                        data-toggle="modal"
+                        data-target="#budget_type_modal"
+                      >
+                        <i class="fas fa-cog" style="font-size: 14px;"></i>
+                      </button>
+
+                      <button class="btn btn-custom-secondary">
+                        <i class="fas fa-filter" style="font-size: 14px;"></i>
+                      </button>
+
+                      <div class="dropdown">
+                        <button
+                          class="btn btn-custom-secondary dropdown-toggle"
+                          type="button"
+                          data-toggle="dropdown"
+                          data-toggle="tooltip"
+                          data-placement="down"
+                          title="Download"
+                        >
+                          <i class="fas fa-download"></i>
+                          <span class="caret" style="margin-top: 6px;"></span>
+                        </button>
+                        <ul class="dropdown-menu download-btn-dropdown">
+                          <li><a href="#">CSV</a></li>
+                          <li><a href="#">EXCEL</a></li>
+                          <li><a href="#">PDF</a></li>
+                        </ul>
+                      </div>
+
+                      <div>
+                        <input
+                          type="file"
+                          id="imgupload"
+                          style="display: none;"
+                        />
                         <button
                           class="btn btn-custom-secondary"
-                          data-toggle="modal"
-                          data-target="#create_budget"
+                          id="OpenImgUpload"
                         >
-                          <i class="fas fa-plus"></i>
+                          <i class="fas fa-upload"></i>
                         </button>
+                        <script>
+                          $("#OpenImgUpload").click(function () {
+                            $("#imgupload").trigger("click");
+                          });
+                        </script>
                       </div>
-                    </div>
 
-                    <!-- Month -->
-                    <div class="table-responsive budgetTable1 Month">
-                      <table
-                        id="table1"
-                        class="table align-center dashboard-table dashboard-task-infos"
+                      <button
+                        class="btn btn-custom-secondary"
+                        data-toggle="modal"
+                        data-target="#create_budget"
                       >
-                        <tr>
-                          <th colspan="3"></th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            January
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            February
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            March
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            April
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            May
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            June
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            June
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            July
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            August
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            September
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            October
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            November
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            December
-                          </th>
-                          <th></th>
-                        </tr>
-                        <tr>
-                          <th style="width: auto;">Budget Name</th>
-                          <th>Department</th>
-                          <th>Budget Type</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Action</th>
-                        </tr>
-                      </table>
+                        <i class="fas fa-plus"></i>
+                      </button>
                     </div>
+                  </div>
 
-                    <!-- Quarter Year -->
-                    <div
-                      class="table-responsive budgetTable1 QuarterYear"
-                      style="display: none;"
+                  <!-- New Tab -->
+                  <div class="table-responsive">
+                    <table
+                      id="budget-table"
+                      class="table align-center dashboard-table dashboard-task-infos"
                     >
-                      <table
-                        id="table1"
-                        class="table align-center dashboard-table dashboard-task-infos"
-                      >
-                        <tr>
-                          <th colspan="3"></th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            Q1
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            Q2
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            Q3
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            Q4
-                          </th>
-                          <th></th>
-                        </tr>
-                        <tr>
-                          <th>Budget Name</th>
-                          <th>Department</th>
-                          <th>Budget Type</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Action</th>
-                        </tr>
-                      </table>
-                    </div>
-
-                    <!-- Half Year -->
-                    <div
-                      class="table-responsive budgetTable1 HalfYear"
-                      style="display: none;"
-                    >
-                      <table
-                        id="table1"
-                        class="table align-center dashboard-table dashboard-task-infos"
-                      >
-                        <tr>
-                          <th colspan="3"></th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            HY - 1
-                          </th>
-                          <th
-                            colspan="4"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            HY - 2
-                          </th>
-                          <th></th>
-                        </tr>
-                        <tr>
-                          <th>Budget Name</th>
-                          <th>Department</th>
-                          <th>Budget Type</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Current</th>
-                          <th colspan="2">Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Action</th>
-                        </tr>
-                      </table>
-                    </div>
-
-                    <!-- Annual -->
-                    <div
-                      class="table-responsive budgetTable1 Annual"
-                      style="display: none;"
-                    >
-                      <table
-                        id="budget-table"
-                        class="table align-center dashboard-table dashboard-task-infos"
-                      >
-                        <tr>
-                          <th colspan="3"></th>
-                          <th
-                            colspan="5"
-                            style="font-weight: bold; color: #181818;"
-                          >
-                            Annual
-                          </th>
-                          <th></th>
-                        </tr>
-                        <tr>
-                          <th>Budget Name</th>
-                          <th>Department</th>
-                          <th>Budget Type</th>
-                          <th>Current</th>
-                          <th>Budgeted</th>
-                          <th>Forcasted</th>
-                          <th>Forcasted</th>
-                          <th>Forcasted</th>
-                          <th>Action</th>
-                        </tr>
-                      </table>
-                    </div>
+                      <tr>
+                        <th colspan="3"></th>
+                        <th
+                          colspan="5"
+                          style="font-weight: bold; color: #1e252d;"
+                        >
+                          Annual
+                        </th>
+                        <th></th>
+                      </tr>
+                      <tr>
+                        <th>Budget Name</th>
+                        <th>Department</th>
+                        <th>Budget Type</th>
+                        <th>Current</th>
+                        <th>Budgeted</th>
+                        <th>Forcasted</th>
+                        <th>Forcasted</th>
+                        <th>Forcasted</th>
+                        <th>Action</th>
+                      </tr>
+                    </table>
                   </div>
                 </div>
               </div>
@@ -2330,10 +2029,10 @@
     <script>
       $(".daterangepicker-field").daterangepicker({
         forceUpdate: true,
-        callback: function(startDate, endDate, period) {
+        callback: function (startDate, endDate, period) {
           var title = startDate.format("L") + " – " + endDate.format("L");
           $(this).val(title);
-        }
+        },
       });
     </script>
     <script>
@@ -2346,12 +2045,12 @@
       $("#example-advanced").treetable({ expandable: true });
     </script>
     <script>
-      $(document).ready(function() {
+      $(document).ready(function () {
         $("#budget_type_select").formSelect();
         $("select.select_all")
           .siblings("ul")
           .prepend("<li id=sm_select_all><span>Select All</span></li>");
-        $("li#sm_select_all").on("click", function() {
+        $("li#sm_select_all").on("click", function () {
           var jq_elem = $(this),
             jq_elem_span = jq_elem.find("span"),
             select_all = jq_elem_span.text() == "Select All",
@@ -2359,18 +2058,29 @@
           jq_elem_span.text(set_text);
           jq_elem
             .siblings("li")
-            .filter(function() {
-              return (
-                $(this)
-                  .find("input")
-                  .prop("checked") != select_all
-              );
+            .filter(function () {
+              return $(this).find("input").prop("checked") != select_all;
             })
             .click();
         });
       });
 
-      $("#control-view").on("click", "button", function(e) {
+      $("#custom-tab").on("click", "button", function (e) {
+        var CustomTabValue = this.dataset.value;
+        if (CustomTabValue) {
+          $(".customTabContent")
+            .not("." + CustomTabValue)
+            .hide();
+          $("." + CustomTabValue).show();
+        } else {
+          $(".customTabContent").hide();
+        }
+        $(this).parent().find("button").removeClass("active");
+        $(this).addClass("active");
+        $(".active").attr("contenteditable", "true");
+      });
+
+      $("#control-view").on("click", "button", function (e) {
         var Timeline = this.dataset.value;
         if (Timeline) {
           $(".budgetTable")
@@ -2380,27 +2090,7 @@
         } else {
           $(".budgetTable").hide();
         }
-        $(this)
-          .parent()
-          .find("button")
-          .removeClass("active");
-        $(this).addClass("active");
-      });
-
-      $("#control-view-new").on("click", "button", function(e) {
-        var Timeline = this.dataset.value;
-        if (Timeline) {
-          $(".budgetTable1")
-            .not("." + Timeline)
-            .hide();
-          $("." + Timeline).show();
-        } else {
-          $(".budgetTable1").hide();
-        }
-        $(this)
-          .parent()
-          .find("button")
-          .removeClass("active");
+        $(this).parent().find("button").removeClass("active");
         $(this).addClass("active");
       });
     </script>

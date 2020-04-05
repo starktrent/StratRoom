@@ -714,7 +714,7 @@ button {
 
 .theme-black .sidebar .menu .list li.active {
   background-color: #dcdcdc;
-  border-left: 4px solid #181818;
+  border-left: 4px solid #1e252d;
 }
 
 table * {
@@ -919,7 +919,7 @@ table td {
 }
 
 .nestedRed {
-  background-color: #696969;
+  background-color: #525252;
   border-left: 16px solid red;
 }
 
@@ -929,7 +929,7 @@ table td {
 }
 
 .nestedGreen {
-  background-color: #696969;
+  background-color: #525252;
   border-left: 16px solid #1aa243;
 }
 
@@ -939,7 +939,7 @@ table td {
 }
 
 .nestedYellow {
-  background-color: #696969;
+  background-color: #525252;
   border-left: 16px solid #ffd500;
 }
 
@@ -949,7 +949,7 @@ table td {
 }
 
 .nestedViolet {
-  background-color: #696969;
+  background-color: #525252;
   border-left: 16px solid #e84343;
 }
 

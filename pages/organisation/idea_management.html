@@ -96,7 +96,7 @@
           ></a>
           <a href="#" onClick="return false;" class="bars"></a>
           <a href="#" onClick="return false;" class="bar_nav sidemenu-collapse"
-            ><i class="nav-hdr-btn ti-menu" style="color: #000"></i
+            ><i class="nav-hdr-btn ti-menu" style="color: #000;"></i
           ></a>
           <a class="navbar-brand nav_float" href="#">
             <img
@@ -108,7 +108,7 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="fullscreen" style="padding: 4px;left: -14px;">
+            <li class="fullscreen" style="padding: 4px; left: -14px;">
               <ul class="list-unstyled order-list">
                 <li class="avatar avatar-sm">
                   <img
@@ -147,13 +147,13 @@
               <form class="form-header" action="" method="POST">
                 <input
                   class="au-input au-input--xl"
-                  style="min-width: 20%"
+                  style="min-width: 20%;"
                   type="text"
                   name="search"
                   placeholder="Search"
                 />
                 <button class="au-btn--submit" type="submit">
-                  <i class="fa fa-search" style="color:gray"></i>
+                  <i class="fa fa-search" style="color: gray;"></i>
                 </button>
               </form>
             </li>
@@ -171,7 +171,7 @@
                 data-toggle="dropdown"
                 role="button"
               >
-                <i class="nav-hdr-btn ti-bell" style="color: gray"></i>
+                <i class="nav-hdr-btn ti-bell" style="color: gray;"></i>
                 <span class="notify"></span>
                 <span class="heartbeat"></span>
               </a>
@@ -184,7 +184,7 @@
                 data-toggle="dropdown"
                 role="button"
               >
-                <i class="nav-hdr-btn ti-settings" style="color: gray"></i>
+                <i class="nav-hdr-btn ti-settings" style="color: gray;"></i>
                 <span class="notify"></span>
                 <span class="heartbeat"></span>
               </a>
@@ -194,7 +194,7 @@
               <a
                 href="#"
                 onclick="return false;"
-                class=" dropdown-toggle js-right-sidebar"
+                class="dropdown-toggle js-right-sidebar"
                 data-close="true"
               >
                 <!-- <img src="../../assets/images/user.jpg" alt="user"> -->
@@ -340,557 +340,567 @@
       </aside>
     </div>
     <!-- #END# Left Sidebar -->
-    <!-- Content Start -->
-    <section class="content">
-      <!-- Add People Modal -->
-      <div id="addpeople" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div
-              class="modal-header"
-              style="background-color: #3A6596; color: #fff;"
+
+    <!-- Add People Modal -->
+    <div id="addpeople" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div
+            class="modal-header"
+            style="background-color: #3a6596; color: #fff;"
+          >
+            <!--button type="button" class="close pull-right" data-dismiss="modal">&times;</button-->
+            <h5>Add People</h5>
+          </div>
+          <div class="modal-body">
+            <label for="peopleadd">People</label>
+            <select
+              id="peopleadd"
+              name=""
+              class="select_all"
+              multiple
+              style="display: none !important;"
             >
-              <!--button type="button" class="close pull-right" data-dismiss="modal">&times;</button-->
-              <h5>Add People</h5>
-            </div>
-            <div class="modal-body">
-              <label for="peopleadd">People</label>
-              <select
-                id="peopleadd"
-                name=""
-                class="select_all"
-                multiple
-                style="display: none !important;"
-              >
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-              </select>
-              <button
-                type="button"
-                class="form-control add"
-                style="background-color: #3A6596; color: #fff;"
-              >
-                Save
-              </button>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-default"
-                data-dismiss="modal"
-              >
-                Close
-              </button>
-            </div>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+            </select>
+            <button
+              type="button"
+              class="form-control add"
+              style="background-color: #3a6596; color: #fff;"
+            >
+              Save
+            </button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Close
+            </button>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Add Thought Modal -->
-      <div id="addThought" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg" style="max-width: 70%;">
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div
-              class="modal-header"
-              style="background-color: #3A6596; color: #fff;"
-            >
-              <!--button type="button" class="close pull-right" data-dismiss="modal">&times;</button-->
-              <h5>Add Board</h5>
-            </div>
-            <div class="modal-body">
-              <div class="row">
-                <div class="col-md-4 form-group">
-                  <label for="type_select">Type Select</label>
-                  <select id="type_select" name="" class="form-control">
-                    <option value="IDEA">IDEA</option>
-                    <option value="CONCEPT">CONCEPT</option>
-                    <option value="INNOVATION">INNOVATION</option>
-                  </select>
-                </div>
-                <div class="col-md-8 form-group">
-                  <label for="title">Enter Title</label>
-                  <input type="text" class="form-control browser-default" />
-                </div>
-                <div class="col-md-12 form-group">
-                  <label for="desc">Enter Description</label>
-                  <textarea
-                    name="desc"
-                    id="desc"
-                    class="form-control"
-                    rows="6"
-                  ></textarea>
-                </div>
-                <div class="col-md-4 form-group">
-                  <label for="datepicker-stat">Start Date</label>
-                  <input
-                    class="form-control datepicker-stat"
-                    name="start"
-                    placeholder="Start Date"
-                    id="datepicker-stat"
-                  />
-                  <script>
-                    $(".datepicker-stat").datepicker();
-                  </script>
-                </div>
-                <div class="col-md-4 form-group">
-                  <label for="datepicker2">End Date</label>
-                  <input
-                    class="form-control datepicker-end"
-                    name="start"
-                    placeholder="End Date"
-                    id="datepicker2"
-                  />
-                  <script>
-                    console.log();
-                    $(".datepicker-end").datepicker();
-                  </script>
-                </div>
-                <div class="col-md-4 form-group">
-                  <label for="budget">Budget</label>
-                  <input type="text" class="form-control browser-default" />
-                </div>
-                <div class="col-md-6 form-group">
-                  <label for="sponsor_m">Sponsor</label>
-                  <select
-                    id="sponsor_m"
-                    name=""
-                    class="select_all"
-                    multiple
-                    style="display: none !important;"
+    <!-- Add Thought Modal -->
+    <div id="addThought" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="max-width: 70%;">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div
+            class="modal-header"
+            style="background-color: #3a6596; color: #fff;"
+          >
+            <!--button type="button" class="close pull-right" data-dismiss="modal">&times;</button-->
+            <h5>Add Board</h5>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-4 form-group">
+                <label for="type_select">Type Select</label>
+                <select id="type_select" name="" class="form-control">
+                  <option value="IDEA">IDEA</option>
+                  <option value="CONCEPT">CONCEPT</option>
+                  <option value="INNOVATION">INNOVATION</option>
+                </select>
+              </div>
+              <div class="col-md-8 form-group">
+                <label for="title">Enter Title</label>
+                <input type="text" class="form-control browser-default" />
+              </div>
+              <div class="col-md-12 form-group">
+                <label for="desc">Enter Description</label>
+                <textarea
+                  name="desc"
+                  id="desc"
+                  class="form-control"
+                  rows="6"
+                ></textarea>
+              </div>
+              <div class="col-md-4 form-group">
+                <label for="datepicker-stat">Start Date</label>
+                <input
+                  class="form-control datepicker-stat"
+                  name="start"
+                  placeholder="Start Date"
+                  id="datepicker-stat"
+                />
+                <script>
+                  $(".datepicker-stat").datepicker();
+                </script>
+              </div>
+              <div class="col-md-4 form-group">
+                <label for="datepicker2">End Date</label>
+                <input
+                  class="form-control datepicker-end"
+                  name="start"
+                  placeholder="End Date"
+                  id="datepicker2"
+                />
+                <script>
+                  console.log();
+                  $(".datepicker-end").datepicker();
+                </script>
+              </div>
+              <div class="col-md-4 form-group">
+                <label for="budget">Budget</label>
+                <input type="text" class="form-control browser-default" />
+              </div>
+              <div class="col-md-6 form-group">
+                <label for="sponsor_m">Sponsor</label>
+                <select
+                  id="sponsor_m"
+                  name=""
+                  class="select_all"
+                  multiple
+                  style="display: none !important;"
+                >
+                  <option value="Person 1">Person 1</option>
+                  <option value="Person 2">Person 2</option>
+                  <option value="Person 3">Person 3</option>
+                  <option value="Person 4">Person 4</option>
+                  <option value="Person 5">Person 5</option>
+                  <option value="Person 6">Person 6</option>
+                </select>
+              </div>
+              <div class="col-md-6 form-group">
+                <label for="fields">Fields Required</label>
+                <select
+                  id="fields"
+                  name=""
+                  class="select_all"
+                  multiple
+                  style="display: none !important;"
+                >
+                  <option value="Scorecard">Scorecard</option>
+                  <option value="Initiatives">Initiatives</option>
+                  <option value="Risk">Risk</option>
+                  <option value="Compliance">Compliance</option>
+                  <option value="Budget">Budget</option>
+                  <option value="Resource Allocation"
+                    >Resource Allocation</option
                   >
-                    <option value="Person 1">Person 1</option>
-                    <option value="Person 2">Person 2</option>
-                    <option value="Person 3">Person 3</option>
-                    <option value="Person 4">Person 4</option>
-                    <option value="Person 5">Person 5</option>
-                    <option value="Person 6">Person 6</option>
-                  </select>
-                </div>
-                <div class="col-md-6 form-group">
-                  <label for="fields">Fields Required</label>
-                  <select
-                    id="fields"
-                    name=""
-                    class="select_all"
-                    multiple
-                    style="display: none !important;"
-                  >
-                    <option value="Scorecard">Scorecard</option>
-                    <option value="Initiatives">Initiatives</option>
-                    <option value="Risk">Risk</option>
-                    <option value="Compliance">Compliance</option>
-                    <option value="Budget">Budget</option>
-                    <option value="Resource Allocation"
-                      >Resource Allocation</option
-                    >
-                  </select>
-                </div>
-                <div class="col-md-8"></div>
-                <div class="col-md-4 form-group">
-                  <button
-                    type="button"
-                    class="form-control add"
-                    style="background-color: #3A6596; color: #fff;"
-                  >
-                    Save
-                  </button>
-                </div>
+                </select>
+              </div>
+              <div class="col-md-8"></div>
+              <div class="col-md-4 form-group">
+                <button
+                  type="button"
+                  class="form-control add"
+                  style="background-color: #3a6596; color: #fff;"
+                >
+                  Save
+                </button>
               </div>
             </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-default"
-                data-dismiss="modal"
-              >
-                Close
-              </button>
-            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Close
+            </button>
           </div>
         </div>
       </div>
+    </div>
 
-      <!--#START Sub Comment View -->
-      <div
-        class="modal fade"
-        id="view_comments"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby=""
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div
-              class="modal-header"
-              style="background-color: #3A6596; color: #fff;"
+    <!--#START Sub Comment View -->
+    <div
+      class="modal fade"
+      id="view_comments"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby=""
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div
+            class="modal-header"
+            style="background-color: #3a6596; color: #fff;"
+          >
+            <h6 class="modal-title">View Comments</h6>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
             >
-              <h6 class="modal-title">View Comments</h6>
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="col-lg-12 col-md-12 sub_initiatives">
-              <div class="card">
-                <div class="comment-history" id="comment-conversation_1">
-                  <ul id="comment-conversation">
-                    <li>
-                      <div class="d-flex flex-row">
-                        <div class="flex-column comment_image">
-                          <img
-                            src="../../images/user/usrbig6.jpg"
-                            class="rounded-circle"
-                            alt="User"
-                            width="40"
-                          />
-                        </div>
-                        <div class="flex-column comment_details">
-                          <ul>
-                            <li>
-                              <span class="message-data-name"
-                                ><strong>Elmer Roberts, </strong></span
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="col-lg-12 col-md-12 sub_initiatives">
+            <div class="card">
+              <div class="comment-history" id="comment-conversation_1">
+                <ul id="comment-conversation">
+                  <li>
+                    <div class="d-flex flex-row">
+                      <div class="flex-column comment_image">
+                        <img
+                          src="../../images/user/usrbig6.jpg"
+                          class="rounded-circle"
+                          alt="User"
+                          width="40"
+                        />
+                      </div>
+                      <div class="flex-column comment_details">
+                        <ul>
+                          <li>
+                            <span class="message-data-name"
+                              ><strong>Elmer Roberts, </strong></span
+                            >
+                          </li>
+                          <li>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                            elit. Aenean commodo ligula eget dolor. Aenean massa
+                          </li>
+                          <li>
+                            <ul class="d-flex flex-row">
+                              <li class="reply">Reply</li>
+                              <li>Like</li>
+                              <li>10:12 AM, Today</li>
+                            </ul>
+                          </li>
+                        </ul>
+                        <ul>
+                          <li>
+                            <div class="comment_send" style="display: none;">
+                              <div
+                                class="form-group d-flex flex-row align-items-center"
                               >
-                            </li>
-                            <li>
-                              Lorem ipsum dolor sit amet, consectetuer
-                              adipiscing elit. Aenean commodo ligula eget dolor.
-                              Aenean massa
-                            </li>
-                            <li>
-                              <ul class="d-flex flex-row">
-                                <li class="reply">Reply</li>
-                                <li>Like</li>
-                                <li>10:12 AM, Today</li>
-                              </ul>
-                            </li>
-                          </ul>
-                          <ul>
-                            <li>
-                              <div class="comment_send" style="display:none">
-                                <div
-                                  class="form-group d-flex flex-row align-items-center"
-                                >
-                                  <div class="form-line">
-                                    <input
-                                      type="text"
-                                      class="form-control comment"
-                                      placeholder="Type a comment..."
-                                    />
-                                  </div>
-                                  <div class="send_btn reply-btn">
-                                    <i class="fas fa-arrow-right"></i>
-                                  </div>
+                                <div class="form-line">
+                                  <input
+                                    type="text"
+                                    class="form-control comment"
+                                    placeholder="Type a comment..."
+                                  />
+                                </div>
+                                <div class="send_btn reply-btn">
+                                  <i class="fas fa-arrow-right"></i>
                                 </div>
                               </div>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="flex-column">
-                          <ul class="header-dropdown m-r--2 pt-2 d-flex">
-                            <li class="dropdown">
-                              <a
-                                href="#"
-                                onclick="return false;"
-                                class="dropdown-toggle"
-                                data-toggle="dropdown"
-                                role="button"
-                                aria-haspopup="true"
-                                aria-expanded="true"
-                              >
-                                <i class="material-icons">more_vert</i>
-                              </a>
-                              <ul
-                                class="dropdown-menu pull-right"
-                                x-placement="bottom-start"
-                                style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
-                              >
-                                <li>
-                                  <a
-                                    href="#"
-                                    data-toggle="modal"
-                                    data-target=".sub_activitie_popup"
-                                    onclick="return false;"
-                                    >Edit</a
-                                  >
-                                </li>
-                                <li>
-                                  <a href="#" onclick="return false;">Delete</a>
-                                </li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </div>
+                            </div>
+                          </li>
+                        </ul>
                       </div>
-                    </li>
-                    <li>
-                      <div class="d-flex flex-row">
-                        <div class="flex-column comment_image">
-                          <img
-                            src="../../images/user/usrbig6.jpg"
-                            class="rounded-circle"
-                            alt="User"
-                            width="40"
-                          />
-                        </div>
-                        <div class="flex-column comment_details">
-                          <ul>
-                            <li>
-                              <span class="message-data-name"
-                                ><strong>Elmer Roberts, </strong></span
-                              >
-                            </li>
-                            <li>
-                              Lorem ipsum dolor sit amet, consectetuer
-                              adipiscing elit. Aenean commodo ligula eget dolor.
-                              Aenean massa
-                            </li>
-                            <li>
-                              <ul class="d-flex flex-row">
-                                <li class="reply">Reply</li>
-                                <li>Like</li>
-                                <li>10:12 AM, Today</li>
-                              </ul>
-                            </li>
-                          </ul>
-                          <ul>
-                            <li>
-                              <div class="comment_send" style="display:none">
-                                <div
-                                  class="form-group d-flex flex-row align-items-center"
+                      <div class="flex-column">
+                        <ul class="header-dropdown m-r--2 pt-2 d-flex">
+                          <li class="dropdown">
+                            <a
+                              href="#"
+                              onclick="return false;"
+                              class="dropdown-toggle"
+                              data-toggle="dropdown"
+                              role="button"
+                              aria-haspopup="true"
+                              aria-expanded="true"
+                            >
+                              <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul
+                              class="dropdown-menu pull-right"
+                              x-placement="bottom-start"
+                              style="
+                                position: absolute;
+                                will-change: transform;
+                                top: 0px;
+                                left: 0px;
+                                transform: translate3d(0px, 24px, 0px);
+                              "
+                            >
+                              <li>
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target=".sub_activitie_popup"
+                                  onclick="return false;"
+                                  >Edit</a
                                 >
-                                  <div class="form-line">
-                                    <input
-                                      type="text"
-                                      class="form-control comment"
-                                      placeholder="Type a comment..."
-                                    />
-                                  </div>
-                                  <div class="send_btn reply-btn">
-                                    <i class="fas fa-arrow-right"></i>
-                                  </div>
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="flex-column">
-                          <ul class="header-dropdown m-r--2 pt-2 d-flex">
-                            <li class="dropdown">
-                              <a
-                                href="#"
-                                onclick="return false;"
-                                class="dropdown-toggle"
-                                data-toggle="dropdown"
-                                role="button"
-                                aria-haspopup="true"
-                                aria-expanded="true"
-                              >
-                                <i class="material-icons">more_vert</i>
-                              </a>
-                              <ul
-                                class="dropdown-menu pull-right"
-                                x-placement="bottom-start"
-                                style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
-                              >
-                                <li>
-                                  <a href="#" onclick="return false;">Edit</a>
-                                </li>
-                                <li>
-                                  <a href="#" onclick="return false;">Delete</a>
-                                </li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </div>
+                              </li>
+                              <li>
+                                <a href="#" onclick="return false;">Delete</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
                       </div>
-                    </li>
-                    <li>
-                      <div class="d-flex flex-row">
-                        <div class="flex-column comment_image">
-                          <img
-                            src="../../images/user/usrbig6.jpg"
-                            class="rounded-circle"
-                            alt="User"
-                            width="40"
-                          />
-                        </div>
-                        <div class="flex-column comment_details">
-                          <ul>
-                            <li>
-                              <span class="message-data-name"
-                                ><strong>Elmer Roberts, </strong></span
-                              >
-                            </li>
-                            <li>
-                              Lorem ipsum dolor sit amet, consectetuer
-                              adipiscing elit. Aenean commodo ligula eget dolor.
-                              Aenean massa
-                            </li>
-                            <li>
-                              <ul class="d-flex flex-row">
-                                <li class="reply">Reply</li>
-                                <li>Like</li>
-                                <li>10:12 AM, Today</li>
-                              </ul>
-                            </li>
-                          </ul>
-                          <ul>
-                            <li>
-                              <div class="comment_send" style="display:none">
-                                <div
-                                  class="form-group d-flex flex-row align-items-center"
-                                >
-                                  <div class="form-line">
-                                    <input
-                                      type="text"
-                                      class="form-control comment"
-                                      placeholder="Type a comment..."
-                                    />
-                                  </div>
-                                  <div class="send_btn reply-btn">
-                                    <i class="fas fa-arrow-right"></i>
-                                  </div>
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="flex-column">
-                          <ul class="header-dropdown m-r--2 pt-2 d-flex">
-                            <li class="dropdown">
-                              <a
-                                href="#"
-                                onclick="return false;"
-                                class="dropdown-toggle"
-                                data-toggle="dropdown"
-                                role="button"
-                                aria-haspopup="true"
-                                aria-expanded="true"
-                              >
-                                <i class="material-icons">more_vert</i>
-                              </a>
-                              <ul
-                                class="dropdown-menu pull-right"
-                                x-placement="bottom-start"
-                                style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
-                              >
-                                <li>
-                                  <a href="#" onclick="return false;">Edit</a>
-                                </li>
-                                <li>
-                                  <a href="#" onclick="return false;">Delete</a>
-                                </li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="d-flex flex-row">
-                        <div class="flex-column comment_image">
-                          <img
-                            src="../../images/user/usrbig6.jpg"
-                            class="rounded-circle"
-                            alt="User"
-                            width="40"
-                          />
-                        </div>
-                        <div class="flex-column comment_details">
-                          <ul>
-                            <li>
-                              <span class="message-data-name"
-                                ><strong>Elmer Roberts, </strong></span
-                              >
-                            </li>
-                            <li>
-                              Lorem ipsum dolor sit amet, consectetuer
-                              adipiscing elit. Aenean commodo ligula eget dolor.
-                              Aenean massa
-                            </li>
-                            <li>
-                              <ul class="d-flex flex-row">
-                                <li class="reply">Reply</li>
-                                <li>Like</li>
-                                <li>10:12 AM, Today</li>
-                              </ul>
-                            </li>
-                          </ul>
-                          <ul>
-                            <li>
-                              <div class="comment_send" style="display:none">
-                                <div
-                                  class="form-group d-flex flex-row align-items-center"
-                                >
-                                  <div class="form-line">
-                                    <input
-                                      type="text"
-                                      class="form-control comment"
-                                      placeholder="Type a comment..."
-                                    />
-                                  </div>
-                                  <div class="send_btn reply-btn">
-                                    <i class="fas fa-arrow-right"></i>
-                                  </div>
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="flex-column">
-                          <ul class="header-dropdown m-r--2 pt-2 d-flex">
-                            <li class="dropdown">
-                              <a
-                                href="#"
-                                onclick="return false;"
-                                class="dropdown-toggle"
-                                data-toggle="dropdown"
-                                role="button"
-                                aria-haspopup="true"
-                                aria-expanded="true"
-                              >
-                                <i class="material-icons">more_vert</i>
-                              </a>
-                              <ul
-                                class="dropdown-menu pull-right"
-                                x-placement="bottom-start"
-                                style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
-                              >
-                                <li>
-                                  <a href="#" onclick="return false;">Edit</a>
-                                </li>
-                                <li>
-                                  <a href="#" onclick="return false;">Delete</a>
-                                </li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="comment_send">
-                  <div class="form-group d-flex flex-row align-items-center">
-                    <div class="form-line">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="comment"
-                        placeholder="Type a comment..."
-                      />
                     </div>
-                    <div class="send_btn" id="send-btn">
-                      <i class="fas fa-arrow-right"></i>
+                  </li>
+                  <li>
+                    <div class="d-flex flex-row">
+                      <div class="flex-column comment_image">
+                        <img
+                          src="../../images/user/usrbig6.jpg"
+                          class="rounded-circle"
+                          alt="User"
+                          width="40"
+                        />
+                      </div>
+                      <div class="flex-column comment_details">
+                        <ul>
+                          <li>
+                            <span class="message-data-name"
+                              ><strong>Elmer Roberts, </strong></span
+                            >
+                          </li>
+                          <li>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                            elit. Aenean commodo ligula eget dolor. Aenean massa
+                          </li>
+                          <li>
+                            <ul class="d-flex flex-row">
+                              <li class="reply">Reply</li>
+                              <li>Like</li>
+                              <li>10:12 AM, Today</li>
+                            </ul>
+                          </li>
+                        </ul>
+                        <ul>
+                          <li>
+                            <div class="comment_send" style="display: none;">
+                              <div
+                                class="form-group d-flex flex-row align-items-center"
+                              >
+                                <div class="form-line">
+                                  <input
+                                    type="text"
+                                    class="form-control comment"
+                                    placeholder="Type a comment..."
+                                  />
+                                </div>
+                                <div class="send_btn reply-btn">
+                                  <i class="fas fa-arrow-right"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="flex-column">
+                        <ul class="header-dropdown m-r--2 pt-2 d-flex">
+                          <li class="dropdown">
+                            <a
+                              href="#"
+                              onclick="return false;"
+                              class="dropdown-toggle"
+                              data-toggle="dropdown"
+                              role="button"
+                              aria-haspopup="true"
+                              aria-expanded="true"
+                            >
+                              <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul
+                              class="dropdown-menu pull-right"
+                              x-placement="bottom-start"
+                              style="
+                                position: absolute;
+                                will-change: transform;
+                                top: 0px;
+                                left: 0px;
+                                transform: translate3d(0px, 24px, 0px);
+                              "
+                            >
+                              <li>
+                                <a href="#" onclick="return false;">Edit</a>
+                              </li>
+                              <li>
+                                <a href="#" onclick="return false;">Delete</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
+                  </li>
+                  <li>
+                    <div class="d-flex flex-row">
+                      <div class="flex-column comment_image">
+                        <img
+                          src="../../images/user/usrbig6.jpg"
+                          class="rounded-circle"
+                          alt="User"
+                          width="40"
+                        />
+                      </div>
+                      <div class="flex-column comment_details">
+                        <ul>
+                          <li>
+                            <span class="message-data-name"
+                              ><strong>Elmer Roberts, </strong></span
+                            >
+                          </li>
+                          <li>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                            elit. Aenean commodo ligula eget dolor. Aenean massa
+                          </li>
+                          <li>
+                            <ul class="d-flex flex-row">
+                              <li class="reply">Reply</li>
+                              <li>Like</li>
+                              <li>10:12 AM, Today</li>
+                            </ul>
+                          </li>
+                        </ul>
+                        <ul>
+                          <li>
+                            <div class="comment_send" style="display: none;">
+                              <div
+                                class="form-group d-flex flex-row align-items-center"
+                              >
+                                <div class="form-line">
+                                  <input
+                                    type="text"
+                                    class="form-control comment"
+                                    placeholder="Type a comment..."
+                                  />
+                                </div>
+                                <div class="send_btn reply-btn">
+                                  <i class="fas fa-arrow-right"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="flex-column">
+                        <ul class="header-dropdown m-r--2 pt-2 d-flex">
+                          <li class="dropdown">
+                            <a
+                              href="#"
+                              onclick="return false;"
+                              class="dropdown-toggle"
+                              data-toggle="dropdown"
+                              role="button"
+                              aria-haspopup="true"
+                              aria-expanded="true"
+                            >
+                              <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul
+                              class="dropdown-menu pull-right"
+                              x-placement="bottom-start"
+                              style="
+                                position: absolute;
+                                will-change: transform;
+                                top: 0px;
+                                left: 0px;
+                                transform: translate3d(0px, 24px, 0px);
+                              "
+                            >
+                              <li>
+                                <a href="#" onclick="return false;">Edit</a>
+                              </li>
+                              <li>
+                                <a href="#" onclick="return false;">Delete</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex flex-row">
+                      <div class="flex-column comment_image">
+                        <img
+                          src="../../images/user/usrbig6.jpg"
+                          class="rounded-circle"
+                          alt="User"
+                          width="40"
+                        />
+                      </div>
+                      <div class="flex-column comment_details">
+                        <ul>
+                          <li>
+                            <span class="message-data-name"
+                              ><strong>Elmer Roberts, </strong></span
+                            >
+                          </li>
+                          <li>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                            elit. Aenean commodo ligula eget dolor. Aenean massa
+                          </li>
+                          <li>
+                            <ul class="d-flex flex-row">
+                              <li class="reply">Reply</li>
+                              <li>Like</li>
+                              <li>10:12 AM, Today</li>
+                            </ul>
+                          </li>
+                        </ul>
+                        <ul>
+                          <li>
+                            <div class="comment_send" style="display: none;">
+                              <div
+                                class="form-group d-flex flex-row align-items-center"
+                              >
+                                <div class="form-line">
+                                  <input
+                                    type="text"
+                                    class="form-control comment"
+                                    placeholder="Type a comment..."
+                                  />
+                                </div>
+                                <div class="send_btn reply-btn">
+                                  <i class="fas fa-arrow-right"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="flex-column">
+                        <ul class="header-dropdown m-r--2 pt-2 d-flex">
+                          <li class="dropdown">
+                            <a
+                              href="#"
+                              onclick="return false;"
+                              class="dropdown-toggle"
+                              data-toggle="dropdown"
+                              role="button"
+                              aria-haspopup="true"
+                              aria-expanded="true"
+                            >
+                              <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul
+                              class="dropdown-menu pull-right"
+                              x-placement="bottom-start"
+                              style="
+                                position: absolute;
+                                will-change: transform;
+                                top: 0px;
+                                left: 0px;
+                                transform: translate3d(0px, 24px, 0px);
+                              "
+                            >
+                              <li>
+                                <a href="#" onclick="return false;">Edit</a>
+                              </li>
+                              <li>
+                                <a href="#" onclick="return false;">Delete</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="comment_send">
+                <div class="form-group d-flex flex-row align-items-center">
+                  <div class="form-line">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="comment"
+                      placeholder="Type a comment..."
+                    />
+                  </div>
+                  <div class="send_btn" id="send-btn">
+                    <i class="fas fa-arrow-right"></i>
                   </div>
                 </div>
               </div>
@@ -898,33 +908,31 @@
           </div>
         </div>
       </div>
-      <!--#END Sub Comment View -->
+    </div>
+    <!--#END Sub Comment View -->
 
+    <!-- Content Start -->
+    <section class="content">
       <!-- Page Header -->
-      <div class="page-header py-3 m-t--70" style="background-color: #686868;">
-        <div class="row">
-          <div class="col-md-6 col-12 pt-3 mb-0" style="color: #fff;">
-            <h4
-              class="page-title ml-4"
-              style="font-weight: 600; text-transform: uppercase;"
-            >
-              Thought Board
-            </h4>
-          </div>
-          <div class="col-md-4"></div>
-          <div class="col-md-2 col-12 pt-2">
-            <button
-              class="btn  pull-right mr-4"
-              data-toggle="modal"
-              data-target="#addThought"
-              style="color: #fff; font-weight: 600; background-color: #3eb321;"
-            >
-              Add New Board
-            </button>
-          </div>
+      <div class="page-header row no-gutters py-2 m-t--70">
+        <div class="col-lg-6 col-md-6 text-center text-sm-left pt-2 mb-0 ml-4">
+          <h4
+            class="page-title"
+            style="font-weight: 600; text-transform: uppercase;"
+          >
+            Thought Board
+          </h4>
+          <!-- <button
+            class="btn btn-custom-secondary pull-right"
+            data-toggle="modal"
+            data-target="#addThought"
+          >
+            <i class="fas fa-plus"></i>
+          </button> -->
         </div>
       </div>
       <!-- End Page Header -->
+
       <div class="container-fluid">
         <div class="row blockContainer" style="margin-top: 1%;" id="idea_box">
           <div class="col-md-3 idea-box">
@@ -953,7 +961,13 @@
                     <ul
                       class="dropdown-menu pull-right"
                       x-placement="bottom-start"
-                      style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                      style="
+                        position: absolute;
+                        will-change: transform;
+                        top: 0px;
+                        left: 0px;
+                        transform: translate3d(0px, 24px, 0px);
+                      "
                     >
                       <li>
                         <a href="#" onclick="return false;">View Details</a>
@@ -972,7 +986,7 @@
                   </div>
                 </div>
               </div>
-              <div class="header-line" style="background-color: #FF6666;"></div>
+              <div class="header-line" style="background-color: #ff6666;"></div>
               <div class="idea-body">
                 <div class="row">
                   <div class="col-md-12 form-group about_idea">
@@ -1048,7 +1062,7 @@
                   </div>
                 </div>
               </div>
-              <div class="idea-footer" style="background-color: #FF6666;">
+              <div class="idea-footer" style="background-color: #ff6666;">
                 <div class="row text-center">
                   <div class="col-md-12 idea-footer-content">
                     <a href="" class="idea-footer-icon">
@@ -1136,7 +1150,13 @@
                     <ul
                       class="dropdown-menu pull-right"
                       x-placement="bottom-start"
-                      style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                      style="
+                        position: absolute;
+                        will-change: transform;
+                        top: 0px;
+                        left: 0px;
+                        transform: translate3d(0px, 24px, 0px);
+                      "
                     >
                       <li>
                         <a href="#" onclick="return false;">View Details</a>
@@ -1155,7 +1175,7 @@
                   </div>
                 </div>
               </div>
-              <div class="header-line" style="background-color: #C179B9;"></div>
+              <div class="header-line" style="background-color: #c179b9;"></div>
               <div class="idea-body">
                 <div class="row">
                   <div class="col-md-12 form-group about_idea">
@@ -1234,7 +1254,7 @@
                   </div>
                 </div>
               </div>
-              <div class="idea-footer" style="background-color: #C179B9;">
+              <div class="idea-footer" style="background-color: #c179b9;">
                 <div class="row text-center">
                   <div class="col-md-12 idea-footer-content">
                     <a href="" class="idea-footer-icon">
@@ -1322,7 +1342,13 @@
                     <ul
                       class="dropdown-menu pull-right"
                       x-placement="bottom-start"
-                      style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                      style="
+                        position: absolute;
+                        will-change: transform;
+                        top: 0px;
+                        left: 0px;
+                        transform: translate3d(0px, 24px, 0px);
+                      "
                     >
                       <li>
                         <a href="#" onclick="return false;">View Details</a>
@@ -1341,7 +1367,7 @@
                   </div>
                 </div>
               </div>
-              <div class="header-line" style="background-color: #3C91E6;"></div>
+              <div class="header-line" style="background-color: #3c91e6;"></div>
               <div class="idea-body">
                 <div class="row">
                   <div class="col-md-12 form-group about_idea">
@@ -1418,7 +1444,7 @@
                   </div>
                 </div>
               </div>
-              <div class="idea-footer" style="background-color: #3C91E6;">
+              <div class="idea-footer" style="background-color: #3c91e6;">
                 <div class="row text-center">
                   <div class="col-md-12 idea-footer-content">
                     <a href="" class="idea-footer-icon">
@@ -1506,7 +1532,13 @@
                     <ul
                       class="dropdown-menu pull-right"
                       x-placement="bottom-start"
-                      style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                      style="
+                        position: absolute;
+                        will-change: transform;
+                        top: 0px;
+                        left: 0px;
+                        transform: translate3d(0px, 24px, 0px);
+                      "
                     >
                       <li>
                         <a href="#" onclick="return false;">View Details</a>
@@ -1525,7 +1557,7 @@
                   </div>
                 </div>
               </div>
-              <div class="header-line" style="background-color: #32CCCC;"></div>
+              <div class="header-line" style="background-color: #32cccc;"></div>
               <div class="idea-body">
                 <div class="row">
                   <div class="col-md-12 form-group about_idea">
@@ -1603,7 +1635,7 @@
                   </div>
                 </div>
               </div>
-              <div class="idea-footer" style="background-color: #32CCCC;">
+              <div class="idea-footer" style="background-color: #32cccc;">
                 <div class="row text-center">
                   <div class="col-md-12 idea-footer-content">
                     <a href="" class="idea-footer-icon">
@@ -1694,10 +1726,10 @@
     <script>
       $(".daterangepicker-field").daterangepicker({
         forceUpdate: true,
-        callback: function(startDate, endDate, period) {
+        callback: function (startDate, endDate, period) {
           var title = startDate.format("L") + " – " + endDate.format("L");
           $(this).val(title);
-        }
+        },
       });
 
       //   $(document).ready(function() {
@@ -1711,13 +1743,13 @@
       //     });
       //   });
 
-      $(document).ready(function() {
+      $(document).ready(function () {
         // $('select').val([1]);
         $("#sponsor_m, #peopleadd, #fields").formSelect();
         $("select.select_all")
           .siblings("ul")
           .prepend("<li id=sm_select_all><span>Select All</span></li>");
-        $("li#sm_select_all").on("click", function() {
+        $("li#sm_select_all").on("click", function () {
           var jq_elem = $(this),
             jq_elem_span = jq_elem.find("span"),
             select_all = jq_elem_span.text() == "Select All",
@@ -1725,12 +1757,8 @@
           jq_elem_span.text(set_text);
           jq_elem
             .siblings("li")
-            .filter(function() {
-              return (
-                $(this)
-                  .find("input")
-                  .prop("checked") != select_all
-              );
+            .filter(function () {
+              return $(this).find("input").prop("checked") != select_all;
             })
             .click();
         });
