@@ -43,6 +43,45 @@
         left: auto !important;
         position: fixed;
       }
+
+      .dropdown-menu {
+        min-width: 200px;
+      }
+      .dropdown-menu.columns-2 {
+        min-width: 400px;
+      }
+      .dropdown-menu.columns-3 {
+        min-width: 600px;
+      }
+      .dropdown-menu li a {
+        padding: 3px 15px;
+        font-weight: 300;
+      }
+      .multi-column-dropdown {
+        list-style: none;
+        margin: 0px;
+        margin-top: 8px;
+        padding: 0px;
+      }
+      .multi-column-dropdown li a {
+        display: block;
+        clear: both;
+        line-height: 1.428571429;
+        color: #333;
+        white-space: normal;
+      }
+      .multi-column-dropdown li a:hover {
+        text-decoration: none;
+        color: #333;
+        background-color: #f5f5f5;
+      }
+
+      @media (max-width: 767px) {
+        .dropdown-menu.multi-column {
+          min-width: 240px !important;
+          overflow-x: hidden;
+        }
+      }
     </style>
     <script>
       function preview_images() {
@@ -89,7 +128,7 @@
           ></a>
           <a href="#" onClick="return false;" class="bars"></a>
           <a href="#" onClick="return false;" class="bar_nav sidemenu-collapse"
-            ><i class="nav-hdr-btn ti-menu" style="color: #000"></i
+            ><i class="nav-hdr-btn ti-menu" style="color: #000;"></i
           ></a>
           <a class="navbar-brand nav_float" href="#">
             <img
@@ -101,7 +140,7 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="fullscreen" style="padding: 4px;left: -14px;">
+            <li class="fullscreen" style="padding: 4px; left: -14px;">
               <ul class="list-unstyled order-list">
                 <li class="avatar avatar-sm">
                   <img
@@ -140,13 +179,13 @@
               <form class="form-header" action="" method="POST">
                 <input
                   class="au-input au-input--xl"
-                  style="min-width: 20%"
+                  style="min-width: 20%;"
                   type="text"
                   name="search"
                   placeholder="Search"
                 />
                 <button class="au-btn--submit" type="submit">
-                  <i class="fa fa-search" style="color:gray"></i>
+                  <i class="fa fa-search" style="color: gray;"></i>
                 </button>
               </form>
             </li>
@@ -164,7 +203,7 @@
                 data-toggle="dropdown"
                 role="button"
               >
-                <i class="nav-hdr-btn ti-bell" style="color: gray"></i>
+                <i class="nav-hdr-btn ti-bell" style="color: gray;"></i>
                 <span class="notify"></span>
                 <span class="heartbeat"></span>
               </a>
@@ -177,7 +216,7 @@
                 data-toggle="dropdown"
                 role="button"
               >
-                <i class="nav-hdr-btn ti-settings" style="color: gray"></i>
+                <i class="nav-hdr-btn ti-settings" style="color: gray;"></i>
                 <span class="notify"></span>
                 <span class="heartbeat"></span>
               </a>
@@ -187,7 +226,7 @@
               <a
                 href="#"
                 onclick="return false;"
-                class=" dropdown-toggle js-right-sidebar"
+                class="dropdown-toggle js-right-sidebar"
                 data-close="true"
               >
                 <!-- <img src="../../assets/images/user.jpg" alt="user"> -->
@@ -381,7 +420,7 @@
                     <li
                       _ngcontent-hhc-c5=""
                       class="center avatar avatar-sm"
-                      style="width:85px"
+                      style="width: 85px;"
                     >
                       <img
                         _ngcontent-hhc-c5=""
@@ -403,7 +442,7 @@
                   </ul>
                   <ul
                     class="setting-list profile-replace list-unstyled m-t-20"
-                    style="display: none"
+                    style="display: none;"
                   >
                     <li class="center">
                       <form id="profileForm">
@@ -414,7 +453,7 @@
                               id="profileImage"
                               _ngcontent-hhc-c5=""
                               class="center avatar avatar-sm"
-                              style="width:85px; z-index:-1"
+                              style="width: 85px; z-index: -1;"
                             >
                               <img
                                 _ngcontent-hhc-c5=""
@@ -568,7 +607,7 @@
                                             <a href="#" class="reportingEdit"
                                               ><i
                                                 class="fas fa-pencil-alt"
-                                                style="font-size: 14px"
+                                                style="font-size: 14px;"
                                               ></i
                                             ></a>
                                           </div>
@@ -594,7 +633,7 @@
                                             <a href="#" class="reportingEdit"
                                               ><i
                                                 class="fas fa-pencil-alt"
-                                                style="font-size: 14px"
+                                                style="font-size: 14px;"
                                               ></i
                                             ></a>
                                           </div>
@@ -602,7 +641,7 @@
                                       </ul>
                                       <ul
                                         class="setting-list reporting-replace-add list-unstyled m-t-20"
-                                        style="display:none"
+                                        style="display: none;"
                                       >
                                         <li class="row">
                                           <form id="reportingAddForm">
@@ -751,7 +790,7 @@
                                             <a href="#" class="directEdit"
                                               ><i
                                                 class="fas fa-pencil-alt"
-                                                style="font-size: 14px"
+                                                style="font-size: 14px;"
                                               ></i
                                             ></a>
                                           </div>
@@ -777,7 +816,7 @@
                                             <a href="#" class="directEdit"
                                               ><i
                                                 class="fas fa-pencil-alt"
-                                                style="font-size: 14px"
+                                                style="font-size: 14px;"
                                               ></i
                                             ></a>
                                           </div>
@@ -785,7 +824,7 @@
                                       </ul>
                                       <ul
                                         class="setting-list direct-replace-add list-unstyled m-t-20"
-                                        style="display:none"
+                                        style="display: none;"
                                       >
                                         <li class="row">
                                           <form id="directAddForm">
@@ -1287,7 +1326,7 @@
                     src="../../assets/images/user/usrbig7.jpg"
                     alt=""
                   />
-                  <input id="upload1" type="file" style="display:none" />
+                  <input id="upload1" type="file" style="display: none;" />
                 </div>
                 <div class="form-row">
                   <div class="form-group">
@@ -1457,7 +1496,7 @@
           <div class="modal-content">
             <div
               class="modal-header"
-              style="background-color: #3A6596; color: #fff;"
+              style="background-color: #1e252d; color: #fff;"
             >
               <h6 class="modal-title" id="myLargeModalLabel">
                 Add Sub Initiative Description
@@ -1577,7 +1616,7 @@
           <div class="modal-content">
             <div
               class="modal-header"
-              style="background-color: #3A6596; color: #fff;"
+              style="background-color: #1e252d; color: #fff;"
             >
               <h6 class="modal-title" id="myLargeModalLabel">
                 Edit Sub Initiative Description
@@ -1697,7 +1736,7 @@
           <div class="modal-content">
             <div
               class="modal-header"
-              style="background-color: #3A6596; color: #fff;"
+              style="background-color: #1e252d; color: #fff;"
             >
               <h6 class="modal-title" id="myLargeModalLabel">
                 View Sub Initatives
@@ -2086,7 +2125,7 @@
           <div class="modal-content">
             <div
               class="modal-header"
-              style="background-color: #3A6596; color: #fff;"
+              style="background-color: #1e252d; color: #fff;"
             >
               <h6 class="modal-title" id="myLargeModalLabel">
                 View Sub Initatives
@@ -2128,7 +2167,13 @@
                         <ul
                           class="dropdown-menu pull-right"
                           x-placement="bottom-start"
-                          style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
                         >
                           <li>
                             <a
@@ -2169,7 +2214,7 @@
           <div class="modal-content">
             <div
               class="modal-header"
-              style="background-color: #3A6596; color: #fff;"
+              style="background-color: #1e252d; color: #fff;"
             >
               <h6 class="modal-title" id="myLargeModalLabel">
                 Add Activitive Description
@@ -2283,7 +2328,7 @@
           <div class="modal-content">
             <div
               class="modal-header"
-              style="background-color: #3A6596; color: #fff;"
+              style="background-color: #1e252d; color: #fff;"
             >
               <h6 class="modal-title" id="myLargeModalLabel">
                 Edit Activitive Description
@@ -2403,7 +2448,7 @@
           <div class="modal-content">
             <div
               class="modal-header"
-              style="background-color: #3A6596; color: #fff;"
+              style="background-color: #1e252d; color: #fff;"
             >
               <h6 class="modal-title" id="myLargeModalLabel">
                 View Activitives
@@ -2762,7 +2807,7 @@
           <div class="modal-content">
             <div
               class="modal-header"
-              style="background-color: #3A6596; color: #fff;"
+              style="background-color: #1e252d; color: #fff;"
             >
               <h6 class="modal-title" id="myLargeModalLabel_1">
                 Add Milestone Description
@@ -2862,7 +2907,7 @@
           <div class="modal-content">
             <div
               class="modal-header"
-              style="background-color: #3A6596; color: #fff;"
+              style="background-color: #1e252d; color: #fff;"
             >
               <h6 class="modal-title" id="myLargeModalLabel_1">
                 View Comments
@@ -2922,7 +2967,7 @@
                           </ul>
                           <ul>
                             <li>
-                              <div class="comment_send" style="display:none">
+                              <div class="comment_send" style="display: none;">
                                 <div
                                   class="form-group d-flex flex-row align-items-center"
                                 >
@@ -2958,7 +3003,13 @@
                               <ul
                                 class="dropdown-menu pull-right"
                                 x-placement="bottom-start"
-                                style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                style="
+                                  position: absolute;
+                                  will-change: transform;
+                                  top: 0px;
+                                  left: 0px;
+                                  transform: translate3d(0px, 24px, 0px);
+                                "
                               >
                                 <li>
                                   <a
@@ -3010,7 +3061,7 @@
                           </ul>
                           <ul>
                             <li>
-                              <div class="comment_send" style="display:none">
+                              <div class="comment_send" style="display: none;">
                                 <div
                                   class="form-group d-flex flex-row align-items-center"
                                 >
@@ -3046,7 +3097,13 @@
                               <ul
                                 class="dropdown-menu pull-right"
                                 x-placement="bottom-start"
-                                style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                style="
+                                  position: absolute;
+                                  will-change: transform;
+                                  top: 0px;
+                                  left: 0px;
+                                  transform: translate3d(0px, 24px, 0px);
+                                "
                               >
                                 <li>
                                   <a href="#" onclick="return false;">Edit</a>
@@ -3092,7 +3149,7 @@
                           </ul>
                           <ul>
                             <li>
-                              <div class="comment_send" style="display:none">
+                              <div class="comment_send" style="display: none;">
                                 <div
                                   class="form-group d-flex flex-row align-items-center"
                                 >
@@ -3128,7 +3185,13 @@
                               <ul
                                 class="dropdown-menu pull-right"
                                 x-placement="bottom-start"
-                                style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                style="
+                                  position: absolute;
+                                  will-change: transform;
+                                  top: 0px;
+                                  left: 0px;
+                                  transform: translate3d(0px, 24px, 0px);
+                                "
                               >
                                 <li>
                                   <a href="#" onclick="return false;">Edit</a>
@@ -3174,7 +3237,7 @@
                           </ul>
                           <ul>
                             <li>
-                              <div class="comment_send" style="display:none">
+                              <div class="comment_send" style="display: none;">
                                 <div
                                   class="form-group d-flex flex-row align-items-center"
                                 >
@@ -3210,7 +3273,13 @@
                               <ul
                                 class="dropdown-menu pull-right"
                                 x-placement="bottom-start"
-                                style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                style="
+                                  position: absolute;
+                                  will-change: transform;
+                                  top: 0px;
+                                  left: 0px;
+                                  transform: translate3d(0px, 24px, 0px);
+                                "
                               >
                                 <li>
                                   <a href="#" onclick="return false;">Edit</a>
@@ -3245,7 +3314,7 @@
           <div class="modal-content">
             <div
               class="modal-header"
-              style="background-color: #3A6596; color: #fff;"
+              style="background-color: #1e252d; color: #fff;"
             >
               <h6 class="modal-title" id="myLargeModalLabel_1">
                 Edit Milestone Description
@@ -3365,7 +3434,7 @@
           <div class="modal-content">
             <div
               class="modal-header"
-              style="background-color: #3A6596; color: #fff;"
+              style="background-color: #1e252d; color: #fff;"
             >
               <h6 class="modal-title" id="myLargeModalLabel_1">
                 View Milestones
@@ -3633,7 +3702,7 @@
           <div class="modal-content">
             <div
               class="modal-header"
-              style="background-color: #3A6596; color: #fff;"
+              style="background-color: #1e252d; color: #fff;"
             >
               <h6 class="modal-title" id="myLargeModalLabel">
                 Initiative Description
@@ -3988,7 +4057,7 @@
           <div class="modal-content">
             <div
               class="modal-header"
-              style="background-color: #3A6596; color: #fff;"
+              style="background-color: #1e252d; color: #fff;"
             >
               <h6 class="modal-title" id="myLargeModalLabel">File Upload</h6>
               <button
@@ -4009,9 +4078,11 @@
                   >
                     <input
                       type="file"
-                      style="padding-bottom: 12%;
-                                     padding-top: 3%;
-                                     padding-right: 5%;"
+                      style="
+                        padding-bottom: 12%;
+                        padding-top: 3%;
+                        padding-right: 5%;
+                      "
                       class="form-control"
                       id="images"
                       name="images[]"
@@ -4024,7 +4095,7 @@
                       type="submit"
                       class="btn"
                       name="submit_image"
-                      style="background-color: #3A6596; color: #ffff;"
+                      style="background-color: #1e252d; color: #ffff;"
                       value="Upload Multiple Image"
                     />
                   </div>
@@ -4080,8 +4151,101 @@
                         data-toggle="modal"
                         data-target=".file_upload_popup"
                       ></i>
-                      <!-- <i class="fa fa-ellipsis-h title_edit_icon"></i> -->
-                      <!-- <i class="fas fa-info align-self-start title_edit_icon_more" data-toggle="modal" data-target=".initatives_description_popup"></i> -->
+                      <ul class="header-dropdown">
+                        <li class="dropdown title_edit_icon">
+                          <a
+                            href="#"
+                            class="dropdown-toggle"
+                            data-toggle="dropdown"
+                          >
+                            <i class="far fa-eye" style="padding: 6px;"></i>
+                          </a>
+                          <ul
+                            class="dropdown-menu multi-column pull-right"
+                            x-placement="bottom-start"
+                            style="
+                              position: absolute;
+                              will-change: transform;
+                              top: 0px;
+                              left: 0px;
+                              width: 180px;
+                              transform: translate3d(0px, 24px, 0px);
+                            "
+                          >
+                            <div class="row">
+                              <div class="col-sm-12">
+                                <ul class="multi-column-dropdown">
+                                  <li>
+                                    <a href="#">
+                                      <label>
+                                        <input
+                                          type="checkbox"
+                                          name="sub-initiatives"
+                                          value="sub-initiatives"
+                                          checked
+                                        />
+                                        Sub Initiatives</label
+                                      >
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="#">
+                                      <label>
+                                        <input
+                                          type="checkbox"
+                                          name="charts"
+                                          value="charts"
+                                          checked
+                                        />
+                                        Charts</label
+                                      >
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="#">
+                                      <label>
+                                        <input
+                                          type="checkbox"
+                                          name="activities"
+                                          value="activities"
+                                          checked
+                                        />
+                                        Activities</label
+                                      >
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="#">
+                                      <label>
+                                        <input
+                                          type="checkbox"
+                                          name="milestones"
+                                          value="milestones"
+                                          checked
+                                        />
+                                        Milestones</label
+                                      >
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="#">
+                                      <label>
+                                        <input
+                                          type="checkbox"
+                                          name="comments"
+                                          value="comments"
+                                          checked
+                                        />
+                                        Comments</label
+                                      >
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </ul>
+                        </li>
+                      </ul>
                       <ul class="header-dropdown">
                         <li class="dropdown title_edit_icon">
                           <a
@@ -4098,7 +4262,13 @@
                           <ul
                             class="dropdown-menu pull-right"
                             x-placement="bottom-start"
-                            style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                            style="
+                              position: absolute;
+                              will-change: transform;
+                              top: 0px;
+                              left: 0px;
+                              transform: translate3d(0px, 24px, 0px);
+                            "
                           >
                             <li>
                               <a href="#" onclick="return false;">Download</a>
@@ -4305,7 +4475,9 @@
 
         <!-------Sub Initiatives------->
         <div class="row row-padding m-0">
-          <div class="col-lg-4 col-md-6 sub_initiatives">
+          <div
+            class="col-lg-4 col-md-6 select-toggle sub-initiatives sub_initiatives"
+          >
             <div class="card">
               <div class="header d-flex flex-row">
                 <h5 class="prob d-flex flex-fill">
@@ -4340,7 +4512,13 @@
                     <ul
                       class="dropdown-menu pull-right"
                       x-placement="bottom-start"
-                      style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                      style="
+                        position: absolute;
+                        will-change: transform;
+                        top: 0px;
+                        left: 0px;
+                        transform: translate3d(0px, 24px, 0px);
+                      "
                     >
                       <li>
                         <a
@@ -4430,7 +4608,13 @@
                         <ul
                           class="dropdown-menu pull-right"
                           x-placement="bottom-start"
-                          style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
                         >
                           <li>
                             <a
@@ -4523,7 +4707,13 @@
                         <ul
                           class="dropdown-menu pull-right"
                           x-placement="bottom-start"
-                          style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
                         >
                           <li>
                             <a
@@ -4616,7 +4806,13 @@
                         <ul
                           class="dropdown-menu pull-right"
                           x-placement="bottom-start"
-                          style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
                         >
                           <li>
                             <a
@@ -4709,7 +4905,13 @@
                         <ul
                           class="dropdown-menu pull-right"
                           x-placement="bottom-start"
-                          style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
                         >
                           <li>
                             <a
@@ -4802,7 +5004,13 @@
                         <ul
                           class="dropdown-menu pull-right"
                           x-placement="bottom-start"
-                          style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
                         >
                           <li>
                             <a
@@ -4895,7 +5103,13 @@
                         <ul
                           class="dropdown-menu pull-right"
                           x-placement="bottom-start"
-                          style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
                         >
                           <li>
                             <a
@@ -4924,7 +5138,7 @@
           </div>
 
           <!---------Chart-------->
-          <div class="col-lg-4 col-md-6 sub_initiatives">
+          <div class="col-lg-4 col-md-6 select-toggle charts sub_initiatives">
             <div class="card">
               <div class="header">
                 <h5 class="prob">
@@ -4951,7 +5165,13 @@
                     <ul
                       class="dropdown-menu pull-right"
                       x-placement="bottom-start"
-                      style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                      style="
+                        position: absolute;
+                        will-change: transform;
+                        top: 0px;
+                        left: 0px;
+                        transform: translate3d(0px, 24px, 0px);
+                      "
                     >
                       <li>
                         <a
@@ -4976,7 +5196,9 @@
           </div>
 
           <!-- Activities-->
-          <div class="col-lg-4 col-md-6 sub_initiatives">
+          <div
+            class="col-lg-4 col-md-6 select-toggle activities sub_initiatives"
+          >
             <div class="card">
               <div class="header d-flex flex-row">
                 <h5 class="prob d-flex flex-fill">
@@ -5011,7 +5233,13 @@
                     <ul
                       class="dropdown-menu pull-right"
                       x-placement="bottom-start"
-                      style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                      style="
+                        position: absolute;
+                        will-change: transform;
+                        top: 0px;
+                        left: 0px;
+                        transform: translate3d(0px, 24px, 0px);
+                      "
                     >
                       <li>
                         <a
@@ -5097,7 +5325,13 @@
                         <ul
                           class="dropdown-menu pull-right"
                           x-placement="bottom-start"
-                          style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
                         >
                           <li>
                             <a
@@ -5184,7 +5418,13 @@
                         <ul
                           class="dropdown-menu pull-right"
                           x-placement="bottom-start"
-                          style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
                         >
                           <li>
                             <a
@@ -5274,7 +5514,13 @@
                         <ul
                           class="dropdown-menu pull-right"
                           x-placement="bottom-start"
-                          style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
                         >
                           <li>
                             <a
@@ -5361,7 +5607,13 @@
                         <ul
                           class="dropdown-menu pull-right"
                           x-placement="bottom-start"
-                          style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
                         >
                           <li>
                             <a
@@ -5448,7 +5700,13 @@
                         <ul
                           class="dropdown-menu pull-right"
                           x-placement="bottom-start"
-                          style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
                         >
                           <li>
                             <a
@@ -5535,7 +5793,13 @@
                         <ul
                           class="dropdown-menu pull-right"
                           x-placement="bottom-start"
-                          style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
                         >
                           <li>
                             <a
@@ -5562,10 +5826,11 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="row row-padding m-0">
+
           <!---------MileStones-------->
-          <div class="col-lg-4 col-md-6 sub_initiatives">
+          <div
+            class="col-lg-4 col-md-6 select-toggle milestones sub_initiatives"
+          >
             <div class="card">
               <div class="header d-flex flex-row">
                 <h5 class="prob d-flex flex-fill">
@@ -5600,7 +5865,13 @@
                     <ul
                       class="dropdown-menu pull-right"
                       x-placement="bottom-start"
-                      style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                      style="
+                        position: absolute;
+                        will-change: transform;
+                        top: 0px;
+                        left: 0px;
+                        transform: translate3d(0px, 24px, 0px);
+                      "
                     >
                       <li>
                         <a
@@ -5673,7 +5944,13 @@
                         <ul
                           class="dropdown-menu pull-right"
                           x-placement="bottom-start"
-                          style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
                         >
                           <li>
                             <a
@@ -5749,7 +6026,13 @@
                         <ul
                           class="dropdown-menu pull-right"
                           x-placement="bottom-start"
-                          style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
                         >
                           <li>
                             <a
@@ -5826,7 +6109,13 @@
                         <ul
                           class="dropdown-menu pull-right"
                           x-placement="bottom-start"
-                          style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
                         >
                           <li>
                             <a
@@ -5902,7 +6191,13 @@
                         <ul
                           class="dropdown-menu pull-right"
                           x-placement="bottom-start"
-                          style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
                         >
                           <li>
                             <a
@@ -5978,7 +6273,13 @@
                         <ul
                           class="dropdown-menu pull-right"
                           x-placement="bottom-start"
-                          style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
                         >
                           <li>
                             <a
@@ -6054,7 +6355,13 @@
                         <ul
                           class="dropdown-menu pull-right"
                           x-placement="bottom-start"
-                          style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
                         >
                           <li>
                             <a
@@ -6081,7 +6388,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 sub_initiatives">
+          <div class="col-lg-4 col-md-6 select-toggle comments sub_initiatives">
             <div class="card">
               <div class="header d-flex flex-row">
                 <h5 class="prob d-flex flex-fill">
@@ -6108,7 +6415,13 @@
                     <ul
                       class="dropdown-menu pull-right"
                       x-placement="bottom-start"
-                      style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                      style="
+                        position: absolute;
+                        will-change: transform;
+                        top: 0px;
+                        left: 0px;
+                        transform: translate3d(0px, 24px, 0px);
+                      "
                     >
                       <li>
                         <a
@@ -6156,7 +6469,7 @@
                         </ul>
                         <ul>
                           <li>
-                            <div class="comment_send" style="display:none">
+                            <div class="comment_send" style="display: none;">
                               <div
                                 class="form-group d-flex flex-row align-items-center"
                               >
@@ -6192,7 +6505,13 @@
                             <ul
                               class="dropdown-menu pull-right"
                               x-placement="bottom-start"
-                              style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                              style="
+                                position: absolute;
+                                will-change: transform;
+                                top: 0px;
+                                left: 0px;
+                                transform: translate3d(0px, 24px, 0px);
+                              "
                             >
                               <li>
                                 <a
@@ -6243,7 +6562,7 @@
                         </ul>
                         <ul>
                           <li>
-                            <div class="comment_send" style="display:none">
+                            <div class="comment_send" style="display: none;">
                               <div
                                 class="form-group d-flex flex-row align-items-center"
                               >
@@ -6279,7 +6598,13 @@
                             <ul
                               class="dropdown-menu pull-right"
                               x-placement="bottom-start"
-                              style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                              style="
+                                position: absolute;
+                                will-change: transform;
+                                top: 0px;
+                                left: 0px;
+                                transform: translate3d(0px, 24px, 0px);
+                              "
                             >
                               <li>
                                 <a href="#" onclick="return false;">Edit</a>
@@ -6324,7 +6649,7 @@
                         </ul>
                         <ul>
                           <li>
-                            <div class="comment_send" style="display:none">
+                            <div class="comment_send" style="display: none;">
                               <div
                                 class="form-group d-flex flex-row align-items-center"
                               >
@@ -6360,7 +6685,13 @@
                             <ul
                               class="dropdown-menu pull-right"
                               x-placement="bottom-start"
-                              style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                              style="
+                                position: absolute;
+                                will-change: transform;
+                                top: 0px;
+                                left: 0px;
+                                transform: translate3d(0px, 24px, 0px);
+                              "
                             >
                               <li>
                                 <a href="#" onclick="return false;">Edit</a>
@@ -6405,7 +6736,7 @@
                         </ul>
                         <ul>
                           <li>
-                            <div class="comment_send" style="display:none">
+                            <div class="comment_send" style="display: none;">
                               <div
                                 class="form-group d-flex flex-row align-items-center"
                               >
@@ -6441,7 +6772,13 @@
                             <ul
                               class="dropdown-menu pull-right"
                               x-placement="bottom-start"
-                              style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                              style="
+                                position: absolute;
+                                will-change: transform;
+                                top: 0px;
+                                left: 0px;
+                                transform: translate3d(0px, 24px, 0px);
+                              "
                             >
                               <li>
                                 <a href="#" onclick="return false;">Edit</a>
@@ -6503,19 +6840,19 @@
       <script>
         $(".daterangepicker-field").daterangepicker({
           forceUpdate: true,
-          callback: function(startDate, endDate, period) {
+          callback: function (startDate, endDate, period) {
             var title = startDate.format("L") + " – " + endDate.format("L");
             $(this).val(title);
-          }
+          },
         });
 
-        $(document).ready(function() {
+        $(document).ready(function () {
           // $('select').val([1]);
           $("select").formSelect();
           $("select.select_all")
             .siblings("ul")
             .prepend("<li id=sm_select_all><span>Select All</span></li>");
-          $("li#sm_select_all").on("click", function() {
+          $("li#sm_select_all").on("click", function () {
             var jq_elem = $(this),
               jq_elem_span = jq_elem.find("span"),
               select_all = jq_elem_span.text() == "Select All",
@@ -6523,15 +6860,22 @@
             jq_elem_span.text(set_text);
             jq_elem
               .siblings("li")
-              .filter(function() {
-                return (
-                  $(this)
-                    .find("input")
-                    .prop("checked") != select_all
-                );
+              .filter(function () {
+                return $(this).find("input").prop("checked") != select_all;
               })
               .click();
           });
+        });
+
+        $(document).ready(function () {
+          $('input[type="checkbox"]').click(function () {
+            var inputValue = $(this).attr("value");
+            $("." + inputValue).toggle();
+          });
+        });
+
+        $(".dropdown-menu").on("click", function (e) {
+          e.stopPropagation();
         });
       </script>
     </div>

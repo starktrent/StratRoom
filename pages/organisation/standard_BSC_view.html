@@ -143,6 +143,54 @@
         left: auto !important;
         position: fixed;
       }
+
+      .toggle-dropdown li {
+        cursor: pointer;
+      }
+
+      .multi-column-dropdown h4 {
+        font-weight: 600;
+        font-size: 15px;
+        padding: 7px 0px 4px 10px;
+      }
+
+      .dropdown-menu {
+        min-width: 200px;
+      }
+      .dropdown-menu.columns-2 {
+        min-width: 400px;
+      }
+      .dropdown-menu.columns-3 {
+        min-width: 600px;
+      }
+      .dropdown-menu li a {
+        padding: 3px 15px;
+        font-weight: 300;
+      }
+      .multi-column-dropdown {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+      }
+      .multi-column-dropdown li a {
+        display: block;
+        clear: both;
+        line-height: 1.428571429;
+        color: #333;
+        white-space: normal;
+      }
+      .multi-column-dropdown li a:hover {
+        text-decoration: none;
+        color: #333;
+        background-color: #f5f5f5;
+      }
+
+      @media (max-width: 767px) {
+        .dropdown-menu.multi-column {
+          min-width: 240px !important;
+          overflow-x: hidden;
+        }
+      }
     </style>
   </head>
 
@@ -177,7 +225,7 @@
           ></a>
           <a href="#" onClick="return false;" class="bars"></a>
           <a href="#" onClick="return false;" class="bar_nav sidemenu-collapse"
-            ><i class="nav-hdr-btn ti-menu" style="color: #000"></i
+            ><i class="nav-hdr-btn ti-menu" style="color: #000;"></i
           ></a>
           <a class="navbar-brand nav_float" href="#">
             <img
@@ -189,7 +237,7 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="fullscreen" style="padding: 4px;left: -14px;">
+            <li class="fullscreen" style="padding: 4px; left: -14px;">
               <ul class="list-unstyled order-list">
                 <li class="avatar avatar-sm">
                   <img
@@ -228,13 +276,13 @@
               <form class="form-header" action="" method="POST">
                 <input
                   class="au-input au-input--xl"
-                  style="min-width: 20%"
+                  style="min-width: 20%;"
                   type="text"
                   name="search"
                   placeholder="Search"
                 />
                 <button class="au-btn--submit" type="submit">
-                  <i class="fa fa-search" style="color:gray"></i>
+                  <i class="fa fa-search" style="color: gray;"></i>
                 </button>
               </form>
             </li>
@@ -260,7 +308,7 @@
                 data-toggle="dropdown"
                 role="button"
               >
-                <i class="nav-hdr-btn ti-bell" style="color: gray"></i>
+                <i class="nav-hdr-btn ti-bell" style="color: gray;"></i>
                 <span class="notify"></span>
                 <span class="heartbeat"></span>
               </a>
@@ -273,7 +321,7 @@
                 data-toggle="dropdown"
                 role="button"
               >
-                <i class="nav-hdr-btn ti-settings" style="color: gray"></i>
+                <i class="nav-hdr-btn ti-settings" style="color: gray;"></i>
                 <span class="notify"></span>
                 <span class="heartbeat"></span>
               </a>
@@ -283,7 +331,7 @@
               <a
                 href="#"
                 onclick="return false;"
-                class=" dropdown-toggle js-right-sidebar"
+                class="dropdown-toggle js-right-sidebar"
                 data-close="true"
               >
                 <!-- <img src="../../assets/images/user.jpg" alt="user"> -->
@@ -472,7 +520,7 @@
                     <li
                       _ngcontent-hhc-c5=""
                       class="center avatar avatar-sm"
-                      style="width:85px"
+                      style="width: 85px;"
                     >
                       <img
                         _ngcontent-hhc-c5=""
@@ -494,7 +542,7 @@
                   </ul>
                   <ul
                     class="setting-list profile-replace list-unstyled m-t-20"
-                    style="display: none"
+                    style="display: none;"
                   >
                     <li class="center">
                       <form id="profileForm">
@@ -505,7 +553,7 @@
                               id="profileImage"
                               _ngcontent-hhc-c5=""
                               class="center avatar avatar-sm"
-                              style="width:85px; z-index:-1"
+                              style="width: 85px; z-index: -1;"
                             >
                               <img
                                 _ngcontent-hhc-c5=""
@@ -659,7 +707,7 @@
                                             <a href="#" class="reportingEdit"
                                               ><i
                                                 class="fas fa-pencil-alt"
-                                                style="font-size: 14px"
+                                                style="font-size: 14px;"
                                               ></i
                                             ></a>
                                           </div>
@@ -685,7 +733,7 @@
                                             <a href="#" class="reportingEdit"
                                               ><i
                                                 class="fas fa-pencil-alt"
-                                                style="font-size: 14px"
+                                                style="font-size: 14px;"
                                               ></i
                                             ></a>
                                           </div>
@@ -693,7 +741,7 @@
                                       </ul>
                                       <ul
                                         class="setting-list reporting-replace-add list-unstyled m-t-20"
-                                        style="display:none"
+                                        style="display: none;"
                                       >
                                         <li class="row">
                                           <form id="reportingAddForm">
@@ -842,7 +890,7 @@
                                             <a href="#" class="directEdit"
                                               ><i
                                                 class="fas fa-pencil-alt"
-                                                style="font-size: 14px"
+                                                style="font-size: 14px;"
                                               ></i
                                             ></a>
                                           </div>
@@ -868,7 +916,7 @@
                                             <a href="#" class="directEdit"
                                               ><i
                                                 class="fas fa-pencil-alt"
-                                                style="font-size: 14px"
+                                                style="font-size: 14px;"
                                               ></i
                                             ></a>
                                           </div>
@@ -876,7 +924,7 @@
                                       </ul>
                                       <ul
                                         class="setting-list direct-replace-add list-unstyled m-t-20"
-                                        style="display:none"
+                                        style="display: none;"
                                       >
                                         <li class="row">
                                           <form id="directAddForm">
@@ -2096,11 +2144,11 @@
                               <td>
                                 <i
                                   class="yellow fas fa-circle"
-                                  style="font-size:10px !important"
+                                  style="font-size: 10px !important;"
                                 ></i>
                               </td>
                               <td>F1</td>
-                              <td style="text-align: left" colspan="6">
+                              <td style="text-align: left;" colspan="6">
                                 <strong>Increase shareholder value</strong>
                               </td>
                               <td></td>
@@ -2112,11 +2160,13 @@
                               <th>
                                 <i
                                   class="green fas fa-flag"
-                                  style="font-size:10px !important"
+                                  style="font-size: 10px !important;"
                                 ></i>
                               </th>
                               <th>F1.1</th>
-                              <th style="text-align: left" colspan="3">ROCE</th>
+                              <th style="text-align: left;" colspan="3">
+                                ROCE
+                              </th>
                               <th>Month</th>
                               <th>13.4%</th>
                               <th>12.9%</th>
@@ -2124,7 +2174,7 @@
                               <th>
                                 <i
                                   class="red fas fa-circle"
-                                  style="font-size:10px !important"
+                                  style="font-size: 10px !important;"
                                 ></i>
                               </th>
                             </tr>
@@ -2134,11 +2184,11 @@
                               <td>
                                 <i
                                   class="green fas fa-flag"
-                                  style="font-size:10px !important"
+                                  style="font-size: 10px !important;"
                                 ></i>
                               </td>
                               <td>F2</td>
-                              <td style="text-align: left" colspan="6">
+                              <td style="text-align: left;" colspan="6">
                                 <strong
                                   >Generate profitable revenue growth</strong
                                 >
@@ -2152,11 +2202,11 @@
                               <th>
                                 <i
                                   class="green fas fa-flag"
-                                  style="font-size:10px !important"
+                                  style="font-size: 10px !important;"
                                 ></i>
                               </th>
                               <th>F2.1</th>
-                              <th style="text-align: left" colspan="3">
+                              <th style="text-align: left;" colspan="3">
                                 Operating Cost
                               </th>
                               <th>Month</th>
@@ -2166,7 +2216,7 @@
                               <th>
                                 <i
                                   class="yellow fas fa-circle"
-                                  style="font-size:10px !important"
+                                  style="font-size: 10px !important;"
                                 ></i>
                               </th>
                             </tr>
@@ -2177,11 +2227,11 @@
                               <td>
                                 <i
                                   class="yellow fas fa-flag"
-                                  style="font-size:10px !important"
+                                  style="font-size: 10px !important;"
                                 ></i>
                               </td>
                               <td>F3</td>
-                              <td style="text-align: left" colspan="6">
+                              <td style="text-align: left;" colspan="6">
                                 <strong>Optimize cash generation</strong>
                               </td>
                               <td><i class="fas fa-arrow-down"></i></td>
@@ -2193,11 +2243,11 @@
                               <th>
                                 <i
                                   class="red fas fa-flag"
-                                  style="font-size:10px !important"
+                                  style="font-size: 10px !important;"
                                 ></i>
                               </th>
                               <th>F3.1</th>
-                              <th style="text-align: left" colspan="3">
+                              <th style="text-align: left;" colspan="3">
                                 Available Cashflow
                               </th>
                               <th>Month</th>
@@ -2207,7 +2257,7 @@
                               <th>
                                 <i
                                   class="green fas fa-circle"
-                                  style="font-size:10px !important"
+                                  style="font-size: 10px !important;"
                                 ></i>
                               </th>
                             </tr>
@@ -2217,11 +2267,11 @@
                               <th>
                                 <i
                                   class="green fas fa-flag"
-                                  style="font-size:10px !important"
+                                  style="font-size: 10px !important;"
                                 ></i>
                               </th>
                               <th>F3.2</th>
-                              <th style="text-align: left" colspan="3">
+                              <th style="text-align: left;" colspan="3">
                                 Sales to working capital ration
                               </th>
                               <th>Month</th>
@@ -2231,7 +2281,7 @@
                               <th>
                                 <i
                                   class="green fas fa-circle"
-                                  style="font-size:10px !important"
+                                  style="font-size: 10px !important;"
                                 ></i>
                               </th>
                             </tr>
@@ -2294,7 +2344,13 @@
                         <ul
                           class="dropdown-menu pull-right"
                           x-placement="bottom-start"
-                          style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
                         >
                           <li>
                             <a
@@ -2358,11 +2414,11 @@
                             <td>
                               <i
                                 class="yellow fas fa-circle"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </td>
                             <td>C1</td>
-                            <td style="text-align: left" colspan="6">
+                            <td style="text-align: left;" colspan="6">
                               <strong
                                 >We patner to provide best products</strong
                               >
@@ -2376,11 +2432,11 @@
                             <th>
                               <i
                                 class="yellow fas fa-circle"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>c1.1</th>
-                            <th style="text-align: left" colspan="3">
+                            <th style="text-align: left;" colspan="3">
                               Customer satisfaction
                             </th>
                             <th>Quarter</th>
@@ -2390,7 +2446,7 @@
                             <th>
                               <i
                                 class="red fas fa-circle"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                           </tr>
@@ -2400,11 +2456,11 @@
                             <td>
                               <i
                                 class="yellow fas fa-circle"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </td>
                             <td>C2</td>
-                            <td style="text-align: left" colspan="6">
+                            <td style="text-align: left;" colspan="6">
                               <strong>Lead in quality and service</strong>
                             </td>
                             <td><i class="fas fa-arrow-up green"></i></td>
@@ -2416,11 +2472,11 @@
                             <th>
                               <i
                                 class="green fas fa-circle"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>C2.1</th>
-                            <th style="text-align: left" colspan="3">
+                            <th style="text-align: left;" colspan="3">
                               Third party survey results
                             </th>
                             <th>Month</th>
@@ -2430,7 +2486,7 @@
                             <th>
                               <i
                                 class="yellow fas fa-circle"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                           </tr>
@@ -2441,11 +2497,11 @@
                             <td>
                               <i
                                 class="green fas fa-circle"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </td>
                             <td>C3</td>
-                            <td style="text-align: left" colspan="6">
+                            <td style="text-align: left;" colspan="6">
                               <strong
                                 >We are recognised in the forefront of our
                                 industry</strong
@@ -2460,11 +2516,11 @@
                             <th>
                               <i
                                 class="red fas fa-circle"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>C3.1</th>
-                            <th style="text-align: left" colspan="3">
+                            <th style="text-align: left;" colspan="3">
                               Positive Media
                             </th>
                             <th>Year</th>
@@ -2474,7 +2530,7 @@
                             <th>
                               <i
                                 class="green fas fa-circle"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                           </tr>
@@ -2484,11 +2540,11 @@
                             <th>
                               <i
                                 class="green fas fa-circle"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>C3.2</th>
-                            <th style="text-align: left" colspan="3">
+                            <th style="text-align: left;" colspan="3">
                               Event sponserships
                             </th>
                             <th>Month</th>
@@ -2498,7 +2554,7 @@
                             <th>
                               <i
                                 class="green fas fa-circle"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                           </tr>
@@ -2536,8 +2592,8 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body" style="padding: 0 25px">
-              <div class="col-md-8" style="padding: 0">
+            <div class="modal-body" style="padding: 0 25px;">
+              <div class="col-md-8" style="padding: 0;">
                 Field Name: &nbsp;
                 <input
                   type="text"
@@ -2566,7 +2622,7 @@
                     >
                   </li>
                 </ul>
-                <div class="tab-content" style="padding: 0">
+                <div class="tab-content" style="padding: 0;">
                   <div class="tab-pane body active" id="formula_builder">
                     <div class="row col-md-12">
                       <textarea
@@ -2705,7 +2761,7 @@
                       </div>
                     </div>
                     <div class="row">
-                      <div class="col-md-4" style="margin-bottom: 0px">
+                      <div class="col-md-4" style="margin-bottom: 0px;">
                         <button
                           name="validate"
                           id="validate"
@@ -2777,15 +2833,95 @@
                 <i class="fas fa-cog" style="font-size: 14px;"></i>
               </button>
 
-              <input type="file" id="imgupload" style="display:none" />
+              <input type="file" id="imgupload" style="display: none;" />
               <button
                 class="btn btn-custom-secondary pull-right"
                 id="OpenImgUpload"
+                style="margin-left: 4px;"
               >
                 <i class="fas fa-upload"></i>
               </button>
+
+              <button
+                class="btn btn-custom-secondary dropdown-toggle pull-right"
+                data-toggle="dropdown"
+              >
+                <i class="far fa-eye"></i>
+
+                <ul
+                  class="dropdown-menu multi-column columns pull-right"
+                  x-placement="bottom-start"
+                  style="
+                    position: absolute;
+                    will-change: transform;
+                    top: 0px;
+                    left: 0px;
+                    width: 180px;
+                    transform: translate3d(0px, 24px, 0px);
+                  "
+                >
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <ul class="multi-column-dropdown">
+                        <li>
+                          <a href="#">
+                            <label>
+                              <input
+                                type="checkbox"
+                                name="financial"
+                                value="financial"
+                                checked
+                              />
+                              Financial</label
+                            >
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <label>
+                              <input
+                                type="checkbox"
+                                name="customer"
+                                value="customer"
+                                checked
+                              />
+                              Customer</label
+                            >
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <label>
+                              <input
+                                type="checkbox"
+                                name="internal-process"
+                                value="internal-process"
+                                checked
+                              />
+                              Internal Process</label
+                            >
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <label>
+                              <input
+                                type="checkbox"
+                                name="learning-growth"
+                                value="learning-growth"
+                                checked
+                              />
+                              Learning and Growth</label
+                            >
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </ul>
+              </button>
               <script>
-                $("#OpenImgUpload").click(function() {
+                $("#OpenImgUpload").click(function () {
                   $("#imgupload").trigger("click");
                 });
               </script>
@@ -2794,7 +2930,7 @@
           <!--  -->
           <div class="tableview">
             <div class="row">
-              <div class="col-lg-6 col-md-6">
+              <div class="col-lg-6 col-md-6 select-toggle financial">
                 <div class="card">
                   <div class="header nestedGreen">
                     <h2 class="prob">
@@ -2818,7 +2954,13 @@
                         <ul
                           class="dropdown-menu pull-right"
                           x-placement="bottom-start"
-                          style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
                         >
                           <li>
                             <a
@@ -2883,11 +3025,11 @@
                             <td>
                               <i
                                 class="yellow fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </td>
                             <td>F1</td>
-                            <td style="text-align: left" colspan="6">
+                            <td style="text-align: left;" colspan="6">
                               <strong>Increase shareholder value</strong>
                             </td>
                             <td></td>
@@ -2909,7 +3051,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -2958,11 +3106,11 @@
                             <th>
                               <i
                                 class="green fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>F1.1</th>
-                            <th style="text-align: left" colspan="3">ROCE</th>
+                            <th style="text-align: left;" colspan="3">ROCE</th>
                             <th>Month</th>
                             <th>13.4%</th>
                             <th>12.9%</th>
@@ -2970,7 +3118,7 @@
                             <th>
                               <i
                                 class="red fas fa-circle"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>
@@ -2990,7 +3138,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -3029,11 +3183,11 @@
                             <td>
                               <i
                                 class="green fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </td>
                             <td>F2</td>
-                            <td style="text-align: left" colspan="6">
+                            <td style="text-align: left;" colspan="6">
                               <strong
                                 >Generate profitable revenue growth</strong
                               >
@@ -3057,7 +3211,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -3105,11 +3265,11 @@
                             <th>
                               <i
                                 class="green fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>F2.1</th>
-                            <th style="text-align: left" colspan="3">
+                            <th style="text-align: left;" colspan="3">
                               Operating Cost
                             </th>
                             <th>Month</th>
@@ -3119,7 +3279,7 @@
                             <th>
                               <i
                                 class="yellow fas fa-circle"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>
@@ -3139,7 +3299,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -3178,11 +3344,11 @@
                             <td>
                               <i
                                 class="yellow fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </td>
                             <td>F3</td>
-                            <td style="text-align: left" colspan="6">
+                            <td style="text-align: left;" colspan="6">
                               <strong>Optimize cash generation</strong>
                             </td>
                             <td><i class="fas fa-arrow-down"></i></td>
@@ -3204,7 +3370,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -3253,11 +3425,11 @@
                             <th>
                               <i
                                 class="red fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>F3.1</th>
-                            <th style="text-align: left" colspan="3">
+                            <th style="text-align: left;" colspan="3">
                               Available Cashflow
                             </th>
                             <th>Month</th>
@@ -3267,7 +3439,7 @@
                             <th>
                               <i
                                 class="green fas fa-circle"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>
@@ -3287,7 +3459,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -3325,11 +3503,11 @@
                             <th>
                               <i
                                 class="green fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>F3.2</th>
-                            <th style="text-align: left" colspan="3">
+                            <th style="text-align: left;" colspan="3">
                               Sales to working capital ration
                             </th>
                             <th>Month</th>
@@ -3339,7 +3517,7 @@
                             <th>
                               <i
                                 class="green fas fa-circle"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>
@@ -3359,7 +3537,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -3397,7 +3581,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6 col-md-6">
+              <div class="col-lg-6 col-md-6 select-toggle customer">
                 <div class="card">
                   <div class="header nestedYellow">
                     <h2 class="prob">
@@ -3421,7 +3605,13 @@
                         <ul
                           class="dropdown-menu pull-right"
                           x-placement="bottom-start"
-                          style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
                         >
                           <li>
                             <a
@@ -3486,11 +3676,11 @@
                             <td>
                               <i
                                 class="yellow fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </td>
                             <td>C1</td>
-                            <td style="text-align: left" colspan="6">
+                            <td style="text-align: left;" colspan="6">
                               <strong
                                 >We patner to provide best products</strong
                               >
@@ -3514,7 +3704,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -3563,11 +3759,11 @@
                             <th>
                               <i
                                 class="yellow fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>c1.1</th>
-                            <th style="text-align: left" colspan="3">
+                            <th style="text-align: left;" colspan="3">
                               Customer satisfaction
                             </th>
                             <th>Quarter</th>
@@ -3577,7 +3773,7 @@
                             <th>
                               <i
                                 class="red fas fa-circle"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>
@@ -3597,7 +3793,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -3636,11 +3838,11 @@
                             <td>
                               <i
                                 class="yellow fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </td>
                             <td>C2</td>
-                            <td style="text-align: left" colspan="6">
+                            <td style="text-align: left;" colspan="6">
                               <strong>Lead in quality and service</strong>
                             </td>
                             <td><i class="fas fa-arrow-up green"></i></td>
@@ -3662,7 +3864,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -3710,11 +3918,11 @@
                             <th>
                               <i
                                 class="green fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>C2.1</th>
-                            <th style="text-align: left" colspan="3">
+                            <th style="text-align: left;" colspan="3">
                               Third party survey results
                             </th>
                             <th>Month</th>
@@ -3724,7 +3932,7 @@
                             <th>
                               <i
                                 class="yellow fas fa-circle"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>
@@ -3744,7 +3952,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -3783,11 +3997,11 @@
                             <td>
                               <i
                                 class="green fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </td>
                             <td>C3</td>
-                            <td style="text-align: left" colspan="6">
+                            <td style="text-align: left;" colspan="6">
                               <strong
                                 >We are recognised in the forefront of our
                                 industry</strong
@@ -3812,7 +4026,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -3861,11 +4081,11 @@
                             <th>
                               <i
                                 class="red fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>C3.1</th>
-                            <th style="text-align: left" colspan="3">
+                            <th style="text-align: left;" colspan="3">
                               Positive Media
                             </th>
                             <th>Year</th>
@@ -3875,7 +4095,7 @@
                             <th>
                               <i
                                 class="green fas fa-circle"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>
@@ -3895,7 +4115,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -3933,11 +4159,11 @@
                             <th>
                               <i
                                 class="green fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>C3.2</th>
-                            <th style="text-align: left" colspan="3">
+                            <th style="text-align: left;" colspan="3">
                               Event sponserships
                             </th>
                             <th>Month</th>
@@ -3947,7 +4173,7 @@
                             <th>
                               <i
                                 class="green fas fa-circle"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>
@@ -3967,7 +4193,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -4005,9 +4237,8 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-6 col-md-6">
+
+              <div class="col-lg-6 col-md-6 select-toggle internal-process">
                 <div class="card">
                   <div class="header nestedGreen">
                     <h2 class="prob">
@@ -4031,7 +4262,13 @@
                         <ul
                           class="dropdown-menu pull-right"
                           x-placement="bottom-start"
-                          style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
                         >
                           <li>
                             <a
@@ -4096,11 +4333,11 @@
                             <td>
                               <i
                                 class="yellow fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </td>
                             <td>IP1</td>
-                            <td style="text-align: left" colspan="6">
+                            <td style="text-align: left;" colspan="6">
                               <strong
                                 >Deliver increased value to our
                                 customers</strong
@@ -4125,7 +4362,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -4174,11 +4417,11 @@
                             <th>
                               <i
                                 class="green fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>IP1.1</th>
-                            <th style="text-align: left" colspan="3">
+                            <th style="text-align: left;" colspan="3">
                               Productivity
                             </th>
                             <th>Month</th>
@@ -4188,7 +4431,7 @@
                             <th>
                               <i
                                 class="red fas fa-circle"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>
@@ -4208,7 +4451,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -4247,11 +4496,11 @@
                             <td>
                               <i
                                 class="green fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </td>
                             <td>IP2</td>
-                            <td style="text-align: left" colspan="6">
+                            <td style="text-align: left;" colspan="6">
                               <strong
                                 >Constant focus on continuous
                                 improvement</strong
@@ -4276,7 +4525,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -4324,11 +4579,11 @@
                             <th>
                               <i
                                 class="green fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>IP2.1</th>
-                            <th style="text-align: left" colspan="3">
+                            <th style="text-align: left;" colspan="3">
                               Key business process with complecated quality
                               review
                             </th>
@@ -4339,7 +4594,7 @@
                             <th>
                               <i
                                 class="yellow fas fa-circle"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>
@@ -4359,7 +4614,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -4398,11 +4659,11 @@
                             <td>
                               <i
                                 class="yellow fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </td>
                             <td>IP3</td>
-                            <td style="text-align: left" colspan="6">
+                            <td style="text-align: left;" colspan="6">
                               <strong
                                 >Keep our people and environment safe</strong
                               >
@@ -4426,7 +4687,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -4475,11 +4742,11 @@
                             <th>
                               <i
                                 class="red fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>IP3.1</th>
-                            <th style="text-align: left" colspan="3">
+                            <th style="text-align: left;" colspan="3">
                               LTI(long Term Injury)
                             </th>
                             <th>Month</th>
@@ -4489,7 +4756,7 @@
                             <th>
                               <i
                                 class="green fas fa-circle"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>
@@ -4509,7 +4776,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -4547,11 +4820,11 @@
                             <th>
                               <i
                                 class="green fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>IP3.2</th>
-                            <th style="text-align: left" colspan="3">
+                            <th style="text-align: left;" colspan="3">
                               TRI(Total recordable incidents)
                             </th>
                             <th>Month</th>
@@ -4576,7 +4849,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -4615,7 +4894,7 @@
                 </div>
               </div>
 
-              <div class="col-lg-6 col-md-6">
+              <div class="col-lg-6 col-md-6 select-toggle learning-growth">
                 <div class="card">
                   <div class="header nestedGreen">
                     <h2 class="prob">
@@ -4639,7 +4918,13 @@
                         <ul
                           class="dropdown-menu pull-right"
                           x-placement="bottom-start"
-                          style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
                         >
                           <li>
                             <a href="#" onclick="return false;">Add</a>
@@ -4697,11 +4982,11 @@
                             <td>
                               <i
                                 class="green fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </td>
                             <td>G1</td>
-                            <td style="text-align: left" colspan="6">
+                            <td style="text-align: left;" colspan="6">
                               <strong
                                 >Build values and leadership practices</strong
                               >
@@ -4725,7 +5010,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -4774,11 +5065,11 @@
                             <th>
                               <i
                                 class="green fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>G1.1</th>
-                            <th style="text-align: left" colspan="3">
+                            <th style="text-align: left;" colspan="3">
                               Employee engagement survey
                             </th>
                             <th>Quarter</th>
@@ -4788,7 +5079,7 @@
                             <th>
                               <i
                                 class="red fas fa-circle"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>
@@ -4808,7 +5099,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -4846,11 +5143,11 @@
                             <td>
                               <i
                                 class="green fas ffa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </td>
                             <td>G2</td>
-                            <td style="text-align: left" colspan="6">
+                            <td style="text-align: left;" colspan="6">
                               <strong
                                 >Strengthen image for technology, product
                                 quality and cust...</strong
@@ -4875,7 +5172,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -4924,11 +5227,11 @@
                             <th>
                               <i
                                 class="green fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>G2.1</th>
-                            <th style="text-align: left" colspan="3">
+                            <th style="text-align: left;" colspan="3">
                               Employee engagement survey
                             </th>
                             <th>Month</th>
@@ -4938,7 +5241,7 @@
                             <th>
                               <i
                                 class="yellow fas fa-circle"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>
@@ -4958,7 +5261,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -4997,11 +5306,11 @@
                             <td>
                               <i
                                 class="yellow fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </td>
                             <td>G3</td>
-                            <td style="text-align: left" colspan="6">
+                            <td style="text-align: left;" colspan="6">
                               <strong
                                 >Share our strategy to achieve our goals</strong
                               >
@@ -5025,7 +5334,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -5074,11 +5389,11 @@
                             <th>
                               <i
                                 class="red fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>G3.1</th>
-                            <th style="text-align: left" colspan="3">
+                            <th style="text-align: left;" colspan="3">
                               Employee engagement index - overall
                             </th>
                             <th>year</th>
@@ -5088,7 +5403,7 @@
                             <th>
                               <i
                                 class="green fas fa-circle"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>
@@ -5108,7 +5423,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -5146,11 +5467,11 @@
                             <th>
                               <i
                                 class="green fas fa-flag"
-                                style="font-size:10px !important"
+                                style="font-size: 10px !important;"
                               ></i>
                             </th>
                             <th>G3.2</th>
-                            <th style="text-align: left" colspan="3">
+                            <th style="text-align: left;" colspan="3">
                               Employee engagement survey - questions on strategy
                             </th>
                             <th>Month</th>
@@ -5175,7 +5496,13 @@
                                   <ul
                                     class="dropdown-menu pull-right"
                                     x-placement="bottom-start"
-                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 24px, 0px);"
+                                    style="
+                                      position: absolute;
+                                      will-change: transform;
+                                      top: 0px;
+                                      left: 0px;
+                                      transform: translate3d(0px, 24px, 0px);
+                                    "
                                   >
                                     <li>
                                       <a
@@ -5244,19 +5571,19 @@
     <script>
       $(".daterangepicker-field").daterangepicker({
         forceUpdate: true,
-        callback: function(startDate, endDate, period) {
+        callback: function (startDate, endDate, period) {
           var title = startDate.format("L") + " – " + endDate.format("L");
           $(this).val(title);
-        }
+        },
       });
 
-      $(document).ready(function() {
+      $(document).ready(function () {
         // $('select').val([1]);
         $("select").formSelect();
         $("select.select_all")
           .siblings("ul")
           .prepend("<li id=sm_select_all><span>Select All</span></li>");
-        $("li#sm_select_all").on("click", function() {
+        $("li#sm_select_all").on("click", function () {
           var jq_elem = $(this),
             jq_elem_span = jq_elem.find("span"),
             select_all = jq_elem_span.text() == "Select All",
@@ -5264,15 +5591,22 @@
           jq_elem_span.text(set_text);
           jq_elem
             .siblings("li")
-            .filter(function() {
-              return (
-                $(this)
-                  .find("input")
-                  .prop("checked") != select_all
-              );
+            .filter(function () {
+              return $(this).find("input").prop("checked") != select_all;
             })
             .click();
         });
+      });
+
+      $(document).ready(function () {
+        $('input[type="checkbox"]').click(function () {
+          var inputValue = $(this).attr("value");
+          $("." + inputValue).toggle();
+        });
+      });
+
+      $(".dropdown-menu").on("click", function (e) {
+        e.stopPropagation();
       });
     </script>
   </body></a
