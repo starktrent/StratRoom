@@ -1005,10 +1005,11 @@ label {
 .custom-tab-control {
   width: fit-content;
   max-width: 100%;
+  display: unset;
 }
 
 .custom-tab-control button {
-  padding: 8px 24px;
+  padding: 6px 24px;
   width: fit-content;
   height: auto;
   font-weight: 600;
