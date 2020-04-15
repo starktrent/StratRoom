@@ -30,6 +30,11 @@ select {
   background-color: transparent !important;
 }
 
+.blue {
+  color: #0084ff !important;
+  background-color: transparent !important;
+}
+
 .table thead tr th,
 .table tbody tr td {
   font-size: 11px !important;

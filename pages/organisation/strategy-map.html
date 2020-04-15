@@ -53,23 +53,35 @@
 
       .dropdown-item {
         word-break: break-word;
-        white-space: pre-wrap; /* CSS3 */
-        white-space: -moz-pre-wrap; /* Firefox */
-        white-space: -pre-wrap; /* Opera <7 */
-        white-space: -o-pre-wrap; /* Opera 7 */
+        white-space: normal; /* CSS3 */
         word-wrap: break-word;
         margin: 0px;
       }
 
       .stMapHead p {
         font-size: 14px;
-        color: #fff;
+        font-weight: 600;
+        color: #1e252d;
       }
 
       .stMapHead h4 {
         color: #0292e6;
         font-size: 22px;
-        line-height: 3rem;
+        line-height: 2rem;
+        margin-top: -10px;
+      }
+
+      .dropdown-item {
+        display: block;
+        width: 100%;
+        padding: 0.32rem 0.5rem;
+        clear: both;
+        font-weight: 400;
+        color: #212529;
+        text-align: inherit;
+        white-space: nowrap;
+        background-color: transparent;
+        border: 0;
       }
     </style>
   </head>
@@ -105,7 +117,7 @@
           ></a>
           <a href="#" onClick="return false;" class="bars"></a>
           <a href="#" onClick="return false;" class="bar_nav sidemenu-collapse"
-            ><i class="nav-hdr-btn ti-menu" style="color: #000"></i
+            ><i class="nav-hdr-btn ti-menu" style="color: #000;"></i
           ></a>
           <a class="navbar-brand nav_float" href="#">
             <img
@@ -117,7 +129,7 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="fullscreen" style="padding: 4px;left: -14px;">
+            <li class="fullscreen" style="padding: 4px; left: -14px;">
               <ul class="list-unstyled order-list">
                 <li class="avatar avatar-sm">
                   <img
@@ -156,13 +168,13 @@
               <form class="form-header" action="" method="POST">
                 <input
                   class="au-input au-input--xl"
-                  style="min-width: 20%"
+                  style="min-width: 20%;"
                   type="text"
                   name="search"
                   placeholder="Search"
                 />
                 <button class="au-btn--submit" type="submit">
-                  <i class="fa fa-search" style="color:gray"></i>
+                  <i class="fa fa-search" style="color: gray;"></i>
                 </button>
               </form>
             </li>
@@ -180,7 +192,7 @@
                 data-toggle="dropdown"
                 role="button"
               >
-                <i class="nav-hdr-btn ti-bell" style="color: gray"></i>
+                <i class="nav-hdr-btn ti-bell" style="color: gray;"></i>
                 <span class="notify"></span>
                 <span class="heartbeat"></span>
               </a>
@@ -193,7 +205,7 @@
                 data-target="#settings"
                 role="button"
               >
-                <i class="nav-hdr-btn ti-settings" style="color: gray"></i>
+                <i class="nav-hdr-btn ti-settings" style="color: gray;"></i>
                 <span class="notify"></span>
                 <span class="heartbeat"></span>
               </a>
@@ -203,7 +215,7 @@
               <a
                 href="#"
                 onclick="return false;"
-                class=" dropdown-toggle js-right-sidebar"
+                class="dropdown-toggle js-right-sidebar"
                 data-close="true"
               >
                 <!-- <img src="../../assets/images/user.jpg" alt="user"> -->
@@ -385,14 +397,20 @@
 
       <div
         class="no-gutters"
-        style="background-image: url('../../assets/strategy-map/assets/img/Layer 10.png'); 
-        background-size: cover; 
-        height: auto;
-        padding: 10px 20px;"
+        style="
+          background-color: #fff;
+          border-radius: 26px;
+          min-height: 100vh;
+          height: 100%;
+          margin-top: 8px;
+        "
       >
-        <div class="row">
-          <div class="stMapHead">
-            <div class="col-md-12 stMapContent">
+        <div class="row" style="padding: 24px;">
+          <div class="col-4 col-md-3 col-lg-2 stMapLogo">
+            <img src="../../assets/strategy-map/assets/img/Logo.png" alt="" />
+          </div>
+          <div class="col-8 col-md-9 col-lg-10 stMapHead">
+            <div class="stMapContent">
               <p>The new age transformational platform that helps you</p>
               <h4>
                 BREAKAWAY FROM THE COMMUNICATION GAP ACROSS YOUR ORGANIZATION.
@@ -401,200 +419,175 @@
           </div>
         </div>
 
-        <div id="main" class="row">
-          <div class="col-md-3 col-sm-4 col-xs-12" id="main_drob_box">
-            <div class="d-flex">
-              <div class="stMapBoxWrapper">
-                <div class="">
-                  <img
-                    class="stMapArrowCircle"
-                    src="../../assets/strategy-map/assets/img/arrowCircle.png"
-                    alt="arrowCircle"
-                  />
-                  <img
-                    class="stMapSavingIcon"
-                    src="../../assets/strategy-map/assets/img/savingIcon.png"
-                    alt="savingIcon"
-                  />
-                </div>
-
-                <div class=" stMapCard">
-                  <div class="stMapCardInner">
-                    <div class="stMapCardCircle d-flex">
-                      <img
-                        src="../../assets/strategy-map/assets/img/img.png"
-                        alt="img"
-                      />
-                      <h5><b>FINANCIAL</b></h5>
-                    </div>
-
-                    <div>
-                      <div class="InsideBox">
-                        <div class="DropDownManagement">
-                          <div class="stMapSelectMenu">
-                            <div class="dropdown">
-                              <button
-                                class="stMapSelectMenuButton"
-                                data-toggle="dropdown"
-                              >
-                                <img
-                                  src="../../assets/strategy-map/assets/img/redIcon.png"
-                                  alt="img"
-                                />Select Management
-                              </button>
-                              <div
-                                class="dropdown-menu"
-                                aria-labelledby="dropdownMenu1"
-                              >
-                                <div class="dropdown-item1" href="#">
-                                  <img
-                                    src="../../assets/strategy-map/assets/img/redIcon.png"
-                                    alt="img"
-                                  />Profit Increase
-                                </div>
-                                <div class="dropdown-item1" href="#">
-                                  <img
-                                    src="../../assets/strategy-map/assets/img/redIcon.png"
-                                    alt="img"
-                                  />Revenue Increase
-                                </div>
-                                <div class="dropdown-item1" href="#">
-                                  <img
-                                    src="../../assets/strategy-map/assets/img/redIcon.png"
-                                    alt="img"
-                                  />Revenue loss control
-                                </div>
-                                <div class="dropdown-item1" href="#">
-                                  <img
-                                    src="../../assets/strategy-map/assets/img/redIcon.png"
-                                    alt="img"
-                                  />Sales Increase
-                                </div>
-                                <div class="dropdown-item1" href="#">
-                                  <img
-                                    src="../../assets/strategy-map/assets/img/redIcon.png"
-                                    alt="img"
-                                  />Cost efficiency
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+        <!-- Blue Flex Cards -->
+        <div class="row" style="padding: 4px 32px;">
+          <div class="stMapCard">
+            <div class="stMapCardInner rounded">
+              <div class="d-flex flex-row">
+                <div class="p-2">
+                  <!-- Side Bar -->
+                  <div class="list-group" style="margin-top: 40px;">
+                    <div class="dropdown">
+                      <button
+                        class="stMapSelectMenuButton rounded"
+                        type="button"
+                        id="dropdownMenuButton"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        style="width: fit-content; text-align: left;"
+                      >
+                        <img
+                          src="../../assets/strategy-map/assets/img/redIcon.png"
+                          alt="img"
+                        />
+                        Select Management
+                      </button>
+                      <div
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton"
+                      >
+                        <div class="dropdown-item" href="#">
+                          ENABLERS
                         </div>
-                      </div>
-                      <button id="plus">+</button>
-                      <button id="minus">-</button>
-                    </div>
-
-                    <div>
-                      <div>
-                        <div class="InsideBox1">
-                          <div class="DropDownStatus">
-                            <div class="stMapSelectMenu">
-                              <div class="dropdown">
-                                <button
-                                  class="stMapSelectMenuButton stMapSelectMenuButtonTransparent"
-                                  data-toggle="dropdown"
-                                >
-                                  <img
-                                    src="../../assets/strategy-map/assets/img/Ellipse.png"
-                                    alt="img"
-                                  />Roce
-                                </button>
-                                <div
-                                  class="dropdown-menu"
-                                  aria-labelledby="dropdownMenu1"
-                                >
-                                  <div class="dropdown-item1" href="#">
-                                    <img
-                                      src="../../assets/strategy-map/assets/img/Ellipse.png"
-                                      alt="img"
-                                    />High Operational Excellence copy
-                                  </div>
-                                  <div class="dropdown-item1" href="#">
-                                    <img
-                                      src="../../assets/strategy-map/assets/img/Ellipse.png"
-                                      alt="img"
-                                    />Revenue Increase
-                                  </div>
-                                  <div class="dropdown-item1" href="#">
-                                    <img
-                                      src="../../assets/strategy-map/assets/img/Ellipse.png"
-                                      alt="img"
-                                    />High Operational Excellence copy High
-                                    Operational Excellence copy
-                                  </div>
-                                  <div class="dropdown-item1" href="#">
-                                    <img
-                                      src="../../assets/strategy-map/assets/img/Ellipse.png"
-                                      alt="img"
-                                    />Increase Stackeholder Value
-                                  </div>
-                                  <div class="dropdown-item1" href="#">
-                                    <img
-                                      src="../../assets/strategy-map/assets/img/Ellipse.png"
-                                      alt="img"
-                                    />Increase Stackeholder Value Copy
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <button id="roce_plus">+</button>
-                          <button id="roce_minus">-</button>
+                        <div class="dropdown-item" href="#">
+                          BUSINESS GOALS
+                        </div>
+                        <div class="dropdown-item" href="#">
+                          CUSTOMER'S PERCEPTION
+                        </div>
+                        <div class="dropdown-item" href="#">
+                          FINAL OUTPUTS
                         </div>
                       </div>
                     </div>
                   </div>
+                  <!-- Select Management Button Ends -->
                 </div>
+                <!-- Side Bar Ends -->
+
+                <!-- Management Flags and Roce Button Border-->
+                <div class="p-2 border rounded" style="margin-left: 5px;">
+                  <!-- Select ManageMent Button -->
+                  <div class="list-group">
+                    <div class="dropdown">
+                      <button
+                        class="stMapSelectMenuButton rounded"
+                        type="button"
+                        id="dropdownMenuButton"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        style="width: fit-content; text-align: left;"
+                      >
+                        <img
+                          src="../../assets/strategy-map/assets/img/redIcon.png"
+                          alt="img"
+                        />
+                        Select Management
+                      </button>
+                      <div
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton"
+                      >
+                        <div class="dropdown-item" href="#">
+                          Profit Increase
+                        </div>
+                        <div class="dropdown-item" href="#">
+                          Revenue Increase
+                        </div>
+                        <div class="dropdown-item" href="#">
+                          Revenue Loss Control
+                        </div>
+                        <div class="dropdown-item" href="#">
+                          Sales Increase
+                        </div>
+                        <div class="dropdown-item" href="#">
+                          Cost Efficiency
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Select Management Button Ends -->
+
+                  <!-- Roce Button -->
+                  <div class="list-group" style="margin-top: 10px;">
+                    <div class="dropdown">
+                      <button
+                        class="stMapSelectMenuButton stMapSelectMenuButtonTransparent rounded"
+                        data-toggle="dropdown"
+                      >
+                        <img
+                          src="../../assets/strategy-map/assets/img/Ellipse.png"
+                          alt="img"
+                          style="margin-left: -100px; margin-top: 5px;"
+                        />
+                        Roce
+                      </button>
+
+                      <div
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenu1"
+                      >
+                        <div class="dropdown-item1" href="#">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit.
+                        </div>
+                        <div class="dropdown-item1" href="#">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Roce Button Ends -->
+
+                  <!-- Roce Plus & Minus Buttons -->
+                  <button
+                    class="btn btn-light btn-sm"
+                    id="roce_plus"
+                    style="height: 30px; margin-left: 5px;"
+                  >
+                    +
+                  </button>
+                  <button
+                    class="btn btn-light btn-sm"
+                    id="roce_minus"
+                    style="height: 30px; margin-left: 5px;"
+                  >
+                    -
+                  </button>
+                </div>
+                <!-- Manament Flags and Roce Button Borde Ends -->
+
+                <!-- Plus Minus buttons -->
+                <button
+                  class="btn btn-light btn-sm"
+                  id="plus"
+                  style="height: 30px; margin-left: 5px;"
+                >
+                  +
+                </button>
+                <button
+                  class="btn btn-light btn-sm"
+                  id="minus"
+                  style="height: 30px; margin-left: 5px;"
+                >
+                  -
+                </button>
               </div>
             </div>
           </div>
         </div>
-        <div>
-          <button type="button" class="stMapAdd" id="add_button">
-            Add Card
-          </button>
-        </div>
-      </div>
-
-      <!-- <div id="root">
-        <div class="stMap">
-          <img
-            class="stMapBg"
-            src="../../assets/strategy-map/assets/img/Layer 10.png"
-            alt="Bgimg"
-          />
-          <div class="stMapContainer set-bg">
-            <div>
-              <header class="d-flex stMapHeader align-center">
-                <div class="stMapLogo">
-                  <img
-                    src="../../assets/strategy-map/assets/img/Logo.png"
-                    alt=""
-                  />
-                </div>
-                <div class="stMapHead">
-                  <div class="stMapContent">
-                    <p>The new age transformational platform that helps you</p>
-                    <h4>
-                      BREAKAWAY FROM THE COMMUNICATION GAP ACROSS YOUR
-                      ORGANIZATION.
-                    </h4>
-                  </div>
-                </div>
-              </header>
-            </div>
-
-            
-
-            <div>
-              <button type="button" class="stMapAdd" id="add_button">
-                Add Card
-              </button>
-            </div>
+        <!-- Blue Flex Cards Ends-->
+        <div class="row" style="padding: 4px 32px;">
+          <div class="col-md-3">
+            <button type="button" class="stMapAdd" id="add_button">
+              Add Card
+            </button>
           </div>
         </div>
-      </div> -->
+      </div>
     </section>
   </body>
 
@@ -625,173 +618,182 @@
   <script>
     $(".daterangepicker-field").daterangepicker({
       forceUpdate: true,
-      callback: function(startDate, endDate, period) {
+      callback: function (startDate, endDate, period) {
         var title = startDate.format("L") + " – " + endDate.format("L");
         $(this).val(title);
-      }
+      },
     });
   </script>
 
   <script type="text/javascript">
-    $(document).ready(function() {
-      $(document).on("click", "#add_button", function() {
-        $("#main").append(
-          "<div class='col-md-3 col-sm-4 col-xs-12'>\
-					<div class='d-flex'>\
-						<div class='stMapBoxWrapper'>\
-							<div class=''><img class='stMapArrowCircle' src='../../assets/strategy-map/assets/img/arrowCircle.png' alt='arrowCircle'><img class='stMapSavingIcon' src='../../assets/strategy-map/assets/img/savingIcon.png' alt='savingIcon'></div>\
-							<div class='stMapCard'>\
-							   <div class='stMapCardInner'>\
-								  <div class='stMapCardCircle d-flex'>\
-									 <img src='../../assets/strategy-map/assets/img/img.png' alt='img'>\
-									 <h5><b>FINANCIAL</b></h5>\
-								  </div>\
-								  <div>\
-									<div class='InsideBox'>\
-										<div class='DropDownManagement'>\
-										   <div class='stMapSelectMenu'>\
-											  <div class='dropdown'>\
-											   <button class='stMapSelectMenuButton' data-toggle='dropdown'><img src='../../assets/strategy-map/assets/img/redIcon.png' alt='img'>Select Management</button>\
-										  			<div class='dropdown-menu' aria-labelledby='dropdownMenu1'>\
-														<div class='dropdown-item1' href='#''><img src='../../assets/strategy-map/assets/img/redIcon.png' alt='img'>Profit Increase</div>\
-															 <div class='dropdown-item1' href='#''><img src='../../assets/strategy-map/assets/img/redIcon.png' alt='img'>Revenue Increase</div>\
-															 <div class='dropdown-item1' href='#''><img src='../../assets/strategy-map/assets/img/redIcon.png' alt='img'>Revenue loss control</div>\
-															 <div class='dropdown-item1' href='#''><img src='../../assets/strategy-map/assets/img/redIcon.png' alt='img'>Sales Increase</div>\
-															 <div class='dropdown-item1' href='#''><img src='../../assets/strategy-map/assets/img/redIcon.png' alt='img'>Cost efficiency</div>\
-													</div>\
-													</div>\
-											 </div>\
-										</div>\
-									 </div>\
-								  <button id='plus'>+</button>   <button id='minus'>-</button>\
-								  <div>\
-									 <div>\
-										<div class='InsideBox1'>\
-										   <div class='DropDownStatus'>\
-											  <div class='stMapSelectMenu'>\
-												<div class='dropdown'>\
-														<button class='stMapSelectMenuButton stMapSelectMenuButtonTransparent' data-toggle='dropdown'><img src='../../assets/strategy-map/assets/img/Ellipse.png' alt='img'>Roce</button>\
-											  			<div class='dropdown-menu' aria-labelledby='dropdownMenu1'>\
-															 <div class='dropdown-item1' href='#''><img src='../../assets/strategy-map/assets/img/Ellipse.png' alt='img'>High Operational Excellence copy</div>\
-															 <div class='dropdown-item1' href='#''><img src='../../assets/strategy-map/assets/img/Ellipse.png' alt='img'>Revenue Increase</div>\
-															 <div class='dropdown-item1' href='#''><img src='../../assets/strategy-map/assets/img/Ellipse.png' alt='img'>High Operational Excellence copy High Operational Excellence copy</div>\
-															 <div class='dropdown-item1' href='#''><img src='../../assets/strategy-map/assets/img/Ellipse.png' alt='img'>Increase Stackeholder Value</div>\
-															 <div class='dropdown-item1' href='#''><img src='../../assets/strategy-map/assets/img/Ellipse.png' alt='img'>Increase Stackeholder Value Copy</div>\
-														</div>\
-											    </div>\
-										     </div>\
-										  </div>\
-										  <button id='roce_plus'>+</button>   <button id='roce_minus'>-</button>\
-									   </div>\
-									 </div>\
-								  </div>\
-							   </div>\
-							</div>\
-						 </div>\
-					</div>\
-				 </div>\
-				 <button type='button' class='btn btn-light' id='remove_button'>Remove card</button></div>\
-				 </div>\
-			  </div><br>"
+    $(document).ready(function () {
+      $(document).on("click", "#add_button", function () {
+        $(this).before(
+          `<div class='container'>
+   <div id='main' class='row'>
+      <div class=' stMapCard'>
+         <div class='stMapCardInner rounded'>
+            <div class='d-flex flex-row'>
+               <div class='p-2'>
+                  <div class='list-group' style='margin-top: 40px'>
+                     <div class='dropdown'>
+                        <button class='stMapSelectMenuButton rounded' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><img src='../../assets/strategy-map/assets/img/redIcon.png' alt='img'>Select Management</button>
+                        <div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
+                           <div class='dropdown-item' href='#'>Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit.</div>
+                           <div class='dropdown-item' href='#'>Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit.</div>
+                           <div class='dropdown-item' href='#'>Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit.</div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               \
+               <div class='p-2 border rounded'>
+                  <div class='list-group'>
+                     <div class='dropdown'>
+                        <button class='stMapSelectMenuButton rounded' type='button' id='dropdownMenuButton'
+                        style="width: fit-content; text-align: left;" data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' style='width: fit-content;'><img src='../../assets/strategy-map/assets/img/redIcon.png' alt='img'>\
+                        Select Management</button>
+                        <div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
+                          <div class="dropdown-item" href="#">
+                            Profit Increase
+                          </div>
+                          <div class="dropdown-item" href="#">
+                            Revenue Increase
+                          </div>
+                          <div class="dropdown-item" href="#">
+                            Revenue Loss Control
+                          </div>
+                          <div class="dropdown-item" href="#">
+                            Sales Increase
+                          </div>
+                          <div class="dropdown-item" href="#">
+                            Cost Efficiency
+                          </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class='list-group' style='margin-top: 10px;'>
+                     <div class='dropdown'>
+                        <button class='stMapSelectMenuButton stMapSelectMenuButtonTransparent rounded' data-toggle='dropdown'><img src='../../assets/strategy-map/assets/img/Ellipse.png' alt='img' style='margin-left: -100px; margin-top: 5px'>Roce</button>
+                        <div class='dropdown-menu' aria-labelledby='dropdownMenu1'>
+                           <div class='dropdown-item1' href='#'>Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit.</div>
+                           <div class='dropdown-item1' href='#'>Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit.</div>
+                        </div>
+                     </div>
+                  </div>
+                  <button class='btn btn-light btn-sm' id='roce_plus' style='height: 30px; margin-left: 5px;'>+</button>\
+                  <button class='btn btn-light btn-sm' id='roce_minus' style='height: 30px; margin-left: 5px;'>-</button>
+               </div>
+               <button class='btn btn-light btn-sm' id='plus' style='height: 30px; margin-left: 5px;'>+</button><button class='btn btn-light btn-sm' id='minus' style='height: 30px; margin-left: 5px;'>-</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <button type='button' class='btn btn-light' id='remove_button' style='margin-left: -15px; margin-top: -45px;'>Remove card</button>
+</div>`
         );
-
-        // var remove_card = $('#main_drob_box').children('#remove_button').length;
-        var remove_card = $("#main_drob_box").children("#remove_button").length;
-        if (remove_card < 1) {
-          $("#main_drob_box").append(
-            "<button type='button' class='btn btn-light' id='remove_button'>Remove card</button>"
-          );
-        }
-
-        var remove_card_button = $("[id=remove_button]").length;
-        console.log(remove_card_button);
-        if (remove_card_button >= 1) {
-          $("[id=remove_button]").show();
-        }
       });
 
       // Removing New Cards //
-      $(document).on("click", "#remove_button", function() {
-        $(this)
-          .parent()
-          .remove();
-
+      $(document).on("click", "#remove_button", function () {
+        $(this).parent().remove();
         var remove_card_button = $("[id=remove_button]").length;
-        console.log(remove_card_button);
+
         if (remove_card_button <= 1) {
           $("[id=remove_button]").hide();
         }
       });
 
       // Adding Dropdown Elements //
-      $(document).on("click", "#plus", function() {
-        var n = $(this).siblings(".InsideBox").length;
+      $(document).on("click", "#plus", function () {
+        var n = $(this).siblings(".border").length;
         console.log(n);
         if (n <= 4) {
           $(this).before(
-            "<div class='InsideBox'>\
-										<div class='DropDownManagement'>\
-										   <div class='stMapSelectMenu'>\
-											  <div class='dropdown'>\
-											   <button class='stMapSelectMenuButton' data-toggle='dropdown'><img src='../../assets/strategy-map/assets/img/redIcon.png' alt='img'>Select Management</button>\
-										  			<div class='dropdown-menu' aria-labelledby='dropdownMenu1'>\
-												 		<div class='dropdown-item' href='#'>Another action Another action Another action Another action</div>\
-													</div>\
-													</div>\
-											 </div>\
-										</div>\
-									 </div>"
+            `<div class='p-2 border rounded' style='margin-left: 5px;'>
+   <div class='list-group'>
+      <div class='dropdown'>
+         <button class='stMapSelectMenuButton rounded' type='button' id='dropdownMenuButton'data-toggle='dropdown'
+                        style="width: fit-content; text-align: left;" aria-haspopup='true' aria-expanded='false'><img src='../../assets/strategy-map/assets/img/redIcon.png' alt='img'>Select Management</button>
+         <div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
+          <div class="dropdown-item" href="#">
+                          Profit Increase
+                        </div>
+                        <div class="dropdown-item" href="#">
+                          Revenue Increase
+                        </div>
+                        <div class="dropdown-item" href="#">
+                          Revenue Loss Control
+                        </div>
+                        <div class="dropdown-item" href="#">
+                          Sales Increase
+                        </div>
+                        <div class="dropdown-item" href="#">
+                          Cost Efficiency
+                        </div>
+         </div>
+      </div>
+   </div>
+   <div class='list-group' style='margin-top: 10px;'>
+      <div class='dropdown'>
+         <button class='stMapSelectMenuButton stMapSelectMenuButtonTransparent rounded' data-toggle='dropdown'><img src='../../assets/strategy-map/assets/img/Ellipse.png' alt='img' style='margin-left: -100px; margin-top: 5px'>Roce</button>
+         <div class='dropdown-menu' aria-labelledby='dropdownMenu1'>
+            <div class='dropdown-item1' href='#'>Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit.</div>
+            <div class='dropdown-item1' href='#'>Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit.</div>
+            \
+         </div>
+      </div>
+   </div>
+   <button class='btn btn-light btn-sm' id='roce_plus' style='height: 30px; margin-left: 5px;'>+</button><button class='btn btn-light btn-sm' id='roce_minus' style='height: 30px; margin-left: 5px;'>-</button>
+</div>`
           );
         }
       });
 
       // Removing Dropdown elements //
-      $(document).on("click", "#minus", function() {
-        var j = $(this).siblings(".InsideBox").length;
-        console.log(j);
+      $(document).on("click", "#minus", function () {
+        var j = $(this).siblings(".border").length;
+
         if (j > 1) {
-          $(this)
-            .prev()
-            .prev()
-            .remove();
+          $(this).prev().prev().remove();
         }
       });
 
       // Adding Roce Components //
-      $(document).on("click", "#roce_plus", function() {
-        var roce = $(this).siblings(".InsideBox1").length;
-        console.log(roce);
-        if (roce <= 3) {
+      $(document).on("click", "#roce_plus", function () {
+        var roce = $(this).siblings(".list-group").length;
+        if (roce <= 5) {
           $(this).before(
-            "<div class='InsideBox1'>\
-										   <div class='DropDownStatus'>\
-											  <div class='stMapSelectMenu'>\
-												<div class='dropdown'>\
-														<button class='stMapSelectMenuButton stMapSelectMenuButtonTransparent' data-toggle='dropdown'><img src='../../assets/strategy-map/assets/img/Ellipse.png' alt='img'>Roce</button>\
-											  			<div class='dropdown-menu' aria-labelledby='dropdownMenu1'>\
-													 		<div class='dropdown-item1' href='#''>Another action</div>\
-														</div>\
-											    </div>\
-										     </div>\
-										  </div>\
-									   </div>"
+            `<div class='list-group' style='margin-top: 10px;'>
+   <div class='dropdown'>
+      <button class='stMapSelectMenuButton stMapSelectMenuButtonTransparent rounded' data-toggle='dropdown'><img src='../../assets/strategy-map/assets/img/Ellipse.png' alt='img' style='margin-left: -100px; margin-top: 5px'>Roce</button>
+      <div class='dropdown-menu' aria-labelledby='dropdownMenu1'>
+         <div class='dropdown-item1' href='#'>Another action</div>
+         <div class='dropdown-item1' href='#'>Another action Another action</div>
+      </div>
+   </div>
+</div>`
           );
         }
       });
 
       // Removing Roce Components //
-      $(document).on("click", "#roce_minus", function() {
-        var roce = $(this).siblings(".InsideBox1").length;
-        if (roce > 0) {
-          $(this)
-            .prev()
-            .prev()
-            .remove();
+      $(document).on("click", "#roce_minus", function () {
+        var roce = $(this).siblings(".list-group").length;
+        if (roce > 2) {
+          $(this).prev().prev().remove();
         }
       });
 
-      $(document).ready(function() {
-        $(document).on("click", ".dropdown-item", function() {
+      $(document).ready(function () {
+        $(document).on("click", ".dropdown-item", function () {
           $(this)
             .parent()
             .prev()
@@ -801,8 +803,9 @@
             );
         });
       });
-      $(document).ready(function() {
-        $(document).on("click", ".dropdown-item1", function() {
+
+      $(document).ready(function () {
+        $(document).on("click", ".dropdown-item1", function () {
           $(this)
             .parent()
             .prev()
@@ -811,6 +814,47 @@
                 $(this).text()
             );
         });
+      });
+
+      // Changing Background Image //
+      $(document).on("click", "#back-image0", function () {
+        console.log("click1");
+        $(".stMap").css(
+          "background-image",
+          "url(../../assets/strategy-map/assets/img/Layer 1.jpg)"
+        );
+      });
+
+      $(document).on("click", "#back-image1", function () {
+        console.log("click2");
+        $(".stMap").css(
+          "background-image",
+          "url(../../assets/strategy-map/assets/img/Layer 2.jpg)"
+        );
+      });
+
+      $(document).on("click", "#back-image2", function () {
+        console.log("click3");
+        $(".stMap").css(
+          "background-image",
+          "url(../../assets/strategy-map/assets/img/Layer 3.jpg)"
+        );
+      });
+
+      $(document).on("click", "#back-image3", function () {
+        console.log("click4");
+        $(".stMap").css(
+          "background-image",
+          "url(../../assets/strategy-map/assets/img/Layer 4.jpg)"
+        );
+      });
+
+      $(document).on("click", "#back-image4", function () {
+        console.log("click5");
+        $(".stMap").css(
+          "background-image",
+          "url(../../assets/strategy-map/assets/img/Layer 10.png)"
+        );
       });
     });
   </script>
