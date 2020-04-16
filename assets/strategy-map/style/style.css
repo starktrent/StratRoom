@@ -80,7 +80,7 @@ ol {
 }
 .stMapLogo img {
   width: 100%;
-  padding-top: 5px;
+  margin-top: -20px;
 }
 .stMapHead {
   position: relative;
