@@ -915,10 +915,11 @@ ul.gj-list-md li {
 .modal-custom-select {
   border: 1px solid #e5e5e5 !important;
   border-radius: 4px !important;
-  width: 106% !important;
-  height: 65% !important;
+  width: 100% !important;
+  height: 68% !important;
   padding: 6px 8px !important;
   font-size: 14px !important;
+  display: block;
 }
 
 .modal-custom-select:focus {
