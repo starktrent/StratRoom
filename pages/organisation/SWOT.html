@@ -1,0 +1,1918 @@
+<!DOCTYPE html>
+<a lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>StratRoom</title>
+    <!-- Favicon-->
+    <!-- <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon"> -->
+    <!-- Plugins Core Css -->
+    <link href="../../assets/css/app.min.css" rel="stylesheet" />
+    <!-- Custom Css -->
+    <link href="../../assets/css/style.css" rel="stylesheet" />
+    <link href="../../assets/css/custom.css" rel="stylesheet" />
+    <link href="../../assets/css/initatives.css" rel="stylesheet" />
+    <link href="../../assets/css/icheck-bootstrap.min.css" rel="stylesheet" />
+    <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" />
+    <!-- You can choose a theme from css/styles instead of get all themes -->
+    <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
+    <!-- <link href="../../assets/css/table-view.css" rel="stylesheet" /> -->
+    <!-- <link rel="stylesheet" href="../../assets/daterangepicker.css"> -->
+    <!-- <link rel="stylesheet" href="../../assets/datepickerair.css" /> -->
+    <link href="../../assets/jquery-ui.min.css" rel="stylesheet" />
+    <link href="../../assets/css/employee.css" rel="stylesheet" />
+    <!-- <link
+      href="../../assets/daterangepicker/daterangepicker.min.css"
+      rel="stylesheet"
+    /> -->
+    <link href="../../assets/css/employee.css" rel="stylesheet" />
+    <!-- <link href="../../assets/bootstrap-datepicker.min.css" rel="stylesheet" /> -->
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      id="main-stylesheet"
+      data-version="1.1.0"
+      href="css/shards-dashboards.1.1.0.min.css"
+    />
+
+    <link
+      href="assets/daterangepicker/daterangepicker.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script
+      src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"
+      type="text/javascript"
+    ></script>
+    <link
+      href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <!-- Font Awsome Icons -->
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      .orientation-right {
+        top: 60px !important;
+        right: 0 !important;
+        left: auto !important;
+        position: fixed;
+      }
+
+      .cardBox {
+        border-radius: 8px !important;
+        border: none !important;
+        padding: 16px 16px 0 16px;
+      }
+
+      .card-icons i {
+        font-size: 12px;
+        color: #919191;
+        cursor: pointer;
+      }
+
+      .card-icons i:nth-child(2) {
+        margin-left: 8px;
+      }
+
+      .page-card-desc {
+        color: #919191;
+        font-size: 12px;
+        margin-top: 8px;
+      }
+
+      .business-impact {
+        color: #1e252d;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 11px;
+      }
+
+      .business-impact span:nth-child(2) {
+        color: #919191;
+        text-transform: none;
+        font-weight: 500;
+      }
+
+      .next-due p {
+        font-size: 12px;
+        color: #919191;
+        margin-top: 8px;
+      }
+
+      .status span i {
+        font-size: 14px;
+        color: #20eaab;
+      }
+
+      .card-footer {
+        display: flex !important;
+        -webkit-box-orient: horizontal !important;
+        -webkit-box-direction: normal !important;
+        flex-direction: row !important;
+        justify-content: space-evenly;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .card-footer-icon i {
+        font-size: 18px;
+        color: rgb(226, 226, 226) !important;
+        cursor: pointer;
+      }
+
+      .modal-custom-input {
+        border: 1px solid #e5e5e5 !important;
+        border-radius: 4px !important;
+        width: 98% !important;
+        height: 65% !important;
+        padding: 0 8px !important;
+        font-size: 14px !important;
+      }
+
+      .gj-datepicker-md [role="right-icon"] {
+        top: 6px;
+      }
+
+      .gj-timepicker-md [role="right-icon"] {
+        top: 5px;
+      }
+
+      .political-impact li {
+        font-size: 14px;
+        color: #1e252d;
+        line-height: 32px;
+      }
+
+      .political-impact li i {
+        color: #ff0e5e;
+      }
+
+      .pestel-indicator {
+        background-color: #042c73;
+        color: #ffffff;
+        padding: 8px 12px;
+        border-radius: 8px 0 8px 0;
+        margin-left: -16px;
+        margin-top: -16px;
+        position: absolute;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .custom-control {
+        position: relative;
+        display: block;
+        min-height: 1.5rem;
+        padding-left: 2.7rem;
+      }
+
+      .status-flag {
+        font-size: 14px;
+        margin-left: -12px;
+        margin-top: 2px;
+        position: absolute;
+        cursor: pointer;
+      }
+
+      .side_border_s {
+        background-color: #1eb194 !important;
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      .side_border_w {
+        background-color: #fab639 !important;
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      .side_border_o {
+        background-color: #40b5bc !important;
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      .side_border_t {
+        background-color: #e24e4c !important;
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      #section .container-fluid .collapse_arrow_left .arrow_collapse_size {
+        position: fixed;
+        background: #fff;
+        font-size: 20px !important;
+        top: 22%;
+        z-index: 999;
+        color: #a3a3a3;
+        margin-left: -30px;
+        padding: 14px 6px 14px 2px;
+        border-top: 1px solid #e9ecef;
+        border-right: 1px solid #e9ecef;
+        border-bottom: 1px solid #e9ecef;
+        border-left: 0px solid #e9ecef;
+        border-radius: 0px 12px 12px 0px;
+        cursor: pointer;
+        transition: 0.5s;
+      }
+
+      #section .container-fluid .collapse_arrow_right .arrow_collapse_size {
+        position: fixed;
+        background: #fff;
+        font-size: 20px !important;
+        top: 22%;
+        z-index: 999;
+        color: #a3a3a3;
+        margin-left: -30px;
+        padding: 14px 6px 14px 2px;
+        border-top: 1px solid #e9ecef;
+        border-right: 1px solid #e9ecef;
+        border-bottom: 1px solid #e9ecef;
+        border-left: 0px solid #e9ecef;
+        border-radius: 0px 12px 12px 0px;
+        cursor: pointer;
+        transition: 0.5s;
+      }
+    </style>
+  </head>
+
+  <body class="light">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+      <div class="loader">
+        <div class="m-t-30">
+          <img width="100" src="../../assets/images/logo_1.gif" alt="admin" />
+        </div>
+        <p>Please wait...</p>
+      </div>
+    </div>
+    <!-- <div>
+            <img src="../../assets/images/SP_Bg.png" alt="">
+        </div> -->
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a
+            href="#"
+            onClick="return false;"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#navbar-collapse"
+            aria-expanded="false"
+          ></a>
+          <a href="#" onClick="return false;" class="bars"></a>
+          <a href="#" onClick="return false;" class="bar_nav sidemenu-collapse"
+            ><i class="nav-hdr-btn ti-menu" style="color: #000;"></i
+          ></a>
+          <a class="navbar-brand nav_float" href="#">
+            <img
+              src="../../assets/images/Startroom_Final logo-01_1.png"
+              alt=""
+            />
+            <!-- <span class="logo-name">Img</span> -->
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="fullscreen" style="padding: 4px; left: -14px;">
+              <ul class="list-unstyled order-list">
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user7.jpg"
+                    alt="user"
+                  />
+                </li>
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user8.jpg"
+                    alt="user"
+                  />
+                </li>
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user9.jpg"
+                    alt="user"
+                  />
+                </li>
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user9.jpg"
+                    alt="user"
+                  />
+                </li>
+                <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                  <span _ngcontent-hhc-c5="" class="badge">+3</span>
+                </li>
+              </ul>
+            </li>
+            <li class="fullscreen">
+              <form class="form-header" action="" method="POST">
+                <input
+                  class="au-input au-input--xl"
+                  style="min-width: 20%;"
+                  type="text"
+                  name="search"
+                  placeholder="Search"
+                />
+                <button class="au-btn--submit" type="submit">
+                  <i class="fa fa-search" style="color: gray;"></i>
+                </button>
+              </form>
+            </li>
+            <li class="fullscreen">
+              <!-- <i class="nav-hdr-btn ti-calendar" style="color: gray"></i> -->
+              <input class="daterangepicker-field top_datepicker" />
+            </li>
+            <!-- #END# Full Screen Button -->
+            <!-- #START# Notifications-->
+            <li class="dropdown">
+              <a
+                href="#"
+                onClick="return false;"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+              >
+                <i class="nav-hdr-btn ti-bell" style="color: gray;"></i>
+                <span class="notify"></span>
+                <span class="heartbeat"></span>
+              </a>
+            </li>
+            <li class="dropdown">
+              <a
+                href="#"
+                onClick="return false;"
+                data-toggle="modal"
+                data-target="#settings"
+                role="button"
+              >
+                <i class="nav-hdr-btn ti-settings" style="color: gray;"></i>
+                <span class="notify"></span>
+                <span class="heartbeat"></span>
+              </a>
+            </li>
+            <!-- #END# Notifications-->
+            <li class="">
+              <a
+                href="#"
+                onclick="return false;"
+                class="dropdown-toggle js-right-sidebar"
+                data-close="true"
+              >
+                <!-- <img src="../../assets/images/user.jpg" alt="user"> -->
+                <i class="fas fa-user-circle"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- #Top Bar -->
+
+    <div>
+      <!-- Left Sidebar -->
+      <aside id="leftsidebar" class="sidebar">
+        <!-- Menu -->
+        <div class="menu">
+          <ul class="list">
+            <li class="active">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon fa fa-home font_icon"></i>
+                <span>Organisation Structure</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" onClick="return false;" class="menu-toggle">
+                <i class="menu-icon fa fa-dashboard font_icon"></i>
+                <span>Dashboards</span>
+              </a>
+              <ul class="ml-menu">
+                <li>
+                  <a href="#">BSC Dashboard</a>
+                </li>
+                <li>
+                  <a href="#">Strategy Map</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon fa fa-bar-chart font_icon"></i>
+                <span>Charts</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon fa fa-key font_icon"></i>
+                <span>Users & Access</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon fa fa-sitemap font_icon"></i>
+                <span>Workflows</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon fa fa-bell font_icon"></i>
+                <span>Notifications & Alerts</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon fa fa-database font_icon"></i>
+                <span>Data Management</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" onClick="return false;" class="menu-toggle">
+                <i class="menu-icon fa fa-laptop font_icon"></i>
+                <span>Template Management</span>
+              </a>
+              <ul class="ml-menu">
+                <li>
+                  <a
+                    href="#"
+                    id="sub-menu"
+                    onClick="return false;"
+                    class="menu-toggle"
+                  >
+                    Scorecard Layouts
+                  </a>
+                  <ul class="ml-menu">
+                    <li><a href="#">Standard BSC View</a></li>
+                    <li><a href="#">Dashboard View</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    id="sub-menu"
+                    onClick="return false;"
+                    class="menu-toggle"
+                  >
+                    Initiative
+                  </a>
+                  <ul class="ml-menu">
+                    <li><a href="#">Sub Initiatives</a></li>
+                    <li><a href="#">Tasks</a></li>
+                    <li><a href="#">Activities</a></li>
+                    <li><a href="#">Milestones</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Reports Table</a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    id="sub-menu"
+                    onClick="return false;"
+                    class="menu-toggle"
+                  >
+                    Comments
+                  </a>
+                  <ul class="ml-menu">
+                    <li><a href="#">Comments & Observations</a></li>
+                    <li><a href="#">Proof of Evidence</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Employee Layout</a>
+                </li>
+                <li>
+                  <a href="#">Appraisal</a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target=".data_collection_form"
+                    >Data Collection Form</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon fa fa-columns font_icon"></i>
+                <span>Widget Management</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon fa fa-pie-chart font_icon"></i>
+                <span>Reports</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- #Menu -->
+      </aside>
+
+      <aside id="initiative_sidebar" class="initiative_sidebar">
+        <div class="sub_initiatives" id="sub_initiatives" style="height: 100%;">
+          <div class="card" style="height: 100%;">
+            <div
+              class="header d-flex flex-row initiate_sidebar"
+              style="margin-top: 5%;"
+            >
+              <h5 class="prob flex-fill" style="text-align: center;">
+                <strong style="color: #333; font-size: 16px;"
+                  >SWOT ANALYSIS</strong
+                >
+              </h5>
+            </div>
+            <div class="d-flex flex-column" id="initiate_sidebar">
+              <div
+                class="d-flex flex-column sub_initiative_sidebar_details side_border_s"
+              >
+                <div class="d-flex flex-row p-b-5">
+                  <div class="d-flex flex-column profile_content">
+                    <span
+                      style="
+                        font-size: 13px;
+                        font-weight: 600;
+                        color: #fff;
+                        margin: 12px 0 6px 0px;
+                      "
+                      >Strenghts</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="d-flex flex-column sub_initiative_sidebar_details side_border_w"
+              >
+                <div class="d-flex flex-row p-b-5">
+                  <div class="d-flex flex-column profile_content">
+                    <span
+                      style="
+                        font-size: 13px;
+                        font-weight: 600;
+                        color: #fff;
+                        margin: 12px 0 6px 0px;
+                      "
+                      >Weaknesses</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="d-flex flex-column sub_initiative_sidebar_details side_border_o"
+              >
+                <div class="d-flex flex-row p-b-5">
+                  <div class="d-flex flex-column profile_content">
+                    <span
+                      style="
+                        font-size: 13px;
+                        font-weight: 600;
+                        color: #fff;
+                        margin: 12px 0 6px 0px;
+                      "
+                      >Oppurtunities</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="d-flex flex-column sub_initiative_sidebar_details side_border_t"
+              >
+                <div class="d-flex flex-row p-b-5">
+                  <div class="d-flex flex-column profile_content">
+                    <span
+                      style="
+                        font-size: 13px;
+                        font-weight: 600;
+                        color: #fff;
+                        margin: 12px 0 6px 0px;
+                      "
+                      >Threats</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <!--#START Data Collection Form -->
+    </div>
+    <!-- #END# Left Sidebar -->
+
+    <!-- Create SWOT Modal -->
+    <div id="add_new" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="margin-top: 4%;">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Strength Description</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label for="meeting-name">Strength</label>
+                <textarea class="form-control" rows="4"> </textarea>
+              </div>
+            </div>
+            <div class="row m-t-20">
+              <div class="form-group col-md-6">
+                <label for="type">Type</label>
+                <select
+                  id="type"
+                  class="modal-custom-select"
+                  style="height: 38px !important;"
+                >
+                  <option value="#">Choose Type</option>
+                  <option value="#">Internal</option>
+                  <option value="#">External</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="datepicker">Next Due</label>
+                <input
+                  type="text"
+                  class="modal-custom-input"
+                  id="datepicker"
+                  style="height: 38px !important;"
+                />
+                <script>
+                  console.log();
+                  $("#datepicker").datepicker();
+                </script>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <label for="meeting-name">Business Impact</label>
+                <textarea class="form-control" rows="4"> </textarea>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-12">
+                <label for="meeting-name">Status</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked1"
+                  name="defaultExample2"
+                  checked
+                />
+                <label class="custom-control-label" for="defaultChecked1">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #20eaab;"
+                  ></i>
+                </label>
+              </div>
+
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked2"
+                  name="defaultExample2"
+                />
+                <label class="custom-control-label" for="defaultChecked2">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #fffb10;"
+                  ></i>
+                </label>
+              </div>
+
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked3"
+                  name="defaultExample2"
+                />
+                <label class="custom-control-label" for="defaultChecked3">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #ea2020;"
+                  ></i>
+                </label>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <label for="objective_name">Responsible</label>
+                <select
+                  id="multiSelect1"
+                  name=""
+                  class="select_all"
+                  multiple
+                  style="display: none !important;"
+                >
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+              <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-secondary"
+                  data-dismiss="modal"
+                >
+                  cancel
+                </button>
+              </div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-primary"
+                >
+                  save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit SWOT Modal -->
+    <div id="edit_pestel" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="margin-top: 4%;">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Strength Description</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label for="meeting-name">Strength</label>
+                <textarea class="form-control" rows="4"> </textarea>
+              </div>
+            </div>
+            <div class="row m-t-20">
+              <div class="form-group col-md-6">
+                <label for="type">Type</label>
+                <select
+                  id="type"
+                  class="modal-custom-select"
+                  style="height: 38px !important;"
+                >
+                  <option value="#">Choose Type</option>
+                  <option value="#">Internal</option>
+                  <option value="#">External</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="datepicker1">Next Due</label>
+                <input
+                  type="text"
+                  class="modal-custom-input"
+                  id="datepicker1"
+                  style="height: 38px !important;"
+                />
+                <script>
+                  console.log();
+                  $("#datepicker1").datepicker();
+                </script>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <label for="meeting-name">Business Impact</label>
+                <textarea class="form-control" rows="4"> </textarea>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-12">
+                <label for="meeting-name">Status</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked4"
+                  name="defaultExample2"
+                  checked
+                />
+                <label class="custom-control-label" for="defaultChecked4">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #20eaab;"
+                  ></i>
+                </label>
+              </div>
+
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked5"
+                  name="defaultExample2"
+                />
+                <label class="custom-control-label" for="defaultChecked5">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #fffb10;"
+                  ></i>
+                </label>
+              </div>
+
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked6"
+                  name="defaultExample2"
+                />
+                <label class="custom-control-label" for="defaultChecked6">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #ea2020;"
+                  ></i>
+                </label>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <label for="objective_name">Responsible</label>
+                <select
+                  id="multiSelect2"
+                  name=""
+                  class="select_all"
+                  multiple
+                  style="display: none !important;"
+                >
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+              <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-secondary"
+                  data-dismiss="modal"
+                >
+                  cancel
+                </button>
+              </div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-primary"
+                >
+                  Update
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recommendation Modal -->
+    <div id="notes" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="margin-top: 8%;">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Recommendation</h4>
+            <div class="float-right">
+              <button
+                onclick="notes('note_table')"
+                class="form-control rounded-circle"
+                style="margin-top: -4px; border: none;"
+              >
+                <i class="fa fa-plus"></i>
+              </button>
+            </div>
+          </div>
+          <div class="modal-body">
+            <table id="note_table" class="table table-bordered">
+              <thead class="bg-light">
+                <tr>
+                  <th>
+                    Recommendation
+                  </th>
+                  <th style="width: 50px;">Responsible</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <textarea class="form-control" rows="5"> </textarea>
+                  </td>
+                  <td>
+                    <div class="fullscreen">
+                      <ul class="list-unstyled order-list">
+                        <li class="avatar avatar-sm">
+                          <img
+                            class="rounded-circle"
+                            src="../../assets/images/user/user7.jpg"
+                            alt="user"
+                          />
+                        </li>
+                        <li class="avatar avatar-sm">
+                          <img
+                            class="rounded-circle"
+                            src="../../assets/images/user/user8.jpg"
+                            alt="user"
+                          />
+                        </li>
+                        <div class="image-upload">
+                          <label for="file-input">
+                            <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                              <a
+                                href="#"
+                                class="favgs"
+                                data-toggle="modal"
+                                data-target="#addpeople"
+                              >
+                                <span _ngcontent-hhc-c5="" class="badge"
+                                  >+</span
+                                >
+                              </a>
+                            </li>
+                          </label>
+                        </div>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <textarea class="form-control" rows="5"> </textarea>
+                  </td>
+                  <td>
+                    <div class="fullscreen">
+                      <ul class="list-unstyled order-list">
+                        <li class="avatar avatar-sm">
+                          <img
+                            class="rounded-circle"
+                            src="../../assets/images/user/user7.jpg"
+                            alt="user"
+                          />
+                        </li>
+                        <li class="avatar avatar-sm">
+                          <img
+                            class="rounded-circle"
+                            src="../../assets/images/user/user8.jpg"
+                            alt="user"
+                          />
+                        </li>
+                        <div class="image-upload">
+                          <label for="file-input">
+                            <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                              <a
+                                href="#"
+                                class="favgs"
+                                data-toggle="modal"
+                                data-target="#addpeople"
+                              >
+                                <span _ngcontent-hhc-c5="" class="badge"
+                                  >+</span
+                                >
+                              </a>
+                            </li>
+                          </label>
+                        </div>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="row">
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+              <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-secondary"
+                  data-dismiss="modal"
+                >
+                  cancel
+                </button>
+              </div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-primary"
+                >
+                  save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Modal -->
+    <div id="action" class="modal fade" role="dialog">
+      <div
+        class="modal-dialog modal-lg"
+        style="margin-top: 8%; max-width: 60% !important;"
+      >
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Actions</h4>
+            <div class="float-right">
+              <button
+                onclick="action('action_table')"
+                class="form-control rounded-circle"
+                style="margin-top: -4px; border: none;"
+              >
+                <i class="fa fa-plus"></i>
+              </button>
+            </div>
+          </div>
+          <div class="modal-body">
+            <table id="action_table" class="table table-bordered">
+              <thead class="bg-light">
+                <tr>
+                  <th>Actions</th>
+                  <th style="width: 150px;">By Date</th>
+                  <th style="width: 50px;">Responsible</th>
+                  <th style="width: 50px;">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <textarea class="form-control" cols="5" rows="5">
+                    </textarea>
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="modal-custom-input"
+                      id="datepicker2"
+                      style="height: 38px !important;"
+                    />
+                    <script>
+                      console.log();
+                      $("#datepicker2").datepicker();
+                    </script>
+                  </td>
+                  <td>
+                    <div class="fullscreen">
+                      <ul class="list-unstyled order-list">
+                        <li class="avatar avatar-sm">
+                          <img
+                            class="rounded-circle"
+                            src="../../assets/images/user/user7.jpg"
+                            alt="user"
+                          />
+                        </li>
+
+                        <div class="image-upload">
+                          <label for="file-input">
+                            <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                              <a
+                                href="#"
+                                class="favgs"
+                                data-toggle="modal"
+                                data-target="#addpeople"
+                              >
+                                <span _ngcontent-hhc-c5="" class="badge"
+                                  >+</span
+                                >
+                              </a>
+                            </li>
+                          </label>
+                        </div>
+                      </ul>
+                    </div>
+                  </td>
+                  <td>
+                    <input type="checkbox" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <textarea class="form-control" cols="5" rows="5">
+                    </textarea>
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="modal-custom-input"
+                      id="datepicker3"
+                      style="height: 38px !important;"
+                    />
+                    <script>
+                      console.log();
+                      $("#datepicker3").datepicker();
+                    </script>
+                  </td>
+                  <td>
+                    <div class="fullscreen">
+                      <ul class="list-unstyled order-list">
+                        <li class="avatar avatar-sm">
+                          <img
+                            class="rounded-circle"
+                            src="../../assets/images/user/user7.jpg"
+                            alt="user"
+                          />
+                        </li>
+
+                        <div class="image-upload">
+                          <label for="file-input">
+                            <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                              <a
+                                href="#"
+                                class="favgs"
+                                data-toggle="modal"
+                                data-target="#addpeople"
+                              >
+                                <span _ngcontent-hhc-c5="" class="badge"
+                                  >+</span
+                                >
+                              </a>
+                            </li>
+                          </label>
+                        </div>
+                      </ul>
+                    </div>
+                  </td>
+                  <td><input type="checkbox" /></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="row">
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+              <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-secondary"
+                  data-dismiss="modal"
+                >
+                  cancel
+                </button>
+              </div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-primary"
+                >
+                  save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="content" id="section">
+      <!-- Page Header -->
+      <div class="page-header row no-gutters py-2 m-t-70">
+        <div class="col-lg-6 col-md-6 text-center text-sm-left pt-2 mb-0 ml-4">
+          <h5
+            class="page-title"
+            style="font-weight: 600; text-transform: uppercase;"
+          >
+            SWOT
+          </h5>
+        </div>
+      </div>
+      <!-- End Page Header -->
+
+      <!-- Page Body -->
+      <div class="container-fluid">
+        <!-- COl -->
+        <div class="collapse_arrow_right" style="display: none;">
+          <i class="arrow_collapse_size fas fa-caret-right"></i>
+        </div>
+        <div class="collapse_arrow_left">
+          <i class="arrow_collapse_size fas fa-caret-left"></i>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="card cardBox">
+              <div class="row">
+                <div
+                  class="col-12"
+                  data-toggle="modal"
+                  data-target="#add_new"
+                  style="
+                    text-align: center;
+                    color: #c3c3c3;
+                    padding: 86px 0;
+                    cursor: pointer;
+                  "
+                >
+                  <span>
+                    <i
+                      style="font-size: 24px; padding-bottom: 8px;"
+                      class="fas fa-plus"
+                    ></i>
+                  </span>
+                  <h5>Add New</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="card cardBox">
+              <div class="row">
+                <div class="col-md-3 col-3">
+                  <span
+                    style="
+                      background-color: #1eb194;
+                      color: #ffffff;
+                      padding: 8px 12px;
+                      border-radius: 8px 0 8px 0;
+                      margin-left: -16px;
+                      margin-top: -16px;
+                      position: absolute;
+                      font-size: 14px;
+                      font-weight: 600;
+                    "
+                    >S</span
+                  >
+                </div>
+                <div class="col-md-6 col-6">
+                  <span
+                    style="
+                      display: inherit;
+                      text-align: center;
+                      font-size: 13px;
+                    "
+                  >
+                    <strong>TYPE :</strong> EXTERNAL
+                  </span>
+                </div>
+                <div class="col-md-3 col-3">
+                  <span class="card-icons pull-right">
+                    <i
+                      class="fas fa-pen"
+                      data-toggle="modal"
+                      data-target="#edit_pestel"
+                    ></i>
+                    <i class="fas fa-trash"></i>
+                  </span>
+                </div>
+                <div class="col-12">
+                  <p class="page-card-desc">
+                    Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua...
+                  </p>
+
+                  <p class="business-impact">
+                    <span>Business Impact : </span>
+                    <span>Lorem ipsum dolor sit amet elit</span>
+                  </p>
+                </div>
+                <div class="col-4" style="text-align: center;">
+                  <h6 style="font-size: 12px;">Responsible</h6>
+                  <div class="d-flex flex-column">
+                    <ul class="list-unstyled order-list d-flex">
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="50"
+                        />
+                      </li>
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="50"
+                        />
+                      </li>
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="50"
+                        />
+                      </li>
+
+                      <li class="avatar avatar-sm">
+                        <span _ngcontent-hhc-c5="" class="badge">+5</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-4 next-due" style="text-align: center;">
+                  <h6 style="font-size: 12px;">Next Due</h6>
+                  <p>Oct 12, 2020</p>
+                </div>
+                <div class="col-4 status" style="text-align: center;">
+                  <h6 style="font-size: 12px;">Status</h6>
+                  <span>
+                    <i class="fas fa-flag"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="row text-center"
+                style="
+                  background-color: #1e252d;
+                  border-bottom-left-radius: 8px;
+                  border-bottom-right-radius: 8px;
+                "
+              >
+                <div class="col-md-12 card-footer">
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#notes"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-clipboard"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Recommendation"
+                    ></i>
+                  </a>
+
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#action"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-bolt"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Action"
+                    ></i>
+                  </a>
+
+                  <a href="#" class="card-footer-icon">
+                    <label for="file-input1">
+                      <i
+                        class="fas fa-paperclip"
+                        data-toggle="tooltip"
+                        data-placement="bottom"
+                        title="Attachment"
+                      ></i>
+                    </label>
+                    <input
+                      id="file-input1"
+                      style="display: none;"
+                      type="file"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="card cardBox">
+              <div class="row">
+                <div class="col-md-3 col-3">
+                  <span
+                    style="
+                      background-color: #1eb194;
+                      color: #ffffff;
+                      padding: 8px 12px;
+                      border-radius: 8px 0 8px 0;
+                      margin-left: -16px;
+                      margin-top: -16px;
+                      position: absolute;
+                      font-size: 14px;
+                      font-weight: 600;
+                    "
+                    >S</span
+                  >
+                </div>
+                <div class="col-md-6 col-6">
+                  <span
+                    style="
+                      display: inherit;
+                      text-align: center;
+                      font-size: 13px;
+                    "
+                  >
+                    <strong>TYPE :</strong> EXTERNAL
+                  </span>
+                </div>
+                <div class="col-md-3 col-3">
+                  <span class="card-icons pull-right">
+                    <i
+                      class="fas fa-pen"
+                      data-toggle="modal"
+                      data-target="#edit_pestel"
+                    ></i>
+                    <i class="fas fa-trash"></i>
+                  </span>
+                </div>
+                <div class="col-12">
+                  <p class="page-card-desc">
+                    Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua...
+                  </p>
+
+                  <p class="business-impact">
+                    <span>Business Impact : </span>
+                    <span>Lorem ipsum dolor sit amet elit</span>
+                  </p>
+                </div>
+                <div class="col-4" style="text-align: center;">
+                  <h6 style="font-size: 12px;">Responsible</h6>
+                  <div class="d-flex flex-column">
+                    <ul class="list-unstyled order-list d-flex">
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="50"
+                        />
+                      </li>
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="50"
+                        />
+                      </li>
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="50"
+                        />
+                      </li>
+
+                      <li class="avatar avatar-sm">
+                        <span _ngcontent-hhc-c5="" class="badge">+5</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-4 next-due" style="text-align: center;">
+                  <h6 style="font-size: 12px;">Next Due</h6>
+                  <p>Oct 12, 2020</p>
+                </div>
+                <div class="col-4 status" style="text-align: center;">
+                  <h6 style="font-size: 12px;">Status</h6>
+                  <span>
+                    <i class="fas fa-flag"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="row text-center"
+                style="
+                  background-color: #1e252d;
+                  border-bottom-left-radius: 8px;
+                  border-bottom-right-radius: 8px;
+                "
+              >
+                <div class="col-md-12 card-footer">
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#notes"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-clipboard"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Recommendation"
+                    ></i>
+                  </a>
+
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#action"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-bolt"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Action"
+                    ></i>
+                  </a>
+
+                  <a href="#" class="card-footer-icon">
+                    <label for="file-input1">
+                      <i
+                        class="fas fa-paperclip"
+                        data-toggle="tooltip"
+                        data-placement="bottom"
+                        title="Attachment"
+                      ></i>
+                    </label>
+                    <input
+                      id="file-input1"
+                      style="display: none;"
+                      type="file"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="card cardBox">
+              <div class="row">
+                <div class="col-md-3 col-3">
+                  <span
+                    style="
+                      background-color: #1eb194;
+                      color: #ffffff;
+                      padding: 8px 12px;
+                      border-radius: 8px 0 8px 0;
+                      margin-left: -16px;
+                      margin-top: -16px;
+                      position: absolute;
+                      font-size: 14px;
+                      font-weight: 600;
+                    "
+                    >S</span
+                  >
+                </div>
+                <div class="col-md-6 col-6">
+                  <span
+                    style="
+                      display: inherit;
+                      text-align: center;
+                      font-size: 13px;
+                    "
+                  >
+                    <strong>TYPE :</strong> EXTERNAL
+                  </span>
+                </div>
+                <div class="col-md-3 col-3">
+                  <span class="card-icons pull-right">
+                    <i
+                      class="fas fa-pen"
+                      data-toggle="modal"
+                      data-target="#edit_pestel"
+                    ></i>
+                    <i class="fas fa-trash"></i>
+                  </span>
+                </div>
+                <div class="col-12">
+                  <p class="page-card-desc">
+                    Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua...
+                  </p>
+
+                  <p class="business-impact">
+                    <span>Business Impact : </span>
+                    <span>Lorem ipsum dolor sit amet elit</span>
+                  </p>
+                </div>
+                <div class="col-4" style="text-align: center;">
+                  <h6 style="font-size: 12px;">Responsible</h6>
+                  <div class="d-flex flex-column">
+                    <ul class="list-unstyled order-list d-flex">
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="50"
+                        />
+                      </li>
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="50"
+                        />
+                      </li>
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="50"
+                        />
+                      </li>
+
+                      <li class="avatar avatar-sm">
+                        <span _ngcontent-hhc-c5="" class="badge">+5</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-4 next-due" style="text-align: center;">
+                  <h6 style="font-size: 12px;">Next Due</h6>
+                  <p>Oct 12, 2020</p>
+                </div>
+                <div class="col-4 status" style="text-align: center;">
+                  <h6 style="font-size: 12px;">Status</h6>
+                  <span>
+                    <i class="fas fa-flag"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="row text-center"
+                style="
+                  background-color: #1e252d;
+                  border-bottom-left-radius: 8px;
+                  border-bottom-right-radius: 8px;
+                "
+              >
+                <div class="col-md-12 card-footer">
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#notes"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-clipboard"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Recommendation"
+                    ></i>
+                  </a>
+
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#action"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-bolt"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Action"
+                    ></i>
+                  </a>
+
+                  <a href="#" class="card-footer-icon">
+                    <label for="file-input1">
+                      <i
+                        class="fas fa-paperclip"
+                        data-toggle="tooltip"
+                        data-placement="bottom"
+                        title="Attachment"
+                      ></i>
+                    </label>
+                    <input
+                      id="file-input1"
+                      style="display: none;"
+                      type="file"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plugins Js -->
+    <script src="../../assets/js/app.min.js"></script>
+    <!-- Custom Js -->
+    <script src="../../assets/js/admin.js"></script>
+    <script src="../../assets/js/bundles/amcharts4/core.js"></script>
+    <script src="../../assets/js/bundles/amcharts4/charts.js"></script>
+    <script src="../../assets/js/bundles/amcharts4/animated.js"></script>
+    <!-- Knob Js -->
+    <script src="../../assets/jquery-ui.min.js"></script>
+    <script src="../../assets/moment.js"></script>
+    <script src="../../assets/js/pages/core.js"></script>
+    <script src="../../assets/js/pages/charts.js"></script>
+    <script src="../../assets/js/pages/spiritedaway.js"></script>
+    <script src="../../assets/js/pages/animated.js"></script>
+    <script src="../../assets/jquery.editable.min.js"></script>
+    <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/pickr.es5.min.js"></script>
+    <script src="../../assets/datepickerair.js"></script>
+    <script src="../../assets/datepicker.en.js"></script>
+    <script src="../../assets/js/widgets.js"></script>
+    <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
+    <script src="../../assets/knockout-3.5.0.js"></script>
+    <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
+    <script src="../../assets/js/colors.js"></script>
+    <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
+    <script src="assets/daterangepicker/daterangepicker.min.js"></script>
+    <script>
+      $(".daterangepicker-field").daterangepicker({
+        forceUpdate: true,
+        callback: function (startDate, endDate, period) {
+          var title = startDate.format("L") + " – " + endDate.format("L");
+          $(this).val(title);
+        },
+      });
+
+      $("#timepicker_pop").timepicker();
+
+      $(function () {
+        $('input[name="date"]').daterangepicker(
+          {
+            singleDatePicker: true,
+            showDropdowns: true,
+            minYear: 1901,
+            maxYear: parseInt(moment().format("YYYY"), 10),
+          },
+          function (start, end, label) {
+            var years = moment().diff(start, "years");
+            alert("You are " + years + " years old!");
+          }
+        );
+      });
+
+      $(document).ready(function () {
+        $("#multiSelect1, #multiSelect2").formSelect();
+        $("select.select_all")
+          .siblings("ul")
+          .prepend("<li id=sm_select_all><span>Select All</span></li>");
+        $("li#sm_select_all").on("click", function () {
+          var jq_elem = $(this),
+            jq_elem_span = jq_elem.find("span"),
+            select_all = jq_elem_span.text() == "Select All",
+            set_text = select_all ? "Select None" : "Select All";
+          jq_elem_span.text(set_text);
+          jq_elem
+            .siblings("li")
+            .filter(function () {
+              return $(this).find("input").prop("checked") != select_all;
+            })
+            .click();
+        });
+      });
+
+      function notes(tableID) {
+        var table = document.getElementById(tableID);
+
+        var rowCount = table.rows.length;
+        var row = table.insertRow(rowCount);
+
+        var cell1 = row.insertCell(0);
+        cell1.innerHTML =
+          '<textarea class="form-control" cols="5" rows="5" > </textarea>';
+
+        var cell2 = row.insertCell(1);
+        cell2.innerHTML =
+          '<div class="fullscreen"> <ul class="list-unstyled order-list"> <li class="avatar avatar-sm"> <img class="rounded-circle" src="../../assets/images/user/user7.jpg" alt="user"> </li><li class="avatar avatar-sm"> <img class="rounded-circle" src="../../assets/images/user/user8.jpg" alt="user"> </li><div class="image-upload"> <label for="file-input"> <li _ngcontent-hhc-c5="" class="avatar avatar-sm" > <a href="#" class="favgs" data-toggle="modal" data-target="#addpeople" > <span _ngcontent-hhc-c5="" class="badge" >+<span id="count"> </span></span ></a> </li></label> </div></ul> </div>';
+      }
+
+      function notes_del(tableID) {
+        try {
+          var table = document.getElementById(tableID);
+          var rowCount = table.rows.length;
+
+          for (var i = 0; i < rowCount; i++) {
+            var row = table.rows[i];
+            var chkbox = row.cells[0].childNodes[0];
+            if (null != chkbox && true == chkbox.checked) {
+              table.deleteRow(i);
+              rowCount--;
+              i--;
+            }
+          }
+        } catch (e) {
+          alert(e);
+        }
+      }
+
+      function action(tableID) {
+        var table = document.getElementById(tableID);
+
+        var rowCount = table.rows.length;
+        var row = table.insertRow(rowCount);
+
+        var cell1 = row.insertCell(0);
+        var factor = rowCount;
+        cell1.innerHTML =
+          '<textarea class="form-control" cols="5" rows="5" > </textarea>';
+
+        var cell2 = row.insertCell(1);
+        cell2.innerHTML =
+          '<input type="text" class="modal-custom-input datepicker" id="datepicker" style="height: 38px !important;" />';
+        $(".datepicker").datepicker();
+
+        var cell3 = row.insertCell(2);
+        cell3.innerHTML =
+          '<div class="fullscreen"> <ul class="list-unstyled order-list"> <li class="avatar avatar-sm"> <img class="rounded-circle" src="../../assets/images/user/user7.jpg" alt="user"/> </li><div class="image-upload"> <label for="file-input"> <li _ngcontent-hhc-c5="" class="avatar avatar-sm"> <a href="#" class="favgs" data-toggle="modal" data-target="#addpeople" > <span _ngcontent-hhc-c5="" class="badge" >+</span > </a> </li></label> </div></ul> </div>';
+
+        var cell4 = row.insertCell(3);
+        cell4.innerHTML = '<input type="checkbox"  >';
+      }
+
+      function action_del(tableID) {
+        try {
+          var table = document.getElementById(tableID);
+          var rowCount = table.rows.length;
+
+          for (var i = 0; i < rowCount; i++) {
+            var row = table.rows[i];
+            var chkbox = row.cells[0].childNodes[0];
+            if (null != chkbox && true == chkbox.checked) {
+              table.deleteRow(i);
+              rowCount--;
+              i--;
+            }
+          }
+        } catch (e) {
+          alert(e);
+        }
+      }
+    </script>
+  </body></a
+>
