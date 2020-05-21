@@ -30,7 +30,8 @@
 }
 
 .initiative_profile_details .employee_info {
-  color: #111111 !important;
+  color: #1e252d !important;
+  font-weight: 600;
 }
 
 .savebt {

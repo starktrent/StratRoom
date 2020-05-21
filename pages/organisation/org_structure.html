@@ -11,6 +11,8 @@
     <link href="../../assets/css/app.min.css" rel="stylesheet" />
     <!-- Custom Css -->
     <link href="../../assets/css/style.css" rel="stylesheet" />
+    <link href="../../assets/org-tree-view/style.css" rel="stylesheet" />
+    <link href="../../assets/css/custom.css" rel="stylesheet" />
     <!-- <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" /> -->
     <link href="../../assets/css/startroom/org.css" rel="stylesheet" />
     <!-- You can choose a theme from css/styles instead of get all themes -->
@@ -34,18 +36,56 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <style>
-      html,
-      body {
-        font-family: poppins;
-        color: #333333;
-        background-image: url(http://dabeng.github.io/OrgChart/img/background.jpg);
-      }
-
       .orientation-right {
         top: 60px !important;
         right: 0 !important;
         left: auto !important;
         position: fixed;
+      }
+
+      #tree ul {
+        padding-left: 20px !important;
+        list-style-type: none !important;
+      }
+
+      #tree {
+        margin: 0;
+        padding: 0;
+      }
+
+      .caret-org {
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      .caret-org::before {
+        content: "\25B6";
+        color: #1e252d;
+        display: inline-block;
+        margin-right: 12px;
+        font-size: 12px;
+      }
+
+      .caret-org-down::before {
+        -ms-transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+
+      .nested-org {
+        display: none;
+        padding-left: 20px;
+      }
+
+      .nested-org li {
+        margin-top: 8px !important;
+      }
+
+      .active-org {
+        display: block;
       }
     </style>
   </head>
@@ -1768,19 +1808,123 @@
       </aside>
       <!-- #END# Edit Org Structure Sidebar -->
 
-      <button
-        class="btn pull-right"
-        style="
-          margin-top: -4%;
-          margin-right: 2%;
-          background-color: #1e252d;
-          color: #fff;
-        "
-      >
-        save
-      </button>
+      <!-- Org Structure Modal -->
+      <div id="org_structure" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" style="margin-top: 10%;">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4>Org Structure</h4>
+              <button
+                type="button"
+                class="close pull-right"
+                data-dismiss="modal"
+              >
+                &times;
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-12" style="margin-left: 40px;">
+                  <ul id="tree">
+                    <li>
+                      <a href="#">Lao Lao - General Manager</a>
+                      <ul>
+                        <li>
+                          <a href="#">Bo Miao - Department Manager</a>
+                        </li>
+                        <li>
+                          <a href="#">Su Miao - Department Manager</a>
+                          <ul>
+                            <li><a href="#">Tie Hua - Senior Engineer</a></li>
+                            <li>
+                              <a href="#">
+                                Hei Hei - Senior Engineer
+                                <ul>
+                                  <li>
+                                    <a href="#">Pang Pang - Engineer</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Xiang Xiang - UE Engineer</a>
+                                  </li>
+                                </ul>
+                              </a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <a href="#">Hong Miao - Department Manager</a>
+                        </li>
+                        <li>
+                          <a href="#">Chun Miao - Department Manager</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <!-- <ul id="tree">
+                    <li>
+                      <span class="caret-org">Lao Lao - General Manager</span>
+                      <ul class="nested-org">
+                        <li>Bo Miao - Department Manager</li>
+                        <li>
+                          <span class="caret-org"
+                            >Su Miao - Department Manager</span
+                          >
+                          <ul class="nested-org">
+                            <li>Tie Hua - Senior Engineer</li>
+                            <li>
+                              <span class="caret-org"
+                                >Hei Hei - Senior Engineer</span
+                              >
+                              <ul class="nested-org">
+                                <li>Pang Pang - Engineer</li>
+                                <li>Xiang Xiang - UE Engineer</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>Hong Miao - Department Manager</li>
+                        <li>Chun Miao - Department Manager</li>
+                      </ul>
+                    </li>
+                  </ul> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <section class="content">
         <div class="container-fluid">
+          <div class="row m-t--50">
+            <div class="col-md-11"></div>
+            <div class="col-md-1 custom-space-even">
+              <button
+                class="btn btn-custom-secondary"
+                data-toggle="modal"
+                data-target="#org_structure"
+              >
+                <i class="fas fa-project-diagram" style="font-size: 14px;"></i>
+              </button>
+
+              <button class="btn btn-custom-secondary">
+                <i class="fas fa-filter" style="font-size: 14px;"></i>
+              </button>
+
+              <div>
+                <input type="file" id="imgupload" style="display: none;" />
+                <button class="btn btn-custom-secondary" id="OpenImgUpload">
+                  <i class="fas fa-upload"></i>
+                </button>
+                <script>
+                  $("#OpenImgUpload").click(function () {
+                    $("#imgupload").trigger("click");
+                  });
+                </script>
+              </div>
+            </div>
+          </div>
           <div id="chart-container"></div>
         </div>
       </section>
@@ -1790,9 +1934,11 @@
     <script src="../../assets/js/widgets.js"></script>
     <!-- Custom Js -->
     <script src="../../assets/js/admin.js"></script>
+    <script src="../../assets/org-tree-view/MultiNestedList.js"></script>
     <script src="../../assets/jquery.orgchart.js"></script>
     <script src="../../assets/js/org_structure.js"></script>
     <script src="../../assets/knockout-3.5.0.js"></script>
+    <script src="../../assets/jquery-ui.min.js"></script>
     <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
     <script>
       $(".daterangepicker-field").daterangepicker({
@@ -1802,6 +1948,18 @@
           $(this).val(title);
         },
       });
+
+      var toggler = document.getElementsByClassName("caret-org");
+      var i;
+
+      for (i = 0; i < toggler.length; i++) {
+        toggler[i].addEventListener("click", function () {
+          this.parentElement
+            .querySelector(".nested-org")
+            .classList.toggle("active-org");
+          this.classList.toggle("caret-org-down");
+        });
+      }
     </script>
   </body>
 </html>

@@ -1,0 +1,75 @@
+#tree {
+  padding: 0em;
+}
+
+#tree li,
+#tree li ul li {
+  position: relative;
+  top: 0;
+  left: -20px;
+  bottom: 0;
+  padding-bottom: 7px;
+}
+
+#tree li ul {
+  margin-left: 4em;
+}
+
+#tree li {
+  list-style-type: none;
+}
+
+#tree li a {
+  padding: 0 0 0 4px;
+  position: relative;
+  top: 1.3em;
+}
+
+#tree li a:hover {
+  text-decoration: none;
+}
+
+#tree a.addBorderBefore:before {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 28px;
+  position: absolute;
+  left: -43px;
+  top: -18px;
+  border-left: 1px solid gray;
+}
+
+#tree li:before {
+  content: "";
+  display: inline-block;
+  width: 25px;
+  height: 0;
+  position: relative;
+  left: 0em;
+  top: 1em;
+  border-top: 1px solid gray;
+}
+
+#tree li ul li:before {
+  content: "";
+  display: inline-block;
+  width: 25px;
+  height: 0;
+  position: relative;
+  left: 0em;
+  top: 14px;
+  border-top: 1px solid gray;
+}
+
+#tree li ul li:last-child:after,
+#tree li:last-child:after {
+  content: "";
+  display: block;
+  width: 1em;
+  height: 1em;
+  position: relative;
+  background: #fff;
+  top: 9px;
+  left: -1px;
+}
