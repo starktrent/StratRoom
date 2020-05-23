@@ -21519,9 +21519,9 @@ span.badge {
   border-top-right-radius: 10px;
 }
 
-.modal .modal-header .modal-title {
+.modal .modal-header h4 {
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .modal .modal-content {

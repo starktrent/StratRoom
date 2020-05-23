@@ -2392,9 +2392,10 @@
       </div>
       <!--#END Activity Edit Description -->
 
-      <!--#START Sub Initiatives -->
+      <!--#START Action Description -->
       <div
-        class="modal fade sub_initative_popup"
+        class="modal fade"
+        id="action_desc_add_popup"
         tabindex="-1"
         role="dialog"
         aria-labelledby="myLargeModalLabel_1"
@@ -2403,78 +2404,81 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h6 class="modal-title" id="myLargeModalLabel_1">
-                Add Plan Description
-              </h6>
+              <h4>Action Description</h4>
               <button
                 type="button"
-                class="close"
+                class="close pull-right"
                 data-dismiss="modal"
-                aria-label="Close"
               >
-                <span aria-hidden="true">&times;</span>
+                &times;
               </button>
             </div>
             <div class="modal-body">
               <form id="sub_initative_Form">
-                <div class="form-row">
-                  <div class="form-group col-md-9">
-                    <label for="sub_initative_desc">Description</label>
-                    <input
-                      type="text"
-                      class="form-control browser-default"
-                      name="sub_initative_desc"
-                      id="kpi_id"
-                      placeholder=""
-                    />
-                  </div>
-                  <div class="form-group col-md-3">
-                    <label for="sub_initative_progress">Progress</label>
-                    <input
-                      type="text"
-                      class="form-control browser-default"
-                      name="sub_initative_progress"
-                      id="sub_initative_progress"
-                      placeholder=""
-                    />
+                <div class="row">
+                  <div class="form-group col-md-12">
+                    <label for="meeting-name">Description</label>
+                    <textarea class="form-control" rows="6"></textarea>
                   </div>
                 </div>
-                <div class="form-row">
+                <div class="row m-t-10">
                   <div class="form-group col-md-6">
-                    <label for="sub_initative_start_end">End Date</label>
-                    <input
-                      type="text"
-                      class="form-control browser-default date_pickers_single"
-                      data-language="en"
-                      name="sub_initative_start_end"
-                      id="sub_initative_start_end"
-                      placeholder=""
-                      data-multiple-dates-separator=" - "
-                      data-language="en"
-                      data-range="true"
-                    />
-                  </div>
-                  <div class="form-group browser-default col-md-6">
-                    <label for="attachment">Attachment</label>
+                    <label for="type">Status</label>
                     <select
-                      id="attachment"
-                      name="attachment"
-                      class="form-control mt-1"
+                      id="type"
+                      class="modal-custom-select"
+                      style="height: 40px !important;"
                     >
-                      <option></option>
+                      <option>Choose</option>
+                      <option value="Completed">Completed</option>
+                      <option value="Pending">Pending</option>
                     </select>
                   </div>
+                  <div class="form-group col-md-6">
+                    <label for="kpi_start_end_date">Date</label>
+                    <input
+                      type="text"
+                      class="modal-custom-input date_pickers_single"
+                      data-language="en"
+                      name="kpi_start_end_date"
+                      id="kpi_start_end_date"
+                      style="width: 96% !important; height: 58% !important;"
+                    />
+                  </div>
                 </div>
-                <div class="form-line right">
-                  <button
-                    type="button"
-                    class="btn-default1 btn"
-                    data-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    Cancel
-                  </button>
-                  <button class="initative_save_btn" value="Save">Save</button>
+                <div class="row m-t-10">
+                  <div class="form-group col-md-12">
+                    <label for="meeting-name">Progress</label>
+                    <input
+                      type="text"
+                      class="modal-custom-input"
+                      id="cause-name"
+                      style="height: 38px !important;"
+                    />
+                  </div>
+                </div>
+                <div class="row m-t-10">
+                  <div class="form-group col-md-12">
+                    <hr />
+                  </div>
+                  <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
+                  <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                    <button
+                      type="button"
+                      class="btn custom-form-control btn-custom-secondary"
+                      data-dismiss="modal"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                  <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                    <button
+                      type="button"
+                      class="btn custom-form-control btn-custom-primary"
+                    >
+                      Save
+                    </button>
+                  </div>
                 </div>
               </form>
             </div>
@@ -2502,7 +2506,134 @@
           </div>
         </div>
       </div>
-      <!--#END Sub Initiatives -->
+      <!--#END Action Description -->
+
+      <!--#START Action Description -->
+      <div
+        class="modal fade"
+        id="action_desc_edit_popup"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myLargeModalLabel_1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4>Action Description</h4>
+              <button
+                type="button"
+                class="close pull-right"
+                data-dismiss="modal"
+              >
+                &times;
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="sub_initative_Form">
+                <div class="row">
+                  <div class="form-group col-md-12">
+                    <label for="meeting-name">ID</label>
+                    <input
+                      type="text"
+                      class="modal-custom-input"
+                      id="cause-name"
+                      style="height: 38px !important;"
+                    />
+                  </div>
+                </div>
+                <div class="row m-t-10">
+                  <div class="form-group col-md-12">
+                    <label for="meeting-name">Description</label>
+                    <textarea class="form-control" rows="6"></textarea>
+                  </div>
+                </div>
+                <div class="row m-t-10">
+                  <div class="form-group col-md-6">
+                    <label for="type">Status</label>
+                    <select
+                      id="type"
+                      class="modal-custom-select"
+                      style="height: 40px !important;"
+                    >
+                      <option>Choose</option>
+                      <option value="Completed">Completed</option>
+                      <option value="Pending">Pending</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="kpi_start_end_date">Date</label>
+                    <input
+                      type="text"
+                      class="modal-custom-input date_pickers_single"
+                      data-language="en"
+                      name="kpi_start_end_date"
+                      id="kpi_start_end_date"
+                      style="width: 96% !important; height: 58% !important;"
+                    />
+                  </div>
+                </div>
+                <div class="row m-t-10">
+                  <div class="form-group col-md-12">
+                    <label for="meeting-name">Progress</label>
+                    <input
+                      type="text"
+                      class="modal-custom-input"
+                      id="cause-name"
+                      style="height: 38px !important;"
+                    />
+                  </div>
+                </div>
+                <div class="row m-t-10">
+                  <div class="form-group col-md-12">
+                    <hr />
+                  </div>
+                  <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
+                  <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                    <button
+                      type="button"
+                      class="btn custom-form-control btn-custom-secondary"
+                      data-dismiss="modal"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                  <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                    <button
+                      type="button"
+                      class="btn custom-form-control btn-custom-primary"
+                    >
+                      Save
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <div
+                class="d-flex flex-column flex-fill ml-4 mb-5 text-left font-11"
+              >
+                <div class="d-flex flex-row">
+                  <p class="kpi_audit">Audit</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <div class="d-flex flex-column">
+                    <p><span>Created By : </span><span>Arun</span></p>
+                    <p><span>Created Date : </span><span>Oct 02, 2019</span></p>
+                  </div>
+                  <div class="d-flex flex-column pl-5">
+                    <p><span>Modified By : </span><span>Karthik</span></p>
+                    <p>
+                      <span>Modified Date : </span><span>Oct 02, 2019</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--#END Action Description -->
 
       <!--#START Sub Initiatives Edit -->
       <div
@@ -2515,16 +2646,13 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h6 class="modal-title" id="myLargeModalLabel_1">
-                Edit Sub Initiative Description
-              </h6>
+              <h4>Edit Sub Initiative Description</h4>
               <button
                 type="button"
-                class="close"
+                class="close pull-right"
                 data-dismiss="modal"
-                aria-label="Close"
               >
-                <span aria-hidden="true">&times;</span>
+                &times;
               </button>
             </div>
             <div class="modal-body">
@@ -2624,16 +2752,13 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h6 class="modal-title" id="myLargeModalLabel_1">
-                View Cause and Consequence
-              </h6>
+              <h4>View Cause and Consequence</h4>
               <button
                 type="button"
-                class="close"
+                class="close pull-right"
                 data-dismiss="modal"
-                aria-label="Close"
               >
-                <span aria-hidden="true">&times;</span>
+                &times;
               </button>
             </div>
             <div class="">
@@ -2967,16 +3092,9 @@
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h6 class="modal-title" id="myLargeModalLabel_1">
-              Add Activities Description
-            </h6>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
+            <h4>Plan Description</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
             </button>
           </div>
           <div class="modal-body">
@@ -3611,16 +3729,9 @@
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h6 class="modal-title" id="myLargeModalLabel_1">
-              Add Activities Description
-            </h6>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
+            <h4>Add Activities Description</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
             </button>
           </div>
           <div class="modal-body">
@@ -3720,16 +3831,9 @@
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h6 class="modal-title" id="myLargeModalLabel_1">
-              Edit Activitive Description
-            </h6>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
+            <h4>Edit Activitive Description</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
             </button>
           </div>
           <div class="modal-body">
@@ -3829,28 +3933,13 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h6 class="modal-title" id="myLargeModalLabel_1">View Comments</h6>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
+            <h4>View Comments</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
             </button>
           </div>
           <div class="col-lg-12 col-md-12 sub_initiatives">
-            <div class="card">
-              <div class="header d-flex flex-row">
-                <h5 class="prob d-flex flex-fill">
-                  <strong
-                    class="editableTxt1"
-                    onkeypress="return (this.innerText.length <= 25)"
-                    editable="true"
-                    >Comments</strong
-                  >
-                </h5>
-              </div>
+            <div class="card" style="box-shadow: none;">
               <div class="comment-history" id="comment-conversation_1">
                 <ul id="comment-conversation">
                   <li>
@@ -4227,16 +4316,9 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h6 class="modal-title" id="myLargeModalLabel_1">
-              View Activitives
-            </h6>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
+            <h4>View Activitives</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
             </button>
           </div>
           <div class="col-lg-12 col-md-12 sub_initiatives">
@@ -4559,16 +4641,9 @@
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h6 class="modal-title" id="myLargeModalLabel_1">
-              Add Monitoring Description
-            </h6>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
+            <h4>Add Monitoring Description</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
             </button>
           </div>
           <div class="modal-body">
@@ -4655,16 +4730,9 @@
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h6 class="modal-title" id="myLargeModalLabel_1">
-              Edit Milestone Description
-            </h6>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
+            <h4>Edit Milestone Description</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
             </button>
           </div>
           <div class="modal-body">
@@ -4762,21 +4830,14 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h6 class="modal-title" id="myLargeModalLabel_1">
-              View Monitoring
-            </h6>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
+            <h4>View Monitoring</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
             </button>
           </div>
           <div class="col-lg-12 col-md-12 sub_initiatives">
             <div class="card">
-              <div class="header d-flex flex-row">
+              <!-- <div class="header d-flex flex-row">
                 <h5 class="prob d-flex flex-fill">
                   <strong
                     class="editableTxt1"
@@ -4785,7 +4846,7 @@
                     >Monitoring</strong
                   >
                 </h5>
-              </div>
+              </div> -->
               <div
                 class="d-flex flex-column employee_div_body_box_risk"
                 id="monitoring-box_risk_view"
@@ -5008,14 +5069,9 @@
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h6 class="modal-title" id="myLargeModalLabel">File Upload</h6>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
+            <h4>File Upload</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
             </button>
           </div>
           <div class="modal-body">
@@ -5292,7 +5348,6 @@
     <!-- #END# Scorecard Desc PopUp -->
 
     <!-- #END# Initatives Desc PopUp -->
-
     <section class="content" id="section">
       <!---------Initiatives--------->
       <div class="initiative_details">
@@ -7050,14 +7105,6 @@
                   >Risk Treatment</strong
                 >
               </h5>
-              <div class="create_initives add-sub-initiative">
-                <span
-                  class="sub_initiative"
-                  data-toggle="modal"
-                  data-target=".sub_plan_popup"
-                  ><i class="fa fa-plus"></i>Add</span
-                >
-              </div>
               <ul class="header-dropdown m-r--2">
                 <li class="dropdown m-t--10">
                   <a
@@ -7615,14 +7662,6 @@
                   >Review & Monitoring</strong
                 >
               </h5>
-              <div class="create_initives add-milestones">
-                <span
-                  class="sub_initiative"
-                  data-toggle="modal"
-                  data-target=".sub_milestone_popup"
-                  ><i class="fa fa-plus"></i>Add</span
-                >
-              </div>
               <ul class="header-dropdown m-r--2 d-flex">
                 <li class="dropdown m-t--10">
                   <a
@@ -7700,11 +7739,7 @@
                   </div>
                   <div class="d-flex flex-row">
                     <div class="d-flex flex-column flex-fill">
-                      <div class="d-flex flex-row">
-                        <h5 style="margin-left: 15%; margin-top: -6px;">
-                          Open
-                        </h5>
-                      </div>
+                      <div><strong>Open</strong></div>
                     </div>
                     <div class="d-flex flex-column">
                       <div><strong>Oct 09, 2019</strong></div>
@@ -7740,7 +7775,16 @@
                           <a
                             href="#"
                             data-toggle="modal"
-                            data-target=".sub_milestone_edit_popup"
+                            data-target="#action_desc_add_popup"
+                            onclick="return false;"
+                            >Add</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            data-toggle="modal"
+                            data-target="#action_desc_edit_popup"
                             onclick="return false;"
                             >Edit</a
                           >
@@ -7790,11 +7834,7 @@
                   </div>
                   <div class="d-flex flex-row">
                     <div class="d-flex flex-column flex-fill">
-                      <div class="d-flex flex-row">
-                        <h5 style="margin-left: 15%; margin-top: -6px;">
-                          Closed
-                        </h5>
-                      </div>
+                      <div><strong>Closed</strong></div>
                     </div>
                     <div class="d-flex flex-column">
                       <div><strong>Oct 09, 2019</strong></div>
@@ -7830,7 +7870,16 @@
                           <a
                             href="#"
                             data-toggle="modal"
-                            data-target=".sub_milestone_edit_popup"
+                            data-target="#action_desc_add_popup"
+                            onclick="return false;"
+                            >Add</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            data-toggle="modal"
+                            data-target="#action_desc_edit_popup"
                             onclick="return false;"
                             >Edit</a
                           >

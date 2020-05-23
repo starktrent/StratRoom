@@ -939,6 +939,7 @@ ul.gj-list-md li {
   font-size: 14px;
   border-radius: 4px;
   box-shadow: none;
+  font-weight: 600;
 }
 
 .btn-custom-primary:hover {
@@ -946,11 +947,7 @@ ul.gj-list-md li {
   border: 2px solid #1e252d;
   color: #1e252d;
   box-shadow: none;
-}
-
-.btn-custom-primary i {
-  margin-right: 2px;
-  font-size: 12px !important;
+  font-weight: 600;
 }
 
 .btn-custom-secondary {
@@ -966,11 +963,6 @@ ul.gj-list-md li {
   background-color: #f0f0f0;
   border-color: #e3e3e3;
   box-shadow: none;
-}
-
-.btn-custom-secondary i {
-  margin-right: 2px;
-  font-size: 12px !important;
 }
 
 .custom-space-even {
