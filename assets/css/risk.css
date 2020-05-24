@@ -463,7 +463,7 @@ a.nav-link {
 
 .header .create_initives .sub_initiative {
   display: flex;
-  padding: 2px 32px 0 0;
+  padding: 5px 32px 0 0;
 }
 
 .sub_initiatives .card .header .header-dropdown {
@@ -915,7 +915,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .sub_initiatives .header {
-  background: #1e252d !important;
+  background: #525252 !important;
   color: #fff !important;
   border-top-left-radius: 5px !important;
   border-top-right-radius: 5px !important;
