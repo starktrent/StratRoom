@@ -13,6 +13,7 @@
     <link href="../../assets/css/style.css" rel="stylesheet" />
     <link href="../../assets/css/custom.css" rel="stylesheet" />
     <link href="../../assets/css/risk.css" rel="stylesheet" />
+    <link href="../../assets/css/icheck-bootstrap.min.css" rel="stylesheet" />
     <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" />
     <!-- You can choose a theme from css/styles instead of get all themes -->
     <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
@@ -2392,123 +2393,7 @@
       </div>
       <!--#END Activity Edit Description -->
 
-      <!--#START Action Description -->
-      <div
-        class="modal fade"
-        id="action_desc_add_popup"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="myLargeModalLabel_1"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4>Action Description</h4>
-              <button
-                type="button"
-                class="close pull-right"
-                data-dismiss="modal"
-              >
-                &times;
-              </button>
-            </div>
-            <div class="modal-body">
-              <form id="sub_initative_Form">
-                <div class="row">
-                  <div class="form-group col-md-12">
-                    <label for="meeting-name">Description</label>
-                    <textarea class="form-control" rows="6"></textarea>
-                  </div>
-                </div>
-                <div class="row m-t-10">
-                  <div class="form-group col-md-6">
-                    <label for="type">Status</label>
-                    <select
-                      id="type"
-                      class="modal-custom-select"
-                      style="height: 40px !important;"
-                    >
-                      <option>Choose</option>
-                      <option value="Completed">Completed</option>
-                      <option value="Pending">Pending</option>
-                    </select>
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="kpi_start_end_date">Date</label>
-                    <input
-                      type="text"
-                      class="modal-custom-input date_pickers_single"
-                      data-language="en"
-                      name="kpi_start_end_date"
-                      id="kpi_start_end_date"
-                      style="width: 96% !important; height: 58% !important;"
-                    />
-                  </div>
-                </div>
-                <div class="row m-t-10">
-                  <div class="form-group col-md-12">
-                    <label for="meeting-name">Progress</label>
-                    <input
-                      type="text"
-                      class="modal-custom-input"
-                      id="cause-name"
-                      style="height: 38px !important;"
-                    />
-                  </div>
-                </div>
-                <div class="row m-t-10">
-                  <div class="form-group col-md-12">
-                    <hr />
-                  </div>
-                  <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
-                  <div class="form-group col-lg-2 col-md-3 col-sm-6">
-                    <button
-                      type="button"
-                      class="btn custom-form-control btn-custom-secondary"
-                      data-dismiss="modal"
-                    >
-                      Cancel
-                    </button>
-                  </div>
-                  <div class="form-group col-lg-2 col-md-3 col-sm-6">
-                    <button
-                      type="button"
-                      class="btn custom-form-control btn-custom-primary"
-                    >
-                      Save
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <div
-                class="d-flex flex-column flex-fill ml-4 mb-5 text-left font-11"
-              >
-                <div class="d-flex flex-row">
-                  <p class="kpi_audit">Audit</p>
-                </div>
-                <div class="d-flex flex-row">
-                  <div class="d-flex flex-column">
-                    <p><span>Created By : </span><span>Arun</span></p>
-                    <p><span>Created Date : </span><span>Oct 02, 2019</span></p>
-                  </div>
-                  <div class="d-flex flex-column pl-5">
-                    <p><span>Modified By : </span><span>Karthik</span></p>
-                    <p>
-                      <span>Modified Date : </span><span>Oct 02, 2019</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--#END Action Description -->
-
-      <!--#START Action Description -->
+      <!--#START Action Edit Description -->
       <div
         class="modal fade"
         id="action_desc_edit_popup"
@@ -2557,8 +2442,8 @@
                       style="height: 40px !important;"
                     >
                       <option>Choose</option>
-                      <option value="Completed">Completed</option>
-                      <option value="Pending">Pending</option>
+                      <option value="Open">Open</option>
+                      <option value="Closed">Closed</option>
                     </select>
                   </div>
                   <div class="form-group col-md-6">
@@ -6765,7 +6650,7 @@
                                         <a
                                           href="#"
                                           data-toggle="modal"
-                                          data-target="#activity_desc_edit_popup"
+                                          data-target="#activity_desc_add_popup"
                                           onclick="return false;"
                                           >Add</a
                                         >
@@ -7005,7 +6890,7 @@
                                         <a
                                           href="#"
                                           data-toggle="modal"
-                                          data-target="#activity_desc_edit_popup"
+                                          data-target="#activity_desc_add_popup"
                                           onclick="return false;"
                                           >Add</a
                                         >

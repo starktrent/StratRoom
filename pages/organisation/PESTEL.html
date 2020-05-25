@@ -19,13 +19,13 @@
     <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
     <!-- <link href="../../assets/css/table-view.css" rel="stylesheet" /> -->
     <!-- <link rel="stylesheet" href="../../assets/daterangepicker.css"> -->
-    <!-- <link rel="stylesheet" href="../../assets/datepickerair.css" /> -->
+    <link rel="stylesheet" href="../../assets/datepickerair.css" />
     <link href="../../assets/jquery-ui.min.css" rel="stylesheet" />
     <link href="../../assets/css/employee.css" rel="stylesheet" />
-    <!-- <link
+    <link
       href="../../assets/daterangepicker/daterangepicker.min.css"
       rel="stylesheet"
-    /> -->
+    />
     <link href="../../assets/css/employee.css" rel="stylesheet" />
     <!-- <link href="../../assets/bootstrap-datepicker.min.css" rel="stylesheet" /> -->
 
@@ -573,6 +573,7 @@
             <div class="d-flex flex-column" id="initiate_sidebar">
               <div
                 class="d-flex flex-column sub_initiative_sidebar_details side_border_p"
+                id="political_btn"
               >
                 <div class="d-flex flex-row p-b-5">
                   <div class="d-flex flex-column profile_content">
@@ -591,6 +592,7 @@
 
               <div
                 class="d-flex flex-column sub_initiative_sidebar_details side_border_e"
+                id="economical_btn"
               >
                 <div class="d-flex flex-row p-b-5">
                   <div class="d-flex flex-column profile_content">
@@ -609,6 +611,7 @@
 
               <div
                 class="d-flex flex-column sub_initiative_sidebar_details side_border_s"
+                id="social_btn"
               >
                 <div class="d-flex flex-row p-b-5">
                   <div class="d-flex flex-column profile_content">
@@ -627,6 +630,7 @@
 
               <div
                 class="d-flex flex-column sub_initiative_sidebar_details side_border_t"
+                id="tech_btn"
               >
                 <div class="d-flex flex-row p-b-5">
                   <div class="d-flex flex-column profile_content">
@@ -645,6 +649,7 @@
 
               <div
                 class="d-flex flex-column sub_initiative_sidebar_details side_border_en"
+                id="env_btn"
               >
                 <div class="d-flex flex-row p-b-5">
                   <div class="d-flex flex-column profile_content">
@@ -663,6 +668,7 @@
 
               <div
                 class="d-flex flex-column sub_initiative_sidebar_details side_border_l"
+                id="legal_btn"
               >
                 <div class="d-flex flex-row p-b-5">
                   <div class="d-flex flex-column profile_content">
@@ -686,9 +692,9 @@
     </div>
     <!-- #END# Left Sidebar -->
 
-    <!-- Create PESTEL Modal -->
-    <div id="add_new" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" style="margin-top: 4%;">
+    <!-- Create Political Modal -->
+    <div id="political_desc_add_popup" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="margin-top: 6%;">
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
@@ -722,14 +728,12 @@
                 <label for="datepicker">Next Due</label>
                 <input
                   type="text"
-                  class="modal-custom-input"
-                  id="datepicker"
-                  style="height: 38px !important;"
+                  class="modal-custom-input date_pickers_single"
+                  style="height: 58% !important;"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
                 />
-                <script>
-                  console.log();
-                  $("#datepicker").datepicker();
-                </script>
               </div>
             </div>
 
@@ -847,9 +851,9 @@
       </div>
     </div>
 
-    <!-- Edit PESTEL Modal -->
-    <div id="edit_pestel" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" style="margin-top: 4%;">
+    <!-- Edit Political Modal -->
+    <div id="political_desc_edit_popup" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="margin-top: 6%;">
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
@@ -883,14 +887,12 @@
                 <label for="datepicker1">Next Due</label>
                 <input
                   type="text"
-                  class="modal-custom-input"
-                  id="datepicker1"
-                  style="height: 38px !important;"
+                  class="modal-custom-input date_pickers_single"
+                  style="height: 58% !important;"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
                 />
-                <script>
-                  console.log();
-                  $("#datepicker1").datepicker();
-                </script>
               </div>
             </div>
 
@@ -999,7 +1001,1597 @@
                   type="button"
                   class="btn custom-form-control btn-custom-primary"
                 >
-                  Update
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Create Economic Modal -->
+    <div id="economic_desc_add_popup" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="margin-top: 6%;">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Economic Description</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label for="meeting-name">Economic</label>
+                <textarea class="form-control" rows="4"> </textarea>
+              </div>
+            </div>
+            <div class="row m-t-20">
+              <div class="form-group col-md-6">
+                <label for="type">Type</label>
+                <select
+                  id="type"
+                  class="modal-custom-select"
+                  style="height: 38px !important;"
+                >
+                  <option value="#">Choose Type</option>
+                  <option value="#">Internal</option>
+                  <option value="#">External</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="datepicker">Next Due</label>
+                <input
+                  type="text"
+                  class="modal-custom-input date_pickers_single"
+                  style="height: 58% !important;"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                />
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <label for="meeting-name">Business Impact</label>
+                <select
+                  id="type"
+                  class="modal-custom-select"
+                  style="height: 38px !important;"
+                >
+                  <option value="#">Choose Impact</option>
+                  <option value="#">Option 1</option>
+                  <option value="#">Option 2</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-12">
+                <label for="meeting-name">Status</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked1"
+                  name="defaultExample2"
+                  checked
+                />
+                <label class="custom-control-label" for="defaultChecked1">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #20eaab;"
+                  ></i>
+                </label>
+              </div>
+
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked2"
+                  name="defaultExample2"
+                />
+                <label class="custom-control-label" for="defaultChecked2">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #fffb10;"
+                  ></i>
+                </label>
+              </div>
+
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked3"
+                  name="defaultExample2"
+                />
+                <label class="custom-control-label" for="defaultChecked3">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #ea2020;"
+                  ></i>
+                </label>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <label for="objective_name">Responsible</label>
+                <select
+                  id="multiSelect1"
+                  name=""
+                  class="select_all"
+                  multiple
+                  style="display: none !important;"
+                >
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+              <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-secondary"
+                  data-dismiss="modal"
+                >
+                  Cancel
+                </button>
+              </div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-primary"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Economic Modal -->
+    <div id="economic_desc_edit_popup" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="margin-top: 6%;">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Economic Description</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label for="meeting-name">Economic</label>
+                <textarea class="form-control" rows="4"> </textarea>
+              </div>
+            </div>
+            <div class="row m-t-20">
+              <div class="form-group col-md-6">
+                <label for="type">Type</label>
+                <select
+                  id="type"
+                  class="modal-custom-select"
+                  style="height: 38px !important;"
+                >
+                  <option value="#">Choose Type</option>
+                  <option value="#">Internal</option>
+                  <option value="#">External</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="datepicker1">Next Due</label>
+                <input
+                  type="text"
+                  class="modal-custom-input date_pickers_single"
+                  style="height: 58% !important;"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                />
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <label for="meeting-name">Business Impact</label>
+                <select
+                  id="type"
+                  class="modal-custom-select"
+                  style="height: 38px !important;"
+                >
+                  <option value="#">Choose Impact</option>
+                  <option value="#">Option 1</option>
+                  <option value="#">Option 2</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-12">
+                <label for="meeting-name">Status</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked4"
+                  name="defaultExample2"
+                  checked
+                />
+                <label class="custom-control-label" for="defaultChecked4">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #20eaab;"
+                  ></i>
+                </label>
+              </div>
+
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked5"
+                  name="defaultExample2"
+                />
+                <label class="custom-control-label" for="defaultChecked5">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #fffb10;"
+                  ></i>
+                </label>
+              </div>
+
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked6"
+                  name="defaultExample2"
+                />
+                <label class="custom-control-label" for="defaultChecked6">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #ea2020;"
+                  ></i>
+                </label>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <label for="objective_name">Responsible</label>
+                <select
+                  id="multiSelect2"
+                  name=""
+                  class="select_all"
+                  multiple
+                  style="display: none !important;"
+                >
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+              <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-secondary"
+                  data-dismiss="modal"
+                >
+                  Cancel
+                </button>
+              </div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-primary"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Create Social Modal -->
+    <div id="social_desc_add_popup" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="margin-top: 6%;">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Social Description</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label for="meeting-name">Social</label>
+                <textarea class="form-control" rows="4"> </textarea>
+              </div>
+            </div>
+            <div class="row m-t-20">
+              <div class="form-group col-md-6">
+                <label for="type">Type</label>
+                <select
+                  id="type"
+                  class="modal-custom-select"
+                  style="height: 38px !important;"
+                >
+                  <option value="#">Choose Type</option>
+                  <option value="#">Internal</option>
+                  <option value="#">External</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="datepicker">Next Due</label>
+                <input
+                  type="text"
+                  class="modal-custom-input date_pickers_single"
+                  style="height: 58% !important;"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                />
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <label for="meeting-name">Business Impact</label>
+                <select
+                  id="type"
+                  class="modal-custom-select"
+                  style="height: 38px !important;"
+                >
+                  <option value="#">Choose Impact</option>
+                  <option value="#">Option 1</option>
+                  <option value="#">Option 2</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-12">
+                <label for="meeting-name">Status</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked1"
+                  name="defaultExample2"
+                  checked
+                />
+                <label class="custom-control-label" for="defaultChecked1">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #20eaab;"
+                  ></i>
+                </label>
+              </div>
+
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked2"
+                  name="defaultExample2"
+                />
+                <label class="custom-control-label" for="defaultChecked2">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #fffb10;"
+                  ></i>
+                </label>
+              </div>
+
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked3"
+                  name="defaultExample2"
+                />
+                <label class="custom-control-label" for="defaultChecked3">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #ea2020;"
+                  ></i>
+                </label>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <label for="objective_name">Responsible</label>
+                <select
+                  id="multiSelect1"
+                  name=""
+                  class="select_all"
+                  multiple
+                  style="display: none !important;"
+                >
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+              <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-secondary"
+                  data-dismiss="modal"
+                >
+                  Cancel
+                </button>
+              </div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-primary"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Social Modal -->
+    <div id="social_desc_edit_popup" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="margin-top: 6%;">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Social Description</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label for="meeting-name">Social</label>
+                <textarea class="form-control" rows="4"> </textarea>
+              </div>
+            </div>
+            <div class="row m-t-20">
+              <div class="form-group col-md-6">
+                <label for="type">Type</label>
+                <select
+                  id="type"
+                  class="modal-custom-select"
+                  style="height: 38px !important;"
+                >
+                  <option value="#">Choose Type</option>
+                  <option value="#">Internal</option>
+                  <option value="#">External</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="datepicker1">Next Due</label>
+                <input
+                  type="text"
+                  class="modal-custom-input date_pickers_single"
+                  style="height: 58% !important;"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                />
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <label for="meeting-name">Business Impact</label>
+                <select
+                  id="type"
+                  class="modal-custom-select"
+                  style="height: 38px !important;"
+                >
+                  <option value="#">Choose Impact</option>
+                  <option value="#">Option 1</option>
+                  <option value="#">Option 2</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-12">
+                <label for="meeting-name">Status</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked4"
+                  name="defaultExample2"
+                  checked
+                />
+                <label class="custom-control-label" for="defaultChecked4">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #20eaab;"
+                  ></i>
+                </label>
+              </div>
+
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked5"
+                  name="defaultExample2"
+                />
+                <label class="custom-control-label" for="defaultChecked5">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #fffb10;"
+                  ></i>
+                </label>
+              </div>
+
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked6"
+                  name="defaultExample2"
+                />
+                <label class="custom-control-label" for="defaultChecked6">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #ea2020;"
+                  ></i>
+                </label>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <label for="objective_name">Responsible</label>
+                <select
+                  id="multiSelect2"
+                  name=""
+                  class="select_all"
+                  multiple
+                  style="display: none !important;"
+                >
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+              <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-secondary"
+                  data-dismiss="modal"
+                >
+                  Cancel
+                </button>
+              </div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-primary"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Create Technological Modal -->
+    <div id="tech_desc_add_popup" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="margin-top: 6%;">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Technological Description</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label for="meeting-name">Technological</label>
+                <textarea class="form-control" rows="4"> </textarea>
+              </div>
+            </div>
+            <div class="row m-t-20">
+              <div class="form-group col-md-6">
+                <label for="type">Type</label>
+                <select
+                  id="type"
+                  class="modal-custom-select"
+                  style="height: 38px !important;"
+                >
+                  <option value="#">Choose Type</option>
+                  <option value="#">Internal</option>
+                  <option value="#">External</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="datepicker">Next Due</label>
+                <input
+                  type="text"
+                  class="modal-custom-input date_pickers_single"
+                  style="height: 58% !important;"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                />
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <label for="meeting-name">Business Impact</label>
+                <select
+                  id="type"
+                  class="modal-custom-select"
+                  style="height: 38px !important;"
+                >
+                  <option value="#">Choose Impact</option>
+                  <option value="#">Option 1</option>
+                  <option value="#">Option 2</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-12">
+                <label for="meeting-name">Status</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked1"
+                  name="defaultExample2"
+                  checked
+                />
+                <label class="custom-control-label" for="defaultChecked1">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #20eaab;"
+                  ></i>
+                </label>
+              </div>
+
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked2"
+                  name="defaultExample2"
+                />
+                <label class="custom-control-label" for="defaultChecked2">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #fffb10;"
+                  ></i>
+                </label>
+              </div>
+
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked3"
+                  name="defaultExample2"
+                />
+                <label class="custom-control-label" for="defaultChecked3">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #ea2020;"
+                  ></i>
+                </label>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <label for="objective_name">Responsible</label>
+                <select
+                  id="multiSelect1"
+                  name=""
+                  class="select_all"
+                  multiple
+                  style="display: none !important;"
+                >
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+              <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-secondary"
+                  data-dismiss="modal"
+                >
+                  Cancel
+                </button>
+              </div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-primary"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Technological Modal -->
+    <div id="tech_desc_edit_popup" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="margin-top: 6%;">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Technological Description</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label for="meeting-name">Technological</label>
+                <textarea class="form-control" rows="4"> </textarea>
+              </div>
+            </div>
+            <div class="row m-t-20">
+              <div class="form-group col-md-6">
+                <label for="type">Type</label>
+                <select
+                  id="type"
+                  class="modal-custom-select"
+                  style="height: 38px !important;"
+                >
+                  <option value="#">Choose Type</option>
+                  <option value="#">Internal</option>
+                  <option value="#">External</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="datepicker1">Next Due</label>
+                <input
+                  type="text"
+                  class="modal-custom-input date_pickers_single"
+                  style="height: 58% !important;"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                />
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <label for="meeting-name">Business Impact</label>
+                <select
+                  id="type"
+                  class="modal-custom-select"
+                  style="height: 38px !important;"
+                >
+                  <option value="#">Choose Impact</option>
+                  <option value="#">Option 1</option>
+                  <option value="#">Option 2</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-12">
+                <label for="meeting-name">Status</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked4"
+                  name="defaultExample2"
+                  checked
+                />
+                <label class="custom-control-label" for="defaultChecked4">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #20eaab;"
+                  ></i>
+                </label>
+              </div>
+
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked5"
+                  name="defaultExample2"
+                />
+                <label class="custom-control-label" for="defaultChecked5">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #fffb10;"
+                  ></i>
+                </label>
+              </div>
+
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked6"
+                  name="defaultExample2"
+                />
+                <label class="custom-control-label" for="defaultChecked6">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #ea2020;"
+                  ></i>
+                </label>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <label for="objective_name">Responsible</label>
+                <select
+                  id="multiSelect2"
+                  name=""
+                  class="select_all"
+                  multiple
+                  style="display: none !important;"
+                >
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+              <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-secondary"
+                  data-dismiss="modal"
+                >
+                  Cancel
+                </button>
+              </div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-primary"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Create Environmental Modal -->
+    <div id="env_desc_add_popup" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="margin-top: 6%;">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Environmental Description</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label for="meeting-name">Environmental</label>
+                <textarea class="form-control" rows="4"> </textarea>
+              </div>
+            </div>
+            <div class="row m-t-20">
+              <div class="form-group col-md-6">
+                <label for="type">Type</label>
+                <select
+                  id="type"
+                  class="modal-custom-select"
+                  style="height: 38px !important;"
+                >
+                  <option value="#">Choose Type</option>
+                  <option value="#">Internal</option>
+                  <option value="#">External</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="datepicker">Next Due</label>
+                <input
+                  type="text"
+                  class="modal-custom-input date_pickers_single"
+                  style="height: 58% !important;"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                />
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <label for="meeting-name">Business Impact</label>
+                <select
+                  id="type"
+                  class="modal-custom-select"
+                  style="height: 38px !important;"
+                >
+                  <option value="#">Choose Impact</option>
+                  <option value="#">Option 1</option>
+                  <option value="#">Option 2</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-12">
+                <label for="meeting-name">Status</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked1"
+                  name="defaultExample2"
+                  checked
+                />
+                <label class="custom-control-label" for="defaultChecked1">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #20eaab;"
+                  ></i>
+                </label>
+              </div>
+
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked2"
+                  name="defaultExample2"
+                />
+                <label class="custom-control-label" for="defaultChecked2">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #fffb10;"
+                  ></i>
+                </label>
+              </div>
+
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked3"
+                  name="defaultExample2"
+                />
+                <label class="custom-control-label" for="defaultChecked3">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #ea2020;"
+                  ></i>
+                </label>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <label for="objective_name">Responsible</label>
+                <select
+                  id="multiSelect1"
+                  name=""
+                  class="select_all"
+                  multiple
+                  style="display: none !important;"
+                >
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+              <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-secondary"
+                  data-dismiss="modal"
+                >
+                  Cancel
+                </button>
+              </div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-primary"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Environmental Modal -->
+    <div id="env_desc_edit_popup" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="margin-top: 6%;">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Environmental Description</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label for="meeting-name">Environmental</label>
+                <textarea class="form-control" rows="4"> </textarea>
+              </div>
+            </div>
+            <div class="row m-t-20">
+              <div class="form-group col-md-6">
+                <label for="type">Type</label>
+                <select
+                  id="type"
+                  class="modal-custom-select"
+                  style="height: 38px !important;"
+                >
+                  <option value="#">Choose Type</option>
+                  <option value="#">Internal</option>
+                  <option value="#">External</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="datepicker1">Next Due</label>
+                <input
+                  type="text"
+                  class="modal-custom-input date_pickers_single"
+                  style="height: 58% !important;"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                />
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <label for="meeting-name">Business Impact</label>
+                <select
+                  id="type"
+                  class="modal-custom-select"
+                  style="height: 38px !important;"
+                >
+                  <option value="#">Choose Impact</option>
+                  <option value="#">Option 1</option>
+                  <option value="#">Option 2</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-12">
+                <label for="meeting-name">Status</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked4"
+                  name="defaultExample2"
+                  checked
+                />
+                <label class="custom-control-label" for="defaultChecked4">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #20eaab;"
+                  ></i>
+                </label>
+              </div>
+
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked5"
+                  name="defaultExample2"
+                />
+                <label class="custom-control-label" for="defaultChecked5">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #fffb10;"
+                  ></i>
+                </label>
+              </div>
+
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked6"
+                  name="defaultExample2"
+                />
+                <label class="custom-control-label" for="defaultChecked6">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #ea2020;"
+                  ></i>
+                </label>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <label for="objective_name">Responsible</label>
+                <select
+                  id="multiSelect2"
+                  name=""
+                  class="select_all"
+                  multiple
+                  style="display: none !important;"
+                >
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+              <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-secondary"
+                  data-dismiss="modal"
+                >
+                  Cancel
+                </button>
+              </div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-primary"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Create Legal Modal -->
+    <div id="legal_desc_add_popup" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="margin-top: 6%;">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Legal Description</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label for="meeting-name">Legal</label>
+                <textarea class="form-control" rows="4"> </textarea>
+              </div>
+            </div>
+            <div class="row m-t-20">
+              <div class="form-group col-md-6">
+                <label for="type">Type</label>
+                <select
+                  id="type"
+                  class="modal-custom-select"
+                  style="height: 38px !important;"
+                >
+                  <option value="#">Choose Type</option>
+                  <option value="#">Internal</option>
+                  <option value="#">External</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="datepicker">Next Due</label>
+                <input
+                  type="text"
+                  class="modal-custom-input date_pickers_single"
+                  style="height: 58% !important;"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                />
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <label for="meeting-name">Business Impact</label>
+                <select
+                  id="type"
+                  class="modal-custom-select"
+                  style="height: 38px !important;"
+                >
+                  <option value="#">Choose Impact</option>
+                  <option value="#">Option 1</option>
+                  <option value="#">Option 2</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-12">
+                <label for="meeting-name">Status</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked1"
+                  name="defaultExample2"
+                  checked
+                />
+                <label class="custom-control-label" for="defaultChecked1">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #20eaab;"
+                  ></i>
+                </label>
+              </div>
+
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked2"
+                  name="defaultExample2"
+                />
+                <label class="custom-control-label" for="defaultChecked2">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #fffb10;"
+                  ></i>
+                </label>
+              </div>
+
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked3"
+                  name="defaultExample2"
+                />
+                <label class="custom-control-label" for="defaultChecked3">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #ea2020;"
+                  ></i>
+                </label>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <label for="objective_name">Responsible</label>
+                <select
+                  id="multiSelect1"
+                  name=""
+                  class="select_all"
+                  multiple
+                  style="display: none !important;"
+                >
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+              <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-secondary"
+                  data-dismiss="modal"
+                >
+                  Cancel
+                </button>
+              </div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-primary"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Legal Modal -->
+    <div id="legal_desc_edit_popup" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="margin-top: 6%;">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Legal Description</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label for="meeting-name">Legal</label>
+                <textarea class="form-control" rows="4"> </textarea>
+              </div>
+            </div>
+            <div class="row m-t-20">
+              <div class="form-group col-md-6">
+                <label for="type">Type</label>
+                <select
+                  id="type"
+                  class="modal-custom-select"
+                  style="height: 38px !important;"
+                >
+                  <option value="#">Choose Type</option>
+                  <option value="#">Internal</option>
+                  <option value="#">External</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="datepicker1">Next Due</label>
+                <input
+                  type="text"
+                  class="modal-custom-input date_pickers_single"
+                  style="height: 58% !important;"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                />
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <label for="meeting-name">Business Impact</label>
+                <select
+                  id="type"
+                  class="modal-custom-select"
+                  style="height: 38px !important;"
+                >
+                  <option value="#">Choose Impact</option>
+                  <option value="#">Option 1</option>
+                  <option value="#">Option 2</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-12">
+                <label for="meeting-name">Status</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked4"
+                  name="defaultExample2"
+                  checked
+                />
+                <label class="custom-control-label" for="defaultChecked4">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #20eaab;"
+                  ></i>
+                </label>
+              </div>
+
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked5"
+                  name="defaultExample2"
+                />
+                <label class="custom-control-label" for="defaultChecked5">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #fffb10;"
+                  ></i>
+                </label>
+              </div>
+
+              <div class="form-group col-4 custom-control custom-radio">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="defaultChecked6"
+                  name="defaultExample2"
+                />
+                <label class="custom-control-label" for="defaultChecked6">
+                  <i
+                    class="fas fa-flag status-flag"
+                    style="color: #ea2020;"
+                  ></i>
+                </label>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <label for="objective_name">Responsible</label>
+                <select
+                  id="multiSelect2"
+                  name=""
+                  class="select_all"
+                  multiple
+                  style="display: none !important;"
+                >
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+              <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-secondary"
+                  data-dismiss="modal"
+                >
+                  Cancel
+                </button>
+              </div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-primary"
+                >
+                  Save
                 </button>
               </div>
             </div>
@@ -1188,14 +2780,12 @@
                   <td>
                     <input
                       type="text"
-                      class="modal-custom-input"
-                      id="datepicker2"
-                      style="height: 38px !important;"
+                      class="modal-custom-input date_pickers_single"
+                      data-language="en"
+                      name="kpi_start_end_date"
+                      id="kpi_start_end_date"
+                      style="width: 88% !important; height: 36px !important;"
                     />
-                    <script>
-                      console.log();
-                      $("#datepicker2").datepicker();
-                    </script>
                   </td>
                   <td>
                     <div class="fullscreen">
@@ -1239,14 +2829,12 @@
                   <td>
                     <input
                       type="text"
-                      class="modal-custom-input"
-                      id="datepicker3"
-                      style="height: 38px !important;"
+                      class="modal-custom-input date_pickers_single"
+                      data-language="en"
+                      name="kpi_start_end_date"
+                      id="kpi_start_end_date"
+                      style="width: 88% !important; height: 36px !important;"
                     />
-                    <script>
-                      console.log();
-                      $("#datepicker3").datepicker();
-                    </script>
                   </td>
                   <td>
                     <div class="fullscreen">
@@ -1335,14 +2923,14 @@
         <div class="collapse_arrow_left">
           <i class="arrow_collapse_size fas fa-caret-left"></i>
         </div>
-        <div class="row">
+        <div class="row" id="political_section">
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <div class="card cardBox">
               <div class="row">
                 <div
                   class="col-12"
                   data-toggle="modal"
-                  data-target="#add_new"
+                  data-target="#political_desc_add_popup"
                   style="
                     text-align: center;
                     color: #c3c3c3;
@@ -1396,7 +2984,7 @@
                     <i
                       class="fas fa-pen"
                       data-toggle="modal"
-                      data-target="#edit_pestel"
+                      data-target="#political_desc_edit_popup"
                     ></i>
                     <i class="fas fa-trash"></i>
                   </span>
@@ -1515,14 +3103,41 @@
               </div>
             </div>
           </div>
+        </div>
 
+        <div class="row" id="economical_section" style="display: none;">
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="card cardBox">
+              <div class="row">
+                <div
+                  class="col-12"
+                  data-toggle="modal"
+                  data-target="#economic_desc_add_popup"
+                  style="
+                    text-align: center;
+                    color: #c3c3c3;
+                    padding: 86px 0;
+                    cursor: pointer;
+                  "
+                >
+                  <span>
+                    <i
+                      style="font-size: 24px; padding-bottom: 8px;"
+                      class="fas fa-plus"
+                    ></i>
+                  </span>
+                  <h5>Add New</h5>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <div class="card cardBox">
               <div class="row">
                 <div class="col-md-3 col-3">
                   <span
                     style="
-                      background-color: #9c2846;
+                      background-color: #002f73;
                       color: #ffffff;
                       padding: 8px 12px;
                       border-radius: 8px 0 8px 0;
@@ -1532,7 +3147,7 @@
                       font-size: 14px;
                       font-weight: 600;
                     "
-                    >P</span
+                    >E</span
                   >
                 </div>
                 <div class="col-md-6 col-6">
@@ -1551,7 +3166,7 @@
                     <i
                       class="fas fa-pen"
                       data-toggle="modal"
-                      data-target="#edit_pestel"
+                      data-target="#economic_desc_edit_popup"
                     ></i>
                     <i class="fas fa-trash"></i>
                   </span>
@@ -1670,14 +3285,41 @@
               </div>
             </div>
           </div>
+        </div>
 
+        <div class="row" id="social_section" style="display: none;">
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="card cardBox">
+              <div class="row">
+                <div
+                  class="col-12"
+                  data-toggle="modal"
+                  data-target="#social_desc_add_popup"
+                  style="
+                    text-align: center;
+                    color: #c3c3c3;
+                    padding: 86px 0;
+                    cursor: pointer;
+                  "
+                >
+                  <span>
+                    <i
+                      style="font-size: 24px; padding-bottom: 8px;"
+                      class="fas fa-plus"
+                    ></i>
+                  </span>
+                  <h5>Add New</h5>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <div class="card cardBox">
               <div class="row">
                 <div class="col-md-3 col-3">
                   <span
                     style="
-                      background-color: #9c2846;
+                      background-color: #a4730d;
                       color: #ffffff;
                       padding: 8px 12px;
                       border-radius: 8px 0 8px 0;
@@ -1687,7 +3329,7 @@
                       font-size: 14px;
                       font-weight: 600;
                     "
-                    >P</span
+                    >S</span
                   >
                 </div>
                 <div class="col-md-6 col-6">
@@ -1706,7 +3348,553 @@
                     <i
                       class="fas fa-pen"
                       data-toggle="modal"
-                      data-target="#edit_pestel"
+                      data-target="#social_desc_edit_popup"
+                    ></i>
+                    <i class="fas fa-trash"></i>
+                  </span>
+                </div>
+                <div class="col-12">
+                  <p class="page-card-desc">
+                    Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua...
+                  </p>
+
+                  <p class="business-impact">
+                    <span>Business Impact : </span>
+                    <span>Lorem ipsum dolor sit amet elit</span>
+                  </p>
+                </div>
+                <div class="col-4" style="text-align: center;">
+                  <h6 style="font-size: 12px;">Responsible</h6>
+                  <div class="d-flex flex-column">
+                    <ul class="list-unstyled order-list d-flex">
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="50"
+                        />
+                      </li>
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="50"
+                        />
+                      </li>
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="50"
+                        />
+                      </li>
+
+                      <li class="avatar avatar-sm">
+                        <span _ngcontent-hhc-c5="" class="badge">+5</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-4 next-due" style="text-align: center;">
+                  <h6 style="font-size: 12px;">Next Due</h6>
+                  <p>Oct 12, 2020</p>
+                </div>
+                <div class="col-4 status" style="text-align: center;">
+                  <h6 style="font-size: 12px;">Status</h6>
+                  <span>
+                    <i class="fas fa-flag"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="row text-center"
+                style="
+                  background-color: #1e252d;
+                  border-bottom-left-radius: 8px;
+                  border-bottom-right-radius: 8px;
+                "
+              >
+                <div class="col-md-12 card-footer">
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#notes"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-clipboard"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Recommendation"
+                    ></i>
+                  </a>
+
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#action"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-bolt"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Action"
+                    ></i>
+                  </a>
+
+                  <a href="#" class="card-footer-icon">
+                    <label for="file-input1">
+                      <i
+                        class="fas fa-paperclip"
+                        data-toggle="tooltip"
+                        data-placement="bottom"
+                        title="Attachment"
+                      ></i>
+                    </label>
+                    <input
+                      id="file-input1"
+                      style="display: none;"
+                      type="file"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" id="tech_section" style="display: none;">
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="card cardBox">
+              <div class="row">
+                <div
+                  class="col-12"
+                  data-toggle="modal"
+                  data-target="#tech_desc_add_popup"
+                  style="
+                    text-align: center;
+                    color: #c3c3c3;
+                    padding: 86px 0;
+                    cursor: pointer;
+                  "
+                >
+                  <span>
+                    <i
+                      style="font-size: 24px; padding-bottom: 8px;"
+                      class="fas fa-plus"
+                    ></i>
+                  </span>
+                  <h5>Add New</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="card cardBox">
+              <div class="row">
+                <div class="col-md-3 col-3">
+                  <span
+                    style="
+                      background-color: #af3c00;
+                      color: #ffffff;
+                      padding: 8px 12px;
+                      border-radius: 8px 0 8px 0;
+                      margin-left: -16px;
+                      margin-top: -16px;
+                      position: absolute;
+                      font-size: 14px;
+                      font-weight: 600;
+                    "
+                    >T</span
+                  >
+                </div>
+                <div class="col-md-6 col-6">
+                  <span
+                    style="
+                      display: inherit;
+                      text-align: center;
+                      font-size: 13px;
+                    "
+                  >
+                    <strong>TYPE :</strong> EXTERNAL
+                  </span>
+                </div>
+                <div class="col-md-3 col-3">
+                  <span class="card-icons pull-right">
+                    <i
+                      class="fas fa-pen"
+                      data-toggle="modal"
+                      data-target="#tech_desc_edit_popup"
+                    ></i>
+                    <i class="fas fa-trash"></i>
+                  </span>
+                </div>
+                <div class="col-12">
+                  <p class="page-card-desc">
+                    Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua...
+                  </p>
+
+                  <p class="business-impact">
+                    <span>Business Impact : </span>
+                    <span>Lorem ipsum dolor sit amet elit</span>
+                  </p>
+                </div>
+                <div class="col-4" style="text-align: center;">
+                  <h6 style="font-size: 12px;">Responsible</h6>
+                  <div class="d-flex flex-column">
+                    <ul class="list-unstyled order-list d-flex">
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="50"
+                        />
+                      </li>
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="50"
+                        />
+                      </li>
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="50"
+                        />
+                      </li>
+
+                      <li class="avatar avatar-sm">
+                        <span _ngcontent-hhc-c5="" class="badge">+5</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-4 next-due" style="text-align: center;">
+                  <h6 style="font-size: 12px;">Next Due</h6>
+                  <p>Oct 12, 2020</p>
+                </div>
+                <div class="col-4 status" style="text-align: center;">
+                  <h6 style="font-size: 12px;">Status</h6>
+                  <span>
+                    <i class="fas fa-flag"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="row text-center"
+                style="
+                  background-color: #1e252d;
+                  border-bottom-left-radius: 8px;
+                  border-bottom-right-radius: 8px;
+                "
+              >
+                <div class="col-md-12 card-footer">
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#notes"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-clipboard"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Recommendation"
+                    ></i>
+                  </a>
+
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#action"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-bolt"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Action"
+                    ></i>
+                  </a>
+
+                  <a href="#" class="card-footer-icon">
+                    <label for="file-input1">
+                      <i
+                        class="fas fa-paperclip"
+                        data-toggle="tooltip"
+                        data-placement="bottom"
+                        title="Attachment"
+                      ></i>
+                    </label>
+                    <input
+                      id="file-input1"
+                      style="display: none;"
+                      type="file"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" id="env_section" style="display: none;">
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="card cardBox">
+              <div class="row">
+                <div
+                  class="col-12"
+                  data-toggle="modal"
+                  data-target="#env_desc_add_popup"
+                  style="
+                    text-align: center;
+                    color: #c3c3c3;
+                    padding: 86px 0;
+                    cursor: pointer;
+                  "
+                >
+                  <span>
+                    <i
+                      style="font-size: 24px; padding-bottom: 8px;"
+                      class="fas fa-plus"
+                    ></i>
+                  </span>
+                  <h5>Add New</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="card cardBox">
+              <div class="row">
+                <div class="col-md-3 col-3">
+                  <span
+                    style="
+                      background-color: #437204;
+                      color: #ffffff;
+                      padding: 8px 12px;
+                      border-radius: 8px 0 8px 0;
+                      margin-left: -16px;
+                      margin-top: -16px;
+                      position: absolute;
+                      font-size: 14px;
+                      font-weight: 600;
+                    "
+                    >E</span
+                  >
+                </div>
+                <div class="col-md-6 col-6">
+                  <span
+                    style="
+                      display: inherit;
+                      text-align: center;
+                      font-size: 13px;
+                    "
+                  >
+                    <strong>TYPE :</strong> EXTERNAL
+                  </span>
+                </div>
+                <div class="col-md-3 col-3">
+                  <span class="card-icons pull-right">
+                    <i
+                      class="fas fa-pen"
+                      data-toggle="modal"
+                      data-target="#env_desc_edit_popup"
+                    ></i>
+                    <i class="fas fa-trash"></i>
+                  </span>
+                </div>
+                <div class="col-12">
+                  <p class="page-card-desc">
+                    Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua...
+                  </p>
+
+                  <p class="business-impact">
+                    <span>Business Impact : </span>
+                    <span>Lorem ipsum dolor sit amet elit</span>
+                  </p>
+                </div>
+                <div class="col-4" style="text-align: center;">
+                  <h6 style="font-size: 12px;">Responsible</h6>
+                  <div class="d-flex flex-column">
+                    <ul class="list-unstyled order-list d-flex">
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="50"
+                        />
+                      </li>
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="50"
+                        />
+                      </li>
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="50"
+                        />
+                      </li>
+
+                      <li class="avatar avatar-sm">
+                        <span _ngcontent-hhc-c5="" class="badge">+5</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-4 next-due" style="text-align: center;">
+                  <h6 style="font-size: 12px;">Next Due</h6>
+                  <p>Oct 12, 2020</p>
+                </div>
+                <div class="col-4 status" style="text-align: center;">
+                  <h6 style="font-size: 12px;">Status</h6>
+                  <span>
+                    <i class="fas fa-flag"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="row text-center"
+                style="
+                  background-color: #1e252d;
+                  border-bottom-left-radius: 8px;
+                  border-bottom-right-radius: 8px;
+                "
+              >
+                <div class="col-md-12 card-footer">
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#notes"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-clipboard"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Recommendation"
+                    ></i>
+                  </a>
+
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#action"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-bolt"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Action"
+                    ></i>
+                  </a>
+
+                  <a href="#" class="card-footer-icon">
+                    <label for="file-input1">
+                      <i
+                        class="fas fa-paperclip"
+                        data-toggle="tooltip"
+                        data-placement="bottom"
+                        title="Attachment"
+                      ></i>
+                    </label>
+                    <input
+                      id="file-input1"
+                      style="display: none;"
+                      type="file"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" id="legal_section" style="display: none;">
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="card cardBox">
+              <div class="row">
+                <div
+                  class="col-12"
+                  data-toggle="modal"
+                  data-target="#legal_desc_add_popup"
+                  style="
+                    text-align: center;
+                    color: #c3c3c3;
+                    padding: 86px 0;
+                    cursor: pointer;
+                  "
+                >
+                  <span>
+                    <i
+                      style="font-size: 24px; padding-bottom: 8px;"
+                      class="fas fa-plus"
+                    ></i>
+                  </span>
+                  <h5>Add New</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="card cardBox">
+              <div class="row">
+                <div class="col-md-3 col-3">
+                  <span
+                    style="
+                      background-color: #490136;
+                      color: #ffffff;
+                      padding: 8px 12px;
+                      border-radius: 8px 0 8px 0;
+                      margin-left: -16px;
+                      margin-top: -16px;
+                      position: absolute;
+                      font-size: 14px;
+                      font-weight: 600;
+                    "
+                    >L</span
+                  >
+                </div>
+                <div class="col-md-6 col-6">
+                  <span
+                    style="
+                      display: inherit;
+                      text-align: center;
+                      font-size: 13px;
+                    "
+                  >
+                    <strong>TYPE :</strong> EXTERNAL
+                  </span>
+                </div>
+                <div class="col-md-3 col-3">
+                  <span class="card-icons pull-right">
+                    <i
+                      class="fas fa-pen"
+                      data-toggle="modal"
+                      data-target="#legal_desc_edit_popup"
                     ></i>
                     <i class="fas fa-trash"></i>
                   </span>
@@ -1949,7 +4137,7 @@
 
         var cell2 = row.insertCell(1);
         cell2.innerHTML =
-          '<input type="text" class="modal-custom-input datepicker" id="datepicker" style="height: 38px !important;" />';
+          '<input type="text" class="modal-custom-input date_pickers_single" style="height: 58% !important;" data-language="en" name="kpi_start_end_date" id="kpi_start_end_date" style="width: 88% !important; height: 36px !important;" />';
         $(".datepicker").datepicker();
 
         var cell3 = row.insertCell(2);
@@ -1978,6 +4166,50 @@
           alert(e);
         }
       }
+
+      $(document).ready(function () {
+        $("#political_btn").click(function () {
+          $("#political_section").show();
+          $(
+            "#economical_section, #social_section, #tech_section, #env_section, #legal_section"
+          ).hide();
+        });
+
+        $("#economical_btn").click(function () {
+          $("#economical_section").show();
+          $(
+            "#political_section, #social_section, #tech_section, #env_section, #legal_section"
+          ).hide();
+        });
+
+        $("#social_btn").click(function () {
+          $("#social_section").show();
+          $(
+            "#economical_section, #political_section, #tech_section, #env_section, #legal_section"
+          ).hide();
+        });
+
+        $("#tech_btn").click(function () {
+          $("#tech_section").show();
+          $(
+            "#economical_section, #social_section, #political_section, #env_section, #legal_section"
+          ).hide();
+        });
+
+        $("#env_btn").click(function () {
+          $("#env_section").show();
+          $(
+            "#economical_section, #social_section, #tech_section, #political_section, #legal_section"
+          ).hide();
+        });
+
+        $("#legal_btn").click(function () {
+          $("#legal_section").show();
+          $(
+            "#economical_section, #social_section, #tech_section, #env_section, #political_section"
+          ).hide();
+        });
+      });
     </script>
   </body></a
 >

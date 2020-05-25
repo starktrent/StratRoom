@@ -944,11 +944,11 @@ ul.gj-list-md li {
 }
 
 .btn-custom-primary:hover {
-  background-color: #fff;
+  /* background-color: #fff;
   border: 2px solid #1e252d;
-  color: #1e252d;
+  color: #1e252d; */
   box-shadow: none;
-  font-weight: 600;
+  /* font-weight: 600; */
 }
 
 .btn-custom-secondary {
@@ -961,8 +961,8 @@ ul.gj-list-md li {
 }
 
 .btn-custom-secondary:hover {
-  background-color: #f0f0f0;
-  border-color: #e3e3e3;
+  /* background-color: #f0f0f0;
+  border-color: #e3e3e3; */
   box-shadow: none;
 }
 
