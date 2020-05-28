@@ -387,11 +387,9 @@
                 <label for="">Task Name</label>
                 <input type="text" class="modal-custom-input" placeholder="" />
               </div>
+            </div>
 
-              <div class="form-group col-md-12">
-                <hr />
-              </div>
-
+            <div class="row m-t-10">
               <div class="form-group col-md-12">
                 <label for="">Task Description</label>
                 <textarea
@@ -400,53 +398,27 @@
                   rows="6"
                 ></textarea>
               </div>
+            </div>
 
-              <div class="form-group col-md-12">
-                <hr />
-              </div>
-
-              <div class="form-group col-md-6">
-                <label for="kpi_owner">Owner</label>
-                <select
-                  id="owner"
-                  name=""
-                  class="select_all"
-                  multiple
-                  style="display: none !important;"
-                >
-                  <option value="1">Gary Richards</option>
-                  <option value="2">Nicholas Marshall</option>
-                  <option value="3">Linda Alvarez</option>
-                  <option value="3">Megan Lewis</option>
-                  <option value="3">Bobby Bowman</option>
-                </select>
-              </div>
-
+            <div class="row m-t-10">
               <div class="form-group col-md-6">
                 <label for="impact">Impact</label>
-                <select
-                  id="impact"
-                  name=""
-                  class="select_all"
-                  multiple
-                  style="display: none !important;"
-                >
-                  <option value="1">Option 1</option>
-                  <option value="2">Option 2</option>
-                  <option value="3">Option 3</option>
+                <select id="" name="" class="modal-custom-select">
+                  <option>Choose</option>
+                  <option>Option - 1</option>
+                  <option>Option - 2</option>
+                  <option>Option - 3</option>
                 </select>
               </div>
 
-              <div class="form-group col-md-12">
-                <hr />
-              </div>
-
-              <div class="form-group col-md-4">
+              <div class="form-group col-md-6">
                 <label for="kpi_name">Budget</label>
                 <input type="text" class="modal-custom-input" />
               </div>
+            </div>
 
-              <div class="form-group col-md-4">
+            <div class="row m-t-10">
+              <div class="form-group col-md-6">
                 <label for="kpi_start_end_date"
                   >Planned Start Date/End Date</label
                 >
@@ -460,7 +432,7 @@
                 />
               </div>
 
-              <div class="form-group col-md-4">
+              <div class="form-group col-md-6">
                 <label for="kpi_start_end_date"
                   >Actual Start Date/End Date</label
                 >
@@ -473,11 +445,9 @@
                   id="air-date-sub-init"
                 />
               </div>
+            </div>
 
-              <div class="form-group col-md-12">
-                <hr />
-              </div>
-
+            <div class="row m-t-10">
               <div class="form-group col-md-12">
                 <label for="">Status</label>
               </div>
@@ -499,10 +469,9 @@
                   <label for="primary3"></label>
                 </div>
               </div>
+            </div>
 
-              <div class="form-group col-md-12">
-                <hr />
-              </div>
+            <div class="row m-t-10">
               <div class="col-md-6 form-group">
                 <label for="budget_type">Status</label>
                 <select id="budget_type" name="" class="modal-custom-select">
@@ -527,11 +496,9 @@
                   placeholder=""
                 />
               </div>
+            </div>
 
-              <div class="form-group col-md-12">
-                <hr />
-              </div>
-
+            <div class="row m-t-10">
               <div class="form-group col-md-12">
                 <label for="kpi_fields" class="ml-2 mr-3">Amount</label>
                 <ul class="d-flex flex-row flex-wrap ml-2">
@@ -588,11 +555,12 @@
                   </li>
                 </ul>
               </div>
-
               <div class="form-group col-md-12">
                 <hr />
               </div>
+            </div>
 
+            <div class="row m-t-10">
               <div class="form-group col-lg-8 col-md-4 col-sm-12"></div>
               <div class="form-group col-lg-2 col-md-4 col-sm-6">
                 <button
@@ -616,6 +584,240 @@
         </div>
       </div>
     </div>
+
+    <!--#Start User Edit Popup -->
+    <div
+      class="modal fade"
+      id="user_edit_popup"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-modal="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Edit Users</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="">
+            <div class="col-lg-12 col-md-12 sub_initiatives">
+              <div
+                class="slimScrollDiv"
+                style="
+                  position: relative;
+                  overflow: hidden;
+                  width: auto;
+                  height: 340px;
+                "
+              >
+                <div
+                  class="d-flex flex-column employee_div_body_box sub-ini-box"
+                  id="sub-ini-box_view"
+                  style="overflow: hidden; width: auto; height: 340px;"
+                >
+                  <span id="sub-ini-box_view_users"
+                    ><div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                type="checkbox"
+                                value="959" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center;"
+                          >
+                            <h5>David Miller</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%;">
+                            <img
+                              alt="David Miller"
+                              src="images/user/usrbig8.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                type="checkbox"
+                                value="960" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center;"
+                          >
+                            <h5>Seema Chatterjee</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%;">
+                            <img
+                              alt="Seema Chatterjee"
+                              src="images/user/usrbig10.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                type="checkbox"
+                                value="961" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center;"
+                          >
+                            <h5>Rafael Nadal</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%;">
+                            <img
+                              alt="Rafael Nadal"
+                              src="images/user/usrbig9.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                type="checkbox"
+                                value="962" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center;"
+                          >
+                            <h5>Prakash Raj</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%;">
+                            <img
+                              alt="Prakash Raj"
+                              src="images/user/usrbig6.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                checked=""
+                                type="checkbox"
+                                value="958" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center;"
+                          >
+                            <h5>Karthik Ramani</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%;">
+                            <img
+                              alt="Karthik Ramani"
+                              src="images/user/usrbig7.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div></div
+                  ></span>
+                </div>
+                <div
+                  class="slimScrollBar"
+                  style="
+                    background: rgb(156, 156, 156);
+                    width: 3px;
+                    position: absolute;
+                    top: 0px;
+                    opacity: 0.4;
+                    display: none;
+                    border-radius: 7px;
+                    z-index: 99;
+                    right: 1px;
+                    height: 340px;
+                  "
+                ></div>
+                <div
+                  class="slimScrollRail"
+                  style="
+                    width: 3px;
+                    height: 100%;
+                    position: absolute;
+                    top: 0px;
+                    display: none;
+                    border-radius: 7px;
+                    background: rgb(51, 51, 51);
+                    opacity: 0.2;
+                    z-index: 90;
+                    right: 1px;
+                  "
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--#End User Edit Popup -->
 
     <!-- Content Start -->
     <section class="content">
@@ -719,7 +921,10 @@
                           <td>Redesign website</td>
                           <td>Oct 1</td>
                           <td>Oct 15</td>
-                          <td>
+                          <td
+                            data-toggle="modal"
+                            data-target="#user_edit_popup"
+                          >
                             <img
                               src="images/user/usrbig10.jpg"
                               width="35px"
@@ -733,7 +938,10 @@
                           <td>Write new content</td>
                           <td>Oct 3</td>
                           <td>Oct 10</td>
-                          <td>
+                          <td
+                            data-toggle="modal"
+                            data-target="#user_edit_popup"
+                          >
                             <img
                               src="images/user/usrbig11.jpg"
                               width="35px"
@@ -747,7 +955,10 @@
                           <td>Apply new styles</td>
                           <td>Oct 4</td>
                           <td>Oct 12</td>
-                          <td>
+                          <td
+                            data-toggle="modal"
+                            data-target="#user_edit_popup"
+                          >
                             <img
                               src="images/user/usrbig4.jpg"
                               width="35px"
@@ -761,7 +972,10 @@
                           <td>Review</td>
                           <td>Oct 8</td>
                           <td>Oct 13</td>
-                          <td>
+                          <td
+                            data-toggle="modal"
+                            data-target="#user_edit_popup"
+                          >
                             <img
                               src="images/user/usrbig5.jpg"
                               width="35px"
@@ -775,7 +989,10 @@
                           <td>Deploy</td>
                           <td>Oct 8</td>
                           <td>Oct 14</td>
-                          <td>
+                          <td
+                            data-toggle="modal"
+                            data-target="#user_edit_popup"
+                          >
                             <img
                               src="images/user/usrbig6.jpg"
                               width="35px"
@@ -789,7 +1006,10 @@
                           <td>Go Live!</td>
                           <td>Oct 11</td>
                           <td>Oct 15</td>
-                          <td>
+                          <td
+                            data-toggle="modal"
+                            data-target="#user_edit_popup"
+                          >
                             <img
                               src="images/user/usrbig7.jpg"
                               width="35px"
@@ -845,27 +1065,6 @@
           var title = startDate.format("L") + " – " + endDate.format("L");
           $(this).val(title);
         },
-      });
-
-      $(document).ready(function () {
-        // $('select').val([1]);
-        $("#impact, #owner").formSelect();
-        $("select.select_all")
-          .siblings("ul")
-          .prepend("<li id=sm_select_all><span>Select All</span></li>");
-        $("li#sm_select_all").on("click", function () {
-          var jq_elem = $(this),
-            jq_elem_span = jq_elem.find("span"),
-            select_all = jq_elem_span.text() == "Select All",
-            set_text = select_all ? "Select None" : "Select All";
-          jq_elem_span.text(set_text);
-          jq_elem
-            .siblings("li")
-            .filter(function () {
-              return $(this).find("input").prop("checked") != select_all;
-            })
-            .click();
-        });
       });
     </script>
     <script>

@@ -1434,7 +1434,11 @@
           <div class="modal-content">
             <div class="modal-header">
               <h4>Objective Description</h4>
-              <button type="button" class="close pull-right" data-dismiss="modal">
+              <button
+                type="button"
+                class="close pull-right"
+                data-dismiss="modal"
+              >
                 &times;
               </button>
             </div>
@@ -1591,7 +1595,11 @@
           <div class="modal-content">
             <div class="modal-header">
               <h4>KPI Description</h4>
-              <button type="button" class="close pull-right" data-dismiss="modal">
+              <button
+                type="button"
+                class="close pull-right"
+                data-dismiss="modal"
+              >
                 &times;
               </button>
             </div>
@@ -1991,7 +1999,11 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close pull-right" data-dismiss="modal">
+              <button
+                type="button"
+                class="close pull-right"
+                data-dismiss="modal"
+              >
                 &times;
               </button>
             </div>
@@ -2196,7 +2208,11 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close pull-right" data-dismiss="modal">
+              <button
+                type="button"
+                class="close pull-right"
+                data-dismiss="modal"
+              >
                 &times;
               </button>
             </div>
@@ -3546,7 +3562,11 @@
           <div class="modal-content">
             <div class="modal-header">
               <h4>View My initiatives</h4>
-              <button type="button" class="close pull-right" data-dismiss="modal">
+              <button
+                type="button"
+                class="close pull-right"
+                data-dismiss="modal"
+              >
                 &times;
               </button>
             </div>
@@ -3726,9 +3746,89 @@
       </div>
       <!--#END View My Initiatives -->
 
-      <!--#START Sub Comment View -->
+      <!--#START Comment Edit Description -->
       <div
-        class="modal fade sub_comments_view_popup"
+        class="modal fade"
+        id="comment_edit_popup"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myLargeModalLabel_1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4>Edit Comment</h4>
+              <button
+                type="button"
+                class="close pull-right"
+                data-dismiss="modal"
+              >
+                &times;
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="sub_initative_Form">
+                <div class="row">
+                  <div class="form-group col-md-12">
+                    <label for="meeting-name">Comment</label>
+                    <textarea class="form-control" rows="6"></textarea>
+                  </div>
+                </div>
+                <div class="row m-t-10">
+                  <div class="form-group col-md-12">
+                    <hr />
+                  </div>
+                  <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
+                  <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                    <button
+                      type="button"
+                      class="btn custom-form-control btn-custom-secondary"
+                      data-dismiss="modal"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                  <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                    <button
+                      type="button"
+                      class="btn custom-form-control btn-custom-primary"
+                    >
+                      Save
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <div
+                class="d-flex flex-column flex-fill ml-4 mb-5 text-left font-11"
+              >
+                <div class="d-flex flex-row">
+                  <p class="kpi_audit">Audit</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <div class="d-flex flex-column">
+                    <p><span>Created By : </span><span>Arun</span></p>
+                    <p><span>Created Date : </span><span>Oct 02, 2019</span></p>
+                  </div>
+                  <div class="d-flex flex-column pl-5">
+                    <p><span>Modified By : </span><span>Karthik</span></p>
+                    <p>
+                      <span>Modified Date : </span><span>Oct 02, 2019</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--#END Comment Description -->
+
+      <!--#START Comment View -->
+      <div
+        class="modal fade comments_view_popup"
         tabindex="-1"
         role="dialog"
         aria-labelledby="myLargeModalLabel_1"
@@ -3801,44 +3901,56 @@
                             </li>
                           </ul>
                         </div>
-                        <div class="flex-column">
-                          <ul class="header-dropdown m-r--2 pt-2 d-flex">
-                            <li class="dropdown">
-                              <a
-                                href="#"
-                                onclick="return false;"
-                                class="dropdown-toggle"
-                                data-toggle="dropdown"
-                                role="button"
-                                aria-haspopup="true"
-                                aria-expanded="true"
+                      </div>
+                    </li>
+                    <li>
+                      <div class="d-flex flex-row">
+                        <div class="flex-column comment_image">
+                          <img
+                            src="images/user/usrbig6.jpg"
+                            class="rounded-circle"
+                            alt="User"
+                            width="40"
+                          />
+                        </div>
+                        <div class="flex-column comment_details">
+                          <ul>
+                            <li>
+                              <span class="message-data-name"
+                                ><strong>Elmer Roberts, </strong></span
                               >
-                                <i class="material-icons">more_vert</i>
-                              </a>
-                              <ul
-                                class="dropdown-menu pull-right"
-                                x-placement="bottom-start"
-                                style="
-                                  position: absolute;
-                                  will-change: transform;
-                                  top: 0px;
-                                  left: 0px;
-                                  transform: translate3d(0px, 24px, 0px);
-                                "
-                              >
-                                <li>
-                                  <a
-                                    href="#"
-                                    data-toggle="modal"
-                                    data-target=".sub_activitie_popup"
-                                    onclick="return false;"
-                                    >Edit</a
-                                  >
-                                </li>
-                                <li>
-                                  <a href="#" onclick="return false;">Delete</a>
-                                </li>
+                            </li>
+                            <li>
+                              Lorem ipsum dolor sit amet, consectetuer
+                              adipiscing elit. Aenean commodo ligula eget dolor.
+                              Aenean massa
+                            </li>
+                            <li>
+                              <ul class="d-flex flex-row">
+                                <li class="reply">Reply</li>
+                                <li>Like</li>
+                                <li>10:12 AM, Today</li>
                               </ul>
+                            </li>
+                          </ul>
+                          <ul>
+                            <li>
+                              <div class="comment_send" style="display: none;">
+                                <div
+                                  class="form-group d-flex flex-row align-items-center"
+                                >
+                                  <div class="form-line">
+                                    <input
+                                      type="text"
+                                      class="form-control comment"
+                                      placeholder="Type a comment..."
+                                    />
+                                  </div>
+                                  <div class="send_btn reply-btn">
+                                    <i class="fas fa-arrow-right"></i>
+                                  </div>
+                                </div>
+                              </div>
                             </li>
                           </ul>
                         </div>
@@ -3895,41 +4007,6 @@
                             </li>
                           </ul>
                         </div>
-                        <div class="flex-column">
-                          <ul class="header-dropdown m-r--2 pt-2 d-flex">
-                            <li class="dropdown">
-                              <a
-                                href="#"
-                                onclick="return false;"
-                                class="dropdown-toggle"
-                                data-toggle="dropdown"
-                                role="button"
-                                aria-haspopup="true"
-                                aria-expanded="true"
-                              >
-                                <i class="material-icons">more_vert</i>
-                              </a>
-                              <ul
-                                class="dropdown-menu pull-right"
-                                x-placement="bottom-start"
-                                style="
-                                  position: absolute;
-                                  will-change: transform;
-                                  top: 0px;
-                                  left: 0px;
-                                  transform: translate3d(0px, 24px, 0px);
-                                "
-                              >
-                                <li>
-                                  <a href="#" onclick="return false;">Edit</a>
-                                </li>
-                                <li>
-                                  <a href="#" onclick="return false;">Delete</a>
-                                </li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </div>
                       </div>
                     </li>
                     <li>
@@ -3980,129 +4057,6 @@
                                   </div>
                                 </div>
                               </div>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="flex-column">
-                          <ul class="header-dropdown m-r--2 pt-2 d-flex">
-                            <li class="dropdown">
-                              <a
-                                href="#"
-                                onclick="return false;"
-                                class="dropdown-toggle"
-                                data-toggle="dropdown"
-                                role="button"
-                                aria-haspopup="true"
-                                aria-expanded="true"
-                              >
-                                <i class="material-icons">more_vert</i>
-                              </a>
-                              <ul
-                                class="dropdown-menu pull-right"
-                                x-placement="bottom-start"
-                                style="
-                                  position: absolute;
-                                  will-change: transform;
-                                  top: 0px;
-                                  left: 0px;
-                                  transform: translate3d(0px, 24px, 0px);
-                                "
-                              >
-                                <li>
-                                  <a href="#" onclick="return false;">Edit</a>
-                                </li>
-                                <li>
-                                  <a href="#" onclick="return false;">Delete</a>
-                                </li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="d-flex flex-row">
-                        <div class="flex-column comment_image">
-                          <img
-                            src="images/user/usrbig6.jpg"
-                            class="rounded-circle"
-                            alt="User"
-                            width="40"
-                          />
-                        </div>
-                        <div class="flex-column comment_details">
-                          <ul>
-                            <li>
-                              <span class="message-data-name"
-                                ><strong>Elmer Roberts, </strong></span
-                              >
-                            </li>
-                            <li>
-                              Lorem ipsum dolor sit amet, consectetuer
-                              adipiscing elit. Aenean commodo ligula eget dolor.
-                              Aenean massa
-                            </li>
-                            <li>
-                              <ul class="d-flex flex-row">
-                                <li class="reply">Reply</li>
-                                <li>Like</li>
-                                <li>10:12 AM, Today</li>
-                              </ul>
-                            </li>
-                          </ul>
-                          <ul>
-                            <li>
-                              <div class="comment_send" style="display: none;">
-                                <div
-                                  class="form-group d-flex flex-row align-items-center"
-                                >
-                                  <div class="form-line">
-                                    <input
-                                      type="text"
-                                      class="form-control comment"
-                                      placeholder="Type a comment..."
-                                    />
-                                  </div>
-                                  <div class="send_btn reply-btn">
-                                    <i class="fas fa-arrow-right"></i>
-                                  </div>
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="flex-column">
-                          <ul class="header-dropdown m-r--2 pt-2 d-flex">
-                            <li class="dropdown">
-                              <a
-                                href="#"
-                                onclick="return false;"
-                                class="dropdown-toggle"
-                                data-toggle="dropdown"
-                                role="button"
-                                aria-haspopup="true"
-                                aria-expanded="true"
-                              >
-                                <i class="material-icons">more_vert</i>
-                              </a>
-                              <ul
-                                class="dropdown-menu pull-right"
-                                x-placement="bottom-start"
-                                style="
-                                  position: absolute;
-                                  will-change: transform;
-                                  top: 0px;
-                                  left: 0px;
-                                  transform: translate3d(0px, 24px, 0px);
-                                "
-                              >
-                                <li>
-                                  <a href="#" onclick="return false;">Edit</a>
-                                </li>
-                                <li>
-                                  <a href="#" onclick="return false;">Delete</a>
-                                </li>
-                              </ul>
                             </li>
                           </ul>
                         </div>
@@ -4115,7 +4069,7 @@
           </div>
         </div>
       </div>
-      <!--#END Sub Comment View -->
+      <!--#END Comment View -->
 
       <div
         class="modal fade goals_view_popup"
@@ -4128,7 +4082,11 @@
           <div class="modal-content">
             <div class="modal-header">
               <h4>View Goals</h4>
-              <button type="button" class="close pull-right" data-dismiss="modal">
+              <button
+                type="button"
+                class="close pull-right"
+                data-dismiss="modal"
+              >
                 &times;
               </button>
             </div>
@@ -4311,7 +4269,11 @@
           <div class="modal-content">
             <div class="modal-header">
               <h4>View My KPI</h4>
-              <button type="button" class="close pull-right" data-dismiss="modal">
+              <button
+                type="button"
+                class="close pull-right"
+                data-dismiss="modal"
+              >
                 &times;
               </button>
             </div>
@@ -4446,7 +4408,11 @@
           <div class="modal-content">
             <div class="modal-header">
               <h4>View Appraisal</h4>
-              <button type="button" class="close pull-right" data-dismiss="modal">
+              <button
+                type="button"
+                class="close pull-right"
+                data-dismiss="modal"
+              >
                 &times;
               </button>
             </div>
@@ -7004,7 +6970,7 @@
                                     <a
                                       href="#"
                                       data-toggle="modal"
-                                      data-target=".sub_comments_view_popup"
+                                      data-target=".comments_view_popup"
                                       onclick="return false;"
                                       >View</a
                                     >
@@ -7111,7 +7077,7 @@
                                             <a
                                               href="#"
                                               data-toggle="modal"
-                                              data-target=".sub_activitie_popup"
+                                              data-target="#comment_edit_popup"
                                               onclick="return false;"
                                               >Edit</a
                                             >
@@ -7217,7 +7183,11 @@
                                           "
                                         >
                                           <li>
-                                            <a href="#" onclick="return false;"
+                                            <a
+                                              href="#"
+                                              data-toggle="modal"
+                                              data-target="#comment_edit_popup"
+                                              onclick="return false;"
                                               >Edit</a
                                             >
                                           </li>
@@ -7322,7 +7292,11 @@
                                           "
                                         >
                                           <li>
-                                            <a href="#" onclick="return false;"
+                                            <a
+                                              href="#"
+                                              data-toggle="modal"
+                                              data-target="#comment_edit_popup"
+                                              onclick="return false;"
                                               >Edit</a
                                             >
                                           </li>
@@ -7427,7 +7401,11 @@
                                           "
                                         >
                                           <li>
-                                            <a href="#" onclick="return false;"
+                                            <a
+                                              href="#"
+                                              data-toggle="modal"
+                                              data-target="#comment_edit_popup"
+                                              onclick="return false;"
                                               >Edit</a
                                             >
                                           </li>
@@ -12035,7 +12013,7 @@
                                     <a
                                       href="#"
                                       data-toggle="modal"
-                                      data-target=".sub_comments_view_popup"
+                                      data-target=".comments_view_popup"
                                       onclick="return false;"
                                       >View</a
                                     >
@@ -12142,7 +12120,7 @@
                                             <a
                                               href="#"
                                               data-toggle="modal"
-                                              data-target=".sub_activitie_popup"
+                                              data-target="#comment_edit_popup"
                                               onclick="return false;"
                                               >Edit</a
                                             >
@@ -12248,7 +12226,11 @@
                                           "
                                         >
                                           <li>
-                                            <a href="#" onclick="return false;"
+                                            <a
+                                              href="#"
+                                              data-toggle="modal"
+                                              data-target="#comment_edit_popup"
+                                              onclick="return false;"
                                               >Edit</a
                                             >
                                           </li>
@@ -12353,7 +12335,11 @@
                                           "
                                         >
                                           <li>
-                                            <a href="#" onclick="return false;"
+                                            <a
+                                              href="#"
+                                              data-toggle="modal"
+                                              data-target="#comment_edit_popup"
+                                              onclick="return false;"
                                               >Edit</a
                                             >
                                           </li>
@@ -12458,7 +12444,11 @@
                                           "
                                         >
                                           <li>
-                                            <a href="#" onclick="return false;"
+                                            <a
+                                              href="#"
+                                              data-toggle="modal"
+                                              data-target="#comment_edit_popup"
+                                              onclick="return false;"
                                               >Edit</a
                                             >
                                           </li>

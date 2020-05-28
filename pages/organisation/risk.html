@@ -1265,6 +1265,7 @@
           </div>
         </div>
       </aside>
+
       <!--#START Data Collection Form -->
       <div
         class="modal fade data_collection_form"
@@ -1932,21 +1933,7 @@
                   </div>
                 </div>
                 <div class="row m-t-10">
-                  <div class="form-group col-md-6">
-                    <label for="multiSelect2">Owner</label>
-                    <select
-                      id="multiSelect2"
-                      name=""
-                      class="select_all"
-                      multiple
-                      style="display: none !important;"
-                    >
-                      <option value="1">Option 1</option>
-                      <option value="2">Option 2</option>
-                      <option value="3">Option 3</option>
-                    </select>
-                  </div>
-                  <div class="form-group col-md-6">
+                  <div class="form-group col-md-12">
                     <label for="kpi_start_end_date">Resolve By</label>
                     <input
                       type="text"
@@ -1954,7 +1941,7 @@
                       data-language="en"
                       name="kpi_start_end_date"
                       id="kpi_start_end_date"
-                      style="width: 96% !important; height: 52% !important;"
+                      style="width: 98% !important; height: 68% !important;"
                     />
                   </div>
                 </div>
@@ -2063,21 +2050,7 @@
                   </div>
                 </div>
                 <div class="row m-t-10">
-                  <div class="form-group col-md-6">
-                    <label for="multiSelect2">Owner</label>
-                    <select
-                      id="multiSelect3"
-                      name=""
-                      class="select_all"
-                      multiple
-                      style="display: none !important;"
-                    >
-                      <option value="1">Option 1</option>
-                      <option value="2">Option 2</option>
-                      <option value="3">Option 3</option>
-                    </select>
-                  </div>
-                  <div class="form-group col-md-6">
+                  <div class="form-group col-md-12">
                     <label for="kpi_start_end_date">Resolve By</label>
                     <input
                       type="text"
@@ -2085,7 +2058,7 @@
                       data-language="en"
                       name="kpi_start_end_date"
                       id="kpi_start_end_date"
-                      style="width: 96% !important; height: 52% !important;"
+                      style="width: 98% !important; height: 68% !important;"
                     />
                   </div>
                 </div>
@@ -2171,20 +2144,6 @@
                 </div>
                 <div class="row m-t-10">
                   <div class="form-group col-md-6">
-                    <label for="multiSelect4">Owner</label>
-                    <select
-                      id="multiSelect4"
-                      name=""
-                      class="select_all"
-                      multiple
-                      style="display: none !important;"
-                    >
-                      <option value="1">Option 1</option>
-                      <option value="2">Option 2</option>
-                      <option value="3">Option 3</option>
-                    </select>
-                  </div>
-                  <div class="form-group col-md-6">
                     <label for="kpi_start_end_date">Resolve By</label>
                     <input
                       type="text"
@@ -2192,12 +2151,10 @@
                       data-language="en"
                       name="kpi_start_end_date"
                       id="kpi_start_end_date"
-                      style="width: 96% !important; height: 52% !important;"
+                      style="width: 98% !important; height: 60% !important;"
                     />
                   </div>
-                </div>
-                <div class="row m-t-10">
-                  <div class="form-group col-md-12">
+                  <div class="form-group col-md-6">
                     <label for="type">Status</label>
                     <select
                       id="type"
@@ -2303,20 +2260,6 @@
                 </div>
                 <div class="row m-t-10">
                   <div class="form-group col-md-6">
-                    <label for="multiSelect4">Owner</label>
-                    <select
-                      id="multiSelect5"
-                      name=""
-                      class="select_all"
-                      multiple
-                      style="display: none !important;"
-                    >
-                      <option value="1">Option 1</option>
-                      <option value="2">Option 2</option>
-                      <option value="3">Option 3</option>
-                    </select>
-                  </div>
-                  <div class="form-group col-md-6">
                     <label for="kpi_start_end_date">Resolve By</label>
                     <input
                       type="text"
@@ -2324,12 +2267,10 @@
                       data-language="en"
                       name="kpi_start_end_date"
                       id="kpi_start_end_date"
-                      style="width: 96% !important; height: 52% !important;"
+                      style="width: 98% !important; height: 60% !important;"
                     />
                   </div>
-                </div>
-                <div class="row m-t-10">
-                  <div class="form-group col-md-12">
+                  <div class="form-group col-md-6">
                     <label for="type">Status</label>
                     <select
                       id="type"
@@ -2520,9 +2461,10 @@
       </div>
       <!--#END Action Description -->
 
-      <!--#START Sub Initiatives Edit -->
+      <!--#START Comment Edit Description -->
       <div
-        class="modal fade sub_initative_edit_popup"
+        class="modal fade"
+        id="comment_edit_popup"
         tabindex="-1"
         role="dialog"
         aria-labelledby="myLargeModalLabel_1"
@@ -2531,7 +2473,7 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h4>Edit Sub Initiative Description</h4>
+              <h4>Edit Comment</h4>
               <button
                 type="button"
                 class="close pull-right"
@@ -2542,61 +2484,34 @@
             </div>
             <div class="modal-body">
               <form id="sub_initative_Form">
-                <div class="form-row">
-                  <div class="form-group col-md-9">
-                    <label for="sub_initative_desc">Description</label>
-                    <input
-                      type="text"
-                      class="form-control browser-default"
-                      name="sub_initative_desc"
-                      id="kpi_id"
-                      placeholder=""
-                    />
-                  </div>
-                  <div class="form-group col-md-3">
-                    <label for="sub_initative_progress">Progress</label>
-                    <input
-                      type="text"
-                      class="form-control browser-default"
-                      name="sub_initative_progress"
-                      id="sub_initative_progress"
-                      placeholder=""
-                    />
+                <div class="row">
+                  <div class="form-group col-md-12">
+                    <label for="meeting-name">Comment</label>
+                    <textarea class="form-control" rows="6"></textarea>
                   </div>
                 </div>
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="sub_initative_start_end">End Date</label>
-                    <input
-                      type="text"
-                      class="form-control browser-default date_pickers_single"
-                      data-language="en"
-                      name="sub_initative_start_end"
-                      id="sub_initative_start_end"
-                      placeholder=""
-                    />
+                <div class="row m-t-10">
+                  <div class="form-group col-md-12">
+                    <hr />
                   </div>
-                  <div class="form-group browser-default col-md-6">
-                    <label for="attachment">Attachment</label>
-                    <select
-                      id="attachment"
-                      name="attachment"
-                      class="form-control mt-1"
+                  <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
+                  <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                    <button
+                      type="button"
+                      class="btn custom-form-control btn-custom-secondary"
+                      data-dismiss="modal"
                     >
-                      <option></option>
-                    </select>
+                      Cancel
+                    </button>
                   </div>
-                </div>
-                <div class="form-line right">
-                  <button
-                    type="button"
-                    class="btn-default1 btn"
-                    data-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    Cancel
-                  </button>
-                  <button class="initative_save_btn" value="Save">Save</button>
+                  <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                    <button
+                      type="button"
+                      class="btn custom-form-control btn-custom-primary"
+                    >
+                      Save
+                    </button>
+                  </div>
                 </div>
               </form>
             </div>
@@ -2624,9 +2539,257 @@
           </div>
         </div>
       </div>
-      <!--#END Sub Initiatives Edit -->
+      <!--#END Comment Description -->
 
-      <!--#START Sub Initiatives View -->
+      <!--#Start User Edit Popup -->
+      <div
+        class="modal fade"
+        id="user_edit_popup"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myLargeModalLabel_1"
+        aria-modal="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4>Edit Users</h4>
+              <button
+                type="button"
+                class="close pull-right"
+                data-dismiss="modal"
+              >
+                &times;
+              </button>
+            </div>
+            <div class="">
+              <div class="col-lg-12 col-md-12 sub_initiatives">
+                <div
+                  class="slimScrollDiv"
+                  style="
+                    position: relative;
+                    overflow: hidden;
+                    width: auto;
+                    height: 340px;
+                  "
+                >
+                  <div
+                    class="d-flex flex-column employee_div_body_box sub-ini-box"
+                    id="sub-ini-box_view"
+                    style="overflow: hidden; width: auto; height: 340px;"
+                  >
+                    <span id="sub-ini-box_view_users"
+                      ><div
+                        class="d-flex flex-row employe_content_border sub_initiative_details"
+                      >
+                        <div
+                          class="d-flex flex-column flex-fill profile_content"
+                        >
+                          <div class="d-flex flex-row">
+                            <div class="form-check">
+                              <label class="form-check-label"
+                                ><input
+                                  id=""
+                                  class="form-check-input"
+                                  name="sub_initiative_owner[]"
+                                  type="checkbox"
+                                  value="959" /><span class="form-check-sign">
+                                  <span class="check"></span></span
+                              ></label>
+                            </div>
+                            <div
+                              class="d-flex flex-column init_flex_profile"
+                              style="margin-top: 3%; text-align: center;"
+                            >
+                              <h5>David Miller</h5>
+                            </div>
+                            <div class="img_details" style="width: 20%;">
+                              <img
+                                alt="David Miller"
+                                src="images/user/usrbig8.jpg"
+                                class="rounded-circle imgprofile"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="d-flex flex-row employe_content_border sub_initiative_details"
+                      >
+                        <div
+                          class="d-flex flex-column flex-fill profile_content"
+                        >
+                          <div class="d-flex flex-row">
+                            <div class="form-check">
+                              <label class="form-check-label"
+                                ><input
+                                  id=""
+                                  class="form-check-input"
+                                  name="sub_initiative_owner[]"
+                                  type="checkbox"
+                                  value="960" /><span class="form-check-sign">
+                                  <span class="check"></span></span
+                              ></label>
+                            </div>
+                            <div
+                              class="d-flex flex-column init_flex_profile"
+                              style="margin-top: 3%; text-align: center;"
+                            >
+                              <h5>Seema Chatterjee</h5>
+                            </div>
+                            <div class="img_details" style="width: 20%;">
+                              <img
+                                alt="Seema Chatterjee"
+                                src="images/user/usrbig10.jpg"
+                                class="rounded-circle imgprofile"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="d-flex flex-row employe_content_border sub_initiative_details"
+                      >
+                        <div
+                          class="d-flex flex-column flex-fill profile_content"
+                        >
+                          <div class="d-flex flex-row">
+                            <div class="form-check">
+                              <label class="form-check-label"
+                                ><input
+                                  id=""
+                                  class="form-check-input"
+                                  name="sub_initiative_owner[]"
+                                  type="checkbox"
+                                  value="961" /><span class="form-check-sign">
+                                  <span class="check"></span></span
+                              ></label>
+                            </div>
+                            <div
+                              class="d-flex flex-column init_flex_profile"
+                              style="margin-top: 3%; text-align: center;"
+                            >
+                              <h5>Rafael Nadal</h5>
+                            </div>
+                            <div class="img_details" style="width: 20%;">
+                              <img
+                                alt="Rafael Nadal"
+                                src="images/user/usrbig9.jpg"
+                                class="rounded-circle imgprofile"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="d-flex flex-row employe_content_border sub_initiative_details"
+                      >
+                        <div
+                          class="d-flex flex-column flex-fill profile_content"
+                        >
+                          <div class="d-flex flex-row">
+                            <div class="form-check">
+                              <label class="form-check-label"
+                                ><input
+                                  id=""
+                                  class="form-check-input"
+                                  name="sub_initiative_owner[]"
+                                  type="checkbox"
+                                  value="962" /><span class="form-check-sign">
+                                  <span class="check"></span></span
+                              ></label>
+                            </div>
+                            <div
+                              class="d-flex flex-column init_flex_profile"
+                              style="margin-top: 3%; text-align: center;"
+                            >
+                              <h5>Prakash Raj</h5>
+                            </div>
+                            <div class="img_details" style="width: 20%;">
+                              <img
+                                alt="Prakash Raj"
+                                src="images/user/usrbig6.jpg"
+                                class="rounded-circle imgprofile"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="d-flex flex-row employe_content_border sub_initiative_details"
+                      >
+                        <div
+                          class="d-flex flex-column flex-fill profile_content"
+                        >
+                          <div class="d-flex flex-row">
+                            <div class="form-check">
+                              <label class="form-check-label"
+                                ><input
+                                  id=""
+                                  class="form-check-input"
+                                  name="sub_initiative_owner[]"
+                                  checked=""
+                                  type="checkbox"
+                                  value="958" /><span class="form-check-sign">
+                                  <span class="check"></span></span
+                              ></label>
+                            </div>
+                            <div
+                              class="d-flex flex-column init_flex_profile"
+                              style="margin-top: 3%; text-align: center;"
+                            >
+                              <h5>Karthik Ramani</h5>
+                            </div>
+                            <div class="img_details" style="width: 20%;">
+                              <img
+                                alt="Karthik Ramani"
+                                src="images/user/usrbig7.jpg"
+                                class="rounded-circle imgprofile"
+                              />
+                            </div>
+                          </div>
+                        </div></div
+                    ></span>
+                  </div>
+                  <div
+                    class="slimScrollBar"
+                    style="
+                      background: rgb(156, 156, 156);
+                      width: 3px;
+                      position: absolute;
+                      top: 0px;
+                      opacity: 0.4;
+                      display: none;
+                      border-radius: 7px;
+                      z-index: 99;
+                      right: 1px;
+                      height: 340px;
+                    "
+                  ></div>
+                  <div
+                    class="slimScrollRail"
+                    style="
+                      width: 3px;
+                      height: 100%;
+                      position: absolute;
+                      top: 0px;
+                      display: none;
+                      border-radius: 7px;
+                      background: rgb(51, 51, 51);
+                      opacity: 0.2;
+                      z-index: 90;
+                      right: 1px;
+                    "
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--#End User Edit Popup -->
+
+      <!--#START Cause and Consequence View -->
       <div
         class="modal fade cause_conq_view_popup"
         tabindex="-1"
@@ -2958,9 +3121,9 @@
         </div>
       </div>
     </div>
-    <!--#END Sub Initiatives Edit -->
+    <!--#END Cause and Consequence Edit -->
 
-    <!--#START Sub Plan -->
+    <!--#START Risk Treatment -->
     <div
       class="modal fade sub_plan_popup"
       tabindex="-1"
@@ -3286,215 +3449,11 @@
         </div>
       </div>
     </div>
-    <!--#END Sub Plan -->
+    <!--#END Risk Treatment -->
 
-    <!--#START Sub Activitie -->
+    <!--#START Comment View -->
     <div
-      class="modal fade sub_activitie_popup"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="myLargeModalLabel_1"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4>Add Activities Description</h4>
-            <button type="button" class="close pull-right" data-dismiss="modal">
-              &times;
-            </button>
-          </div>
-          <div class="modal-body">
-            <form id="sub_initative_Form">
-              <div class="form-row">
-                <div class="form-group col-md-9">
-                  <label for="sub_initative_desc">Description</label>
-                  <input
-                    type="text"
-                    class="form-control browser-default"
-                    name="sub_initative_desc"
-                    id="kpi_id"
-                    placeholder=""
-                  />
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="sub_initative_progress">Progress</label>
-                  <input
-                    type="text"
-                    class="form-control browser-default"
-                    name="sub_initative_progress"
-                    id="sub_initative_progress"
-                    placeholder=""
-                  />
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="sub_initative_start_end">Start / End Date</label>
-                  <input
-                    type="text"
-                    class="form-control browser-default date_pickers"
-                    data-range="true"
-                    data-multiple-dates-separator=" - "
-                    data-language="en"
-                    name="sub_initative_start_end"
-                    id="sub_initative_start_end"
-                    placeholder=""
-                  />
-                </div>
-                <div class="form-group browser-default col-md-6">
-                  <label for="attachment">Attachment</label>
-                  <select
-                    id="attachment"
-                    name="attachment"
-                    class="form-control mt-1"
-                  >
-                    <option></option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-line right">
-                <button
-                  type="button"
-                  class="btn-default1 btn"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
-                  Cancel
-                </button>
-                <button class="initative_save_btn" value="Save">Save</button>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <div
-              class="d-flex flex-column flex-fill ml-4 mb-5 text-left font-11"
-            >
-              <div class="d-flex flex-row">
-                <p class="kpi_audit">Audit</p>
-              </div>
-              <div class="d-flex flex-row">
-                <div class="d-flex flex-column">
-                  <p><span>Created By : </span><span>Arun</span></p>
-                  <p><span>Created Date : </span><span>Oct 02, 2019</span></p>
-                </div>
-                <div class="d-flex flex-column pl-5">
-                  <p><span>Modified By : </span><span>Karthik</span></p>
-                  <p><span>Modified Date : </span><span>Oct 02, 2019</span></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--#END Sub Activitie -->
-
-    <!--#START Sub Activitie Edit -->
-    <div
-      class="modal fade sub_activitie_edit_popup"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="myLargeModalLabel_1"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4>Edit Activitive Description</h4>
-            <button type="button" class="close pull-right" data-dismiss="modal">
-              &times;
-            </button>
-          </div>
-          <div class="modal-body">
-            <form id="sub_initative_Form">
-              <div class="form-row">
-                <div class="form-group col-md-9">
-                  <label for="sub_initative_desc">Description</label>
-                  <input
-                    type="text"
-                    class="form-control browser-default"
-                    name="sub_initative_desc"
-                    id="kpi_id"
-                    placeholder=""
-                  />
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="sub_initative_progress">Progress</label>
-                  <input
-                    type="text"
-                    class="form-control browser-default"
-                    name="sub_initative_progress"
-                    id="sub_initative_progress"
-                    placeholder=""
-                  />
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="sub_initative_start_end">Start / End Date</label>
-                  <input
-                    type="text"
-                    class="form-control browser-default date_pickers"
-                    data-range="true"
-                    data-multiple-dates-separator=" - "
-                    data-language="en"
-                    name="sub_initative_start_end"
-                    id="sub_initative_start_end"
-                    placeholder=""
-                  />
-                </div>
-                <div class="form-group browser-default col-md-6">
-                  <label for="attachment">Attachment</label>
-                  <select
-                    id="attachment"
-                    name="attachment"
-                    class="form-control mt-1"
-                  >
-                    <option></option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-line right">
-                <button
-                  type="button"
-                  class="btn-default1 btn"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
-                  Cancel
-                </button>
-                <button class="initative_save_btn" value="Save">Save</button>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <div
-              class="d-flex flex-column flex-fill ml-4 mb-5 text-left font-11"
-            >
-              <div class="d-flex flex-row">
-                <p class="kpi_audit">Audit</p>
-              </div>
-              <div class="d-flex flex-row">
-                <div class="d-flex flex-column">
-                  <p><span>Created By : </span><span>Arun</span></p>
-                  <p><span>Created Date : </span><span>Oct 02, 2019</span></p>
-                </div>
-                <div class="d-flex flex-column pl-5">
-                  <p><span>Modified By : </span><span>Karthik</span></p>
-                  <p><span>Modified Date : </span><span>Oct 02, 2019</span></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--#END Sub Activitie Edit -->
-
-    <!--#START Sub Comment View -->
-    <div
-      class="modal fade sub_comments_view_popup"
+      class="modal fade comments_view_popup"
       tabindex="-1"
       role="dialog"
       aria-labelledby="myLargeModalLabel_1"
@@ -3562,44 +3521,55 @@
                           </li>
                         </ul>
                       </div>
-                      <div class="flex-column">
-                        <ul class="header-dropdown m-r--2 pt-2 d-flex">
-                          <li class="dropdown">
-                            <a
-                              href="#"
-                              onclick="return false;"
-                              class="dropdown-toggle"
-                              data-toggle="dropdown"
-                              role="button"
-                              aria-haspopup="true"
-                              aria-expanded="true"
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex flex-row">
+                      <div class="flex-column comment_image">
+                        <img
+                          src="images/user/usrbig6.jpg"
+                          class="rounded-circle"
+                          alt="User"
+                          width="40"
+                        />
+                      </div>
+                      <div class="flex-column comment_details">
+                        <ul>
+                          <li>
+                            <span class="message-data-name"
+                              ><strong>Elmer Roberts, </strong></span
                             >
-                              <i class="material-icons">more_vert</i>
-                            </a>
-                            <ul
-                              class="dropdown-menu pull-right"
-                              x-placement="bottom-start"
-                              style="
-                                position: absolute;
-                                will-change: transform;
-                                top: 0px;
-                                left: 0px;
-                                transform: translate3d(0px, 24px, 0px);
-                              "
-                            >
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target=".sub_activitie_popup"
-                                  onclick="return false;"
-                                  >Edit</a
-                                >
-                              </li>
-                              <li>
-                                <a href="#" onclick="return false;">Delete</a>
-                              </li>
+                          </li>
+                          <li>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                            elit. Aenean commodo ligula eget dolor. Aenean massa
+                          </li>
+                          <li>
+                            <ul class="d-flex flex-row">
+                              <li class="reply">Reply</li>
+                              <li>Like</li>
+                              <li>10:12 AM, Today</li>
                             </ul>
+                          </li>
+                        </ul>
+                        <ul>
+                          <li>
+                            <div class="comment_send" style="display: none;">
+                              <div
+                                class="form-group d-flex flex-row align-items-center"
+                              >
+                                <div class="form-line">
+                                  <input
+                                    type="text"
+                                    class="form-control comment"
+                                    placeholder="Type a comment..."
+                                  />
+                                </div>
+                                <div class="send_btn reply-btn">
+                                  <i class="fas fa-arrow-right"></i>
+                                </div>
+                              </div>
+                            </div>
                           </li>
                         </ul>
                       </div>
@@ -3655,41 +3625,6 @@
                           </li>
                         </ul>
                       </div>
-                      <div class="flex-column">
-                        <ul class="header-dropdown m-r--2 pt-2 d-flex">
-                          <li class="dropdown">
-                            <a
-                              href="#"
-                              onclick="return false;"
-                              class="dropdown-toggle"
-                              data-toggle="dropdown"
-                              role="button"
-                              aria-haspopup="true"
-                              aria-expanded="true"
-                            >
-                              <i class="material-icons">more_vert</i>
-                            </a>
-                            <ul
-                              class="dropdown-menu pull-right"
-                              x-placement="bottom-start"
-                              style="
-                                position: absolute;
-                                will-change: transform;
-                                top: 0px;
-                                left: 0px;
-                                transform: translate3d(0px, 24px, 0px);
-                              "
-                            >
-                              <li>
-                                <a href="#" onclick="return false;">Edit</a>
-                              </li>
-                              <li>
-                                <a href="#" onclick="return false;">Delete</a>
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </div>
                     </div>
                   </li>
                   <li>
@@ -3739,128 +3674,6 @@
                                 </div>
                               </div>
                             </div>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="flex-column">
-                        <ul class="header-dropdown m-r--2 pt-2 d-flex">
-                          <li class="dropdown">
-                            <a
-                              href="#"
-                              onclick="return false;"
-                              class="dropdown-toggle"
-                              data-toggle="dropdown"
-                              role="button"
-                              aria-haspopup="true"
-                              aria-expanded="true"
-                            >
-                              <i class="material-icons">more_vert</i>
-                            </a>
-                            <ul
-                              class="dropdown-menu pull-right"
-                              x-placement="bottom-start"
-                              style="
-                                position: absolute;
-                                will-change: transform;
-                                top: 0px;
-                                left: 0px;
-                                transform: translate3d(0px, 24px, 0px);
-                              "
-                            >
-                              <li>
-                                <a href="#" onclick="return false;">Edit</a>
-                              </li>
-                              <li>
-                                <a href="#" onclick="return false;">Delete</a>
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex flex-row">
-                      <div class="flex-column comment_image">
-                        <img
-                          src="images/user/usrbig6.jpg"
-                          class="rounded-circle"
-                          alt="User"
-                          width="40"
-                        />
-                      </div>
-                      <div class="flex-column comment_details">
-                        <ul>
-                          <li>
-                            <span class="message-data-name"
-                              ><strong>Elmer Roberts, </strong></span
-                            >
-                          </li>
-                          <li>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing
-                            elit. Aenean commodo ligula eget dolor. Aenean massa
-                          </li>
-                          <li>
-                            <ul class="d-flex flex-row">
-                              <li class="reply">Reply</li>
-                              <li>Like</li>
-                              <li>10:12 AM, Today</li>
-                            </ul>
-                          </li>
-                        </ul>
-                        <ul>
-                          <li>
-                            <div class="comment_send" style="display: none;">
-                              <div
-                                class="form-group d-flex flex-row align-items-center"
-                              >
-                                <div class="form-line">
-                                  <input
-                                    type="text"
-                                    class="form-control comment"
-                                    placeholder="Type a comment..."
-                                  />
-                                </div>
-                                <div class="send_btn reply-btn">
-                                  <i class="fas fa-arrow-right"></i>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="flex-column">
-                        <ul class="header-dropdown m-r--2 pt-2 d-flex">
-                          <li class="dropdown">
-                            <a
-                              href="#"
-                              onclick="return false;"
-                              class="dropdown-toggle"
-                              data-toggle="dropdown"
-                              role="button"
-                              aria-haspopup="true"
-                              aria-expanded="true"
-                            >
-                              <i class="material-icons">more_vert</i>
-                            </a>
-                            <ul
-                              class="dropdown-menu pull-right"
-                              x-placement="bottom-start"
-                              style="
-                                position: absolute;
-                                will-change: transform;
-                                top: 0px;
-                                left: 0px;
-                                transform: translate3d(0px, 24px, 0px);
-                              "
-                            >
-                              <li>
-                                <a href="#" onclick="return false;">Edit</a>
-                              </li>
-                              <li>
-                                <a href="#" onclick="return false;">Delete</a>
-                              </li>
-                            </ul>
                           </li>
                         </ul>
                       </div>
@@ -3873,523 +3686,9 @@
         </div>
       </div>
     </div>
-    <!--#END Sub Comment View -->
+    <!--#END Comment View -->
 
-    <!--#START Sub Activitie View -->
-    <div
-      class="modal fade sub_activitie_view_popup"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="myLargeModalLabel_1"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4>View Activitives</h4>
-            <button type="button" class="close pull-right" data-dismiss="modal">
-              &times;
-            </button>
-          </div>
-          <div class="col-lg-12 col-md-12 sub_initiatives">
-            <div class="card">
-              <div class="header d-flex flex-row">
-                <h5 class="prob d-flex flex-fill">
-                  <strong
-                    class="editableTxt1"
-                    onkeypress="return (this.innerText.length <= 25)"
-                    editable="true"
-                    >Activities</strong
-                  >
-                </h5>
-              </div>
-              <div
-                class="d-flex flex-column employee_div_body_box_risk activities-box1"
-                id="activities-box_risk_view"
-              >
-                <div
-                  class="d-flex flex-row employe_content_border sub_initiative_details"
-                >
-                  <div class="d-flex flex-column flex-fill profile_content">
-                    <div class="d-flex flex-row">
-                      <div class="d-flex flex-column init_flex_profile">
-                        <p>Activities 1</p>
-                      </div>
-                      <div class="d-flex flex-column">
-                        <ul class="list-unstyled order-list d-flex">
-                          <li class="avatar avatar-sm">
-                            <img
-                              class="rounded-circle sub_init_img"
-                              src="../../assets/images/user/user9.jpg"
-                              alt="user"
-                              width="50"
-                            />
-                          </li>
-                          <li class="avatar avatar-sm">
-                            <img
-                              class="rounded-circle sub_init_img"
-                              src="../../assets/images/user/user9.jpg"
-                              alt="user"
-                              width="50"
-                            />
-                          </li>
-                          <li class="avatar avatar-sm">
-                            <span _ngcontent-hhc-c5="" class="badge">+3</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="d-flex flex-row">
-                      <div class="d-flex flex-column flex-fill">
-                        <div class="d-flex flex-row">
-                          <div class="icon">
-                            <div id="one" class="chart_orange chart-pie"></div>
-                          </div>
-                          <div class="pie-progress">25%</div>
-                        </div>
-                      </div>
-                      <div class="d-flex flex-column">
-                        <p>Oct 09, 2019 - Oct 11, 2019</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="d-flex flex-row employe_content_border sub_initiative_details"
-                >
-                  <div class="d-flex flex-column flex-fill profile_content">
-                    <div class="d-flex flex-row">
-                      <div class="d-flex flex-column init_flex_profile">
-                        <p>Activities 2</p>
-                      </div>
-                      <div class="d-flex flex-column">
-                        <ul class="list-unstyled order-list d-flex">
-                          <li class="avatar avatar-sm">
-                            <img
-                              class="rounded-circle sub_init_img"
-                              src="../../assets/images/user/user9.jpg"
-                              alt="user"
-                              width="50"
-                            />
-                          </li>
-                          <li class="avatar avatar-sm">
-                            <img
-                              class="rounded-circle sub_init_img"
-                              src="../../assets/images/user/user9.jpg"
-                              alt="user"
-                              width="50"
-                            />
-                          </li>
-                          <li class="avatar avatar-sm">
-                            <span _ngcontent-hhc-c5="" class="badge">+3</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="d-flex flex-row">
-                      <div class="d-flex flex-column flex-fill">
-                        <div class="d-flex flex-row">
-                          <div class="icon">
-                            <div id="two" class="chart_green chart-pie"></div>
-                          </div>
-                          <div class="pie-progress">85%</div>
-                        </div>
-                      </div>
-                      <div class="d-flex flex-column">
-                        <p>Oct 09, 2019 - Oct 11, 2019</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="d-flex flex-row employe_content_border sub_initiative_details"
-                >
-                  <div class="d-flex flex-column flex-fill profile_content">
-                    <div class="d-flex flex-row">
-                      <div class="d-flex flex-column init_flex_profile">
-                        <p>Activities 3</p>
-                      </div>
-                      <div class="d-flex flex-column">
-                        <ul class="list-unstyled order-list d-flex">
-                          <li class="avatar avatar-sm">
-                            <img
-                              class="rounded-circle sub_init_img"
-                              src="../../assets/images/user/user9.jpg"
-                              alt="user"
-                              width="50"
-                            />
-                          </li>
-                          <li class="avatar avatar-sm">
-                            <img
-                              class="rounded-circle sub_init_img"
-                              src="../../assets/images/user/user9.jpg"
-                              alt="user"
-                              width="50"
-                            />
-                          </li>
-                          <li class="avatar avatar-sm">
-                            <span _ngcontent-hhc-c5="" class="badge">+3</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="d-flex flex-row">
-                      <div class="d-flex flex-column flex-fill">
-                        <div class="d-flex flex-row">
-                          <div class="icon">
-                            <div
-                              id="three"
-                              class="chart_yellow chart-pie"
-                            ></div>
-                          </div>
-                          <div class="pie-progress">50%</div>
-                        </div>
-                      </div>
-                      <div class="d-flex flex-column">
-                        <p>Oct 09, 2019 - Oct 11, 2019</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="d-flex flex-row employe_content_border sub_initiative_details"
-                >
-                  <div class="d-flex flex-column flex-fill profile_content">
-                    <div class="d-flex flex-row">
-                      <div class="d-flex flex-column init_flex_profile">
-                        <p>Activities 4</p>
-                      </div>
-                      <div class="d-flex flex-column">
-                        <ul class="list-unstyled order-list d-flex">
-                          <li class="avatar avatar-sm">
-                            <img
-                              class="rounded-circle sub_init_img"
-                              src="../../assets/images/user/user9.jpg"
-                              alt="user"
-                              width="50"
-                            />
-                          </li>
-                          <li class="avatar avatar-sm">
-                            <img
-                              class="rounded-circle sub_init_img"
-                              src="../../assets/images/user/user9.jpg"
-                              alt="user"
-                              width="50"
-                            />
-                          </li>
-                          <li class="avatar avatar-sm">
-                            <span _ngcontent-hhc-c5="" class="badge">+3</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="d-flex flex-row">
-                      <div class="d-flex flex-column flex-fill">
-                        <div class="d-flex flex-row">
-                          <div class="icon">
-                            <div id="four" class="chart_orange chart-pie"></div>
-                          </div>
-                          <div class="pie-progress">25%</div>
-                        </div>
-                      </div>
-                      <div class="d-flex flex-column">
-                        <p>Oct 09, 2019 - Oct 11, 2019</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="d-flex flex-row employe_content_border sub_initiative_details"
-                >
-                  <div class="d-flex flex-column flex-fill profile_content">
-                    <div class="d-flex flex-row">
-                      <div class="d-flex flex-column init_flex_profile">
-                        <p>Activities 5</p>
-                      </div>
-                      <div class="d-flex flex-column">
-                        <ul class="list-unstyled order-list d-flex">
-                          <li class="avatar avatar-sm">
-                            <img
-                              class="rounded-circle sub_init_img"
-                              src="../../assets/images/user/user9.jpg"
-                              alt="user"
-                              width="50"
-                            />
-                          </li>
-                          <li class="avatar avatar-sm">
-                            <img
-                              class="rounded-circle sub_init_img"
-                              src="../../assets/images/user/user9.jpg"
-                              alt="user"
-                              width="50"
-                            />
-                          </li>
-                          <li class="avatar avatar-sm">
-                            <span _ngcontent-hhc-c5="" class="badge">+3</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="d-flex flex-row">
-                      <div class="d-flex flex-column flex-fill">
-                        <div class="d-flex flex-row">
-                          <div class="icon">
-                            <div id="four" class="chart_orange chart-pie"></div>
-                          </div>
-                          <div class="pie-progress">45%</div>
-                        </div>
-                      </div>
-                      <div class="d-flex flex-column">
-                        <p>Oct 09, 2019 - Oct 11, 2019</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="d-flex flex-row employe_content_border sub_initiative_details"
-                >
-                  <div class="d-flex flex-column flex-fill profile_content">
-                    <div class="d-flex flex-row">
-                      <div class="d-flex flex-column init_flex_profile">
-                        <p>Activities 6</p>
-                      </div>
-                      <div class="d-flex flex-column">
-                        <ul class="list-unstyled order-list d-flex">
-                          <li class="avatar avatar-sm">
-                            <img
-                              class="rounded-circle sub_init_img"
-                              src="../../assets/images/user/user9.jpg"
-                              alt="user"
-                              width="50"
-                            />
-                          </li>
-                          <li class="avatar avatar-sm">
-                            <img
-                              class="rounded-circle sub_init_img"
-                              src="../../assets/images/user/user9.jpg"
-                              alt="user"
-                              width="50"
-                            />
-                          </li>
-                          <li class="avatar avatar-sm">
-                            <span _ngcontent-hhc-c5="" class="badge">+3</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="d-flex flex-row">
-                      <div class="d-flex flex-column flex-fill">
-                        <div class="d-flex flex-row">
-                          <div class="icon">
-                            <div id="one" class="chart_orange chart-pie"></div>
-                          </div>
-                          <div class="pie-progress">25%</div>
-                        </div>
-                      </div>
-                      <div class="d-flex flex-column">
-                        <p>Oct 09, 2019 - Oct 11, 2019</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--#END Sub Activitie View -->
-
-    <!--#START Sub Milestone -->
-    <div
-      class="modal fade sub_milestone_popup"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="myLargeModalLabel_1"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4>Add Monitoring Description</h4>
-            <button type="button" class="close pull-right" data-dismiss="modal">
-              &times;
-            </button>
-          </div>
-          <div class="modal-body">
-            <form id="sub_initative_Form">
-              <div class="form-row">
-                <div class="form-group col-md-12">
-                  <label for="sub_initative_desc">Description</label>
-                  <input
-                    type="text"
-                    class="form-control browser-default"
-                    name="sub_initative_desc"
-                    id="kpi_id"
-                    placeholder=""
-                  />
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="sub_initative_progress">Progress</label>
-                  <input
-                    type="text"
-                    class="form-control browser-default"
-                    name="sub_initative_progress"
-                    id="sub_initative_progress"
-                    placeholder=""
-                  />
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="sub_initative_start_end">End Date</label>
-                  <input
-                    type="text"
-                    class="form-control browser-default single_date_picker date_pickers_single"
-                    name="sub_initative_start_end"
-                    id="sub_initative_start_end"
-                    placeholder=""
-                  />
-                </div>
-              </div>
-              <div class="form-line right">
-                <button
-                  type="button"
-                  class="btn-default1 btn"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
-                  Cancel
-                </button>
-                <button class="initative_save_btn" value="Save">Save</button>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <div
-              class="d-flex flex-column flex-fill ml-4 mb-5 text-left font-11"
-            >
-              <div class="d-flex flex-row">
-                <p class="kpi_audit">Audit</p>
-              </div>
-              <div class="d-flex flex-row">
-                <div class="d-flex flex-column">
-                  <p><span>Created By : </span><span>Arun</span></p>
-                  <p><span>Created Date : </span><span>Oct 02, 2019</span></p>
-                </div>
-                <div class="d-flex flex-column pl-5">
-                  <p><span>Modified By : </span><span>Karthik</span></p>
-                  <p><span>Modified Date : </span><span>Oct 02, 2019</span></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--#END Sub Milestone -->
-
-    <!--#START Sub Milestone Edit -->
-    <div
-      class="modal fade sub_milestone_edit_popup"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="myLargeModalLabel_1"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4>Edit Milestone Description</h4>
-            <button type="button" class="close pull-right" data-dismiss="modal">
-              &times;
-            </button>
-          </div>
-          <div class="modal-body">
-            <form id="sub_initative_Form">
-              <div class="form-row">
-                <div class="form-group col-md-9">
-                  <label for="sub_initative_desc">Description</label>
-                  <input
-                    type="text"
-                    class="form-control browser-default"
-                    name="sub_initative_desc"
-                    id="kpi_id"
-                    placeholder=""
-                  />
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="sub_initative_progress">Progress</label>
-                  <input
-                    type="text"
-                    class="form-control browser-default"
-                    name="sub_initative_progress"
-                    id="sub_initative_progress"
-                    placeholder=""
-                  />
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="sub_initative_start_end">End Date</label>
-                  <input
-                    type="text"
-                    class="form-control browser-default date_pickers_single"
-                    data-language="en"
-                    name="sub_initative_start_end"
-                    id="sub_initative_start_end"
-                    placeholder=""
-                  />
-                </div>
-                <div class="form-group browser-default col-md-6">
-                  <label for="attachment">Attachment</label>
-                  <select
-                    id="attachment"
-                    name="attachment"
-                    class="form-control"
-                  >
-                    <option></option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-line right">
-                <button
-                  type="button"
-                  class="btn-default1 btn"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
-                  Cancel
-                </button>
-                <button class="initative_save_btn" value="Save">Save</button>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <div
-              class="d-flex flex-column flex-fill ml-4 mb-5 text-left font-11"
-            >
-              <div class="d-flex flex-row">
-                <p class="kpi_audit">Audit</p>
-              </div>
-              <div class="d-flex flex-row">
-                <div class="d-flex flex-column">
-                  <p><span>Created By : </span><span>Arun</span></p>
-                  <p><span>Created Date : </span><span>Oct 02, 2019</span></p>
-                </div>
-                <div class="d-flex flex-column pl-5">
-                  <p><span>Modified By : </span><span>Karthik</span></p>
-                  <p><span>Modified Date : </span><span>Oct 02, 2019</span></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--#END Sub Milestone Edit -->
-
-    <!--#START Sub Milestone View -->
+    <!--#START Review & Monitoring View -->
     <div
       class="modal fade sub_milestone_view_popup"
       tabindex="-1"
@@ -4407,16 +3706,6 @@
           </div>
           <div class="col-lg-12 col-md-12 sub_initiatives">
             <div class="card">
-              <!-- <div class="header d-flex flex-row">
-                <h5 class="prob d-flex flex-fill">
-                  <strong
-                    class="editableTxt1"
-                    onkeypress="return (this.innerText.length <= 25)"
-                    editable="true"
-                    >Monitoring</strong
-                  >
-                </h5>
-              </div> -->
               <div class="d-flex flex-column employee_div_body_box">
                 <div
                   class="d-flex flex-row employe_content_border sub_initiative_details"
@@ -4517,7 +3806,7 @@
         </div>
       </div>
     </div>
-    <!--#END Sub Milestone View -->
+    <!--#END Review & Monitoring View -->
 
     <!-- File Upload PopUp -->
     <div
@@ -6597,7 +5886,11 @@
                                 </p>
                               </div>
                               <div class="d-flex flex-column">
-                                <ul class="list-unstyled order-list d-flex">
+                                <ul
+                                  class="list-unstyled order-list d-flex"
+                                  data-toggle="modal"
+                                  data-target="#user_edit_popup"
+                                >
                                   <li class="avatar avatar-sm">
                                     <img
                                       class="rounded-circle sub_init_img"
@@ -6622,7 +5915,10 @@
                                 </ul>
                               </div>
                               <div class="flex-column">
-                                <ul class="header-dropdown m-r--2 pt-3 d-flex">
+                                <ul
+                                  class="header-dropdown m-r--2 pt-3 d-flex"
+                                  style="margin-right: -12px; margin-top: -6px;"
+                                >
                                   <li class="dropdown">
                                     <a
                                       href="#"
@@ -6662,15 +5958,6 @@
                                           data-target="#plan_desc_edit_popup"
                                           onclick="return false;"
                                           >Edit</a
-                                        >
-                                      </li>
-                                      <li>
-                                        <a
-                                          href="#"
-                                          data-toggle="modal"
-                                          data-target=".sub_cause_conq_edit_popup"
-                                          onclick="return false;"
-                                          >View</a
                                         >
                                       </li>
                                       <li>
@@ -6837,7 +6124,11 @@
                                 </p>
                               </div>
                               <div class="d-flex flex-column">
-                                <ul class="list-unstyled order-list d-flex">
+                                <ul
+                                  class="list-unstyled order-list d-flex"
+                                  data-toggle="modal"
+                                  data-target="#user_edit_popup"
+                                >
                                   <li class="avatar avatar-sm">
                                     <img
                                       class="rounded-circle sub_init_img"
@@ -6862,7 +6153,10 @@
                                 </ul>
                               </div>
                               <div class="flex-column">
-                                <ul class="header-dropdown m-r--2 pt-3 d-flex">
+                                <ul
+                                  class="header-dropdown m-r--2 pt-3 d-flex"
+                                  style="margin-right: -12px; margin-top: -6px;"
+                                >
                                   <li class="dropdown">
                                     <a
                                       href="#"
@@ -6902,15 +6196,6 @@
                                           data-target="#plan_desc_edit_popup"
                                           onclick="return false;"
                                           >Edit</a
-                                        >
-                                      </li>
-                                      <li>
-                                        <a
-                                          href="#"
-                                          data-toggle="modal"
-                                          data-target=".sub_cause_conq_edit_popup"
-                                          onclick="return false;"
-                                          >View</a
                                         >
                                       </li>
                                       <li>
@@ -7100,6 +6385,7 @@
             <div class="d-flex flex-column employee_div_body_box">
               <div
                 class="d-flex flex-row employe_content_border sub_initiative_details"
+                style="background-color: #efedec; border: 1px solid #dedede;"
               >
                 <div class="d-flex flex-column flex-fill profile_content">
                   <div class="d-flex flex-row">
@@ -7107,7 +6393,12 @@
                       <p>Define onboarding process</p>
                     </div>
                     <div class="d-flex flex-column">
-                      <ul class="list-unstyled order-list d-flex">
+                      <ul
+                        class="list-unstyled order-list d-flex"
+                        data-toggle="modal"
+                        data-target="#user_edit_popup"
+                        style="cursor: pointer;"
+                      >
                         <li class="avatar avatar-sm">
                           <img
                             class="rounded-circle sub_init_img"
@@ -7190,6 +6481,7 @@
 
               <div
                 class="d-flex flex-row employe_content_border sub_initiative_details"
+                style="background-color: #efedec; border: 1px solid #dedede;"
               >
                 <div class="d-flex flex-column flex-fill profile_content">
                   <div class="d-flex flex-row">
@@ -7197,7 +6489,12 @@
                       <p>Define onboarding process</p>
                     </div>
                     <div class="d-flex flex-column">
-                      <ul class="list-unstyled order-list d-flex">
+                      <ul
+                        class="list-unstyled order-list d-flex"
+                        data-toggle="modal"
+                        data-target="#user_edit_popup"
+                        style="cursor: pointer;"
+                      >
                         <li class="avatar avatar-sm">
                           <img
                             class="rounded-circle sub_init_img"
@@ -7321,7 +6618,7 @@
                       <a
                         href="#"
                         data-toggle="modal"
-                        data-target=".sub_comments_view_popup"
+                        data-target=".comments_view_popup"
                         onclick="return false;"
                         >View</a
                       >
@@ -7411,7 +6708,7 @@
                               <a
                                 href="#"
                                 data-toggle="modal"
-                                data-target=".sub_activitie_popup"
+                                data-target="#comment_edit_popup"
                                 onclick="return false;"
                                 >Edit</a
                               >
@@ -7501,7 +6798,13 @@
                             "
                           >
                             <li>
-                              <a href="#" onclick="return false;">Edit</a>
+                              <a
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#comment_edit_popup"
+                                onclick="return false;"
+                                >Edit</a
+                              >
                             </li>
                             <li>
                               <a href="#" onclick="return false;">Delete</a>
@@ -7588,7 +6891,13 @@
                             "
                           >
                             <li>
-                              <a href="#" onclick="return false;">Edit</a>
+                              <a
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#comment_edit_popup"
+                                onclick="return false;"
+                                >Edit</a
+                              >
                             </li>
                             <li>
                               <a href="#" onclick="return false;">Delete</a>
@@ -7675,7 +6984,13 @@
                             "
                           >
                             <li>
-                              <a href="#" onclick="return false;">Edit</a>
+                              <a
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#comment_edit_popup"
+                                onclick="return false;"
+                                >Edit</a
+                              >
                             </li>
                             <li>
                               <a href="#" onclick="return false;">Delete</a>
@@ -7750,29 +7065,6 @@
           var title = startDate.format("L") + " – " + endDate.format("L");
           $(this).val(title);
         },
-      });
-
-      $(document).ready(function () {
-        // $('select').val([1]);
-        $(
-          "#multiSelect1, #multiSelect2, #multiSelect3, #multiSelect4, #multiSelect5"
-        ).formSelect();
-        $("select.select_all")
-          .siblings("ul")
-          .prepend("<li id=sm_select_all><span>Select All</span></li>");
-        $("li#sm_select_all").on("click", function () {
-          var jq_elem = $(this),
-            jq_elem_span = jq_elem.find("span"),
-            select_all = jq_elem_span.text() == "Select All",
-            set_text = select_all ? "Select None" : "Select All";
-          jq_elem_span.text(set_text);
-          jq_elem
-            .siblings("li")
-            .filter(function () {
-              return $(this).find("input").prop("checked") != select_all;
-            })
-            .click();
-        });
       });
 
       $(document).ready(function () {
