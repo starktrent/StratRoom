@@ -269,6 +269,14 @@
         right: 6%;
         font-size: 16px;
       }
+
+      .input-calender-icon1 {
+        color: #5a6169;
+        position: absolute;
+        bottom: 40%;
+        right: 12%;
+        font-size: 16px;
+      }
     </style>
   </head>
 
@@ -2416,6 +2424,341 @@
       </div>
     </div>
 
+    <!-- Recommendation Modal -->
+    <div id="notes" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="margin-top: 8%;">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Recommendation</h4>
+            <div class="float-right">
+              <button
+                onclick="notes('note_table')"
+                class="form-control rounded-circle"
+                style="margin-top: -4px; border: none;"
+              >
+                <i class="fa fa-plus"></i>
+              </button>
+            </div>
+          </div>
+          <div class="modal-body">
+            <table id="note_table" class="table table-bordered">
+              <thead class="bg-light">
+                <tr>
+                  <th>
+                    Recommendation
+                  </th>
+                  <th style="width: 50px;">Responsible</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <textarea class="form-control" rows="5"> </textarea>
+                  </td>
+                  <td>
+                    <div class="fullscreen">
+                      <ul
+                        class="list-unstyled order-list"
+                        data-toggle="modal"
+                        data-target="#user_edit_popup"
+                        style="cursor: pointer;"
+                      >
+                        <li class="avatar avatar-sm">
+                          <img
+                            class="rounded-circle"
+                            src="../../assets/images/user/user7.jpg"
+                            alt="user"
+                          />
+                        </li>
+                        <li class="avatar avatar-sm">
+                          <img
+                            class="rounded-circle"
+                            src="../../assets/images/user/user8.jpg"
+                            alt="user"
+                          />
+                        </li>
+                        <div class="image-upload">
+                          <label for="file-input">
+                            <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                              <a
+                                href="#"
+                                class="favgs"
+                                data-toggle="modal"
+                                data-target="#addpeople"
+                              >
+                                <span _ngcontent-hhc-c5="" class="badge"
+                                  >+</span
+                                >
+                              </a>
+                            </li>
+                          </label>
+                        </div>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <textarea class="form-control" rows="5"> </textarea>
+                  </td>
+                  <td>
+                    <div class="fullscreen">
+                      <ul
+                        class="list-unstyled order-list"
+                        data-toggle="modal"
+                        data-target="#user_edit_popup"
+                        style="cursor: pointer;"
+                      >
+                        <li class="avatar avatar-sm">
+                          <img
+                            class="rounded-circle"
+                            src="../../assets/images/user/user7.jpg"
+                            alt="user"
+                          />
+                        </li>
+                        <li class="avatar avatar-sm">
+                          <img
+                            class="rounded-circle"
+                            src="../../assets/images/user/user8.jpg"
+                            alt="user"
+                          />
+                        </li>
+                        <div class="image-upload">
+                          <label for="file-input">
+                            <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                              <a
+                                href="#"
+                                class="favgs"
+                                data-toggle="modal"
+                                data-target="#addpeople"
+                              >
+                                <span _ngcontent-hhc-c5="" class="badge"
+                                  >+</span
+                                >
+                              </a>
+                            </li>
+                          </label>
+                        </div>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="row">
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+              <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-secondary"
+                  data-dismiss="modal"
+                >
+                  Cancel
+                </button>
+              </div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-primary"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Modal -->
+    <div id="action" class="modal fade" role="dialog">
+      <div
+        class="modal-dialog modal-lg"
+        style="margin-top: 6%; max-width: 60% !important;"
+      >
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Actions</h4>
+            <div class="float-right">
+              <button
+                onclick="action('action_table')"
+                class="form-control rounded-circle"
+                style="margin-top: -4px; border: none;"
+              >
+                <i class="fa fa-plus"></i>
+              </button>
+            </div>
+          </div>
+          <div class="modal-body">
+            <table id="action_table" class="table table-bordered">
+              <thead class="bg-light">
+                <tr>
+                  <th>Actions</th>
+                  <th style="width: 150px;">By Date</th>
+                  <th style="width: 50px;">Responsible</th>
+                  <th style="width: 50px;">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <textarea class="form-control" cols="5" rows="5">
+                    </textarea>
+                  </td>
+                  <td>
+                    <div class="row">
+                      <div class="form-group col-md-12">
+                        <i class="far fa-calendar input-calender-icon1"></i>
+                        <input
+                          type="text"
+                          class="modal-custom-input date_pickers_single"
+                          style="
+                            height: 34px !important;
+                            width: 90% !important;
+                          "
+                          data-language="en"
+                          name="kpi_start_end_date"
+                          id="kpi_start_end_date"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="fullscreen">
+                      <ul
+                        class="list-unstyled order-list"
+                        data-toggle="modal"
+                        data-target="#user_edit_popup"
+                        style="cursor: pointer;"
+                      >
+                        <li class="avatar avatar-sm">
+                          <img
+                            class="rounded-circle"
+                            src="../../assets/images/user/user7.jpg"
+                            alt="user"
+                          />
+                        </li>
+
+                        <div class="image-upload">
+                          <label for="file-input">
+                            <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                              <a
+                                href="#"
+                                class="favgs"
+                                data-toggle="modal"
+                                data-target="#addpeople"
+                              >
+                                <span _ngcontent-hhc-c5="" class="badge"
+                                  >+</span
+                                >
+                              </a>
+                            </li>
+                          </label>
+                        </div>
+                      </ul>
+                    </div>
+                  </td>
+                  <td>
+                    <input type="checkbox" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <textarea class="form-control" cols="5" rows="5">
+                    </textarea>
+                  </td>
+                  <td>
+                    <div class="row">
+                      <div class="form-group col-md-12">
+                        <i class="far fa-calendar input-calender-icon1"></i>
+                        <input
+                          type="text"
+                          class="modal-custom-input date_pickers_single"
+                          style="
+                            height: 34px !important;
+                            width: 90% !important;
+                          "
+                          data-language="en"
+                          name="kpi_start_end_date"
+                          id="kpi_start_end_date"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="fullscreen">
+                      <ul
+                        class="list-unstyled order-list"
+                        data-toggle="modal"
+                        data-target="#user_edit_popup"
+                        style="cursor: pointer;"
+                      >
+                        <li class="avatar avatar-sm">
+                          <img
+                            class="rounded-circle"
+                            src="../../assets/images/user/user7.jpg"
+                            alt="user"
+                          />
+                        </li>
+
+                        <div class="image-upload">
+                          <label for="file-input">
+                            <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                              <a
+                                href="#"
+                                class="favgs"
+                                data-toggle="modal"
+                                data-target="#addpeople"
+                              >
+                                <span _ngcontent-hhc-c5="" class="badge"
+                                  >+</span
+                                >
+                              </a>
+                            </li>
+                          </label>
+                        </div>
+                      </ul>
+                    </div>
+                  </td>
+                  <td><input type="checkbox" /></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="row">
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+              <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-secondary"
+                  data-dismiss="modal"
+                >
+                  Cancel
+                </button>
+              </div>
+              <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-primary"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!--#Start User Edit Popup -->
     <div
       class="modal fade"
@@ -2649,310 +2992,6 @@
       </div>
     </div>
     <!--#End User Edit Popup -->
-
-    <!-- Recommendation Modal -->
-    <div id="notes" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" style="margin-top: 8%;">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4>Recommendation</h4>
-            <div class="float-right">
-              <button
-                onclick="notes('note_table')"
-                class="form-control rounded-circle"
-                style="margin-top: -4px; border: none;"
-              >
-                <i class="fa fa-plus"></i>
-              </button>
-            </div>
-          </div>
-          <div class="modal-body">
-            <table id="note_table" class="table table-bordered">
-              <thead class="bg-light">
-                <tr>
-                  <th>
-                    Recommendation
-                  </th>
-                  <th style="width: 50px;">Responsible</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <textarea class="form-control" rows="5"> </textarea>
-                  </td>
-                  <td>
-                    <div class="fullscreen">
-                      <ul
-                        class="list-unstyled order-list"
-                        data-toggle="modal"
-                        data-target="#user_edit_popup"
-                        style="cursor: pointer;"
-                      >
-                        <li class="avatar avatar-sm">
-                          <img
-                            class="rounded-circle"
-                            src="../../assets/images/user/user7.jpg"
-                            alt="user"
-                          />
-                        </li>
-                        <li class="avatar avatar-sm">
-                          <img
-                            class="rounded-circle"
-                            src="../../assets/images/user/user8.jpg"
-                            alt="user"
-                          />
-                        </li>
-                        <div class="image-upload">
-                          <label for="file-input">
-                            <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
-                              <a
-                                href="#"
-                                class="favgs"
-                                data-toggle="modal"
-                                data-target="#addpeople"
-                              >
-                                <span _ngcontent-hhc-c5="" class="badge"
-                                  >+</span
-                                >
-                              </a>
-                            </li>
-                          </label>
-                        </div>
-                      </ul>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <textarea class="form-control" rows="5"> </textarea>
-                  </td>
-                  <td>
-                    <div class="fullscreen">
-                      <ul class="list-unstyled order-list">
-                        <li class="avatar avatar-sm">
-                          <img
-                            class="rounded-circle"
-                            src="../../assets/images/user/user7.jpg"
-                            alt="user"
-                          />
-                        </li>
-                        <li class="avatar avatar-sm">
-                          <img
-                            class="rounded-circle"
-                            src="../../assets/images/user/user8.jpg"
-                            alt="user"
-                          />
-                        </li>
-                        <div class="image-upload">
-                          <label for="file-input">
-                            <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
-                              <a
-                                href="#"
-                                class="favgs"
-                                data-toggle="modal"
-                                data-target="#addpeople"
-                              >
-                                <span _ngcontent-hhc-c5="" class="badge"
-                                  >+</span
-                                >
-                              </a>
-                            </li>
-                          </label>
-                        </div>
-                      </ul>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-            <div class="row">
-              <div class="form-group col-md-12">
-                <hr />
-              </div>
-              <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
-              <div class="form-group col-lg-2 col-md-3 col-sm-6">
-                <button
-                  type="button"
-                  class="btn custom-form-control btn-custom-secondary"
-                  data-dismiss="modal"
-                >
-                  Cancel
-                </button>
-              </div>
-              <div class="form-group col-lg-2 col-md-3 col-sm-6">
-                <button
-                  type="button"
-                  class="btn custom-form-control btn-custom-primary"
-                >
-                  Save
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Action Modal -->
-    <div id="action" class="modal fade" role="dialog">
-      <div
-        class="modal-dialog modal-lg"
-        style="margin-top: 8%; max-width: 60% !important;"
-      >
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4>Actions</h4>
-            <div class="float-right">
-              <button
-                onclick="action('action_table')"
-                class="form-control rounded-circle"
-                style="margin-top: -4px; border: none;"
-              >
-                <i class="fa fa-plus"></i>
-              </button>
-            </div>
-          </div>
-          <div class="modal-body">
-            <table id="action_table" class="table table-bordered">
-              <thead class="bg-light">
-                <tr>
-                  <th>Actions</th>
-                  <th style="width: 150px;">By Date</th>
-                  <th style="width: 50px;">Responsible</th>
-                  <th style="width: 50px;">Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <textarea class="form-control" cols="5" rows="5">
-                    </textarea>
-                  </td>
-                  <td>
-                    <input
-                      type="text"
-                      class="modal-custom-input date_pickers_single"
-                      style="height: 34px !important;"
-                      data-language="en"
-                      name="kpi_start_end_date"
-                      id="kpi_start_end_date"
-                    />
-                  </td>
-                  <td>
-                    <div class="fullscreen">
-                      <ul class="list-unstyled order-list">
-                        <li class="avatar avatar-sm">
-                          <img
-                            class="rounded-circle"
-                            src="../../assets/images/user/user7.jpg"
-                            alt="user"
-                          />
-                        </li>
-
-                        <div class="image-upload">
-                          <label for="file-input">
-                            <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
-                              <a
-                                href="#"
-                                class="favgs"
-                                data-toggle="modal"
-                                data-target="#addpeople"
-                              >
-                                <span _ngcontent-hhc-c5="" class="badge"
-                                  >+</span
-                                >
-                              </a>
-                            </li>
-                          </label>
-                        </div>
-                      </ul>
-                    </div>
-                  </td>
-                  <td>
-                    <input type="checkbox" />
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <textarea class="form-control" cols="5" rows="5">
-                    </textarea>
-                  </td>
-                  <td>
-                    <input
-                      type="text"
-                      class="modal-custom-input date_pickers_single"
-                      style="height: 34px !important;"
-                      data-language="en"
-                      name="kpi_start_end_date"
-                      id="kpi_start_end_date"
-                    />
-                  </td>
-                  <td>
-                    <div class="fullscreen">
-                      <ul class="list-unstyled order-list">
-                        <li class="avatar avatar-sm">
-                          <img
-                            class="rounded-circle"
-                            src="../../assets/images/user/user7.jpg"
-                            alt="user"
-                          />
-                        </li>
-
-                        <div class="image-upload">
-                          <label for="file-input">
-                            <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
-                              <a
-                                href="#"
-                                class="favgs"
-                                data-toggle="modal"
-                                data-target="#addpeople"
-                              >
-                                <span _ngcontent-hhc-c5="" class="badge"
-                                  >+</span
-                                >
-                              </a>
-                            </li>
-                          </label>
-                        </div>
-                      </ul>
-                    </div>
-                  </td>
-                  <td><input type="checkbox" /></td>
-                </tr>
-              </tbody>
-            </table>
-
-            <div class="row">
-              <div class="form-group col-md-12">
-                <hr />
-              </div>
-              <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
-              <div class="form-group col-lg-2 col-md-3 col-sm-6">
-                <button
-                  type="button"
-                  class="btn custom-form-control btn-custom-secondary"
-                  data-dismiss="modal"
-                >
-                  Cancel
-                </button>
-              </div>
-              <div class="form-group col-lg-2 col-md-3 col-sm-6">
-                <button
-                  type="button"
-                  class="btn custom-form-control btn-custom-primary"
-                >
-                  Save
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <section class="content" id="section">
       <!-- Page Header -->
@@ -4187,7 +4226,7 @@
 
         var cell2 = row.insertCell(1);
         cell2.innerHTML =
-          '<div class="fullscreen"> <ul class="list-unstyled order-list"> <li class="avatar avatar-sm"> <img class="rounded-circle" src="../../assets/images/user/user7.jpg" alt="user"> </li><li class="avatar avatar-sm"> <img class="rounded-circle" src="../../assets/images/user/user8.jpg" alt="user"> </li><div class="image-upload"> <label for="file-input"> <li _ngcontent-hhc-c5="" class="avatar avatar-sm" > <a href="#" class="favgs" data-toggle="modal" data-target="#addpeople" > <span _ngcontent-hhc-c5="" class="badge" >+<span id="count"> </span></span ></a> </li></label> </div></ul> </div>';
+          '<div class="fullscreen"> <ul class="list-unstyled order-list" data-toggle="modal" data-target="#user_edit_popup" style="cursor: pointer;"> <li class="avatar avatar-sm"> <img class="rounded-circle" src="../../assets/images/user/user7.jpg" alt="user"> </li><li class="avatar avatar-sm"> <img class="rounded-circle" src="../../assets/images/user/user8.jpg" alt="user"> </li><div class="image-upload"> <label for="file-input"> <li _ngcontent-hhc-c5="" class="avatar avatar-sm" > <a href="#" class="favgs" data-toggle="modal" data-target="#addpeople" > <span _ngcontent-hhc-c5="" class="badge" >+<span id="count"> </span></span ></a> </li></label> </div></ul> </div>';
       }
 
       function notes_del(tableID) {
@@ -4221,13 +4260,23 @@
           '<textarea class="form-control" cols="5" rows="5" > </textarea>';
 
         var cell2 = row.insertCell(1);
-        cell2.innerHTML =
-          '<input type="text" class="modal-custom-input date_pickers_single" style="height: 36px !important;" data-language="en" name="kpi_start_end_date" id="kpi_start_end_date" style="width: 88% !important; height: 36px !important;" />';
-        $(".datepicker").datepicker();
+        cell2.innerHTML = `<div class="row">
+            <div class="form-group col-md-12">
+              <i class="far fa-calendar input-calender-icon1"></i>
+              <input
+                type="text"
+                class="modal-custom-input date_pickers_single"
+                style="height: 34px !important; width: 90% !important"
+                data-language="en"
+                name="kpi_start_end_date"
+                id="kpi_start_end_date"
+              />
+            </div>
+          </div>`;
 
         var cell3 = row.insertCell(2);
         cell3.innerHTML =
-          '<div class="fullscreen"> <ul class="list-unstyled order-list"> <li class="avatar avatar-sm"> <img class="rounded-circle" src="../../assets/images/user/user7.jpg" alt="user"/> </li><div class="image-upload"> <label for="file-input"> <li _ngcontent-hhc-c5="" class="avatar avatar-sm"> <a href="#" class="favgs" data-toggle="modal" data-target="#addpeople" > <span _ngcontent-hhc-c5="" class="badge" >+</span > </a> </li></label> </div></ul> </div>';
+          '<div class="fullscreen"> <ul class="list-unstyled order-list" data-toggle="modal" data-target="#user_edit_popup" style="cursor: pointer;"> <li class="avatar avatar-sm"> <img class="rounded-circle" src="../../assets/images/user/user7.jpg" alt="user"/> </li><div class="image-upload"> <label for="file-input"> <li _ngcontent-hhc-c5="" class="avatar avatar-sm"> <a href="#" class="favgs" data-toggle="modal" data-target="#addpeople" > <span _ngcontent-hhc-c5="" class="badge" >+</span > </a> </li></label> </div></ul> </div>';
 
         var cell4 = row.insertCell(3);
         cell4.innerHTML = '<input type="checkbox"  >';

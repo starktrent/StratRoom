@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<a lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>StratRoom</title>
+    <!-- Favicon-->
+    <!-- <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon"> -->
+    <!-- Plugins Core Css -->
+    <link href="../../assets/css/app.min.css" rel="stylesheet" />
+    <!-- Custom Css -->
+    <link href="../../assets/css/style.css" rel="stylesheet" />
+    <link href="../../assets/css/custom.css" rel="stylesheet" />
+    <link href="../../assets/css/risk.css" rel="stylesheet" />
+    <link href="../../assets/css/icheck-bootstrap.min.css" rel="stylesheet" />
+    <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" />
+    <!-- You can choose a theme from css/styles instead of get all themes -->
+    <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
+    <!-- <link href="../../assets/css/table-view.css" rel="stylesheet" /> -->
+    <!-- <link rel="stylesheet" href="../../assets/daterangepicker.css"> -->
+    <link
+      href="../../assets/css/bootstrap-popover-x.css"
+      media="all"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../assets/datepickerair.css" />
+    <link href="../../assets/css/employee.css" rel="stylesheet" />
+    <link href="../../assets/jquery-ui.min.css" rel="stylesheet" />
+    <link
+      href="../../assets/daterangepicker/daterangepicker.min.css"
+      rel="stylesheet"
+    />
+    <link href="../../assets/select2.min.css" rel="stylesheet" />
+
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .orientation-right {
+        top: 60px !important;
+        right: 0 !important;
+        left: auto !important;
+        position: fixed;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .shown {
+        display: block;
+      }
+
+      .select2-container {
+        width: 360px !important;
+      }
+
+      .select2-container--default .select2-selection--multiple {
+        border: none;
+        border-bottom: 1px solid #9e9e9e !important;
+        border-radius: 0 !important;
+        height: 30px;
+      }
+
+      .select2-container--default.select2-container--focus
+        .select2-selection--multiple {
+        border: none;
+        border-bottom: 1px solid #9e9e9e !important;
+      }
+
+      .toggle-dropdown li {
+        cursor: pointer;
+      }
+
+      .multi-column-dropdown h4 {
+        font-weight: 600;
+        font-size: 15px;
+        padding: 7px 0px 4px 10px;
+      }
+
+      .dropdown-menu {
+        min-width: 200px;
+      }
+      .dropdown-menu.columns-2 {
+        min-width: 400px;
+      }
+      .dropdown-menu.columns-3 {
+        min-width: 600px;
+      }
+      .dropdown-menu li a {
+        padding: 3px 15px;
+        font-weight: 300;
+      }
+      .multi-column-dropdown {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+      }
+      .multi-column-dropdown li a {
+        display: block;
+        clear: both;
+        line-height: 1.428571429;
+        color: #333;
+        white-space: normal;
+      }
+      .multi-column-dropdown li a:hover {
+        text-decoration: none;
+        color: #333;
+        background-color: #f5f5f5;
+      }
+
+      @media (max-width: 767px) {
+        .dropdown-menu.multi-column {
+          min-width: 240px !important;
+          overflow-x: hidden;
+        }
+      }
+
+      .dashboard-table tbody tr td,
+      .dashboard-table tbody tr th {
+        border: 1px solid #ececec !important;
+        padding: 14px 5px 14px 5px;
+        font-size: 12px !important;
+      }
+
+      .dashboard-table tbody tr th {
+        background-color: #f7f7f7;
+      }
+
+      .dashboard-table tbody tr td {
+        font-weight: 500 !important;
+        color: #555;
+      }
+
+      .dashboard-table tbody tr th {
+        font-weight: 600 !important;
+        color: #1e252d;
+      }
+    </style>
+
+    <script>
+      function preview_images() {
+        var total_file = document.getElementById("images").files.length;
+        for (var i = 0; i < total_file; i++) {
+          $("#image_preview").append(
+            "<div class='col-md-3' style='padding-bottom: 4%' '><img class='img-responsive' src='" +
+              URL.createObjectURL(event.target.files[i]) +
+              "'></div>"
+          );
+        }
+      }
+    </script>
+  </head>
+
+  <body class="light">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+      <div class="loader">
+        <div class="m-t-30">
+          <img width="100" src="../../assets/images/logo_1.gif" alt="admin" />
+        </div>
+        <p>Please wait...</p>
+      </div>
+    </div>
+    <!-- <div>
+            <img src="../../assets/images/SP_Bg.png" alt="">
+        </div> -->
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a
+            href="#"
+            onClick="return false;"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#navbar-collapse"
+            aria-expanded="false"
+          ></a>
+          <a href="#" onClick="return false;" class="bars"></a>
+          <a href="#" onClick="return false;" class="bar_nav sidemenu-collapse"
+            ><i class="nav-hdr-btn ti-menu" style="color: #000;"></i
+          ></a>
+          <a class="navbar-brand nav_float" href="#">
+            <img
+              src="../../assets/images/Startroom_Final logo-01_1.png"
+              alt=""
+            />
+            <!-- <span class="logo-name">Img</span> -->
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="fullscreen" style="padding: 4px; left: -14px;">
+              <ul class="list-unstyled order-list">
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user7.jpg"
+                    alt="user"
+                  />
+                </li>
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user8.jpg"
+                    alt="user"
+                  />
+                </li>
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user9.jpg"
+                    alt="user"
+                  />
+                </li>
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user9.jpg"
+                    alt="user"
+                  />
+                </li>
+                <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                  <span _ngcontent-hhc-c5="" class="badge top-bar-badge"
+                    >+3
+                  </span>
+                </li>
+              </ul>
+            </li>
+            <li class="fullscreen">
+              <form class="form-header" action="" method="POST">
+                <input
+                  class="au-input au-input--xl"
+                  style="min-width: 20%;"
+                  type="text"
+                  name="search"
+                  placeholder="Search"
+                />
+                <button class="au-btn--submit" type="submit">
+                  <i class="fa fa-search" style="color: gray;"></i>
+                </button>
+              </form>
+            </li>
+            <li class="fullscreen">
+              <!-- <i class="nav-hdr-btn ti-calendar" style="color: gray"></i> -->
+              <input class="daterangepicker-field top_datepicker" />
+            </li>
+            <!-- #END# Full Screen Button -->
+            <!-- #START# Notifications-->
+            <li class="dropdown">
+              <a
+                href="#"
+                onClick="return false;"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+              >
+                <i class="nav-hdr-btn ti-bell" style="color: gray;"></i>
+                <span class="notify"></span>
+                <span class="heartbeat"></span>
+              </a>
+            </li>
+            <li class="dropdown">
+              <a
+                href="#"
+                onClick="return false;"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+              >
+                <i class="nav-hdr-btn ti-settings" style="color: gray;"></i>
+                <span class="notify"></span>
+                <span class="heartbeat"></span>
+              </a>
+            </li>
+            <!-- #END# Notifications-->
+            <li class="">
+              <a
+                href="#"
+                onclick="return false;"
+                class="dropdown-toggle js-right-sidebar"
+                data-close="true"
+              >
+                <!-- <img src="../../assets/images/user.jpg" alt="user"> -->
+                <i class="fas fa-user-circle"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- #Top Bar -->
+    <div>
+      <!-- Left Sidebar -->
+      <aside id="leftsidebar" class="sidebar">
+        <!-- Menu -->
+        <div class="menu">
+          <ul class="list">
+            <li class="active">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon ti-home"></i>
+                <span>Organisation Structure</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" onClick="return false;" class="menu-toggle">
+                <i class="menu-icon ti-image"></i>
+                <span>Dashboards</span>
+              </a>
+              <ul class="ml-menu">
+                <li>
+                  <a href="#">BSC Dashboard</a>
+                </li>
+                <li>
+                  <a href="#">Strategy Map</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon ti-bar-chart"></i>
+                <span>Charts</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon ti-key"></i>
+                <span>Users & Access</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon ti-vector"></i>
+                <span>Workflows</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon ti-bell"></i>
+                <span>Notifications & Alerts</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon ti-server"></i>
+                <span>Data Management</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" onClick="return false;" class="menu-toggle">
+                <i class="menu-icon ti-layout-media-right-alt"></i>
+                <span>Template Management</span>
+              </a>
+              <ul class="ml-menu">
+                <li>
+                  <a
+                    href="#"
+                    id="sub-menu"
+                    onClick="return false;"
+                    class="menu-toggle"
+                  >
+                    Scorecard Layouts
+                  </a>
+                  <ul class="ml-menu">
+                    <li><a href="#">Standard BSC View</a></li>
+                    <li><a href="#">Dashboard View</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    id="sub-menu"
+                    onClick="return false;"
+                    class="menu-toggle"
+                  >
+                    Initiative
+                  </a>
+                  <ul class="ml-menu">
+                    <li><a href="#">Sub Initiatives</a></li>
+                    <li><a href="#">Tasks</a></li>
+                    <li><a href="#">Activities</a></li>
+                    <li><a href="#">Milestones</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Reports Table</a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    id="sub-menu"
+                    onClick="return false;"
+                    class="menu-toggle"
+                  >
+                    Comments
+                  </a>
+                  <ul class="ml-menu">
+                    <li><a href="#">Comments & Observations</a></li>
+                    <li><a href="#">Proof of Evidence</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Employee Layout</a>
+                </li>
+                <li>
+                  <a href="#">Appraisal</a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target=".data_collection_form"
+                    >Data Collection Form</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon ti-home"></i>
+                <span>Widget Management</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon ti-pie-chart"></i>
+                <span>Reports</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- #Menu -->
+      </aside>
+      <!-- #END# Left Sidebar -->
+
+      <!--#START Comment Edit Description -->
+      <div
+        class="modal fade"
+        id="comment_edit_popup"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myLargeModalLabel_1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4>Edit Comment</h4>
+              <button
+                type="button"
+                class="close pull-right"
+                data-dismiss="modal"
+              >
+                &times;
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="sub_initative_Form">
+                <div class="row">
+                  <div class="form-group col-md-12">
+                    <label for="meeting-name">Comment</label>
+                    <textarea class="form-control" rows="6"></textarea>
+                  </div>
+                </div>
+                <div class="row m-t-10">
+                  <div class="form-group col-md-12">
+                    <hr />
+                  </div>
+                  <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
+                  <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                    <button
+                      type="button"
+                      class="btn custom-form-control btn-custom-secondary"
+                      data-dismiss="modal"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                  <div class="form-group col-lg-2 col-md-3 col-sm-6">
+                    <button
+                      type="button"
+                      class="btn custom-form-control btn-custom-primary"
+                    >
+                      Save
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <div
+                class="d-flex flex-column flex-fill ml-4 mb-5 text-left font-11"
+              >
+                <div class="d-flex flex-row">
+                  <p class="kpi_audit">Audit</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <div class="d-flex flex-column">
+                    <p><span>Created By : </span><span>Arun</span></p>
+                    <p><span>Created Date : </span><span>Oct 02, 2019</span></p>
+                  </div>
+                  <div class="d-flex flex-column pl-5">
+                    <p><span>Modified By : </span><span>Karthik</span></p>
+                    <p>
+                      <span>Modified Date : </span><span>Oct 02, 2019</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--#END Comment Description -->
+
+      <!--#START Sub Comment View -->
+      <div
+        class="modal fade sub_comments_view_popup"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myLargeModalLabel_1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4>View Comments</h4>
+              <button
+                type="button"
+                class="close pull-right"
+                data-dismiss="modal"
+              >
+                &times;
+              </button>
+            </div>
+            <div class="col-lg-12 col-md-12 sub_initiatives">
+              <div class="card" style="box-shadow: none;">
+                <div class="comment-history" id="comment-conversation_1">
+                  <ul id="comment-conversation">
+                    <li>
+                      <div class="d-flex flex-row">
+                        <div class="flex-column comment_image">
+                          <img
+                            src="images/user/usrbig6.jpg"
+                            class="rounded-circle"
+                            alt="User"
+                            width="40"
+                          />
+                        </div>
+                        <div class="flex-column comment_details">
+                          <ul>
+                            <li>
+                              <span class="message-data-name"
+                                ><strong>Elmer Roberts, </strong></span
+                              >
+                            </li>
+                            <li>
+                              Lorem ipsum dolor sit amet, consectetuer
+                              adipiscing elit. Aenean commodo ligula eget dolor.
+                              Aenean massa
+                            </li>
+                            <li>
+                              <ul class="d-flex flex-row">
+                                <li class="reply">Reply</li>
+                                <li>Like</li>
+                                <li>10:12 AM, Today</li>
+                              </ul>
+                            </li>
+                          </ul>
+                          <ul>
+                            <li>
+                              <div class="comment_send" style="display: none;">
+                                <div
+                                  class="form-group d-flex flex-row align-items-center"
+                                >
+                                  <div class="form-line">
+                                    <input
+                                      type="text"
+                                      class="form-control comment"
+                                      placeholder="Type a comment..."
+                                    />
+                                  </div>
+                                  <div class="send_btn reply-btn">
+                                    <i class="fas fa-arrow-right"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="d-flex flex-row">
+                        <div class="flex-column comment_image">
+                          <img
+                            src="images/user/usrbig6.jpg"
+                            class="rounded-circle"
+                            alt="User"
+                            width="40"
+                          />
+                        </div>
+                        <div class="flex-column comment_details">
+                          <ul>
+                            <li>
+                              <span class="message-data-name"
+                                ><strong>Elmer Roberts, </strong></span
+                              >
+                            </li>
+                            <li>
+                              Lorem ipsum dolor sit amet, consectetuer
+                              adipiscing elit. Aenean commodo ligula eget dolor.
+                              Aenean massa
+                            </li>
+                            <li>
+                              <ul class="d-flex flex-row">
+                                <li class="reply">Reply</li>
+                                <li>Like</li>
+                                <li>10:12 AM, Today</li>
+                              </ul>
+                            </li>
+                          </ul>
+                          <ul>
+                            <li>
+                              <div class="comment_send" style="display: none;">
+                                <div
+                                  class="form-group d-flex flex-row align-items-center"
+                                >
+                                  <div class="form-line">
+                                    <input
+                                      type="text"
+                                      class="form-control comment"
+                                      placeholder="Type a comment..."
+                                    />
+                                  </div>
+                                  <div class="send_btn reply-btn">
+                                    <i class="fas fa-arrow-right"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="d-flex flex-row">
+                        <div class="flex-column comment_image">
+                          <img
+                            src="images/user/usrbig6.jpg"
+                            class="rounded-circle"
+                            alt="User"
+                            width="40"
+                          />
+                        </div>
+                        <div class="flex-column comment_details">
+                          <ul>
+                            <li>
+                              <span class="message-data-name"
+                                ><strong>Elmer Roberts, </strong></span
+                              >
+                            </li>
+                            <li>
+                              Lorem ipsum dolor sit amet, consectetuer
+                              adipiscing elit. Aenean commodo ligula eget dolor.
+                              Aenean massa
+                            </li>
+                            <li>
+                              <ul class="d-flex flex-row">
+                                <li class="reply">Reply</li>
+                                <li>Like</li>
+                                <li>10:12 AM, Today</li>
+                              </ul>
+                            </li>
+                          </ul>
+                          <ul>
+                            <li>
+                              <div class="comment_send" style="display: none;">
+                                <div
+                                  class="form-group d-flex flex-row align-items-center"
+                                >
+                                  <div class="form-line">
+                                    <input
+                                      type="text"
+                                      class="form-control comment"
+                                      placeholder="Type a comment..."
+                                    />
+                                  </div>
+                                  <div class="send_btn reply-btn">
+                                    <i class="fas fa-arrow-right"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="d-flex flex-row">
+                        <div class="flex-column comment_image">
+                          <img
+                            src="images/user/usrbig6.jpg"
+                            class="rounded-circle"
+                            alt="User"
+                            width="40"
+                          />
+                        </div>
+                        <div class="flex-column comment_details">
+                          <ul>
+                            <li>
+                              <span class="message-data-name"
+                                ><strong>Elmer Roberts, </strong></span
+                              >
+                            </li>
+                            <li>
+                              Lorem ipsum dolor sit amet, consectetuer
+                              adipiscing elit. Aenean commodo ligula eget dolor.
+                              Aenean massa
+                            </li>
+                            <li>
+                              <ul class="d-flex flex-row">
+                                <li class="reply">Reply</li>
+                                <li>Like</li>
+                                <li>10:12 AM, Today</li>
+                              </ul>
+                            </li>
+                          </ul>
+                          <ul>
+                            <li>
+                              <div class="comment_send" style="display: none;">
+                                <div
+                                  class="form-group d-flex flex-row align-items-center"
+                                >
+                                  <div class="form-line">
+                                    <input
+                                      type="text"
+                                      class="form-control comment"
+                                      placeholder="Type a comment..."
+                                    />
+                                  </div>
+                                  <div class="send_btn reply-btn">
+                                    <i class="fas fa-arrow-right"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--#END Sub Comment View -->
+
+      <!-- #END# Initatives Desc PopUp -->
+      <section class="content">
+        <!-- Page Header -->
+        <div class="page-header row no-gutters py-2 m-t--70">
+          <div
+            class="col-lg-6 col-md-6 text-center text-sm-left pt-2 mb-0 ml-4"
+          >
+            <h5
+              class="page-title"
+              style="font-weight: 600; text-transform: uppercase;"
+            >
+              Risk Summary
+            </h5>
+          </div>
+        </div>
+        <!-- End Page Header -->
+
+        <div class="row row-padding m-0">
+          <!-------Heat Map------->
+          <div
+            class="col-lg-8 col-md-6 sub_initiatives select-toggle causenconsequence"
+          >
+            <div class="card">
+              <div class="header d-flex flex-row">
+                <h5 class="prob d-flex flex-fill">
+                  <strong
+                    class="editableTxt1"
+                    onkeypress="return (this.innerText.length <= 25)"
+                    editable="true"
+                    >Heat Map</strong
+                  >
+                </h5>
+                <ul class="header-dropdown m-r--2">
+                  <li class="dropdown m-t--10">
+                    <a
+                      href="#"
+                      onclick="return false;"
+                      class="dropdown-toggle"
+                      data-toggle="dropdown"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="true"
+                    >
+                      <i class="material-icons">more_vert</i>
+                    </a>
+                    <ul
+                      class="dropdown-menu pull-right"
+                      x-placement="bottom-start"
+                      style="
+                        position: absolute;
+                        will-change: transform;
+                        top: 0px;
+                        left: 0px;
+                        transform: translate3d(0px, 24px, 0px);
+                      "
+                    >
+                      <li>
+                        <a
+                          href="#"
+                          data-toggle="modal"
+                          data-target=".cause_conq_view_popup"
+                          onclick="return false;"
+                          >View</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" onclick="return false;" class="delete-row"
+                          >Delete</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="d-flex flex-column employee_div_body_box"></div>
+            </div>
+          </div>
+
+          <!-- Comment Section -->
+          <div class="col-lg-4 col-md-6 sub_initiatives select-toggle comments">
+            <div class="card">
+              <div class="header d-flex flex-row">
+                <h5 class="prob d-flex flex-fill">
+                  <strong
+                    class="editableTxt1"
+                    onkeypress="return (this.innerText.length <= 25)"
+                    editable="true"
+                    >Comments</strong
+                  >
+                </h5>
+                <ul class="header-dropdown m-r--2 d-flex">
+                  <li class="dropdown m-t--10">
+                    <a
+                      href="#"
+                      onclick="return false;"
+                      class="dropdown-toggle"
+                      data-toggle="dropdown"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="true"
+                    >
+                      <i class="material-icons">more_vert</i>
+                    </a>
+                    <ul
+                      class="dropdown-menu pull-right"
+                      x-placement="bottom-start"
+                      style="
+                        position: absolute;
+                        will-change: transform;
+                        top: 0px;
+                        left: 0px;
+                        transform: translate3d(0px, 24px, 0px);
+                      "
+                    >
+                      <li>
+                        <a
+                          href="#"
+                          data-toggle="modal"
+                          data-target=".sub_comments_view_popup"
+                          onclick="return false;"
+                          >View</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="comment-history" id="comment-conversation_1">
+                <ul id="comment-conversation">
+                  <li>
+                    <div class="d-flex flex-row">
+                      <div class="flex-column comment_image">
+                        <img
+                          src="images/user/usrbig6.jpg"
+                          class="rounded-circle"
+                          alt="User"
+                          width="40"
+                        />
+                      </div>
+                      <div class="flex-column comment_details">
+                        <ul>
+                          <li>
+                            <span class="message-data-name"
+                              ><strong>Elmer Roberts, </strong></span
+                            >
+                          </li>
+                          <li>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                            elit. Aenean commodo ligula eget dolor. Aenean massa
+                          </li>
+                          <li>
+                            <ul class="d-flex flex-row">
+                              <li class="reply">Reply</li>
+                              <li>Like</li>
+                              <li>10:12 AM, Today</li>
+                            </ul>
+                          </li>
+                        </ul>
+                        <ul>
+                          <li>
+                            <div class="comment_send" style="display: none;">
+                              <div
+                                class="form-group d-flex flex-row align-items-center"
+                              >
+                                <div class="form-line">
+                                  <input
+                                    type="text"
+                                    class="form-control comment"
+                                    placeholder="Type a comment..."
+                                  />
+                                </div>
+                                <div class="send_btn reply-btn">
+                                  <i class="fas fa-arrow-right"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="flex-column">
+                        <ul class="header-dropdown m-r--2 pt-2 d-flex">
+                          <li class="dropdown">
+                            <a
+                              href="#"
+                              onclick="return false;"
+                              class="dropdown-toggle"
+                              data-toggle="dropdown"
+                              role="button"
+                              aria-haspopup="true"
+                              aria-expanded="true"
+                            >
+                              <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul
+                              class="dropdown-menu pull-right"
+                              x-placement="bottom-start"
+                              style="
+                                position: absolute;
+                                will-change: transform;
+                                top: 0px;
+                                left: 0px;
+                                transform: translate3d(0px, 24px, 0px);
+                              "
+                            >
+                              <li>
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#comment_edit_popup"
+                                  onclick="return false;"
+                                  >Edit</a
+                                >
+                              </li>
+                              <li>
+                                <a href="#" onclick="return false;">Delete</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex flex-row">
+                      <div class="flex-column comment_image">
+                        <img
+                          src="images/user/usrbig6.jpg"
+                          class="rounded-circle"
+                          alt="User"
+                          width="40"
+                        />
+                      </div>
+                      <div class="flex-column comment_details">
+                        <ul>
+                          <li>
+                            <span class="message-data-name"
+                              ><strong>Elmer Roberts, </strong></span
+                            >
+                          </li>
+                          <li>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                            elit. Aenean commodo ligula eget dolor. Aenean massa
+                          </li>
+                          <li>
+                            <ul class="d-flex flex-row">
+                              <li class="reply">Reply</li>
+                              <li>Like</li>
+                              <li>10:12 AM, Today</li>
+                            </ul>
+                          </li>
+                        </ul>
+                        <ul>
+                          <li>
+                            <div class="comment_send" style="display: none;">
+                              <div
+                                class="form-group d-flex flex-row align-items-center"
+                              >
+                                <div class="form-line">
+                                  <input
+                                    type="text"
+                                    class="form-control comment"
+                                    placeholder="Type a comment..."
+                                  />
+                                </div>
+                                <div class="send_btn reply-btn">
+                                  <i class="fas fa-arrow-right"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="flex-column">
+                        <ul class="header-dropdown m-r--2 pt-2 d-flex">
+                          <li class="dropdown">
+                            <a
+                              href="#"
+                              onclick="return false;"
+                              class="dropdown-toggle"
+                              data-toggle="dropdown"
+                              role="button"
+                              aria-haspopup="true"
+                              aria-expanded="true"
+                            >
+                              <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul
+                              class="dropdown-menu pull-right"
+                              x-placement="bottom-start"
+                              style="
+                                position: absolute;
+                                will-change: transform;
+                                top: 0px;
+                                left: 0px;
+                                transform: translate3d(0px, 24px, 0px);
+                              "
+                            >
+                              <li>
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#comment_edit_popup"
+                                  onclick="return false;"
+                                  >Edit</a
+                                >
+                              </li>
+                              <li>
+                                <a href="#" onclick="return false;">Delete</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex flex-row">
+                      <div class="flex-column comment_image">
+                        <img
+                          src="images/user/usrbig6.jpg"
+                          class="rounded-circle"
+                          alt="User"
+                          width="40"
+                        />
+                      </div>
+                      <div class="flex-column comment_details">
+                        <ul>
+                          <li>
+                            <span class="message-data-name"
+                              ><strong>Elmer Roberts, </strong></span
+                            >
+                          </li>
+                          <li>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                            elit. Aenean commodo ligula eget dolor. Aenean massa
+                          </li>
+                          <li>
+                            <ul class="d-flex flex-row">
+                              <li class="reply">Reply</li>
+                              <li>Like</li>
+                              <li>10:12 AM, Today</li>
+                            </ul>
+                          </li>
+                        </ul>
+                        <ul>
+                          <li>
+                            <div class="comment_send" style="display: none;">
+                              <div
+                                class="form-group d-flex flex-row align-items-center"
+                              >
+                                <div class="form-line">
+                                  <input
+                                    type="text"
+                                    class="form-control comment"
+                                    placeholder="Type a comment..."
+                                  />
+                                </div>
+                                <div class="send_btn reply-btn">
+                                  <i class="fas fa-arrow-right"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="flex-column">
+                        <ul class="header-dropdown m-r--2 pt-2 d-flex">
+                          <li class="dropdown">
+                            <a
+                              href="#"
+                              onclick="return false;"
+                              class="dropdown-toggle"
+                              data-toggle="dropdown"
+                              role="button"
+                              aria-haspopup="true"
+                              aria-expanded="true"
+                            >
+                              <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul
+                              class="dropdown-menu pull-right"
+                              x-placement="bottom-start"
+                              style="
+                                position: absolute;
+                                will-change: transform;
+                                top: 0px;
+                                left: 0px;
+                                transform: translate3d(0px, 24px, 0px);
+                              "
+                            >
+                              <li>
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#comment_edit_popup"
+                                  onclick="return false;"
+                                  >Edit</a
+                                >
+                              </li>
+                              <li>
+                                <a href="#" onclick="return false;">Delete</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex flex-row">
+                      <div class="flex-column comment_image">
+                        <img
+                          src="images/user/usrbig6.jpg"
+                          class="rounded-circle"
+                          alt="User"
+                          width="40"
+                        />
+                      </div>
+                      <div class="flex-column comment_details">
+                        <ul>
+                          <li>
+                            <span class="message-data-name"
+                              ><strong>Elmer Roberts, </strong></span
+                            >
+                          </li>
+                          <li>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                            elit. Aenean commodo ligula eget dolor. Aenean massa
+                          </li>
+                          <li>
+                            <ul class="d-flex flex-row">
+                              <li class="reply">Reply</li>
+                              <li>Like</li>
+                              <li>10:12 AM, Today</li>
+                            </ul>
+                          </li>
+                        </ul>
+                        <ul>
+                          <li>
+                            <div class="comment_send" style="display: none;">
+                              <div
+                                class="form-group d-flex flex-row align-items-center"
+                              >
+                                <div class="form-line">
+                                  <input
+                                    type="text"
+                                    class="form-control comment"
+                                    placeholder="Type a comment..."
+                                  />
+                                </div>
+                                <div class="send_btn reply-btn">
+                                  <i class="fas fa-arrow-right"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="flex-column">
+                        <ul class="header-dropdown m-r--2 pt-2 d-flex">
+                          <li class="dropdown">
+                            <a
+                              href="#"
+                              onclick="return false;"
+                              class="dropdown-toggle"
+                              data-toggle="dropdown"
+                              role="button"
+                              aria-haspopup="true"
+                              aria-expanded="true"
+                            >
+                              <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul
+                              class="dropdown-menu pull-right"
+                              x-placement="bottom-start"
+                              style="
+                                position: absolute;
+                                will-change: transform;
+                                top: 0px;
+                                left: 0px;
+                                transform: translate3d(0px, 24px, 0px);
+                              "
+                            >
+                              <li>
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#comment_edit_popup"
+                                  onclick="return false;"
+                                  >Edit</a
+                                >
+                              </li>
+                              <li>
+                                <a href="#" onclick="return false;">Delete</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="comment_send">
+                <div class="form-group d-flex flex-row align-items-center">
+                  <div class="form-line">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="comment"
+                      placeholder="Type a comment..."
+                    />
+                  </div>
+                  <div class="send_btn" id="send-btn">
+                    <i class="fas fa-arrow-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!---------Table-------->
+          <div class="col-lg-8 col-md-8 select-toggle tables sub_initiatives">
+            <div class="card">
+              <div class="header d-flex flex-row">
+                <h5 class="prob d-flex flex-fill">
+                  <strong
+                    class="editableTxt1"
+                    onkeypress="return (this.innerText.length <= 25)"
+                    editable="true"
+                    >Tables</strong
+                  >
+                </h5>
+                <ul class="header-dropdown m-r--2 d-flex">
+                  <li class="dropdown m-t--10">
+                    <a
+                      href="#"
+                      onclick="return false;"
+                      class="dropdown-toggle"
+                      data-toggle="dropdown"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="true"
+                    >
+                      <i class="material-icons">more_vert</i>
+                    </a>
+                    <ul
+                      class="dropdown-menu pull-right"
+                      x-placement="bottom-start"
+                      style="
+                        position: absolute;
+                        will-change: transform;
+                        top: 0px;
+                        left: 0px;
+                        transform: translate3d(0px, 24px, 0px);
+                      "
+                    >
+                      <li>
+                        <a
+                          href="#"
+                          data-toggle="modal"
+                          data-target="#bigTable"
+                          onclick="return false;"
+                          >View</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" onclick="return false;" class="delete-row"
+                          >Delete</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="body table-responsive sub-ini-box">
+                <div class="col-lg-12 col-md-12">
+                  <div class="card">
+                    <div class="tableBody">
+                      <div class="table-responsive Month box">
+                        <table
+                          class="table dashboard-task-infos align-center dashboard-table"
+                          id="table1"
+                          style="margin-bottom: 0px !important;"
+                        >
+                          <tr>
+                            <th>Status</th>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Impact</th>
+                            <th>Likelihood</th>
+                            <th>Score</th>
+                            <th>Raised on</th>
+                            <th>Next Assessment</th>
+                          </tr>
+                          <tr>
+                            <td>
+                              <i
+                                class="fas fa-flag"
+                                style="color: #28f76d;"
+                              ></i>
+                            </td>
+                            <td>12</td>
+                            <td>
+                              <a
+                                href="#"
+                                style="
+                                  font-weight: 600;
+                                  color: #333 !important;
+                                "
+                                >Risk 1</a
+                              >
+                            </td>
+                            <td>Regulatory</td>
+                            <td style="color: #28f76d;">Tolerable</td>
+                            <td style="color: #f72f28;">High</td>
+                            <td>3</td>
+                            <td>23-05-2020</td>
+                            <td>23-06-2020</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <i
+                                class="fas fa-flag"
+                                style="color: #f72f28;"
+                              ></i>
+                            </td>
+                            <td>12</td>
+                            <td>
+                              <a
+                                href="#"
+                                style="
+                                  font-weight: 600;
+                                  color: #333 !important;
+                                "
+                                >Risk 2</a
+                              >
+                            </td>
+                            <td>Regulatory</td>
+                            <td style="color: #28f76d;">Tolerable</td>
+                            <td style="color: #f72f28;">High</td>
+                            <td>3</td>
+                            <td>23-05-2020</td>
+                            <td>23-06-2020</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <i
+                                class="fas fa-flag"
+                                style="color: #f72f28;"
+                              ></i>
+                            </td>
+                            <td>12</td>
+                            <td>
+                              <a
+                                href="#"
+                                style="
+                                  font-weight: 600;
+                                  color: #333 !important;
+                                "
+                                >Risk 3</a
+                              >
+                            </td>
+                            <td>Regulatory</td>
+                            <td style="color: #28f76d;">Tolerable</td>
+                            <td style="color: #f72f28;">High</td>
+                            <td>3</td>
+                            <td>23-05-2020</td>
+                            <td>23-06-2020</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <i
+                                class="fas fa-flag"
+                                style="color: #28f76d;"
+                              ></i>
+                            </td>
+                            <td>12</td>
+                            <td>
+                              <a
+                                href="#"
+                                style="
+                                  font-weight: 600;
+                                  color: #333 !important;
+                                "
+                                >Risk 4</a
+                              >
+                            </td>
+                            <td>Regulatory</td>
+                            <td style="color: #28f76d;">Tolerable</td>
+                            <td style="color: #f72f28;">High</td>
+                            <td>3</td>
+                            <td>23-05-2020</td>
+                            <td>23-06-2020</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <i
+                                class="fas fa-flag"
+                                style="color: #f4f728;"
+                              ></i>
+                            </td>
+                            <td>12</td>
+                            <td>
+                              <a
+                                href="#"
+                                style="
+                                  font-weight: 600;
+                                  color: #333 !important;
+                                "
+                                >Risk 5</a
+                              >
+                            </td>
+                            <td>Regulatory</td>
+                            <td style="color: #28f76d;">Tolerable</td>
+                            <td style="color: #f72f28;">High</td>
+                            <td>3</td>
+                            <td>23-05-2020</td>
+                            <td>23-06-2020</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <i
+                                class="fas fa-flag"
+                                style="color: #f72f28;"
+                              ></i>
+                            </td>
+                            <td>12</td>
+                            <td>
+                              <a
+                                href="#"
+                                style="
+                                  font-weight: 600;
+                                  color: #333 !important;
+                                "
+                                >Risk 6</a
+                              >
+                            </td>
+                            <td>Regulatory</td>
+                            <td style="color: #28f76d;">Tolerable</td>
+                            <td style="color: #f72f28;">High</td>
+                            <td>3</td>
+                            <td>23-05-2020</td>
+                            <td>23-06-2020</td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Plugins Js -->
+      <script src="../../assets/js/app.min.js"></script>
+      <!-- Custom Js -->
+      <script src="../../assets/js/admin.js"></script>
+      <script src="../../assets/js/file-preview.js"></script>
+      <script src="../../assets/js/bundles/amcharts4/core.js"></script>
+      <script src="../../assets/js/bundles/amcharts4/charts.js"></script>
+      <script src="../../assets/js/bundles/amcharts4/animated.js"></script>
+      <!-- Knob Js -->
+      <script src="../../assets/jquery-ui.min.js"></script>
+      <script src="../../assets/moment.js"></script>
+      <script src="../../assets/js/pages/core.js"></script>
+      <script src="../../assets/js/pages/charts.js"></script>
+      <script src="../../assets/js/pages/spiritedaway.js"></script>
+      <script src="../../assets/js/pages/animated.js"></script>
+      <script src="../../assets/jquery.editable.min.js"></script>
+      <script
+        src="../../assets/js/bootstrap-popover-x.js"
+        type="text/javascript"
+      ></script>
+
+      <!-- <script src="../../assets/bootstrap-datepicker.min.js"></script> -->
+      <script src="../../assets/amcharts.js"></script>
+      <script src="../../assets/serial.js"></script>
+      <script src="../../assets/light.js"></script>
+      <script src="../../assets/d3.v4.js"></script>
+      <script src="../../assets/d3-scale-chromatic.v1.min.js"></script>
+      <script src="../../assets/jquery-resize.js"></script>
+      <script src="../../assets/datepickerair.js"></script>
+      <script src="../../assets/datepicker.en.js"></script>
+      <script src="../../assets/js/widgets.js"></script>
+      <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
+      <script src="../../assets/knockout-3.5.0.js"></script>
+      <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
+      <script src="../../assets/select2.min.js"></script>
+      <script src="../../assets/js/risk.js"></script>
+      <script>
+        $(".daterangepicker-field").daterangepicker({
+          forceUpdate: true,
+          callback: function (startDate, endDate, period) {
+            var title = startDate.format("L") + " – " + endDate.format("L");
+            $(this).val(title);
+          },
+        });
+
+        $(document).ready(function () {
+          // $('select').val([1]);
+          $(
+            "#multiSelect1, #multiSelect2, #multiSelect3, #multiSelect4, #multiSelect5"
+          ).formSelect();
+          $("select.select_all")
+            .siblings("ul")
+            .prepend("<li id=sm_select_all><span>Select All</span></li>");
+          $("li#sm_select_all").on("click", function () {
+            var jq_elem = $(this),
+              jq_elem_span = jq_elem.find("span"),
+              select_all = jq_elem_span.text() == "Select All",
+              set_text = select_all ? "Select None" : "Select All";
+            jq_elem_span.text(set_text);
+            jq_elem
+              .siblings("li")
+              .filter(function () {
+                return $(this).find("input").prop("checked") != select_all;
+              })
+              .click();
+          });
+        });
+
+        $(document).ready(function () {
+          $('input[type="checkbox"]').click(function () {
+            var inputValue = $(this).attr("value");
+            $("." + inputValue).toggle();
+          });
+        });
+
+        $(".dropdown-hide").on("click", function (e) {
+          e.stopPropagation();
+        });
+      </script>
+    </div>
+  </body></a
+>
