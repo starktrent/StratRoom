@@ -17,9 +17,7 @@
     <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" />
     <!-- You can choose a theme from css/styles instead of get all themes -->
     <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
-    <!-- <link href="../../assets/css/table-view.css" rel="stylesheet" /> -->
-    <!-- <link rel="stylesheet" href="../../assets/daterangepicker.css"> -->
-    <!-- <link rel="stylesheet" href="../../assets/datepickerair.css" /> -->
+    <link rel="stylesheet" href="../../assets/datepickerair.css" />
     <link href="../../assets/jquery-ui.min.css" rel="stylesheet" />
     <!-- <link
       href="../../assets/daterangepicker/daterangepicker.min.css"
@@ -144,6 +142,14 @@
 
       .gj-timepicker-md [role="right-icon"] {
         top: 5px;
+      }
+
+      .input-calender-icon {
+        color: #5a6169;
+        position: absolute;
+        bottom: 28%;
+        right: 6%;
+        font-size: 16px;
       }
     </style>
   </head>
@@ -468,17 +474,15 @@
             <div class="row m-t-20">
               <div class="form-group col-md-4">
                 <label for="datepicker">Date</label>
+                <i class="far fa-calendar input-calender-icon"></i>
                 <input
                   type="text"
-                  class="modal-custom-input"
-                  id="datetimepicker4"
-                  style="height: 38px !important;"
+                  class="modal-custom-input date_pickers_single"
+                  style="height: 55% !important;"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
                 />
-                <script type="text/javascript">
-                  $(function () {
-                    $("#datetimepicker4").datetimepicker();
-                  });
-                </script>
               </div>
 
               <div class="form-group col-md-4">
@@ -571,16 +575,15 @@
             <div class="row m-t-20">
               <div class="form-group col-md-4">
                 <label for="datepicker">Date</label>
+                <i class="far fa-calendar input-calender-icon"></i>
                 <input
                   type="text"
-                  class="modal-custom-input"
-                  id="datepicker1"
-                  style="height: 38px !important;"
+                  class="modal-custom-input date_pickers_single"
+                  style="height: 55% !important;"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
                 />
-                <script>
-                  console.log();
-                  $("#datepicker1").datepicker();
-                </script>
               </div>
 
               <div class="form-group col-md-4">
@@ -1558,6 +1561,7 @@
     <script src="../../assets/js/colors.js"></script>
     <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
+    <script src="assets/daterangepicker/daterangepicker.min.js"></script>
     <script src="assets/daterangepicker/daterangepicker.min.js"></script>
     <script>
       $(".daterangepicker-field").daterangepicker({
