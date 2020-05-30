@@ -123,6 +123,14 @@
           overflow-x: hidden;
         }
       }
+
+      .input-calender-icon {
+        color: #5a6169;
+        position: absolute;
+        bottom: 20%;
+        right: 8%;
+        font-size: 16px;
+      }
     </style>
 
     <script>
@@ -1933,16 +1941,44 @@
                   </div>
                 </div>
                 <div class="row m-t-10">
-                  <div class="form-group col-md-12">
+                  <div class="form-group col-md-6">
                     <label for="kpi_start_end_date">Resolve By</label>
+                    <i
+                      class="far fa-calendar input-calender-icon"
+                      style="bottom: 8%;"
+                    ></i>
                     <input
                       type="text"
                       class="modal-custom-input date_pickers_single"
                       data-language="en"
                       name="kpi_start_end_date"
                       id="kpi_start_end_date"
-                      style="width: 98% !important; height: 68% !important;"
+                      style="width: 96% !important; height: 68% !important;"
                     />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="meeting-name">Progress(%)</label>
+                    <input
+                      type="number"
+                      class="modal-custom-input"
+                      id="cause-name"
+                      style="height: 68% !important; width: 96% !important;"
+                    />
+                  </div>
+                </div>
+                <div class="row m-t-10">
+                  <div class="form-group col-md-12">
+                    <label for="type">Add Cause</label>
+                    <select
+                      id="type"
+                      class="modal-custom-select"
+                      style="height: 40px !important;"
+                    >
+                      <option>Choose</option>
+                      <option value="tolerable">Cause-1</option>
+                      <option value="very high">Cause-2</option>
+                      <option value="very low">Cause-3</option>
+                    </select>
                   </div>
                 </div>
                 <div class="row m-t-10">
@@ -2050,16 +2086,44 @@
                   </div>
                 </div>
                 <div class="row m-t-10">
-                  <div class="form-group col-md-12">
+                  <div class="form-group col-md-6">
                     <label for="kpi_start_end_date">Resolve By</label>
+                    <i
+                      class="far fa-calendar input-calender-icon"
+                      style="bottom: 8%;"
+                    ></i>
                     <input
                       type="text"
                       class="modal-custom-input date_pickers_single"
                       data-language="en"
                       name="kpi_start_end_date"
                       id="kpi_start_end_date"
-                      style="width: 98% !important; height: 68% !important;"
+                      style="width: 96% !important; height: 68% !important;"
                     />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="meeting-name">Progress(%)</label>
+                    <input
+                      type="number"
+                      class="modal-custom-input"
+                      id="cause-name"
+                      style="height: 68% !important; width: 96% !important;"
+                    />
+                  </div>
+                </div>
+                <div class="row m-t-10">
+                  <div class="form-group col-md-12">
+                    <label for="type">Add Cause</label>
+                    <select
+                      id="type"
+                      class="modal-custom-select"
+                      style="height: 40px !important;"
+                    >
+                      <option>Choose</option>
+                      <option value="tolerable">Cause-1</option>
+                      <option value="very high">Cause-2</option>
+                      <option value="very low">Cause-3</option>
+                    </select>
                   </div>
                 </div>
                 <div class="row m-t-10">
@@ -2145,6 +2209,7 @@
                 <div class="row m-t-10">
                   <div class="form-group col-md-6">
                     <label for="kpi_start_end_date">Resolve By</label>
+                    <i class="far fa-calendar input-calender-icon"></i>
                     <input
                       type="text"
                       class="modal-custom-input date_pickers_single"
@@ -2161,10 +2226,20 @@
                       class="modal-custom-select"
                       style="height: 40px !important;"
                     >
-                      <option>Choose</option>
                       <option value="Completed">Completed</option>
                       <option value="Pending">Pending</option>
                     </select>
+                  </div>
+                </div>
+                <div class="row m-t-10">
+                  <div class="form-group col-md-12">
+                    <label for="meeting-name">Progress(%)</label>
+                    <input
+                      type="number"
+                      class="modal-custom-input"
+                      id="cause-name"
+                      style="height: 38px !important; width: 98% !important;"
+                    />
                   </div>
                 </div>
                 <div class="row m-t-10">
@@ -2261,6 +2336,7 @@
                 <div class="row m-t-10">
                   <div class="form-group col-md-6">
                     <label for="kpi_start_end_date">Resolve By</label>
+                    <i class="far fa-calendar input-calender-icon"></i>
                     <input
                       type="text"
                       class="modal-custom-input date_pickers_single"
@@ -2277,10 +2353,20 @@
                       class="modal-custom-select"
                       style="height: 40px !important;"
                     >
-                      <option>Choose</option>
                       <option value="Completed">Completed</option>
                       <option value="Pending">Pending</option>
                     </select>
+                  </div>
+                </div>
+                <div class="row m-t-10">
+                  <div class="form-group col-md-12">
+                    <label for="meeting-name">Progress(%)</label>
+                    <input
+                      type="number"
+                      class="modal-custom-input"
+                      id="cause-name"
+                      style="height: 38px !important; width: 98% !important;"
+                    />
                   </div>
                 </div>
                 <div class="row m-t-10">
@@ -2364,13 +2450,13 @@
                       type="text"
                       class="modal-custom-input"
                       id="cause-name"
-                      style="height: 38px !important;"
+                      style="height: 38px !important; width: 98% !important;"
                     />
                   </div>
                 </div>
                 <div class="row m-t-10">
                   <div class="form-group col-md-12">
-                    <label for="meeting-name">Description</label>
+                    <label for="meeting-name">Name</label>
                     <textarea class="form-control" rows="6"></textarea>
                   </div>
                 </div>
@@ -2382,35 +2468,35 @@
                       class="modal-custom-select"
                       style="height: 40px !important;"
                     >
-                      <option>Choose</option>
                       <option value="Open">Open</option>
                       <option value="Closed">Closed</option>
                     </select>
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="kpi_start_end_date">Date</label>
+                    <label for="kpi_start_end_date">Resolve By</label>
+                    <i class="far fa-calendar input-calender-icon"></i>
                     <input
                       type="text"
                       class="modal-custom-input date_pickers_single"
                       data-language="en"
                       name="kpi_start_end_date"
                       id="kpi_start_end_date"
-                      style="width: 96% !important; height: 58% !important;"
+                      style="width: 95% !important; height: 60% !important;"
                     />
                   </div>
                 </div>
                 <div class="row m-t-10">
                   <div class="form-group col-md-12">
-                    <label for="meeting-name">Progress</label>
+                    <label for="meeting-name">Progress(%)</label>
                     <input
-                      type="text"
+                      type="number"
                       class="modal-custom-input"
                       id="cause-name"
-                      style="height: 38px !important;"
+                      style="height: 38px !important; width: 98% !important;"
                     />
                   </div>
                 </div>
-                <div class="row m-t-10">
+                <div class="row">
                   <div class="form-group col-md-12">
                     <hr />
                   </div>
@@ -3860,7 +3946,7 @@
     </div>
     <!-- End of File Upload PopUp -->
 
-    <!-- #Start Scorecard Desc PopUp -->
+    <!-- #Start Risk Desc PopUp -->
     <div
       class="modal fade"
       tabindex="-1"
@@ -3907,14 +3993,14 @@
                   <input
                     type="text"
                     class="modal-custom-input"
-                    style="width: 96% !important;"
+                    style="width: 94% !important;"
                   />
                 </div>
 
                 <div class="form-group col-md-6">
                   <label for="impact">Risk Category</label>
                   <select
-                    style="height: 66% !important; width: 105% !important;"
+                    style="height: 66% !important;"
                     id=""
                     name=""
                     class="modal-custom-select"
@@ -3931,7 +4017,7 @@
                 <div class="form-group col-md-6">
                   <label for="impact">Impact</label>
                   <select
-                    style="height: 66% !important; width: 105% !important;"
+                    style="height: 66% !important;"
                     id=""
                     name=""
                     class="modal-custom-select"
@@ -3945,7 +4031,7 @@
                 <div class="form-group col-md-6">
                   <label for="impact">Likelihood</label>
                   <select
-                    style="height: 66% !important; width: 105% !important;"
+                    style="height: 66% !important;"
                     id=""
                     name=""
                     class="modal-custom-select"
@@ -3963,7 +4049,7 @@
                   <input
                     type="text"
                     class="modal-custom-input"
-                    style="width: 97% !important;"
+                    style="width: 94% !important;"
                     value="Calculated Score"
                     disabled
                   />
@@ -3973,7 +4059,7 @@
                   <input
                     type="text"
                     class="modal-custom-input"
-                    style="width: 97% !important;"
+                    style="width: 94% !important;"
                     value="Calculated Status"
                     disabled
                   />
@@ -3985,7 +4071,7 @@
                   <input
                     type="text"
                     class="modal-custom-input"
-                    style="width: 97% !important;"
+                    style="width: 94% !important;"
                   />
                 </div>
                 <div class="form-group col-md-6">
@@ -3993,57 +4079,45 @@
                   <input
                     type="number"
                     class="modal-custom-input"
-                    style="width: 97% !important;"
+                    style="width: 94% !important;"
                   />
                 </div>
               </div>
               <div class="row m-t-10">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                   <label for="kpi_start_end_date">Date Raised</label>
+                  <i class="far fa-calendar input-calender-icon"></i>
                   <input
                     type="text"
                     class="modal-custom-input date_pickers_single"
                     data-language="en"
                     name="kpi_start_end_date"
                     id="kpi_start_end_date"
-                    style="width: 96% !important;"
+                    style="width: 94% !important;"
                   />
                 </div>
-                <div class="form-group col-md-6">
-                  <label for="multiSelect1">Raised By</label>
-                  <select
-                    id="multiSelect1"
-                    name=""
-                    class="select_all"
-                    multiple
-                    style="display: none !important;"
-                  >
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                  </select>
-                </div>
-              </div>
-              <div class="row m-t-10">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                   <label for="kpi_start_end_date">Date Completed</label>
+                  <i class="far fa-calendar input-calender-icon"></i>
                   <input
                     type="text"
                     class="modal-custom-input date_pickers_single"
                     data-language="en"
                     name="kpi_start_end_date"
                     id="kpi_start_end_date"
+                    style="width: 94% !important;"
                   />
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                   <label for="kpi_start_end_date">Next Assessment</label>
+                  <i class="far fa-calendar input-calender-icon"></i>
                   <input
                     type="text"
                     class="modal-custom-input date_pickers_single"
                     data-language="en"
                     name="kpi_start_end_date"
                     id="kpi_start_end_date"
-                    style="width: 96% !important;"
+                    style="width: 94% !important;"
                   />
                 </div>
               </div>
@@ -4095,7 +4169,241 @@
         </div>
       </div>
     </div>
-    <!-- #END# Scorecard Desc PopUp -->
+    <!-- #END# Risk Desc PopUp -->
+
+    <!-- #Start Risk Desc Edit PopUp -->
+    <div
+      class="modal fade"
+      tabindex="-1"
+      id="risk_description_edit_popup"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Risk Description</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="objectiveForm">
+              <div class="row">
+                <div class="form-group col-md-2">
+                  <label for="objective_name">ID</label>
+                  <input
+                    type="text"
+                    class="modal-custom-input"
+                    style="width: 97% !important;"
+                    name="name"
+                  />
+                </div>
+                <div class="form-group col-md-10">
+                  <label for="objective_name">Name</label>
+                  <input
+                    type="text"
+                    class="modal-custom-input"
+                    style="width: 97% !important;"
+                    name="name"
+                  />
+                </div>
+              </div>
+              <div class="row m-t-10">
+                <div class="form-group col-md-12">
+                  <label for="objective_description">Description</label>
+                  <textarea
+                    class="modal-custom-textarea"
+                    placeholder=""
+                    rows="6"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="row m-t-10">
+                <div class="form-group col-md-6">
+                  <label for="kpi_start_end_date">Department</label>
+                  <input
+                    type="text"
+                    class="modal-custom-input"
+                    style="width: 94% !important;"
+                  />
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label for="impact">Risk Category</label>
+                  <select
+                    style="height: 66% !important;"
+                    id=""
+                    name=""
+                    class="modal-custom-select"
+                  >
+                    <option>Choose</option>
+                    <option>Option - 1</option>
+                    <option>Option - 2</option>
+                    <option>Option - 3</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row m-t-10">
+                <div class="form-group col-md-6">
+                  <label for="impact">Impact</label>
+                  <select
+                    style="height: 66% !important;"
+                    id=""
+                    name=""
+                    class="modal-custom-select"
+                  >
+                    <option>Choose</option>
+                    <option>Option - 1</option>
+                    <option>Option - 2</option>
+                    <option>Option - 3</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="impact">Likelihood</label>
+                  <select
+                    style="height: 66% !important;"
+                    id=""
+                    name=""
+                    class="modal-custom-select"
+                  >
+                    <option>Choose</option>
+                    <option>Option - 1</option>
+                    <option>Option - 2</option>
+                    <option>Option - 3</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row m-t-10">
+                <div class="form-group col-md-6">
+                  <label for="objective_name">Risk Score</label>
+                  <input
+                    type="text"
+                    class="modal-custom-input"
+                    style="width: 94% !important;"
+                    value="Calculated Score"
+                    disabled
+                  />
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="objective_name">Status</label>
+                  <input
+                    type="text"
+                    class="modal-custom-input"
+                    style="width: 94% !important;"
+                    value="Calculated Status"
+                    disabled
+                  />
+                </div>
+              </div>
+              <div class="row m-t-10">
+                <div class="form-group col-md-6">
+                  <label for="objective_name">Business Impact</label>
+                  <input
+                    type="text"
+                    class="modal-custom-input"
+                    style="width: 94% !important;"
+                  />
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="objective_name">Financial Impact</label>
+                  <input
+                    type="number"
+                    class="modal-custom-input"
+                    style="width: 94% !important;"
+                  />
+                </div>
+              </div>
+              <div class="row m-t-10">
+                <div class="form-group col-md-4">
+                  <label for="kpi_start_end_date">Date Raised</label>
+                  <i class="far fa-calendar input-calender-icon"></i>
+                  <input
+                    type="text"
+                    class="modal-custom-input date_pickers_single"
+                    data-language="en"
+                    name="kpi_start_end_date"
+                    id="kpi_start_end_date"
+                    style="width: 94% !important;"
+                  />
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="kpi_start_end_date">Date Completed</label>
+                  <i class="far fa-calendar input-calender-icon"></i>
+                  <input
+                    type="text"
+                    class="modal-custom-input date_pickers_single"
+                    data-language="en"
+                    name="kpi_start_end_date"
+                    id="kpi_start_end_date"
+                    style="width: 94% !important;"
+                  />
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="kpi_start_end_date">Next Assessment</label>
+                  <i class="far fa-calendar input-calender-icon"></i>
+                  <input
+                    type="text"
+                    class="modal-custom-input date_pickers_single"
+                    data-language="en"
+                    name="kpi_start_end_date"
+                    id="kpi_start_end_date"
+                    style="width: 94% !important;"
+                  />
+                </div>
+              </div>
+              <div class="row m-t-10">
+                <div class="col-md-12">
+                  <hr />
+                </div>
+                <div class="form-group col-lg-8 col-md-4 col-sm-12"></div>
+                <div class="form-group col-lg-2 col-md-4 col-sm-6">
+                  <button
+                    type="button"
+                    class="btn custom-form-control btn-custom-secondary"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+                <div class="form-group col-lg-2 col-md-4 col-sm-6">
+                  <button
+                    type="button"
+                    class="btn custom-form-control btn-custom-primary"
+                  >
+                    Save
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <hr />
+          <div class="modal-footer">
+            <div
+              class="d-flex flex-column flex-fill ml-4 mb-5 text-left font-11"
+            >
+              <div class="d-flex flex-row">
+                <p class="kpi_audit">Audit</p>
+              </div>
+              <div class="d-flex flex-row">
+                <div class="d-flex flex-column">
+                  <p><span>Created By : </span><span>Arun</span></p>
+                  <p><span>Created Date : </span><span>Oct 02, 2019</span></p>
+                </div>
+                <div class="d-flex flex-column pl-5">
+                  <p><span>Modified By : </span><span>Karthik</span></p>
+                  <p><span>Modified Date : </span><span>Oct 02, 2019</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- #END# Risk Desc Edit PopUp -->
 
     <!-- #END# Initatives Desc PopUp -->
     <section class="content" id="section">
@@ -4127,7 +4435,7 @@
                     <i
                       class="fas fa-pencil-alt title_edit_icon"
                       data-toggle="modal"
-                      data-target="#risk_description_popup"
+                      data-target="#risk_description_edit_popup"
                     ></i>
                     <i
                       class="fas fa-paperclip title_edit_icon"
@@ -4419,7 +4727,12 @@
                   <div class="raised_info">
                     <div class="employee_info">Raised by</div>
                     <div class="">
-                      <ul class="list-unstyled order-list d-flex">
+                      <ul
+                        class="list-unstyled order-list d-flex"
+                        data-toggle="modal"
+                        data-target="#user_edit_popup"
+                        style="cursor: pointer;"
+                      >
                         <li class="avatar avatar-sm">
                           <img
                             class="rounded-circle sub_init_img"
@@ -4615,16 +4928,6 @@
                                 <li>
                                   <a
                                     href="#"
-                                    data-toggle="modal"
-                                    data-target=".cause_conq_edit_popup"
-                                    onclick="return false;"
-                                    >View</a
-                                  >
-                                </li>
-
-                                <li>
-                                  <a
-                                    href="#"
                                     onclick="return false;"
                                     class="delete-row"
                                     >Delete</a
@@ -4687,15 +4990,6 @@
                               <li>
                                 <a
                                   href="#"
-                                  data-toggle="modal"
-                                  data-target=".sub_cause_conq_edit_popup"
-                                  onclick="return false;"
-                                  >View</a
-                                >
-                              </li>
-                              <li>
-                                <a
-                                  href="#"
                                   onclick="return false;"
                                   class="delete-row"
                                   >Delete</a
@@ -4744,15 +5038,6 @@
                                   data-target="#conq_desc_edit_popup"
                                   onclick="return false;"
                                   >Edit</a
-                                >
-                              </li>
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target=".sub_cause_conq_edit_popup"
-                                  onclick="return false;"
-                                  >View</a
                                 >
                               </li>
                               <li>
@@ -4809,15 +5094,6 @@
                                   data-target="#conq_desc_edit_popup"
                                   onclick="return false;"
                                   >Edit</a
-                                >
-                              </li>
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target=".sub_cause_conq_edit_popup"
-                                  onclick="return false;"
-                                  >View</a
                                 >
                               </li>
                               <li>
@@ -4912,16 +5188,6 @@
                                 <li>
                                   <a
                                     href="#"
-                                    data-toggle="modal"
-                                    data-target=".cause_conq_edit_popup"
-                                    onclick="return false;"
-                                    >View</a
-                                  >
-                                </li>
-
-                                <li>
-                                  <a
-                                    href="#"
                                     onclick="return false;"
                                     class="delete-row"
                                     >Delete</a
@@ -4984,15 +5250,6 @@
                               <li>
                                 <a
                                   href="#"
-                                  data-toggle="modal"
-                                  data-target=".sub_cause_conq_edit_popup"
-                                  onclick="return false;"
-                                  >View</a
-                                >
-                              </li>
-                              <li>
-                                <a
-                                  href="#"
                                   onclick="return false;"
                                   class="delete-row"
                                   >Delete</a
@@ -5041,15 +5298,6 @@
                                   data-target="#conq_desc_edit_popup"
                                   onclick="return false;"
                                   >Edit</a
-                                >
-                              </li>
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target=".sub_cause_conq_edit_popup"
-                                  onclick="return false;"
-                                  >View</a
                                 >
                               </li>
                               <li>
@@ -5106,15 +5354,6 @@
                                   data-target="#conq_desc_edit_popup"
                                   onclick="return false;"
                                   >Edit</a
-                                >
-                              </li>
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target=".sub_cause_conq_edit_popup"
-                                  onclick="return false;"
-                                  >View</a
                                 >
                               </li>
                               <li>
@@ -5210,16 +5449,6 @@
                                 <li>
                                   <a
                                     href="#"
-                                    data-toggle="modal"
-                                    data-target=".sub_cause_conq_edit_popup"
-                                    onclick="return false;"
-                                    >View</a
-                                  >
-                                </li>
-
-                                <li>
-                                  <a
-                                    href="#"
                                     onclick="return false;"
                                     class="delete-row"
                                     >Delete</a
@@ -5282,15 +5511,6 @@
                               <li>
                                 <a
                                   href="#"
-                                  data-toggle="modal"
-                                  data-target=".sub_cause_conq_edit_popup"
-                                  onclick="return false;"
-                                  >View</a
-                                >
-                              </li>
-                              <li>
-                                <a
-                                  href="#"
                                   onclick="return false;"
                                   class="delete-row"
                                   >Delete</a
@@ -5339,15 +5559,6 @@
                                   data-target="#conq_desc_edit_popup"
                                   onclick="return false;"
                                   >Edit</a
-                                >
-                              </li>
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target=".sub_cause_conq_edit_popup"
-                                  onclick="return false;"
-                                  >View</a
                                 >
                               </li>
                               <li>
@@ -5404,15 +5615,6 @@
                                   data-target="#conq_desc_edit_popup"
                                   onclick="return false;"
                                   >Edit</a
-                                >
-                              </li>
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target=".sub_cause_conq_edit_popup"
-                                  onclick="return false;"
-                                  >View</a
                                 >
                               </li>
                               <li>
@@ -5508,16 +5710,6 @@
                                 <li>
                                   <a
                                     href="#"
-                                    data-toggle="modal"
-                                    data-target=".cause_conq_edit_popup"
-                                    onclick="return false;"
-                                    >View</a
-                                  >
-                                </li>
-
-                                <li>
-                                  <a
-                                    href="#"
                                     onclick="return false;"
                                     class="delete-row"
                                     >Delete</a
@@ -5580,15 +5772,6 @@
                               <li>
                                 <a
                                   href="#"
-                                  data-toggle="modal"
-                                  data-target=".sub_cause_conq_edit_popup"
-                                  onclick="return false;"
-                                  >View</a
-                                >
-                              </li>
-                              <li>
-                                <a
-                                  href="#"
                                   onclick="return false;"
                                   class="delete-row"
                                   >Delete</a
@@ -5637,15 +5820,6 @@
                                   data-target="#conq_desc_edit_popup"
                                   onclick="return false;"
                                   >Edit</a
-                                >
-                              </li>
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target=".sub_cause_conq_edit_popup"
-                                  onclick="return false;"
-                                  >View</a
                                 >
                               </li>
                               <li>
@@ -5702,15 +5876,6 @@
                                   data-target="#conq_desc_edit_popup"
                                   onclick="return false;"
                                   >Edit</a
-                                >
-                              </li>
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target=".sub_cause_conq_edit_popup"
-                                  onclick="return false;"
-                                  >View</a
                                 >
                               </li>
                               <li>
@@ -6382,196 +6547,319 @@
                 </li>
               </ul>
             </div>
-            <div class="d-flex flex-column employee_div_body_box">
+            <div class="d-flex flex-column employee_div_body_box sub-ini-box">
               <div
-                class="d-flex flex-row employe_content_border sub_initiative_details"
-                style="background-color: #efedec; border: 1px solid #dedede;"
+                class="panel-group"
+                id="risk_accordion_1"
+                role="tablist"
+                aria-multiselectable="true"
               >
-                <div class="d-flex flex-column flex-fill profile_content">
-                  <div class="d-flex flex-row">
-                    <div class="d-flex flex-column init_flex_profile">
-                      <p>Define onboarding process</p>
-                    </div>
-                    <div class="d-flex flex-column">
-                      <ul
-                        class="list-unstyled order-list d-flex"
-                        data-toggle="modal"
-                        data-target="#user_edit_popup"
-                        style="cursor: pointer;"
+                <div class="panel panel-col_border">
+                  <div class="panel-heading" role="tab" id="risk_headingOne_1">
+                    <div class="panel-title_risk">
+                      <a
+                        role="button"
+                        data-toggle="collapse"
+                        data-parent="#risk_accordion_1"
+                        href="#risk_monitoring_1"
+                        aria-expanded="false"
+                        aria-controls="risk_monitoring_1"
+                        class="collapsed"
+                        style="padding: 0px 0px !important;"
                       >
-                        <li class="avatar avatar-sm">
-                          <img
-                            class="rounded-circle sub_init_img"
-                            src="../../assets/images/user/user9.jpg"
-                            alt="user"
-                            width="50"
-                          />
-                        </li>
-                        <li class="avatar avatar-sm">
-                          <img
-                            class="rounded-circle sub_init_img"
-                            src="../../assets/images/user/user9.jpg"
-                            alt="user"
-                            width="50"
-                          />
-                        </li>
-                        <li class="avatar avatar-sm">
-                          <span _ngcontent-hhc-c5="" class="badge">+3</span>
-                        </li>
-                      </ul>
+                        <div
+                          class="d-flex flex-row employe_content_border sub_initiative_details"
+                          style="margin-bottom: 0px;"
+                        >
+                          <div
+                            class="d-flex flex-column flex-fill profile_content"
+                          >
+                            <div class="d-flex flex-row">
+                              <div
+                                class="d-flex flex-column init_flex_profile"
+                                style="color: #1e252d;"
+                              >
+                                <p>
+                                  Adequately train a secondary level of
+                                  management and/or identify a potential
+                                  candidate for partner.
+                                </p>
+                              </div>
+                              <div class="d-flex flex-column">
+                                <ul
+                                  class="list-unstyled order-list d-flex"
+                                  data-toggle="modal"
+                                  data-target="#user_edit_popup"
+                                >
+                                  <li class="avatar avatar-sm">
+                                    <img
+                                      class="rounded-circle sub_init_img"
+                                      src="../../assets/images/user/user9.jpg"
+                                      alt="user"
+                                      width="50"
+                                    />
+                                  </li>
+                                  <li class="avatar avatar-sm">
+                                    <img
+                                      class="rounded-circle sub_init_img"
+                                      src="../../assets/images/user/user9.jpg"
+                                      alt="user"
+                                      width="50"
+                                    />
+                                  </li>
+                                  <li class="avatar avatar-sm">
+                                    <span _ngcontent-hhc-c5="" class="badge"
+                                      >+3</span
+                                    >
+                                  </li>
+                                </ul>
+                              </div>
+                              <div class="flex-column">
+                                <ul
+                                  class="header-dropdown m-r--2 pt-3 d-flex"
+                                  style="margin-right: -12px; margin-top: -6px;"
+                                >
+                                  <li class="dropdown">
+                                    <a
+                                      href="#"
+                                      onclick="return false;"
+                                      class="dropdown-toggle"
+                                      data-toggle="dropdown"
+                                      role="button"
+                                      aria-haspopup="true"
+                                      aria-expanded="true"
+                                    >
+                                      <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul
+                                      class="dropdown-menu pull-right"
+                                      x-placement="bottom-start"
+                                      style="
+                                        position: absolute;
+                                        will-change: transform;
+                                        top: 0px;
+                                        left: 0px;
+                                        transform: translate3d(0px, 24px, 0px);
+                                      "
+                                    >
+                                      <li>
+                                        <a
+                                          href="#"
+                                          data-toggle="modal"
+                                          data-target="#action_desc_edit_popup"
+                                          onclick="return false;"
+                                          >Edit</a
+                                        >
+                                      </li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="d-flex flex-row">
+                              <div class="d-flex flex-column flex-fill">
+                                <div><strong>Avoid</strong></div>
+                              </div>
+                              <div class="d-flex flex-column">
+                                <div><strong>Oct 09, 2019</strong></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
                     </div>
                   </div>
-                  <div class="d-flex flex-row">
-                    <div class="d-flex flex-column flex-fill">
-                      <div>
-                        <strong style="color: #1e252d; font-size: 12px;"
-                          >Open</strong
-                        >
+                  <div
+                    id="risk_monitoring_1"
+                    class="panel-collapse in collapse show"
+                    role="tabpanel"
+                    aria-labelledby="risk_headingOne_1"
+                  >
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                      style="margin: 11px 4px; padding: 5px;"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="d-flex flex-column init_flex_profile">
+                            <p>
+                              Define onboarding process
+                            </p>
+                          </div>
+                          <div class="d-flex flex-column">
+                            <div><strong>Completed</strong></div>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-row">
+                          <div class="d-flex flex-column flex-fill">
+                            <div style="font-size: 12px;">
+                              <strong>Open</strong>
+                            </div>
+                          </div>
+                          <div class="d-flex flex-column">
+                            <div>Apr 18, 2020</div>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div class="d-flex flex-column">
-                      <div><strong>Oct 09, 2019</strong></div>
-                    </div>
                   </div>
-                </div>
-                <div class="flex-column">
-                  <ul class="header-dropdown m-r--2 d-flex">
-                    <li class="dropdown">
-                      <a
-                        href="#"
-                        onclick="return false;"
-                        class="dropdown-toggle"
-                        data-toggle="dropdown"
-                        role="button"
-                        aria-haspopup="true"
-                        aria-expanded="true"
-                      >
-                        <i class="material-icons">more_vert</i>
-                      </a>
-                      <ul
-                        class="dropdown-menu pull-right"
-                        x-placement="bottom-start"
-                        style="
-                          position: absolute;
-                          will-change: transform;
-                          top: 0px;
-                          left: 0px;
-                          transform: translate3d(0px, 24px, 0px);
-                        "
-                      >
-                        <li>
-                          <a
-                            href="#"
-                            data-toggle="modal"
-                            data-target="#action_desc_edit_popup"
-                            onclick="return false;"
-                            >Edit</a
-                          >
-                        </li>
-                        <li>
-                          <a href="#" onclick="return false;" class="delete-row"
-                            >Delete</a
-                          >
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
                 </div>
               </div>
 
               <div
-                class="d-flex flex-row employe_content_border sub_initiative_details"
-                style="background-color: #efedec; border: 1px solid #dedede;"
+                class="panel-group"
+                id="risk_accordion_1"
+                role="tablist"
+                aria-multiselectable="true"
               >
-                <div class="d-flex flex-column flex-fill profile_content">
-                  <div class="d-flex flex-row">
-                    <div class="d-flex flex-column init_flex_profile">
-                      <p>Define onboarding process</p>
-                    </div>
-                    <div class="d-flex flex-column">
-                      <ul
-                        class="list-unstyled order-list d-flex"
-                        data-toggle="modal"
-                        data-target="#user_edit_popup"
-                        style="cursor: pointer;"
+                <div class="panel panel-col_border">
+                  <div class="panel-heading" role="tab" id="risk_headingOne_1">
+                    <div class="panel-title_risk">
+                      <a
+                        role="button"
+                        data-toggle="collapse"
+                        data-parent="#risk_accordion_1"
+                        href="#risk_monitoring_2"
+                        aria-expanded="false"
+                        aria-controls="risk_monitoring_2"
+                        style="padding: 0px 0px !important;"
                       >
-                        <li class="avatar avatar-sm">
-                          <img
-                            class="rounded-circle sub_init_img"
-                            src="../../assets/images/user/user9.jpg"
-                            alt="user"
-                            width="50"
-                          />
-                        </li>
-                        <li class="avatar avatar-sm">
-                          <img
-                            class="rounded-circle sub_init_img"
-                            src="../../assets/images/user/user9.jpg"
-                            alt="user"
-                            width="50"
-                          />
-                        </li>
-                        <li class="avatar avatar-sm">
-                          <span _ngcontent-hhc-c5="" class="badge">+3</span>
-                        </li>
-                      </ul>
+                        <div
+                          class="d-flex flex-row employe_content_border sub_initiative_details"
+                          style="margin-bottom: 0px;"
+                        >
+                          <div
+                            class="d-flex flex-column flex-fill profile_content"
+                          >
+                            <div class="d-flex flex-row">
+                              <div
+                                class="d-flex flex-column init_flex_profile"
+                                style="color: #1e252d;"
+                              >
+                                <p>
+                                  Adequately train a secondary level of
+                                  management and/or identify a potential
+                                  candidate for partner.
+                                </p>
+                              </div>
+                              <div class="d-flex flex-column">
+                                <ul
+                                  class="list-unstyled order-list d-flex"
+                                  data-toggle="modal"
+                                  data-target="#user_edit_popup"
+                                >
+                                  <li class="avatar avatar-sm">
+                                    <img
+                                      class="rounded-circle sub_init_img"
+                                      src="../../assets/images/user/user9.jpg"
+                                      alt="user"
+                                      width="50"
+                                    />
+                                  </li>
+                                  <li class="avatar avatar-sm">
+                                    <img
+                                      class="rounded-circle sub_init_img"
+                                      src="../../assets/images/user/user9.jpg"
+                                      alt="user"
+                                      width="50"
+                                    />
+                                  </li>
+                                  <li class="avatar avatar-sm">
+                                    <span _ngcontent-hhc-c5="" class="badge"
+                                      >+3</span
+                                    >
+                                  </li>
+                                </ul>
+                              </div>
+                              <div class="flex-column">
+                                <ul
+                                  class="header-dropdown m-r--2 pt-3 d-flex"
+                                  style="margin-right: -12px; margin-top: -6px;"
+                                >
+                                  <li class="dropdown">
+                                    <a
+                                      href="#"
+                                      onclick="return false;"
+                                      class="dropdown-toggle"
+                                      data-toggle="dropdown"
+                                      role="button"
+                                      aria-haspopup="true"
+                                      aria-expanded="true"
+                                    >
+                                      <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul
+                                      class="dropdown-menu pull-right"
+                                      x-placement="bottom-start"
+                                      style="
+                                        position: absolute;
+                                        will-change: transform;
+                                        top: 0px;
+                                        left: 0px;
+                                        transform: translate3d(0px, 24px, 0px);
+                                      "
+                                    >
+                                      <li>
+                                        <a
+                                          href="#"
+                                          data-toggle="modal"
+                                          data-target="#action_desc_edit_popup"
+                                          onclick="return false;"
+                                          >Edit</a
+                                        >
+                                      </li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="d-flex flex-row">
+                              <div class="d-flex flex-column flex-fill">
+                                <div><strong>Avoid</strong></div>
+                              </div>
+                              <div class="d-flex flex-column">
+                                <div><strong>Oct 09, 2019</strong></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
                     </div>
                   </div>
-                  <div class="d-flex flex-row">
-                    <div class="d-flex flex-column flex-fill">
-                      <div>
-                        <strong style="color: #1e252d; font-size: 12px;"
-                          >Closed</strong
-                        >
+                  <div
+                    id="risk_monitoring_2"
+                    class="panel-collapse in collapse show"
+                    role="tabpanel"
+                    aria-labelledby="risk_headingOne_1"
+                  >
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                      style="margin: 11px 4px; padding: 5px;"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="d-flex flex-column init_flex_profile">
+                            <p>
+                              Define onboarding process
+                            </p>
+                          </div>
+                          <div class="d-flex flex-column">
+                            <div><strong>Completed</strong></div>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-row">
+                          <div class="d-flex flex-column flex-fill">
+                            <div style="font-size: 12px;">
+                              <strong>Closed</strong>
+                            </div>
+                          </div>
+                          <div class="d-flex flex-column">
+                            <div>Apr 18, 2020</div>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div class="d-flex flex-column">
-                      <div><strong>Oct 09, 2019</strong></div>
-                    </div>
                   </div>
-                </div>
-                <div class="flex-column">
-                  <ul class="header-dropdown m-r--2 d-flex">
-                    <li class="dropdown">
-                      <a
-                        href="#"
-                        onclick="return false;"
-                        class="dropdown-toggle"
-                        data-toggle="dropdown"
-                        role="button"
-                        aria-haspopup="true"
-                        aria-expanded="true"
-                      >
-                        <i class="material-icons">more_vert</i>
-                      </a>
-                      <ul
-                        class="dropdown-menu pull-right"
-                        x-placement="bottom-start"
-                        style="
-                          position: absolute;
-                          will-change: transform;
-                          top: 0px;
-                          left: 0px;
-                          transform: translate3d(0px, 24px, 0px);
-                        "
-                      >
-                        <li>
-                          <a
-                            href="#"
-                            data-toggle="modal"
-                            data-target="#action_desc_edit_popup"
-                            onclick="return false;"
-                            >Edit</a
-                          >
-                        </li>
-                        <li>
-                          <a href="#" onclick="return false;" class="delete-row"
-                            >Delete</a
-                          >
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
                 </div>
               </div>
             </div>
