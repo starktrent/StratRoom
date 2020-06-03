@@ -2864,7 +2864,7 @@
                   </div>
                 </div>
                 <div class="row m-t-10">
-                  <div class="form-group col-md-6">
+                  <div class="form-group col-md-4">
                     <i
                       class="far fa-calendar input-calender-icon"
                       style="bottom: 8%;"
@@ -2878,14 +2878,25 @@
                       style="width: 94% !important;"
                     />
                   </div>
-                  <div class="form-group col-md-6">
+                  <div class="form-group col-md-4">
                     <label for="sub_initative_progress">Progress (%)</label>
                     <input
-                      type="text"
+                      type="number"
                       class="modal-custom-input"
                       name="name"
                       style="width: 94% !important;"
                     />
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="sub_initative_progress">Status</label>
+                    <select
+                      class="modal-custom-input"
+                      style="height: 70% !important;"
+                    >
+                      <option>Choose</option>
+                      <option>Pending</option>
+                      <option>Completed</option>
+                    </select>
                   </div>
                 </div>
                 <div class="row m-t-10">
@@ -3072,6 +3083,17 @@
               <form id="sub_initative_Form">
                 <div class="row">
                   <div class="form-group col-md-12">
+                    <label for="sub_initative_desc">ID</label>
+                    <input
+                      type="text"
+                      class="modal-custom-input"
+                      name="name"
+                      style="width: 98% !important;"
+                    />
+                  </div>
+                </div>
+                <div class="row m-t-10">
+                  <div class="form-group col-md-12">
                     <label for="sub_initative_desc">Description</label>
                     <textarea
                       class="modal-custom-textarea"
@@ -3157,105 +3179,6 @@
       </div>
       <!--#END Edit Activities -->
 
-      <!--#START Add Sub Initiatives -->
-      <div
-        class="modal fade add_sub_initiatives_popup"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="myLargeModalLabel_1"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4>Add Sub Initiatives</h4>
-              <button
-                type="button"
-                class="close pull-right"
-                data-dismiss="modal"
-              >
-                &times;
-              </button>
-            </div>
-            <div class="modal-body">
-              <form id="sub_initative_Form">
-                <div class="form-row">
-                  <div class="form-group col-md-12">
-                    <label for="sub_initative_desc">Description</label>
-                    <textarea
-                      class="modal-custom-textarea"
-                      placeholder=""
-                      rows="6"
-                    ></textarea>
-                  </div>
-                </div>
-                <div class="row m-t-10">
-                  <div class="form-group col-md-6">
-                    <label for="sub_initative_progress">Progress</label>
-                    <input type="text" class="modal-custom-input" name="name" />
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="sub_initative_start_end">End Date</label>
-                    <input
-                      type="text"
-                      class="modal-custom-input date_pickers_single"
-                      name="sub_initative_start_end"
-                      id="sub_initative_start_end"
-                      placeholder=""
-                    />
-                  </div>
-                </div>
-                <div class="row m-t-10">
-                  <div class="col-md-12">
-                    <hr />
-                  </div>
-                  <div class="form-group col-lg-8 col-md-4 col-sm-12"></div>
-                  <div class="form-group col-lg-2 col-md-4 col-sm-6">
-                    <button
-                      type="button"
-                      class="btn custom-form-control btn-custom-secondary"
-                      data-dismiss="modal"
-                    >
-                      Close
-                    </button>
-                  </div>
-                  <div class="form-group col-lg-2 col-md-4 col-sm-6">
-                    <button
-                      type="button"
-                      class="btn custom-form-control btn-custom-primary"
-                    >
-                      Save
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <div
-                class="d-flex flex-column flex-fill ml-4 mb-5 text-left font-11"
-              >
-                <div class="d-flex flex-row">
-                  <p class="kpi_audit">Audit</p>
-                </div>
-                <div class="d-flex flex-row">
-                  <div class="d-flex flex-column">
-                    <p><span>Created By : </span><span>Arun</span></p>
-                    <p><span>Created Date : </span><span>Oct 02, 2019</span></p>
-                  </div>
-                  <div class="d-flex flex-column pl-5">
-                    <p><span>Modified By : </span><span>Karthik</span></p>
-                    <p>
-                      <span>Modified Date : </span><span>Oct 02, 2019</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--#END Add Sub Initiatives -->
-
       <!--#START Edit Sub Initiatives -->
       <div
         class="modal fade edit_sub_initiatives_popup"
@@ -3278,7 +3201,18 @@
             </div>
             <div class="modal-body">
               <form id="sub_initative_Form">
-                <div class="form-row">
+                <div class="row">
+                  <div class="form-group col-md-12">
+                    <label for="sub_initative_desc">ID</label>
+                    <input
+                      type="text"
+                      class="modal-custom-input"
+                      name="name"
+                      style="width: 98% !important;"
+                    />
+                  </div>
+                </div>
+                <div class="row m-t-10">
                   <div class="form-group col-md-12">
                     <label for="sub_initative_desc">Description</label>
                     <textarea
@@ -3290,17 +3224,28 @@
                 </div>
                 <div class="row m-t-10">
                   <div class="form-group col-md-6">
-                    <label for="sub_initative_progress">Progress</label>
-                    <input type="text" class="modal-custom-input" name="name" />
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="sub_initative_start_end">End Date</label>
+                    <i
+                      class="far fa-calendar input-calender-icon"
+                      style="bottom: 8%;"
+                    ></i>
+                    <label for="sub_initative_start_end">Start/End Date</label>
                     <input
                       type="text"
-                      class="modal-custom-input date_pickers_single"
-                      name="sub_initative_start_end"
-                      id="sub_initative_start_end"
-                      placeholder=""
+                      class="modal-custom-input date_pickers datepicker-here"
+                      data-range="true"
+                      data-multiple-dates-separator=" - "
+                      data-language="en"
+                      id="air-date-sub-init"
+                      style="width: 94% !important;"
+                    />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="sub_initative_progress">Progress (%)</label>
+                    <input
+                      type="number"
+                      class="modal-custom-input"
+                      name="name"
+                      style="width: 94% !important;"
                     />
                   </div>
                 </div>
@@ -3481,7 +3426,18 @@
             </div>
             <div class="modal-body">
               <form id="sub_initative_Form">
-                <div class="form-row">
+                <div class="row">
+                  <div class="form-group col-md-12">
+                    <label for="sub_initative_desc">ID</label>
+                    <input
+                      type="text"
+                      class="modal-custom-input"
+                      name="name"
+                      style="width: 98% !important;"
+                    />
+                  </div>
+                </div>
+                <div class="row m-t-10">
                   <div class="form-group col-md-12">
                     <label for="sub_initative_desc">Description</label>
                     <textarea
@@ -3492,11 +3448,11 @@
                   </div>
                 </div>
                 <div class="row m-t-10">
-                  <div class="form-group col-md-6">
+                  <div class="form-group col-md-4">
                     <label for="sub_initative_progress">Progress</label>
                     <input type="text" class="modal-custom-input" name="name" />
                   </div>
-                  <div class="form-group col-md-6">
+                  <div class="form-group col-md-4">
                     <label for="sub_initative_start_end"
                       >Start / End Date</label
                     >
@@ -3510,6 +3466,17 @@
                       id="sub_initative_start_end"
                       placeholder=""
                     />
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="sub_initative_progress">Status</label>
+                    <select
+                      class="modal-custom-input"
+                      style="height: 70% !important;"
+                    >
+                      <option>Choose</option>
+                      <option>Pending</option>
+                      <option>Completed</option>
+                    </select>
                   </div>
                 </div>
                 <div class="row m-t-10">
@@ -3601,7 +3568,7 @@
                       class="far fa-calendar input-calender-icon"
                       style="bottom: 8%;"
                     ></i>
-                    <label for="sub_initative_start_end">Due On</label>
+                    <label for="sub_initative_start_end">Start/End Date</label>
                     <input
                       type="text"
                       class="modal-custom-input date_pickers datepicker-here"
@@ -3615,7 +3582,7 @@
                   <div class="form-group col-md-6">
                     <label for="sub_initative_progress">Progress (%)</label>
                     <input
-                      type="text"
+                      type="number"
                       class="modal-custom-input"
                       name="name"
                       style="width: 94% !important;"
@@ -3722,7 +3689,7 @@
                       class="far fa-calendar input-calender-icon"
                       style="bottom: 8%;"
                     ></i>
-                    <label for="sub_initative_start_end">Due On</label>
+                    <label for="sub_initative_start_end">Start/End Date</label>
                     <input
                       type="text"
                       class="modal-custom-input date_pickers datepicker-here"
@@ -3736,7 +3703,7 @@
                   <div class="form-group col-md-6">
                     <label for="sub_initative_progress">Progress (%)</label>
                     <input
-                      type="text"
+                      type="number"
                       class="modal-custom-input"
                       name="name"
                       style="width: 94% !important;"
@@ -3823,7 +3790,7 @@
                     >
                       <div class="d-flex flex-column flex-fill profile_content">
                         <div class="d-flex flex-row">
-                          <p>Initiatives 1</p>
+                          <p>Initiative 1</p>
                         </div>
                         <div class="d-flex flex-row">
                           <div class="d-flex flex-column flex-fill">
@@ -3842,7 +3809,7 @@
                           </div>
                           <div class="d-flex flex-column">
                             <div>
-                              <strong>05/08/2020 - 12/12/2020</strong>
+                              <strong>Oct 09, 2019 - Oct 11, 2019</strong>
                             </div>
                           </div>
                         </div>
@@ -3854,7 +3821,7 @@
                     >
                       <div class="d-flex flex-column flex-fill profile_content">
                         <div class="d-flex flex-row">
-                          <p>Initiatives 2</p>
+                          <p>Initiative 2</p>
                         </div>
                         <div class="d-flex flex-row">
                           <div class="d-flex flex-column flex-fill">
@@ -3873,12 +3840,11 @@
                           </div>
                           <div class="d-flex flex-column">
                             <div>
-                              <strong>05/08/2020 - 12/12/2020</strong>
+                              <strong>Oct 09, 2019 - Oct 11, 2019</strong>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <
                     </div>
 
                     <div
@@ -3886,7 +3852,7 @@
                     >
                       <div class="d-flex flex-column flex-fill profile_content">
                         <div class="d-flex flex-row">
-                          <p>Initiatives 3</p>
+                          <p>Initiative 3</p>
                         </div>
                         <div class="d-flex flex-row">
                           <div class="d-flex flex-column flex-fill">
@@ -3905,7 +3871,7 @@
                           </div>
                           <div class="d-flex flex-column">
                             <div>
-                              <strong>05/08/2020 - 12/12/2020</strong>
+                              <strong>Oct 09, 2019 - Oct 11, 2019</strong>
                             </div>
                           </div>
                         </div>
@@ -3917,7 +3883,7 @@
                     >
                       <div class="d-flex flex-column flex-fill profile_content">
                         <div class="d-flex flex-row">
-                          <p>Initiatives 4</p>
+                          <p>Initiative 4</p>
                         </div>
                         <div class="d-flex flex-row">
                           <div class="d-flex flex-column flex-fill">
@@ -3936,7 +3902,7 @@
                           </div>
                           <div class="d-flex flex-column">
                             <div>
-                              <strong>05/08/2020 - 12/12/2020</strong>
+                              <strong>Oct 09, 2019 - Oct 11, 2019</strong>
                             </div>
                           </div>
                         </div>
@@ -4760,7 +4726,7 @@
                           </div>
                           <div class="d-flex flex-column">
                             <div>
-                              <strong style="font-size: 15px;">4</strong>
+                              <strong style="font-size: 12px;">4</strong>
                             </div>
                           </div>
                         </div>
@@ -4791,7 +4757,7 @@
                           </div>
                           <div class="d-flex flex-column">
                             <div>
-                              <strong style="font-size: 15px;">4</strong>
+                              <strong style="font-size: 12px;">4</strong>
                             </div>
                           </div>
                         </div>
@@ -4822,7 +4788,7 @@
                           </div>
                           <div class="d-flex flex-column">
                             <div>
-                              <strong style="font-size: 15px;">4</strong>
+                              <strong style="font-size: 12px;">4</strong>
                             </div>
                           </div>
                         </div>
@@ -4853,7 +4819,7 @@
                           </div>
                           <div class="d-flex flex-column">
                             <div>
-                              <strong style="font-size: 15px;">4</strong>
+                              <strong style="font-size: 12px;">4</strong>
                             </div>
                           </div>
                         </div>
@@ -4890,7 +4856,7 @@
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h4>View My KPI</h4>
+              <h4>View My KPIs</h4>
               <button
                 type="button"
                 class="close pull-right"
@@ -5151,7 +5117,7 @@
                   </div>
                 </div>
                 <div class="row m-t-10">
-                  <div class="form-group col-md-6">
+                  <div class="form-group col-md-4">
                     <i
                       class="far fa-calendar input-calender-icon"
                       style="bottom: 8%;"
@@ -5165,14 +5131,25 @@
                       style="width: 94% !important;"
                     />
                   </div>
-                  <div class="form-group col-md-6">
+                  <div class="form-group col-md-4">
                     <label for="sub_initative_progress">Progress (%)</label>
                     <input
-                      type="text"
+                      type="number"
                       class="modal-custom-input"
                       name="name"
                       style="width: 94% !important;"
                     />
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="sub_initative_progress">Status</label>
+                    <select
+                      class="modal-custom-input"
+                      style="height: 70% !important;"
+                    >
+                      <option>Choose</option>
+                      <option>Pending</option>
+                      <option>Completed</option>
+                    </select>
                   </div>
                 </div>
                 <div class="row m-t-10">
@@ -6366,6 +6343,7 @@
                         class="fas fa-pencil-alt title_edit_icon"
                         data-toggle="modal"
                         data-target=".edit_employee_popup"
+                        style="color: #1e252d;"
                       ></i>
 
                       <ul class="header-dropdown">
@@ -6375,7 +6353,10 @@
                             class="dropdown-toggle"
                             data-toggle="dropdown"
                           >
-                            <i class="far fa-eye" style="padding: 6px;"></i>
+                            <i
+                              class="far fa-eye"
+                              style="padding: 6px; color: #1e252d;"
+                            ></i>
                           </a>
                           <ul
                             class="dropdown-menu dropdown-hide multi-column columns-3 pull-right"
@@ -6590,7 +6571,9 @@
                             aria-haspopup="true"
                             aria-expanded="true"
                           >
-                            <i class="material-icons">more_horiz</i>
+                            <i class="material-icons" style="color: #1e252d;"
+                              >more_horiz</i
+                            >
                           </a>
                           <ul
                             class="dropdown-menu pull-right"
@@ -7242,7 +7225,8 @@
                           </div>
                         </div>
                       </div>
-                      <!-------Sub Initiatives------->
+
+                      <!-------Appraisal------->
                       <div
                         class="col-lg-4 col-md-6 sub_initiatives select-toggle appraisal"
                       >
@@ -7826,17 +7810,6 @@
                                 >My Initiatives</strong
                               >
                             </h5>
-                            <div
-                              class="create_initives add-sub-initiative"
-                              style="margin-top: 5px;"
-                            >
-                              <span
-                                class="sub_initiative"
-                                data-toggle="modal"
-                                data-target=".add_initiative_popup"
-                                ><i class="fa fa-plus"></i>Add</span
-                              >
-                            </div>
                             <ul class="header-dropdown m-r--2">
                               <li class="dropdown m-t--10">
                                 <a
@@ -7909,7 +7882,9 @@
                                   </div>
                                   <div class="d-flex flex-column">
                                     <div>
-                                      <strong>05/08/2020 - 12/12/2020</strong>
+                                      <strong
+                                        >Oct 09, 2019 - Oct 11, 2019</strong
+                                      >
                                     </div>
                                   </div>
                                 </div>
@@ -7988,7 +7963,9 @@
                                   </div>
                                   <div class="d-flex flex-column">
                                     <div>
-                                      <strong>05/08/2020 - 12/12/2020</strong>
+                                      <strong
+                                        >Oct 09, 2019 - Oct 11, 2019</strong
+                                      >
                                     </div>
                                   </div>
                                 </div>
@@ -8067,7 +8044,9 @@
                                   </div>
                                   <div class="d-flex flex-column">
                                     <div>
-                                      <strong>05/08/2020 - 12/12/2020</strong>
+                                      <strong
+                                        >Oct 09, 2019 - Oct 11, 2019</strong
+                                      >
                                     </div>
                                   </div>
                                 </div>
@@ -8146,7 +8125,9 @@
                                   </div>
                                   <div class="d-flex flex-column">
                                     <div>
-                                      <strong>05/08/2020 - 12/12/2020</strong>
+                                      <strong
+                                        >Oct 09, 2019 - Oct 11, 2019</strong
+                                      >
                                     </div>
                                   </div>
                                 </div>
@@ -8249,14 +8230,6 @@
                                       >View</a
                                     >
                                   </li>
-                                  <li>
-                                    <a
-                                      href="#"
-                                      onclick="return false;"
-                                      class="delete-row"
-                                      >Delete</a
-                                    >
-                                  </li>
                                 </ul>
                               </li>
                             </ul>
@@ -8276,7 +8249,7 @@
                                   </div>
                                   <div class="d-flex flex-column">
                                     <div>
-                                      <strong style="font-size: 15px;"
+                                      <strong style="font-size: 12px;"
                                         >4</strong
                                       >
                                     </div>
@@ -8357,7 +8330,7 @@
                                   </div>
                                   <div class="d-flex flex-column">
                                     <div>
-                                      <strong style="font-size: 15px;"
+                                      <strong style="font-size: 12px;"
                                         >4</strong
                                       >
                                     </div>
@@ -8438,7 +8411,7 @@
                                   </div>
                                   <div class="d-flex flex-column">
                                     <div>
-                                      <strong style="font-size: 15px;"
+                                      <strong style="font-size: 12px;"
                                         >4</strong
                                       >
                                     </div>
@@ -8519,7 +8492,7 @@
                                   </div>
                                   <div class="d-flex flex-column">
                                     <div>
-                                      <strong style="font-size: 15px;"
+                                      <strong style="font-size: 12px;"
                                         >4</strong
                                       >
                                     </div>
@@ -12239,7 +12212,7 @@
                                 class="d-flex flex-column flex-fill profile_content"
                               >
                                 <div class="d-flex flex-row">
-                                  <p>Organize Coffee Break Events</p>
+                                  <p>Initiative 1</p>
                                 </div>
                                 <div class="d-flex flex-row">
                                   <div class="d-flex flex-column flex-fill">
@@ -12256,16 +12229,11 @@
                                       <div class="progress_value">90%</div>
                                     </div>
                                   </div>
-                                  <div
-                                    class="d-flex flex-column"
-                                    style="margin-top: -5px;"
-                                  >
+                                  <div class="d-flex flex-column">
                                     <div>
-                                      <strong style="color: #bdbdbd;"
-                                        >Due on</strong
+                                      <strong
+                                        >Oct 09, 2019 - Oct 11, 2019</strong
                                       >
-                                      <br />
-                                      <strong>Sep 30 2019</strong>
                                     </div>
                                   </div>
                                 </div>
@@ -12325,7 +12293,7 @@
                                 class="d-flex flex-column flex-fill profile_content"
                               >
                                 <div class="d-flex flex-row">
-                                  <p>Schedule Product Usability Workshops</p>
+                                  <p>Initiative 2</p>
                                 </div>
                                 <div class="d-flex flex-row">
                                   <div class="d-flex flex-column flex-fill">
@@ -12342,16 +12310,11 @@
                                       <div class="progress_value">40%</div>
                                     </div>
                                   </div>
-                                  <div
-                                    class="d-flex flex-column"
-                                    style="margin-top: -5px;"
-                                  >
+                                  <div class="d-flex flex-column">
                                     <div>
-                                      <strong style="color: #bdbdbd;"
-                                        >Due on</strong
+                                      <strong
+                                        >Oct 09, 2019 - Oct 11, 2019</strong
                                       >
-                                      <br />
-                                      <strong>Sep 30 2019</strong>
                                     </div>
                                   </div>
                                 </div>
@@ -12411,7 +12374,7 @@
                                 class="d-flex flex-column flex-fill profile_content"
                               >
                                 <div class="d-flex flex-row">
-                                  <p>Implementation of StratRoom</p>
+                                  <p>Initiative 3</p>
                                 </div>
                                 <div class="d-flex flex-row">
                                   <div class="d-flex flex-column flex-fill">
@@ -12428,16 +12391,11 @@
                                       <div class="progress_value">95%</div>
                                     </div>
                                   </div>
-                                  <div
-                                    class="d-flex flex-column"
-                                    style="margin-top: -5px;"
-                                  >
+                                  <div class="d-flex flex-column">
                                     <div>
-                                      <strong style="color: #bdbdbd;"
-                                        >Due on</strong
+                                      <strong
+                                        >Oct 09, 2019 - Oct 11, 2019</strong
                                       >
-                                      <br />
-                                      <strong>Sep 30 2019</strong>
                                     </div>
                                   </div>
                                 </div>
@@ -12497,7 +12455,7 @@
                                 class="d-flex flex-column flex-fill profile_content"
                               >
                                 <div class="d-flex flex-row">
-                                  <p>Team Motivation</p>
+                                  <p>Initiative 4</p>
                                 </div>
                                 <div class="d-flex flex-row">
                                   <div class="d-flex flex-column flex-fill">
@@ -12514,16 +12472,11 @@
                                       <div class="progress_value">30%</div>
                                     </div>
                                   </div>
-                                  <div
-                                    class="d-flex flex-column"
-                                    style="margin-top: -5px;"
-                                  >
+                                  <div class="d-flex flex-column">
                                     <div>
-                                      <strong style="color: #bdbdbd;"
-                                        >Due on</strong
+                                      <strong
+                                        >Oct 09, 2019 - Oct 11, 2019</strong
                                       >
-                                      <br />
-                                      <strong>Sep 30 2019</strong>
                                     </div>
                                   </div>
                                 </div>
@@ -12579,9 +12532,9 @@
                         </div>
                       </div>
 
-                      <!------- Sub Initiatives ------->
+                      <!-- Sub Initiative -->
                       <div
-                        class="col-lg-4 col-md-6 select-toggle sub_initiatives sub-initiatives"
+                        class="col-lg-4 col-md-6 select-toggle sub-initiatives sub_initiatives"
                       >
                         <div class="card">
                           <div class="header d-flex flex-row">
@@ -12590,21 +12543,9 @@
                                 class="editableTxt1"
                                 onkeypress="return (this.innerText.length <= 25)"
                                 editable="true"
-                                contenteditable="true"
                                 >Sub Initiatives</strong
                               >
                             </h5>
-                            <!-- <div
-                              class="create_initives add-sub-initiative"
-                              style="margin-top: 5px;"
-                            >
-                              <span
-                                class="sub_initiative"
-                                data-toggle="modal"
-                                data-target=".add_sub_initiatives_popup"
-                                ><i class="fa fa-plus"></i>Add</span
-                              >
-                            </div> -->
                             <ul class="header-dropdown m-r--2">
                               <li class="dropdown m-t--10">
                                 <a
@@ -12650,49 +12591,46 @@
                               </li>
                             </ul>
                           </div>
-                          <div class="d-flex flex-column employee_div_body_box">
+                          <div
+                            class="d-flex flex-column employee_div_body_box sub-ini-box"
+                          >
                             <div
-                              class="d-flex flex-row employe_content_border goal_row_box"
+                              class="d-flex flex-row employe_content_border sub_initiative_details"
                             >
                               <div
                                 class="d-flex flex-column flex-fill profile_content"
                               >
                                 <div class="d-flex flex-row">
-                                  <p>
-                                    Sub Initiatives 1 - Lorem ipsum dolor sit
-                                    amet, nam ea, ei putent oblique probatus ve
-                                  </p>
+                                  <div
+                                    class="d-flex flex-column init_flex_profile"
+                                  >
+                                    <p>Sub Initiatives 1</p>
+                                  </div>
                                 </div>
                                 <div class="d-flex flex-row">
                                   <div class="d-flex flex-column flex-fill">
                                     <div class="d-flex flex-row">
                                       <div class="progress-s progress">
                                         <div
-                                          class="progress-bar width-per-90 rounded-pill bar_height yellow_bar"
+                                          class="progress-bar width-per-40 rounded-pill bar_height yellow_bar"
                                           role="progressbar"
                                           aria-valuenow="40"
                                           aria-valuemin="0"
                                           aria-valuemax="100"
                                         ></div>
                                       </div>
-                                      <div class="progress_value">90%</div>
+                                      <div class="progress_value">40%</div>
                                     </div>
                                   </div>
-                                  <div
-                                    class="d-flex flex-column"
-                                    style="margin-top: -5px;"
-                                  >
+                                  <div class="d-flex flex-column">
                                     <div>
-                                      <strong style="color: #bdbdbd;"
-                                        >Due on</strong
+                                      <strong
+                                        >Oct 09, 2019 - Oct 11, 2019</strong
                                       >
-                                      <br />
-                                      <strong>Sep 30 2019</strong>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-
                               <div class="flex-column">
                                 <ul class="header-dropdown m-r--2 d-flex">
                                   <li class="dropdown">
@@ -12741,47 +12679,42 @@
                               </div>
                             </div>
                             <div
-                              class="d-flex flex-row employe_content_border goal_row_box"
+                              class="d-flex flex-row employe_content_border sub_initiative_details"
                             >
                               <div
                                 class="d-flex flex-column flex-fill profile_content"
                               >
                                 <div class="d-flex flex-row">
-                                  <p>
-                                    Sub Initiatives 2 - Lorem ipsum dolor sit
-                                    amet, nam ea, ei putent oblique probatus ve
-                                  </p>
+                                  <div
+                                    class="d-flex flex-column init_flex_profile"
+                                  >
+                                    <p>Sub Initiatives 2</p>
+                                  </div>
                                 </div>
                                 <div class="d-flex flex-row">
                                   <div class="d-flex flex-column flex-fill">
                                     <div class="d-flex flex-row">
                                       <div class="progress-s progress">
                                         <div
-                                          class="progress-bar width-per-50 rounded-pill bar_height green_bar"
+                                          class="progress-bar progress-bar-success width-per-80 rounded-pill bar_height"
                                           role="progressbar"
-                                          aria-valuenow="40"
+                                          aria-valuenow="80"
                                           aria-valuemin="0"
                                           aria-valuemax="100"
                                         ></div>
                                       </div>
-                                      <div class="progress_value">50%</div>
+                                      <div class="progress_value">80%</div>
                                     </div>
                                   </div>
-                                  <div
-                                    class="d-flex flex-column"
-                                    style="margin-top: -5px;"
-                                  >
+                                  <div class="d-flex flex-column">
                                     <div>
-                                      <strong style="color: #bdbdbd;"
-                                        >Due on</strong
+                                      <strong
+                                        >Oct 09, 2019 - Oct 11, 2019</strong
                                       >
-                                      <br />
-                                      <strong>Sep 30 2019</strong>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-
                               <div class="flex-column">
                                 <ul class="header-dropdown m-r--2 d-flex">
                                   <li class="dropdown">
@@ -12830,47 +12763,42 @@
                               </div>
                             </div>
                             <div
-                              class="d-flex flex-row employe_content_border goal_row_box"
+                              class="d-flex flex-row employe_content_border sub_initiative_details"
                             >
                               <div
                                 class="d-flex flex-column flex-fill profile_content"
                               >
                                 <div class="d-flex flex-row">
-                                  <p>
-                                    Sub Initiatives 3 - Lorem ipsum dolor sit
-                                    amet, nam ea, ei putent oblique probatus ve
-                                  </p>
+                                  <div
+                                    class="d-flex flex-column init_flex_profile"
+                                  >
+                                    <p>Sub Initiatives 3</p>
+                                  </div>
                                 </div>
                                 <div class="d-flex flex-row">
                                   <div class="d-flex flex-column flex-fill">
                                     <div class="d-flex flex-row">
                                       <div class="progress-s progress">
                                         <div
-                                          class="progress-bar width-per-75 rounded-pill bar_height orange_bar"
+                                          class="progress-bar width-per-15 rounded-pill bar_height orange_bar"
                                           role="progressbar"
-                                          aria-valuenow="40"
+                                          aria-valuenow="15"
                                           aria-valuemin="0"
                                           aria-valuemax="100"
                                         ></div>
                                       </div>
-                                      <div class="progress_value">75%</div>
+                                      <div class="progress_value">15%</div>
                                     </div>
                                   </div>
-                                  <div
-                                    class="d-flex flex-column"
-                                    style="margin-top: -5px;"
-                                  >
+                                  <div class="d-flex flex-column">
                                     <div>
-                                      <strong style="color: #bdbdbd;"
-                                        >Due on</strong
+                                      <strong
+                                        >Oct 09, 2019 - Oct 11, 2019</strong
                                       >
-                                      <br />
-                                      <strong>Sep 30 2019</strong>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-
                               <div class="flex-column">
                                 <ul class="header-dropdown m-r--2 d-flex">
                                   <li class="dropdown">
@@ -12919,47 +12847,42 @@
                               </div>
                             </div>
                             <div
-                              class="d-flex flex-row employe_content_border goal_row_box"
+                              class="d-flex flex-row employe_content_border sub_initiative_details"
                             >
                               <div
                                 class="d-flex flex-column flex-fill profile_content"
                               >
                                 <div class="d-flex flex-row">
-                                  <p>
-                                    Sub Initiatives 4 - Lorem ipsum dolor sit
-                                    amet, nam ea, ei putent oblique probatus ve
-                                  </p>
+                                  <div
+                                    class="d-flex flex-column init_flex_profile"
+                                  >
+                                    <p>Sub Initiatives 4</p>
+                                  </div>
                                 </div>
                                 <div class="d-flex flex-row">
                                   <div class="d-flex flex-column flex-fill">
                                     <div class="d-flex flex-row">
                                       <div class="progress-s progress">
                                         <div
-                                          class="progress-bar width-per-60 rounded-pill bar_height green_bar"
+                                          class="progress-bar progress-bar-success width-per-15 rounded-pill bar_height"
                                           role="progressbar"
-                                          aria-valuenow="40"
+                                          aria-valuenow="15"
                                           aria-valuemin="0"
                                           aria-valuemax="100"
                                         ></div>
                                       </div>
-                                      <div class="progress_value">60%</div>
+                                      <div class="progress_value">15%</div>
                                     </div>
                                   </div>
-                                  <div
-                                    class="d-flex flex-column"
-                                    style="margin-top: -5px;"
-                                  >
+                                  <div class="d-flex flex-column">
                                     <div>
-                                      <strong style="color: #bdbdbd;"
-                                        >Due on</strong
+                                      <strong
+                                        >Oct 09, 2019 - Oct 11, 2019</strong
                                       >
-                                      <br />
-                                      <strong>Sep 30 2019</strong>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-
                               <div class="flex-column">
                                 <ul class="header-dropdown m-r--2 d-flex">
                                   <li class="dropdown">
@@ -13008,47 +12931,126 @@
                               </div>
                             </div>
                             <div
-                              class="d-flex flex-row employe_content_border goal_row_box"
+                              class="d-flex flex-row employe_content_border sub_initiative_details"
                             >
                               <div
                                 class="d-flex flex-column flex-fill profile_content"
                               >
                                 <div class="d-flex flex-row">
-                                  <p>
-                                    Sub Initiatives 5 - Lorem ipsum dolor sit
-                                    amet, nam ea, ei putent oblique probatus ve
-                                  </p>
+                                  <div
+                                    class="d-flex flex-column init_flex_profile"
+                                  >
+                                    <p>Sub Initiatives 5</p>
+                                  </div>
                                 </div>
                                 <div class="d-flex flex-row">
                                   <div class="d-flex flex-column flex-fill">
                                     <div class="d-flex flex-row">
                                       <div class="progress-s progress">
                                         <div
-                                          class="progress-bar width-per-20 rounded-pill bar_height orange_bar"
+                                          class="progress-bar progress-bar-success width-per-15 rounded-pill bar_height"
+                                          role="progressbar"
+                                          aria-valuenow="15"
+                                          aria-valuemin="0"
+                                          aria-valuemax="100"
+                                        ></div>
+                                      </div>
+                                      <div class="progress_value">15%</div>
+                                    </div>
+                                  </div>
+                                  <div class="d-flex flex-column">
+                                    <div>
+                                      <strong
+                                        >Oct 09, 2019 - Oct 11, 2019</strong
+                                      >
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="flex-column">
+                                <ul class="header-dropdown m-r--2 d-flex">
+                                  <li class="dropdown">
+                                    <a
+                                      href="#"
+                                      onclick="return false;"
+                                      class="dropdown-toggle"
+                                      data-toggle="dropdown"
+                                      role="button"
+                                      aria-haspopup="true"
+                                      aria-expanded="true"
+                                    >
+                                      <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul
+                                      class="dropdown-menu pull-right"
+                                      x-placement="bottom-start"
+                                      style="
+                                        position: absolute;
+                                        will-change: transform;
+                                        top: 0px;
+                                        left: 0px;
+                                        transform: translate3d(0px, 24px, 0px);
+                                      "
+                                    >
+                                      <li>
+                                        <a
+                                          href="#"
+                                          data-toggle="modal"
+                                          data-target=".edit_sub_initiatives_popup"
+                                          onclick="return false;"
+                                          >Edit</a
+                                        >
+                                      </li>
+                                      <li>
+                                        <a
+                                          href="#"
+                                          onclick="return false;"
+                                          class="delete-row"
+                                          >Delete</a
+                                        >
+                                      </li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div
+                              class="d-flex flex-row employe_content_border sub_initiative_details"
+                            >
+                              <div
+                                class="d-flex flex-column flex-fill profile_content"
+                              >
+                                <div class="d-flex flex-row">
+                                  <div
+                                    class="d-flex flex-column init_flex_profile"
+                                  >
+                                    <p>Sub Initiatives 6</p>
+                                  </div>
+                                </div>
+                                <div class="d-flex flex-row">
+                                  <div class="d-flex flex-column flex-fill">
+                                    <div class="d-flex flex-row">
+                                      <div class="progress-s progress">
+                                        <div
+                                          class="progress-bar width-per-40 rounded-pill bar_height yellow_bar"
                                           role="progressbar"
                                           aria-valuenow="40"
                                           aria-valuemin="0"
                                           aria-valuemax="100"
                                         ></div>
                                       </div>
-                                      <div class="progress_value">20%</div>
+                                      <div class="progress_value">40%</div>
                                     </div>
                                   </div>
-                                  <div
-                                    class="d-flex flex-column"
-                                    style="margin-top: -5px;"
-                                  >
+                                  <div class="d-flex flex-column">
                                     <div>
-                                      <strong style="color: #bdbdbd;"
-                                        >Due on</strong
+                                      <strong
+                                        >Oct 09, 2019 - Oct 11, 2019</strong
                                       >
-                                      <br />
-                                      <strong>Sep 30 2019</strong>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-
                               <div class="flex-column">
                                 <ul class="header-dropdown m-r--2 d-flex">
                                   <li class="dropdown">
@@ -13115,17 +13117,6 @@
                                 >Activities</strong
                               >
                             </h5>
-                            <!-- <div
-                              class="create_initives add-sub-initiative"
-                              style="margin-top: 5px;"
-                            >
-                              <span
-                                class="sub_initiative"
-                                data-toggle="modal"
-                                data-target=".add_activities_popup"
-                                ><i class="fa fa-plus"></i>Add</span
-                              >
-                            </div> -->
                             <ul class="header-dropdown m-r--2">
                               <li class="dropdown m-t--10">
                                 <a
@@ -13180,8 +13171,7 @@
                               >
                                 <div class="d-flex flex-row">
                                   <p>
-                                    Activities 1- Lorem ipsum dolor sit amet,
-                                    nam ea, ei putent oblique probatus ve
+                                    Activities 1
                                   </p>
                                 </div>
                                 <div class="d-flex flex-row">
@@ -13262,8 +13252,7 @@
                               >
                                 <div class="d-flex flex-row">
                                   <p>
-                                    Activities 2- Lorem ipsum dolor sit amet,
-                                    nam ea, ei putent oblique probatus ve
+                                    Activities 2
                                   </p>
                                 </div>
                                 <div class="d-flex flex-row">
@@ -13343,8 +13332,7 @@
                               >
                                 <div class="d-flex flex-row">
                                   <p>
-                                    Activities 3- Lorem ipsum dolor sit amet,
-                                    nam ea, ei putent oblique probatus ve
+                                    Activities 3
                                   </p>
                                 </div>
                                 <div class="d-flex flex-row">
@@ -13424,8 +13412,7 @@
                               >
                                 <div class="d-flex flex-row">
                                   <p>
-                                    Activities 4- Lorem ipsum dolor sit amet,
-                                    nam ea, ei putent oblique probatus ve
+                                    Activities 4
                                   </p>
                                 </div>
                                 <div class="d-flex flex-row">
@@ -13505,8 +13492,7 @@
                               >
                                 <div class="d-flex flex-row">
                                   <p>
-                                    Activities 5- Lorem ipsum dolor sit amet,
-                                    nam ea, ei putent oblique probatus ve
+                                    Activities 5
                                   </p>
                                 </div>
                                 <div class="d-flex flex-row">
@@ -13582,9 +13568,9 @@
                         </div>
                       </div>
 
-                      <!------- Milestones ------->
+                      <!---------MileStones-------->
                       <div
-                        class="col-lg-4 col-md-6 select-toggle sub_initiatives milestones"
+                        class="col-lg-4 col-md-6 select-toggle milestones sub_initiatives"
                       >
                         <div class="card">
                           <div class="header d-flex flex-row">
@@ -13593,11 +13579,10 @@
                                 class="editableTxt1"
                                 onkeypress="return (this.innerText.length <= 25)"
                                 editable="true"
-                                contenteditable="true"
                                 >Milestones</strong
                               >
                             </h5>
-                            <ul class="header-dropdown m-r--2">
+                            <ul class="header-dropdown m-r--2 d-flex">
                               <li class="dropdown m-t--10">
                                 <a
                                   href="#"
@@ -13644,42 +13629,47 @@
                           </div>
                           <div class="d-flex flex-column employee_div_body_box">
                             <div
-                              class="d-flex flex-row employe_content_border goal_row_box"
+                              class="d-flex flex-row employe_content_border sub_initiative_details"
                             >
                               <div
                                 class="d-flex flex-column flex-fill profile_content"
                               >
                                 <div class="d-flex flex-row">
-                                  <p>
-                                    Milestones 1- Lorem ipsum dolor sit amet,
-                                    nam ea, ei putent oblique probatus ve
-                                  </p>
+                                  <div
+                                    class="d-flex flex-column init_flex_profile"
+                                  >
+                                    <p>
+                                      Milestones-1
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="d-flex flex-column"
+                                    style="margin-top: 2px;"
+                                  >
+                                    <div><strong>Completed</strong></div>
+                                  </div>
                                 </div>
                                 <div class="d-flex flex-row">
                                   <div class="d-flex flex-column flex-fill">
                                     <div class="d-flex flex-row">
                                       <div class="progress-s progress">
                                         <div
-                                          class="progress-bar width-per-90 rounded-pill bar_height yellow_bar"
+                                          class="progress-bar progress-bar-success width-per-35 rounded-pill bar_height"
                                           role="progressbar"
-                                          aria-valuenow="40"
+                                          aria-valuenow="15"
                                           aria-valuemin="0"
                                           aria-valuemax="100"
                                         ></div>
                                       </div>
-                                      <div class="progress_value">90%</div>
+                                      <div class="progress_value">35%</div>
                                     </div>
                                   </div>
+
                                   <div class="d-flex flex-column">
-                                    <div>
-                                      <strong
-                                        >Dec 01, 2014 - Oct 31, 2015</strong
-                                      >
-                                    </div>
+                                    <div><strong>Oct 09, 2019</strong></div>
                                   </div>
                                 </div>
                               </div>
-
                               <div class="flex-column">
                                 <ul class="header-dropdown m-r--2 d-flex">
                                   <li class="dropdown">
@@ -13692,7 +13682,11 @@
                                       aria-haspopup="true"
                                       aria-expanded="true"
                                     >
-                                      <i class="material-icons">more_vert</i>
+                                      <i
+                                        class="material-icons"
+                                        style="margin-top: 4px;"
+                                        >more_vert</i
+                                      >
                                     </a>
                                     <ul
                                       class="dropdown-menu pull-right"
@@ -13728,42 +13722,47 @@
                               </div>
                             </div>
                             <div
-                              class="d-flex flex-row employe_content_border goal_row_box"
+                              class="d-flex flex-row employe_content_border sub_initiative_details"
                             >
                               <div
                                 class="d-flex flex-column flex-fill profile_content"
                               >
                                 <div class="d-flex flex-row">
-                                  <p>
-                                    Milestones 2 - Lorem ipsum dolor sit amet,
-                                    nam ea, ei putent oblique probatus ve
-                                  </p>
+                                  <div
+                                    class="d-flex flex-column init_flex_profile"
+                                  >
+                                    <p>
+                                      Milestones-2
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="d-flex flex-column"
+                                    style="margin-top: 2px;"
+                                  >
+                                    <div><strong>Pending</strong></div>
+                                  </div>
                                 </div>
                                 <div class="d-flex flex-row">
                                   <div class="d-flex flex-column flex-fill">
                                     <div class="d-flex flex-row">
                                       <div class="progress-s progress">
                                         <div
-                                          class="progress-bar width-per-50 rounded-pill bar_height green_bar"
+                                          class="progress-bar width-per-40 rounded-pill bar_height yellow_bar"
                                           role="progressbar"
                                           aria-valuenow="40"
                                           aria-valuemin="0"
                                           aria-valuemax="100"
                                         ></div>
                                       </div>
-                                      <div class="progress_value">50%</div>
+                                      <div class="progress_value">40%</div>
                                     </div>
                                   </div>
+
                                   <div class="d-flex flex-column">
-                                    <div>
-                                      <strong
-                                        >Dec 01, 2014 - Oct 31, 2015</strong
-                                      >
-                                    </div>
+                                    <div><strong>Oct 09, 2019</strong></div>
                                   </div>
                                 </div>
                               </div>
-
                               <div class="flex-column">
                                 <ul class="header-dropdown m-r--2 d-flex">
                                   <li class="dropdown">
@@ -13776,7 +13775,105 @@
                                       aria-haspopup="true"
                                       aria-expanded="true"
                                     >
-                                      <i class="material-icons">more_vert</i>
+                                      <i
+                                        class="material-icons"
+                                        style="margin-top: 4px;"
+                                        >more_vert</i
+                                      >
+                                    </a>
+                                    <ul
+                                      class="dropdown-menu pull-right"
+                                      x-placement="bottom-start"
+                                      style="
+                                        position: absolute;
+                                        will-change: transform;
+                                        top: 0px;
+                                        left: 0px;
+                                        transform: translate3d(0px, 24px, 0px);
+                                      "
+                                    >
+                                      <li>
+                                        <a
+                                          href="#"
+                                          data-toggle="modal"
+                                          data-target=".edit_milestones_popup"
+                                          onclick="return false;"
+                                          >Edit</a
+                                        >
+                                      </li>
+                                      <li>
+                                        <a
+                                          href="#"
+                                          onclick="return false;"
+                                          class="delete-row"
+                                          >Delete</a
+                                        >
+                                      </li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+
+                            <div
+                              class="d-flex flex-row employe_content_border sub_initiative_details"
+                            >
+                              <div
+                                class="d-flex flex-column flex-fill profile_content"
+                              >
+                                <div class="d-flex flex-row">
+                                  <div
+                                    class="d-flex flex-column init_flex_profile"
+                                  >
+                                    <p>
+                                      Milestones-3
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="d-flex flex-column"
+                                    style="margin-top: 2px;"
+                                  >
+                                    <div><strong>Completed</strong></div>
+                                  </div>
+                                </div>
+                                <div class="d-flex flex-row">
+                                  <div class="d-flex flex-column flex-fill">
+                                    <div class="d-flex flex-row">
+                                      <div class="progress-s progress">
+                                        <div
+                                          class="progress-bar progress-bar-success width-per-80 rounded-pill bar_height"
+                                          role="progressbar"
+                                          aria-valuenow="80"
+                                          aria-valuemin="0"
+                                          aria-valuemax="100"
+                                        ></div>
+                                      </div>
+                                      <div class="progress_value">80%</div>
+                                    </div>
+                                  </div>
+
+                                  <div class="d-flex flex-column">
+                                    <div><strong>Oct 09, 2019</strong></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="flex-column">
+                                <ul class="header-dropdown m-r--2 d-flex">
+                                  <li class="dropdown">
+                                    <a
+                                      href="#"
+                                      onclick="return false;"
+                                      class="dropdown-toggle"
+                                      data-toggle="dropdown"
+                                      role="button"
+                                      aria-haspopup="true"
+                                      aria-expanded="true"
+                                    >
+                                      <i
+                                        class="material-icons"
+                                        style="margin-top: 4px;"
+                                        >more_vert</i
+                                      >
                                     </a>
                                     <ul
                                       class="dropdown-menu pull-right"
@@ -13812,42 +13909,47 @@
                               </div>
                             </div>
                             <div
-                              class="d-flex flex-row employe_content_border goal_row_box"
+                              class="d-flex flex-row employe_content_border sub_initiative_details"
                             >
                               <div
                                 class="d-flex flex-column flex-fill profile_content"
                               >
                                 <div class="d-flex flex-row">
-                                  <p>
-                                    Milestones 3 - Lorem ipsum dolor sit amet,
-                                    nam ea, ei putent oblique probatus ve
-                                  </p>
+                                  <div
+                                    class="d-flex flex-column init_flex_profile"
+                                  >
+                                    <p>
+                                      Milestones-4
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="d-flex flex-column"
+                                    style="margin-top: 2px;"
+                                  >
+                                    <div><strong>Completed</strong></div>
+                                  </div>
                                 </div>
                                 <div class="d-flex flex-row">
                                   <div class="d-flex flex-column flex-fill">
                                     <div class="d-flex flex-row">
                                       <div class="progress-s progress">
                                         <div
-                                          class="progress-bar width-per-75 rounded-pill bar_height orange_bar"
+                                          class="progress-bar width-per-15 rounded-pill bar_height orange_bar"
                                           role="progressbar"
-                                          aria-valuenow="40"
+                                          aria-valuenow="15"
                                           aria-valuemin="0"
                                           aria-valuemax="100"
                                         ></div>
                                       </div>
-                                      <div class="progress_value">75%</div>
+                                      <div class="progress_value">15%</div>
                                     </div>
                                   </div>
+
                                   <div class="d-flex flex-column">
-                                    <div>
-                                      <strong
-                                        >Dec 01, 2014 - Oct 31, 2015</strong
-                                      >
-                                    </div>
+                                    <div><strong>Oct 09, 2019</strong></div>
                                   </div>
                                 </div>
                               </div>
-
                               <div class="flex-column">
                                 <ul class="header-dropdown m-r--2 d-flex">
                                   <li class="dropdown">
@@ -13860,7 +13962,11 @@
                                       aria-haspopup="true"
                                       aria-expanded="true"
                                     >
-                                      <i class="material-icons">more_vert</i>
+                                      <i
+                                        class="material-icons"
+                                        style="margin-top: 4px;"
+                                        >more_vert</i
+                                      >
                                     </a>
                                     <ul
                                       class="dropdown-menu pull-right"
@@ -13896,25 +14002,34 @@
                               </div>
                             </div>
                             <div
-                              class="d-flex flex-row employe_content_border goal_row_box"
+                              class="d-flex flex-row employe_content_border sub_initiative_details"
                             >
                               <div
                                 class="d-flex flex-column flex-fill profile_content"
                               >
                                 <div class="d-flex flex-row">
-                                  <p>
-                                    Milestones 4 - Lorem ipsum dolor sit amet,
-                                    nam ea, ei putent oblique probatus ve
-                                  </p>
+                                  <div
+                                    class="d-flex flex-column init_flex_profile"
+                                  >
+                                    <p>
+                                      Milestones-5
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="d-flex flex-column"
+                                    style="margin-top: 2px;"
+                                  >
+                                    <div><strong>Completed</strong></div>
+                                  </div>
                                 </div>
                                 <div class="d-flex flex-row">
                                   <div class="d-flex flex-column flex-fill">
                                     <div class="d-flex flex-row">
                                       <div class="progress-s progress">
                                         <div
-                                          class="progress-bar width-per-60 rounded-pill bar_height green_bar"
+                                          class="progress-bar progress-bar-success width-per-60 rounded-pill bar_height"
                                           role="progressbar"
-                                          aria-valuenow="40"
+                                          aria-valuenow="60"
                                           aria-valuemin="0"
                                           aria-valuemax="100"
                                         ></div>
@@ -13922,12 +14037,9 @@
                                       <div class="progress_value">60%</div>
                                     </div>
                                   </div>
+
                                   <div class="d-flex flex-column">
-                                    <div>
-                                      <strong
-                                        >Dec 01, 2014 - Oct 31, 2015</strong
-                                      >
-                                    </div>
+                                    <div><strong>Oct 09, 2019</strong></div>
                                   </div>
                                 </div>
                               </div>
@@ -13943,7 +14055,11 @@
                                       aria-haspopup="true"
                                       aria-expanded="true"
                                     >
-                                      <i class="material-icons">more_vert</i>
+                                      <i
+                                        class="material-icons"
+                                        style="margin-top: 4px;"
+                                        >more_vert</i
+                                      >
                                     </a>
                                     <ul
                                       class="dropdown-menu pull-right"
@@ -13979,38 +14095,44 @@
                               </div>
                             </div>
                             <div
-                              class="d-flex flex-row employe_content_border goal_row_box"
+                              class="d-flex flex-row employe_content_border sub_initiative_details"
                             >
                               <div
                                 class="d-flex flex-column flex-fill profile_content"
                               >
                                 <div class="d-flex flex-row">
-                                  <p>
-                                    Milestones 5 - Lorem ipsum dolor sit amet,
-                                    nam ea, ei putent oblique probatus ve
-                                  </p>
+                                  <div
+                                    class="d-flex flex-column init_flex_profile"
+                                  >
+                                    <p>
+                                      Milestones-6
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="d-flex flex-column"
+                                    style="margin-top: 2px;"
+                                  >
+                                    <div><strong>Completed</strong></div>
+                                  </div>
                                 </div>
                                 <div class="d-flex flex-row">
                                   <div class="d-flex flex-column flex-fill">
                                     <div class="d-flex flex-row">
                                       <div class="progress-s progress">
                                         <div
-                                          class="progress-bar width-per-20 rounded-pill bar_height orange_bar"
+                                          class="progress-bar progress-bar-success width-per-35 rounded-pill bar_height"
                                           role="progressbar"
-                                          aria-valuenow="40"
+                                          aria-valuenow="15"
                                           aria-valuemin="0"
                                           aria-valuemax="100"
                                         ></div>
                                       </div>
-                                      <div class="progress_value">20%</div>
+                                      <div class="progress_value">35%</div>
                                     </div>
                                   </div>
+
                                   <div class="d-flex flex-column">
-                                    <div>
-                                      <strong
-                                        >Dec 01, 2014 - Oct 31, 2015</strong
-                                      >
-                                    </div>
+                                    <div><strong>Oct 09, 2019</strong></div>
                                   </div>
                                 </div>
                               </div>
@@ -14026,7 +14148,11 @@
                                       aria-haspopup="true"
                                       aria-expanded="true"
                                     >
-                                      <i class="material-icons">more_vert</i>
+                                      <i
+                                        class="material-icons"
+                                        style="margin-top: 4px;"
+                                        >more_vert</i
+                                      >
                                     </a>
                                     <ul
                                       class="dropdown-menu pull-right"
@@ -14595,7 +14721,7 @@
                     <div class="row row-padding">
                       <!-------Heat Map------->
                       <div
-                        class="col-lg-6 col-md-6 sub_initiatives select-toggle causenconsequence"
+                        class="col-lg-8 col-md-6 sub_initiatives select-toggle causenconsequence"
                       >
                         <div class="card">
                           <div class="header d-flex flex-row">
@@ -14655,257 +14781,6 @@
                           <div
                             class="d-flex flex-column employee_div_body_box"
                           ></div>
-                        </div>
-                      </div>
-
-                      <!---------Table-------->
-                      <div
-                        class="col-lg-6 col-md-6 select-toggle tables sub_initiatives"
-                      >
-                        <div class="card">
-                          <div class="header d-flex flex-row">
-                            <h5 class="prob d-flex flex-fill">
-                              <strong
-                                class="editableTxt1"
-                                onkeypress="return (this.innerText.length <= 25)"
-                                editable="true"
-                                >Tables</strong
-                              >
-                            </h5>
-                            <ul class="header-dropdown m-r--2 d-flex">
-                              <li class="dropdown m-t--10">
-                                <a
-                                  href="#"
-                                  onclick="return false;"
-                                  class="dropdown-toggle"
-                                  data-toggle="dropdown"
-                                  role="button"
-                                  aria-haspopup="true"
-                                  aria-expanded="true"
-                                >
-                                  <i class="material-icons">more_vert</i>
-                                </a>
-                                <ul
-                                  class="dropdown-menu pull-right"
-                                  x-placement="bottom-start"
-                                  style="
-                                    position: absolute;
-                                    will-change: transform;
-                                    top: 0px;
-                                    left: 0px;
-                                    transform: translate3d(0px, 24px, 0px);
-                                  "
-                                >
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#bigTable"
-                                      onclick="return false;"
-                                      >View</a
-                                    >
-                                  </li>
-                                  <li>
-                                    <a
-                                      href="#"
-                                      onclick="return false;"
-                                      class="delete-row"
-                                      >Delete</a
-                                    >
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </div>
-                          <div class="body table-responsive sub-ini-box">
-                            <div class="col-lg-12 col-md-12">
-                              <div class="card">
-                                <div class="tableBody">
-                                  <div class="table-responsive Month box">
-                                    <table
-                                      class="table dashboard-task-infos align-center dashboard-table"
-                                      id="table1"
-                                      style="margin-bottom: 0px !important;"
-                                    >
-                                      <tr>
-                                        <th>Status</th>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Category</th>
-                                        <th>Impact</th>
-                                        <th>Likelihood</th>
-                                        <th>Score</th>
-                                        <th>Raised on</th>
-                                        <th>Next Assessment</th>
-                                      </tr>
-                                      <tr>
-                                        <td>
-                                          <i
-                                            class="fas fa-flag"
-                                            style="color: #28f76d;"
-                                          ></i>
-                                        </td>
-                                        <td>12</td>
-                                        <td>
-                                          <a
-                                            href="#"
-                                            style="
-                                              font-weight: 600;
-                                              color: #333 !important;
-                                            "
-                                            >Risk 1</a
-                                          >
-                                        </td>
-                                        <td>Regulatory</td>
-                                        <td style="color: #28f76d;">
-                                          Tolerable
-                                        </td>
-                                        <td style="color: #f72f28;">High</td>
-                                        <td>3</td>
-                                        <td>23-05-2020</td>
-                                        <td>23-06-2020</td>
-                                      </tr>
-                                      <tr>
-                                        <td>
-                                          <i
-                                            class="fas fa-flag"
-                                            style="color: #f72f28;"
-                                          ></i>
-                                        </td>
-                                        <td>12</td>
-                                        <td>
-                                          <a
-                                            href="#"
-                                            style="
-                                              font-weight: 600;
-                                              color: #333 !important;
-                                            "
-                                            >Risk 2</a
-                                          >
-                                        </td>
-                                        <td>Regulatory</td>
-                                        <td style="color: #28f76d;">
-                                          Tolerable
-                                        </td>
-                                        <td style="color: #f72f28;">High</td>
-                                        <td>3</td>
-                                        <td>23-05-2020</td>
-                                        <td>23-06-2020</td>
-                                      </tr>
-                                      <tr>
-                                        <td>
-                                          <i
-                                            class="fas fa-flag"
-                                            style="color: #f72f28;"
-                                          ></i>
-                                        </td>
-                                        <td>12</td>
-                                        <td>
-                                          <a
-                                            href="#"
-                                            style="
-                                              font-weight: 600;
-                                              color: #333 !important;
-                                            "
-                                            >Risk 3</a
-                                          >
-                                        </td>
-                                        <td>Regulatory</td>
-                                        <td style="color: #28f76d;">
-                                          Tolerable
-                                        </td>
-                                        <td style="color: #f72f28;">High</td>
-                                        <td>3</td>
-                                        <td>23-05-2020</td>
-                                        <td>23-06-2020</td>
-                                      </tr>
-                                      <tr>
-                                        <td>
-                                          <i
-                                            class="fas fa-flag"
-                                            style="color: #28f76d;"
-                                          ></i>
-                                        </td>
-                                        <td>12</td>
-                                        <td>
-                                          <a
-                                            href="#"
-                                            style="
-                                              font-weight: 600;
-                                              color: #333 !important;
-                                            "
-                                            >Risk 4</a
-                                          >
-                                        </td>
-                                        <td>Regulatory</td>
-                                        <td style="color: #28f76d;">
-                                          Tolerable
-                                        </td>
-                                        <td style="color: #f72f28;">High</td>
-                                        <td>3</td>
-                                        <td>23-05-2020</td>
-                                        <td>23-06-2020</td>
-                                      </tr>
-                                      <tr>
-                                        <td>
-                                          <i
-                                            class="fas fa-flag"
-                                            style="color: #f4f728;"
-                                          ></i>
-                                        </td>
-                                        <td>12</td>
-                                        <td>
-                                          <a
-                                            href="#"
-                                            style="
-                                              font-weight: 600;
-                                              color: #333 !important;
-                                            "
-                                            >Risk 5</a
-                                          >
-                                        </td>
-                                        <td>Regulatory</td>
-                                        <td style="color: #28f76d;">
-                                          Tolerable
-                                        </td>
-                                        <td style="color: #f72f28;">High</td>
-                                        <td>3</td>
-                                        <td>23-05-2020</td>
-                                        <td>23-06-2020</td>
-                                      </tr>
-                                      <tr>
-                                        <td>
-                                          <i
-                                            class="fas fa-flag"
-                                            style="color: #f72f28;"
-                                          ></i>
-                                        </td>
-                                        <td>12</td>
-                                        <td>
-                                          <a
-                                            href="#"
-                                            style="
-                                              font-weight: 600;
-                                              color: #333 !important;
-                                            "
-                                            >Risk 6</a
-                                          >
-                                        </td>
-                                        <td>Regulatory</td>
-                                        <td style="color: #28f76d;">
-                                          Tolerable
-                                        </td>
-                                        <td style="color: #f72f28;">High</td>
-                                        <td>3</td>
-                                        <td>23-05-2020</td>
-                                        <td>23-06-2020</td>
-                                      </tr>
-                                    </table>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
                         </div>
                       </div>
 
@@ -15422,6 +15297,257 @@
                           </div>
                         </div>
                       </div>
+
+                      <!---------Table-------->
+                      <div
+                        class="col-lg-8 col-md-6 select-toggle tables sub_initiatives"
+                      >
+                        <div class="card">
+                          <div class="header d-flex flex-row">
+                            <h5 class="prob d-flex flex-fill">
+                              <strong
+                                class="editableTxt1"
+                                onkeypress="return (this.innerText.length <= 25)"
+                                editable="true"
+                                >Risk Register</strong
+                              >
+                            </h5>
+                            <ul class="header-dropdown m-r--2 d-flex">
+                              <li class="dropdown m-t--10">
+                                <a
+                                  href="#"
+                                  onclick="return false;"
+                                  class="dropdown-toggle"
+                                  data-toggle="dropdown"
+                                  role="button"
+                                  aria-haspopup="true"
+                                  aria-expanded="true"
+                                >
+                                  <i class="material-icons">more_vert</i>
+                                </a>
+                                <ul
+                                  class="dropdown-menu pull-right"
+                                  x-placement="bottom-start"
+                                  style="
+                                    position: absolute;
+                                    will-change: transform;
+                                    top: 0px;
+                                    left: 0px;
+                                    transform: translate3d(0px, 24px, 0px);
+                                  "
+                                >
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target=".risk_register_view_popup"
+                                      onclick="return false;"
+                                      >View</a
+                                    >
+                                  </li>
+                                  <li>
+                                    <a
+                                      href="#"
+                                      onclick="return false;"
+                                      class="delete-row"
+                                      >Delete</a
+                                    >
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="body table-responsive sub-ini-box">
+                            <div class="col-lg-12 col-md-12">
+                              <div class="card">
+                                <div class="tableBody">
+                                  <div class="table-responsive Month box">
+                                    <table
+                                      class="table dashboard-task-infos align-center dashboard-table"
+                                      id="table1"
+                                      style="margin-bottom: 0px !important;"
+                                    >
+                                      <tr>
+                                        <th>Status</th>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Category</th>
+                                        <th>Impact</th>
+                                        <th>Likelihood</th>
+                                        <th>Score</th>
+                                        <th>Raised on</th>
+                                        <th>Next Assessment</th>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <i
+                                            class="fas fa-flag"
+                                            style="color: #28f76d;"
+                                          ></i>
+                                        </td>
+                                        <td>12</td>
+                                        <td>
+                                          <a
+                                            href="#"
+                                            style="
+                                              font-weight: 600;
+                                              color: #333 !important;
+                                            "
+                                            >Risk 1</a
+                                          >
+                                        </td>
+                                        <td>Regulatory</td>
+                                        <td style="color: #28f76d;">
+                                          Tolerable
+                                        </td>
+                                        <td style="color: #f72f28;">High</td>
+                                        <td>3</td>
+                                        <td>23-05-2020</td>
+                                        <td>23-06-2020</td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <i
+                                            class="fas fa-flag"
+                                            style="color: #f72f28;"
+                                          ></i>
+                                        </td>
+                                        <td>12</td>
+                                        <td>
+                                          <a
+                                            href="#"
+                                            style="
+                                              font-weight: 600;
+                                              color: #333 !important;
+                                            "
+                                            >Risk 2</a
+                                          >
+                                        </td>
+                                        <td>Regulatory</td>
+                                        <td style="color: #28f76d;">
+                                          Tolerable
+                                        </td>
+                                        <td style="color: #f72f28;">High</td>
+                                        <td>3</td>
+                                        <td>23-05-2020</td>
+                                        <td>23-06-2020</td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <i
+                                            class="fas fa-flag"
+                                            style="color: #f72f28;"
+                                          ></i>
+                                        </td>
+                                        <td>12</td>
+                                        <td>
+                                          <a
+                                            href="#"
+                                            style="
+                                              font-weight: 600;
+                                              color: #333 !important;
+                                            "
+                                            >Risk 3</a
+                                          >
+                                        </td>
+                                        <td>Regulatory</td>
+                                        <td style="color: #28f76d;">
+                                          Tolerable
+                                        </td>
+                                        <td style="color: #f72f28;">High</td>
+                                        <td>3</td>
+                                        <td>23-05-2020</td>
+                                        <td>23-06-2020</td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <i
+                                            class="fas fa-flag"
+                                            style="color: #28f76d;"
+                                          ></i>
+                                        </td>
+                                        <td>12</td>
+                                        <td>
+                                          <a
+                                            href="#"
+                                            style="
+                                              font-weight: 600;
+                                              color: #333 !important;
+                                            "
+                                            >Risk 4</a
+                                          >
+                                        </td>
+                                        <td>Regulatory</td>
+                                        <td style="color: #28f76d;">
+                                          Tolerable
+                                        </td>
+                                        <td style="color: #f72f28;">High</td>
+                                        <td>3</td>
+                                        <td>23-05-2020</td>
+                                        <td>23-06-2020</td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <i
+                                            class="fas fa-flag"
+                                            style="color: #f4f728;"
+                                          ></i>
+                                        </td>
+                                        <td>12</td>
+                                        <td>
+                                          <a
+                                            href="#"
+                                            style="
+                                              font-weight: 600;
+                                              color: #333 !important;
+                                            "
+                                            >Risk 5</a
+                                          >
+                                        </td>
+                                        <td>Regulatory</td>
+                                        <td style="color: #28f76d;">
+                                          Tolerable
+                                        </td>
+                                        <td style="color: #f72f28;">High</td>
+                                        <td>3</td>
+                                        <td>23-05-2020</td>
+                                        <td>23-06-2020</td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <i
+                                            class="fas fa-flag"
+                                            style="color: #f72f28;"
+                                          ></i>
+                                        </td>
+                                        <td>12</td>
+                                        <td>
+                                          <a
+                                            href="#"
+                                            style="
+                                              font-weight: 600;
+                                              color: #333 !important;
+                                            "
+                                            >Risk 6</a
+                                          >
+                                        </td>
+                                        <td>Regulatory</td>
+                                        <td style="color: #28f76d;">
+                                          Tolerable
+                                        </td>
+                                        <td style="color: #f72f28;">High</td>
+                                        <td>3</td>
+                                        <td>23-05-2020</td>
+                                        <td>23-06-2020</td>
+                                      </tr>
+                                    </table>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -15464,7 +15590,7 @@
                         </button>
                       </div>
                       <div class="">
-                        <!---------MileStones-------->
+                        <!---------Activities-------->
                         <div class="col-lg-12 col-md-12 sub_initiatives">
                           <div class="card">
                             <div
@@ -15478,8 +15604,7 @@
                                 >
                                   <div class="d-flex flex-row">
                                     <p>
-                                      Activities 1- Lorem ipsum dolor sit amet,
-                                      nam ea, ei putent oblique probatus ve
+                                      Activities 1
                                     </p>
                                   </div>
                                   <div class="d-flex flex-row">
@@ -15513,8 +15638,7 @@
                                 >
                                   <div class="d-flex flex-row">
                                     <p>
-                                      Activities 2- Lorem ipsum dolor sit amet,
-                                      nam ea, ei putent oblique probatus ve
+                                      Activities 2
                                     </p>
                                   </div>
                                   <div class="d-flex flex-row">
@@ -15547,8 +15671,7 @@
                                 >
                                   <div class="d-flex flex-row">
                                     <p>
-                                      Activities 3- Lorem ipsum dolor sit amet,
-                                      nam ea, ei putent oblique probatus ve
+                                      Activities 3
                                     </p>
                                   </div>
                                   <div class="d-flex flex-row">
@@ -15581,8 +15704,7 @@
                                 >
                                   <div class="d-flex flex-row">
                                     <p>
-                                      Activities 4- Lorem ipsum dolor sit amet,
-                                      nam ea, ei putent oblique probatus ve
+                                      Activities 4
                                     </p>
                                   </div>
                                   <div class="d-flex flex-row">
@@ -15615,8 +15737,7 @@
                                 >
                                   <div class="d-flex flex-row">
                                     <p>
-                                      Activities 5- Lorem ipsum dolor sit amet,
-                                      nam ea, ei putent oblique probatus ve
+                                      Activities 5
                                     </p>
                                   </div>
                                   <div class="d-flex flex-row">
@@ -15669,191 +15790,751 @@
                         </button>
                       </div>
                       <div class="">
-                        <!---------MileStones-------->
                         <div class="col-lg-12 col-md-12 sub_initiatives">
                           <div class="card">
                             <div
-                              class="d-flex flex-column employee_div_body_box"
+                              class="d-flex flex-column employee_div_body_box sub-ini-box"
                             >
                               <div
-                                class="d-flex flex-row employe_content_border goal_row_box"
+                                class="d-flex flex-row employe_content_border sub_initiative_details"
                               >
                                 <div
                                   class="d-flex flex-column flex-fill profile_content"
                                 >
                                   <div class="d-flex flex-row">
-                                    <p>
-                                      Sub Initiatives 1 - Lorem ipsum dolor sit
-                                      amet, nam ea, ei putent oblique probatus
-                                      ve
-                                    </p>
+                                    <div
+                                      class="d-flex flex-column init_flex_profile"
+                                    >
+                                      <p>Sub Initiatives 1</p>
+                                    </div>
                                   </div>
                                   <div class="d-flex flex-row">
                                     <div class="d-flex flex-column flex-fill">
                                       <div class="d-flex flex-row">
                                         <div class="progress-s progress">
                                           <div
-                                            class="progress-bar width-per-90 rounded-pill bar_height yellow_bar"
+                                            class="progress-bar width-per-40 rounded-pill bar_height yellow_bar"
                                             role="progressbar"
                                             aria-valuenow="40"
                                             aria-valuemin="0"
                                             aria-valuemax="100"
                                           ></div>
                                         </div>
-                                        <div class="progress_value">90%</div>
+                                        <div class="progress_value">40%</div>
                                       </div>
                                     </div>
                                     <div class="d-flex flex-column">
                                       <div>
-                                        <strong>Due on 30 Sep 2019</strong>
+                                        <strong
+                                          >Oct 09, 2019 - Oct 11, 2019</strong
+                                        >
                                       </div>
                                     </div>
                                   </div>
+                                </div>
+                                <div class="flex-column">
+                                  <ul class="header-dropdown m-r--2 d-flex">
+                                    <li class="dropdown">
+                                      <a
+                                        href="#"
+                                        onclick="return false;"
+                                        class="dropdown-toggle"
+                                        data-toggle="dropdown"
+                                        role="button"
+                                        aria-haspopup="true"
+                                        aria-expanded="true"
+                                      >
+                                        <i class="material-icons">more_vert</i>
+                                      </a>
+                                      <ul
+                                        class="dropdown-menu pull-right"
+                                        x-placement="bottom-start"
+                                        style="
+                                          position: absolute;
+                                          will-change: transform;
+                                          top: 0px;
+                                          left: 0px;
+                                          transform: translate3d(
+                                            0px,
+                                            24px,
+                                            0px
+                                          );
+                                        "
+                                      >
+                                        <li>
+                                          <a
+                                            href="#"
+                                            data-toggle="modal"
+                                            data-target=".edit_sub_initiatives_popup"
+                                            onclick="return false;"
+                                            >Edit</a
+                                          >
+                                        </li>
+                                        <li>
+                                          <a
+                                            href="#"
+                                            onclick="return false;"
+                                            class="delete-row"
+                                            >Delete</a
+                                          >
+                                        </li>
+                                      </ul>
+                                    </li>
+                                  </ul>
                                 </div>
                               </div>
                               <div
-                                class="d-flex flex-row employe_content_border goal_row_box"
+                                class="d-flex flex-row employe_content_border sub_initiative_details"
                               >
                                 <div
                                   class="d-flex flex-column flex-fill profile_content"
                                 >
                                   <div class="d-flex flex-row">
-                                    <p>
-                                      Sub Initiatives 2 - Lorem ipsum dolor sit
-                                      amet, nam ea, ei putent oblique probatus
-                                      ve
-                                    </p>
+                                    <div
+                                      class="d-flex flex-column init_flex_profile"
+                                    >
+                                      <p>Sub Initiatives 2</p>
+                                    </div>
                                   </div>
                                   <div class="d-flex flex-row">
                                     <div class="d-flex flex-column flex-fill">
                                       <div class="d-flex flex-row">
                                         <div class="progress-s progress">
                                           <div
-                                            class="progress-bar width-per-50 rounded-pill bar_height green_bar"
+                                            class="progress-bar progress-bar-success width-per-80 rounded-pill bar_height"
                                             role="progressbar"
-                                            aria-valuenow="40"
+                                            aria-valuenow="80"
                                             aria-valuemin="0"
                                             aria-valuemax="100"
                                           ></div>
                                         </div>
-                                        <div class="progress_value">50%</div>
+                                        <div class="progress_value">80%</div>
                                       </div>
                                     </div>
                                     <div class="d-flex flex-column">
                                       <div>
-                                        <strong>Due on 30 Sep 2019</strong>
+                                        <strong
+                                          >Oct 09, 2019 - Oct 11, 2019</strong
+                                        >
                                       </div>
                                     </div>
                                   </div>
+                                </div>
+                                <div class="flex-column">
+                                  <ul class="header-dropdown m-r--2 d-flex">
+                                    <li class="dropdown">
+                                      <a
+                                        href="#"
+                                        onclick="return false;"
+                                        class="dropdown-toggle"
+                                        data-toggle="dropdown"
+                                        role="button"
+                                        aria-haspopup="true"
+                                        aria-expanded="true"
+                                      >
+                                        <i class="material-icons">more_vert</i>
+                                      </a>
+                                      <ul
+                                        class="dropdown-menu pull-right"
+                                        x-placement="bottom-start"
+                                        style="
+                                          position: absolute;
+                                          will-change: transform;
+                                          top: 0px;
+                                          left: 0px;
+                                          transform: translate3d(
+                                            0px,
+                                            24px,
+                                            0px
+                                          );
+                                        "
+                                      >
+                                        <li>
+                                          <a
+                                            href="#"
+                                            data-toggle="modal"
+                                            data-target=".edit_sub_initiatives_popup"
+                                            onclick="return false;"
+                                            >Edit</a
+                                          >
+                                        </li>
+                                        <li>
+                                          <a
+                                            href="#"
+                                            onclick="return false;"
+                                            class="delete-row"
+                                            >Delete</a
+                                          >
+                                        </li>
+                                      </ul>
+                                    </li>
+                                  </ul>
                                 </div>
                               </div>
                               <div
-                                class="d-flex flex-row employe_content_border goal_row_box"
+                                class="d-flex flex-row employe_content_border sub_initiative_details"
                               >
                                 <div
                                   class="d-flex flex-column flex-fill profile_content"
                                 >
                                   <div class="d-flex flex-row">
-                                    <p>
-                                      Sub Initiatives 3 - Lorem ipsum dolor sit
-                                      amet, nam ea, ei putent oblique probatus
-                                      ve
-                                    </p>
+                                    <div
+                                      class="d-flex flex-column init_flex_profile"
+                                    >
+                                      <p>Sub Initiatives 3</p>
+                                    </div>
                                   </div>
                                   <div class="d-flex flex-row">
                                     <div class="d-flex flex-column flex-fill">
                                       <div class="d-flex flex-row">
                                         <div class="progress-s progress">
                                           <div
-                                            class="progress-bar width-per-75 rounded-pill bar_height orange_bar"
+                                            class="progress-bar width-per-15 rounded-pill bar_height orange_bar"
                                             role="progressbar"
-                                            aria-valuenow="40"
+                                            aria-valuenow="15"
                                             aria-valuemin="0"
                                             aria-valuemax="100"
                                           ></div>
                                         </div>
-                                        <div class="progress_value">75%</div>
+                                        <div class="progress_value">15%</div>
                                       </div>
                                     </div>
                                     <div class="d-flex flex-column">
                                       <div>
-                                        <strong>Due on 30 Sep 2019</strong>
+                                        <strong
+                                          >Oct 09, 2019 - Oct 11, 2019</strong
+                                        >
                                       </div>
                                     </div>
                                   </div>
+                                </div>
+                                <div class="flex-column">
+                                  <ul class="header-dropdown m-r--2 d-flex">
+                                    <li class="dropdown">
+                                      <a
+                                        href="#"
+                                        onclick="return false;"
+                                        class="dropdown-toggle"
+                                        data-toggle="dropdown"
+                                        role="button"
+                                        aria-haspopup="true"
+                                        aria-expanded="true"
+                                      >
+                                        <i class="material-icons">more_vert</i>
+                                      </a>
+                                      <ul
+                                        class="dropdown-menu pull-right"
+                                        x-placement="bottom-start"
+                                        style="
+                                          position: absolute;
+                                          will-change: transform;
+                                          top: 0px;
+                                          left: 0px;
+                                          transform: translate3d(
+                                            0px,
+                                            24px,
+                                            0px
+                                          );
+                                        "
+                                      >
+                                        <li>
+                                          <a
+                                            href="#"
+                                            data-toggle="modal"
+                                            data-target=".edit_sub_initiatives_popup"
+                                            onclick="return false;"
+                                            >Edit</a
+                                          >
+                                        </li>
+                                        <li>
+                                          <a
+                                            href="#"
+                                            onclick="return false;"
+                                            class="delete-row"
+                                            >Delete</a
+                                          >
+                                        </li>
+                                      </ul>
+                                    </li>
+                                  </ul>
                                 </div>
                               </div>
                               <div
-                                class="d-flex flex-row employe_content_border goal_row_box"
+                                class="d-flex flex-row employe_content_border sub_initiative_details"
                               >
                                 <div
                                   class="d-flex flex-column flex-fill profile_content"
                                 >
                                   <div class="d-flex flex-row">
-                                    <p>
-                                      Sub Initiatives 4 - Lorem ipsum dolor sit
-                                      amet, nam ea, ei putent oblique probatus
-                                      ve
-                                    </p>
+                                    <div
+                                      class="d-flex flex-column init_flex_profile"
+                                    >
+                                      <p>Sub Initiatives 4</p>
+                                    </div>
                                   </div>
                                   <div class="d-flex flex-row">
                                     <div class="d-flex flex-column flex-fill">
                                       <div class="d-flex flex-row">
                                         <div class="progress-s progress">
                                           <div
-                                            class="progress-bar width-per-60 rounded-pill bar_height green_bar"
+                                            class="progress-bar progress-bar-success width-per-15 rounded-pill bar_height"
                                             role="progressbar"
-                                            aria-valuenow="40"
+                                            aria-valuenow="15"
                                             aria-valuemin="0"
                                             aria-valuemax="100"
                                           ></div>
                                         </div>
-                                        <div class="progress_value">60%</div>
+                                        <div class="progress_value">15%</div>
                                       </div>
                                     </div>
                                     <div class="d-flex flex-column">
                                       <div>
-                                        <strong>Due on 30 Sep 2019</strong>
+                                        <strong
+                                          >Oct 09, 2019 - Oct 11, 2019</strong
+                                        >
                                       </div>
                                     </div>
                                   </div>
+                                </div>
+                                <div class="flex-column">
+                                  <ul class="header-dropdown m-r--2 d-flex">
+                                    <li class="dropdown">
+                                      <a
+                                        href="#"
+                                        onclick="return false;"
+                                        class="dropdown-toggle"
+                                        data-toggle="dropdown"
+                                        role="button"
+                                        aria-haspopup="true"
+                                        aria-expanded="true"
+                                      >
+                                        <i class="material-icons">more_vert</i>
+                                      </a>
+                                      <ul
+                                        class="dropdown-menu pull-right"
+                                        x-placement="bottom-start"
+                                        style="
+                                          position: absolute;
+                                          will-change: transform;
+                                          top: 0px;
+                                          left: 0px;
+                                          transform: translate3d(
+                                            0px,
+                                            24px,
+                                            0px
+                                          );
+                                        "
+                                      >
+                                        <li>
+                                          <a
+                                            href="#"
+                                            data-toggle="modal"
+                                            data-target=".edit_sub_initiatives_popup"
+                                            onclick="return false;"
+                                            >Edit</a
+                                          >
+                                        </li>
+                                        <li>
+                                          <a
+                                            href="#"
+                                            onclick="return false;"
+                                            class="delete-row"
+                                            >Delete</a
+                                          >
+                                        </li>
+                                      </ul>
+                                    </li>
+                                  </ul>
                                 </div>
                               </div>
                               <div
-                                class="d-flex flex-row employe_content_border goal_row_box"
+                                class="d-flex flex-row employe_content_border sub_initiative_details"
                               >
                                 <div
                                   class="d-flex flex-column flex-fill profile_content"
                                 >
                                   <div class="d-flex flex-row">
-                                    <p>
-                                      Sub Initiatives 5 - Lorem ipsum dolor sit
-                                      amet, nam ea, ei putent oblique probatus
-                                      ve
-                                    </p>
+                                    <div
+                                      class="d-flex flex-column init_flex_profile"
+                                    >
+                                      <p>Sub Initiatives 5</p>
+                                    </div>
                                   </div>
                                   <div class="d-flex flex-row">
                                     <div class="d-flex flex-column flex-fill">
                                       <div class="d-flex flex-row">
                                         <div class="progress-s progress">
                                           <div
-                                            class="progress-bar width-per-20 rounded-pill bar_height orange_bar"
+                                            class="progress-bar progress-bar-success width-per-15 rounded-pill bar_height"
+                                            role="progressbar"
+                                            aria-valuenow="15"
+                                            aria-valuemin="0"
+                                            aria-valuemax="100"
+                                          ></div>
+                                        </div>
+                                        <div class="progress_value">15%</div>
+                                      </div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                      <div>
+                                        <strong
+                                          >Oct 09, 2019 - Oct 11, 2019</strong
+                                        >
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="flex-column">
+                                  <ul class="header-dropdown m-r--2 d-flex">
+                                    <li class="dropdown">
+                                      <a
+                                        href="#"
+                                        onclick="return false;"
+                                        class="dropdown-toggle"
+                                        data-toggle="dropdown"
+                                        role="button"
+                                        aria-haspopup="true"
+                                        aria-expanded="true"
+                                      >
+                                        <i class="material-icons">more_vert</i>
+                                      </a>
+                                      <ul
+                                        class="dropdown-menu pull-right"
+                                        x-placement="bottom-start"
+                                        style="
+                                          position: absolute;
+                                          will-change: transform;
+                                          top: 0px;
+                                          left: 0px;
+                                          transform: translate3d(
+                                            0px,
+                                            24px,
+                                            0px
+                                          );
+                                        "
+                                      >
+                                        <li>
+                                          <a
+                                            href="#"
+                                            data-toggle="modal"
+                                            data-target=".edit_sub_initiatives_popup"
+                                            onclick="return false;"
+                                            >Edit</a
+                                          >
+                                        </li>
+                                        <li>
+                                          <a
+                                            href="#"
+                                            onclick="return false;"
+                                            class="delete-row"
+                                            >Delete</a
+                                          >
+                                        </li>
+                                      </ul>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                              <div
+                                class="d-flex flex-row employe_content_border sub_initiative_details"
+                              >
+                                <div
+                                  class="d-flex flex-column flex-fill profile_content"
+                                >
+                                  <div class="d-flex flex-row">
+                                    <div
+                                      class="d-flex flex-column init_flex_profile"
+                                    >
+                                      <p>Sub Initiatives 6</p>
+                                    </div>
+                                  </div>
+                                  <div class="d-flex flex-row">
+                                    <div class="d-flex flex-column flex-fill">
+                                      <div class="d-flex flex-row">
+                                        <div class="progress-s progress">
+                                          <div
+                                            class="progress-bar width-per-40 rounded-pill bar_height yellow_bar"
                                             role="progressbar"
                                             aria-valuenow="40"
                                             aria-valuemin="0"
                                             aria-valuemax="100"
                                           ></div>
                                         </div>
-                                        <div class="progress_value">20%</div>
+                                        <div class="progress_value">40%</div>
                                       </div>
                                     </div>
                                     <div class="d-flex flex-column">
                                       <div>
-                                        <strong>Due on 30 Sep 2019</strong>
+                                        <strong
+                                          >Oct 09, 2019 - Oct 11, 2019</strong
+                                        >
                                       </div>
                                     </div>
                                   </div>
                                 </div>
+                                <div class="flex-column">
+                                  <ul class="header-dropdown m-r--2 d-flex">
+                                    <li class="dropdown">
+                                      <a
+                                        href="#"
+                                        onclick="return false;"
+                                        class="dropdown-toggle"
+                                        data-toggle="dropdown"
+                                        role="button"
+                                        aria-haspopup="true"
+                                        aria-expanded="true"
+                                      >
+                                        <i class="material-icons">more_vert</i>
+                                      </a>
+                                      <ul
+                                        class="dropdown-menu pull-right"
+                                        x-placement="bottom-start"
+                                        style="
+                                          position: absolute;
+                                          will-change: transform;
+                                          top: 0px;
+                                          left: 0px;
+                                          transform: translate3d(
+                                            0px,
+                                            24px,
+                                            0px
+                                          );
+                                        "
+                                      >
+                                        <li>
+                                          <a
+                                            href="#"
+                                            data-toggle="modal"
+                                            data-target=".edit_sub_initiatives_popup"
+                                            onclick="return false;"
+                                            >Edit</a
+                                          >
+                                        </li>
+                                        <li>
+                                          <a
+                                            href="#"
+                                            onclick="return false;"
+                                            class="delete-row"
+                                            >Delete</a
+                                          >
+                                        </li>
+                                      </ul>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- View Risk Register -->
+                <div
+                  class="modal fade risk_register_view_popup"
+                  tabindex="-1"
+                  role="dialog"
+                  aria-labelledby="myLargeModalLabel_1"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4>View Risk Register</h4>
+                        <button
+                          type="button"
+                          class="close pull-right"
+                          data-dismiss="modal"
+                        >
+                          &times;
+                        </button>
+                      </div>
+                      <div class="">
+                        <div class="col-lg-12 col-md-12 sub_initiatives">
+                          <div class="card">
+                            <div class="tableBody">
+                              <div class="table-responsive Month box">
+                                <table
+                                  class="table dashboard-task-infos align-center dashboard-table"
+                                  id="table1"
+                                  style="margin-bottom: 0px !important;"
+                                >
+                                  <tr>
+                                    <th>Status</th>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Category</th>
+                                    <th>Impact</th>
+                                    <th>Likelihood</th>
+                                    <th>Score</th>
+                                    <th>Raised on</th>
+                                    <th>Next Assessment</th>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <i
+                                        class="fas fa-flag"
+                                        style="color: #28f76d;"
+                                      ></i>
+                                    </td>
+                                    <td>12</td>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        style="
+                                          font-weight: 600;
+                                          color: #333 !important;
+                                        "
+                                        >Risk 1</a
+                                      >
+                                    </td>
+                                    <td>Regulatory</td>
+                                    <td style="color: #28f76d;">
+                                      Tolerable
+                                    </td>
+                                    <td style="color: #f72f28;">High</td>
+                                    <td>3</td>
+                                    <td>23-05-2020</td>
+                                    <td>23-06-2020</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <i
+                                        class="fas fa-flag"
+                                        style="color: #f72f28;"
+                                      ></i>
+                                    </td>
+                                    <td>12</td>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        style="
+                                          font-weight: 600;
+                                          color: #333 !important;
+                                        "
+                                        >Risk 2</a
+                                      >
+                                    </td>
+                                    <td>Regulatory</td>
+                                    <td style="color: #28f76d;">
+                                      Tolerable
+                                    </td>
+                                    <td style="color: #f72f28;">High</td>
+                                    <td>3</td>
+                                    <td>23-05-2020</td>
+                                    <td>23-06-2020</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <i
+                                        class="fas fa-flag"
+                                        style="color: #f72f28;"
+                                      ></i>
+                                    </td>
+                                    <td>12</td>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        style="
+                                          font-weight: 600;
+                                          color: #333 !important;
+                                        "
+                                        >Risk 3</a
+                                      >
+                                    </td>
+                                    <td>Regulatory</td>
+                                    <td style="color: #28f76d;">
+                                      Tolerable
+                                    </td>
+                                    <td style="color: #f72f28;">High</td>
+                                    <td>3</td>
+                                    <td>23-05-2020</td>
+                                    <td>23-06-2020</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <i
+                                        class="fas fa-flag"
+                                        style="color: #28f76d;"
+                                      ></i>
+                                    </td>
+                                    <td>12</td>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        style="
+                                          font-weight: 600;
+                                          color: #333 !important;
+                                        "
+                                        >Risk 4</a
+                                      >
+                                    </td>
+                                    <td>Regulatory</td>
+                                    <td style="color: #28f76d;">
+                                      Tolerable
+                                    </td>
+                                    <td style="color: #f72f28;">High</td>
+                                    <td>3</td>
+                                    <td>23-05-2020</td>
+                                    <td>23-06-2020</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <i
+                                        class="fas fa-flag"
+                                        style="color: #f4f728;"
+                                      ></i>
+                                    </td>
+                                    <td>12</td>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        style="
+                                          font-weight: 600;
+                                          color: #333 !important;
+                                        "
+                                        >Risk 5</a
+                                      >
+                                    </td>
+                                    <td>Regulatory</td>
+                                    <td style="color: #28f76d;">
+                                      Tolerable
+                                    </td>
+                                    <td style="color: #f72f28;">High</td>
+                                    <td>3</td>
+                                    <td>23-05-2020</td>
+                                    <td>23-06-2020</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <i
+                                        class="fas fa-flag"
+                                        style="color: #f72f28;"
+                                      ></i>
+                                    </td>
+                                    <td>12</td>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        style="
+                                          font-weight: 600;
+                                          color: #333 !important;
+                                        "
+                                        >Risk 6</a
+                                      >
+                                    </td>
+                                    <td>Regulatory</td>
+                                    <td style="color: #28f76d;">
+                                      Tolerable
+                                    </td>
+                                    <td style="color: #f72f28;">High</td>
+                                    <td>3</td>
+                                    <td>23-05-2020</td>
+                                    <td>23-06-2020</td>
+                                  </tr>
+                                </table>
                               </div>
                             </div>
                           </div>
@@ -15890,136 +16571,207 @@
                               class="d-flex flex-column employee_div_body_box"
                             >
                               <div
-                                class="d-flex flex-row employe_content_border goal_row_box"
+                                class="d-flex flex-row employe_content_border sub_initiative_details"
                               >
                                 <div
                                   class="d-flex flex-column flex-fill profile_content"
                                 >
                                   <div class="d-flex flex-row">
-                                    <p>
-                                      Milestones 1- Lorem ipsum dolor sit amet,
-                                      nam ea, ei putent oblique probatus ve
-                                    </p>
+                                    <div
+                                      class="d-flex flex-column init_flex_profile"
+                                    >
+                                      <p>
+                                        Milestones-1
+                                      </p>
+                                    </div>
+                                    <div
+                                      class="d-flex flex-column"
+                                      style="margin-top: 2px;"
+                                    >
+                                      <div><strong>Completed</strong></div>
+                                    </div>
                                   </div>
                                   <div class="d-flex flex-row">
                                     <div class="d-flex flex-column flex-fill">
                                       <div class="d-flex flex-row">
                                         <div class="progress-s progress">
                                           <div
-                                            class="progress-bar width-per-90 rounded-pill bar_height yellow_bar"
+                                            class="progress-bar progress-bar-success width-per-35 rounded-pill bar_height"
+                                            role="progressbar"
+                                            aria-valuenow="15"
+                                            aria-valuemin="0"
+                                            aria-valuemax="100"
+                                          ></div>
+                                        </div>
+                                        <div class="progress_value">35%</div>
+                                      </div>
+                                    </div>
+
+                                    <div class="d-flex flex-column">
+                                      <div><strong>Oct 09, 2019</strong></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="d-flex flex-row employe_content_border sub_initiative_details"
+                              >
+                                <div
+                                  class="d-flex flex-column flex-fill profile_content"
+                                >
+                                  <div class="d-flex flex-row">
+                                    <div
+                                      class="d-flex flex-column init_flex_profile"
+                                    >
+                                      <p>
+                                        Milestones-2
+                                      </p>
+                                    </div>
+                                    <div
+                                      class="d-flex flex-column"
+                                      style="margin-top: 2px;"
+                                    >
+                                      <div><strong>Pending</strong></div>
+                                    </div>
+                                  </div>
+                                  <div class="d-flex flex-row">
+                                    <div class="d-flex flex-column flex-fill">
+                                      <div class="d-flex flex-row">
+                                        <div class="progress-s progress">
+                                          <div
+                                            class="progress-bar width-per-40 rounded-pill bar_height yellow_bar"
                                             role="progressbar"
                                             aria-valuenow="40"
                                             aria-valuemin="0"
                                             aria-valuemax="100"
                                           ></div>
                                         </div>
-                                        <div class="progress_value">90%</div>
+                                        <div class="progress_value">40%</div>
                                       </div>
                                     </div>
+
                                     <div class="d-flex flex-column">
-                                      <div>
-                                        <strong
-                                          >Dec 01, 2014 - Oct 31, 2015</strong
-                                        >
-                                      </div>
+                                      <div><strong>Oct 09, 2019</strong></div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
+
                               <div
-                                class="d-flex flex-row employe_content_border goal_row_box"
+                                class="d-flex flex-row employe_content_border sub_initiative_details"
                               >
                                 <div
                                   class="d-flex flex-column flex-fill profile_content"
                                 >
                                   <div class="d-flex flex-row">
-                                    <p>
-                                      Milestones 2 - Lorem ipsum dolor sit amet,
-                                      nam ea, ei putent oblique probatus ve
-                                    </p>
+                                    <div
+                                      class="d-flex flex-column init_flex_profile"
+                                    >
+                                      <p>
+                                        Milestones-3
+                                      </p>
+                                    </div>
+                                    <div
+                                      class="d-flex flex-column"
+                                      style="margin-top: 2px;"
+                                    >
+                                      <div><strong>Completed</strong></div>
+                                    </div>
                                   </div>
                                   <div class="d-flex flex-row">
                                     <div class="d-flex flex-column flex-fill">
                                       <div class="d-flex flex-row">
                                         <div class="progress-s progress">
                                           <div
-                                            class="progress-bar width-per-50 rounded-pill bar_height green_bar"
+                                            class="progress-bar progress-bar-success width-per-80 rounded-pill bar_height"
                                             role="progressbar"
-                                            aria-valuenow="40"
+                                            aria-valuenow="80"
                                             aria-valuemin="0"
                                             aria-valuemax="100"
                                           ></div>
                                         </div>
-                                        <div class="progress_value">50%</div>
+                                        <div class="progress_value">80%</div>
                                       </div>
                                     </div>
+
                                     <div class="d-flex flex-column">
-                                      <div>
-                                        <strong
-                                          >Dec 01, 2014 - Oct 31, 2015</strong
-                                        >
-                                      </div>
+                                      <div><strong>Oct 09, 2019</strong></div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
                               <div
-                                class="d-flex flex-row employe_content_border goal_row_box"
+                                class="d-flex flex-row employe_content_border sub_initiative_details"
                               >
                                 <div
                                   class="d-flex flex-column flex-fill profile_content"
                                 >
                                   <div class="d-flex flex-row">
-                                    <p>
-                                      Milestones 3 - Lorem ipsum dolor sit amet,
-                                      nam ea, ei putent oblique probatus ve
-                                    </p>
+                                    <div
+                                      class="d-flex flex-column init_flex_profile"
+                                    >
+                                      <p>
+                                        Milestones-4
+                                      </p>
+                                    </div>
+                                    <div
+                                      class="d-flex flex-column"
+                                      style="margin-top: 2px;"
+                                    >
+                                      <div><strong>Completed</strong></div>
+                                    </div>
                                   </div>
                                   <div class="d-flex flex-row">
                                     <div class="d-flex flex-column flex-fill">
                                       <div class="d-flex flex-row">
                                         <div class="progress-s progress">
                                           <div
-                                            class="progress-bar width-per-75 rounded-pill bar_height orange_bar"
+                                            class="progress-bar width-per-15 rounded-pill bar_height orange_bar"
                                             role="progressbar"
-                                            aria-valuenow="40"
+                                            aria-valuenow="15"
                                             aria-valuemin="0"
                                             aria-valuemax="100"
                                           ></div>
                                         </div>
-                                        <div class="progress_value">75%</div>
+                                        <div class="progress_value">15%</div>
                                       </div>
                                     </div>
+
                                     <div class="d-flex flex-column">
-                                      <div>
-                                        <strong
-                                          >Dec 01, 2014 - Oct 31, 2015</strong
-                                        >
-                                      </div>
+                                      <div><strong>Oct 09, 2019</strong></div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
                               <div
-                                class="d-flex flex-row employe_content_border goal_row_box"
+                                class="d-flex flex-row employe_content_border sub_initiative_details"
                               >
                                 <div
                                   class="d-flex flex-column flex-fill profile_content"
                                 >
                                   <div class="d-flex flex-row">
-                                    <p>
-                                      Milestones 4 - Lorem ipsum dolor sit amet,
-                                      nam ea, ei putent oblique probatus ve
-                                    </p>
+                                    <div
+                                      class="d-flex flex-column init_flex_profile"
+                                    >
+                                      <p>
+                                        Milestones-5
+                                      </p>
+                                    </div>
+                                    <div
+                                      class="d-flex flex-column"
+                                      style="margin-top: 2px;"
+                                    >
+                                      <div><strong>Completed</strong></div>
+                                    </div>
                                   </div>
                                   <div class="d-flex flex-row">
                                     <div class="d-flex flex-column flex-fill">
                                       <div class="d-flex flex-row">
                                         <div class="progress-s progress">
                                           <div
-                                            class="progress-bar width-per-60 rounded-pill bar_height green_bar"
+                                            class="progress-bar progress-bar-success width-per-60 rounded-pill bar_height"
                                             role="progressbar"
-                                            aria-valuenow="40"
+                                            aria-valuenow="60"
                                             aria-valuemin="0"
                                             aria-valuemax="100"
                                           ></div>
@@ -16027,49 +16779,52 @@
                                         <div class="progress_value">60%</div>
                                       </div>
                                     </div>
+
                                     <div class="d-flex flex-column">
-                                      <div>
-                                        <strong
-                                          >Dec 01, 2014 - Oct 31, 2015</strong
-                                        >
-                                      </div>
+                                      <div><strong>Oct 09, 2019</strong></div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
                               <div
-                                class="d-flex flex-row employe_content_border goal_row_box"
+                                class="d-flex flex-row employe_content_border sub_initiative_details"
                               >
                                 <div
                                   class="d-flex flex-column flex-fill profile_content"
                                 >
                                   <div class="d-flex flex-row">
-                                    <p>
-                                      Milestones 5 - Lorem ipsum dolor sit amet,
-                                      nam ea, ei putent oblique probatus ve
-                                    </p>
+                                    <div
+                                      class="d-flex flex-column init_flex_profile"
+                                    >
+                                      <p>
+                                        Milestones-6
+                                      </p>
+                                    </div>
+                                    <div
+                                      class="d-flex flex-column"
+                                      style="margin-top: 2px;"
+                                    >
+                                      <div><strong>Completed</strong></div>
+                                    </div>
                                   </div>
                                   <div class="d-flex flex-row">
                                     <div class="d-flex flex-column flex-fill">
                                       <div class="d-flex flex-row">
                                         <div class="progress-s progress">
                                           <div
-                                            class="progress-bar width-per-20 rounded-pill bar_height orange_bar"
+                                            class="progress-bar progress-bar-success width-per-35 rounded-pill bar_height"
                                             role="progressbar"
-                                            aria-valuenow="40"
+                                            aria-valuenow="15"
                                             aria-valuemin="0"
                                             aria-valuemax="100"
                                           ></div>
                                         </div>
-                                        <div class="progress_value">20%</div>
+                                        <div class="progress_value">35%</div>
                                       </div>
                                     </div>
+
                                     <div class="d-flex flex-column">
-                                      <div>
-                                        <strong
-                                          >Dec 01, 2014 - Oct 31, 2015</strong
-                                        >
-                                      </div>
+                                      <div><strong>Oct 09, 2019</strong></div>
                                     </div>
                                   </div>
                                 </div>
