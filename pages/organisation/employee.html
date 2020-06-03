@@ -97,6 +97,14 @@
           overflow-x: hidden;
         }
       }
+
+      .input-calender-icon {
+        color: #5a6169;
+        position: absolute;
+        bottom: 10%;
+        right: 8%;
+        font-size: 16px;
+      }
     </style>
   </head>
 
@@ -2654,6 +2662,133 @@
       </div>
       <!--#END -->
 
+      <!--Edit Employee START -->
+      <div
+        class="modal fade edit_employee_popup"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myLargeModalLabel_1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4>Edit Employee</h4>
+              <button
+                type="button"
+                class="close pull-right"
+                data-dismiss="modal"
+              >
+                &times;
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="sub_initative_Form">
+                <div class="row">
+                  <div class="form-group col-md-12">
+                    <label for="sub_initative_progress">Name</label>
+                    <input
+                      type="text"
+                      class="modal-custom-input"
+                      name="name"
+                      style="width: 94% !important;"
+                    />
+                  </div>
+                </div>
+                <div class="row m-t-10">
+                  <div class="form-group col-md-6">
+                    <label for="kpi_start_end_date">Date of Joining </label>
+                    <i class="far fa-calendar input-calender-icon"></i>
+                    <input
+                      type="text"
+                      class="modal-custom-input date_pickers_single"
+                      data-language="en"
+                      name="kpi_start_end_date"
+                      id="kpi_start_end_date"
+                      style="width: 94% !important;"
+                    />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="sub_initative_progress">Designation</label>
+                    <input
+                      type="text"
+                      class="modal-custom-input"
+                      name="name"
+                      style="width: 94% !important;"
+                    />
+                  </div>
+                </div>
+                <div class="row m-t-10">
+                  <div class="form-group col-md-6">
+                    <label for="sub_initative_progress">Grade</label>
+                    <input
+                      type="text"
+                      class="modal-custom-input"
+                      name="name"
+                      style="width: 94% !important;"
+                    />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="sub_initative_progress">Department</label>
+                    <input
+                      type="text"
+                      class="modal-custom-input"
+                      name="name"
+                      style="width: 94% !important;"
+                    />
+                  </div>
+                </div>
+                <div class="row m-t-10">
+                  <div class="col-md-12">
+                    <hr />
+                  </div>
+                  <div class="form-group col-lg-8 col-md-4 col-sm-12"></div>
+                  <div class="form-group col-lg-2 col-md-4 col-sm-6">
+                    <button
+                      type="button"
+                      class="btn custom-form-control btn-custom-secondary"
+                      data-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                  <div class="form-group col-lg-2 col-md-4 col-sm-6">
+                    <button
+                      type="button"
+                      class="btn custom-form-control btn-custom-primary"
+                    >
+                      Save
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <div
+                class="d-flex flex-column flex-fill ml-4 mb-5 text-left font-11"
+              >
+                <div class="d-flex flex-row">
+                  <p class="kpi_audit">Audit</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <div class="d-flex flex-column">
+                    <p><span>Created By : </span><span>Arun</span></p>
+                    <p><span>Created Date : </span><span>Oct 02, 2019</span></p>
+                  </div>
+                  <div class="d-flex flex-column pl-5">
+                    <p><span>Modified By : </span><span>Karthik</span></p>
+                    <p>
+                      <span>Modified Date : </span><span>Oct 02, 2019</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--#END -->
+
       <!--#START View -->
       <div
         class="modal fade add_goals_popup"
@@ -3579,7 +3714,7 @@
                     id="my_initative_view"
                   >
                     <div
-                      class="d-flex flex-row employe_content_border my_kpi_yellow sub_initiative_details"
+                      class="d-flex flex-row employe_content_border my_kpi_red sub_initiative_details"
                     >
                       <div class="d-flex flex-column flex-fill profile_content">
                         <div class="d-flex flex-row">
@@ -3611,7 +3746,7 @@
                     </div>
 
                     <div
-                      class="d-flex flex-row employe_content_border my_kpi_green sub_initiative_details"
+                      class="d-flex flex-row employe_content_border my_kpi_red sub_initiative_details"
                     >
                       <div class="d-flex flex-column flex-fill profile_content">
                         <div class="d-flex flex-row">
@@ -3643,7 +3778,7 @@
                     </div>
 
                     <div
-                      class="d-flex flex-row employe_content_border my_kpi_orange sub_initiative_details"
+                      class="d-flex flex-row employe_content_border my_kpi_red sub_initiative_details"
                     >
                       <div class="d-flex flex-column flex-fill profile_content">
                         <div class="d-flex flex-row">
@@ -3675,7 +3810,7 @@
                     </div>
 
                     <div
-                      class="d-flex flex-row employe_content_border my_kpi_yellow sub_initiative_details"
+                      class="d-flex flex-row employe_content_border my_kpi_red sub_initiative_details"
                     >
                       <div class="d-flex flex-column flex-fill profile_content">
                         <div class="d-flex flex-row">
@@ -3707,7 +3842,7 @@
                     </div>
 
                     <div
-                      class="d-flex flex-row employe_content_border my_kpi_orange sub_initiative_details"
+                      class="d-flex flex-row employe_content_border my_kpi_red sub_initiative_details"
                     >
                       <div class="d-flex flex-column flex-fill profile_content">
                         <div class="d-flex flex-row">
@@ -4286,7 +4421,7 @@
                     id="my_kpi_view"
                   >
                     <div
-                      class="d-flex flex-row employe_content_border my_kpi_yellow sub_initiative_details"
+                      class="d-flex flex-row employe_content_border my_kpi_red sub_initiative_details"
                     >
                       <div class="d-flex flex-column flex-fill profile_content">
                         <div class="d-flex flex-row">
@@ -4307,7 +4442,7 @@
                     </div>
 
                     <div
-                      class="d-flex flex-row employe_content_border my_kpi_green sub_initiative_details"
+                      class="d-flex flex-row employe_content_border my_kpi_red sub_initiative_details"
                     >
                       <div class="d-flex flex-column flex-fill profile_content">
                         <div class="d-flex flex-row">
@@ -4328,7 +4463,7 @@
                     </div>
 
                     <div
-                      class="d-flex flex-row employe_content_border my_kpi_orange sub_initiative_details"
+                      class="d-flex flex-row employe_content_border my_kpi_red sub_initiative_details"
                     >
                       <div class="d-flex flex-column flex-fill profile_content">
                         <div class="d-flex flex-row">
@@ -4349,7 +4484,7 @@
                     </div>
 
                     <div
-                      class="d-flex flex-row employe_content_border my_kpi_yellow sub_initiative_details"
+                      class="d-flex flex-row employe_content_border my_kpi_red sub_initiative_details"
                     >
                       <div class="d-flex flex-column flex-fill profile_content">
                         <div class="d-flex flex-row">
@@ -4370,7 +4505,7 @@
                     </div>
 
                     <div
-                      class="d-flex flex-row employe_content_border my_kpi_orange sub_initiative_details"
+                      class="d-flex flex-row employe_content_border my_kpi_red sub_initiative_details"
                     >
                       <div class="d-flex flex-column flex-fill profile_content">
                         <div class="d-flex flex-row">
@@ -5482,6 +5617,254 @@
         </div>
       </div>
 
+      <!--#Start User Edit Popup -->
+      <div
+        class="modal fade"
+        id="user_edit_popup"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myLargeModalLabel_1"
+        aria-modal="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4>Edit Users</h4>
+              <button
+                type="button"
+                class="close pull-right"
+                data-dismiss="modal"
+              >
+                &times;
+              </button>
+            </div>
+            <div class="">
+              <div class="col-lg-12 col-md-12 sub_initiatives">
+                <div
+                  class="slimScrollDiv"
+                  style="
+                    position: relative;
+                    overflow: hidden;
+                    width: auto;
+                    height: 340px;
+                  "
+                >
+                  <div
+                    class="d-flex flex-column employee_div_body_box sub-ini-box"
+                    id="sub-ini-box_view"
+                    style="overflow: hidden; width: auto; height: 340px;"
+                  >
+                    <span id="sub-ini-box_view_users"
+                      ><div
+                        class="d-flex flex-row employe_content_border sub_initiative_details"
+                      >
+                        <div
+                          class="d-flex flex-column flex-fill profile_content"
+                        >
+                          <div class="d-flex flex-row">
+                            <div class="form-check">
+                              <label class="form-check-label"
+                                ><input
+                                  id=""
+                                  class="form-check-input"
+                                  name="sub_initiative_owner[]"
+                                  type="checkbox"
+                                  value="959" /><span class="form-check-sign">
+                                  <span class="check"></span></span
+                              ></label>
+                            </div>
+                            <div
+                              class="d-flex flex-column init_flex_profile"
+                              style="margin-top: 3%; text-align: center;"
+                            >
+                              <h5>David Miller</h5>
+                            </div>
+                            <div class="img_details" style="width: 20%;">
+                              <img
+                                alt="David Miller"
+                                src="images/user/usrbig8.jpg"
+                                class="rounded-circle imgprofile"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="d-flex flex-row employe_content_border sub_initiative_details"
+                      >
+                        <div
+                          class="d-flex flex-column flex-fill profile_content"
+                        >
+                          <div class="d-flex flex-row">
+                            <div class="form-check">
+                              <label class="form-check-label"
+                                ><input
+                                  id=""
+                                  class="form-check-input"
+                                  name="sub_initiative_owner[]"
+                                  type="checkbox"
+                                  value="960" /><span class="form-check-sign">
+                                  <span class="check"></span></span
+                              ></label>
+                            </div>
+                            <div
+                              class="d-flex flex-column init_flex_profile"
+                              style="margin-top: 3%; text-align: center;"
+                            >
+                              <h5>Seema Chatterjee</h5>
+                            </div>
+                            <div class="img_details" style="width: 20%;">
+                              <img
+                                alt="Seema Chatterjee"
+                                src="images/user/usrbig10.jpg"
+                                class="rounded-circle imgprofile"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="d-flex flex-row employe_content_border sub_initiative_details"
+                      >
+                        <div
+                          class="d-flex flex-column flex-fill profile_content"
+                        >
+                          <div class="d-flex flex-row">
+                            <div class="form-check">
+                              <label class="form-check-label"
+                                ><input
+                                  id=""
+                                  class="form-check-input"
+                                  name="sub_initiative_owner[]"
+                                  type="checkbox"
+                                  value="961" /><span class="form-check-sign">
+                                  <span class="check"></span></span
+                              ></label>
+                            </div>
+                            <div
+                              class="d-flex flex-column init_flex_profile"
+                              style="margin-top: 3%; text-align: center;"
+                            >
+                              <h5>Rafael Nadal</h5>
+                            </div>
+                            <div class="img_details" style="width: 20%;">
+                              <img
+                                alt="Rafael Nadal"
+                                src="images/user/usrbig9.jpg"
+                                class="rounded-circle imgprofile"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="d-flex flex-row employe_content_border sub_initiative_details"
+                      >
+                        <div
+                          class="d-flex flex-column flex-fill profile_content"
+                        >
+                          <div class="d-flex flex-row">
+                            <div class="form-check">
+                              <label class="form-check-label"
+                                ><input
+                                  id=""
+                                  class="form-check-input"
+                                  name="sub_initiative_owner[]"
+                                  type="checkbox"
+                                  value="962" /><span class="form-check-sign">
+                                  <span class="check"></span></span
+                              ></label>
+                            </div>
+                            <div
+                              class="d-flex flex-column init_flex_profile"
+                              style="margin-top: 3%; text-align: center;"
+                            >
+                              <h5>Prakash Raj</h5>
+                            </div>
+                            <div class="img_details" style="width: 20%;">
+                              <img
+                                alt="Prakash Raj"
+                                src="images/user/usrbig6.jpg"
+                                class="rounded-circle imgprofile"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="d-flex flex-row employe_content_border sub_initiative_details"
+                      >
+                        <div
+                          class="d-flex flex-column flex-fill profile_content"
+                        >
+                          <div class="d-flex flex-row">
+                            <div class="form-check">
+                              <label class="form-check-label"
+                                ><input
+                                  id=""
+                                  class="form-check-input"
+                                  name="sub_initiative_owner[]"
+                                  checked=""
+                                  type="checkbox"
+                                  value="958" /><span class="form-check-sign">
+                                  <span class="check"></span></span
+                              ></label>
+                            </div>
+                            <div
+                              class="d-flex flex-column init_flex_profile"
+                              style="margin-top: 3%; text-align: center;"
+                            >
+                              <h5>Karthik Ramani</h5>
+                            </div>
+                            <div class="img_details" style="width: 20%;">
+                              <img
+                                alt="Karthik Ramani"
+                                src="images/user/usrbig7.jpg"
+                                class="rounded-circle imgprofile"
+                              />
+                            </div>
+                          </div>
+                        </div></div
+                    ></span>
+                  </div>
+                  <div
+                    class="slimScrollBar"
+                    style="
+                      background: rgb(156, 156, 156);
+                      width: 3px;
+                      position: absolute;
+                      top: 0px;
+                      opacity: 0.4;
+                      display: none;
+                      border-radius: 7px;
+                      z-index: 99;
+                      right: 1px;
+                      height: 340px;
+                    "
+                  ></div>
+                  <div
+                    class="slimScrollRail"
+                    style="
+                      width: 3px;
+                      height: 100%;
+                      position: absolute;
+                      top: 0px;
+                      display: none;
+                      border-radius: 7px;
+                      background: rgb(51, 51, 51);
+                      opacity: 0.2;
+                      z-index: 90;
+                      right: 1px;
+                    "
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--#End User Edit Popup -->
+
       <!-- #END# Objective Desc PopUp -->
       <section class="content">
         <div class="employee_section">
@@ -5504,7 +5887,11 @@
                       jelvis@stratrom.com
                     </p>
                     <div class="employe_head_info_icon">
-                      <i class="fas fa-pencil-alt title_edit_icon"></i>
+                      <i
+                        class="fas fa-pencil-alt title_edit_icon"
+                        data-toggle="modal"
+                        data-target=".edit_employee_popup"
+                      ></i>
 
                       <ul class="header-dropdown">
                         <li class="dropdown title_edit_icon">
@@ -5816,7 +6203,12 @@
                     >
                       <div class="employee_info">Direct Reportees</div>
                       <div class="">
-                        <ul class="list-unstyled order-list">
+                        <ul
+                          class="list-unstyled order-list"
+                          data-toggle="modal"
+                          data-target="#user_edit_popup"
+                          style="cursor: pointer;"
+                        >
                           <li class="avatar avatar-sm">
                             <img
                               class="rounded-circle"
@@ -5830,11 +6222,6 @@
                               src="https://www.wikipreneurs.be/assets/templates/pixel/plugins/images/users/4.jpg"
                               alt="user"
                             />
-                          </li>
-                          <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
-                            <span _ngcontent-hhc-c5="" class="badge"
-                              ><i class="fa fa-plus"></i
-                            ></span>
                           </li>
                         </ul>
                       </div>
@@ -5958,6 +6345,13 @@
                       <button
                         type="button"
                         class="btn btn-custom-secondary"
+                        data-value="Activities"
+                      >
+                        Risk
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-custom-secondary"
                         data-value="Appraisal"
                       >
                         Appraisal
@@ -6057,7 +6451,7 @@
                                 My KPI's</strong
                               >
                             </h5>
-                            <div
+                            <!-- <div
                               class="create_initives add-sub-initiative"
                               style="margin-top: 5px;"
                             >
@@ -6067,7 +6461,7 @@
                                 data-target=".add_kpi_popup"
                                 ><i class="fa fa-plus"></i>Add</span
                               >
-                            </div>
+                            </div> -->
                             <ul class="header-dropdown m-r--2">
                               <li class="dropdown m-t--10">
                                 <a
@@ -6115,7 +6509,7 @@
                           </div>
                           <div class="d-flex flex-column employee_div_body_box">
                             <div
-                              class="d-flex flex-row employe_content_border my_kpi_yellow sub_initiative_details"
+                              class="d-flex flex-row employe_content_border my_kpi_red sub_initiative_details"
                             >
                               <div
                                 class="d-flex flex-column flex-fill profile_content"
@@ -6185,7 +6579,7 @@
                             </div>
 
                             <div
-                              class="d-flex flex-row employe_content_border my_kpi_yellow sub_initiative_details"
+                              class="d-flex flex-row employe_content_border my_kpi_red sub_initiative_details"
                             >
                               <div
                                 class="d-flex flex-column flex-fill profile_content"
@@ -6251,7 +6645,7 @@
                             </div>
 
                             <div
-                              class="d-flex flex-row employe_content_border my_kpi_orange sub_initiative_details"
+                              class="d-flex flex-row employe_content_border my_kpi_red sub_initiative_details"
                             >
                               <div
                                 class="d-flex flex-column flex-fill profile_content"
@@ -6317,7 +6711,7 @@
                             </div>
 
                             <div
-                              class="d-flex flex-row employe_content_border my_kpi_yellow sub_initiative_details"
+                              class="d-flex flex-row employe_content_border my_kpi_red sub_initiative_details"
                             >
                               <div
                                 class="d-flex flex-column flex-fill profile_content"
@@ -6535,9 +6929,7 @@
                           </div>
                         </div>
                       </div>
-                    </div>
 
-                    <div class="row row-padding">
                       <!------- My Initiative ------->
                       <div
                         class="col-lg-4 col-md-6 sub_initiatives select-toggle my-initiatives"
@@ -6552,7 +6944,7 @@
                                 >My Initiatives</strong
                               >
                             </h5>
-                            <div
+                            <!-- <div
                               class="create_initives add-sub-initiative"
                               style="margin-top: 5px;"
                             >
@@ -6562,7 +6954,7 @@
                                 data-target=".add_initiative_popup"
                                 ><i class="fa fa-plus"></i> Add</span
                               >
-                            </div>
+                            </div> -->
                             <ul class="header-dropdown m-r--2">
                               <li class="dropdown m-t--10">
                                 <a
@@ -6610,7 +7002,7 @@
                           </div>
                           <div class="d-flex flex-column employee_div_body_box">
                             <div
-                              class="d-flex flex-row employe_content_border my_kpi_yellow sub_initiative_details"
+                              class="d-flex flex-row employe_content_border my_kpi_red sub_initiative_details"
                             >
                               <div
                                 class="d-flex flex-column flex-fill profile_content"
@@ -6689,7 +7081,7 @@
                             </div>
 
                             <div
-                              class="d-flex flex-row employe_content_border my_kpi_green sub_initiative_details"
+                              class="d-flex flex-row employe_content_border my_kpi_red sub_initiative_details"
                             >
                               <div
                                 class="d-flex flex-column flex-fill profile_content"
@@ -6768,7 +7160,7 @@
                             </div>
 
                             <div
-                              class="d-flex flex-row employe_content_border my_kpi_green sub_initiative_details"
+                              class="d-flex flex-row employe_content_border my_kpi_red sub_initiative_details"
                             >
                               <div
                                 class="d-flex flex-column flex-fill profile_content"
@@ -6847,7 +7239,7 @@
                             </div>
 
                             <div
-                              class="d-flex flex-row employe_content_border my_kpi_green sub_initiative_details"
+                              class="d-flex flex-row employe_content_border my_kpi_red sub_initiative_details"
                             >
                               <div
                                 class="d-flex flex-column flex-fill profile_content"
@@ -6928,7 +7320,221 @@
                         </div>
                       </div>
 
-                      <!-- Comment Section -->
+                      <!------- My Risks ------->
+                      <div
+                        class="col-lg-4 col-md-6 sub_initiatives select-toggle my-initiatives"
+                      >
+                        <div class="card">
+                          <div class="header d-flex flex-row">
+                            <h5 class="prob d-flex flex-fill">
+                              <strong
+                                class="editableTxt1"
+                                onkeypress="return (this.innerText.length <= 25)"
+                                editable="true"
+                                >My Risks</strong
+                              >
+                            </h5>
+                            <!-- <div
+                                                  class="create_initives add-sub-initiative"
+                                                  style="margin-top: 5px;"
+                                                >
+                                                  <span
+                                                    class="sub_initiative"
+                                                    data-toggle="modal"
+                                                    data-target=".add_initiative_popup"
+                                                    ><i class="fa fa-plus"></i> Add</span
+                                                  >
+                                                </div> -->
+                            <ul class="header-dropdown m-r--2">
+                              <li class="dropdown m-t--10">
+                                <a
+                                  href="#"
+                                  onclick="return false;"
+                                  class="dropdown-toggle"
+                                  data-toggle="dropdown"
+                                  role="button"
+                                  aria-haspopup="true"
+                                  aria-expanded="true"
+                                >
+                                  <i class="material-icons">more_vert</i>
+                                </a>
+                                <ul
+                                  class="dropdown-menu pull-right"
+                                  x-placement="bottom-start"
+                                  style="
+                                    position: absolute;
+                                    will-change: transform;
+                                    top: 0px;
+                                    left: 0px;
+                                    transform: translate3d(0px, 24px, 0px);
+                                  "
+                                >
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target=".my_initative_view_popup"
+                                      onclick="return false;"
+                                      >View</a
+                                    >
+                                  </li>
+                                  <li>
+                                    <a
+                                      href="#"
+                                      onclick="return false;"
+                                      class="delete-row"
+                                      >Delete</a
+                                    >
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="d-flex flex-column employee_div_body_box">
+                            <div
+                              class="d-flex flex-row employe_content_border my_kpi_red sub_initiative_details"
+                            >
+                              <div
+                                class="d-flex flex-column flex-fill profile_content"
+                              >
+                                <div class="d-flex flex-row">
+                                  <div class="d-flex flex-column flex-fill">
+                                    <div>
+                                      <p>Risk 1</p>
+                                    </div>
+                                  </div>
+                                  <div class="d-flex flex-column">
+                                    <div>
+                                      <strong style="font-size: 18px;"
+                                        >4</strong
+                                      >
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="d-flex flex-row">
+                                  <div class="d-flex flex-column flex-fill">
+                                    <div>
+                                      <strong>Tolerable</strong>
+                                    </div>
+                                  </div>
+                                  <div class="d-flex flex-column">
+                                    <div>
+                                      <strong>30 Sep 2019</strong>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div
+                              class="d-flex flex-row employe_content_border my_kpi_red sub_initiative_details"
+                            >
+                              <div
+                                class="d-flex flex-column flex-fill profile_content"
+                              >
+                                <div class="d-flex flex-row">
+                                  <div class="d-flex flex-column flex-fill">
+                                    <div>
+                                      <p>Risk 2</p>
+                                    </div>
+                                  </div>
+                                  <div class="d-flex flex-column">
+                                    <div>
+                                      <strong style="font-size: 18px;"
+                                        >4</strong
+                                      >
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="d-flex flex-row">
+                                  <div class="d-flex flex-column flex-fill">
+                                    <div>
+                                      <strong>Tolerable</strong>
+                                    </div>
+                                  </div>
+                                  <div class="d-flex flex-column">
+                                    <div>
+                                      <strong>30 Sep 2019</strong>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div
+                              class="d-flex flex-row employe_content_border my_kpi_red sub_initiative_details"
+                            >
+                              <div
+                                class="d-flex flex-column flex-fill profile_content"
+                              >
+                                <div class="d-flex flex-row">
+                                  <div class="d-flex flex-column flex-fill">
+                                    <div>
+                                      <p>Risk 3</p>
+                                    </div>
+                                  </div>
+                                  <div class="d-flex flex-column">
+                                    <div>
+                                      <strong style="font-size: 18px;"
+                                        >4</strong
+                                      >
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="d-flex flex-row">
+                                  <div class="d-flex flex-column flex-fill">
+                                    <div>
+                                      <strong>Tolerable</strong>
+                                    </div>
+                                  </div>
+                                  <div class="d-flex flex-column">
+                                    <div>
+                                      <strong>30 Sep 2019</strong>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div
+                              class="d-flex flex-row employe_content_border my_kpi_red sub_initiative_details"
+                            >
+                              <div
+                                class="d-flex flex-column flex-fill profile_content"
+                              >
+                                <div class="d-flex flex-row">
+                                  <div class="d-flex flex-column flex-fill">
+                                    <div>
+                                      <p>Risk 4</p>
+                                    </div>
+                                  </div>
+                                  <div class="d-flex flex-column">
+                                    <div>
+                                      <strong style="font-size: 18px;"
+                                        >4</strong
+                                      >
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="d-flex flex-row">
+                                  <div class="d-flex flex-column flex-fill">
+                                    <div>
+                                      <strong>Tolerable</strong>
+                                    </div>
+                                  </div>
+                                  <div class="d-flex flex-column">
+                                    <div>
+                                      <strong>30 Sep 2019</strong>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Notes Section -->
                       <div
                         class="col-lg-4 col-md-6 sub_initiatives select-toggle comments"
                       >
@@ -6939,7 +7545,7 @@
                                 class="editableTxt1"
                                 onkeypress="return (this.innerText.length <= 25)"
                                 editable="true"
-                                >Comments</strong
+                                >Notes</strong
                               >
                             </h5>
                             <ul class="header-dropdown m-r--2 d-flex">
