@@ -14,6 +14,7 @@
     <link href="../../assets/css/custom.css" rel="stylesheet" />
     <link href="../../assets/css/initatives.css" rel="stylesheet" />
     <link href="../../assets/css/table-view.css" rel="stylesheet" />
+    <link href="../../assets/css/icheck-bootstrap.min.css" rel="stylesheet" />
     <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" />
     <!-- You can choose a theme from css/styles instead of get all themes -->
     <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
@@ -127,6 +128,18 @@
         color: #1e252d;
       }
     </style>
+    <script>
+      function preview_images() {
+        var total_file = document.getElementById("images").files.length;
+        for (var i = 0; i < total_file; i++) {
+          $("#image_preview").append(
+            "<div class='col-md-3' style='padding-bottom: 4%' '><img class='img-responsive' src='" +
+              URL.createObjectURL(event.target.files[i]) +
+              "'></div>"
+          );
+        }
+      }
+    </script>
   </head>
 
   <body class="light">
@@ -2590,6 +2603,64 @@
       </div>
       <!--#END -->
 
+      <!-- File Upload PopUp -->
+      <div
+        class="modal fade file_upload_popup"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myLargeModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4>File Upload</h4>
+              <button
+                type="button"
+                class="close pull-right"
+                data-dismiss="modal"
+              >
+                &times;
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <form action="" method="post" enctype="multipart/form-data">
+                  <div
+                    class="col-md-12"
+                    style="width: 100%; margin-bottom: 2%;"
+                  >
+                    <input
+                      type="file"
+                      style="
+                        padding-bottom: 12%;
+                        padding-top: 3%;
+                        padding-right: 5%;
+                      "
+                      class="form-control"
+                      id="images"
+                      name="images[]"
+                      onchange="preview_images();"
+                      multiple
+                    />
+                  </div>
+                  <div class="col-md-12" style="margin-bottom: 6%;">
+                    <input
+                      type="submit"
+                      class="btn"
+                      name="submit_image"
+                      style="background-color: #1e252d; color: #ffff;"
+                      value="Upload Multiple Image"
+                    />
+                  </div>
+                </form>
+              </div>
+              <div class="row" id="image_preview"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!--Edit KPI START -->
       <div
         class="modal fade edit_kpi_popup"
@@ -3530,18 +3601,18 @@
       </div>
       <!--#END Edit Milestones -->
 
-      <!--#START Add My Initiatives -->
+      <!--#START Edit Initiatives -->
       <div
-        class="modal fade add_initiative_popup"
+        class="modal fade initatives_description_edit_popup"
         tabindex="-1"
         role="dialog"
-        aria-labelledby="myLargeModalLabel_1"
+        aria-labelledby="myLargeModalLabel"
         aria-hidden="true"
       >
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h4>My Initiatives</h4>
+              <h4>Initiative Description</h4>
               <button
                 type="button"
                 class="close pull-right"
@@ -3550,11 +3621,33 @@
                 &times;
               </button>
             </div>
+
             <div class="modal-body">
-              <form id="sub_initative_Form">
+              <form id="kpiForm">
+                <div class="row">
+                  <div class="form-group col-md-2">
+                    <label for="sub_initative_desc">ID</label>
+                    <input
+                      type="text"
+                      class="modal-custom-input"
+                      name="name"
+                      style="width: 98% !important;"
+                    />
+                  </div>
+                  <div class="form-group col-md-10">
+                    <label for="sub_initative_desc">Name</label>
+                    <input
+                      type="text"
+                      class="modal-custom-input"
+                      name="name"
+                      style="width: 98% !important;"
+                    />
+                  </div>
+                </div>
+
                 <div class="row m-t-10">
                   <div class="form-group col-md-12">
-                    <label for="sub_initative_desc">Name</label>
+                    <label for="sub_initative_desc">Description</label>
                     <textarea
                       class="modal-custom-textarea"
                       placeholder=""
@@ -3562,13 +3655,28 @@
                     ></textarea>
                   </div>
                 </div>
+
+                <div class="row m-t-10">
+                  <div class="form-group col-md-12">
+                    <label for="impact">Impact</label>
+                    <select
+                      id="impact"
+                      name="impact"
+                      class="modal-custom-select"
+                    >
+                      <option>Choose</option>
+                      <option>Option - 1</option>
+                      <option>Option - 2</option>
+                      <option>Option - 3</option>
+                    </select>
+                  </div>
+                </div>
+
                 <div class="row m-t-10">
                   <div class="form-group col-md-6">
-                    <i
-                      class="far fa-calendar input-calender-icon"
-                      style="bottom: 8%;"
-                    ></i>
-                    <label for="sub_initative_start_end">Start/End Date</label>
+                    <label for="kpi_start_end_date"
+                      >Planned Start Date/End Date</label
+                    >
                     <input
                       type="text"
                       class="modal-custom-input date_pickers datepicker-here"
@@ -3576,20 +3684,219 @@
                       data-multiple-dates-separator=" - "
                       data-language="en"
                       id="air-date-sub-init"
-                      style="width: 94% !important;"
+                      style="width: 96% !important;"
                     />
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="sub_initative_progress">Progress (%)</label>
+                    <label for="kpi_start_end_date"
+                      >Actual Start Date/End Date</label
+                    >
                     <input
-                      type="number"
-                      class="modal-custom-input"
-                      name="name"
-                      style="width: 94% !important;"
+                      type="text"
+                      class="modal-custom-input date_pickers datepicker-here"
+                      data-range="true"
+                      data-multiple-dates-separator=" - "
+                      data-language="en"
+                      id="air-date-sub-init"
+                      style="width: 96% !important;"
                     />
                   </div>
                 </div>
+
                 <div class="row m-t-10">
+                  <div class="form-group col-md-12">
+                    <label for="">Status</label>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <div class="radio icheck-success">
+                      <input
+                        type="radio"
+                        id="primary1"
+                        checked
+                        name="primary"
+                      />
+                      <label for="primary1"></label>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <div class="radio icheck-warning">
+                      <input type="radio" id="primary2" name="primary" />
+                      <label for="primary2"></label>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <div class="radio icheck-danger">
+                      <input type="radio" id="primary3" name="primary" />
+                      <label for="primary3"></label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="kpi_start_end_date">Status</label>
+                    <select
+                      id="inputState"
+                      class="modal-custom-select"
+                      style="width: 96% !important;"
+                    >
+                      <option>Choose</option>
+                      <option value="manual">Manual</option>
+                      <option value="weighted">Weighted</option>
+                      <option value="first">First</option>
+                      <option value="second">Second</option>
+                      <option value="third">Third</option>
+                      <option value="fourth">Fourth</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="kpi_name">Progress (%)</label>
+                    <input
+                      type="number"
+                      min="0"
+                      class="modal-custom-input"
+                      name="kpi_name"
+                      id="kpi_name"
+                      style="width: 96% !important;"
+                    />
+                  </div>
+                </div>
+
+                <div class="row m-t-10">
+                  <div class="form-group col-md-12">
+                    <label for="kpi_fields">Data Fields</label>
+                    <ul class="d-flex flex-row flex-wrap mt-2">
+                      <li>
+                        <div class="form-check">
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                              />
+                              Actual
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check">
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                              />
+                              Target
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check">
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                              />
+                              Budget
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check">
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                              />
+                              Forecast
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-12">
+                    <label for="kpi_fields">Amount</label>
+                    <ul class="d-flex flex-row flex-wrap mt-2">
+                      <li>
+                        <div class="form-check">
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                              />
+                              Budget
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check">
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                              />
+                              Utillized
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check">
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                              />
+                              Balance
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="row">
                   <div class="col-md-12">
                     <hr />
                   </div>
@@ -3614,6 +3921,7 @@
                 </div>
               </form>
             </div>
+            <hr />
             <div class="modal-footer">
               <div
                 class="d-flex flex-column flex-fill ml-4 mb-5 text-left font-11"
@@ -3638,7 +3946,7 @@
           </div>
         </div>
       </div>
-      <!--#END Add My Initiatives -->
+      <!--#END Edit Initiatives -->
 
       <!--#START Edit My Initiatives -->
       <div
@@ -3760,6 +4068,7 @@
         </div>
       </div>
       <!--#END Edit My Initiatives -->
+
       <!--#START My initiatives View -->
       <div
         class="modal fade my_initative_view_popup"
@@ -3772,6 +4081,163 @@
           <div class="modal-content">
             <div class="modal-header">
               <h4>View My Initiatives</h4>
+              <button
+                type="button"
+                class="close pull-right"
+                data-dismiss="modal"
+              >
+                &times;
+              </button>
+            </div>
+            <div class="">
+              <!---------My Initiatives-------->
+              <div class="col-lg-12 col-md-12 sub_initiatives">
+                <div class="card">
+                  <div class="d-flex flex-column employee_div_body_box">
+                    <div
+                      class="d-flex flex-row employe_content_border my_kpi_red sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <p>Initiative 1</p>
+                        </div>
+                        <div class="d-flex flex-row">
+                          <div class="d-flex flex-column flex-fill">
+                            <div class="d-flex flex-row">
+                              <div class="progress-s progress">
+                                <div
+                                  class="progress-bar width-per-90 rounded-pill bar_height green_bar"
+                                  role="progressbar"
+                                  aria-valuenow="40"
+                                  aria-valuemin="0"
+                                  aria-valuemax="100"
+                                ></div>
+                              </div>
+                              <div class="progress_value">90%</div>
+                            </div>
+                          </div>
+                          <div class="d-flex flex-column">
+                            <div>
+                              <strong>Oct 09, 2019 - Oct 11, 2019</strong>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="d-flex flex-row employe_content_border my_kpi_red sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <p>Initiative 2</p>
+                        </div>
+                        <div class="d-flex flex-row">
+                          <div class="d-flex flex-column flex-fill">
+                            <div class="d-flex flex-row">
+                              <div class="progress-s progress">
+                                <div
+                                  class="progress-bar width-per-40 rounded-pill bar_height yellow_bar"
+                                  role="progressbar"
+                                  aria-valuenow="40"
+                                  aria-valuemin="0"
+                                  aria-valuemax="100"
+                                ></div>
+                              </div>
+                              <div class="progress_value">40%</div>
+                            </div>
+                          </div>
+                          <div class="d-flex flex-column">
+                            <div>
+                              <strong>Oct 09, 2019 - Oct 11, 2019</strong>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="d-flex flex-row employe_content_border my_kpi_red sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <p>Initiative 3</p>
+                        </div>
+                        <div class="d-flex flex-row">
+                          <div class="d-flex flex-column flex-fill">
+                            <div class="d-flex flex-row">
+                              <div class="progress-s progress">
+                                <div
+                                  class="progress-bar width-per-95 rounded-pill bar_height green_bar"
+                                  role="progressbar"
+                                  aria-valuenow="95"
+                                  aria-valuemin="0"
+                                  aria-valuemax="100"
+                                ></div>
+                              </div>
+                              <div class="progress_value">95%</div>
+                            </div>
+                          </div>
+                          <div class="d-flex flex-column">
+                            <div>
+                              <strong>Oct 09, 2019 - Oct 11, 2019</strong>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="d-flex flex-row employe_content_border my_kpi_red sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <p>Initiative 4</p>
+                        </div>
+                        <div class="d-flex flex-row">
+                          <div class="d-flex flex-column flex-fill">
+                            <div class="d-flex flex-row">
+                              <div class="progress-s progress">
+                                <div
+                                  class="progress-bar width-per-30 rounded-pill bar_height red_bar"
+                                  role="progressbar"
+                                  aria-valuenow="30"
+                                  aria-valuemin="0"
+                                  aria-valuemax="100"
+                                ></div>
+                              </div>
+                              <div class="progress_value">30%</div>
+                            </div>
+                          </div>
+                          <div class="d-flex flex-column">
+                            <div>
+                              <strong>Oct 09, 2019 - Oct 11, 2019</strong>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--#END View My Initiatives -->
+
+      <!--#START My initiatives View -->
+      <div
+        class="modal fade initative_view_popup"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myLargeModalLabel_1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4>View Initiatives</h4>
               <button
                 type="button"
                 class="close pull-right"
@@ -7918,7 +8384,7 @@
                                         <a
                                           href="#"
                                           data-toggle="modal"
-                                          data-target=".edit_initiative_popup"
+                                          data-target=".initatives_description_edit_popup"
                                           onclick="return false;"
                                           >Edit</a
                                         >
@@ -7999,7 +8465,7 @@
                                         <a
                                           href="#"
                                           data-toggle="modal"
-                                          data-target=".edit_initiative_popup"
+                                          data-target=".initatives_description_edit_popup"
                                           onclick="return false;"
                                           >Edit</a
                                         >
@@ -8080,7 +8546,7 @@
                                         <a
                                           href="#"
                                           data-toggle="modal"
-                                          data-target=".edit_initiative_popup"
+                                          data-target=".initatives_description_edit_popup"
                                           onclick="return false;"
                                           >Edit</a
                                         >
@@ -8161,7 +8627,7 @@
                                         <a
                                           href="#"
                                           data-toggle="modal"
-                                          data-target=".edit_initiative_popup"
+                                          data-target=".initatives_description_edit_popup"
                                           onclick="return false;"
                                           >Edit</a
                                         >
@@ -12187,7 +12653,7 @@
                                     <a
                                       href="#"
                                       data-toggle="modal"
-                                      data-target=".my_initative_view_popup"
+                                      data-target=".initative_view_popup"
                                       onclick="return false;"
                                       >View</a
                                     >
@@ -12267,7 +12733,7 @@
                                         <a
                                           href="#"
                                           data-toggle="modal"
-                                          data-target=".edit_initiative_popup"
+                                          data-target=".initatives_description_edit_popup"
                                           onclick="return false;"
                                           >Edit</a
                                         >
@@ -12348,7 +12814,7 @@
                                         <a
                                           href="#"
                                           data-toggle="modal"
-                                          data-target=".edit_initiative_popup"
+                                          data-target=".initatives_description_edit_popup"
                                           onclick="return false;"
                                           >Edit</a
                                         >
@@ -12429,7 +12895,7 @@
                                         <a
                                           href="#"
                                           data-toggle="modal"
-                                          data-target=".edit_initiative_popup"
+                                          data-target=".initatives_description_edit_popup"
                                           onclick="return false;"
                                           >Edit</a
                                         >
@@ -12510,7 +12976,7 @@
                                         <a
                                           href="#"
                                           data-toggle="modal"
-                                          data-target=".edit_initiative_popup"
+                                          data-target=".initatives_description_edit_popup"
                                           onclick="return false;"
                                           >Edit</a
                                         >
@@ -15565,7 +16031,79 @@
                   style="display: none;"
                 >
                   <div class="container-fluid">
-                    <h5>Documents</h5>
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="card">
+                          <div class="form-row" style="padding: 16px;">
+                            <div class="col-md-11"></div>
+                            <div class="col-md-1 custom-space-even">
+                              <button
+                                class="btn btn-custom-secondary"
+                                data-toggle="modal"
+                                data-target=".file_upload_popup"
+                              >
+                                <i class="fas fa-plus"></i>
+                              </button>
+                            </div>
+                          </div>
+                          <div
+                            class="form-row"
+                            style="padding: 16px; margin-top: -20px;"
+                          >
+                            <div class="col-md-12">
+                              <div class="tableBody">
+                                <div class="table-responsive">
+                                  <table
+                                    class="table dashboard-task-infos align-center dashboard-table"
+                                    id="table1"
+                                    style="margin-bottom: 0px !important;"
+                                  >
+                                    <tr style="background-color: #f7f7f7;">
+                                      <th>Select</th>
+                                      <th>File Name</th>
+                                      <th>Uploaded On</th>
+                                      <th>Size</th>
+                                      <th>Type</th>
+                                      <th>Actions</th>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        <input type="checkbox" />
+                                      </td>
+                                      <td>End Report</td>
+                                      <td>Oct 15, 2020</td>
+                                      <td>22 MB</td>
+                                      <td>PDF</td>
+                                      <td>PDF</td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        <input type="checkbox" />
+                                      </td>
+                                      <td>End Report</td>
+                                      <td>Oct 15, 2020</td>
+                                      <td>22 MB</td>
+                                      <td>PDF</td>
+                                      <td>PDF</td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        <input type="checkbox" />
+                                      </td>
+                                      <td>End Report</td>
+                                      <td>Oct 15, 2020</td>
+                                      <td>22 MB</td>
+                                      <td>PDF</td>
+                                      <td>PDF</td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -16355,7 +16893,7 @@
                         <div class="col-lg-12 col-md-12 sub_initiatives">
                           <div class="card">
                             <div class="tableBody">
-                              <div class="table-responsive Month box">
+                              <div class="table-responsive">
                                 <table
                                   class="table dashboard-task-infos align-center dashboard-table"
                                   id="table1"

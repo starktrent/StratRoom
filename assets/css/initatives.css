@@ -46,7 +46,7 @@ select {
 .table thead tr th,
 .table tbody tr td {
   font-size: 12px !important;
-  font-weight: 600;
+  /* font-weight: 600; */
 }
 
 strong {
