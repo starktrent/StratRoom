@@ -3121,6 +3121,55 @@
         </div>
       </div>
 
+      <!-- File Upload Edit PopUp -->
+      <div
+        class="modal fade file_upload_edit_popup"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myLargeModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4>File Upload</h4>
+              <button
+                type="button"
+                class="close pull-right"
+                data-dismiss="modal"
+              >
+                &times;
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="form-group col-md-10" style="padding-right: 4px;">
+                  <input
+                    type="file"
+                    class="modal-custom-input"
+                    style="
+                      height: 38px !important;
+                      padding: 5px !important;
+                      margin-bottom: 8px;
+                    "
+                    accept=".pdf,.ppt,.jpeg,.xlsx,.doc,.docx"
+                  />
+                  <span>Supported file type (jpeg,pdf,pptx,xlsx,docx)</span>
+                </div>
+                <div class="form-group col-md-2" style="padding-left: 4px;">
+                  <button
+                    type="button"
+                    class="btn custom-form-control btn-custom-primary"
+                  >
+                    Upload
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!--Edit KPI START -->
       <div
         class="modal fade edit_kpi_popup"
@@ -15384,7 +15433,11 @@
                                           <td>22 MB</td>
                                           <td>PDF</td>
                                           <td>
-                                            <i class="fas fa-pen"></i>
+                                            <i
+                                              class="fas fa-pen"
+                                              data-toggle="modal"
+                                              data-target=".file_upload_edit_popup"
+                                            ></i>
                                             <i
                                               class="fas fa-trash"
                                               style="margin-left: 16px;"
@@ -15400,7 +15453,11 @@
                                           <td>22 MB</td>
                                           <td>PDF</td>
                                           <td>
-                                            <i class="fas fa-pen"></i>
+                                            <i
+                                              class="fas fa-pen"
+                                              data-toggle="modal"
+                                              data-target=".file_upload_edit_popup"
+                                            ></i>
                                             <i
                                               class="fas fa-trash"
                                               style="margin-left: 16px;"
@@ -15416,7 +15473,11 @@
                                           <td>22 MB</td>
                                           <td>PDF</td>
                                           <td>
-                                            <i class="fas fa-pen"></i>
+                                            <i
+                                              class="fas fa-pen"
+                                              data-toggle="modal"
+                                              data-target=".file_upload_edit_popup"
+                                            ></i>
                                             <i
                                               class="fas fa-trash"
                                               style="margin-left: 16px;"
