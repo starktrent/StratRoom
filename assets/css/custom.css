@@ -932,6 +932,7 @@ ul.gj-list-md li {
 
 .custom-form-control {
   width: 100%;
+  height: auto;
 }
 
 .btn-custom-primary {
