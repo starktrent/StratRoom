@@ -1085,12 +1085,15 @@ label {
 .notifics li h6 {
   font-size: 13px;
   color: #49494d;
+  margin-left: 54px;
+  margin-top: -32px;
 }
 
 .notifics li p {
   font-size: 10px;
   margin-top: -16px;
   margin-bottom: -12px;
+  margin-left: 54px;
   color: rgb(94, 94, 94);
 }
 
@@ -1099,6 +1102,12 @@ label {
   color: #2772d4;
   float: right;
   margin-top: -28px;
+}
+
+.notifics li img {
+  width: 40px;
+  height: auto;
+  border-radius: 50%;
 }
 
 .notifics .unread {
