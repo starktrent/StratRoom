@@ -480,20 +480,35 @@
               </div>
             </div>
             <div class="row m-t-20">
-              <div class="form-group col-md-4">
-                <label for="datepicker">Date</label>
+              <div class="form-group col-md-6">
+                <label for="datepicker">From Date & Time</label>
                 <i class="far fa-calendar input-calender-icon"></i>
                 <input
                   type="text"
                   class="modal-custom-input date_pickers_single"
                   style="height: 55% !important; width: 94% !important;"
                   data-language="en"
+                  data-timepicker="true"
                   name="kpi_start_end_date"
                   id="kpi_start_end_date"
                 />
               </div>
 
-              <div class="form-group col-md-4">
+              <div class="form-group col-md-6">
+                <label for="datepicker">To Date & Time</label>
+                <i class="far fa-calendar input-calender-icon"></i>
+                <input
+                  type="text"
+                  class="modal-custom-input date_pickers_single"
+                  style="height: 55% !important; width: 94% !important;"
+                  data-language="en"
+                  data-timepicker="true"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                />
+              </div>
+
+              <!-- <div class="form-group col-md-4">
                 <label for="timepicker">From Time</label>
                 <input
                   type="text"
@@ -517,7 +532,7 @@
                 <script>
                   $("#timepicker1").timepicker();
                 </script>
-              </div>
+              </div> -->
             </div>
 
             <div class="row m-t-10">
