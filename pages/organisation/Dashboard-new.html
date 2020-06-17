@@ -134,35 +134,82 @@
         border-radius: 4px;
       }
 
-      .cost-blue {
-        color: #0f7fff;
+      .text_type_mini h4 {
+        font-size: 14px;
+        font-weight: 500;
+        color: #4f4e4e;
       }
 
-      .cost-green {
-        color: #2b982b;
-        border: 2px solid;
-        padding: 4px;
-        border-radius: 4px;
+      .text_type_mini p {
+        font-size: 10px;
+        color: #848484;
+      }
+
+      .text_type_mini .cost-blue {
+        color: #0f7fff;
+        font-size: 12px;
+        text-align: center;
+      }
+
+      .text_type_mini .cost-red {
+        color: #ff0f2f;
+        font-size: 12px;
+        text-align: center;
+      }
+
+      .text_type h4 {
+        font-size: 20px;
+        font-weight: 500;
+        color: #4f4e4e;
+      }
+
+      .text_type p {
+        font-size: 14px;
+        color: #848484;
+      }
+
+      .cost-blue {
+        color: #0f7fff;
+        font-size: 18px;
+        text-align: center;
       }
 
       .cost-red {
         color: #ff0f2f;
+        font-size: 18px;
+        text-align: center;
       }
 
-      .text_type_mini h6 {
-        font-size: 10px;
+      .cost-red img {
+        width: 24px;
       }
 
-      .text_type_mini strong {
-        font-size: 9px;
+      .text_type_card {
+        border: 1px solid #e9ecef;
+        border-radius: 14px !important;
+        -webkit-box-shadow: 0px 0px 4px 0px #d8d4d4;
+        -moz-box-shadow: 0px 0px 4px 0px #d8d4d4;
+        -ms-box-shadow: 0px 0px 4px 0px #d8d4d4;
+        box-shadow: 0px 0px 4px 0px #d8d4d4;
       }
 
-      .text_type h6 {
-        font-size: 14px;
+      .sub_initiatives .header {
+        background: #ffffff !important;
+        border-top-left-radius: 14px !important;
+        border-top-right-radius: 14px !important;
+        color: #565656 !important;
       }
 
-      .text_type strong {
-        font-size: 12px;
+      .sub_initiatives .card .header .prob {
+        text-align: center;
+      }
+
+      .sub_initiatives .card {
+        border-radius: 14px !important;
+      }
+
+      .card .header .header-dropdown i {
+        color: #565656 !important;
       }
     </style>
   </head>
@@ -589,7 +636,7 @@
                     <center data-toggle="tooltip" title="Column">
                       <img
                         src="../organisation/images/charts/Column.png"
-                        alt="Bubble Chart"
+                        alt="Column Chart"
                       />
                     </center>
                   </div>
@@ -597,7 +644,7 @@
                     <center data-toggle="tooltip" title="Line">
                       <img
                         src="../organisation/images/charts/Line.png"
-                        alt="Bubble Chart"
+                        alt="Line Chart"
                       />
                     </center>
                   </div>
@@ -605,7 +652,7 @@
                     <center data-toggle="tooltip" title="Area">
                       <img
                         src="../organisation/images/charts/Area.png"
-                        alt="Bubble Chart"
+                        alt="Area Chart"
                       />
                     </center>
                   </div>
@@ -613,7 +660,7 @@
                     <center data-toggle="tooltip" title="Pie">
                       <img
                         src="../organisation/images/charts/Pie.png"
-                        alt="Bubble Chart"
+                        alt="Pie Chart"
                       />
                     </center>
                   </div>
@@ -621,7 +668,7 @@
                     <center data-toggle="tooltip" title="Waterfall">
                       <img
                         src="../organisation/images/charts/Waterfall.png"
-                        alt="Bubble Chart"
+                        alt="Waterfall Chart"
                       />
                     </center>
                   </div>
@@ -629,7 +676,7 @@
                     <center data-toggle="tooltip" title="Multi axis">
                       <img
                         src="../organisation/images/charts/Multiaxis.png"
-                        alt="Bubble Chart"
+                        alt="Multi axis Chart"
                       />
                     </center>
                   </div>
@@ -637,7 +684,7 @@
                     <center data-toggle="tooltip" title="Stacked">
                       <img
                         src="../organisation/images/charts/Stacked.png"
-                        alt="Bubble Chart"
+                        alt="Stacked Chart"
                       />
                     </center>
                   </div>
@@ -645,7 +692,7 @@
                     <center data-toggle="tooltip" title="Funnel">
                       <img
                         src="../organisation/images/charts/Funnel.png"
-                        alt="Bubble Chart"
+                        alt="Funnel Chart"
                       />
                     </center>
                   </div>
@@ -653,7 +700,7 @@
                     <center data-toggle="tooltip" title="Burn Down">
                       <img
                         src="../organisation/images/charts/Burndown.png"
-                        alt="Bubble Chart"
+                        alt="Burn Down Chart"
                       />
                     </center>
                   </div>
@@ -661,7 +708,7 @@
                     <center data-toggle="tooltip" title="Speedo">
                       <img
                         src="../organisation/images/charts/Speedo.png"
-                        alt="Bubble Chart"
+                        alt="Speedo Chart"
                       />
                     </center>
                   </div>
@@ -669,7 +716,7 @@
                     <center data-toggle="tooltip" title="Heat Map">
                       <img
                         src="../organisation/images/charts/Heatmap.png"
-                        alt="Bubble Chart"
+                        alt="Heat Map Chart"
                       />
                     </center>
                   </div>
@@ -677,47 +724,37 @@
 
                 <div
                   class="row widget Text"
-                  style="padding: 8px; display: none;"
+                  style="padding: 2px; display: none; padding-top: 8px;"
                 >
                   <div class="col-12 form-group text_type_mini">
                     <div
                       class="d-flex flex-row employe_content_border sub_initiative_details"
+                      ondragstart="dragStart(event)"
+                      draggable="true"
+                      id="normalTextType"
                     >
-                      <div class="d-flex flex-column flex-fill profile_content">
-                        <div class="d-flex flex-row">
-                          <div class="flex-column">
-                            <h6>
+                      <div
+                        class="flex-column flex-fill profile_content"
+                        style="padding: 10px 0;"
+                      >
+                        <div class="flex-row">
+                          <div class="flex-column text-center">
+                            <h4>
                               $ Revenue
-                            </h6>
+                            </h4>
                           </div>
                         </div>
-                        <div class="d-flex flex-row">
-                          <div class="d-flex flex-column">
-                            <div>
-                              <strong>Oct 09, 2019 - Oct 11, 2019</strong>
-                            </div>
+                        <div class="flex-row">
+                          <div class="flex-column text-center">
+                            <p>Oct 09, 2019 - Oct 11, 2019</p>
                           </div>
                         </div>
-                        <div
-                          class="d-flex flex-row"
-                          style="margin-top: 8px; margin-bottom: 8px;"
-                        >
-                          <div class="d-flex flex-column flex-fill">
-                            <div>
-                              <strong class="cost-blue">$202,212.31</strong>
-                            </div>
+                        <div class="d-flex flex-row" style="margin-top: 14px;">
+                          <div class="flex-column flex-fill text-center">
+                            <strong class="cost-blue">$202,212.31</strong>
                           </div>
-                          <div class="d-flex flex-column flex-fill">
-                            <div>
-                              <strong class="cost-green"
-                                >Target: $505,212</strong
-                              >
-                            </div>
-                          </div>
-                          <div class="d-flex flex-column flex-fill">
-                            <div>
-                              <strong class="cost-red">$202,212.31</strong>
-                            </div>
+                          <div class="flex-column flex-fill text-center">
+                            <strong class="cost-red">$202,212.31</strong>
                           </div>
                         </div>
                       </div>
@@ -725,45 +762,35 @@
 
                     <div
                       class="d-flex flex-row employe_content_border sub_initiative_details"
+                      ondragstart="dragStart(event)"
+                      draggable="true"
+                      id="chartTextType"
                     >
-                      <div class="d-flex flex-column flex-fill profile_content">
-                        <div class="d-flex flex-row">
-                          <div class="flex-column">
-                            <h6>
+                      <div
+                        class="flex-column flex-fill profile_content"
+                        style="padding: 10px 0;"
+                      >
+                        <div class="flex-row">
+                          <div class="flex-column text-center">
+                            <h4>
                               $ Revenue
-                            </h6>
+                            </h4>
                           </div>
                         </div>
-                        <div class="d-flex flex-row">
-                          <div class="d-flex flex-column">
-                            <div>
-                              <strong>Oct 09, 2019 - Oct 11, 2019</strong>
-                            </div>
+                        <div class="flex-row">
+                          <div class="flex-column text-center">
+                            <p>Oct 09, 2019 - Oct 11, 2019</p>
                           </div>
                         </div>
-                        <div
-                          class="d-flex flex-row"
-                          style="margin-top: 8px; margin-bottom: 8px;"
-                        >
-                          <div class="d-flex flex-column flex-fill">
-                            <div>
-                              <strong class="cost-blue">$202,212.31</strong>
-                            </div>
+                        <div class="d-flex flex-row" style="margin-top: 14px;">
+                          <div class="flex-column flex-fill text-center">
+                            <strong class="cost-blue">$202,212.31</strong>
                           </div>
-                          <div class="d-flex flex-column flex-fill">
-                            <div>
-                              <strong class="cost-green"
-                                >Target: $505,212</strong
-                              >
-                            </div>
-                          </div>
-                          <div class="d-flex flex-column flex-fill">
-                            <div>
-                              <img
-                                src="../organisation/images/Bubble.png"
-                                alt="Bubble Chart"
-                              />
-                            </div>
+                          <div class="flex-column flex-fill text-center">
+                            <img
+                              src="../organisation/images/Bubble.png"
+                              alt="Bubble Chart"
+                            />
                           </div>
                         </div>
                       </div>
@@ -820,7 +847,7 @@
                 <tr>
                   <th>
                     Data Fields
-                    <div class="float-right focused pull-right">
+                    <div class="focused pull-right">
                       <button
                         onclick="action('action_table')"
                         class="form-control rounded-circle"
@@ -833,18 +860,16 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>
+                  <td style="text-align: left;">
                     <div class="row">
-                      <div class="form-group col-md-11">
-                        <label for="" style="text-align: left;"
-                          >Display Name</label
-                        >
+                      <div class="form-group col-md-10">
+                        <label for="">Display Name</label>
                         <input
                           type="text"
                           class="form-control browser-default"
                         />
                       </div>
-                      <div class="form-group col-md-1">
+                      <div class="form-group col-md-2">
                         <label
                           for="sub_initative_progress"
                           style="text-align: left;"
@@ -853,6 +878,39 @@
                         <input
                           type="color"
                           style="padding: 0;"
+                          class="form-control browser-default"
+                        />
+                      </div>
+
+                      <div class="form-group col-md-6">
+                        <label for="">Formula</label>
+                        <input
+                          type="text"
+                          class="form-control browser-default"
+                        />
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="">Axis</label>
+                        <select class="form-control browser-default">
+                          <option value="x-Axis">x-Axis</option>
+                          <option value="y-Axis">y-Axis</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group col-md-6">
+                        <label for="">Type</label>
+                        <select class="form-control browser-default">
+                          <option value="Actual">Actual</option>
+                          <option value="Target">Target</option>
+                          <option value="Budget">Budget</option>
+                          <option value="Forecast">Forecast</option>
+                          <option value="Gap">Gap</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="">Period</label>
+                        <input
+                          type="text"
                           class="form-control browser-default"
                         />
                       </div>
@@ -892,6 +950,137 @@
         </div>
 
         <div
+          class="row row-padding m-0 text_type"
+          id="typeText"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
+          <!-- Text Type -->
+          <div class="col-md-3 select-toggle">
+            <div class="card text_type_card">
+              <div class="row" style="padding: 20px 8px;">
+                <div class="col-12 text-center" style="margin-bottom: 6px;">
+                  <h4>
+                    $ Revenue
+                    <span class="pull-right">
+                      <ul class="header-dropdown m-r--2">
+                        <li class="dropdown">
+                          <a
+                            href="#"
+                            onclick="return false;"
+                            class="dropdown-toggle"
+                            data-toggle="dropdown"
+                            role="button"
+                            aria-haspopup="true"
+                            aria-expanded="true"
+                          >
+                            <i class="material-icons">more_vert</i>
+                          </a>
+                          <ul
+                            class="dropdown-menu pull-right"
+                            x-placement="bottom-start"
+                            style="
+                              position: absolute;
+                              will-change: transform;
+                              top: 0px;
+                              left: 0px;
+                              transform: translate3d(0px, 24px, 0px);
+                            "
+                          >
+                            <li>
+                              <a
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#chart_setting"
+                                onclick="return false;"
+                                >Settings</a
+                              >
+                            </li>
+                            <li>
+                              <a href="#" onclick="return false;">Delete</a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </span>
+                  </h4>
+                  <p>20 Oct, 2019 - 21 Oct, 2020</p>
+                </div>
+                <div class="col-6 cost-blue">
+                  $202,212.31
+                </div>
+                <div class="col-6 cost-red">
+                  $202,212.31
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 select-toggle">
+            <div class="card text_type_card">
+              <div class="row" style="padding: 20px 8px;">
+                <div class="col-12 text-center" style="margin-bottom: 6px;">
+                  <h4>
+                    $ Revenue
+                    <span class="pull-right">
+                      <ul class="header-dropdown m-r--2">
+                        <li class="dropdown">
+                          <a
+                            href="#"
+                            onclick="return false;"
+                            class="dropdown-toggle"
+                            data-toggle="dropdown"
+                            role="button"
+                            aria-haspopup="true"
+                            aria-expanded="true"
+                          >
+                            <i class="material-icons">more_vert</i>
+                          </a>
+                          <ul
+                            class="dropdown-menu pull-right"
+                            x-placement="bottom-start"
+                            style="
+                              position: absolute;
+                              will-change: transform;
+                              top: 0px;
+                              left: 0px;
+                              transform: translate3d(0px, 24px, 0px);
+                            "
+                          >
+                            <li>
+                              <a
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#chart_setting"
+                                onclick="return false;"
+                                >Settings</a
+                              >
+                            </li>
+                            <li>
+                              <a href="#" onclick="return false;">Delete</a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </span>
+                  </h4>
+                  <p>20 Oct, 2019 - 21 Oct, 2020</p>
+                </div>
+                <div class="col-6 cost-blue">
+                  $202,212.31
+                </div>
+                <div class="col-6 cost-red">
+                  <img
+                    src="../organisation/images/Bubble.png"
+                    alt="Bubble Chart"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
           class="row row-padding m-0"
           id="dashboard-body"
           ondrop="drop(event)"
@@ -900,8 +1089,8 @@
           <!---------Chart-------->
           <div class="col-md-6 select-toggle chart sub_initiatives">
             <div class="card">
-              <div class="header d-flex flex-row">
-                <h5 class="prob d-flex flex-fill_47">
+              <div class="header flex-row">
+                <h5 class="prob flex-fill_47">
                   <strong
                     class="editableTxt1"
                     onkeypress="return (this.innerText.length <= 25)"
@@ -909,25 +1098,6 @@
                     >Chart</strong
                   >
                 </h5>
-                <!-- <div class="form-group kpi_create_initives mb-0">
-                  <select
-                    id="chart-selection"
-                    name="sub_initative_desc"
-                    class="mr-4"
-                  >
-                    <option value="1">Standard Chart</option>
-                    <option value="2">Bar Chart</option>
-                    <option value="3">Line Chart</option>
-                    <option value="4">Bar-Line Chart</option>
-                    <option value="5">Pie Chart</option>
-                    <option value="6">Area Chart</option>
-                    <option value="7">Radar Chart</option>
-                    <option value="8">Polar Chart</option>
-                    <option value="9">Waterfall Chart</option>
-                    <option value="10">Risk Chart</option>
-                    <option value="11">Gantt Chart</option>
-                  </select>
-                </div> -->
                 <ul class="header-dropdown m-r--2">
                   <li class="dropdown m-t--10">
                     <a
@@ -975,201 +1145,11 @@
             </div>
           </div>
 
-          <!-- Text Type -->
-          <div class="col-md-6 select-toggle myinitiative sub_initiatives">
-            <div class="card" style="height: 150px !important;">
-              <div class="header d-flex flex-row">
-                <h5 class="prob d-flex flex-fill">
-                  <strong
-                    class="editableTxt1"
-                    onkeypress="return (this.innerText.length <= 25)"
-                    editable="true"
-                    >Text Type</strong
-                  >
-                </h5>
-                <ul class="header-dropdown m-r--2 d-flex">
-                  <li class="dropdown m-t--10">
-                    <a
-                      href="#"
-                      onclick="return false;"
-                      class="dropdown-toggle"
-                      data-toggle="dropdown"
-                      role="button"
-                      aria-haspopup="true"
-                      aria-expanded="true"
-                    >
-                      <i class="material-icons">more_vert</i>
-                    </a>
-                    <ul
-                      class="dropdown-menu pull-right"
-                      x-placement="bottom-start"
-                      style="
-                        position: absolute;
-                        will-change: transform;
-                        top: 0px;
-                        left: 0px;
-                        transform: translate3d(0px, 24px, 0px);
-                      "
-                    >
-                      <li>
-                        <a
-                          href="#"
-                          data-toggle="modal"
-                          data-target=".sub_activitie_view_popup"
-                          onclick="return false;"
-                          >Settings</a
-                        >
-                      </li>
-                      <li>
-                        <a href="#" onclick="return false;" class="delete-row"
-                          >Delete</a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-              <div
-                class="d-flex flex-column employee_div_body_box activities-box text_type"
-              >
-                <div
-                  class="d-flex flex-row employe_content_border sub_initiative_details"
-                >
-                  <div class="d-flex flex-column flex-fill profile_content">
-                    <div class="d-flex flex-row">
-                      <div class="flex-column">
-                        <h6>
-                          $ Revenue
-                        </h6>
-                      </div>
-                    </div>
-                    <div class="d-flex flex-row">
-                      <div class="d-flex flex-column">
-                        <div><strong>Oct 09, 2019 - Oct 11, 2019</strong></div>
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex flex-row"
-                      style="margin-top: 8px; margin-bottom: 8px;"
-                    >
-                      <div class="d-flex flex-column flex-fill">
-                        <div>
-                          <strong class="cost-blue">$202,212.31</strong>
-                        </div>
-                      </div>
-                      <div class="d-flex flex-column flex-fill">
-                        <div>
-                          <strong class="cost-green">Target: $505,212</strong>
-                        </div>
-                      </div>
-                      <div class="d-flex flex-column flex-fill">
-                        <div><strong class="cost-red">$202,212.31</strong></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card" style="height: 150px !important;">
-              <div class="header d-flex flex-row">
-                <h5 class="prob d-flex flex-fill">
-                  <strong
-                    class="editableTxt1"
-                    onkeypress="return (this.innerText.length <= 25)"
-                    editable="true"
-                    >Text Type</strong
-                  >
-                </h5>
-                <ul class="header-dropdown m-r--2 d-flex">
-                  <li class="dropdown m-t--10">
-                    <a
-                      href="#"
-                      onclick="return false;"
-                      class="dropdown-toggle"
-                      data-toggle="dropdown"
-                      role="button"
-                      aria-haspopup="true"
-                      aria-expanded="true"
-                    >
-                      <i class="material-icons">more_vert</i>
-                    </a>
-                    <ul
-                      class="dropdown-menu pull-right"
-                      x-placement="bottom-start"
-                      style="
-                        position: absolute;
-                        will-change: transform;
-                        top: 0px;
-                        left: 0px;
-                        transform: translate3d(0px, 24px, 0px);
-                      "
-                    >
-                      <li>
-                        <a
-                          href="#"
-                          data-toggle="modal"
-                          data-target=".sub_activitie_view_popup"
-                          onclick="return false;"
-                          >Settings</a
-                        >
-                      </li>
-                      <li>
-                        <a href="#" onclick="return false;" class="delete-row"
-                          >Delete</a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-              <div
-                class="d-flex flex-column employee_div_body_box activities-box"
-              >
-                <div
-                  class="d-flex flex-row employe_content_border sub_initiative_details"
-                >
-                  <div class="d-flex flex-column flex-fill profile_content">
-                    <div class="d-flex flex-row">
-                      <div class="flex-column">
-                        <h6>
-                          $ Revenue
-                        </h6>
-                      </div>
-                    </div>
-                    <div class="d-flex flex-row">
-                      <div class="d-flex flex-column">
-                        <div><strong>Oct 09, 2019 - Oct 11, 2019</strong></div>
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex flex-row"
-                      style="margin-top: 8px; margin-bottom: 8px;"
-                    >
-                      <div class="d-flex flex-column flex-fill">
-                        <div>
-                          <strong class="cost-blue">$202,212.31</strong>
-                        </div>
-                      </div>
-                      <div class="d-flex flex-column flex-fill">
-                        <div>
-                          <strong class="cost-green">Target: $505,212</strong>
-                        </div>
-                      </div>
-                      <div class="d-flex flex-column flex-fill">
-                        <div><strong class="cost-red">$202,212.31</strong></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
           <!-- Data Table -->
           <div class="col-md-6 select-toggle myinitiative sub_initiatives">
             <div class="card">
-              <div class="header d-flex flex-row">
-                <h5 class="prob d-flex flex-fill">
+              <div class="header flex-row">
+                <h5 class="prob flex-fill">
                   <strong
                     class="editableTxt1"
                     onkeypress="return (this.innerText.length <= 25)"
@@ -1228,8 +1208,8 @@
           <!-- Maps -->
           <div class="col-md-6 select-toggle myinitiative sub_initiatives">
             <div class="card">
-              <div class="header d-flex flex-row">
-                <h5 class="prob d-flex flex-fill">
+              <div class="header flex-row">
+                <h5 class="prob flex-fill">
                   <strong
                     class="editableTxt1"
                     onkeypress="return (this.innerText.length <= 25)"
@@ -1329,7 +1309,7 @@
       }
 
       function dragStart(event) {
-        event.dataTransfer.setData("chartType", event.target.id);
+        event.dataTransfer.setData("textType", event.target.id);
       }
 
       function allowDrop(event) {
@@ -1338,8 +1318,13 @@
 
       function drop(event) {
         event.preventDefault();
-        var data = event.dataTransfer.getData("chartType");
-        $("#dashboard-body").append(``);
+        var data = event.dataTransfer.getData("textType");
+        if (data == "normalTextType") {
+          $("#typeText").append(`Hellow World`);
+        }
+        if (data == "chartTextType") {
+          $("#typeText").append(`Hello World`);
+        }
       }
 
       $(document).ready(function () {
