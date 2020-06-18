@@ -113,16 +113,6 @@
         height: auto;
       }
 
-      .text-type img {
-        width: 100%;
-        height: auto;
-      }
-
-      .text_type_mini img {
-        width: 18px;
-        height: auto;
-      }
-
       center {
         cursor: pointer;
       }
@@ -134,69 +124,157 @@
         border-radius: 4px;
       }
 
-      .text_type_mini h4 {
-        font-size: 14px;
-        font-weight: 500;
-        color: #4f4e4e;
+      .bg-blue {
+        background: linear-gradient(270deg, #10316b 0%, #4574c6 98.08%);
       }
 
-      .text_type_mini p {
+      .bg-green {
+        background: linear-gradient(270deg, #1e6262 0%, #09a2a2 98.08%);
+      }
+
+      .bg-purple {
+        background: linear-gradient(90deg, #8b4fcb 0%, #581b98 98.44%);
+      }
+
+      .bg-pink {
+        background: linear-gradient(270.12deg, #fd3270 0.05%, #fd5c8d 98.04%);
+      }
+
+      .text-type-card {
+        height: 133px;
+        box-shadow: 0px 0px 16px rgba(21, 21, 23, 0.14);
+        border-radius: 16px !important;
+      }
+
+      .text-type-card .row {
+        padding: 12px 18px;
+      }
+
+      .text-type-card .text-type-period {
         font-size: 10px;
-        color: #848484;
-      }
-
-      .text_type_mini .cost-blue {
-        color: #0f7fff;
-        font-size: 12px;
-        text-align: center;
-      }
-
-      .text_type_mini .cost-red {
-        color: #ff0f2f;
-        font-size: 12px;
-        text-align: center;
-      }
-
-      .text_type h4 {
-        font-size: 20px;
+        color: #fff;
         font-weight: 500;
-        color: #4f4e4e;
+        float: right;
+        margin-right: -6%;
       }
 
-      .text_type p {
-        font-size: 14px;
-        color: #848484;
+      .text-type-card .header-dropdown i {
+        font-size: 12px;
+        color: #fff;
+        text-align: right;
       }
 
-      .cost-blue {
-        color: #0f7fff;
+      .text-type-card .header-dropdown i:hover {
+        color: #fff !important;
+      }
+
+      .text-type-card h4 {
         font-size: 18px;
-        text-align: center;
+        font-weight: 500;
+        color: #fff;
       }
 
-      .cost-red {
-        color: #ff0f2f;
+      .text-type-card strong {
+        font-weight: bold;
         font-size: 18px;
-        text-align: center;
+        color: #ffffff;
       }
 
-      .cost-red img {
-        width: 24px;
+      .text-type-card .text-type-trend {
+        font-weight: 500;
+        font-size: 12px;
+        color: #ffffff;
       }
 
-      .text_type_card {
-        border: 1px solid #e9ecef;
-        border-radius: 14px !important;
-        -webkit-box-shadow: 0px 0px 4px 0px #d8d4d4;
-        -moz-box-shadow: 0px 0px 4px 0px #d8d4d4;
-        -ms-box-shadow: 0px 0px 4px 0px #d8d4d4;
-        box-shadow: 0px 0px 4px 0px #d8d4d4;
+      .text-type-card span img {
+        width: 16px;
+        margin-top: -1%;
+        margin-right: 2%;
+      }
+
+      .text-type-card .card-icon {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: #fff;
+      }
+
+      .text-type-card .card-icon i {
+        font-size: 24px;
+      }
+
+      .text-type-card .card-chart i {
+        font-size: 64px;
+        color: #fff;
+      }
+
+      .text-type-card-mini {
+        height: 94px;
+        box-shadow: 0px 0px 16px rgba(21, 21, 23, 0.14);
+        border-radius: 8px !important;
+      }
+
+      .text-type-card-mini .row {
+        padding: 10px 12px;
+      }
+
+      .text-type-card-mini .text-type-period {
+        font-size: 8px;
+        color: #fff;
+        font-weight: 500;
+        float: right;
+      }
+
+      .text-type-card-mini h4 {
+        font-size: 12px;
+        font-weight: 500;
+        color: #fff;
+      }
+
+      .text-type-card-mini strong {
+        font-weight: bold;
+        font-size: 12px;
+        color: #ffffff;
+      }
+
+      .text-type-card-mini .text-type-trend {
+        font-weight: 500;
+        font-size: 10px;
+        color: #ffffff;
+      }
+
+      .text-type-card-mini span img {
+        width: 14px;
+        margin-top: -1%;
+        margin-right: 2%;
+      }
+
+      .text-type-card-mini .card-icon {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: #fff;
+      }
+
+      .text-type-card-mini .card-icon i {
+        font-size: 18px;
+      }
+
+      .text-type-card-mini .card-chart i {
+        font-size: 40px;
+        color: #fff;
       }
 
       .sub_initiatives .header {
         background: #ffffff !important;
-        border-top-left-radius: 14px !important;
-        border-top-right-radius: 14px !important;
+        border-top-left-radius: 16px !important;
+        border-top-right-radius: 16px !important;
         color: #565656 !important;
       }
 
@@ -205,11 +283,12 @@
       }
 
       .sub_initiatives .card {
-        border-radius: 14px !important;
+        border-radius: 16px !important;
       }
 
       .card .header .header-dropdown i {
         color: #565656 !important;
+        font-size: 18px;
       }
     </style>
   </head>
@@ -726,35 +805,56 @@
                   class="row widget Text"
                   style="padding: 2px; display: none; padding-top: 8px;"
                 >
-                  <div class="col-12 form-group text_type_mini">
+                  <div class="col-12 form-group">
                     <div
                       class="d-flex flex-row employe_content_border sub_initiative_details"
+                      style="padding: 0; border-radius: 8px;"
                       ondragstart="dragStart(event)"
                       draggable="true"
-                      id="normalTextType"
+                      id="chartTextType"
                     >
                       <div
                         class="flex-column flex-fill profile_content"
-                        style="padding: 10px 0;"
+                        style="padding: 0;"
                       >
-                        <div class="flex-row">
-                          <div class="flex-column text-center">
-                            <h4>
-                              $ Revenue
-                            </h4>
-                          </div>
-                        </div>
-                        <div class="flex-row">
-                          <div class="flex-column text-center">
-                            <p>Oct 09, 2019 - Oct 11, 2019</p>
-                          </div>
-                        </div>
-                        <div class="d-flex flex-row" style="margin-top: 14px;">
-                          <div class="flex-column flex-fill text-center">
-                            <strong class="cost-blue">$202,212.31</strong>
-                          </div>
-                          <div class="flex-column flex-fill text-center">
-                            <strong class="cost-red">$202,212.31</strong>
+                        <div class="text-type-card-mini bg-blue">
+                          <div class="row">
+                            <div class="col-12">
+                              <span class="text-type-period">
+                                Oct, 2019
+                              </span>
+                            </div>
+                            <div
+                              class="col-12"
+                              style="margin-bottom: 6%; margin-top: -2%;"
+                            >
+                              <h4>Total Revenue</h4>
+                              <strong>$ 202.35 M</strong>
+                            </div>
+                            <div class="col-12">
+                              <span>
+                                <img
+                                  src="../organisation/images/icon/up.png"
+                                  alt="Trend Low"
+                                />
+                              </span>
+                              <span class="text-type-trend">$ 202.36 M</span>
+                            </div>
+                            <div
+                              class="col-12"
+                              style="
+                                position: absolute;
+                                margin-top: 10%;
+                                left: 60%;
+                              "
+                            >
+                              <div class="card-icon">
+                                <i
+                                  class="fas fa-dollar-sign"
+                                  style="color: #10316b;"
+                                ></i>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -762,35 +862,365 @@
 
                     <div
                       class="d-flex flex-row employe_content_border sub_initiative_details"
+                      style="padding: 0; border-radius: 8px;"
                       ondragstart="dragStart(event)"
                       draggable="true"
                       id="chartTextType"
                     >
                       <div
                         class="flex-column flex-fill profile_content"
-                        style="padding: 10px 0;"
+                        style="padding: 0;"
                       >
-                        <div class="flex-row">
-                          <div class="flex-column text-center">
-                            <h4>
-                              $ Revenue
-                            </h4>
+                        <div class="text-type-card-mini bg-green">
+                          <div class="row">
+                            <div class="col-12">
+                              <span class="text-type-period">
+                                Oct, 2019
+                              </span>
+                            </div>
+                            <div
+                              class="col-12"
+                              style="margin-bottom: 6%; margin-top: -2%;"
+                            >
+                              <h4>Total Revenue</h4>
+                              <strong>$ 202.35 M</strong>
+                            </div>
+                            <div class="col-12">
+                              <span>
+                                <img
+                                  src="../organisation/images/icon/up.png"
+                                  alt="Trend Low"
+                                />
+                              </span>
+                              <span class="text-type-trend">$ 202.36 M</span>
+                            </div>
+                            <div
+                              class="col-12"
+                              style="
+                                position: absolute;
+                                margin-top: 10%;
+                                left: 60%;
+                              "
+                            >
+                              <div class="card-icon">
+                                <i
+                                  class="fas fa-dollar-sign"
+                                  style="color: #1e6262;"
+                                ></i>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                        <div class="flex-row">
-                          <div class="flex-column text-center">
-                            <p>Oct 09, 2019 - Oct 11, 2019</p>
+                      </div>
+                    </div>
+
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                      style="padding: 0; border-radius: 8px;"
+                      ondragstart="dragStart(event)"
+                      draggable="true"
+                      id="chartTextType"
+                    >
+                      <div
+                        class="flex-column flex-fill profile_content"
+                        style="padding: 0;"
+                      >
+                        <div class="text-type-card-mini bg-purple">
+                          <div class="row">
+                            <div class="col-12">
+                              <span class="text-type-period">
+                                Oct, 2019
+                              </span>
+                            </div>
+                            <div
+                              class="col-12"
+                              style="margin-bottom: 6%; margin-top: -2%;"
+                            >
+                              <h4>Total Revenue</h4>
+                              <strong>$ 202.35 M</strong>
+                            </div>
+                            <div class="col-12">
+                              <span>
+                                <img
+                                  src="../organisation/images/icon/up.png"
+                                  alt="Trend Low"
+                                />
+                              </span>
+                              <span class="text-type-trend">$ 202.36 M</span>
+                            </div>
+                            <div
+                              class="col-12"
+                              style="
+                                position: absolute;
+                                margin-top: 10%;
+                                left: 60%;
+                              "
+                            >
+                              <div class="card-icon">
+                                <i
+                                  class="fas fa-dollar-sign"
+                                  style="color: #581b98;"
+                                ></i>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                        <div class="d-flex flex-row" style="margin-top: 14px;">
-                          <div class="flex-column flex-fill text-center">
-                            <strong class="cost-blue">$202,212.31</strong>
+                      </div>
+                    </div>
+
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                      style="padding: 0; border-radius: 8px;"
+                      ondragstart="dragStart(event)"
+                      draggable="true"
+                      id="chartTextType"
+                    >
+                      <div
+                        class="flex-column flex-fill profile_content"
+                        style="padding: 0;"
+                      >
+                        <div class="text-type-card-mini bg-pink">
+                          <div class="row">
+                            <div class="col-12">
+                              <span class="text-type-period">
+                                Oct, 2019
+                              </span>
+                            </div>
+                            <div
+                              class="col-12"
+                              style="margin-bottom: 6%; margin-top: -2%;"
+                            >
+                              <h4>Total Revenue</h4>
+                              <strong>$ 202.35 M</strong>
+                            </div>
+                            <div class="col-12">
+                              <span>
+                                <img
+                                  src="../organisation/images/icon/up.png"
+                                  alt="Trend Low"
+                                />
+                              </span>
+                              <span class="text-type-trend">$ 202.36 M</span>
+                            </div>
+                            <div
+                              class="col-12"
+                              style="
+                                position: absolute;
+                                margin-top: 10%;
+                                left: 60%;
+                              "
+                            >
+                              <div class="card-icon">
+                                <i
+                                  class="fas fa-dollar-sign"
+                                  style="color: #fd3270;"
+                                ></i>
+                              </div>
+                            </div>
                           </div>
-                          <div class="flex-column flex-fill text-center">
-                            <img
-                              src="../organisation/images/Bubble.png"
-                              alt="Bubble Chart"
-                            />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                      style="padding: 0; border-radius: 8px;"
+                      ondragstart="dragStart(event)"
+                      draggable="true"
+                      id="chartTextType"
+                    >
+                      <div
+                        class="flex-column flex-fill profile_content"
+                        style="padding: 0;"
+                      >
+                        <div class="text-type-card-mini bg-blue">
+                          <div class="row">
+                            <div class="col-12">
+                              <span class="text-type-period">
+                                Oct, 2019
+                              </span>
+                            </div>
+                            <div
+                              class="col-12"
+                              style="margin-bottom: 6%; margin-top: -2%;"
+                            >
+                              <h4>Total Revenue</h4>
+                              <strong>$ 202.35 M</strong>
+                            </div>
+                            <div class="col-12">
+                              <span>
+                                <img
+                                  src="../organisation/images/icon/up.png"
+                                  alt="Trend Low"
+                                />
+                              </span>
+                              <span class="text-type-trend">$ 202.36 M</span>
+                            </div>
+                            <div
+                              class="col-12"
+                              style="
+                                position: absolute;
+                                margin-top: 10%;
+                                left: 60%;
+                              "
+                            >
+                              <div class="card-chart">
+                                <i class="fas fa-chart-pie"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                      style="padding: 0; border-radius: 8px;"
+                      ondragstart="dragStart(event)"
+                      draggable="true"
+                      id="chartTextType"
+                    >
+                      <div
+                        class="flex-column flex-fill profile_content"
+                        style="padding: 0;"
+                      >
+                        <div class="text-type-card-mini bg-green">
+                          <div class="row">
+                            <div class="col-12">
+                              <span class="text-type-period">
+                                Oct, 2019
+                              </span>
+                            </div>
+                            <div
+                              class="col-12"
+                              style="margin-bottom: 6%; margin-top: -2%;"
+                            >
+                              <h4>Total Revenue</h4>
+                              <strong>$ 202.35 M</strong>
+                            </div>
+                            <div class="col-12">
+                              <span>
+                                <img
+                                  src="../organisation/images/icon/up.png"
+                                  alt="Trend Low"
+                                />
+                              </span>
+                              <span class="text-type-trend">$ 202.36 M</span>
+                            </div>
+                            <div
+                              class="col-12"
+                              style="
+                                position: absolute;
+                                margin-top: 10%;
+                                left: 60%;
+                              "
+                            >
+                              <div class="card-chart">
+                                <i class="fas fa-chart-pie"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                      style="padding: 0; border-radius: 8px;"
+                      ondragstart="dragStart(event)"
+                      draggable="true"
+                      id="chartTextType"
+                    >
+                      <div
+                        class="flex-column flex-fill profile_content"
+                        style="padding: 0;"
+                      >
+                        <div class="text-type-card-mini bg-purple">
+                          <div class="row">
+                            <div class="col-12">
+                              <span class="text-type-period">
+                                Oct, 2019
+                              </span>
+                            </div>
+                            <div
+                              class="col-12"
+                              style="margin-bottom: 6%; margin-top: -2%;"
+                            >
+                              <h4>Total Revenue</h4>
+                              <strong>$ 202.35 M</strong>
+                            </div>
+                            <div class="col-12">
+                              <span>
+                                <img
+                                  src="../organisation/images/icon/up.png"
+                                  alt="Trend Low"
+                                />
+                              </span>
+                              <span class="text-type-trend">$ 202.36 M</span>
+                            </div>
+                            <div
+                              class="col-12"
+                              style="
+                                position: absolute;
+                                margin-top: 10%;
+                                left: 60%;
+                              "
+                            >
+                              <div class="card-chart">
+                                <i class="fas fa-chart-pie"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                      style="padding: 0; border-radius: 8px;"
+                      ondragstart="dragStart(event)"
+                      draggable="true"
+                      id="chartTextType"
+                    >
+                      <div
+                        class="flex-column flex-fill profile_content"
+                        style="padding: 0;"
+                      >
+                        <div class="text-type-card-mini bg-pink">
+                          <div class="row">
+                            <div class="col-12">
+                              <span class="text-type-period">
+                                Oct, 2019
+                              </span>
+                            </div>
+                            <div
+                              class="col-12"
+                              style="margin-bottom: 6%; margin-top: -2%;"
+                            >
+                              <h4>Total Revenue</h4>
+                              <strong>$ 202.35 M</strong>
+                            </div>
+                            <div class="col-12">
+                              <span>
+                                <img
+                                  src="../organisation/images/icon/up.png"
+                                  alt="Trend Low"
+                                />
+                              </span>
+                              <span class="text-type-trend">$ 202.36 M</span>
+                            </div>
+                            <div
+                              class="col-12"
+                              style="
+                                position: absolute;
+                                margin-top: 10%;
+                                left: 60%;
+                              "
+                            >
+                              <div class="card-chart">
+                                <i class="fas fa-chart-pie"></i>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -823,6 +1253,72 @@
       <!--#START Data Collection Form -->
     </div>
     <!-- #END# Left Sidebar -->
+
+    <!-- Text Setting -->
+    <div
+      class="modal fade"
+      id="text_setting"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Text Settings</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="form-group col-md-9">
+                <label for="">Display Name</label>
+                <input type="text" class="form-control browser-default" />
+              </div>
+              <div class="form-group col-md-3">
+                <label for="sub_initative_progress" style="text-align: left;"
+                  >Card Color</label
+                >
+                <input
+                  type="color"
+                  style="padding: 0;"
+                  class="form-control browser-default"
+                />
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="">Card Type</label>
+                <select class="form-control browser-default">
+                  <option value="Text">Text</option>
+                  <option value="Chart">Chart</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="">Select Icon</label>
+                <select class="form-control browser-default">
+                  <option value="$ Dollar">$ Dollar</option>
+                  <option value="% Percentage">% Percentage</option>
+                  <option value="# Number"># Number</option>
+                  <option value="* Graph">* Graph</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="">Sum ($ Revenue)</label>
+                <input type="text" class="form-control browser-default" />
+              </div>
+              <div class="form-group col-md-6">
+                <label for="">Period</label>
+                <input type="text" class="form-control browser-default" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Text Setting -->
 
     <!-- Chart Setting -->
     <div
@@ -957,123 +1453,370 @@
         >
           <!-- Text Type -->
           <div class="col-md-3 select-toggle">
-            <div class="card text_type_card">
-              <div class="row" style="padding: 20px 8px;">
-                <div class="col-12 text-center" style="margin-bottom: 6px;">
-                  <h4>
-                    $ Revenue
-                    <span class="pull-right">
-                      <ul class="header-dropdown m-r--2">
-                        <li class="dropdown">
+            <div class="card text-type-card bg-blue">
+              <div class="row">
+                <div class="col-10">
+                  <span class="text-type-period">
+                    Oct, 2019
+                  </span>
+                </div>
+                <div class="col-2">
+                  <ul class="header-dropdown">
+                    <li class="dropdown">
+                      <a
+                        href="#"
+                        onclick="return false;"
+                        class="dropdown-toggle"
+                        data-toggle="dropdown"
+                        role="button"
+                        aria-haspopup="true"
+                        aria-expanded="true"
+                      >
+                        <i class="fas fa-ellipsis-h"></i>
+                      </a>
+                      <ul
+                        class="dropdown-menu pull-right"
+                        x-placement="bottom-start"
+                        style="
+                          position: absolute;
+                          will-change: transform;
+                          top: 0px;
+                          left: 0px;
+                          transform: translate3d(0px, 24px, 0px);
+                        "
+                      >
+                        <li>
                           <a
                             href="#"
+                            data-toggle="modal"
+                            data-target="#text_setting"
                             onclick="return false;"
-                            class="dropdown-toggle"
-                            data-toggle="dropdown"
-                            role="button"
-                            aria-haspopup="true"
-                            aria-expanded="true"
+                            >Settings</a
                           >
-                            <i class="material-icons">more_vert</i>
-                          </a>
-                          <ul
-                            class="dropdown-menu pull-right"
-                            x-placement="bottom-start"
-                            style="
-                              position: absolute;
-                              will-change: transform;
-                              top: 0px;
-                              left: 0px;
-                              transform: translate3d(0px, 24px, 0px);
-                            "
-                          >
-                            <li>
-                              <a
-                                href="#"
-                                data-toggle="modal"
-                                data-target="#chart_setting"
-                                onclick="return false;"
-                                >Settings</a
-                              >
-                            </li>
-                            <li>
-                              <a href="#" onclick="return false;">Delete</a>
-                            </li>
-                          </ul>
+                        </li>
+                        <li>
+                          <a href="#" onclick="return false;">Delete</a>
                         </li>
                       </ul>
-                    </span>
-                  </h4>
-                  <p>20 Oct, 2019 - 21 Oct, 2020</p>
+                    </li>
+                  </ul>
                 </div>
-                <div class="col-6 cost-blue">
-                  $202,212.31
+                <div class="col-12" style="margin-bottom: 6%; margin-top: -6%;">
+                  <h4>Total Revenue</h4>
+                  <strong>$ 202.35 M</strong>
                 </div>
-                <div class="col-6 cost-red">
-                  $202,212.31
+                <div class="col-12">
+                  <span>
+                    <img
+                      src="../organisation/images/icon/down.png"
+                      alt="Trend Low"
+                    />
+                  </span>
+                  <span class="text-type-trend">$ 202.36 M</span>
+                </div>
+                <div
+                  class="col-12"
+                  style="position: absolute; margin-top: 10%; left: 60%;"
+                >
+                  <div class="card-icon">
+                    <i class="fas fa-dollar-sign" style="color: #10316b;"></i>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="col-md-3 select-toggle">
-            <div class="card text_type_card">
-              <div class="row" style="padding: 20px 8px;">
-                <div class="col-12 text-center" style="margin-bottom: 6px;">
-                  <h4>
-                    $ Revenue
-                    <span class="pull-right">
-                      <ul class="header-dropdown m-r--2">
-                        <li class="dropdown">
+            <div class="card text-type-card bg-green">
+              <div class="row">
+                <div class="col-10">
+                  <span class="text-type-period">
+                    Oct, 2019
+                  </span>
+                </div>
+                <div class="col-2">
+                  <ul class="header-dropdown">
+                    <li class="dropdown">
+                      <a
+                        href="#"
+                        onclick="return false;"
+                        class="dropdown-toggle"
+                        data-toggle="dropdown"
+                        role="button"
+                        aria-haspopup="true"
+                        aria-expanded="true"
+                      >
+                        <i class="fas fa-ellipsis-h"></i>
+                      </a>
+                      <ul
+                        class="dropdown-menu pull-right"
+                        x-placement="bottom-start"
+                        style="
+                          position: absolute;
+                          will-change: transform;
+                          top: 0px;
+                          left: 0px;
+                          transform: translate3d(0px, 24px, 0px);
+                        "
+                      >
+                        <li>
                           <a
                             href="#"
+                            data-toggle="modal"
+                            data-target="#chart_setting"
                             onclick="return false;"
-                            class="dropdown-toggle"
-                            data-toggle="dropdown"
-                            role="button"
-                            aria-haspopup="true"
-                            aria-expanded="true"
+                            >Settings</a
                           >
-                            <i class="material-icons">more_vert</i>
-                          </a>
-                          <ul
-                            class="dropdown-menu pull-right"
-                            x-placement="bottom-start"
-                            style="
-                              position: absolute;
-                              will-change: transform;
-                              top: 0px;
-                              left: 0px;
-                              transform: translate3d(0px, 24px, 0px);
-                            "
-                          >
-                            <li>
-                              <a
-                                href="#"
-                                data-toggle="modal"
-                                data-target="#chart_setting"
-                                onclick="return false;"
-                                >Settings</a
-                              >
-                            </li>
-                            <li>
-                              <a href="#" onclick="return false;">Delete</a>
-                            </li>
-                          </ul>
+                        </li>
+                        <li>
+                          <a href="#" onclick="return false;">Delete</a>
                         </li>
                       </ul>
-                    </span>
-                  </h4>
-                  <p>20 Oct, 2019 - 21 Oct, 2020</p>
+                    </li>
+                  </ul>
                 </div>
-                <div class="col-6 cost-blue">
-                  $202,212.31
+                <div class="col-12" style="margin-bottom: 6%; margin-top: -6%;">
+                  <h4>Total Revenue</h4>
+                  <strong>$ 202.35 M</strong>
                 </div>
-                <div class="col-6 cost-red">
-                  <img
-                    src="../organisation/images/Bubble.png"
-                    alt="Bubble Chart"
-                  />
+                <div class="col-12">
+                  <span>
+                    <img
+                      src="../organisation/images/icon/down.png"
+                      alt="Trend Low"
+                    />
+                  </span>
+                  <span class="text-type-trend">$ 202.36 M</span>
+                </div>
+                <div
+                  class="col-12"
+                  style="position: absolute; margin-top: 10%; left: 60%;"
+                >
+                  <div class="card-icon">
+                    <i class="fas fa-dollar-sign" style="color: #1e6262;"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 select-toggle">
+            <div class="card text-type-card bg-purple">
+              <div class="row">
+                <div class="col-10">
+                  <span class="text-type-period">
+                    Oct, 2019
+                  </span>
+                </div>
+                <div class="col-2">
+                  <ul class="header-dropdown">
+                    <li class="dropdown">
+                      <a
+                        href="#"
+                        onclick="return false;"
+                        class="dropdown-toggle"
+                        data-toggle="dropdown"
+                        role="button"
+                        aria-haspopup="true"
+                        aria-expanded="true"
+                      >
+                        <i class="fas fa-ellipsis-h"></i>
+                      </a>
+                      <ul
+                        class="dropdown-menu pull-right"
+                        x-placement="bottom-start"
+                        style="
+                          position: absolute;
+                          will-change: transform;
+                          top: 0px;
+                          left: 0px;
+                          transform: translate3d(0px, 24px, 0px);
+                        "
+                      >
+                        <li>
+                          <a
+                            href="#"
+                            data-toggle="modal"
+                            data-target="#chart_setting"
+                            onclick="return false;"
+                            >Settings</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" onclick="return false;">Delete</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-12" style="margin-bottom: 6%; margin-top: -6%;">
+                  <h4>Total Revenue</h4>
+                  <strong>$ 202.35 M</strong>
+                </div>
+                <div class="col-12">
+                  <span>
+                    <img
+                      src="../organisation/images/icon/up.png"
+                      alt="Trend Low"
+                    />
+                  </span>
+                  <span class="text-type-trend">$ 202.36 M</span>
+                </div>
+                <div
+                  class="col-12"
+                  style="position: absolute; margin-top: 10%; left: 60%;"
+                >
+                  <div class="card-icon">
+                    <i class="fas fa-dollar-sign" style="color: #581b98;"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 select-toggle">
+            <div class="card text-type-card bg-pink">
+              <div class="row">
+                <div class="col-10">
+                  <span class="text-type-period">
+                    Oct, 2019
+                  </span>
+                </div>
+                <div class="col-2">
+                  <ul class="header-dropdown">
+                    <li class="dropdown">
+                      <a
+                        href="#"
+                        onclick="return false;"
+                        class="dropdown-toggle"
+                        data-toggle="dropdown"
+                        role="button"
+                        aria-haspopup="true"
+                        aria-expanded="true"
+                      >
+                        <i class="fas fa-ellipsis-h"></i>
+                      </a>
+                      <ul
+                        class="dropdown-menu pull-right"
+                        x-placement="bottom-start"
+                        style="
+                          position: absolute;
+                          will-change: transform;
+                          top: 0px;
+                          left: 0px;
+                          transform: translate3d(0px, 24px, 0px);
+                        "
+                      >
+                        <li>
+                          <a
+                            href="#"
+                            data-toggle="modal"
+                            data-target="#chart_setting"
+                            onclick="return false;"
+                            >Settings</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" onclick="return false;">Delete</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-12" style="margin-bottom: 6%; margin-top: -6%;">
+                  <h4>Total Revenue</h4>
+                  <strong>$ 202.35 M</strong>
+                </div>
+                <div class="col-12">
+                  <span>
+                    <img
+                      src="../organisation/images/icon/up.png"
+                      alt="Trend Low"
+                    />
+                  </span>
+                  <span class="text-type-trend">$ 202.36 M</span>
+                </div>
+                <div
+                  class="col-12"
+                  style="position: absolute; margin-top: 10%; left: 60%;"
+                >
+                  <div class="card-icon">
+                    <i class="fas fa-dollar-sign" style="color: #fd3270;"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 select-toggle">
+            <div class="card text-type-card bg-pink">
+              <div class="row">
+                <div class="col-10">
+                  <span class="text-type-period">
+                    Oct, 2019
+                  </span>
+                </div>
+                <div class="col-2">
+                  <ul class="header-dropdown">
+                    <li class="dropdown">
+                      <a
+                        href="#"
+                        onclick="return false;"
+                        class="dropdown-toggle"
+                        data-toggle="dropdown"
+                        role="button"
+                        aria-haspopup="true"
+                        aria-expanded="true"
+                      >
+                        <i class="fas fa-ellipsis-h"></i>
+                      </a>
+                      <ul
+                        class="dropdown-menu pull-right"
+                        x-placement="bottom-start"
+                        style="
+                          position: absolute;
+                          will-change: transform;
+                          top: 0px;
+                          left: 0px;
+                          transform: translate3d(0px, 24px, 0px);
+                        "
+                      >
+                        <li>
+                          <a
+                            href="#"
+                            data-toggle="modal"
+                            data-target="#chart_setting"
+                            onclick="return false;"
+                            >Settings</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" onclick="return false;">Delete</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-12" style="margin-bottom: 6%; margin-top: -6%;">
+                  <h4>Total Revenue</h4>
+                  <strong>$ 202.35 M</strong>
+                </div>
+                <div class="col-12">
+                  <span>
+                    <img
+                      src="../organisation/images/icon/up.png"
+                      alt="Trend Low"
+                    />
+                  </span>
+                  <span class="text-type-trend">$ 202.36 M</span>
+                </div>
+                <div
+                  class="col-12"
+                  style="position: absolute; margin-top: 10%; left: 60%;"
+                >
+                  <div class="card-chart">
+                    <i class="fas fa-chart-pie"></i>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1109,7 +1852,7 @@
                       aria-haspopup="true"
                       aria-expanded="true"
                     >
-                      <i class="material-icons">more_vert</i>
+                      <i class="fas fa-ellipsis-h"></i>
                     </a>
                     <ul
                       class="dropdown-menu pull-right"
@@ -1168,7 +1911,7 @@
                       aria-haspopup="true"
                       aria-expanded="true"
                     >
-                      <i class="material-icons">more_vert</i>
+                      <i class="fas fa-ellipsis-h"></i>
                     </a>
                     <ul
                       class="dropdown-menu pull-right"
@@ -1228,7 +1971,7 @@
                       aria-haspopup="true"
                       aria-expanded="true"
                     >
-                      <i class="material-icons">more_vert</i>
+                      <i class="fas fa-ellipsis-h"></i>
                     </a>
                     <ul
                       class="dropdown-menu pull-right"
