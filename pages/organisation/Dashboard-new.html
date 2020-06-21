@@ -371,10 +371,22 @@
         font-size: 18px;
       }
 
-      .dashboard-table tbody tr td,
       .dashboard-table tbody tr th {
         border: 1px solid #bbbbbb !important;
         padding: 14px 5px 14px 5px;
+        font-size: 13px;
+        color: #fff;
+        background: #565656;
+      }
+
+      .sub_initiatives .dashboard-table tbody tr td {
+        border: 1px solid #bbbbbb !important;
+        padding: 14px 5px 14px 5px !important;
+        font-size: 12px;
+      }
+
+      .sub_initiatives .card .header .prob {
+        font-size: 16px;
       }
     </style>
   </head>
@@ -775,7 +787,7 @@
                       <option value="Chart">Chart</option>
                       <option value="Text">Text</option>
                       <option value="Table">Table</option>
-                      <option value="Maps">Maps</option>
+                      <option value="Map">Map</option>
                     </select>
                   </div>
                 </div>
@@ -1473,6 +1485,62 @@
     </div>
     <!-- END Text Setting -->
 
+    <!-- Chart Period -->
+    <div
+      class="modal fade"
+      id="chart_period"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Chart Period</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="container">
+                  <div
+                    data-bind="
+                    daterangepicker: dateRange,
+                    daterangepickerOptions: {
+                      standalone: true
+                    }
+                    "
+                    style="position: absolute;"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <hr />
+              </div>
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Chart Period -->
+
     <!-- Chart Setting -->
     <div
       class="modal fade"
@@ -1510,7 +1578,30 @@
               <tbody>
                 <tr>
                   <td style="text-align: left;">
-                    <div class="row" id="chart-seeting-div">
+                    <div class="row">
+                      <div class="form-group col-md-6">
+                        <label for="">Display Name</label>
+                        <input
+                          type="text"
+                          class="form-control browser-default"
+                          value="Period"
+                          disabled
+                        />
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="">Axis</label>
+                        <select class="form-control browser-default" disabled>
+                          <option value="X-axis">X-axis</option>
+                          <option value="Y-axis">Y-axis</option>
+                          <option value="Z-axis">Z-axis</option>
+                        </select>
+                      </div>
+
+                      <div class="col-12">
+                        <hr />
+                      </div>
+                    </div>
+                    <div class="row" id="chart-setting-div">
                       <div class="form-group col-md-10">
                         <label for="">Display Name</label>
                         <input
@@ -1557,7 +1648,6 @@
                       <div class="form-group col-md-6">
                         <label for="">Axis</label>
                         <select class="form-control browser-default">
-                          <option value="X-axis">X-axis</option>
                           <option value="Y-axis">Y-axis</option>
                           <option value="Z-axis">Z-axis</option>
                         </select>
@@ -1620,6 +1710,141 @@
       </div>
     </div>
     <!-- END Chart Setting -->
+
+    <!-- Drill Down Table Setting -->
+    <div
+      class="modal fade"
+      id="drilldown_setting"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Drill Down Table Settings</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <table id="chart_table" class="table table-bordered">
+              <thead class="bg-light">
+                <tr>
+                  <th style="font-size: 14px !important;">
+                    Data Fields
+                    <div class="focused pull-right">
+                      <button
+                        class="form-control rounded-circle"
+                        id="drilldown-setting"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </button>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align: left;">
+                    <div class="row">
+                      <div class="form-group col-md-6">
+                        <label for="">Display Name</label>
+                        <input
+                          type="text"
+                          class="form-control browser-default"
+                          value="Period"
+                          disabled
+                        />
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="">Axis</label>
+                        <input
+                          type="text"
+                          class="form-control browser-default"
+                          value="X-axis"
+                          disabled
+                        />
+                      </div>
+
+                      <div class="col-12">
+                        <hr />
+                      </div>
+                    </div>
+                    <div class="row" id="drilldown-setting-div">
+                      <div class="form-group col-md-12">
+                        <label for="">Display Name</label>
+                        <input
+                          type="text"
+                          class="form-control browser-default"
+                        />
+                      </div>
+
+                      <div class="form-group col-md-6">
+                        <label for="">Data FIled</label>
+                        <input
+                          type="text"
+                          class="form-control browser-default"
+                          name="kpi_formula1"
+                          id="kpi_formula1"
+                          readonly
+                        />
+                        <a
+                          href="#"
+                          id="kpi_trigger"
+                          data-toggle="modal"
+                          data-target=".kpi_formula_popup"
+                        ></a>
+                      </div>
+
+                      <div class="form-group col-md-6">
+                        <label for="">Type</label>
+                        <select class="form-control browser-default">
+                          <option value="Actual">Actual</option>
+                          <option value="Target">Target</option>
+                          <option value="Budget">Budget</option>
+                          <option value="Forecast">Forecast</option>
+                          <option value="Gap">Gap</option>
+                        </select>
+                      </div>
+                      <div class="col-12">
+                        <hr />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div
+                      class="row"
+                      style="margin-top: -16px; padding-bottom: 6px;"
+                    >
+                      <div class="col-12">
+                        <div class="form-line right">
+                          <button
+                            type="button"
+                            class="btn-default1 btn"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            Cancel
+                          </button>
+                          <button class="initative_save_btn" value="Save">
+                            Save
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Drill Down Table Setting -->
 
     <!-- KPI Calculator -->
     <div
@@ -2317,6 +2542,15 @@
                         <a
                           href="#"
                           data-toggle="modal"
+                          data-target="#chart_period"
+                          onclick="return false;"
+                          >Period</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          data-toggle="modal"
                           data-target="#chart_setting"
                           onclick="return false;"
                           >Settings</a
@@ -2345,7 +2579,7 @@
                     class="editableTxt1"
                     onkeypress="return (this.innerText.length <= 25)"
                     editable="true"
-                    >Data Table</strong
+                    >Drill Down Table</strong
                   >
                 </h5>
                 <ul class="header-dropdown m-r--2 d-flex">
@@ -2376,7 +2610,16 @@
                         <a
                           href="#"
                           data-toggle="modal"
-                          data-target=".sub_activitie_view_popup"
+                          data-target="#drilldown_period"
+                          onclick="return false;"
+                          >Period</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          data-toggle="modal"
+                          data-target="#drilldown_setting"
                           onclick="return false;"
                           >Settings</a
                         >
@@ -2405,12 +2648,9 @@
                         <i class="fas fa-arrow-down"></i>
                       </th>
                       <th rowspan="2">
-                        Home/Period
+                        Name/Period
                       </th>
-                      <th
-                        colspan="3"
-                        style="font-weight: bold; color: #1e252d;"
-                      >
+                      <th colspan="3">
                         Q1 2020
                       </th>
                     </tr>
@@ -2420,15 +2660,15 @@
                       <th>Gap</th>
                     </tr>
                     <tr>
-                      <th><i class="fas fa-arrow-up"></i></th>
-                      <th>Sales and Marketing</th>
+                      <td><i class="fas fa-arrow-up"></i></td>
+                      <td>Sales and Marketing</td>
                       <td>28%</td>
                       <td>24%</td>
                       <td>38%</td>
                     </tr>
                     <tr>
-                      <th><i class="fas fa-arrow-up"></i></th>
-                      <th>Human Resource and admin</th>
+                      <td><i class="fas fa-arrow-up"></i></td>
+                      <td>Human Resource and admin</td>
                       <td>28%</td>
                       <td>24%</td>
                       <td>38%</td>
@@ -2507,17 +2747,34 @@
                       <th>Actual</th>
                       <th>Target</th>
                       <th>Gap</th>
+                      <th>YTT</th>
                     </tr>
                     <tr>
-                      <th>Sales and Marketing</th>
+                      <td>Q1 2019</td>
                       <td>28%</td>
                       <td>24%</td>
+                      <td>38.091%</td>
                       <td>38%</td>
                     </tr>
                     <tr>
-                      <th>Human Resource and admin</th>
+                      <td>Q2 2019</td>
                       <td>28%</td>
                       <td>24%</td>
+                      <td>38.091%</td>
+                      <td>38%</td>
+                    </tr>
+                    <tr>
+                      <td>Q3 2019</td>
+                      <td>28%</td>
+                      <td>24%</td>
+                      <td>38.091%</td>
+                      <td>38%</td>
+                    </tr>
+                    <tr>
+                      <td>Q4 2019</td>
+                      <td>28%</td>
+                      <td>24%</td>
+                      <td>38.091%</td>
                       <td>38%</td>
                     </tr>
                   </table>
@@ -2535,7 +2792,7 @@
                     class="editableTxt1"
                     onkeypress="return (this.innerText.length <= 25)"
                     editable="true"
-                    >Maps</strong
+                    >Map</strong
                   >
                 </h5>
                 <ul class="header-dropdown m-r--2 d-flex">
@@ -2582,7 +2839,9 @@
               </div>
               <div
                 class="d-flex flex-column employee_div_body_box activities-box"
-              ></div>
+              >
+                <div id="mapdiv"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -2732,6 +2991,10 @@
         },
       });
 
+      ko.applyBindings({
+        dateRange: ko.observable([moment().subtract(1, "month"), moment()]),
+      });
+
       $("#timepicker_pop").timepicker();
 
       $(function () {
@@ -2749,16 +3012,69 @@
         );
       });
 
-      document.getElementById("chart-setting").onclick = duplicate;
+      document.getElementById("chart-setting").onclick = duplicateChart;
 
       var i = 0;
-      var original = document.getElementById("chart-seeting-div");
+      var originalChart = document.getElementById("chart-setting-div");
 
-      function duplicate() {
-        var clone = original.cloneNode(true); // "deep" clone
-        clone.id = "duplicetor" + ++i; // there can only be one element with an ID
-        original.parentNode.appendChild(clone);
+      function duplicateChart() {
+        var clone = originalChart.cloneNode(true); // "deep" clone
+        clone.id = "chart" + ++i; // there can only be one element with an ID
+        originalChart.parentNode.appendChild(clone);
       }
+
+      document.getElementById("drilldown-setting").onclick = duplicateDrilldown;
+
+      var i = 0;
+      var originalDrilldown = document.getElementById("drilldown-setting-div");
+
+      function duplicateDrilldown() {
+        var clone = originalDrilldown.cloneNode(true); // "deep" clone
+        clone.id = "drilldown" + ++i; // there can only be one element with an ID
+        originalDrilldown.parentNode.appendChild(clone);
+      }
+
+      am4core.ready(function () {
+        // Themes begin
+        am4core.useTheme(am4themes_animated);
+        // Themes end
+
+        // Create map instance
+        var chart = am4core.create("mapdiv", am4maps.MapChart);
+
+        // Set map definition
+        chart.geodata = am4geodata_worldLow;
+
+        // Set projection
+        chart.projection = new am4maps.projections.Miller();
+
+        // Series for World map
+        var worldSeries = chart.series.push(new am4maps.MapPolygonSeries());
+        worldSeries.exclude = ["AQ"];
+        worldSeries.useGeodata = true;
+
+        var polygonTemplate = worldSeries.mapPolygons.template;
+        polygonTemplate.tooltipText = "{name}";
+        polygonTemplate.fill = chart.colors.getIndex(0);
+        polygonTemplate.nonScalingStroke = true;
+
+        // Hover state
+        var hs = polygonTemplate.states.create("hover");
+        hs.properties.fill = am4core.color("#367B25");
+
+        // Series for United States map
+        var usaSeries = chart.series.push(new am4maps.MapPolygonSeries());
+        usaSeries.geodata = am4geodata_usaLow;
+
+        var usPolygonTemplate = usaSeries.mapPolygons.template;
+        usPolygonTemplate.tooltipText = "{name}";
+        usPolygonTemplate.fill = chart.colors.getIndex(1);
+        usPolygonTemplate.nonScalingStroke = true;
+
+        // Hover state
+        var hs = usPolygonTemplate.states.create("hover");
+        hs.properties.fill = am4core.color("#367B25");
+      }); // end am4core.ready()
     </script>
   </body>
 </html>
