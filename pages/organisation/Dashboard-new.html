@@ -3666,6 +3666,14 @@
 
       $(".daterangepicker-field").daterangepicker({
         forceUpdate: true,
+        periods: ['month', 'quarter', 'year'],
+        period: 'month',
+        ranges: {
+          'Last 30 days': [moment().subtract(29, 'days'), moment()],
+          'Last 90 days': [moment().subtract(89, 'days'), moment()],
+          'Last Year': [moment().subtract(1, 'year').add(1,'day'), moment()],
+          // 'All Time': 'all-time' // [minDate, maxDate]
+        },
         callback: function (startDate, endDate, period) {
           var title = startDate.format("L") + " – " + endDate.format("L");
           $(this).val(title);
