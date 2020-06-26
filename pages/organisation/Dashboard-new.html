@@ -34,6 +34,8 @@
     <link rel="stylesheet" href="../../assets/monolith.min.css" />
     <link rel="stylesheet" href="../../assets/classic.min.css" />
 
+    <script src="../../assets/plotly-latest.min.js"></script>
+
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
@@ -2076,6 +2078,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
     <script src="assets/daterangepicker/daterangepicker.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://d3js.org/d3.v5.js"></script>
     <script>
       function dragStart(event) {
         event.dataTransfer.setData("dragData", event.target.id);
@@ -2530,6 +2533,12 @@
                         >
                       </li>
                       <li>
+                        <a href="#" onclick="return false;">Expand</a>
+                      </li>
+                      <li>
+                        <a href="#" onclick="return false;">Download PNG</a>
+                      </li>
+                      <li>
                         <a href="#" onclick="return false;">Delete</a>
                       </li>
                     </ul>
@@ -2537,7 +2546,7 @@
                 </ul>
               </div>
               <div>
-                <div id="bubble-chart" style="height: 336px;"></div>
+                <div id="bubble-chart" style="height: 320px;"></div>
                 <div id="tag"></div>
               </div>
             </div>
@@ -2600,6 +2609,9 @@
                           onclick="return false;"
                           >Settings</a
                         >
+                      </li>
+                      <li>
+                        <a href="#" onclick="return false;">Download PDF</a>
                       </li>
                       <li>
                         <a href="#" onclick="return false;" class="delete-row"
@@ -2712,9 +2724,9 @@
           $("#dashboard-body").append(`
           <div class="col-md-6 select-toggle myinitiative sub_initiatives">
             <div class="card" style="padding: 8px 12px; height: 395px;">
+              <div class="header flex-row">
                 <span>Oct 2019 -Dec 2019</span>
                 <h5 class="prob flex-fill_47" style="margin-top: -20px;">
-                <h5 class="prob flex-fill">
                   <strong
                     class="editableTxt1"
                     onkeypress="return (this.innerText.length <= 25)"
@@ -2773,6 +2785,7 @@
                   </li>
                 </ul>
               </div>
+
               <div
                 class="d-flex flex-column employee_div_body_box activities-box"
               >
@@ -2968,139 +2981,35 @@
       }
 
       function bubbleRender() {
-        am4core.ready(function () {
-          // Themes begin
-          am4core.useTheme(am4themes_animated);
-          // Themes end
+        var trace1 = {
+          x: [1, 2, 3, 4],
+          y: [10, 11, 12, 13],
+          text: [
+            "A<br>size: 40",
+            "B<br>size: 60",
+            "C<br>size: 80",
+            "D<br>size: 100",
+          ],
+          mode: "markers",
+          marker: {
+            color: [
+              "rgb(93, 164, 214)",
+              "rgb(255, 144, 14)",
+              "rgb(44, 160, 101)",
+              "rgb(255, 65, 54)",
+            ],
+            size: [40, 60, 80, 100],
+          },
+        };
 
-          // Create chart instance
-          var chart = am4core.create("bubble-chart", am4charts.XYChart);
-          chart.colors.step = 3;
+        var data = [trace1];
 
-          // Add data
-          chart.data = [
-            {
-              y: 10,
-              x: 14,
-              value: 59,
-              y2: -5,
-              x2: -3,
-              value2: 44,
-            },
-            {
-              y: 5,
-              x: 3,
-              value: 50,
-              y2: -15,
-              x2: -8,
-              value2: 12,
-            },
-            {
-              y: -10,
-              x: 8,
-              value: 19,
-              y2: -4,
-              x2: 6,
-              value2: 35,
-            },
-            {
-              y: -6,
-              x: 5,
-              value: 65,
-              y2: -5,
-              x2: -6,
-              value2: 168,
-            },
-            {
-              y: 15,
-              x: -4,
-              value: 92,
-              y2: -10,
-              x2: -8,
-              value2: 102,
-            },
-            {
-              y: 13,
-              x: 1,
-              value: 8,
-              y2: -2,
-              x2: 0,
-              value2: 41,
-            },
-            {
-              y: 1,
-              x: 6,
-              value: 35,
-              y2: 0,
-              x2: -3,
-              value2: 16,
-            },
-          ];
+        var layout = {
+          // title: "Bubble Chart Hover Text",
+          showlegend: false,
+        };
 
-          // Create axes
-          var xAxis = chart.xAxes.push(new am4charts.ValueAxis());
-          xAxis.renderer.minGridDistance = 50;
-
-          var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
-          yAxis.renderer.minGridDistance = 50;
-
-          // Create series #1
-          var series = chart.series.push(new am4charts.LineSeries());
-          series.dataFields.valueY = "y";
-          series.dataFields.valueX = "x";
-          series.dataFields.value = "value";
-          series.strokeOpacity = 0;
-          series.name = "Series 1";
-
-          var bullet = series.bullets.push(new am4charts.CircleBullet());
-          bullet.strokeOpacity = 0.2;
-          bullet.stroke = am4core.color("#ffffff");
-          bullet.nonScalingStroke = true;
-          bullet.tooltipText = "x:{valueX} y:{valueY}";
-          series.heatRules.push({
-            target: bullet.circle,
-            min: 10,
-            max: 60,
-            property: "radius",
-          });
-
-          // Create series #2
-          var series2 = chart.series.push(new am4charts.LineSeries());
-          series2.dataFields.valueY = "y2";
-          series2.dataFields.valueX = "x2";
-          series2.dataFields.value = "value2";
-          series2.strokeOpacity = 0;
-          series2.name = "Series 2";
-
-          var bullet2 = series2.bullets.push(new am4charts.Bullet());
-          bullet2.tooltipText = "x:{valueX} y:{valueY}";
-          bullet2.layout = "absolute";
-          bullet2.rotation = 45;
-
-          var rectangle = bullet2.createChild(am4core.Rectangle);
-          rectangle.verticalCenter = "middle";
-          rectangle.horizontalCenter = "middle";
-          rectangle.width = 10;
-          rectangle.height = 10;
-          rectangle.strokeOpacity = 0.5;
-          rectangle.stroke = am4core.color("#ffffff");
-          rectangle.nonScalingStroke = true;
-
-          rectangle.verticalCenter = "middle";
-          rectangle.horizontalCenter = "middle";
-
-          series2.heatRules.push({
-            target: rectangle,
-            min: 1,
-            max: 8,
-            property: "scale",
-          });
-
-          chart.scrollbarX = new am4core.Scrollbar();
-          chart.scrollbarY = new am4core.Scrollbar();
-
-          chart.legend = new am4charts.Legend();
-        }); // end am4core.ready()
+        Plotly.newPlot("bubble-chart", data, layout);
       }
 
       function mapRender() {
