@@ -2562,6 +2562,105 @@
       </div>
     </div>
 
+    <!-- File upload Modal -->
+    <div id="file_upload_popup" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="margin-top: 6%;">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>File Upload</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-row" style="padding: 16px;">
+              <div class="col-md-12">
+                <div class="tableBody">
+                  <div class="table-responsive">
+                    <table
+                      class="table dashboard-task-infos align-center dashboard-table"
+                      id="table1"
+                      style="margin-bottom: 0px !important;"
+                    >
+                      <tr style="background-color: #f7f7f7;">
+                        <th>Sr. No.</th>
+                        <th>File Name</th>
+                        <th>Uploaded On</th>
+                        <th>Size</th>
+                        <th>Type</th>
+                        <th>Actions</th>
+                      </tr>
+                      <tr>
+                        <td>
+                          1
+                        </td>
+                        <td>End Report</td>
+                        <td>Oct 15, 2020</td>
+                        <td>22 MB</td>
+                        <td>PDF</td>
+                        <td>
+                          <i
+                            class="fas fa-pen"
+                            data-toggle="modal"
+                            data-target=".file_upload_edit_popup"
+                          ></i>
+                          <i
+                            class="fas fa-trash"
+                            style="margin-left: 16px;"
+                          ></i>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          2
+                        </td>
+                        <td>End Report</td>
+                        <td>Oct 15, 2020</td>
+                        <td>22 MB</td>
+                        <td>PDF</td>
+                        <td>
+                          <i
+                            class="fas fa-pen"
+                            data-toggle="modal"
+                            data-target=".file_upload_edit_popup"
+                          ></i>
+                          <i
+                            class="fas fa-trash"
+                            style="margin-left: 16px;"
+                          ></i>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          3
+                        </td>
+                        <td>End Report</td>
+                        <td>Oct 15, 2020</td>
+                        <td>22 MB</td>
+                        <td>PDF</td>
+                        <td>
+                          <i
+                            class="fas fa-pen"
+                            data-toggle="modal"
+                            data-target=".file_upload_edit_popup"
+                          ></i>
+                          <i
+                            class="fas fa-trash"
+                            style="margin-left: 16px;"
+                          ></i>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Recommendation Modal -->
     <div id="notes" class="modal fade" role="dialog">
       <div class="modal-dialog modal-lg" style="margin-top: 8%;">
@@ -3333,20 +3432,19 @@
                     ></i>
                   </a>
 
-                  <a href="#" class="card-footer-icon">
-                    <label for="file-input1">
-                      <i
-                        class="fas fa-paperclip"
-                        data-toggle="tooltip"
-                        data-placement="bottom"
-                        title="Attachment"
-                      ></i>
-                    </label>
-                    <input
-                      id="file-input1"
-                      style="display: none;"
-                      type="file"
-                    />
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#file_upload_popup"
+                    class="card-footer-icon"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-paperclip"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Attachment"
+                    ></i>
                   </a>
                 </div>
               </div>

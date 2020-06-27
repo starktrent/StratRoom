@@ -74,6 +74,13 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <style>
+      .navbar-nav .orientation-right {
+        top: 60px !important;
+        right: 0 !important;
+        left: auto !important;
+        position: fixed;
+      }
+
       #section .container-fluid .collapse_arrow_left .arrow_collapse_size {
         position: fixed;
         background: #fff;
@@ -845,6 +852,9 @@
                   <div class="col-3 form-group chart-type">
                     <center data-toggle="tooltip" title="Column">
                       <img
+                        ondragstart="dragStart(event)"
+                        draggable="true"
+                        id="ColumnChart"
                         src="../organisation/images/widgets/Column.png"
                         alt="Column Chart"
                       />
@@ -861,6 +871,9 @@
                   <div class="col-3 form-group chart-type">
                     <center data-toggle="tooltip" title="Area">
                       <img
+                        ondragstart="dragStart(event)"
+                        draggable="true"
+                        id="AreaChart"
                         src="../organisation/images/widgets/Area.png"
                         alt="Area Chart"
                       />
@@ -885,6 +898,9 @@
                   <div class="col-3 form-group chart-type">
                     <center data-toggle="tooltip" title="Multi axis">
                       <img
+                        ondragstart="dragStart(event)"
+                        draggable="true"
+                        id="MultiAxis"
                         src="../organisation/images/widgets/Multiaxis.png"
                         alt="Multi axis Chart"
                       />
@@ -925,6 +941,9 @@
                   <div class="col-3 form-group chart-type">
                     <center data-toggle="tooltip" title="Heat Map">
                       <img
+                        ondragstart="dragStart(event)"
+                        draggable="true"
+                        id="HeatMap"
                         src="../organisation/images/widgets/Heatmap.png"
                         alt="Heat Map Chart"
                       />
@@ -1061,7 +1080,7 @@
                           class="text-type-card-mini bg-purple"
                           ondragstart="dragStart(event)"
                           draggable="true"
-                          id="chartTextType3"
+                          id="chartTextType"
                         >
                           <div class="row">
                             <div class="col-12">
@@ -2397,7 +2416,7 @@
           </div>`);
         }
 
-        if (data == "chartTextType3") {
+        if (data == "chartTextType") {
           $("#text-body").append(`
           <div class="col-md-3">
             <div class="card text-type-card bg-purple">
@@ -2466,16 +2485,101 @@
                   style="position: absolute; margin-top: 2%; left: 26%;"
                 >
                   <div class="card-chart">
-                    <div id="radialChart3"></div>
+                    <div id="Radialchart"></div>
                   </div>
                 </div>
               </div>
             </div>
           </div>`);
-          renderChartTextType3();
+          radialRender();
         }
 
-        if (data == "BubbleChart") {
+        if (data == "AreaChart") {
+          $("#dashboard-body")
+            .append(`<div class="col-md-6 select-toggle chart sub_initiatives">
+            <div class="card" style="padding: 8px 12px;">
+              <div class="header flex-row">
+                <input
+                    class="daterangepicker-field-period top_datepicker"
+                    id="datePicker12"
+                  />
+                <h5 class="prob flex-fill_47" style="margin-top: -20px;">
+                  <strong
+                    class="editableTxt1"
+                    onkeypress="return (this.innerText.length <= 25)"
+                    editable="true"
+                    >Chart</strong
+                  >
+                </h5>
+                <ul class="header-dropdown m-r--2">
+                  <li class="dropdown m-t--10">
+                    <a
+                      href="#"
+                      onclick="return false;"
+                      class="dropdown-toggle"
+                      data-toggle="dropdown"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="true"
+                    >
+                      <i class="fas fa-ellipsis-h"></i>
+                    </a>
+                    <ul
+                      class="dropdown-menu pull-right"
+                      x-placement="bottom-start"
+                      style="
+                        position: absolute;
+                        will-change: transform;
+                        top: 0px;
+                        left: 0px;
+                        transform: translate3d(0px, 24px, 0px);
+                      "
+                    >
+                      <li>
+                        <a href="#" onclick="openDatePicker()"
+                          >Period
+                          
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          data-toggle="modal"
+                          data-target="#chart_setting"
+                          onclick="return false;"
+                          >Settings</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" onclick="return false;">Enlarge</a>
+                      </li>
+                      <li>
+                        <a href="#" onclick="return false;">Download PNG</a>
+                      </li>
+                      <li>
+                        <a href="#" onclick="return false;">Delete</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div id="Areachart" style="height: 320px;"></div>
+                <div id="tag"></div>
+              </div>
+            </div>
+          </div>`);
+          $("#datePicker12").daterangepicker({
+            forceUpdate: true,
+            callback: function (startDate, endDate, period) {
+              var title = startDate.format("L") + " – " + endDate.format("L");
+              $(this).val(title);
+            },
+          });
+          areaRender();
+        }
+
+        if (data == "MultiAxis") {
           $("#dashboard-body")
             .append(`<div class="col-md-6 select-toggle chart sub_initiatives">
             <div class="card" style="padding: 8px 12px;">
@@ -2533,7 +2637,7 @@
                         >
                       </li>
                       <li>
-                        <a href="#" onclick="return false;">Expand</a>
+                        <a href="#" onclick="return false;">Enlarge</a>
                       </li>
                       <li>
                         <a href="#" onclick="return false;">Download PNG</a>
@@ -2546,12 +2650,91 @@
                 </ul>
               </div>
               <div>
-                <div id="bubble-chart" style="height: 320px;"></div>
+                <div id="Multiaxis"></div>
                 <div id="tag"></div>
               </div>
             </div>
           </div>`);
-          bubbleRender();
+          multiaxisRender();
+        }
+
+        if (data == "ColumnChart") {
+          $("#dashboard-body")
+            .append(`<div class="col-md-6 select-toggle chart sub_initiatives">
+            <div class="card" style="padding: 8px 12px;">
+              <div class="header flex-row">
+                <span>Oct 2019 -Dec 2019</span>
+                <h5 class="prob flex-fill_47" style="margin-top: -20px;">
+                  <strong
+                    class="editableTxt1"
+                    onkeypress="return (this.innerText.length <= 25)"
+                    editable="true"
+                    >Chart</strong
+                  >
+                </h5>
+                <ul class="header-dropdown m-r--2">
+                  <li class="dropdown m-t--10">
+                    <a
+                      href="#"
+                      onclick="return false;"
+                      class="dropdown-toggle"
+                      data-toggle="dropdown"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="true"
+                    >
+                      <i class="fas fa-ellipsis-h"></i>
+                    </a>
+                    <ul
+                      class="dropdown-menu pull-right"
+                      x-placement="bottom-start"
+                      style="
+                        position: absolute;
+                        will-change: transform;
+                        top: 0px;
+                        left: 0px;
+                        transform: translate3d(0px, 24px, 0px);
+                      "
+                    >
+                      <li>
+                        <a href="#" onclick="openDatePicker()"
+                          >Period
+                          <input
+                            class="daterangepicker-field-period top_datepicker"
+                            id="period-date-picker"
+                            hidden
+                          />
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          data-toggle="modal"
+                          data-target="#chart_setting"
+                          onclick="return false;"
+                          >Settings</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" onclick="return false;">Enlarge</a>
+                      </li>
+                      <li>
+                        <a href="#" onclick="return false;">Download PNG</a>
+                      </li>
+                      <li>
+                        <a href="#" onclick="return false;">Delete</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div id="Columnchart"></div>
+                <div id="tag"></div>
+              </div>
+            </div>
+          </div>`);
+          columnRender();
         }
 
         if (data == "drilldownDragDiv") {
@@ -2940,7 +3123,7 @@
         }
       }
 
-      function renderChartTextType3() {
+      function radialRender() {
         var options3 = {
           chart: {
             height: 120,
@@ -2975,41 +3158,217 @@
         };
 
         new ApexCharts(
-          document.querySelector("#radialChart3"),
+          document.querySelector("#Radialchart"),
           options3
         ).render();
       }
 
-      function bubbleRender() {
-        var trace1 = {
-          x: [1, 2, 3, 4],
-          y: [10, 11, 12, 13],
-          text: [
-            "A<br>size: 40",
-            "B<br>size: 60",
-            "C<br>size: 80",
-            "D<br>size: 100",
+      function multiaxisRender() {
+        var options = {
+          chart: {
+            height: 325,
+            type: "line",
+            stacked: false,
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          colors: ["#FF1654", "#247BA0"],
+          series: [
+            {
+              name: "Series A",
+              data: [1.4, 2, 2.5, 1.5, 2.5, 2.8, 3.8, 4.6],
+            },
+            {
+              name: "Series B",
+              data: [20, 29, 37, 36, 44, 45, 50, 58],
+            },
           ],
-          mode: "markers",
-          marker: {
-            color: [
-              "rgb(93, 164, 214)",
-              "rgb(255, 144, 14)",
-              "rgb(44, 160, 101)",
-              "rgb(255, 65, 54)",
-            ],
-            size: [40, 60, 80, 100],
+          stroke: {
+            width: [4, 4],
+          },
+          plotOptions: {
+            bar: {
+              columnWidth: "20%",
+            },
+          },
+          xaxis: {
+            categories: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016],
+          },
+          yaxis: [
+            {
+              axisTicks: {
+                show: true,
+              },
+              axisBorder: {
+                show: true,
+                color: "#FF1654",
+              },
+              labels: {
+                style: {
+                  colors: "#FF1654",
+                },
+              },
+              title: {
+                text: "Series A",
+                style: {
+                  color: "#FF1654",
+                },
+              },
+            },
+            {
+              opposite: true,
+              axisTicks: {
+                show: true,
+              },
+              axisBorder: {
+                show: true,
+                color: "#247BA0",
+              },
+              labels: {
+                style: {
+                  colors: "#247BA0",
+                },
+              },
+              title: {
+                text: "Series B",
+                style: {
+                  color: "#247BA0",
+                },
+              },
+            },
+          ],
+          tooltip: {
+            shared: false,
+            intersect: true,
+            x: {
+              show: false,
+            },
+          },
+          legend: {
+            horizontalAlign: "left",
+            offsetX: 40,
           },
         };
 
-        var data = [trace1];
+        var chart = new ApexCharts(
+          document.querySelector("#Multiaxis"),
+          options
+        ).render();
+      }
 
-        var layout = {
-          // title: "Bubble Chart Hover Text",
-          showlegend: false,
+      function areaRender() {
+        var options = {
+          chart: {
+            height: 325,
+            type: "area",
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          series: [
+            {
+              name: "Series 1",
+              data: [45, 52, 38, 45, 19, 23, 2],
+            },
+          ],
+          fill: {
+            type: "gradient",
+            gradient: {
+              shadeIntensity: 1,
+              opacityFrom: 0.7,
+              opacityTo: 0.9,
+              stops: [0, 90, 100],
+            },
+          },
+          xaxis: {
+            categories: [
+              "01 Jan",
+              "02 Jan",
+              "03 Jan",
+              "04 Jan",
+              "05 Jan",
+              "06 Jan",
+              "07 Jan",
+            ],
+          },
         };
 
-        Plotly.newPlot("bubble-chart", data, layout);
+        var chart = new ApexCharts(
+          document.querySelector("#Areachart"),
+          options
+        ).render();
+      }
+
+      function columnRender() {
+        var options = {
+          series: [
+            {
+              name: "Net Profit",
+              data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
+            },
+            {
+              name: "Revenue",
+              data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
+            },
+            {
+              name: "Free Cash Flow",
+              data: [35, 41, 36, 26, 45, 48, 52, 53, 41],
+            },
+          ],
+          chart: {
+            type: "bar",
+            height: 325,
+          },
+          plotOptions: {
+            bar: {
+              horizontal: false,
+              columnWidth: "55%",
+              endingShape: "rounded",
+            },
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          stroke: {
+            show: true,
+            width: 2,
+            colors: ["transparent"],
+          },
+          xaxis: {
+            categories: [
+              "Feb",
+              "Mar",
+              "Apr",
+              "May",
+              "Jun",
+              "Jul",
+              "Aug",
+              "Sep",
+              "Oct",
+            ],
+          },
+          yaxis: {
+            title: {
+              text: "$ (thousands)",
+            },
+          },
+          fill: {
+            opacity: 1,
+          },
+          tooltip: {
+            y: {
+              formatter: function (val) {
+                return "$ " + val + " thousands";
+              },
+            },
+          },
+        };
+
+        var chart = new ApexCharts(
+          document.querySelector("#Columnchart"),
+          options
+        ).render();
       }
 
       function mapRender() {
@@ -3053,6 +3412,7 @@
           // Hover state
           var hs = usPolygonTemplate.states.create("hover");
           hs.properties.fill = am4core.color("#red");
+          chart.logo.disabled = true;
         }); // end am4core.ready()
       }
 
@@ -3224,11 +3584,11 @@
         });
       }
 
-      $(document).ready(function () {
-        $(".daterangepicker").eq(0).addClass("chartPeriodCustom");
-        $("body").find(".daterangepicker").eq(1).addClass("ddPeriodCustom");
-        $("body").find(".daterangepicker").eq(2).addClass("dtPeriodCustom");
-      });
+      // $(document).ready(function () {
+      //   $(".daterangepicker").eq(0).addClass("chartPeriodCustom");
+      //   $("body").find(".daterangepicker").eq(1).addClass("ddPeriodCustom");
+      //   $("body").find(".daterangepicker").eq(2).addClass("dtPeriodCustom");
+      // });
 
       function openDatePicker() {
         document.getElementById("period-date-picker").click();
