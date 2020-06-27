@@ -265,6 +265,42 @@
         right: 12%;
         font-size: 16px;
       }
+
+      .paging-nav {
+        text-align: right;
+        padding-top: 2px;
+      }
+
+      .paging-nav a {
+        margin: 6px 2px;
+        text-decoration: none;
+        display: inline-block;
+        padding: 4px 10px;
+        background: #71767a;
+        color: #fff !important;
+        border-radius: 3px;
+      }
+
+      .paging-nav .selected-page {
+        background: #1e252d;
+        font-weight: bold;
+      }
+
+      #fileuploadTable thead tr th {
+        border: 1px solid #cecece !important;
+        padding: 6px 4px 6px 4px;
+        font-size: 12px !important;
+        color: #4e4e4e;
+        background: #f7f7f7;
+        font-weight: 600;
+      }
+
+      #fileuploadTable tbody tr td {
+        border: 1px solid #cecece !important;
+        padding: 8px 4px 8px 4px !important;
+        font-size: 12px !important;
+        color: #535353;
+      }
     </style>
   </head>
 
@@ -1898,6 +1934,347 @@
       </div>
     </div>
 
+    <!-- File upload Modal -->
+    <div id="uploaded_files" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>File Upload</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row" style="padding: 16px;">
+              <div
+                class="col-md-12"
+                style="margin-top: -12px; padding-bottom: 8px;"
+              >
+                <button
+                  class="btn btn-custom-secondary"
+                  data-toggle="modal"
+                  data-target="#file_upload_popup"
+                >
+                  <i class="fa fa-plus"></i>
+                </button>
+              </div>
+              <div class="col-md-12">
+                <div class="tableBody">
+                  <div class="table-responsive">
+                    <table
+                      class="table"
+                      id="fileuploadTable"
+                      style="margin-bottom: 0px !important;"
+                    >
+                      <thead>
+                        <tr>
+                          <th>Sr. No.</th>
+                          <th>File Name</th>
+                          <th>Uploaded On</th>
+                          <th>Size</th>
+                          <th>Type</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            1
+                          </td>
+                          <td>End Report</td>
+                          <td>Oct 15, 2020</td>
+                          <td>22 MB</td>
+                          <td>PDF</td>
+                          <td>
+                            <i
+                              class="fas fa-pen"
+                              data-toggle="modal"
+                              data-target=".file_upload_edit_popup"
+                            ></i>
+                            <i
+                              class="fas fa-trash"
+                              style="margin-left: 16px;"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            2
+                          </td>
+                          <td>End Report</td>
+                          <td>Oct 15, 2020</td>
+                          <td>22 MB</td>
+                          <td>PDF</td>
+                          <td>
+                            <i
+                              class="fas fa-pen"
+                              data-toggle="modal"
+                              data-target=".file_upload_edit_popup"
+                            ></i>
+                            <i
+                              class="fas fa-trash"
+                              style="margin-left: 16px;"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            3
+                          </td>
+                          <td>End Report</td>
+                          <td>Oct 15, 2020</td>
+                          <td>22 MB</td>
+                          <td>PDF</td>
+                          <td>
+                            <i
+                              class="fas fa-pen"
+                              data-toggle="modal"
+                              data-target=".file_upload_edit_popup"
+                            ></i>
+                            <i
+                              class="fas fa-trash"
+                              style="margin-left: 16px;"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            4
+                          </td>
+                          <td>End Report</td>
+                          <td>Oct 15, 2020</td>
+                          <td>22 MB</td>
+                          <td>PDF</td>
+                          <td>
+                            <i
+                              class="fas fa-pen"
+                              data-toggle="modal"
+                              data-target=".file_upload_edit_popup"
+                            ></i>
+                            <i
+                              class="fas fa-trash"
+                              style="margin-left: 16px;"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            5
+                          </td>
+                          <td>End Report</td>
+                          <td>Oct 15, 2020</td>
+                          <td>22 MB</td>
+                          <td>PDF</td>
+                          <td>
+                            <i
+                              class="fas fa-pen"
+                              data-toggle="modal"
+                              data-target=".file_upload_edit_popup"
+                            ></i>
+                            <i
+                              class="fas fa-trash"
+                              style="margin-left: 16px;"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            6
+                          </td>
+                          <td>End Report</td>
+                          <td>Oct 15, 2020</td>
+                          <td>22 MB</td>
+                          <td>PDF</td>
+                          <td>
+                            <i
+                              class="fas fa-pen"
+                              data-toggle="modal"
+                              data-target=".file_upload_edit_popup"
+                            ></i>
+                            <i
+                              class="fas fa-trash"
+                              style="margin-left: 16px;"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            7
+                          </td>
+                          <td>End Report</td>
+                          <td>Oct 15, 2020</td>
+                          <td>22 MB</td>
+                          <td>PDF</td>
+                          <td>
+                            <i
+                              class="fas fa-pen"
+                              data-toggle="modal"
+                              data-target=".file_upload_edit_popup"
+                            ></i>
+                            <i
+                              class="fas fa-trash"
+                              style="margin-left: 16px;"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            8
+                          </td>
+                          <td>End Report</td>
+                          <td>Oct 15, 2020</td>
+                          <td>22 MB</td>
+                          <td>PDF</td>
+                          <td>
+                            <i
+                              class="fas fa-pen"
+                              data-toggle="modal"
+                              data-target=".file_upload_edit_popup"
+                            ></i>
+                            <i
+                              class="fas fa-trash"
+                              style="margin-left: 16px;"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            9
+                          </td>
+                          <td>End Report</td>
+                          <td>Oct 15, 2020</td>
+                          <td>22 MB</td>
+                          <td>PDF</td>
+                          <td>
+                            <i
+                              class="fas fa-pen"
+                              data-toggle="modal"
+                              data-target=".file_upload_edit_popup"
+                            ></i>
+                            <i
+                              class="fas fa-trash"
+                              style="margin-left: 16px;"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            10
+                          </td>
+                          <td>End Report</td>
+                          <td>Oct 15, 2020</td>
+                          <td>22 MB</td>
+                          <td>PDF</td>
+                          <td>
+                            <i
+                              class="fas fa-pen"
+                              data-toggle="modal"
+                              data-target=".file_upload_edit_popup"
+                            ></i>
+                            <i
+                              class="fas fa-trash"
+                              style="margin-left: 16px;"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            11
+                          </td>
+                          <td>End Report</td>
+                          <td>Oct 15, 2020</td>
+                          <td>22 MB</td>
+                          <td>PDF</td>
+                          <td>
+                            <i
+                              class="fas fa-pen"
+                              data-toggle="modal"
+                              data-target=".file_upload_edit_popup"
+                            ></i>
+                            <i
+                              class="fas fa-trash"
+                              style="margin-left: 16px;"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            12
+                          </td>
+                          <td>End Report</td>
+                          <td>Oct 15, 2020</td>
+                          <td>22 MB</td>
+                          <td>PDF</td>
+                          <td>
+                            <i
+                              class="fas fa-pen"
+                              data-toggle="modal"
+                              data-target=".file_upload_edit_popup"
+                            ></i>
+                            <i
+                              class="fas fa-trash"
+                              style="margin-left: 16px;"
+                            ></i>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- File Upload PopUp -->
+    <div
+      class="modal fade"
+      id="file_upload_popup"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>File Upload</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="form-group col-md-10" style="padding-right: 4px;">
+                <input
+                  type="file"
+                  class="modal-custom-input"
+                  style="
+                    height: 38px !important;
+                    padding: 5px !important;
+                    margin-bottom: 8px;
+                  "
+                  accept=".pdf,.ppt,.jpeg,.xlsx,.doc,.docx"
+                />
+                <span>Supported file type (jpeg,pdf,pptx,xlsx,docx)</span>
+              </div>
+              <div class="form-group col-md-2" style="padding-left: 4px;">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-primary"
+                >
+                  Upload
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Recommendation Modal -->
     <div id="notes" class="modal fade" role="dialog">
       <div class="modal-dialog modal-lg" style="margin-top: 8%;">
@@ -2668,20 +3045,18 @@
                     ></i>
                   </a>
 
-                  <a href="#" class="card-footer-icon">
-                    <label for="file-input1">
-                      <i
-                        class="fas fa-paperclip"
-                        data-toggle="tooltip"
-                        data-placement="bottom"
-                        title="Attachment"
-                      ></i>
-                    </label>
-                    <input
-                      id="file-input1"
-                      style="display: none;"
-                      type="file"
-                    />
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#uploaded_files"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-paperclip"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Attachment"
+                    ></i>
                   </a>
                 </div>
               </div>
@@ -2828,20 +3203,18 @@
                     ></i>
                   </a>
 
-                  <a href="#" class="card-footer-icon">
-                    <label for="file-input1">
-                      <i
-                        class="fas fa-paperclip"
-                        data-toggle="tooltip"
-                        data-placement="bottom"
-                        title="Attachment"
-                      ></i>
-                    </label>
-                    <input
-                      id="file-input1"
-                      style="display: none;"
-                      type="file"
-                    />
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#uploaded_files"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-paperclip"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Attachment"
+                    ></i>
                   </a>
                 </div>
               </div>
@@ -3015,20 +3388,18 @@
                     ></i>
                   </a>
 
-                  <a href="#" class="card-footer-icon">
-                    <label for="file-input1">
-                      <i
-                        class="fas fa-paperclip"
-                        data-toggle="tooltip"
-                        data-placement="bottom"
-                        title="Attachment"
-                      ></i>
-                    </label>
-                    <input
-                      id="file-input1"
-                      style="display: none;"
-                      type="file"
-                    />
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#uploaded_files"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-paperclip"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Attachment"
+                    ></i>
                   </a>
                 </div>
               </div>
@@ -3175,20 +3546,18 @@
                     ></i>
                   </a>
 
-                  <a href="#" class="card-footer-icon">
-                    <label for="file-input1">
-                      <i
-                        class="fas fa-paperclip"
-                        data-toggle="tooltip"
-                        data-placement="bottom"
-                        title="Attachment"
-                      ></i>
-                    </label>
-                    <input
-                      id="file-input1"
-                      style="display: none;"
-                      type="file"
-                    />
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#uploaded_files"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-paperclip"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Attachment"
+                    ></i>
                   </a>
                 </div>
               </div>
@@ -3362,20 +3731,18 @@
                     ></i>
                   </a>
 
-                  <a href="#" class="card-footer-icon">
-                    <label for="file-input1">
-                      <i
-                        class="fas fa-paperclip"
-                        data-toggle="tooltip"
-                        data-placement="bottom"
-                        title="Attachment"
-                      ></i>
-                    </label>
-                    <input
-                      id="file-input1"
-                      style="display: none;"
-                      type="file"
-                    />
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#uploaded_files"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-paperclip"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Attachment"
+                    ></i>
                   </a>
                 </div>
               </div>
@@ -3522,20 +3889,18 @@
                     ></i>
                   </a>
 
-                  <a href="#" class="card-footer-icon">
-                    <label for="file-input1">
-                      <i
-                        class="fas fa-paperclip"
-                        data-toggle="tooltip"
-                        data-placement="bottom"
-                        title="Attachment"
-                      ></i>
-                    </label>
-                    <input
-                      id="file-input1"
-                      style="display: none;"
-                      type="file"
-                    />
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#uploaded_files"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-paperclip"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Attachment"
+                    ></i>
                   </a>
                 </div>
               </div>
@@ -3709,20 +4074,18 @@
                     ></i>
                   </a>
 
-                  <a href="#" class="card-footer-icon">
-                    <label for="file-input1">
-                      <i
-                        class="fas fa-paperclip"
-                        data-toggle="tooltip"
-                        data-placement="bottom"
-                        title="Attachment"
-                      ></i>
-                    </label>
-                    <input
-                      id="file-input1"
-                      style="display: none;"
-                      type="file"
-                    />
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#uploaded_files"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-paperclip"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Attachment"
+                    ></i>
                   </a>
                 </div>
               </div>
@@ -3869,20 +4232,18 @@
                     ></i>
                   </a>
 
-                  <a href="#" class="card-footer-icon">
-                    <label for="file-input1">
-                      <i
-                        class="fas fa-paperclip"
-                        data-toggle="tooltip"
-                        data-placement="bottom"
-                        title="Attachment"
-                      ></i>
-                    </label>
-                    <input
-                      id="file-input1"
-                      style="display: none;"
-                      type="file"
-                    />
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#uploaded_files"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-paperclip"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Attachment"
+                    ></i>
                   </a>
                 </div>
               </div>
@@ -3900,6 +4261,7 @@
     <script src="../../assets/js/bundles/amcharts4/charts.js"></script>
     <script src="../../assets/js/bundles/amcharts4/animated.js"></script>
     <!-- Knob Js -->
+    <script src="../../assets/js/paging.js"></script>
     <script src="../../assets/jquery-ui.min.js"></script>
     <script src="../../assets/moment.js"></script>
     <script src="../../assets/js/pages/core.js"></script>
@@ -3920,6 +4282,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
     <script src="assets/daterangepicker/daterangepicker.min.js"></script>
     <script>
+      $(document).ready(function () {
+        $("#fileuploadTable").paging({ limit: 5 });
+      });
+
       $("#timepicker_pop").timepicker();
 
       $(function () {
