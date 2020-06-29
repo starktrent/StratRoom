@@ -545,12 +545,12 @@ ul.gj-list-md li {
   margin-left: 5px !important;
 }
 
-.orientation-right {
+/* .orientation-right {
   top: 70px !important;
   right: 0 !important;
   left: auto !important;
   position: fixed;
-}
+} */
 
 .sticky-top {
   z-index: 0 !important;

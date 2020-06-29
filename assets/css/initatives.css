@@ -753,11 +753,11 @@ a.nav-link {
 }
 
 .daterangepicker {
-  top: 13% !important;
+  /* top: 13% !important;
   right: 80px !important;
-  left: auto !important;
+  left: auto !important; */
   z-index: 99999;
-  position: fixed !important;
+  /* position: fixed !important; */
 }
 
 .collapse_arrow {
