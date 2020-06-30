@@ -234,7 +234,7 @@
       }
 
       .text-type-card .text-type-period {
-        font-size: 10px;
+        font-size: 9px;
         color: #fff;
         font-weight: 500;
         float: right;
@@ -430,10 +430,8 @@
         height: 322px;
       }
 
-      #modalBackground,
-      #modal {
+      .apexcharts-menu-item.exportSVG {
         display: none;
-        position: fixed;
       }
     </style>
   </head>
@@ -868,6 +866,9 @@
                   <div class="col-3 form-group chart-type">
                     <center data-toggle="tooltip" title="Line">
                       <img
+                        ondragstart="dragStart(event)"
+                        draggable="true"
+                        id="LineChart"
                         src="../organisation/images/widgets/Line.png"
                         alt="Line Chart"
                       />
@@ -887,6 +888,9 @@
                   <div class="col-3 form-group chart-type">
                     <center data-toggle="tooltip" title="Pie">
                       <img
+                        ondragstart="dragStart(event)"
+                        draggable="true"
+                        id="PieChart"
                         src="../organisation/images/widgets/Pie.png"
                         alt="Pie Chart"
                       />
@@ -895,6 +899,9 @@
                   <div class="col-3 form-group chart-type">
                     <center data-toggle="tooltip" title="Waterfall">
                       <img
+                        ondragstart="dragStart(event)"
+                        draggable="true"
+                        id="WaterfallChart"
                         src="../organisation/images/widgets/Waterfall.png"
                         alt="Waterfall Chart"
                       />
@@ -914,6 +921,9 @@
                   <div class="col-3 form-group chart-type">
                     <center data-toggle="tooltip" title="Stacked">
                       <img
+                        ondragstart="dragStart(event)"
+                        draggable="true"
+                        id="StackedChart"
                         src="../organisation/images/widgets/Stacked.png"
                         alt="Stacked Chart"
                       />
@@ -978,7 +988,7 @@
                           <div class="row">
                             <div class="col-12">
                               <span class="text-type-period">
-                                Oct, 2019
+                                Jan 2019 - Dec 2020
                               </span>
                             </div>
                             <div
@@ -1034,7 +1044,7 @@
                           <div class="row">
                             <div class="col-12">
                               <span class="text-type-period">
-                                Oct, 2019
+                                Jan 2019 - Dec 2020
                               </span>
                             </div>
                             <div
@@ -1090,7 +1100,7 @@
                           <div class="row">
                             <div class="col-12">
                               <span class="text-type-period">
-                                Oct, 2019
+                                Jan 2019 - Dec 2020
                               </span>
                             </div>
                             <div
@@ -1146,7 +1156,7 @@
                           <div class="row">
                             <div class="col-12">
                               <span class="text-type-period">
-                                Oct, 2019
+                                Jan 2019 - Dec 2020
                               </span>
                             </div>
                             <div
@@ -1564,72 +1574,87 @@
             </button>
           </div>
           <div class="modal-body">
-            <table id="drilldown_table" class="table table-bordered">
-              <thead class="bg-light">
-                <tr>
-                  <th style="font-size: 14px !important;">
-                    Data Fields
-                    <div class="focused pull-right">
-                      <button
-                        class="form-control rounded-circle"
-                        id="drilldown-setting"
-                      >
-                        <i class="fa fa-plus"></i>
-                      </button>
-                    </div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody
-                style="
-                  display: -webkit-inline-box;
-                  height: 410px;
-                  overflow-x: hidden;
-                "
-              >
-                <tr>
-                  <td style="text-align: left;">
-                    <div class="row" id="drilldown-setting-div">
-                      <div class="form-group col-md-12">
-                        <label for="">Display Name</label>
-                        <input
-                          type="text"
-                          class="form-control browser-default"
-                        />
-                      </div>
-
-                      <div class="form-group col-md-6">
-                        <label for="">Data Field</label>
-                        <input
-                          type="text"
-                          class="form-control browser-default"
-                          id="kpi_formula"
-                          readonly
-                          data-toggle="modal"
-                          data-target="#kpi_formula_popup"
-                          role="button"
-                        />
-                      </div>
-
-                      <div class="form-group col-md-6">
-                        <label for="">Type</label>
-                        <select class="form-control browser-default">
-                          <option value="Actual">Actual</option>
-                          <option value="Target">Target</option>
-                          <option value="Budget">Budget</option>
-                          <option value="Forecast">Forecast</option>
-                          <option value="Gap">Gap</option>
-                        </select>
-                      </div>
-                      <div class="col-12">
-                        <hr style="border: 1px solid #505050;" />
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label for="">KPI Name</label>
+                <input type="text" class="form-control browser-default" />
+              </div>
+              <div class="form-group col-md-12 mt-2">
+                <label for="kpi_fields">Types</label>
+                <ul class="d-flex flex-row flex-wrap ml-2">
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          Actual
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
                       </div>
                     </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="row" style="padding-bottom: 6px;">
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          Target
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          Gap
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          YTT
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-12">
+                <hr style="border: 1px solid #505050;" />
+              </div>
               <div class="col-12">
                 <div class="form-line right">
                   <button
@@ -1652,6 +1677,142 @@
     </div>
     <!-- END Drill Down Table Setting -->
 
+    <!-- Drill Down Table View -->
+    <div
+      class="modal fade"
+      id="drilldown_view"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <table
+              class="table dashboard-task-infos align-center dashboard-table"
+              id="drilldownTableView"
+              style="margin-bottom: 0px !important;"
+            >
+              <thead>
+                <tr>
+                  <th rowspan="2" style="width: 40px;">
+                    <i class="fas fa-arrow-up"></i>
+                    <i class="fas fa-arrow-down"></i>
+                  </th>
+                  <th rowspan="2" style="width: 198px;">
+                    Name/Period
+                  </th>
+                  <th colspan="3">
+                    Q1 2020
+                  </th>
+                </tr>
+                <tr>
+                  <th style="width: 98px;">Actual</th>
+                  <th style="width: 98px;">Target</th>
+                  <th style="width: 98px;">Gap</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><i class="fas fa-arrow-up"></i></td>
+                  <td>Sales and Marketing</td>
+                  <td>28.53425%</td>
+                  <td>24.53425%</td>
+                  <td>38.53425%</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-arrow-down"></i></td>
+                  <td>Human Resource and admin</td>
+                  <td>28.53425%</td>
+                  <td>24.53425%</td>
+                  <td>38.53425%</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-arrow-up"></i></td>
+                  <td>Product Design</td>
+                  <td>28.53425%</td>
+                  <td>24.53425%</td>
+                  <td>38.53425%</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-arrow-up"></i></td>
+                  <td>Development Process</td>
+                  <td>28.53425%</td>
+                  <td>24.53425%</td>
+                  <td>38.53425%</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-arrow-up"></i></td>
+                  <td>Marketing</td>
+                  <td>28.53425%</td>
+                  <td>24.53425%</td>
+                  <td>38.53425%</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-arrow-down"></i></td>
+                  <td>Admin</td>
+                  <td>28.53425%</td>
+                  <td>24.53425%</td>
+                  <td>38.53425%</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-arrow-down"></i></td>
+                  <td>Admin</td>
+                  <td>28.53425%</td>
+                  <td>24.53425%</td>
+                  <td>38.53425%</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-arrow-down"></i></td>
+                  <td>Admin</td>
+                  <td>28.53425%</td>
+                  <td>24.53425%</td>
+                  <td>38.53425%</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-arrow-up"></i></td>
+                  <td>Sales and Marketing</td>
+                  <td>28.53425%</td>
+                  <td>24.53425%</td>
+                  <td>38.53425%</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-arrow-down"></i></td>
+                  <td>Human Resource and admin</td>
+                  <td>28.53425%</td>
+                  <td>24.53425%</td>
+                  <td>38.53425%</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-arrow-up"></i></td>
+                  <td>Product Design</td>
+                  <td>28.53425%</td>
+                  <td>24.53425%</td>
+                  <td>38.53425%</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-arrow-up"></i></td>
+                  <td>Development Process</td>
+                  <td>28.53425%</td>
+                  <td>24.53425%</td>
+                  <td>38.53425%</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-arrow-up"></i></td>
+                  <td>Marketing</td>
+                  <td>28.53425%</td>
+                  <td>24.53425%</td>
+                  <td>38.53425%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Drill Down Table View  -->
+
     <!-- Data Table Setting -->
     <div
       class="modal fade"
@@ -1670,72 +1831,87 @@
             </button>
           </div>
           <div class="modal-body">
-            <table id="chart_table" class="table table-bordered">
-              <thead class="bg-light">
-                <tr>
-                  <th style="font-size: 14px !important;">
-                    Data Fields
-                    <div class="focused pull-right">
-                      <button
-                        class="form-control rounded-circle"
-                        id="datatable-setting"
-                      >
-                        <i class="fa fa-plus"></i>
-                      </button>
-                    </div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody
-                style="
-                  display: -webkit-inline-box;
-                  height: 410px;
-                  overflow-x: hidden;
-                "
-              >
-                <tr>
-                  <td style="text-align: left;">
-                    <div class="row" id="datatable-setting-div">
-                      <div class="form-group col-md-12">
-                        <label for="">Display Name</label>
-                        <input
-                          type="text"
-                          class="form-control browser-default"
-                        />
-                      </div>
-
-                      <div class="form-group col-md-6">
-                        <label for="">Data Field</label>
-                        <input
-                          type="text"
-                          class="form-control browser-default"
-                          id="kpi_formula"
-                          readonly
-                          data-toggle="modal"
-                          data-target="#kpi_formula_popup"
-                          role="button"
-                        />
-                      </div>
-
-                      <div class="form-group col-md-6">
-                        <label for="">Type</label>
-                        <select class="form-control browser-default">
-                          <option value="Actual">Actual</option>
-                          <option value="Target">Target</option>
-                          <option value="Budget">Budget</option>
-                          <option value="Forecast">Forecast</option>
-                          <option value="Gap">Gap</option>
-                        </select>
-                      </div>
-                      <div class="col-12">
-                        <hr style="border: 1px solid #505050;" />
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label for="">KPI Name</label>
+                <input type="text" class="form-control browser-default" />
+              </div>
+              <div class="form-group col-md-12 mt-2">
+                <label for="kpi_fields">Types</label>
+                <ul class="d-flex flex-row flex-wrap ml-2">
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          Actual
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
                       </div>
                     </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="row" style="padding-bottom: 6px;">
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          Target
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          Gap
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          YTT
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-12">
+                <hr style="border: 1px solid #505050;" />
+              </div>
               <div class="col-12">
                 <div class="form-line right">
                   <button
@@ -1757,6 +1933,146 @@
       </div>
     </div>
     <!-- END Data Table Setting -->
+
+    <!-- Data Table View -->
+    <div
+      class="modal fade"
+      id="datatable_view"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <table
+              class="table dashboard-task-infos align-center dashboard-table"
+              id="dataTableView"
+              style="margin-bottom: 0px !important;"
+            >
+              <thead>
+                <tr>
+                  <th style="width: 80px;">Period</th>
+                  <th style="width: 98px;">Actual</th>
+                  <th style="width: 98px;">Target</th>
+                  <th style="width: 98px;">Gap</th>
+                  <th style="width: 98px;">YTT</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Q1 2019</td>
+                  <td>28%</td>
+                  <td>24%</td>
+                  <td>38.091%</td>
+                  <td>38%</td>
+                </tr>
+                <tr>
+                  <td>Q2 2019</td>
+                  <td>28%</td>
+                  <td>24%</td>
+                  <td>38.091%</td>
+                  <td>38%</td>
+                </tr>
+                <tr>
+                  <td>Q3 2019</td>
+                  <td>28%</td>
+                  <td>24%</td>
+                  <td>38.091%</td>
+                  <td>38%</td>
+                </tr>
+                <tr>
+                  <td>Q4 2019</td>
+                  <td>28%</td>
+                  <td>24%</td>
+                  <td>38.091%</td>
+                  <td>38%</td>
+                </tr>
+                <tr>
+                  <td>Q1 2019</td>
+                  <td>28%</td>
+                  <td>24%</td>
+                  <td>38.091%</td>
+                  <td>38%</td>
+                </tr>
+                <tr>
+                  <td>Q2 2019</td>
+                  <td>28%</td>
+                  <td>24%</td>
+                  <td>38.091%</td>
+                  <td>38%</td>
+                </tr>
+                <tr>
+                  <td>Q3 2019</td>
+                  <td>28%</td>
+                  <td>24%</td>
+                  <td>38.091%</td>
+                  <td>38%</td>
+                </tr>
+                <tr>
+                  <td>Q4 2019</td>
+                  <td>28%</td>
+                  <td>24%</td>
+                  <td>38.091%</td>
+                  <td>38%</td>
+                </tr>
+                <tr>
+                  <td>Q2 2019</td>
+                  <td>28%</td>
+                  <td>24%</td>
+                  <td>38.091%</td>
+                  <td>38%</td>
+                </tr>
+                <tr>
+                  <td>Q3 2019</td>
+                  <td>28%</td>
+                  <td>24%</td>
+                  <td>38.091%</td>
+                  <td>38%</td>
+                </tr>
+                <tr>
+                  <td>Q4 2019</td>
+                  <td>28%</td>
+                  <td>24%</td>
+                  <td>38.091%</td>
+                  <td>38%</td>
+                </tr>
+                <tr>
+                  <td>Q1 2019</td>
+                  <td>28%</td>
+                  <td>24%</td>
+                  <td>38.091%</td>
+                  <td>38%</td>
+                </tr>
+                <tr>
+                  <td>Q2 2019</td>
+                  <td>28%</td>
+                  <td>24%</td>
+                  <td>38.091%</td>
+                  <td>38%</td>
+                </tr>
+                <tr>
+                  <td>Q3 2019</td>
+                  <td>28%</td>
+                  <td>24%</td>
+                  <td>38.091%</td>
+                  <td>38%</td>
+                </tr>
+                <tr>
+                  <td>Q4 2019</td>
+                  <td>28%</td>
+                  <td>24%</td>
+                  <td>38.091%</td>
+                  <td>38%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Data Table View  -->
 
     <!-- Column Large -->
     <div
@@ -1814,6 +2130,120 @@
       </div>
     </div>
     <!-- END Multiaxis Large -->
+
+    <!-- Bubble Large -->
+    <div
+      class="modal fade"
+      id="bubble-large"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div id="Bubblelarge"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Bubble Large -->
+
+    <!-- Line Large -->
+    <div
+      class="modal fade"
+      id="line-large"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div id="Linelarge"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Line Large -->
+
+    <!-- Pie Large -->
+    <div
+      class="modal fade"
+      id="pie-large"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div id="Pielarge"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Pie Large -->
+
+    <!-- Waterfall Large -->
+    <div
+      class="modal fade"
+      id="waterfall-large"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div id="Waterfalllarge"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Waterfall Large -->
+
+    <!-- Stacked Large -->
+    <div
+      class="modal fade"
+      id="stacked-large"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div id="Stackedlarge"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Stacked Large -->
+
+    <!-- Heatmap Large -->
+    <div
+      class="modal fade"
+      id="heatmap-large"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div id="Heatmaplarge"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Heatmap Large -->
 
     <!-- KPI Calculator -->
     <div
@@ -2154,7 +2584,7 @@
               <div class="row">
                 <div class="col-10">
                   <span class="text-type-period">
-                    Oct, 2019
+                    Jan 2019 - Dec 2020
                   </span>
                 </div>
                 <div class="col-2">
@@ -2230,7 +2660,7 @@
               <div class="row">
                 <div class="col-10">
                   <span class="text-type-period">
-                    Oct, 2019
+                    Jan 2019 - Dec 2020
                   </span>
                 </div>
                 <div class="col-2">
@@ -2299,82 +2729,7 @@
             </div>
           </div>`);
         }
-        if (data == "normalTextType3") {
-          $("#text-body").append(`
-          <div class="col-md-3">
-            <div class="card text-type-card bg-purple">
-              <div class="row">
-                <div class="col-10">
-                  <span class="text-type-period">
-                    Oct, 2019
-                  </span>
-                </div>
-                <div class="col-2">
-                  <ul class="header-dropdown">
-                    <li class="dropdown">
-                      <a
-                        href="#"
-                        onclick="return false;"
-                        class="dropdown-toggle"
-                        data-toggle="dropdown"
-                        role="button"
-                        aria-haspopup="true"
-                        aria-expanded="true"
-                      >
-                        <i class="fas fa-ellipsis-h"></i>
-                      </a>
-                      <ul
-                        class="dropdown-menu pull-right"
-                        x-placement="bottom-start"
-                        style="
-                          position: absolute;
-                          will-change: transform;
-                          top: 0px;
-                          left: 0px;
-                          transform: translate3d(0px, 24px, 0px);
-                        "
-                      >
-                        <li>
-                          <a
-                            href="#"
-                            data-toggle="modal"
-                            data-target="#text_setting"
-                            onclick="return false;"
-                            >Settings</a
-                          >
-                        </li>
-                        <li>
-                          <a href="#" onclick="return false;">Delete</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-12" style="margin-bottom: 6%; margin-top: -6%;">
-                  <h4>Total Revenue</h4>
-                  <strong>$ 202.35 M</strong>
-                </div>
-                <div class="col-12">
-                  <span>
-                    <img
-                      src="../organisation/images/icon/up.png"
-                      alt="Trend Low"
-                    />
-                  </span>
-                  <span class="text-type-trend">$ 202.36 M</span>
-                </div>
-                <div
-                  class="col-12"
-                  style="position: absolute; margin-top: 12%; left: 65%;"
-                >
-                  <div class="card-icon">
-                    <i class="fas fa-chart-line" style="color: #581b98;"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>`);
-        }
+
         if (data == "normalTextType4") {
           $("#text-body").append(`
           <div class="col-md-3">
@@ -2382,7 +2737,7 @@
               <div class="row">
                 <div class="col-10">
                   <span class="text-type-period">
-                    Oct, 2019
+                    Jan 2019 - Dec 2020
                   </span>
                 </div>
                 <div class="col-2">
@@ -2459,7 +2814,7 @@
               <div class="row">
                 <div class="col-10">
                   <span class="text-type-period">
-                    Oct, 2019
+                    Jan 2019 - Dec 2020
                   </span>
                 </div>
                 <div class="col-2">
@@ -2536,8 +2891,8 @@
             <div class="card" style="padding: 8px 12px;">
               <div class="header flex-row">
                 <input
-                    class="daterangepicker-field-period top_datepicker"
-                    id="datePicker11"
+                    class="top_datepicker"
+                    id="datePickerAR"
                     style="width: 35%;
                       margin-left: -12px !important;
                       margin-top: -4px;
@@ -2603,7 +2958,7 @@
               </div>
             </div>
           </div>`);
-          $("#datePicker11").daterangepicker({
+          $("#datePickerAR").daterangepicker({
             forceUpdate: true,
             periods: ["month", "quarter", "year"],
             period: "month",
@@ -2630,8 +2985,8 @@
             <div class="card" style="padding: 8px 12px;">
               <div class="header flex-row">
                 <input
-                    class="daterangepicker-field-period top_datepicker"
-                    id="datePicker12"
+                    class="top_datepicker"
+                    id="datePickerMA"
                     style="width: 35%;
                       margin-left: -12px !important;
                       margin-top: -4px;
@@ -2698,7 +3053,7 @@
               </div>
             </div>
           </div>`);
-          $("#datePicker12").daterangepicker({
+          $("#datePickerMA").daterangepicker({
             forceUpdate: true,
             periods: ["month", "quarter", "year"],
             period: "month",
@@ -2725,8 +3080,8 @@
             <div class="card" style="padding: 8px 12px;">
               <div class="header flex-row">
                 <input
-                    class="daterangepicker-field-period top_datepicker"
-                    id="datePicker13"
+                    class="top_datepicker"
+                    id="datePickerCL"
                     style="width: 35%;
                       margin-left: -12px !important;
                       margin-top: -4px;
@@ -2735,7 +3090,6 @@
                 <h5 class="prob flex-fill_47" style="margin-top: -42px;">
                   <strong
                     class="editableTxt1"
-                    onkeypress="return (this.innerText.length <= 25)"
                     editable="true"
                     >Chart</strong
                   >
@@ -2792,7 +3146,7 @@
               </div>
             </div>
           </div>`);
-          $("#datePicker13").daterangepicker({
+          $("#datePickerCL").daterangepicker({
             forceUpdate: true,
             periods: ["month", "quarter", "year"],
             period: "month",
@@ -2811,6 +3165,564 @@
             },
           });
           columnRender();
+        }
+
+        if (data == "BubbleChart") {
+          $("#dashboard-body")
+            .append(`<div class="col-md-6 select-toggle chart sub_initiatives">
+            <div class="card" style="padding: 8px 12px;">
+              <div class="header flex-row">
+                <input
+                    class="top_datepicker"
+                    id="datePickerBL"
+                    style="width: 35%;
+                      margin-left: -12px !important;
+                      margin-top: -4px;
+                      border: none !important;"
+                  />
+                <h5 class="prob flex-fill_47" style="margin-top: -42px;">
+                  <strong
+                    editable="true"
+                    contenteditable="true"
+                    >Chart</strong
+                  >
+                </h5>
+                <ul class="header-dropdown m-r--2">
+                  <li class="dropdown m-t--10">
+                    <a
+                      href="#"
+                      onclick="return false;"
+                      class="dropdown-toggle"
+                      data-toggle="dropdown"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="true"
+                    >
+                      <i class="fas fa-ellipsis-h"></i>
+                    </a>
+                    <ul
+                      class="dropdown-menu pull-right"
+                      x-placement="bottom-start"
+                      style="
+                        position: absolute;
+                        will-change: transform;
+                        top: 0px;
+                        left: 0px;
+                        transform: translate3d(0px, 24px, 0px);
+                      "
+                    >
+                      <li>
+                        <a
+                          href="#"
+                          data-toggle="modal"
+                          data-target="#chart_setting"
+                          onclick="return false;"
+                          >Settings</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" 
+                          data-toggle="modal"
+                          data-target="#bubble-large">Enlarge</a>
+                      </li>
+                      
+                      <li>
+                        <a href="#" onclick="return false;">Delete</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div id="Bubblechart"></div>
+                <div id="tag"></div>
+              </div>
+            </div>
+          </div>`);
+          $("#datePickerBL").daterangepicker({
+            forceUpdate: true,
+            periods: ["month", "quarter", "year"],
+            period: "month",
+            ranges: {
+              "Last 30 days": [moment().subtract(29, "days"), moment()],
+              "Last 90 days": [moment().subtract(89, "days"), moment()],
+              "Last Year": [
+                moment().subtract(1, "year").add(1, "day"),
+                moment(),
+              ],
+              // 'All Time': 'all-time' // [minDate, maxDate]
+            },
+            callback: function (startDate, endDate, period) {
+              var title = startDate.format("L") + " – " + endDate.format("L");
+              $(this).val(title);
+            },
+          });
+          bubbleRender();
+        }
+
+        if (data == "LineChart") {
+          $("#dashboard-body")
+            .append(`<div class="col-md-6 select-toggle chart sub_initiatives">
+            <div class="card" style="padding: 8px 12px;">
+              <div class="header flex-row">
+                <input
+                    class="top_datepicker"
+                    id="datePickerL"
+                    style="width: 35%;
+                      margin-left: -12px !important;
+                      margin-top: -4px;
+                      border: none !important;"
+                  />
+                <h5 class="prob flex-fill_47" style="margin-top: -42px;">
+                  <strong
+                    editable="true"
+                    contenteditable="true"
+                    >Chart</strong
+                  >
+                </h5>
+                <ul class="header-dropdown m-r--2">
+                  <li class="dropdown m-t--10">
+                    <a
+                      href="#"
+                      onclick="return false;"
+                      class="dropdown-toggle"
+                      data-toggle="dropdown"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="true"
+                    >
+                      <i class="fas fa-ellipsis-h"></i>
+                    </a>
+                    <ul
+                      class="dropdown-menu pull-right"
+                      x-placement="bottom-start"
+                      style="
+                        position: absolute;
+                        will-change: transform;
+                        top: 0px;
+                        left: 0px;
+                        transform: translate3d(0px, 24px, 0px);
+                      "
+                    >
+                      <li>
+                        <a
+                          href="#"
+                          data-toggle="modal"
+                          data-target="#chart_setting"
+                          onclick="return false;"
+                          >Settings</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" 
+                          data-toggle="modal"
+                          data-target="#line-large">Enlarge</a>
+                      </li>
+                      
+                      <li>
+                        <a href="#" onclick="return false;">Delete</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div id="Linechart"></div>
+                <div id="tag"></div>
+              </div>
+            </div>
+          </div>`);
+          $("#datePickerL").daterangepicker({
+            forceUpdate: true,
+            periods: ["month", "quarter", "year"],
+            period: "month",
+            ranges: {
+              "Last 30 days": [moment().subtract(29, "days"), moment()],
+              "Last 90 days": [moment().subtract(89, "days"), moment()],
+              "Last Year": [
+                moment().subtract(1, "year").add(1, "day"),
+                moment(),
+              ],
+              // 'All Time': 'all-time' // [minDate, maxDate]
+            },
+            callback: function (startDate, endDate, period) {
+              var title = startDate.format("L") + " – " + endDate.format("L");
+              $(this).val(title);
+            },
+          });
+          lineRender();
+        }
+
+        if (data == "PieChart") {
+          $("#dashboard-body")
+            .append(`<div class="col-md-6 select-toggle chart sub_initiatives">
+            <div class="card" style="padding: 8px 12px;">
+              <div class="header flex-row">
+                <input
+                    class="top_datepicker"
+                    id="datePickerPIE"
+                    style="width: 35%;
+                      margin-left: -12px !important;
+                      margin-top: -4px;
+                      border: none !important;"
+                  />
+                <h5 class="prob flex-fill_47" style="margin-top: -42px;">
+                  <strong
+                    editable="true"
+                    contenteditable="true"
+                    >Chart</strong
+                  >
+                </h5>
+                <ul class="header-dropdown m-r--2">
+                  <li class="dropdown m-t--10">
+                    <a
+                      href="#"
+                      onclick="return false;"
+                      class="dropdown-toggle"
+                      data-toggle="dropdown"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="true"
+                    >
+                      <i class="fas fa-ellipsis-h"></i>
+                    </a>
+                    <ul
+                      class="dropdown-menu pull-right"
+                      x-placement="bottom-start"
+                      style="
+                        position: absolute;
+                        will-change: transform;
+                        top: 0px;
+                        left: 0px;
+                        transform: translate3d(0px, 24px, 0px);
+                      "
+                    >
+                      <li>
+                        <a
+                          href="#"
+                          data-toggle="modal"
+                          data-target="#chart_setting"
+                          onclick="return false;"
+                          >Settings</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" 
+                          data-toggle="modal"
+                          data-target="#pie-large">Enlarge</a>
+                      </li>
+                      
+                      <li>
+                        <a href="#" onclick="return false;">Delete</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div id="Piechart"></div>
+                <div id="tag"></div>
+              </div>
+            </div>
+          </div>`);
+          $("#datePickerPIE").daterangepicker({
+            forceUpdate: true,
+            periods: ["month", "quarter", "year"],
+            period: "month",
+            ranges: {
+              "Last 30 days": [moment().subtract(29, "days"), moment()],
+              "Last 90 days": [moment().subtract(89, "days"), moment()],
+              "Last Year": [
+                moment().subtract(1, "year").add(1, "day"),
+                moment(),
+              ],
+              // 'All Time': 'all-time' // [minDate, maxDate]
+            },
+            callback: function (startDate, endDate, period) {
+              var title = startDate.format("L") + " – " + endDate.format("L");
+              $(this).val(title);
+            },
+          });
+          pieRender();
+        }
+
+        if (data == "WaterfallChart") {
+          $("#dashboard-body")
+            .append(`<div class="col-md-6 select-toggle chart sub_initiatives">
+            <div class="card" style="padding: 8px 12px;">
+              <div class="header flex-row">
+                <input
+                    class="top_datepicker"
+                    id="datePickerWF"
+                    style="width: 35%;
+                      margin-left: -12px !important;
+                      margin-top: -4px;
+                      border: none !important;"
+                  />
+                <h5 class="prob flex-fill_47" style="margin-top: -42px;">
+                  <strong
+                    editable="true"
+                    contenteditable="true"
+                    >Chart</strong
+                  >
+                </h5>
+                <ul class="header-dropdown m-r--2">
+                  <li class="dropdown m-t--10">
+                    <a
+                      href="#"
+                      onclick="return false;"
+                      class="dropdown-toggle"
+                      data-toggle="dropdown"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="true"
+                    >
+                      <i class="fas fa-ellipsis-h"></i>
+                    </a>
+                    <ul
+                      class="dropdown-menu pull-right"
+                      x-placement="bottom-start"
+                      style="
+                        position: absolute;
+                        will-change: transform;
+                        top: 0px;
+                        left: 0px;
+                        transform: translate3d(0px, 24px, 0px);
+                      "
+                    >
+                      <li>
+                        <a
+                          href="#"
+                          data-toggle="modal"
+                          data-target="#chart_setting"
+                          onclick="return false;"
+                          >Settings</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" 
+                          data-toggle="modal"
+                          data-target="#waterfall-large">Enlarge</a>
+                      </li>
+                      
+                      <li>
+                        <a href="#" onclick="return false;">Delete</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div id="Waterfallchart"></div>
+                <div id="tag"></div>
+              </div>
+            </div>
+          </div>`);
+          $("#datePickerWF").daterangepicker({
+            forceUpdate: true,
+            periods: ["month", "quarter", "year"],
+            period: "month",
+            ranges: {
+              "Last 30 days": [moment().subtract(29, "days"), moment()],
+              "Last 90 days": [moment().subtract(89, "days"), moment()],
+              "Last Year": [
+                moment().subtract(1, "year").add(1, "day"),
+                moment(),
+              ],
+              // 'All Time': 'all-time' // [minDate, maxDate]
+            },
+            callback: function (startDate, endDate, period) {
+              var title = startDate.format("L") + " – " + endDate.format("L");
+              $(this).val(title);
+            },
+          });
+          waterfallRender();
+        }
+
+        if (data == "StackedChart") {
+          $("#dashboard-body")
+            .append(`<div class="col-md-6 select-toggle chart sub_initiatives">
+            <div class="card" style="padding: 8px 12px;">
+              <div class="header flex-row">
+                <input
+                    class="top_datepicker"
+                    id="datePickerST"
+                    style="width: 35%;
+                      margin-left: -12px !important;
+                      margin-top: -4px;
+                      border: none !important;"
+                  />
+                <h5 class="prob flex-fill_47" style="margin-top: -42px;">
+                  <strong
+                    editable="true"
+                    contenteditable="true"
+                    >Chart</strong
+                  >
+                </h5>
+                <ul class="header-dropdown m-r--2">
+                  <li class="dropdown m-t--10">
+                    <a
+                      href="#"
+                      onclick="return false;"
+                      class="dropdown-toggle"
+                      data-toggle="dropdown"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="true"
+                    >
+                      <i class="fas fa-ellipsis-h"></i>
+                    </a>
+                    <ul
+                      class="dropdown-menu pull-right"
+                      x-placement="bottom-start"
+                      style="
+                        position: absolute;
+                        will-change: transform;
+                        top: 0px;
+                        left: 0px;
+                        transform: translate3d(0px, 24px, 0px);
+                      "
+                    >
+                      <li>
+                        <a
+                          href="#"
+                          data-toggle="modal"
+                          data-target="#chart_setting"
+                          onclick="return false;"
+                          >Settings</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" 
+                          data-toggle="modal"
+                          data-target="#stacked-large">Enlarge</a>
+                      </li>
+                      
+                      <li>
+                        <a href="#" onclick="return false;">Delete</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div id="Stackedchart"></div>
+                <div id="tag"></div>
+              </div>
+            </div>
+          </div>`);
+          $("#datePickerST").daterangepicker({
+            forceUpdate: true,
+            periods: ["month", "quarter", "year"],
+            period: "month",
+            ranges: {
+              "Last 30 days": [moment().subtract(29, "days"), moment()],
+              "Last 90 days": [moment().subtract(89, "days"), moment()],
+              "Last Year": [
+                moment().subtract(1, "year").add(1, "day"),
+                moment(),
+              ],
+              // 'All Time': 'all-time' // [minDate, maxDate]
+            },
+            callback: function (startDate, endDate, period) {
+              var title = startDate.format("L") + " – " + endDate.format("L");
+              $(this).val(title);
+            },
+          });
+          stackedRender();
+        }
+
+        if (data == "HeatMap") {
+          $("#dashboard-body")
+            .append(`<div class="col-md-6 select-toggle chart sub_initiatives">
+            <div class="card" style="padding: 8px 12px;">
+              <div class="header flex-row">
+                <input
+                    class="top_datepicker"
+                    id="datePickerHM"
+                    style="width: 35%;
+                      margin-left: -12px !important;
+                      margin-top: -4px;
+                      border: none !important;"
+                  />
+                <h5 class="prob flex-fill_47" style="margin-top: -42px;">
+                  <strong
+                    editable="true"
+                    contenteditable="true"
+                    >Chart</strong
+                  >
+                </h5>
+                <ul class="header-dropdown m-r--2">
+                  <li class="dropdown m-t--10">
+                    <a
+                      href="#"
+                      onclick="return false;"
+                      class="dropdown-toggle"
+                      data-toggle="dropdown"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="true"
+                    >
+                      <i class="fas fa-ellipsis-h"></i>
+                    </a>
+                    <ul
+                      class="dropdown-menu pull-right"
+                      x-placement="bottom-start"
+                      style="
+                        position: absolute;
+                        will-change: transform;
+                        top: 0px;
+                        left: 0px;
+                        transform: translate3d(0px, 24px, 0px);
+                      "
+                    >
+                      <li>
+                        <a
+                          href="#"
+                          data-toggle="modal"
+                          data-target="#chart_setting"
+                          onclick="return false;"
+                          >Settings</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" 
+                          data-toggle="modal"
+                          data-target="#heatmap-large">Enlarge</a>
+                      </li>
+                      
+                      <li>
+                        <a href="#" onclick="return false;">Delete</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div id="Heatmap"></div>
+                <div id="tag"></div>
+              </div>
+            </div>
+          </div>`);
+          $("#datePickerHM").daterangepicker({
+            forceUpdate: true,
+            periods: ["month", "quarter", "year"],
+            period: "month",
+            ranges: {
+              "Last 30 days": [moment().subtract(29, "days"), moment()],
+              "Last 90 days": [moment().subtract(89, "days"), moment()],
+              "Last Year": [
+                moment().subtract(1, "year").add(1, "day"),
+                moment(),
+              ],
+              // 'All Time': 'all-time' // [minDate, maxDate]
+            },
+            callback: function (startDate, endDate, period) {
+              var title = startDate.format("L") + " – " + endDate.format("L");
+              $(this).val(title);
+            },
+          });
+          heatmapRender();
         }
 
         if (data == "drilldownDragDiv") {
@@ -2865,6 +3777,15 @@
                           data-target="#drilldown_setting"
                           onclick="return false;"
                           >Settings</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          data-toggle="modal"
+                          data-target="#drilldown_view"
+                          onclick="return false;"
+                          >View</a
                         >
                       </li>
                       <li>
@@ -3085,6 +4006,18 @@
                           onclick="return false;"
                           >Settings</a
                         >
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          data-toggle="modal"
+                          data-target="#datatable_view"
+                          onclick="return false;"
+                          >View</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" onclick="return false;">Download PDF</a>
                       </li>
                       <li>
                         <a href="#" onclick="return false;" class="delete-row"
@@ -3442,8 +4375,7 @@
             },
           },
           legend: {
-            horizontalAlign: "left",
-            offsetX: 40,
+            horizontalAlign: "center",
           },
         };
 
@@ -3580,6 +4512,409 @@
         ).render();
       }
 
+      function bubbleRender() {
+        var options = {
+          series: [
+            {
+              name: "Bubble1",
+              data: [
+                {
+                  x: 20,
+                  y: 54,
+                  z: 24,
+                },
+              ],
+            },
+            {
+              name: "Bubble2",
+              data: [
+                {
+                  x: 30,
+                  y: 24,
+                  z: 32,
+                },
+              ],
+            },
+            {
+              name: "Bubble3",
+              data: [
+                {
+                  x: 43,
+                  y: 34,
+                  z: 15,
+                },
+              ],
+            },
+          ],
+          chart: {
+            height: 323,
+            type: "bubble",
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          fill: {
+            opacity: 0.8,
+          },
+          xaxis: {
+            tickAmount: 12,
+            type: "category",
+          },
+          yaxis: {
+            max: 70,
+          },
+        };
+
+        var chart = new ApexCharts(
+          document.querySelector("#Bubblechart"),
+          options
+        ).render();
+        var bubbleChart = new ApexCharts(
+          document.querySelector("#Bubblelarge"),
+          options
+        ).render();
+      }
+
+      function lineRender() {
+        var options = {
+          series: [
+            {
+              name: "High - 2013",
+              data: [24, 29, 33, 36, 32, 32, 33],
+            },
+            {
+              name: "Low - 2013",
+              data: [12, 11, 14, 18, 17, 13, 13],
+            },
+          ],
+          chart: {
+            height: 323,
+            type: "line",
+            dropShadow: {
+              enabled: true,
+              color: "#000",
+              top: 18,
+              left: 7,
+              blur: 10,
+              opacity: 0.2,
+            },
+            toolbar: {
+              show: true,
+            },
+          },
+          colors: ["#77B6EA", "#545454"],
+          dataLabels: {
+            enabled: true,
+          },
+          stroke: {
+            curve: "smooth",
+          },
+          grid: {
+            borderColor: "#e7e7e7",
+            row: {
+              colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on columns
+              opacity: 0.5,
+            },
+          },
+          markers: {
+            size: 1,
+          },
+          xaxis: {
+            categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+            title: {
+              text: "Month",
+            },
+          },
+          yaxis: {
+            title: {
+              text: "Temperature",
+            },
+            min: 5,
+            max: 40,
+          },
+          legend: {
+            position: "bottom",
+            horizontalAlign: "right",
+            floating: true,
+            offsetY: 8,
+          },
+        };
+
+        var chart = new ApexCharts(
+          document.querySelector("#Linechart"),
+          options
+        ).render();
+        var bubbleChart = new ApexCharts(
+          document.querySelector("#Linelarge"),
+          options
+        ).render();
+      }
+
+      function pieRender() {
+        var options = {
+          series: [44, 55, 13, 43, 22],
+          chart: {
+            width: 447,
+            type: "pie",
+          },
+          labels: ["Team A", "Team B", "Team C", "Team D", "Team E"],
+          responsive: [
+            {
+              breakpoint: 480,
+              options: {
+                chart: {
+                  width: 200,
+                },
+                legend: {
+                  position: "right",
+                },
+              },
+            },
+          ],
+        };
+
+        var chart = new ApexCharts(
+          document.querySelector("#Piechart"),
+          options
+        ).render();
+        var pieChart = new ApexCharts(
+          document.querySelector("#Pielarge"),
+          options
+        ).render();
+      }
+
+      function waterfallRender() {
+        var options = {
+          series: [
+            {
+              data: [
+                {
+                  x: "Team A",
+                  y: [1, 5],
+                },
+                {
+                  x: "Team B",
+                  y: [4, 6],
+                },
+                {
+                  x: "Team C",
+                  y: [5, 8],
+                },
+                {
+                  x: "Team D",
+                  y: [3, 11],
+                },
+              ],
+            },
+            {
+              data: [
+                {
+                  x: "Team A",
+                  y: [2, 6],
+                },
+                {
+                  x: "Team B",
+                  y: [1, 3],
+                },
+                {
+                  x: "Team C",
+                  y: [7, 8],
+                },
+                {
+                  x: "Team D",
+                  y: [5, 9],
+                },
+              ],
+            },
+          ],
+          chart: {
+            type: "rangeBar",
+            height: 323,
+          },
+          plotOptions: {
+            bar: {
+              horizontal: false,
+            },
+          },
+          dataLabels: {
+            enabled: true,
+          },
+        };
+
+        var chart = new ApexCharts(
+          document.querySelector("#Waterfallchart"),
+          options
+        ).render();
+        var waterfallChart = new ApexCharts(
+          document.querySelector("#Waterfalllarge"),
+          options
+        ).render();
+      }
+
+      function stackedRender() {
+        var options = {
+          series: [
+            {
+              name: "Marine Sprite",
+              data: [44, 55, 41, 37, 22, 43, 21],
+            },
+            {
+              name: "Striking Calf",
+              data: [53, 32, 33, 52, 13, 43, 32],
+            },
+            {
+              name: "Tank Picture",
+              data: [12, 17, 11, 9, 15, 11, 20],
+            },
+            {
+              name: "Bucket Slope",
+              data: [9, 7, 5, 8, 6, 9, 4],
+            },
+            {
+              name: "Reborn Kid",
+              data: [25, 12, 19, 32, 25, 24, 10],
+            },
+          ],
+          chart: {
+            type: "bar",
+            height: 323,
+            stacked: true,
+          },
+          plotOptions: {
+            bar: {
+              horizontal: true,
+            },
+          },
+          stroke: {
+            width: 1,
+            colors: ["#fff"],
+          },
+          xaxis: {
+            categories: [2008, 2009, 2010, 2011, 2012, 2013, 2014],
+            labels: {
+              formatter: function (val) {
+                return val + "K";
+              },
+            },
+          },
+          yaxis: {
+            title: {
+              text: undefined,
+            },
+          },
+          tooltip: {
+            y: {
+              formatter: function (val) {
+                return val + "K";
+              },
+            },
+          },
+          fill: {
+            opacity: 1,
+          },
+          legend: {
+            position: "bottom",
+            horizontalAlign: "center",
+          },
+        };
+
+        var chart = new ApexCharts(
+          document.querySelector("#Stackedchart"),
+          options
+        ).render();
+        var stackedChart = new ApexCharts(
+          document.querySelector("#Stackedlarge"),
+          options
+        ).render();
+      }
+
+      function heatmapRender() {
+        var options = {
+          series: [
+            {
+              name: "Jan",
+              data: [
+                {
+                  x: "8",
+                  y: "23",
+                },
+                {
+                  x: "12",
+                  y: "90",
+                },
+              ],
+            },
+            {
+              name: "Feb",
+              data: [
+                {
+                  x: "15",
+                  y: "-3",
+                },
+                {
+                  x: "20",
+                  y: "50",
+                },
+              ],
+            },
+          ],
+          chart: {
+            height: 323,
+            type: "heatmap",
+          },
+          plotOptions: {
+            heatmap: {
+              shadeIntensity: 0.5,
+              radius: 0,
+              useFillColorAsStroke: true,
+              colorScale: {
+                ranges: [
+                  {
+                    from: -30,
+                    to: 5,
+                    name: "low",
+                    color: "#00A100",
+                  },
+                  {
+                    from: 6,
+                    to: 20,
+                    name: "medium",
+                    color: "#128FD9",
+                  },
+                  {
+                    from: 21,
+                    to: 45,
+                    name: "high",
+                    color: "#FFB200",
+                  },
+                  {
+                    from: 46,
+                    to: 55,
+                    name: "extreme",
+                    color: "#FF0000",
+                  },
+                ],
+              },
+            },
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          stroke: {
+            width: 1,
+          },
+        };
+
+        var chart = new ApexCharts(
+          document.querySelector("#Heatmap"),
+          options
+        ).render();
+        var heatmapChart = new ApexCharts(
+          document.querySelector("#Heatmaplarge"),
+          options
+        ).render();
+      }
+
       function mapRender() {
         am4core.ready(function () {
           // Themes begin
@@ -3688,11 +5023,6 @@
           $(this).val(title);
         },
       });
-      ko.applyBindings({
-        dateRange: ko.observable([moment().subtract(1, "month"), moment()]),
-      });
-
-      $("#timepicker_pop").timepicker();
 
       document.getElementById("chart-setting").onclick = duplicateChart;
 
@@ -3726,6 +5056,14 @@
         clone.id = "datatable" + ++i; // there can only be one element with an ID
         originalDatatable.parentNode.appendChild(clone);
       }
+
+      $(document).ready(function () {
+        $("#drilldownTableView").paging({ limit: 6 });
+      });
+
+      $(document).ready(function () {
+        $("#dataTableView").paging({ limit: 7 });
+      });
     </script>
   </body>
 </html>
