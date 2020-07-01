@@ -8,27 +8,21 @@
     <!-- Favicon-->
     <!-- <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon"> -->
     <!-- Plugins Core Css -->
-    <link
-      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
     <link href="../../assets/css/app.min.css" rel="stylesheet" />
     <!-- Custom Css -->
+    <link href="../../assets/css/app.min.css" rel="stylesheet" />
     <link href="../../assets/css/style.css" rel="stylesheet" />
     <link href="../../assets/css/custom.css" rel="stylesheet" />
     <link href="../../assets/css/initatives.css" rel="stylesheet" />
     <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" />
     <!-- You can choose a theme from css/styles instead of get all themes -->
     <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
-    <!-- <link href="../../assets/css/table-view.css" rel="stylesheet" /> -->
-    <!-- <link rel="stylesheet" href="../../assets/daterangepicker.css"> -->
-    <!-- <link rel="stylesheet" href="../../assets/datepickerair.css"> -->
+    <link rel="stylesheet" href="../../assets/datepickerair.css" />
     <link href="../../assets/jquery-ui.min.css" rel="stylesheet" />
-    <!-- <link href="../../assets/daterangepicker/daterangepicker.min.css" rel="stylesheet"> -->
+    <!-- <link
+      href="../../assets/daterangepicker/daterangepicker.min.css"
+      rel="stylesheet"
+    /> -->
     <link href="../../assets/css/employee.css" rel="stylesheet" />
     <!-- <link href="../../assets/bootstrap-datepicker.min.css" rel="stylesheet" /> -->
 
@@ -60,12 +54,146 @@
 
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
+    <!-- Font Awsome Icons -->
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <style>
       .orientation-right {
         top: 60px !important;
         right: 0 !important;
         left: auto !important;
         position: fixed;
+      }
+
+      .cardBox {
+        border-radius: 8px !important;
+        border: none !important;
+        padding: 16px 16px 0 16px;
+      }
+
+      .card-icons i {
+        font-size: 12px;
+        color: #919191;
+        cursor: pointer;
+      }
+
+      .card-icons i:nth-child(2) {
+        margin-left: 8px;
+        font-size: 15px;
+      }
+
+      .page-card-title {
+        color: #1e252d;
+        font-size: 15px;
+      }
+
+      .meeting-time {
+        color: #919191;
+      }
+
+      .meeting-time span:nth-child(2) {
+        margin-left: 8px;
+      }
+
+      .meeting-time span:nth-child(3) {
+        text-align: right;
+      }
+
+      .meeting-location span {
+        color: #1e252d;
+        font-weight: 500;
+        font-size: 12px;
+      }
+
+      .card-footer {
+        display: flex !important;
+        -webkit-box-orient: horizontal !important;
+        -webkit-box-direction: normal !important;
+        flex-direction: row !important;
+        justify-content: space-evenly;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .card-footer-icon i {
+        font-size: 18px;
+        color: rgb(226, 226, 226) !important;
+        cursor: pointer;
+      }
+
+      .modal-custom-input {
+        border: 1px solid #e5e5e5 !important;
+        border-radius: 4px !important;
+        width: 98% !important;
+        height: 65% !important;
+        padding: 0 8px !important;
+        font-size: 14px !important;
+      }
+
+      .gj-datepicker-md [role="right-icon"] {
+        top: 6px;
+      }
+
+      .gj-timepicker-md [role="right-icon"] {
+        top: 5px;
+      }
+
+      .input-calender-icon {
+        color: #5a6169;
+        position: absolute;
+        bottom: 6%;
+        right: 8%;
+        font-size: 16px;
+      }
+
+      .input-calender-icon1 {
+        color: #5a6169;
+        position: absolute;
+        bottom: 40%;
+        right: 12%;
+        font-size: 16px;
+      }
+
+      .paging-nav {
+        text-align: right;
+        padding-top: 2px;
+      }
+
+      .paging-nav a {
+        margin: 6px 2px;
+        text-decoration: none;
+        display: inline-block;
+        padding: 4px 10px;
+        background: #71767a;
+        color: #fff !important;
+        border-radius: 3px;
+      }
+
+      .paging-nav .selected-page {
+        background: #1e252d;
+        font-weight: bold;
+      }
+
+      #fileuploadTable thead tr th {
+        border: 1px solid #cecece !important;
+        padding: 6px 4px 6px 4px;
+        font-size: 12px !important;
+        color: #4e4e4e;
+        background: #f7f7f7;
+        font-weight: 600;
+      }
+
+      #fileuploadTable tbody tr td {
+        border: 1px solid #cecece !important;
+        padding: 8px 4px 8px 4px !important;
+        font-size: 12px !important;
+        color: #535353;
       }
     </style>
   </head>
@@ -185,8 +313,8 @@
               <a
                 href="#"
                 onClick="return false;"
-                class="dropdown-toggle"
-                data-toggle="dropdown"
+                data-toggle="modal"
+                data-target="#settings"
                 role="button"
               >
                 <i class="nav-hdr-btn ti-settings" style="color: gray;"></i>
@@ -364,592 +492,1153 @@
       </aside>
     </div>
     <!-- #END# Left Sidebar -->
-    <!-- Right Sidebar -->
-    <aside id="rightsidebar" class="right-sidebar open">
-      <div class="tab-content">
-        <div
-          role="tabpanel"
-          class="tab-pane in active in active stretchLeft"
-          id="skins"
-        >
-          <div
-            class="slimScrollDiv"
-            style="position: relative; overflow: hidden; width: auto;"
-          >
-            <div
-              class="demo-skin"
-              style="overflow: hidden; width: auto; height: auto;"
-            >
-              <div class="rightSetting">
-                <p class="left">Profile</p>
-                <a href="#">
-                  <p class="right editProfile">Edit</p>
-                  <p class="right editProfile"></p>
-                </a>
-                <ul
-                  class="setting-list profile-default list-unstyled m-t-20 center"
+
+    <!-- Create Meeting Modal -->
+    <div id="create_meeting" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="margin-top: 8%;">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Create Meeting</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label for="meeting-name">Subject</label>
+                <input
+                  type="text"
+                  class="modal-custom-input"
+                  id="meeting-name"
+                />
+              </div>
+            </div>
+            <div class="row m-t-20">
+              <div class="form-group col-md-6">
+                <label for="datepicker">From Date & Time</label>
+                <i class="far fa-calendar input-calender-icon"></i>
+                <input
+                  type="text"
+                  class="modal-custom-input date_pickers_single"
+                  style="height: 70% !important; width: 94% !important;"
+                  data-language="en"
+                  data-timepicker="true"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                />
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="datepicker">To Date & Time</label>
+                <i class="far fa-calendar input-calender-icon"></i>
+                <input
+                  type="text"
+                  class="modal-custom-input date_pickers_single"
+                  style="height: 70% !important; width: 94% !important;"
+                  data-language="en"
+                  data-timepicker="true"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                />
+              </div>
+            </div>
+
+            <div class="row m-t-10">
+              <div class="form-group col-md-6">
+                <label for="location">Location</label>
+                <input
+                  type="text"
+                  class="modal-custom-input"
+                  id="location"
+                  style="height: 38px !important;"
+                />
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="type">Status</label>
+                <select
+                  id="type"
+                  class="modal-custom-select"
+                  style="height: 56% !important;"
                 >
-                  <!-- <li class="center">
-                                                <i class="fas fa-user-circle" style="font-size: 110px"></i>
-                                            </li> -->
-                  <li
-                    _ngcontent-hhc-c5=""
-                    class="center avatar avatar-sm"
-                    style="width: 85px;"
-                  >
-                    <img
-                      _ngcontent-hhc-c5=""
-                      alt="user"
-                      width="110"
-                      class="rounded-circle"
-                      src="../../assets/images/user/usrbig7.jpg"
-                    />
-                  </li>
-                  <li>
-                    <p class="center name">Karthick, C001</p>
-                  </li>
-                  <li>
-                    <p class="center grey1">Manager, Chennai, TN, India</p>
-                  </li>
-                  <li>
-                    <p class="center grey1">karthick@stratroom.com</p>
-                  </li>
-                </ul>
-                <ul
-                  class="setting-list profile-replace list-unstyled m-t-20"
-                  style="display: none;"
+                  <option value="Scheduled">Scheduled</option>
+                  <option value="Rescheduled">Rescheduled</option>
+                  <option value="Ongoing">Ongoing</option>
+                  <option value="Completed">Completed</option>
+                  <option value="Cancelled">Cancelled</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+              <div class="form-group col-lg-8 col-md-4 col-sm-12"></div>
+              <div
+                class="form-group col-lg-2 col-md-4 col-sm-6"
+                style="padding-right: 4px;"
+              >
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-secondary"
+                  data-dismiss="modal"
                 >
-                  <li class="center">
-                    <form id="profileForm">
-                      <div class="form-group">
-                        <div class="form-line profile-pic">
-                          <!-- <i  class="fas fa-user-circle" style="font-size: 100px; opacity:0.5"></i> -->
-                          <li
-                            id="profileImage"
-                            _ngcontent-hhc-c5=""
-                            class="center avatar avatar-sm"
-                            style="width: 85px; z-index: -1;"
-                          >
-                            <img
-                              _ngcontent-hhc-c5=""
-                              alt="user"
-                              width="110"
-                              class="rounded-circle"
-                              src="../../assets/images/user/usrbig7.jpg"
-                            />
-                          </li>
-                          <input
-                            id="imageUpload"
-                            type="file"
-                            name="profile_photo"
-                            placeholder="Photo"
-                            required=""
-                            capture=""
-                          />
-                          <div class="edit">
-                            <a href="#"><i class="fa fa-pencil-alt"></i></a>
-                          </div>
-                        </div>
-                        <div class="form-line">
-                          <label for="name" class="left">Name</label>
-                          <input type="text" name="name" class="form-control" />
-                        </div>
-                        <div class="form-line">
-                          <label for="id" class="left">Employee ID</label>
-                          <input type="text" name="id" class="form-control" />
-                        </div>
+                  Cancel
+                </button>
+              </div>
+              <div
+                class="form-group col-lg-2 col-md-4 col-sm-6"
+                style="padding-left: 4px;"
+              >
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-primary"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-                        <div class="form-line">
-                          <label for="title" class="left">Title</label>
-                          <input
-                            type="text"
-                            name="title"
-                            class="form-control"
-                          />
-                        </div>
-
-                        <div class="form-line">
-                          <label for="email" class="left">Email</label>
-                          <input
-                            type="email"
-                            name="email"
-                            class="form-control"
-                          />
-                        </div>
-
-                        <div class="form-line">
-                          <label for="location" class="left">Location</label>
-                          <input
-                            type="text"
-                            name="location"
-                            class="form-control"
-                          />
-                        </div>
-
-                        <div class="form-line center">
-                          <button
-                            class="btn-default1 btn cancelEditProfile"
-                            value="Cancel"
-                          >
-                            Cancel
-                          </button>
-                          <button class="initative_save_btn" value="Submit">
-                            Submit
-                          </button>
-                        </div>
-                      </div>
-                    </form>
-                  </li>
-                  <li>
-                    <!-- <p class="center name">Karthick</p> -->
-                  </li>
-                </ul>
+    <!-- Edit Meeting Modal -->
+    <div id="edit_meeting" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="margin-top: 8%;">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Edit Meeting</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label for="meeting-name">Subject</label>
+                <input
+                  type="text"
+                  class="modal-custom-input"
+                  id="meeting-name"
+                />
+              </div>
+            </div>
+            <div class="row m-t-20">
+              <div class="form-group col-md-6">
+                <label for="datepicker">From Date & Time</label>
+                <i class="far fa-calendar input-calender-icon"></i>
+                <input
+                  type="text"
+                  class="modal-custom-input date_pickers_single"
+                  style="height: 70% !important; width: 94% !important;"
+                  data-language="en"
+                  data-timepicker="true"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                />
               </div>
 
-              <div class="row clearfix">
-                <!-- Basic Examples -->
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <div class="">
-                    <div class="body">
-                      <div class="row clearfix">
-                        <div class="col-xs-12 ol-sm-12 col-md-12 col-lg-12">
-                          <div
-                            class="panel-group"
-                            id="accordion_1"
-                            role="tablist"
-                            aria-multiselectable="true"
-                          >
-                            <div class="panel">
-                              <div
-                                class="panel-heading profile_report"
-                                role="tab"
-                                id="headingOne_1"
-                              >
-                                <h4 class="panel-title">
-                                  <a
-                                    role="button"
-                                    data-toggle="collapse"
-                                    data-parent="#accordion_1"
-                                    href="#collapseOne_1"
-                                    aria-expanded="true"
-                                    aria-controls="collapseOne_1"
-                                  >
-                                    Reporting To
-                                  </a>
-                                </h4>
-                              </div>
-                              <div
-                                id="collapseOne_1"
-                                class="panel-collapse collapse in"
-                                role="tabpanel"
-                                aria-labelledby="headingOne_1"
-                              >
-                                <div class="panel-body profile_edit">
-                                  <div class="rightSetting">
-                                    <!-- <p class="left">Reporting To</p> -->
-                                    <a href="#" id="reportingAdd">
-                                      <p class="right">Add</p>
-                                    </a>
-                                    <ul
-                                      class="setting-list reporting-default list-unstyled m-t-20"
-                                    >
-                                      <li class="row reportingRow">
-                                        <div class="col-md-3 p-b-10">
-                                          <!-- <li id="profileImage" _ngcontent-hhc-c5="" class="center avatar avatar-sm" style="width:85px; z-index:-1"> -->
-                                          <img
-                                            _ngcontent-hhc-c5=""
-                                            alt="user"
-                                            width="110"
-                                            class="rounded-circle"
-                                            src="../../assets/images/user/usrbig7.jpg"
-                                          />
-                                          <!-- </li> -->
-                                        </div>
-                                        <div class="col-md-7 p-t-5">
-                                          <p class="center name">Arun</p>
-                                          <p class="center grey1">Developer</p>
-                                        </div>
-                                        <div
-                                          class="col-md-1"
-                                          style="float: right;"
-                                        >
-                                          <a href="#" class="reportingEdit"
-                                            ><i
-                                              class="fas fa-pencil-alt"
-                                              style="font-size: 14px;"
-                                            ></i
-                                          ></a>
-                                        </div>
-                                      </li>
-                                      <li class="row reportingRow">
-                                        <div class="col-md-3 p-b-10">
-                                          <img
-                                            _ngcontent-hhc-c5=""
-                                            alt="user"
-                                            width="110"
-                                            class="rounded-circle"
-                                            src="../../assets/images/user/usrbig8.jpg"
-                                          />
-                                        </div>
-                                        <div class="col-md-7 p-t-5">
-                                          <p class="center name">Santhosh</p>
-                                          <p class="center grey1">CTO</p>
-                                        </div>
-                                        <div
-                                          class="col-md-1"
-                                          style="float: right;"
-                                        >
-                                          <a href="#" class="reportingEdit"
-                                            ><i
-                                              class="fas fa-pencil-alt"
-                                              style="font-size: 14px;"
-                                            ></i
-                                          ></a>
-                                        </div>
-                                      </li>
-                                    </ul>
-                                    <ul
-                                      class="setting-list reporting-replace-add list-unstyled m-t-20"
-                                      style="display: none;"
-                                    >
-                                      <li class="row">
-                                        <form id="reportingAddForm">
-                                          <div class="form-group">
-                                            <div
-                                              class="form-line center profile-pic"
-                                            >
-                                              <img
-                                                _ngcontent-hhc-c5=""
-                                                alt="user"
-                                                width="60"
-                                                class="rounded-circle"
-                                                src="../../assets/images/user/usrbig7.jpg"
-                                              />
-                                              <input
-                                                id="reportingImageUpload"
-                                                type="file"
-                                                name="profile_photo1"
-                                                placeholder="Photo"
-                                                required=""
-                                                capture=""
-                                              />
-                                              <div class="edit1">
-                                                <a href="#"
-                                                  ><i
-                                                    class="fa fa-pencil-alt"
-                                                  ></i
-                                                ></a>
-                                              </div>
-                                            </div>
-                                            <div class="form-line">
-                                              <label for="name" class="left"
-                                                >Name</label
-                                              >
-                                              <input
-                                                type="text"
-                                                name="name"
-                                                class="form-control"
-                                              />
-                                            </div>
-                                            <div class="form-line">
-                                              <label for="title" class="left"
-                                                >Title</label
-                                              >
-                                              <input
-                                                type="text"
-                                                name="title"
-                                                class="form-control"
-                                              />
-                                            </div>
-
-                                            <div class="form-line center">
-                                              <button
-                                                class="btn-default1 btn canceladdReporting"
-                                                value="Cancel"
-                                              >
-                                                Cancel
-                                              </button>
-                                              <button
-                                                class="initative_save_btn"
-                                                value="Submit"
-                                              >
-                                                Submit
-                                              </button>
-                                            </div>
-                                          </div>
-                                        </form>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div class="form-group col-md-6">
+                <label for="datepicker">To Date & Time</label>
+                <i class="far fa-calendar input-calender-icon"></i>
+                <input
+                  type="text"
+                  class="modal-custom-input date_pickers_single"
+                  style="height: 70% !important; width: 94% !important;"
+                  data-language="en"
+                  data-timepicker="true"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                />
               </div>
-              <div class="row clearfix">
-                <!-- Basic Examples -->
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <div class="">
-                    <div class="body">
-                      <div class="row clearfix">
-                        <div class="col-xs-12 ol-sm-12 col-md-12 col-lg-12">
-                          <div
-                            class="panel-group"
-                            id="accordion_2"
-                            role="tablist"
-                            aria-multiselectable="true"
-                          >
-                            <div class="panel">
-                              <div
-                                class="panel-heading profile_direct"
-                                role="tab"
-                                id="headingOne_2"
-                              >
-                                <h4 class="panel-title">
-                                  <a
-                                    role="button"
-                                    data-toggle="collapse"
-                                    data-parent="#accordion_2"
-                                    href="#collapseOne_2"
-                                    aria-expanded="true"
-                                    aria-controls="collapseOne_2"
-                                  >
-                                    Direct Reportees
-                                  </a>
-                                </h4>
-                              </div>
-                              <div
-                                id="collapseOne_2"
-                                class="panel-collapse collapse in"
-                                role="tabpanel"
-                                aria-labelledby="headingOne_2"
-                              >
-                                <div class="panel-body profile_edit">
-                                  <div class="rightSetting">
-                                    <!-- <p class="left">Direct Reportees</p> -->
-                                    <a href="#" id="directAdd">
-                                      <p class="right">Add</p>
-                                    </a>
-                                    <ul
-                                      class="setting-list direct-default list-unstyled m-t-20"
-                                    >
-                                      <li class="row reportingRow">
-                                        <div class="col-md-3 p-b-10">
-                                          <img
-                                            _ngcontent-hhc-c5=""
-                                            alt="user"
-                                            width="110"
-                                            class="rounded-circle"
-                                            src="../../assets/images/user/usrbig6.jpg"
-                                          />
-                                        </div>
-                                        <div class="col-md-7 p-t-5">
-                                          <p class="center name">Karthick</p>
-                                          <p class="center grey1">Manager</p>
-                                        </div>
-                                        <div
-                                          class="col-md-1"
-                                          style="float: right;"
-                                        >
-                                          <a href="#" class="directEdit"
-                                            ><i
-                                              class="fas fa-pencil-alt"
-                                              style="font-size: 14px;"
-                                            ></i
-                                          ></a>
-                                        </div>
-                                      </li>
-                                      <li class="row reportingRow">
-                                        <div class="col-md-3 p-b-10">
-                                          <img
-                                            _ngcontent-hhc-c5=""
-                                            alt="user"
-                                            width="110"
-                                            class="rounded-circle"
-                                            src="../../assets/images/user/usrbig9.jpg"
-                                          />
-                                        </div>
-                                        <div class="col-md-7 p-t-5">
-                                          <p class="center name">Naren</p>
-                                          <p class="center grey1">Designer</p>
-                                        </div>
-                                        <div
-                                          class="col-md-1"
-                                          style="float: right;"
-                                        >
-                                          <a href="#" class="directEdit"
-                                            ><i
-                                              class="fas fa-pencil-alt"
-                                              style="font-size: 14px;"
-                                            ></i
-                                          ></a>
-                                        </div>
-                                      </li>
-                                    </ul>
-                                    <ul
-                                      class="setting-list direct-replace-add list-unstyled m-t-20"
-                                      style="display: none;"
-                                    >
-                                      <li class="row">
-                                        <form id="directAddForm">
-                                          <div class="form-group">
-                                            <div
-                                              class="form-line center profile-pic"
-                                            >
-                                              <img
-                                                _ngcontent-hhc-c5=""
-                                                alt="user"
-                                                width="60"
-                                                class="rounded-circle"
-                                                src="../../assets/images/user/usrbig7.jpg"
-                                              />
-                                              <input
-                                                id="directImageUpload"
-                                                type="file"
-                                                name="profile_photo1"
-                                                placeholder="Photo"
-                                                required=""
-                                                capture=""
-                                              />
-                                              <div class="edit1">
-                                                <a href="#"
-                                                  ><i
-                                                    class="fa fa-pencil-alt"
-                                                  ></i
-                                                ></a>
-                                              </div>
-                                            </div>
-                                            <div class="form-line">
-                                              <label for="name" class="left"
-                                                >Name</label
-                                              >
-                                              <input
-                                                type="text"
-                                                name="name"
-                                                class="form-control"
-                                              />
-                                            </div>
-                                            <div class="form-line">
-                                              <label for="title" class="left"
-                                                >Title</label
-                                              >
-                                              <input
-                                                type="text"
-                                                name="title"
-                                                class="form-control"
-                                              />
-                                            </div>
+            </div>
 
-                                            <div class="form-line center">
-                                              <button
-                                                class="btn-default1 btn canceladdDirect"
-                                                value="Cancel"
-                                              >
-                                                Cancel
-                                              </button>
-                                              <button
-                                                class="initative_save_btn"
-                                                value="Submit"
-                                              >
-                                                Submit
-                                              </button>
-                                            </div>
-                                          </div>
-                                        </form>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <div class="row m-t-10">
+              <div class="form-group col-md-6">
+                <label for="location">Location</label>
+                <input
+                  type="text"
+                  class="modal-custom-input"
+                  id="location"
+                  style="height: 38px !important; width: 94% !important;"
+                />
               </div>
-              <div class="row clearfix">
-                <!-- Basic Examples -->
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <div class="">
-                    <div class="body">
-                      <div class="row clearfix">
-                        <div class="col-xs-12 ol-sm-12 col-md-12 col-lg-12">
-                          <div
-                            class="panel-group"
-                            id="accordion_3"
-                            role="tablist"
-                            aria-multiselectable="true"
-                          >
-                            <div class="panel">
-                              <div
-                                class="panel-heading profile_responsilities"
-                                role="tab"
-                                id="headingOne_3"
-                              >
-                                <h4 class="panel-title">
-                                  <a
-                                    role="button"
-                                    data-toggle="collapse"
-                                    data-parent="#accordion_3"
-                                    href="#collapseOne_3"
-                                    aria-expanded="true"
-                                    aria-controls="collapseOne_3"
-                                  >
-                                    My Responsibilities
-                                  </a>
-                                </h4>
-                              </div>
-                              <div
-                                id="collapseOne_3"
-                                class="panel-collapse collapse in"
-                                role="tabpanel"
-                                aria-labelledby="headingOne_3"
-                              >
-                                <div class="panel-body profile_edit">
-                                  <ul class="ml-menu profile_accordion">
-                                    <li>
-                                      <a href="#">My KPI's</a>
-                                    </li>
-                                    <li>
-                                      <a href="#">My Initiatives</a>
-                                    </li>
-                                    <li>
-                                      <a href="#">My Activities</a>
-                                    </li>
-                                    <li>
-                                      <a href="#">My Tasks</a>
-                                    </li>
-                                    <li>
-                                      <a href="#">My Forms</a>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+
+              <div class="form-group col-md-6">
+                <label for="type">Status</label>
+                <select
+                  id="type"
+                  class="modal-custom-select"
+                  style="height: 56% !important;"
+                >
+                  <option value="Scheduled">Scheduled</option>
+                  <option value="Rescheduled">Rescheduled</option>
+                  <option value="Ongoing">Ongoing</option>
+                  <option value="Completed">Completed</option>
+                  <option value="Cancelled">Cancelled</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+              <div class="form-group col-lg-8 col-md-4 col-sm-12"></div>
+              <div
+                class="form-group col-lg-2 col-md-4 col-sm-6"
+                style="padding-right: 4px;"
+              >
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-secondary"
+                  data-dismiss="modal"
+                >
+                  Cancel
+                </button>
+              </div>
+              <div
+                class="form-group col-lg-2 col-md-4 col-sm-6"
+                style="padding-left: 4px;"
+              >
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-primary"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- File upload Modal -->
+    <div id="uploaded_files" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>File Upload</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row" style="padding: 16px;">
+              <div
+                class="col-md-12"
+                style="margin-top: -12px; padding-bottom: 8px;"
+              >
+                <button
+                  class="btn btn-custom-secondary"
+                  data-toggle="modal"
+                  data-target="#file_upload_popup"
+                >
+                  <i class="fa fa-plus"></i>
+                </button>
+              </div>
+              <div class="col-md-12">
+                <div class="tableBody">
+                  <div class="table-responsive">
+                    <table
+                      class="table"
+                      id="fileuploadTable"
+                      style="margin-bottom: 0px !important;"
+                    >
+                      <thead>
+                        <tr>
+                          <th>Sr. No.</th>
+                          <th>File Name</th>
+                          <th>Uploaded On</th>
+                          <th>Size</th>
+                          <th>Type</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            1
+                          </td>
+                          <td>End Report</td>
+                          <td>Oct 15, 2020</td>
+                          <td>22 MB</td>
+                          <td>PDF</td>
+                          <td>
+                            <i
+                              class="fas fa-pen"
+                              data-toggle="modal"
+                              data-target=".file_upload_edit_popup"
+                            ></i>
+                            <i
+                              class="fas fa-trash"
+                              style="margin-left: 16px;"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            2
+                          </td>
+                          <td>End Report</td>
+                          <td>Oct 15, 2020</td>
+                          <td>22 MB</td>
+                          <td>PDF</td>
+                          <td>
+                            <i
+                              class="fas fa-pen"
+                              data-toggle="modal"
+                              data-target=".file_upload_edit_popup"
+                            ></i>
+                            <i
+                              class="fas fa-trash"
+                              style="margin-left: 16px;"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            3
+                          </td>
+                          <td>End Report</td>
+                          <td>Oct 15, 2020</td>
+                          <td>22 MB</td>
+                          <td>PDF</td>
+                          <td>
+                            <i
+                              class="fas fa-pen"
+                              data-toggle="modal"
+                              data-target=".file_upload_edit_popup"
+                            ></i>
+                            <i
+                              class="fas fa-trash"
+                              style="margin-left: 16px;"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            4
+                          </td>
+                          <td>End Report</td>
+                          <td>Oct 15, 2020</td>
+                          <td>22 MB</td>
+                          <td>PDF</td>
+                          <td>
+                            <i
+                              class="fas fa-pen"
+                              data-toggle="modal"
+                              data-target=".file_upload_edit_popup"
+                            ></i>
+                            <i
+                              class="fas fa-trash"
+                              style="margin-left: 16px;"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            5
+                          </td>
+                          <td>End Report</td>
+                          <td>Oct 15, 2020</td>
+                          <td>22 MB</td>
+                          <td>PDF</td>
+                          <td>
+                            <i
+                              class="fas fa-pen"
+                              data-toggle="modal"
+                              data-target=".file_upload_edit_popup"
+                            ></i>
+                            <i
+                              class="fas fa-trash"
+                              style="margin-left: 16px;"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            6
+                          </td>
+                          <td>End Report</td>
+                          <td>Oct 15, 2020</td>
+                          <td>22 MB</td>
+                          <td>PDF</td>
+                          <td>
+                            <i
+                              class="fas fa-pen"
+                              data-toggle="modal"
+                              data-target=".file_upload_edit_popup"
+                            ></i>
+                            <i
+                              class="fas fa-trash"
+                              style="margin-left: 16px;"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            7
+                          </td>
+                          <td>End Report</td>
+                          <td>Oct 15, 2020</td>
+                          <td>22 MB</td>
+                          <td>PDF</td>
+                          <td>
+                            <i
+                              class="fas fa-pen"
+                              data-toggle="modal"
+                              data-target=".file_upload_edit_popup"
+                            ></i>
+                            <i
+                              class="fas fa-trash"
+                              style="margin-left: 16px;"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            8
+                          </td>
+                          <td>End Report</td>
+                          <td>Oct 15, 2020</td>
+                          <td>22 MB</td>
+                          <td>PDF</td>
+                          <td>
+                            <i
+                              class="fas fa-pen"
+                              data-toggle="modal"
+                              data-target=".file_upload_edit_popup"
+                            ></i>
+                            <i
+                              class="fas fa-trash"
+                              style="margin-left: 16px;"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            9
+                          </td>
+                          <td>End Report</td>
+                          <td>Oct 15, 2020</td>
+                          <td>22 MB</td>
+                          <td>PDF</td>
+                          <td>
+                            <i
+                              class="fas fa-pen"
+                              data-toggle="modal"
+                              data-target=".file_upload_edit_popup"
+                            ></i>
+                            <i
+                              class="fas fa-trash"
+                              style="margin-left: 16px;"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            10
+                          </td>
+                          <td>End Report</td>
+                          <td>Oct 15, 2020</td>
+                          <td>22 MB</td>
+                          <td>PDF</td>
+                          <td>
+                            <i
+                              class="fas fa-pen"
+                              data-toggle="modal"
+                              data-target=".file_upload_edit_popup"
+                            ></i>
+                            <i
+                              class="fas fa-trash"
+                              style="margin-left: 16px;"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            11
+                          </td>
+                          <td>End Report</td>
+                          <td>Oct 15, 2020</td>
+                          <td>22 MB</td>
+                          <td>PDF</td>
+                          <td>
+                            <i
+                              class="fas fa-pen"
+                              data-toggle="modal"
+                              data-target=".file_upload_edit_popup"
+                            ></i>
+                            <i
+                              class="fas fa-trash"
+                              style="margin-left: 16px;"
+                            ></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            12
+                          </td>
+                          <td>End Report</td>
+                          <td>Oct 15, 2020</td>
+                          <td>22 MB</td>
+                          <td>PDF</td>
+                          <td>
+                            <i
+                              class="fas fa-pen"
+                              data-toggle="modal"
+                              data-target=".file_upload_edit_popup"
+                            ></i>
+                            <i
+                              class="fas fa-trash"
+                              style="margin-left: 16px;"
+                            ></i>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- <div class="slimScrollBar" style="background: rgba(0, 0, 0, 0.5); width: 6px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 0px; z-index: 99; right: 1px; height: 482px;"></div>
-                                <div class="slimScrollRail" style="width: 6px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 0px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div> -->
           </div>
         </div>
       </div>
-    </aside>
-    <!-- #END# Right Sidebar -->
+    </div>
 
-    <section class="content" id="">
+    <!-- File Upload PopUp -->
+    <div
+      class="modal fade"
+      id="file_upload_popup"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>File Upload</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="form-group col-md-10" style="padding-right: 4px;">
+                <input
+                  type="file"
+                  class="modal-custom-input"
+                  style="
+                    height: 38px !important;
+                    padding: 5px !important;
+                    margin-bottom: 8px;
+                  "
+                  accept=".pdf,.ppt,.jpeg,.xlsx,.doc,.docx"
+                />
+                <span>Supported file type (jpeg,pdf,pptx,xlsx,docx)</span>
+              </div>
+              <div class="form-group col-md-2" style="padding-left: 4px;">
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-primary"
+                >
+                  Upload
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notes Modal -->
+    <div id="notes" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="margin-top: 8%;">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Notes</h4>
+            <div class="float-right">
+              <button
+                onclick="notes('note_table')"
+                class="form-control rounded-circle"
+                style="margin-top: -4px; border: none;"
+              >
+                <i class="fa fa-plus"></i>
+              </button>
+            </div>
+          </div>
+          <div class="modal-body">
+            <table id="note_table" class="table table-bordered">
+              <thead class="bg-light">
+                <tr>
+                  <th>
+                    Notes
+                  </th>
+                  <th style="width: 50px;">Responsible</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <textarea class="form-control" rows="5"> </textarea>
+                  </td>
+                  <td>
+                    <div class="fullscreen">
+                      <ul
+                        class="list-unstyled order-list"
+                        data-toggle="modal"
+                        data-target="#user_edit_popup"
+                        style="cursor: pointer;"
+                      >
+                        <li class="avatar avatar-sm">
+                          <img
+                            class="rounded-circle"
+                            src="../../assets/images/user/user7.jpg"
+                            alt="user"
+                          />
+                        </li>
+                        <li class="avatar avatar-sm">
+                          <img
+                            class="rounded-circle"
+                            src="../../assets/images/user/user8.jpg"
+                            alt="user"
+                          />
+                        </li>
+                        <div class="image-upload">
+                          <label for="file-input">
+                            <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                              <a
+                                href="#"
+                                class="favgs"
+                                data-toggle="modal"
+                                data-target="#addpeople"
+                              >
+                                <span _ngcontent-hhc-c5="" class="badge"
+                                  >+</span
+                                >
+                              </a>
+                            </li>
+                          </label>
+                        </div>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <textarea class="form-control" rows="5"> </textarea>
+                  </td>
+                  <td>
+                    <div class="fullscreen">
+                      <ul
+                        class="list-unstyled order-list"
+                        data-toggle="modal"
+                        data-target="#user_edit_popup"
+                        style="cursor: pointer;"
+                      >
+                        <li class="avatar avatar-sm">
+                          <img
+                            class="rounded-circle"
+                            src="../../assets/images/user/user7.jpg"
+                            alt="user"
+                          />
+                        </li>
+                        <li class="avatar avatar-sm">
+                          <img
+                            class="rounded-circle"
+                            src="../../assets/images/user/user8.jpg"
+                            alt="user"
+                          />
+                        </li>
+                        <div class="image-upload">
+                          <label for="file-input">
+                            <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                              <a
+                                href="#"
+                                class="favgs"
+                                data-toggle="modal"
+                                data-target="#addpeople"
+                              >
+                                <span _ngcontent-hhc-c5="" class="badge"
+                                  >+</span
+                                >
+                              </a>
+                            </li>
+                          </label>
+                        </div>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="row">
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+              <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
+              <div
+                class="form-group col-lg-2 col-md-3 col-sm-6"
+                style="padding-right: 4px;"
+              >
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-secondary"
+                  data-dismiss="modal"
+                >
+                  Cancel
+                </button>
+              </div>
+              <div
+                class="form-group col-lg-2 col-md-3 col-sm-6"
+                style="padding-left: 4px;"
+              >
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-primary"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Modal -->
+    <div id="action" class="modal fade" role="dialog">
+      <div
+        class="modal-dialog modal-lg"
+        style="margin-top: 6%; max-width: 60% !important;"
+      >
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Actions</h4>
+            <div class="float-right">
+              <button
+                onclick="action('action_table')"
+                class="form-control rounded-circle"
+                style="margin-top: -4px; border: none;"
+              >
+                <i class="fa fa-plus"></i>
+              </button>
+            </div>
+          </div>
+          <div class="modal-body">
+            <table id="action_table" class="table table-bordered">
+              <thead class="bg-light">
+                <tr>
+                  <th>Actions</th>
+                  <th style="width: 150px;">By Date</th>
+                  <th style="width: 50px;">Responsible</th>
+                  <th style="width: 50px;">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <textarea class="form-control" cols="5" rows="5">
+                    </textarea>
+                  </td>
+                  <td>
+                    <div class="row">
+                      <div class="form-group col-md-12">
+                        <i class="far fa-calendar input-calender-icon1"></i>
+                        <input
+                          type="text"
+                          class="modal-custom-input date_pickers_single"
+                          style="
+                            height: 34px !important;
+                            width: 90% !important;
+                          "
+                          data-language="en"
+                          name="kpi_start_end_date"
+                          id="kpi_start_end_date"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="fullscreen">
+                      <ul
+                        class="list-unstyled order-list"
+                        data-toggle="modal"
+                        data-target="#user_edit_popup"
+                        style="cursor: pointer;"
+                      >
+                        <li class="avatar avatar-sm">
+                          <img
+                            class="rounded-circle"
+                            src="../../assets/images/user/user7.jpg"
+                            alt="user"
+                          />
+                        </li>
+
+                        <div class="image-upload">
+                          <label for="file-input">
+                            <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                              <a
+                                href="#"
+                                class="favgs"
+                                data-toggle="modal"
+                                data-target="#addpeople"
+                              >
+                                <span _ngcontent-hhc-c5="" class="badge"
+                                  >+</span
+                                >
+                              </a>
+                            </li>
+                          </label>
+                        </div>
+                      </ul>
+                    </div>
+                  </td>
+                  <td>
+                    <input type="checkbox" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <textarea class="form-control" cols="5" rows="5">
+                    </textarea>
+                  </td>
+                  <td>
+                    <div class="row">
+                      <div class="form-group col-md-12">
+                        <i class="far fa-calendar input-calender-icon1"></i>
+                        <input
+                          type="text"
+                          class="modal-custom-input date_pickers_single"
+                          style="
+                            height: 34px !important;
+                            width: 90% !important;
+                          "
+                          data-language="en"
+                          name="kpi_start_end_date"
+                          id="kpi_start_end_date"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="fullscreen">
+                      <ul
+                        class="list-unstyled order-list"
+                        data-toggle="modal"
+                        data-target="#user_edit_popup"
+                        style="cursor: pointer;"
+                      >
+                        <li class="avatar avatar-sm">
+                          <img
+                            class="rounded-circle"
+                            src="../../assets/images/user/user7.jpg"
+                            alt="user"
+                          />
+                        </li>
+
+                        <div class="image-upload">
+                          <label for="file-input">
+                            <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                              <a
+                                href="#"
+                                class="favgs"
+                                data-toggle="modal"
+                                data-target="#addpeople"
+                              >
+                                <span _ngcontent-hhc-c5="" class="badge"
+                                  >+</span
+                                >
+                              </a>
+                            </li>
+                          </label>
+                        </div>
+                      </ul>
+                    </div>
+                  </td>
+                  <td><input type="checkbox" /></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="row">
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+              <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
+              <div
+                class="form-group col-lg-2 col-md-3 col-sm-6"
+                style="padding-right: 4px;"
+              >
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-secondary"
+                  data-dismiss="modal"
+                >
+                  Cancel
+                </button>
+              </div>
+              <div
+                class="form-group col-lg-2 col-md-3 col-sm-6"
+                style="padding-left: 4px;"
+              >
+                <button
+                  type="button"
+                  class="btn custom-form-control btn-custom-primary"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--#Start User Edit Popup -->
+    <div
+      class="modal fade"
+      id="user_edit_popup"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-modal="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Edit Users</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="">
+            <div class="col-lg-12 col-md-12 sub_initiatives">
+              <div
+                class="slimScrollDiv"
+                style="
+                  position: relative;
+                  overflow: hidden;
+                  width: auto;
+                  height: 340px;
+                "
+              >
+                <div
+                  class="d-flex flex-column employee_div_body_box sub-ini-box"
+                  id="sub-ini-box_view"
+                  style="overflow: hidden; width: auto; height: 340px;"
+                >
+                  <span id="sub-ini-box_view_users"
+                    ><div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                type="checkbox"
+                                value="959" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center;"
+                          >
+                            <h5>David Miller</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%;">
+                            <img
+                              alt="David Miller"
+                              src="images/user/usrbig8.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                type="checkbox"
+                                value="960" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center;"
+                          >
+                            <h5>Seema Chatterjee</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%;">
+                            <img
+                              alt="Seema Chatterjee"
+                              src="images/user/usrbig10.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                type="checkbox"
+                                value="961" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center;"
+                          >
+                            <h5>Rafael Nadal</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%;">
+                            <img
+                              alt="Rafael Nadal"
+                              src="images/user/usrbig9.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                type="checkbox"
+                                value="962" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center;"
+                          >
+                            <h5>Prakash Raj</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%;">
+                            <img
+                              alt="Prakash Raj"
+                              src="images/user/usrbig6.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                checked=""
+                                type="checkbox"
+                                value="958" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center;"
+                          >
+                            <h5>Karthik Ramani</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%;">
+                            <img
+                              alt="Karthik Ramani"
+                              src="images/user/usrbig7.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div></div
+                  ></span>
+                </div>
+                <div
+                  class="slimScrollBar"
+                  style="
+                    background: rgb(156, 156, 156);
+                    width: 3px;
+                    position: absolute;
+                    top: 0px;
+                    opacity: 0.4;
+                    display: none;
+                    border-radius: 7px;
+                    z-index: 99;
+                    right: 1px;
+                    height: 340px;
+                  "
+                ></div>
+                <div
+                  class="slimScrollRail"
+                  style="
+                    width: 3px;
+                    height: 100%;
+                    position: absolute;
+                    top: 0px;
+                    display: none;
+                    border-radius: 7px;
+                    background: rgb(51, 51, 51);
+                    opacity: 0.2;
+                    z-index: 90;
+                    right: 1px;
+                  "
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--#End User Edit Popup -->
+
+    <section class="content">
       <!-- Page Header -->
       <div class="page-header row no-gutters py-2 m-t--70">
         <div class="col-lg-6 col-md-6 text-center text-sm-left pt-2 mb-0 ml-4">
@@ -957,599 +1646,335 @@
             class="page-title"
             style="font-weight: 600; text-transform: uppercase;"
           >
-            Meeting Management
+            Meetings
           </h5>
         </div>
       </div>
       <!-- End Page Header -->
 
-      <!-- Default Light Table -->
-      <div class="row" style="margin: 0 !important;">
-        <div class="col-lg-12 col-md-12 col-sm-12">
-          <div class="card card-small mb-4">
-            <div class="card-header border-bottom">
-              <table>
-                <tr>
-                  <td>
-                    <button
-                      class="addbtnz green_form btnfll"
-                      onclick="addRow('dataTable')"
-                    >
-                      <i class="fa fa-plus" aria-hidden="true"></i>
-                      <b>Add Meeting</b>
-                    </button>
-
-                    <button
-                      class="addbtnz red_form btnfll"
-                      onclick="deleteRow('dataTable')"
-                    >
-                      <i class="fa fa-trash" aria-hidden="true"></i>
-                      <b> Delete Row </b>
-                    </button>
-                  </td>
-                  <td></td>
-                </tr>
-              </table>
-            </div>
-            <div class="card-body p-0 pb-3 text-center table-responsive">
-              <form action="" enctype="multipart/form-data" method="post">
-                <table id="dataTable" class="tplla">
-                  <thead class="">
-                    <tr>
-                      <th style="font-weight: 700 !important;" scope="col">
-                        Select
-                      </th>
-                      <th style="font-weight: 700 !important;" scope="col">
-                        Title
-                      </th>
-                      <th style="font-weight: 700 !important;" scope="col">
-                        Initiated By
-                      </th>
-                      <th style="font-weight: 700 !important;" scope="col">
-                        Date
-                      </th>
-                      <th style="font-weight: 700 !important;" scope="col">
-                        From Time
-                      </th>
-                      <th style="font-weight: 700 !important;" scope="col">
-                        End Time
-                      </th>
-                      <th style="font-weight: 700 !important;" scope="col">
-                        Attendees
-                      </th>
-                      <th style="font-weight: 700 !important;" scope="col">
-                        Location
-                      </th>
-                      <th style="font-weight: 700 !important;" scope="col">
-                        Notes
-                      </th>
-                      <th style="font-weight: 700 !important;" scope="col">
-                        Action
-                      </th>
-                      <th style="font-weight: 700 !important;" scope="col">
-                        Attachment
-                      </th>
-                      <th style="font-weight: 700 !important;" scope="col">
-                        Status
-                      </th>
-                      <th style="font-weight: 700 !important;" scope="col">
-                        Save
-                      </th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <tr>
-                      <td><input type="checkbox" name="chk" /></td>
-                      <td>
-                        <textarea
-                          class="form-control browser-default"
-                          name="objective_description"
-                          id="objective_description"
-                          placeholder=""
-                          cols=""
-                          rows="2"
-                        ></textarea>
-                      </td>
-                      <td>
-                        <div class="avatar-wrapper avatar-wrapper-overlap">
-                          <div class="avatar-icon-wrapper avatar-icon-sm">
-                            <div class="avatar-icon">
-                              <img src="images/avatars/0.jpg" alt="" />
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <input
-                          class="form-control datepicker"
-                          id="datepicker"
-                          width="120px"
-                        />
-                        <script>
-                          console.log();
-                          $("#datepicker").datepicker();
-                        </script>
-                      </td>
-
-                      <td>
-                        <input
-                          class="form-control"
-                          id="timepicker"
-                          width="100px"
-                        />
-                        <script>
-                          $("#timepicker").timepicker();
-                        </script>
-                      </td>
-
-                      <td>
-                        <input
-                          class="form-control"
-                          id="timepicker1"
-                          width="100px"
-                        />
-                        <script>
-                          $("#timepicker1").timepicker();
-                        </script>
-                      </td>
-                      <td>
-                        <div class="d-flex flex-column">
-                          <ul class="list-unstyled order-list d-flex">
-                            <li class="avatar avatar-sm">
-                              <img
-                                class="rounded-circle sub_init_img"
-                                src="../../assets/images/user/user9.jpg"
-                                alt="user"
-                                width="50"
-                              />
-                            </li>
-
-                            <li class="avatar avatar-sm">
-                              <span _ngcontent-hhc-c5="" class="badge">+3</span>
-                            </li>
-                            <div class="image-upload">
-                              <label for="file-input">
-                                <li
-                                  _ngcontent-hhc-c5=""
-                                  class="avatar avatar-sm"
-                                >
-                                  <a
-                                    href="#"
-                                    class="favgs"
-                                    data-toggle="modal"
-                                    data-target="#addpeople"
-                                  >
-                                    <span _ngcontent-hhc-c5="" class="badge"
-                                      >+<span id="count"> </span></span
-                                  ></a>
-                                </li>
-                              </label>
-                            </div>
-                          </ul>
-                        </div>
-                      </td>
-                      <td>
-                        <textarea
-                          class="form-control browser-default"
-                          name="objective_description"
-                          id="objective_description"
-                          placeholder=""
-                          cols=""
-                          rows="2"
-                        ></textarea>
-                      </td>
-
-                      <td class="pt-4">
-                        <a
-                          href="#"
-                          class="favgs"
-                          data-toggle="modal"
-                          data-target="#notes"
-                        >
-                          <i class="fa fa-clone fa-lg" aria-hidden="true"></i>
-                        </a>
-                      </td>
-
-                      <td class="pt-4">
-                        <a
-                          href="#"
-                          class="favgs"
-                          data-toggle="modal"
-                          data-target="#action"
-                        >
-                          <i class="fa fa-bolt fa-lg" aria-hidden="true"></i>
-                        </a>
-                      </td>
-                      <td class="pt-4">
-                        <label for="file-input1"
-                          ><span class="favgs"
-                            ><i
-                              class="fa fa-paperclip fa-lg"
-                              style="font-size: 20px;"
-                              aria-hidden="true"
-                            ></i></span
-                        ></label>
-                        <input
-                          id="file-input1"
-                          style="display: none;"
-                          type="file"
-                        />
-                      </td>
-                      <td>
-                        <select style="width: 120px;" class="form-control">
-                          <option> Completed</option>
-                          <option> Pending </option>
-                          <option> Rescheduled </option>
-                          <option> Canceled </option>
-                          <option> Pending </option>
-                        </select>
-                      </td>
-                      <td class="pt-4">
-                        <a href="">
-                          <i class="fa fa-save savebt" aria-hidden="true"></i
-                        ></a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Default Light Table -->
-
-      <!--INPUT type="button" value="Add Row" onclick="addRow('dataTable')" />
-
-	<INPUT type="button" value="Delete Row" onclick="deleteRow('dataTable')" />
-
-	<TABLE id="dataTable" width="350px" border="1">
-		<TR>
-			<TD><INPUT type="checkbox" name="chk"/></TD>
-			<TD> 1 </TD>
-			<TD> <INPUT type="text" /> </TD>
-		</TR>
-    </TABLE-->
-
-      <!-- Modal -->
-      <div id="notes" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div
-              class="modal-header"
-              style="background-color: #1e252d; color: #fff;"
-            >
-              <!--button type="button" class="close pull-right" data-dismiss="modal">&times;</button-->
-              <h4>
-                Notes / Minutes
-              </h4>
-              <div class="float-right p-1">
-                <button
-                  onclick="notes('note_table')"
-                  class="form-control rounded-circle"
+      <!-- Page Body -->
+      <div class="container-fluid">
+        <!-- COl -->
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="card cardBox">
+              <div class="row">
+                <div
+                  class="col-12"
+                  data-toggle="modal"
+                  data-target="#create_meeting"
+                  style="
+                    text-align: center;
+                    color: #c3c3c3;
+                    padding: 86px 0;
+                    cursor: pointer;
+                  "
                 >
-                  <i class="fa fa-plus"></i>
-                </button>
+                  <span>
+                    <i
+                      style="font-size: 24px; padding-bottom: 8px;"
+                      class="fas fa-plus"
+                    ></i>
+                  </span>
+                  <h5>Create Meeting</h5>
+                </div>
               </div>
             </div>
-            <div class="modal-body">
-              <table id="note_table" class="table table-bordered">
-                <thead class="bg-light">
-                  <tr>
-                    <th>
-                      Notes
-                    </th>
-                    <th style="width: 50px;">Responsible</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <textarea class="form-control" cols="5" rows="5">
-                      </textarea>
-                    </td>
-                    <td>
-                      <div class="fullscreen">
-                        <ul class="list-unstyled order-list">
-                          <li class="avatar avatar-sm">
-                            <img
-                              class="rounded-circle"
-                              src="../../assets/images/user/user7.jpg"
-                              alt="user"
-                            />
-                          </li>
-                          <li class="avatar avatar-sm">
-                            <img
-                              class="rounded-circle"
-                              src="../../assets/images/user/user8.jpg"
-                              alt="user"
-                            />
-                          </li>
-                          <div class="image-upload">
-                            <label for="file-input">
-                              <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
-                                <a
-                                  href="#"
-                                  class="favgs"
-                                  data-toggle="modal"
-                                  data-target="#addpeople"
-                                >
-                                  <span _ngcontent-hhc-c5="" class="badge"
-                                    >+</span
-                                  >
-                                </a>
-                              </li>
-                            </label>
-                          </div>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <textarea class="form-control" cols="5" rows="5">
-                      </textarea>
-                    </td>
-                    <td>
-                      <div class="fullscreen">
-                        <ul class="list-unstyled order-list">
-                          <li class="avatar avatar-sm">
-                            <img
-                              class="rounded-circle"
-                              src="../../assets/images/user/user7.jpg"
-                              alt="user"
-                            />
-                          </li>
-                          <li class="avatar avatar-sm">
-                            <img
-                              class="rounded-circle"
-                              src="../../assets/images/user/user8.jpg"
-                              alt="user"
-                            />
-                          </li>
-                          <div class="image-upload">
-                            <label for="file-input">
-                              <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
-                                <a
-                                  href="#"
-                                  class="favgs"
-                                  data-toggle="modal"
-                                  data-target="#addpeople"
-                                >
-                                  <span _ngcontent-hhc-c5="" class="badge"
-                                    >+</span
-                                  >
-                                </a>
-                              </li>
-                            </label>
-                          </div>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <button
-                type="button"
-                class="form-control add"
-                style="background-color: #1e252d; color: #fff;"
-              >
-                Save
-              </button>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-default"
-                data-dismiss="modal"
-              >
-                Close
-              </button>
-            </div>
           </div>
-        </div>
-      </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="card cardBox">
+              <div class="row">
+                <div class="col-12">
+                  <span class="card-icons pull-right">
+                    <i
+                      class="fas fa-pen"
+                      data-toggle="modal"
+                      data-target="#edit_meeting"
+                    ></i>
+                    <i class="far fa-times-circle"></i>
+                  </span>
+                </div>
+                <div class="col-12">
+                  <h4 class="page-card-title">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </h4>
 
-      <!-- Modal -->
-      <div id="action" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg" style="max-width: 60% !important;">
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div
-              class="modal-header"
-              style="background-color: #1e252d; color: #fff;"
-            >
-              <!--button type="button" class="close pull-right" data-dismiss="modal">&times;</button-->
-              <h4>
-                Actions
-              </h4>
-              <div class="float-right p-1">
-                <button
-                  onclick="action('action_table')"
-                  class="form-control rounded-circle"
-                >
-                  <i class="fa fa-plus"></i>
-                </button>
+                  <p class="meeting-time">
+                    <span><i class="far fa-calendar-alt"></i> 13 Mar </span>
+                    <span> <i class="far fa-clock"></i> 3.00-4.00PM </span>
+                    <span class="pull-right" style="font-weight: 600;">
+                      Ongoing
+                      <i
+                        style="color: #20eaab; font-size: 10px;"
+                        class="fas fa-circle"
+                      ></i
+                    ></span>
+                  </p>
+
+                  <p class="meeting-location">
+                    <span
+                      ><i class="fas fa-map-marker-alt"></i> Location: Meeting
+                      Hall 15224
+                    </span>
+                  </p>
+                </div>
+                <div class="col-6">
+                  <h6>Initiated By</h6>
+                  <div class="d-flex flex-column">
+                    <ul class="list-unstyled order-list d-flex">
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="55"
+                        />
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <h6>Attendies</h6>
+                  <div class="d-flex flex-column">
+                    <ul
+                      class="list-unstyled order-list d-flex"
+                      data-toggle="modal"
+                      data-target="#user_edit_popup"
+                      style="cursor: pointer;"
+                    >
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="50"
+                        />
+                      </li>
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="50"
+                        />
+                      </li>
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="50"
+                        />
+                      </li>
+
+                      <li class="avatar avatar-sm">
+                        <span _ngcontent-hhc-c5="" class="badge">+5</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="row text-center"
+                style="
+                  background-color: #1e252d;
+                  border-bottom-left-radius: 8px;
+                  border-bottom-right-radius: 8px;
+                "
+              >
+                <div class="col-md-12 card-footer">
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#notes"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-clipboard"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Notes"
+                    ></i>
+                  </a>
+
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#action"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-bolt"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Action"
+                    ></i>
+                  </a>
+
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#uploaded_files"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-paperclip"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Attachment"
+                    ></i>
+                  </a>
+                </div>
               </div>
             </div>
-            <div class="modal-body">
-              <table id="action_table" class="table table-bordered">
-                <thead class="bg-light">
-                  <tr>
-                    <th>Actions</th>
-                    <th style="width: 150px;">By Date</th>
-                    <th style="width: 50px;">Responsible</th>
-                    <th style="width: 50px;">Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <textarea class="form-control" cols="5" rows="5">
-                      </textarea>
-                    </td>
-                    <td>
-                      <input
-                        class="form-control datepicker"
-                        id="datepicker1"
-                        width="120px"
-                      />
-                      <script>
-                        console.log();
-                        $("#datepicker1").datepicker();
-                      </script>
-                    </td>
-                    <td>
-                      <div class="fullscreen">
-                        <ul class="list-unstyled order-list">
-                          <li class="avatar avatar-sm">
-                            <img
-                              class="rounded-circle"
-                              src="../../assets/images/user/user7.jpg"
-                              alt="user"
-                            />
-                          </li>
-
-                          <div class="image-upload">
-                            <label for="file-input">
-                              <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
-                                <a
-                                  href="#"
-                                  class="favgs"
-                                  data-toggle="modal"
-                                  data-target="#addpeople"
-                                >
-                                  <span _ngcontent-hhc-c5="" class="badge"
-                                    >+</span
-                                  >
-                                </a>
-                              </li>
-                            </label>
-                          </div>
-                        </ul>
-                      </div>
-                    </td>
-                    <td>
-                      <input type="checkbox" />
-                      <!--i class="fa fa-check" aria-hidden="true"></i> <br/>
-	<input type="checkbox" /> <i class="fa fa-times" aria-hidden="true"></i> <br/-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <textarea class="form-control" cols="5" rows="5">
-                      </textarea>
-                    </td>
-                    <td>
-                      <input
-                        class="form-control datepicker"
-                        id="datepicker2"
-                        width="120px"
-                      />
-                      <script>
-                        console.log();
-                        $("#datepicker2").datepicker();
-                      </script>
-                    </td>
-                    <td>
-                      <div class="fullscreen">
-                        <ul class="list-unstyled order-list">
-                          <li class="avatar avatar-sm">
-                            <img
-                              class="rounded-circle"
-                              src="../../assets/images/user/user7.jpg"
-                              alt="user"
-                            />
-                          </li>
-
-                          <div class="image-upload">
-                            <label for="file-input">
-                              <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
-                                <a
-                                  href="#"
-                                  class="favgs"
-                                  data-toggle="modal"
-                                  data-target="#addpeople"
-                                >
-                                  <span _ngcontent-hhc-c5="" class="badge"
-                                    >+</span
-                                  >
-                                </a>
-                              </li>
-                            </label>
-                          </div>
-                        </ul>
-                      </div>
-                    </td>
-                    <td><input type="checkbox" /></td>
-                  </tr>
-                </tbody>
-              </table>
-              <button
-                type="button"
-                class="form-control add"
-                style="background-color: #1e252d; color: #fff;"
-              >
-                Save
-              </button>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-default"
-                data-dismiss="modal"
-              >
-                Close
-              </button>
-            </div>
           </div>
-        </div>
-      </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="card cardBox">
+              <div class="row">
+                <div class="col-12">
+                  <span class="card-icons pull-right">
+                    <i
+                      class="fas fa-pen"
+                      data-toggle="modal"
+                      data-target="#edit_meeting"
+                    ></i>
+                    <i class="far fa-times-circle"></i>
+                  </span>
+                </div>
+                <div class="col-12">
+                  <h4 class="page-card-title">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </h4>
 
-      <!-- Modal -->
-      <div id="addpeople" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div
-              class="modal-header"
-              style="background-color: #1e252d; color: #fff;"
-            >
-              <!--button type="button" class="close pull-right" data-dismiss="modal">&times;</button-->
-              <h4>Add People</h4>
-            </div>
-            <div class="modal-body">
-              <label for="objective_owner">People</label>
-              <select
-                id="objective_owner"
-                name=""
-                class="select_all"
-                multiple
-                style="display: none !important;"
-              >
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-              </select>
+                  <p class="meeting-time">
+                    <span><i class="far fa-calendar-alt"></i> 13 Mar </span>
+                    <span> <i class="far fa-clock"></i> 3.00-4.00PM </span>
+                    <span class="pull-right" style="font-weight: 600;">
+                      Ongoing
+                      <i
+                        style="color: #20eaab; font-size: 10px;"
+                        class="fas fa-circle"
+                      ></i
+                    ></span>
+                  </p>
 
-              <button
-                type="button"
-                class="form-control add"
-                style="background-color: #1e252d; color: #fff;"
+                  <p class="meeting-location">
+                    <span
+                      ><i class="fas fa-map-marker-alt"></i> Location: Meeting
+                      Hall 15224
+                    </span>
+                  </p>
+                </div>
+                <div class="col-6">
+                  <h6>Initiated By</h6>
+                  <div class="d-flex flex-column">
+                    <ul class="list-unstyled order-list d-flex">
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="55"
+                        />
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <h6>Attendies</h6>
+                  <div class="d-flex flex-column">
+                    <ul
+                      class="list-unstyled order-list d-flex"
+                      data-toggle="modal"
+                      data-target="#user_edit_popup"
+                      style="cursor: pointer;"
+                    >
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="50"
+                        />
+                      </li>
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="50"
+                        />
+                      </li>
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="50"
+                        />
+                      </li>
+
+                      <li class="avatar avatar-sm">
+                        <span _ngcontent-hhc-c5="" class="badge">+5</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="row text-center"
+                style="
+                  background-color: #1e252d;
+                  border-bottom-left-radius: 8px;
+                  border-bottom-right-radius: 8px;
+                "
               >
-                Save
-              </button>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-default"
-                data-dismiss="modal"
-              >
-                Close
-              </button>
+                <div class="col-md-12 card-footer">
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#notes"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-clipboard"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Notes"
+                    ></i>
+                  </a>
+
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#action"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-bolt"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Action"
+                    ></i>
+                  </a>
+
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#uploaded_files"
+                    class="card-footer-icon"
+                  >
+                    <i
+                      class="fas fa-paperclip"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Attachment"
+                    ></i>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1564,6 +1989,7 @@
     <script src="../../assets/js/bundles/amcharts4/charts.js"></script>
     <script src="../../assets/js/bundles/amcharts4/animated.js"></script>
     <!-- Knob Js -->
+    <script src="../../assets/js/paging.js"></script>
     <script src="../../assets/jquery-ui.min.js"></script>
     <script src="../../assets/moment.js"></script>
     <script src="../../assets/js/pages/core.js"></script>
@@ -1579,7 +2005,16 @@
     <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
     <script src="../../assets/knockout-3.5.0.js"></script>
     <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
+    <script src="../../assets/js/colors.js"></script>
+    <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
+    <script src="assets/daterangepicker/daterangepicker.min.js"></script>
+    <script src="assets/daterangepicker/daterangepicker.min.js"></script>
     <script>
+      $(document).ready(function () {
+        $("#fileuploadTable").paging({ limit: 5 });
+      });
+
       $(".daterangepicker-field").daterangepicker({
         forceUpdate: true,
         callback: function (startDate, endDate, period) {
@@ -1587,126 +2022,43 @@
           $(this).val(title);
         },
       });
-    </script>
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"
-    ></script>
+      $("#timepicker_pop").timepicker();
 
-    <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
-    <script src="js/extras.1.1.0.min.js"></script>
-    <script src="js/shards-dashboards.1.1.0.min.js"></script>
-    <script src="assets/knockout-3.5.0.js"></script>
-    <script src="assets/daterangepicker/daterangepicker.min.js"></script>
-
-    <script>
-      $(".daterangepicker-field").daterangepicker({
-        forceUpdate: true,
-        callback: function (startDate, endDate, period) {
-          var title = startDate.format("L") + " – " + endDate.format("L");
-          $(this).val(title);
-        },
+      $(function () {
+        $('input[name="date"]').daterangepicker(
+          {
+            singleDatePicker: true,
+            showDropdowns: true,
+            minYear: 1901,
+            maxYear: parseInt(moment().format("YYYY"), 10),
+          },
+          function (start, end, label) {
+            var years = moment().diff(start, "years");
+            alert("You are " + years + " years old!");
+          }
+        );
       });
 
       $(document).ready(function () {
-        $("#my_id").change(function (e) {
-          var files = $(this)[0].files;
-          var fileName = files.length;
-          alert('The file "' + fileName + '" has been selected.');
+        $("#multiSelect1, #multiSelect2, #multiSelect3").formSelect();
+        $("select.select_all")
+          .siblings("ul")
+          .prepend("<li id=sm_select_all><span>Select All</span></li>");
+        $("li#sm_select_all").on("click", function () {
+          var jq_elem = $(this),
+            jq_elem_span = jq_elem.find("span"),
+            select_all = jq_elem_span.text() == "Select All",
+            set_text = select_all ? "Select None" : "Select All";
+          jq_elem_span.text(set_text);
+          jq_elem
+            .siblings("li")
+            .filter(function () {
+              return $(this).find("input").prop("checked") != select_all;
+            })
+            .click();
         });
       });
-    </script>
-    <script language="javascript">
-      function addRow(tableID) {
-        var table = document.getElementById(tableID);
-
-        var rowCount = table.rows.length;
-        var row = table.insertRow(rowCount);
-
-        var cell1 = row.insertCell(0);
-        var element1 = document.createElement("input");
-        element1.type = "checkbox";
-        element1.name = "chkbox[]";
-        cell1.appendChild(element1);
-
-        var cell2 = row.insertCell(1);
-        var factor = rowCount;
-        cell2.innerHTML = `<textarea class="form-control browser-default" name="objective_description" id="objective_description" placeholder="" cols="" rows="2" ></textarea>`;
-
-        var cell3 = row.insertCell(2);
-        //var element2 = document.createElement("input");
-        cell3.innerHTML =
-          '<div class="avatar-wrapper avatar-wrapper-overlap"><div class="avatar-icon-wrapper avatar-icon-sm"><div class="avatar-icon"><img src="images/avatars/0.jpg" alt=""></div></div></div>';
-        //cell3.appendChild(element2);
-
-        var cell4 = row.insertCell(3);
-        cell4.innerHTML =
-          '<div role="wrapper" class="gj-timepicker gj-timepicker-md"><input class="form-control gj-textbox-md datepicker" id="datepicker_pop"/><i class="gj-icon" role="right-icon">event</i></div>';
-        $(".datepicker").datepicker();
-
-        var cell5 = row.insertCell(4);
-        cell5.innerHTML =
-          '<div role="wrapper" class="gj-timepicker gj-timepicker-md gj-unselectable" style="width: 100px;"><input class="form-control gj-textbox-md timepicker1" id="timepicker2" width="100px" data-type="timepicker"  data-timepicker="true" role="input"><i class="gj-icon clock" role="right-icon"></i></div>';
-
-        $(".timepicker1").timepicker();
-
-        var cell5 = row.insertCell(5);
-        cell5.innerHTML =
-          '<div role="wrapper" class="gj-timepicker gj-timepicker-md gj-unselectable" style="width: 100px;"><input class="form-control gj-textbox-md timepicker2" id="timepicker3" width="100px" data-type="timepicker"  data-timepicker="true" role="input"><i class="gj-icon clock" role="right-icon"></i></div>';
-        $(".timepicker2").timepicker();
-
-        //var cell5 = row.insertCell(5);
-        //cell5.innerHTML = " ";
-
-        var cell6 = row.insertCell(6);
-        cell6.innerHTML =
-          '<div class="d-flex flex-column"><ul class="list-unstyled order-list d-flex"><li class="avatar avatar-sm"><img class="rounded-circle sub_init_img" src="../../assets/images/user/user9.jpg" alt="user" width="50"></li><li class="avatar avatar-sm"><span _ngcontent-hhc-c5="" class="badge">+3</span></li><div class="image-upload"><label for="file-input"><li _ngcontent-hhc-c5="" class="avatar avatar-sm"><a href="#" class="favgs" data-toggle="modal" data-target="#addpeople"> <span _ngcontent-hhc-c5="" class="badge">+<span id="count"> </span></span></a></li></label></div> </ul> </div>';
-
-        var cell7 = row.insertCell(7);
-        cell7.innerHTML = `<textarea class="form-control browser-default" name="objective_description" id="objective_description" placeholder="" cols="" rows="2" ></textarea>`;
-
-        var cell8 = row.insertCell(8);
-        cell8.innerHTML =
-          '<a href="#" class="favgs" data-toggle="modal" data-target="#notes"> <i class="fa fa-clone fa-lg" aria-hidden="true"></i> </a>';
-
-        var cell9 = row.insertCell(9);
-        cell9.innerHTML =
-          '<a href="#" class="favgs" data-toggle="modal" data-target="#action"> <i class="fa fa-bolt fa-lg" aria-hidden="true"></i>  </a>';
-
-        var cell10 = row.insertCell(10);
-        cell10.innerHTML =
-          "<label for='file-input1'><span class='favgs'><i class='fa fa-paperclip fa-lg' style='font-size:20px' aria-hidden='true'></i></span></label> <input id='file-input1' style='display:none' type='file'/>";
-
-        var cell11 = row.insertCell(11);
-        cell11.innerHTML =
-          '<select style="width:120px;" class="form-control"> <option> Completed</option> <option> Pending </option> <option> Rescheduled </option> <option> Canceled </option> <option> Pending </option> </select>';
-
-        var cell10 = row.insertCell(12);
-        cell10.innerHTML =
-          '<a href=""> <i  class="fa fa-save savebt" aria-hidden="true"></i></a>';
-      }
-
-      function deleteRow(tableID) {
-        try {
-          var table = document.getElementById(tableID);
-          var rowCount = table.rows.length;
-
-          for (var i = 0; i < rowCount; i++) {
-            var row = table.rows[i];
-            var chkbox = row.cells[0].childNodes[0];
-            if (null != chkbox && true == chkbox.checked) {
-              table.deleteRow(i);
-              rowCount--;
-              i--;
-            }
-          }
-        } catch (e) {
-          alert(e);
-        }
-      }
 
       function notes(tableID) {
         var table = document.getElementById(tableID);
@@ -1720,7 +2072,7 @@
 
         var cell2 = row.insertCell(1);
         cell2.innerHTML =
-          '<div class="fullscreen"> <ul class="list-unstyled order-list"> <li class="avatar avatar-sm"> <img class="rounded-circle" src="../../assets/images/user/user7.jpg" alt="user"> </li><li class="avatar avatar-sm"> <img class="rounded-circle" src="../../assets/images/user/user8.jpg" alt="user"> </li><div class="image-upload"> <label for="file-input"> <li _ngcontent-hhc-c5="" class="avatar avatar-sm" > <a href="#" class="favgs" data-toggle="modal" data-target="#addpeople" > <span _ngcontent-hhc-c5="" class="badge" >+<span id="count"> </span></span ></a> </li></label> </div></ul> </div>';
+          '<div class="fullscreen"> <ul class="list-unstyled order-list" data-toggle="modal" data-target="#user_edit_popup" style="cursor: pointer;"> <li class="avatar avatar-sm"> <img class="rounded-circle" src="../../assets/images/user/user7.jpg" alt="user"> </li><li class="avatar avatar-sm"> <img class="rounded-circle" src="../../assets/images/user/user8.jpg" alt="user"> </li><div class="image-upload"> <label for="file-input"> <li _ngcontent-hhc-c5="" class="avatar avatar-sm" > <a href="#" class="favgs" data-toggle="modal" data-target="#addpeople" > <span _ngcontent-hhc-c5="" class="badge" >+<span id="count"> </span></span ></a> </li></label> </div></ul> </div>';
       }
 
       function notes_del(tableID) {
@@ -1754,13 +2106,23 @@
           '<textarea class="form-control" cols="5" rows="5" > </textarea>';
 
         var cell2 = row.insertCell(1);
-        cell2.innerHTML =
-          '<input class="form-control datepicker" id="datepicker" width="120px"/>';
-        $(".datepicker").datepicker();
+        cell2.innerHTML = `<div class="row">
+            <div class="form-group col-md-12">
+              <i class="far fa-calendar input-calender-icon1"></i>
+              <input
+                type="text"
+                class="modal-custom-input date_pickers_single"
+                style="height: 34px !important; width: 90% !important"
+                data-language="en"
+                name="kpi_start_end_date"
+                id="kpi_start_end_date"
+              />
+            </div>
+          </div>`;
 
         var cell3 = row.insertCell(2);
         cell3.innerHTML =
-          '<div class="fullscreen"> <ul class="list-unstyled order-list"> <li class="avatar avatar-sm"> <img class="rounded-circle" src="../../assets/images/user/user7.jpg" alt="user"/> </li><div class="image-upload"> <label for="file-input"> <li _ngcontent-hhc-c5="" class="avatar avatar-sm"> <a href="#" class="favgs" data-toggle="modal" data-target="#addpeople" > <span _ngcontent-hhc-c5="" class="badge" >+</span > </a> </li></label> </div></ul> </div>';
+          '<div class="fullscreen"> <ul class="list-unstyled order-list" data-toggle="modal" data-target="#user_edit_popup" style="cursor: pointer;"> <li class="avatar avatar-sm"> <img class="rounded-circle" src="../../assets/images/user/user7.jpg" alt="user"/> </li><div class="image-upload"> <label for="file-input"> <li _ngcontent-hhc-c5="" class="avatar avatar-sm"> <a href="#" class="favgs" data-toggle="modal" data-target="#addpeople" > <span _ngcontent-hhc-c5="" class="badge" >+</span > </a> </li></label> </div></ul> </div>';
 
         var cell4 = row.insertCell(3);
         cell4.innerHTML = '<input type="checkbox"  >';
@@ -1785,72 +2147,5 @@
         }
       }
     </script>
-
-    <script>
-      $("#timepicker_pop").timepicker();
-    </script>
-    <script>
-      $(function () {
-        $('input[name="date"]').daterangepicker(
-          {
-            singleDatePicker: true,
-            showDropdowns: true,
-            minYear: 1901,
-            maxYear: parseInt(moment().format("YYYY"), 10),
-          },
-          function (start, end, label) {
-            var years = moment().diff(start, "years");
-            alert("You are " + years + " years old!");
-          }
-        );
-      });
-    </script>
-    <script type="text/javascript">
-      function cloneRow() {
-        var row = document.getElementById("rowToClone"); // find row to copy
-        var table = document.getElementById("tableToModify"); // find table to append to
-        var clone = row.cloneNode(true); // copy children too
-        clone.id = "newID"; // change id or other attributes/contents
-        table.appendChild(clone); // add new row to end of table
-      }
-
-      function createRow() {
-        var row = document.createElement("tr"); // create row node
-        var col = document.createElement("td"); // create column node
-        var col2 = document.createElement("td"); // create second column node
-        row.appendChild(col); // append first column to row
-
-        row.appendChild(col2); // append second column to row
-        col.innerHTML =
-          "Impact <button class='btn btn-primary'> <i class='fa fa-plus' aria-hidden='true'></i>  Add </button>"; // put data in first column
-        col2.innerHTML =
-          "<label for='file-input'><img src='images/plus.png' width='50px' height='50px'></label><input style='display:none' id='file-input' type='file'/> "; // put data in second column
-        var table = document.getElementById("tableToModify"); // find table to append to
-        table.appendChild(row); // append row to table
-      }
-    </script>
-
-    <script>
-      $(document).ready(function () {
-        // $('select').val([1]);
-        $("#objective_owner").formSelect();
-        $("select.select_all")
-          .siblings("ul")
-          .prepend("<li id=sm_select_all><span>Select All</span></li>");
-        $("li#sm_select_all").on("click", function () {
-          var jq_elem = $(this),
-            jq_elem_span = jq_elem.find("span"),
-            select_all = jq_elem_span.text() == "Select All",
-            set_text = select_all ? "Select None" : "Select All";
-          jq_elem_span.text(set_text);
-          jq_elem
-            .siblings("li")
-            .filter(function () {
-              return $(this).find("input").prop("checked") != select_all;
-            })
-            .click();
-        });
-      });
-    </script>
-  </body>
-</a>
+  </body></a
+>

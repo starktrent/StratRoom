@@ -789,7 +789,7 @@
         <!-- Page Header -->
         <div class="page-header row no-gutters py-2 m-t--70">
           <div
-            class="col-lg-12 col-md-12 text-center text-sm-left pt-2 mb-0 ml-4 mr-2"
+            class="col-lg-12 col-md-12 text-center text-sm-left pt-2 mb-0 ml-4"
           >
             <h5
               class="page-title"
@@ -808,243 +808,9 @@
         <!-- End Page Header -->
 
         <div class="row row-padding m-0">
-          <!---------Table-------->
-          <div class="col-lg-8 col-md-8 select-toggle tables sub_initiatives">
-            <div class="card">
-              <div class="header d-flex flex-row">
-                <h5 class="prob d-flex flex-fill">
-                  <strong
-                    class="editableTxt1"
-                    onkeypress="return (this.innerText.length <= 25)"
-                    editable="true"
-                    >Tables</strong
-                  >
-                </h5>
-                <ul class="header-dropdown m-r--2 d-flex">
-                  <li class="dropdown m-t--10">
-                    <a
-                      href="#"
-                      onclick="return false;"
-                      class="dropdown-toggle"
-                      data-toggle="dropdown"
-                      role="button"
-                      aria-haspopup="true"
-                      aria-expanded="true"
-                    >
-                      <i class="material-icons">more_vert</i>
-                    </a>
-                    <ul
-                      class="dropdown-menu pull-right"
-                      x-placement="bottom-start"
-                      style="
-                        position: absolute;
-                        will-change: transform;
-                        top: 0px;
-                        left: 0px;
-                        transform: translate3d(0px, 24px, 0px);
-                      "
-                    >
-                      <li>
-                        <a
-                          href="#"
-                          data-toggle="modal"
-                          data-target="#bigTable"
-                          onclick="return false;"
-                          >View</a
-                        >
-                      </li>
-                      <li>
-                        <a href="#" onclick="return false;" class="delete-row"
-                          >Delete</a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-              <div class="body table-responsive sub-ini-box">
-                <div class="col-lg-12 col-md-12">
-                  <div class="card">
-                    <div class="tableBody">
-                      <div class="table-responsive Month box">
-                        <table
-                          class="table dashboard-task-infos align-center dashboard-table"
-                          id="table1"
-                          style="margin-bottom: 0px !important;"
-                        >
-                          <tr>
-                            <th>Status</th>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Category</th>
-                            <th>Impact</th>
-                            <th>Likelihood</th>
-                            <th>Score</th>
-                            <th>Raised on</th>
-                            <th>Next Assessment</th>
-                          </tr>
-                          <tr>
-                            <td>
-                              <i
-                                class="fas fa-flag"
-                                style="color: #28f76d;"
-                              ></i>
-                            </td>
-                            <td>12</td>
-                            <td>
-                              <a
-                                href="#"
-                                style="
-                                  font-weight: 600;
-                                  color: #333 !important;
-                                "
-                                >Risk 1</a
-                              >
-                            </td>
-                            <td>Regulatory</td>
-                            <td style="color: #28f76d;">Tolerable</td>
-                            <td style="color: #f72f28;">High</td>
-                            <td>3</td>
-                            <td>23-05-2020</td>
-                            <td>23-06-2020</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <i
-                                class="fas fa-flag"
-                                style="color: #f72f28;"
-                              ></i>
-                            </td>
-                            <td>12</td>
-                            <td>
-                              <a
-                                href="#"
-                                style="
-                                  font-weight: 600;
-                                  color: #333 !important;
-                                "
-                                >Risk 2</a
-                              >
-                            </td>
-                            <td>Regulatory</td>
-                            <td style="color: #28f76d;">Tolerable</td>
-                            <td style="color: #f72f28;">High</td>
-                            <td>3</td>
-                            <td>23-05-2020</td>
-                            <td>23-06-2020</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <i
-                                class="fas fa-flag"
-                                style="color: #f72f28;"
-                              ></i>
-                            </td>
-                            <td>12</td>
-                            <td>
-                              <a
-                                href="#"
-                                style="
-                                  font-weight: 600;
-                                  color: #333 !important;
-                                "
-                                >Risk 3</a
-                              >
-                            </td>
-                            <td>Regulatory</td>
-                            <td style="color: #28f76d;">Tolerable</td>
-                            <td style="color: #f72f28;">High</td>
-                            <td>3</td>
-                            <td>23-05-2020</td>
-                            <td>23-06-2020</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <i
-                                class="fas fa-flag"
-                                style="color: #28f76d;"
-                              ></i>
-                            </td>
-                            <td>12</td>
-                            <td>
-                              <a
-                                href="#"
-                                style="
-                                  font-weight: 600;
-                                  color: #333 !important;
-                                "
-                                >Risk 4</a
-                              >
-                            </td>
-                            <td>Regulatory</td>
-                            <td style="color: #28f76d;">Tolerable</td>
-                            <td style="color: #f72f28;">High</td>
-                            <td>3</td>
-                            <td>23-05-2020</td>
-                            <td>23-06-2020</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <i
-                                class="fas fa-flag"
-                                style="color: #f4f728;"
-                              ></i>
-                            </td>
-                            <td>12</td>
-                            <td>
-                              <a
-                                href="#"
-                                style="
-                                  font-weight: 600;
-                                  color: #333 !important;
-                                "
-                                >Risk 5</a
-                              >
-                            </td>
-                            <td>Regulatory</td>
-                            <td style="color: #28f76d;">Tolerable</td>
-                            <td style="color: #f72f28;">High</td>
-                            <td>3</td>
-                            <td>23-05-2020</td>
-                            <td>23-06-2020</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <i
-                                class="fas fa-flag"
-                                style="color: #f72f28;"
-                              ></i>
-                            </td>
-                            <td>12</td>
-                            <td>
-                              <a
-                                href="#"
-                                style="
-                                  font-weight: 600;
-                                  color: #333 !important;
-                                "
-                                >Risk 6</a
-                              >
-                            </td>
-                            <td>Regulatory</td>
-                            <td style="color: #28f76d;">Tolerable</td>
-                            <td style="color: #f72f28;">High</td>
-                            <td>3</td>
-                            <td>23-05-2020</td>
-                            <td>23-06-2020</td>
-                          </tr>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
           <!-------Heat Map------->
           <div
-            class="col-lg-4 col-md-6 sub_initiatives select-toggle causenconsequence"
+            class="col-lg-8 col-md-6 sub_initiatives select-toggle causenconsequence"
           >
             <div class="card">
               <div class="header d-flex flex-row">
@@ -1539,6 +1305,240 @@
                   </div>
                   <div class="send_btn" id="send-btn">
                     <i class="fas fa-arrow-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!---------Table-------->
+          <div class="col-lg-8 col-md-8 select-toggle tables sub_initiatives">
+            <div class="card">
+              <div class="header d-flex flex-row">
+                <h5 class="prob d-flex flex-fill">
+                  <strong
+                    class="editableTxt1"
+                    onkeypress="return (this.innerText.length <= 25)"
+                    editable="true"
+                    >Tables</strong
+                  >
+                </h5>
+                <ul class="header-dropdown m-r--2 d-flex">
+                  <li class="dropdown m-t--10">
+                    <a
+                      href="#"
+                      onclick="return false;"
+                      class="dropdown-toggle"
+                      data-toggle="dropdown"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="true"
+                    >
+                      <i class="material-icons">more_vert</i>
+                    </a>
+                    <ul
+                      class="dropdown-menu pull-right"
+                      x-placement="bottom-start"
+                      style="
+                        position: absolute;
+                        will-change: transform;
+                        top: 0px;
+                        left: 0px;
+                        transform: translate3d(0px, 24px, 0px);
+                      "
+                    >
+                      <li>
+                        <a
+                          href="#"
+                          data-toggle="modal"
+                          data-target="#bigTable"
+                          onclick="return false;"
+                          >View</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" onclick="return false;" class="delete-row"
+                          >Delete</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="body table-responsive sub-ini-box">
+                <div class="col-lg-12 col-md-12">
+                  <div class="card">
+                    <div class="tableBody">
+                      <div class="table-responsive Month box">
+                        <table
+                          class="table dashboard-task-infos align-center dashboard-table"
+                          id="table1"
+                          style="margin-bottom: 0px !important;"
+                        >
+                          <tr>
+                            <th>Status</th>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Impact</th>
+                            <th>Likelihood</th>
+                            <th>Score</th>
+                            <th>Raised on</th>
+                            <th>Next Assessment</th>
+                          </tr>
+                          <tr>
+                            <td>
+                              <i
+                                class="fas fa-flag"
+                                style="color: #28f76d;"
+                              ></i>
+                            </td>
+                            <td>12</td>
+                            <td>
+                              <a
+                                href="#"
+                                style="
+                                  font-weight: 600;
+                                  color: #333 !important;
+                                "
+                                >Risk 1</a
+                              >
+                            </td>
+                            <td>Regulatory</td>
+                            <td style="color: #28f76d;">Tolerable</td>
+                            <td style="color: #f72f28;">High</td>
+                            <td>3</td>
+                            <td>23-05-2020</td>
+                            <td>23-06-2020</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <i
+                                class="fas fa-flag"
+                                style="color: #f72f28;"
+                              ></i>
+                            </td>
+                            <td>12</td>
+                            <td>
+                              <a
+                                href="#"
+                                style="
+                                  font-weight: 600;
+                                  color: #333 !important;
+                                "
+                                >Risk 2</a
+                              >
+                            </td>
+                            <td>Regulatory</td>
+                            <td style="color: #28f76d;">Tolerable</td>
+                            <td style="color: #f72f28;">High</td>
+                            <td>3</td>
+                            <td>23-05-2020</td>
+                            <td>23-06-2020</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <i
+                                class="fas fa-flag"
+                                style="color: #f72f28;"
+                              ></i>
+                            </td>
+                            <td>12</td>
+                            <td>
+                              <a
+                                href="#"
+                                style="
+                                  font-weight: 600;
+                                  color: #333 !important;
+                                "
+                                >Risk 3</a
+                              >
+                            </td>
+                            <td>Regulatory</td>
+                            <td style="color: #28f76d;">Tolerable</td>
+                            <td style="color: #f72f28;">High</td>
+                            <td>3</td>
+                            <td>23-05-2020</td>
+                            <td>23-06-2020</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <i
+                                class="fas fa-flag"
+                                style="color: #28f76d;"
+                              ></i>
+                            </td>
+                            <td>12</td>
+                            <td>
+                              <a
+                                href="#"
+                                style="
+                                  font-weight: 600;
+                                  color: #333 !important;
+                                "
+                                >Risk 4</a
+                              >
+                            </td>
+                            <td>Regulatory</td>
+                            <td style="color: #28f76d;">Tolerable</td>
+                            <td style="color: #f72f28;">High</td>
+                            <td>3</td>
+                            <td>23-05-2020</td>
+                            <td>23-06-2020</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <i
+                                class="fas fa-flag"
+                                style="color: #f4f728;"
+                              ></i>
+                            </td>
+                            <td>12</td>
+                            <td>
+                              <a
+                                href="#"
+                                style="
+                                  font-weight: 600;
+                                  color: #333 !important;
+                                "
+                                >Risk 5</a
+                              >
+                            </td>
+                            <td>Regulatory</td>
+                            <td style="color: #28f76d;">Tolerable</td>
+                            <td style="color: #f72f28;">High</td>
+                            <td>3</td>
+                            <td>23-05-2020</td>
+                            <td>23-06-2020</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <i
+                                class="fas fa-flag"
+                                style="color: #f72f28;"
+                              ></i>
+                            </td>
+                            <td>12</td>
+                            <td>
+                              <a
+                                href="#"
+                                style="
+                                  font-weight: 600;
+                                  color: #333 !important;
+                                "
+                                >Risk 6</a
+                              >
+                            </td>
+                            <td>Regulatory</td>
+                            <td style="color: #28f76d;">Tolerable</td>
+                            <td style="color: #f72f28;">High</td>
+                            <td>3</td>
+                            <td>23-05-2020</td>
+                            <td>23-06-2020</td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
