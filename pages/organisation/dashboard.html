@@ -3287,24 +3287,7 @@
               </div>
             </div>
           </div>`);
-          $("#datePickerBL").daterangepicker({
-            forceUpdate: true,
-            periods: ["month", "quarter", "year"],
-            period: "month",
-            ranges: {
-              "Last 30 days": [moment().subtract(29, "days"), moment()],
-              "Last 90 days": [moment().subtract(89, "days"), moment()],
-              "Last Year": [
-                moment().subtract(1, "year").add(1, "day"),
-                moment(),
-              ],
-              // 'All Time': 'all-time' // [minDate, maxDate]
-            },
-            callback: function (startDate, endDate, period) {
-              var title = startDate.format("L") + " – " + endDate.format("L");
-              $(this).val(title);
-            },
-          });
+          initDateRangePicker('#datePickerBL');          
           bubbleRender();
         }
 
@@ -3380,24 +3363,8 @@
               </div>
             </div>
           </div>`);
-          $("#datePickerL").daterangepicker({
-            forceUpdate: true,
-            periods: ["month", "quarter", "year"],
-            period: "month",
-            ranges: {
-              "Last 30 days": [moment().subtract(29, "days"), moment()],
-              "Last 90 days": [moment().subtract(89, "days"), moment()],
-              "Last Year": [
-                moment().subtract(1, "year").add(1, "day"),
-                moment(),
-              ],
-              // 'All Time': 'all-time' // [minDate, maxDate]
-            },
-            callback: function (startDate, endDate, period) {
-              var title = startDate.format("L") + " – " + endDate.format("L");
-              $(this).val(title);
-            },
-          });
+          
+          initDateRangePicker("#datePickerL");
           lineRender();
         }
 
@@ -3473,24 +3440,7 @@
               </div>
             </div>
           </div>`);
-          $("#datePickerPIE").daterangepicker({
-            forceUpdate: true,
-            periods: ["month", "quarter", "year"],
-            period: "month",
-            ranges: {
-              "Last 30 days": [moment().subtract(29, "days"), moment()],
-              "Last 90 days": [moment().subtract(89, "days"), moment()],
-              "Last Year": [
-                moment().subtract(1, "year").add(1, "day"),
-                moment(),
-              ],
-              // 'All Time': 'all-time' // [minDate, maxDate]
-            },
-            callback: function (startDate, endDate, period) {
-              var title = startDate.format("L") + " – " + endDate.format("L");
-              $(this).val(title);
-            },
-          });
+          initDateRangePicker("#datePickerPIE");
           pieRender();
         }
 
@@ -3566,24 +3516,7 @@
               </div>
             </div>
           </div>`);
-          $("#datePickerWF").daterangepicker({
-            forceUpdate: true,
-            periods: ["month", "quarter", "year"],
-            period: "month",
-            ranges: {
-              "Last 30 days": [moment().subtract(29, "days"), moment()],
-              "Last 90 days": [moment().subtract(89, "days"), moment()],
-              "Last Year": [
-                moment().subtract(1, "year").add(1, "day"),
-                moment(),
-              ],
-              // 'All Time': 'all-time' // [minDate, maxDate]
-            },
-            callback: function (startDate, endDate, period) {
-              var title = startDate.format("L") + " – " + endDate.format("L");
-              $(this).val(title);
-            },
-          });
+          initDateRangePicker("#datePickerWF");
           waterfallRender();
         }
 
@@ -3659,24 +3592,7 @@
               </div>
             </div>
           </div>`);
-          $("#datePickerST").daterangepicker({
-            forceUpdate: true,
-            periods: ["month", "quarter", "year"],
-            period: "month",
-            ranges: {
-              "Last 30 days": [moment().subtract(29, "days"), moment()],
-              "Last 90 days": [moment().subtract(89, "days"), moment()],
-              "Last Year": [
-                moment().subtract(1, "year").add(1, "day"),
-                moment(),
-              ],
-              // 'All Time': 'all-time' // [minDate, maxDate]
-            },
-            callback: function (startDate, endDate, period) {
-              var title = startDate.format("L") + " – " + endDate.format("L");
-              $(this).val(title);
-            },
-          });
+          initDateRangePicker("#datePickerST");
           stackedRender();
         }
 
@@ -3752,24 +3668,8 @@
               </div>
             </div>
           </div>`);
-          $("#datePickerHM").daterangepicker({
-            forceUpdate: true,
-            periods: ["month", "quarter", "year"],
-            period: "month",
-            ranges: {
-              "Last 30 days": [moment().subtract(29, "days"), moment()],
-              "Last 90 days": [moment().subtract(89, "days"), moment()],
-              "Last Year": [
-                moment().subtract(1, "year").add(1, "day"),
-                moment(),
-              ],
-              // 'All Time': 'all-time' // [minDate, maxDate]
-            },
-            callback: function (startDate, endDate, period) {
-              var title = startDate.format("L") + " – " + endDate.format("L");
-              $(this).val(title);
-            },
-          });
+          
+          initDateRangePicker("#datePickerHM");
           heatmapRender();
         }
 
@@ -3980,24 +3880,7 @@
           $(document).ready(function () {
             $("#drilldownTable").paging({ limit: 6 });
           });
-          $("#datePicker14").daterangepicker({
-            forceUpdate: true,
-            periods: ["month", "quarter", "year"],
-            period: "month",
-            ranges: {
-              "Last 30 days": [moment().subtract(29, "days"), moment()],
-              "Last 90 days": [moment().subtract(89, "days"), moment()],
-              "Last Year": [
-                moment().subtract(1, "year").add(1, "day"),
-                moment(),
-              ],
-              // 'All Time': 'all-time' // [minDate, maxDate]
-            },
-            callback: function (startDate, endDate, period) {
-              var title = startDate.format("L") + " – " + endDate.format("L");
-              $(this).val(title);
-            },
-          });
+          initDateRangePicker("#datePicker14");
           drilldownRender();
         }
 
@@ -4213,24 +4096,7 @@
           $(document).ready(function () {
             $("#dataTable").paging({ limit: 7 });
           });
-          $("#datePicker15").daterangepicker({
-            forceUpdate: true,
-            periods: ["month", "quarter", "year"],
-            period: "month",
-            ranges: {
-              "Last 30 days": [moment().subtract(29, "days"), moment()],
-              "Last 90 days": [moment().subtract(89, "days"), moment()],
-              "Last Year": [
-                moment().subtract(1, "year").add(1, "day"),
-                moment(),
-              ],
-              // 'All Time': 'all-time' // [minDate, maxDate]
-            },
-            callback: function (startDate, endDate, period) {
-              var title = startDate.format("L") + " – " + endDate.format("L");
-              $(this).val(title);
-            },
-          });
+          initDateRangePicker("#datePicker15");
           dataRender();
         }
 
@@ -5101,6 +4967,9 @@
 
       $(".daterangepicker-field").daterangepicker({
         forceUpdate: true,
+        orientation: 'left',
+        // endDate: moment().add(10, 'year'),
+        maxDate: [moment().add(20, 'year'), 'inclusive'],
         callback: function (startDate, endDate, period) {
           var title = startDate.format("L") + " – " + endDate.format("L");
           $(this).val(title);
@@ -5163,6 +5032,33 @@
       $(document).ready(function () {
         $("#dataTableView").paging({ limit: 7 });
       });
+
+
+      function initDateRangePicker(selector) {
+
+        var orientation = $('#dashboard-body .sub_initiatives').length%2 === 0 ? 'left': 'right';
+        console.log('selector', selector, orientation);
+        $(selector).daterangepicker({
+            forceUpdate: true,
+            orientation: orientation,
+            maxDate: [moment().add(20, 'year'), 'inclusive'],
+            periods: ["month", "quarter", "year"],
+            period: "month",
+            ranges: {
+              "Last 30 days": [moment().subtract(29, "days"), moment()],
+              "Last 90 days": [moment().subtract(89, "days"), moment()],
+              "Last Year": [
+                moment().subtract(1, "year").add(1, "day"),
+                moment(),
+              ],
+              // 'All Time': 'all-time' // [minDate, maxDate]
+            },
+            callback: function (startDate, endDate, period) {
+              var title = startDate.format("L") + " – " + endDate.format("L");
+              $(this).val(title);
+            },
+          });
+      }
     </script>
   </body>
 </html>
