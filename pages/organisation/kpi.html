@@ -4346,7 +4346,7 @@
                     >Chart</strong
                   >
                 </h5>
-                <div class="form-group kpi_create_initives mb-0">
+                <!-- <div class="form-group kpi_create_initives mb-0">
                   <select
                     id="chart-selection"
                     name="sub_initative_desc"
@@ -4364,7 +4364,80 @@
                     <option value="10">Risk Chart</option>
                     <option value="11">Gantt Chart</option>
                   </select>
-                </div>
+                </div> -->
+                <ul class="header-dropdown" style="margin-right: 8%;">
+                  <li class="dropdown m-t--10">
+                    <a
+                      href="#"
+                      onclick="return false;"
+                      class="dropdown-toggle"
+                      data-toggle="dropdown"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="true"
+                    >
+                      <i class="fas fa-chart-line"></i>
+                    </a>
+                    <ul
+                      class="dropdown-menu pull-right"
+                      x-placement="bottom-start"
+                      style="
+                        position: absolute;
+                        will-change: transform;
+                        top: 0px;
+                        left: 0px;
+                        transform: translate3d(0px, 24px, 0px);
+                      "
+                    >
+                      <li
+                        id="chart-type"
+                        style="
+                          display: flex !important;
+                          -webkit-box-orient: horizontal !important;
+                          -webkit-box-direction: normal !important;
+                          flex-direction: row !important;
+                          justify-content: space-evenly;
+                          text-align: center;
+                          padding: 4px;
+                        "
+                      >
+                        <a href="#" data-toggle="tooltip" title="Bubble">
+                          <img
+                            ondragstart="dragStart(event)"
+                            draggable="true"
+                            id="BubbleChart"
+                            src="../organisation/images/widgets/Bubble.png"
+                            alt="Bubble Chart"
+                          />
+                        </a>
+                        <a href="#" data-toggle="tooltip" title="Column">
+                          <img
+                            ondragstart="dragStart(event)"
+                            draggable="true"
+                            id="ColumnChart"
+                            src="../organisation/images/widgets/Column.png"
+                            alt="Column Chart"
+                          />
+                        </a>
+                        <a href="#" data-toggle="tooltip" title="Line">
+                          <img
+                            src="../organisation/images/widgets/Line.png"
+                            alt="Line Chart"
+                          />
+                        </a>
+                        <a href="#" data-toggle="tooltip" title="Area">
+                          <img
+                            ondragstart="dragStart(event)"
+                            draggable="true"
+                            id="AreaChart"
+                            src="../organisation/images/widgets/Area.png"
+                            alt="Area Chart"
+                          />
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
                 <ul class="header-dropdown m-r--2">
                   <li class="dropdown m-t--10">
                     <a
@@ -6172,6 +6245,7 @@
     <script src="../../assets/lodash.min.js"></script>
     <script src="../../assets/loader.js"></script>
     <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script>
       var pie;
       drawChart();
@@ -6192,8 +6266,8 @@
       }
 
       function drawChart() {
-        var value = $("#chart-selection").val();
-        if (value == "1") {
+        var value = $("#chart-type").click();
+        if (value == "BubbleChart") {
           $("#chartdiv_init").empty();
           drawStandard();
         }
@@ -7646,204 +7720,72 @@
       }
 
       function drawStandard() {
-        var margin = {
-            top: 40,
-            right: 20,
-            bottom: 30,
-            left: 40,
-            front: 0,
-            back: 0,
+        var options = {
+          series: [
+            {
+              name: "Bubble1",
+              data: [
+                {
+                  x: 20,
+                  y: 54,
+                  z: 24,
+                },
+              ],
+            },
+            {
+              name: "Bubble2",
+              data: [
+                {
+                  x: 30,
+                  y: 24,
+                  z: 32,
+                },
+              ],
+            },
+            {
+              name: "Bubble3",
+              data: [
+                {
+                  x: 43,
+                  y: 34,
+                  z: 15,
+                },
+              ],
+            },
+          ],
+          chart: {
+            height: 323,
+            type: "bubble",
           },
-          width = getWidth() - margin.left - margin.right,
-          height = getHeight() - margin.top - margin.bottom,
-          depth = 100 - margin.front - margin.back;
+          dataLabels: {
+            enabled: false,
+          },
+          legend: {
+            position: "bottom",
+            horizontalAlign: "center",
+          },
+          fill: {
+            opacity: 0.8,
+          },
+          xaxis: {
+            tickAmount: 12,
+            type: "category",
+            title: {
+              text: "Period",
+            },
+          },
+          yaxis: {
+            max: 70,
+            title: {
+              text: "$ (thousand)",
+            },
+          },
+        };
 
-        var xScale = d3.scale.ordinal().rangeRoundBands([0, width], 0.2);
-
-        var yScale = d3.scale.linear().range([height, 0]);
-
-        var zScale = d3.scale
-          .ordinal()
-          .domain([0, 1, 2])
-          .rangeRoundBands([0, depth], 0.4);
-
-        var xAxis = d3.svg.axis().scale(xScale).orient("bottom");
-
-        var yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(10, "%");
-
-        var chart = d3
-          .select("#chartdiv_init")
-          .append("svg")
-          .attr("width", width + margin.left + margin.right)
-          .attr("height", height + margin.top + margin.bottom)
-          .append("g")
-          .attr("transform", svgHelp.translate(margin.left, margin.right));
-
-        var data = [
-          {
-            letter: "A",
-            frequency: ".08167",
-          },
-          {
-            letter: "B",
-            frequency: ".01492",
-          },
-          {
-            letter: "C",
-            frequency: ".02782",
-          },
-          {
-            letter: "D",
-            frequency: ".04253",
-          },
-          {
-            letter: "E",
-            frequency: ".12702",
-          },
-          {
-            letter: "F",
-            frequency: ".02288",
-          },
-          {
-            letter: "G",
-            frequency: ".02015",
-          },
-          {
-            letter: "H",
-            frequency: ".06094",
-          },
-          {
-            letter: "I",
-            frequency: ".06966",
-          },
-          {
-            letter: "J",
-            frequency: ".00153",
-          },
-          {
-            letter: "K",
-            frequency: ".00772",
-          },
-          {
-            letter: "L",
-            frequency: ".04025",
-          },
-          {
-            letter: "M",
-            frequency: ".02406",
-          },
-          {
-            letter: "N",
-            frequency: ".06749",
-          },
-          {
-            letter: "O",
-            frequency: ".07507",
-          },
-          {
-            letter: "P",
-            frequency: ".01929",
-          },
-          {
-            letter: "Q",
-            frequency: ".00095",
-          },
-          {
-            letter: "R",
-            frequency: ".05987",
-          },
-          {
-            letter: "S",
-            frequency: ".06327",
-          },
-          {
-            letter: "T",
-            frequency: ".09056",
-          },
-          {
-            letter: "U",
-            frequency: ".02758",
-          },
-          {
-            letter: "V",
-            frequency: ".00978",
-          },
-          {
-            letter: "W",
-            frequency: ".02360",
-          },
-          {
-            letter: "X",
-            frequency: ".00150",
-          },
-          {
-            letter: "Y",
-            frequency: ".01974",
-          },
-          {
-            letter: "Z",
-            frequency: ".00074",
-          },
-        ];
-        xScale.domain(_.sortBy(_.uniq(_.map(data, "letter"))));
-        yScale.domain([0, _.max(data, "frequency").frequency]);
-
-        function x(d) {
-          return xScale(d.letter);
-        }
-
-        function y(d) {
-          return yScale(d.frequency);
-        }
-
-        var camera = [width / 2, height / 2, -1000];
-        var barGen = bar3d()
-          .camera(camera)
-          .x(x)
-          .y(y)
-          .z(zScale(0))
-          .width(xScale.rangeBand())
-          .height(function (d) {
-            return height - y(d);
-          })
-          .depth(xScale.rangeBand());
-
-        chart
-          .append("g")
-          .attr("class", "x axis")
-          .attr("transform", svgHelp.translate(0, height))
-          .call(xAxis);
-
-        chart
-          .append("g")
-          .attr("class", "y axis")
-          .call(yAxis)
-          .append("text")
-          .attr("transform", svgHelp.rotate(-90))
-          .attr("y", 6)
-          .attr("dy", ".71em")
-          .style("text-anchor", "end")
-          .text("Frequency");
-
-        var extent = xScale.rangeExtent();
-        var middle = (extent[1] - extent[0]) / 2;
-        chart
-          .selectAll("g.bar")
-          .data(data)
-          .enter()
-          .append("g")
-          .attr("class", "bar")
-          // sort based on distance from center, so we draw outermost
-          // bars first. otherwise, bars drawn later might overlap bars drawn first
-          .sort(function (a, b) {
-            return Math.abs(x(b) - middle) - Math.abs(x(a) - middle);
-          })
-          .call(barGen);
-
-        function type(d) {
-          d.frequency = +d.frequency;
-          return d;
-        }
+        var chart = new ApexCharts(
+          document.querySelector("#Bubblechart"),
+          options
+        ).render();
       }
       $("#chart-selection").on("change", function () {
         drawChart();
