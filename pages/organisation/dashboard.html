@@ -1285,7 +1285,7 @@
                   class="form-control browser-default"
                   id="card_type_select"
                 >
-                  <option value="Text">Text</option>
+                  <option value="Text">Icon</option>
                   <option value="Chart">Chart</option>
                 </select>
               </div>
@@ -1315,6 +1315,19 @@
                 <input
                   type="text"
                   class="form-control browser-default daterangepicker-field-period"
+                />
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="">Gap</label>
+                <input
+                  type="text"
+                  class="form-control browser-default"
+                  id="kpi_formula"
+                  readonly
+                  data-toggle="modal"
+                  data-target="#kpi_formula_popup"
+                  role="button"
                 />
               </div>
               <div class="col-12">
@@ -1577,10 +1590,18 @@
             <div class="row">
               <div class="form-group col-md-12">
                 <label for="">KPI Name</label>
-                <input type="text" class="form-control browser-default" />
+                <input
+                  type="text"
+                  class="form-control browser-default"
+                  id="kpi_formula"
+                  readonly
+                  data-toggle="modal"
+                  data-target="#kpi_formula_popup"
+                  role="button"
+                />
               </div>
               <div class="form-group col-md-12 mt-2">
-                <label for="kpi_fields">Types</label>
+                <label for="kpi_fields">Data Fields</label>
                 <ul class="d-flex flex-row flex-wrap ml-2">
                   <li>
                     <div class="form-check">
@@ -1642,7 +1663,7 @@
                             type="checkbox"
                             value=""
                           />
-                          YTT
+                          YTD
                           <span class="form-check-sign">
                             <span class="check"></span>
                           </span>
@@ -1834,10 +1855,18 @@
             <div class="row">
               <div class="form-group col-md-12">
                 <label for="">KPI Name</label>
-                <input type="text" class="form-control browser-default" />
+                <input
+                  type="text"
+                  class="form-control browser-default"
+                  id="kpi_formula"
+                  readonly
+                  data-toggle="modal"
+                  data-target="#kpi_formula_popup"
+                  role="button"
+                />
               </div>
               <div class="form-group col-md-12 mt-2">
-                <label for="kpi_fields">Types</label>
+                <label for="kpi_fields">Data Fields</label>
                 <ul class="d-flex flex-row flex-wrap ml-2">
                   <li>
                     <div class="form-check">
@@ -1899,7 +1928,7 @@
                             type="checkbox"
                             value=""
                           />
-                          YTT
+                          YTD
                           <span class="form-check-sign">
                             <span class="check"></span>
                           </span>
@@ -1957,7 +1986,7 @@
                   <th style="width: 98px;">Actual</th>
                   <th style="width: 98px;">Target</th>
                   <th style="width: 98px;">Gap</th>
-                  <th style="width: 98px;">YTT</th>
+                  <th style="width: 98px;">YTD</th>
                 </tr>
               </thead>
               <tbody>
@@ -2239,6 +2268,25 @@
         <div class="modal-content">
           <div class="modal-body">
             <div id="Heatmaplarge"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Heatmap Large -->
+
+    <!-- Heatmap Large -->
+    <div
+      class="modal fade"
+      id="map-large"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div style="height: 400px;" id="Maplarge"></div>
           </div>
         </div>
       </div>
@@ -2900,9 +2948,9 @@
                   />
                 <h5 class="prob flex-fill_47" style="margin-top: -42px;">
                   <strong
-                    class="editableTxt1"
-                    onkeypress="return (this.innerText.length <= 25)"
+                    
                     editable="true"
+                    contenteditable="true"
                     >Chart</strong
                   >
                 </h5>
@@ -2994,9 +3042,9 @@
                   />
                 <h5 class="prob flex-fill_47" style="margin-top: -42px;">
                   <strong
-                    class="editableTxt1"
-                    onkeypress="return (this.innerText.length <= 25)"
+                    
                     editable="true"
+                    contenteditable="true"
                     >Chart</strong
                   >
                 </h5>
@@ -3089,8 +3137,8 @@
                   />
                 <h5 class="prob flex-fill_47" style="margin-top: -42px;">
                   <strong
-                    class="editableTxt1"
-                    editable="true"
+                  editable="true"
+                    contenteditable="true"
                     >Chart</strong
                   >
                 </h5>
@@ -3234,7 +3282,7 @@
                 </ul>
               </div>
               <div>
-                <div id="Bubblechart"></div>
+                <div style="width: 100%;" id="Bubblechart"></div>
                 <div id="tag"></div>
               </div>
             </div>
@@ -3740,9 +3788,9 @@
                   />
                 <h5 class="prob flex-fill_47" style="margin-top: -42px;">
                   <strong
-                    class="editableTxt1"
-                    onkeypress="return (this.innerText.length <= 25)"
+                    
                     editable="true"
+                    contenteditable="true"
                     >Drill Down Table</strong
                   >
                 </h5>
@@ -3968,9 +4016,9 @@
                   />
                 <h5 class="prob flex-fill_47" style="margin-top: -42px;">
                   <strong
-                    class="editableTxt1"
-                    onkeypress="return (this.innerText.length <= 25)"
+                    
                     editable="true"
+                    contenteditable="true"
                     >Data Table</strong
                   >
                 </h5>
@@ -4193,9 +4241,9 @@
               <div class="header flex-row">
                 <h5 class="prob flex-fill">
                   <strong
-                    class="editableTxt1"
-                    onkeypress="return (this.innerText.length <= 25)"
+                    
                     editable="true"
+                    contenteditable="true"
                     >Map</strong
                   >
                 </h5>
@@ -4231,6 +4279,11 @@
                           onclick="return false;"
                           >Settings</a
                         >
+                      </li>
+                      <li>
+                        <a href="#" 
+                          data-toggle="modal"
+                          data-target="#map-large">Enlarge</a>
                       </li>
                       <li>
                         <a href="#" onclick="return false;" class="delete-row"
@@ -4666,7 +4719,10 @@
                   width: 200,
                 },
                 legend: {
-                  position: "right",
+                  position: "bottom",
+                  horizontalAlign: "right",
+                  floating: true,
+                  offsetY: 8,
                 },
               },
             },
@@ -4959,6 +5015,49 @@
           chart.logo.disabled = true;
         }); // end am4core.ready()
       }
+
+      am4core.ready(function () {
+        // Themes begin
+        am4core.useTheme(am4themes_animated);
+        // Themes end
+
+        // Create map instance
+        var chart = am4core.create("Maplarge", am4maps.MapChart);
+
+        // Set map definition
+        chart.geodata = am4geodata_worldLow;
+
+        // Set projection
+        chart.projection = new am4maps.projections.Miller();
+
+        // Series for World map
+        var worldSeries = chart.series.push(new am4maps.MapPolygonSeries());
+        worldSeries.exclude = ["AQ"];
+        worldSeries.useGeodata = true;
+
+        var polygonTemplate = worldSeries.mapPolygons.template;
+        polygonTemplate.tooltipText = "{name}";
+        polygonTemplate.fill = chart.colors.getIndex(0);
+        polygonTemplate.nonScalingStroke = true;
+
+        // Hover state
+        var hs = polygonTemplate.states.create("hover");
+        hs.properties.fill = am4core.color("#565678");
+
+        // Series for United States map
+        var usaSeries = chart.series.push(new am4maps.MapPolygonSeries());
+        usaSeries.geodata = am4geodata_usaLow;
+
+        var usPolygonTemplate = usaSeries.mapPolygons.template;
+        usPolygonTemplate.tooltipText = "{name}";
+        usPolygonTemplate.fill = chart.colors.getIndex(1);
+        usPolygonTemplate.nonScalingStroke = true;
+
+        // Hover state
+        var hs = usPolygonTemplate.states.create("hover");
+        hs.properties.fill = am4core.color("#red");
+        chart.logo.disabled = true;
+      }); // end am4core.ready()
 
       function twoColumn() {
         $("#dashboard-body>div").removeClass("col-md-4");
