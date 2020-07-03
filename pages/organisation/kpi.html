@@ -50,170 +50,6 @@
         height: 100%;
       }
 
-      path.slice {
-        stroke-width: 2px;
-      }
-
-      polyline {
-        opacity: 0.3;
-        stroke: black;
-        stroke-width: 2px;
-        fill: none;
-      }
-
-      .arc text {
-        font: 10px sans-serif;
-        text-anchor: middle;
-      }
-
-      .arc path {
-        stroke: #fff;
-      }
-
-      .bar {
-        fill: orange;
-      }
-
-      .bar:hover {
-        fill: orangered;
-      }
-
-      .x.axis path {
-        display: none;
-      }
-
-      .d3-tip {
-        line-height: 1;
-        font-weight: bold;
-        padding: 12px;
-        background: rgba(0, 0, 0, 0.8);
-        color: #fff;
-        border-radius: 2px;
-      }
-
-      /* Creates a small triangle extender for the tooltip */
-
-      .d3-tip:after {
-        box-sizing: border-box;
-        display: inline;
-        font-size: 10px;
-        width: 100%;
-        line-height: 1;
-        color: rgba(0, 0, 0, 0.8);
-        content: "\25BC";
-        position: absolute;
-        text-align: center;
-      }
-
-      /* Style northward tooltips differently */
-
-      .d3-tip.n:after {
-        margin: -1px 0 0 0;
-        top: 100%;
-        left: 0;
-      }
-
-      .bar.total rect {
-        fill: steelblue;
-      }
-
-      .bar.positive rect {
-        fill: darkolivegreen;
-      }
-
-      .bar.negative rect {
-        fill: crimson;
-      }
-
-      .bar line.connector {
-        stroke: grey;
-        stroke-dasharray: 3;
-      }
-
-      .bar text {
-        fill: white;
-        font: 12px sans-serif;
-        text-anchor: middle;
-      }
-
-      .axis text {
-        font: 10px sans-serif;
-      }
-
-      path {
-        stroke: steelblue;
-        stroke-width: 2;
-        fill: none;
-      }
-
-      .axis path,
-      .axis line {
-        fill: none;
-        stroke: grey;
-        stroke-width: 1;
-        shape-rendering: crispEdges;
-      }
-
-      /* 3d bar chart style */
-
-      .bar .face {
-        shape-rendering: geometricPrecision;
-        stroke: #4286b4;
-        stroke-width: 0.7px;
-      }
-
-      .bar .face.front {
-        fill: #4286b4;
-      }
-
-      .bar .face.top {
-        fill: #3b82bd;
-      }
-
-      .bar .face.left,
-      .bar .face.right {
-        fill: #3675a9;
-      }
-
-      .bar:hover .face {
-        stroke: #a52a2a;
-      }
-
-      .bar:hover .face.front {
-        fill: #a52a2a;
-      }
-
-      .bar:hover .face.top {
-        fill: #991920;
-      }
-
-      .bar:hover .face.left,
-      .bar:hover .face.right {
-        fill: #8e181e;
-      }
-
-      .axis {
-        font: 10px sans-serif;
-      }
-
-      .axis path,
-      .axis line {
-        fill: none;
-        stroke: #000;
-        shape-rendering: crispEdges;
-      }
-
-      .x.axis path {
-        display: none;
-      }
-
-      .orientation-right {
-        top: 60px !important;
-        right: 0 !important;
-        left: auto !important;
-        position: fixed;
-      }
-
       .toggle-dropdown li {
         cursor: pointer;
       }
@@ -4390,7 +4226,7 @@
                       "
                     >
                       <li
-                        id="chart-type"
+                        class="chart-type"
                         style="
                           display: flex !important;
                           -webkit-box-orient: horizontal !important;
@@ -4401,35 +4237,46 @@
                           padding: 4px;
                         "
                       >
-                        <a href="#" data-toggle="tooltip" title="Bubble">
+                        <a
+                          href="#"
+                          id="BubbleChart"
+                          data-toggle="tooltip"
+                          title="Bubble"
+                        >
                           <img
-                            ondragstart="dragStart(event)"
-                            draggable="true"
-                            id="BubbleChart"
                             src="../organisation/images/widgets/Bubble.png"
                             alt="Bubble Chart"
                           />
                         </a>
-                        <a href="#" data-toggle="tooltip" title="Column">
+                        <a
+                          href="#"
+                          id="ColumnChart"
+                          data-toggle="tooltip"
+                          title="Column"
+                        >
                           <img
-                            ondragstart="dragStart(event)"
-                            draggable="true"
-                            id="ColumnChart"
                             src="../organisation/images/widgets/Column.png"
                             alt="Column Chart"
                           />
                         </a>
-                        <a href="#" data-toggle="tooltip" title="Line">
+                        <a
+                          href="#"
+                          id="LineChart"
+                          data-toggle="tooltip"
+                          title="Line"
+                        >
                           <img
                             src="../organisation/images/widgets/Line.png"
                             alt="Line Chart"
                           />
                         </a>
-                        <a href="#" data-toggle="tooltip" title="Area">
+                        <a
+                          href="#"
+                          id="AreaChart"
+                          data-toggle="tooltip"
+                          title="Area"
+                        >
                           <img
-                            ondragstart="dragStart(event)"
-                            draggable="true"
-                            id="AreaChart"
                             src="../organisation/images/widgets/Area.png"
                             alt="Area Chart"
                           />
@@ -4473,7 +4320,7 @@
                 </ul>
               </div>
               <div>
-                <div id="chartdiv_init" style="height: 99.5vh;"></div>
+                <div id="Columnchart"></div>
                 <div id="tag"></div>
               </div>
             </div>
@@ -6211,25 +6058,9 @@
     <script src="../../assets/js/app.min.js"></script>
     <!-- Custom Js -->
     <script src="../../assets/js/admin.js"></script>
-    <script src="../../assets/js/file-preview.js"></script>
-    <script src="../../assets/js/bundles/amcharts4/core.js"></script>
-    <script src="../../assets/js/bundles/amcharts4/charts.js"></script>
-    <script src="../../assets/js/bundles/amcharts4/animated.js"></script>
-    <script src="../../assets/amcharts.js"></script>
-    <script src="../../assets/serial.js"></script>
-    <script src="../../assets/light.js"></script>
-    <script src="../../assets/gantt.js"></script>
     <!-- Knob Js -->
     <script src="../../assets/jquery-ui.min.js"></script>
     <script src="../../assets/moment.js"></script>
-    <!-- <script src="../../assets/daterangepicker.min.js"></script> -->
-    <script src="../../assets/d3.v3.min.js"></script>
-    <!-- <script src="../../assets/d3.v4.js"></script> -->
-    <script src="../../assets/d3pie.min.js"></script>
-    <script src="../../assets/js/pages/core.js"></script>
-    <script src="../../assets/js/pages/charts.js"></script>
-    <script src="../../assets/js/pages/spiritedaway.js"></script>
-    <script src="../../assets/js/pages/animated.js"></script>
     <script src="../../assets/jquery.editable.min.js"></script>
     <script src="../../assets/js/bootstrap.bundle.min.js"></script>
     <script src="../../assets/pickr.es5.min.js"></script>
@@ -6237,1489 +6068,41 @@
     <script src="../../assets/datepicker.en.js"></script>
     <script src="../../assets/js/widgets.js"></script>
     <script src="../../assets/jquery-resize.js"></script>
-    <script src="../../assets/RadarChart.js"></script>
-    <script src="../../assets/plotly-latest.min.js"></script>
-    <script src="../../assets/suncalc.js"></script>
-    <script src="../../assets/chart-utils.js"></script>
-    <script src="../../assets/bar3d.js"></script>
     <script src="../../assets/lodash.min.js"></script>
     <script src="../../assets/loader.js"></script>
     <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script>
-      var pie;
-      drawChart();
       $(document).ready(function () {
         $("#chartdiv_init").resize(function (e) {
           drawChart();
         });
       });
 
-      function getHeight() {
-        var innerHeight = $("#chartdiv_init").innerHeight();
-        return innerHeight;
-      }
-
-      function getWidth() {
-        var innerWidth = $("#chartdiv_init").innerWidth();
-        return innerWidth;
-      }
-
       function drawChart() {
-        var value = $("#chart-type").click();
+        $("li.chart-type a").click(function () {
+          var value = $(this).attr("id");
+        });
         if (value == "BubbleChart") {
           $("#chartdiv_init").empty();
-          drawStandard();
+          drawBubble();
+          console.log("Bubble");
         }
-        if (value == "2") {
+        if (value == "ColumnChart") {
           $("#chartdiv_init").empty();
-          drawBar();
+          drawColumn();
         }
-        if (value == "3") {
+        if (value == "LineChart") {
           $("#chartdiv_init").empty();
           drawLine();
         }
-        if (value == "4") {
-          $("#chartdiv_init").empty();
-          drawBarLine();
-        }
-        if (value == "5") {
-          $("#chartdiv_init").empty();
-          drawPie();
-        }
-        if (value == "6") {
+        if (value == "AreaChart") {
           $("#chartdiv_init").empty();
           drawArea();
         }
-        if (value == "7") {
-          $("#chartdiv_init").empty();
-          drawRadar();
-        }
-        if (value == "8") {
-          $("#chartdiv_init").empty();
-          drawPolar();
-        }
-        if (value == "9") {
-          $("#chartdiv_init").empty();
-          drawWaterfall();
-        }
-        if (value == "10") {
-          $("#chartdiv_init").empty();
-          drawRisk();
-        }
-        if (value == "11") {
-          $("#chartdiv_init").empty();
-          drawGantt();
-        }
       }
 
-      function drawGantt() {
-        google.charts.load("current", {
-          packages: ["gantt"],
-        });
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-          var data = new google.visualization.DataTable();
-          data.addColumn("string", "Task ID");
-          data.addColumn("string", "Task Name");
-          data.addColumn("string", "Resource");
-          data.addColumn("date", "Start Date");
-          data.addColumn("date", "End Date");
-          data.addColumn("number", "Duration");
-          data.addColumn("number", "Percent Complete");
-          data.addColumn("string", "Dependencies");
-
-          data.addRows([
-            [
-              "2014Spring",
-              "Spring 2014",
-              "spring",
-              new Date(2014, 2, 22),
-              new Date(2014, 5, 20),
-              null,
-              100,
-              null,
-            ],
-            [
-              "2014Summer",
-              "Summer 2014",
-              "summer",
-              new Date(2014, 5, 21),
-              new Date(2014, 8, 20),
-              null,
-              100,
-              null,
-            ],
-            [
-              "2014Autumn",
-              "Autumn 2014",
-              "autumn",
-              new Date(2014, 8, 21),
-              new Date(2014, 11, 20),
-              null,
-              100,
-              null,
-            ],
-            [
-              "2014Winter",
-              "Winter 2014",
-              "winter",
-              new Date(2014, 11, 21),
-              new Date(2015, 2, 21),
-              null,
-              100,
-              null,
-            ],
-            [
-              "2015Spring",
-              "Spring 2015",
-              "spring",
-              new Date(2015, 2, 22),
-              new Date(2015, 5, 20),
-              null,
-              50,
-              null,
-            ],
-            [
-              "2015Summer",
-              "Summer 2015",
-              "summer",
-              new Date(2015, 5, 21),
-              new Date(2015, 8, 20),
-              null,
-              0,
-              null,
-            ],
-            [
-              "2015Autumn",
-              "Autumn 2015",
-              "autumn",
-              new Date(2015, 8, 21),
-              new Date(2015, 11, 20),
-              null,
-              0,
-              null,
-            ],
-            [
-              "2015Winter",
-              "Winter 2015",
-              "winter",
-              new Date(2015, 11, 21),
-              new Date(2016, 2, 21),
-              null,
-              0,
-              null,
-            ],
-            [
-              "Football",
-              "Football Season",
-              "sports",
-              new Date(2014, 8, 4),
-              new Date(2015, 1, 1),
-              null,
-              100,
-              null,
-            ],
-            [
-              "Baseball",
-              "Baseball Season",
-              "sports",
-              new Date(2015, 2, 31),
-              new Date(2015, 9, 20),
-              null,
-              14,
-              null,
-            ],
-            [
-              "Basketball",
-              "Basketball Season",
-              "sports",
-              new Date(2014, 9, 28),
-              new Date(2015, 5, 20),
-              null,
-              86,
-              null,
-            ],
-            [
-              "Hockey",
-              "Hockey Season",
-              "sports",
-              new Date(2014, 9, 8),
-              new Date(2015, 5, 21),
-              null,
-              89,
-              null,
-            ],
-          ]);
-
-          var options = {
-            height: getHeight(),
-            gantt: {
-              trackHeight: 30,
-            },
-          };
-
-          var chart = new google.visualization.Gantt(
-            document.getElementById("chartdiv_init")
-          );
-
-          chart.draw(data, options);
-        }
-      }
-
-      function drawRisk() {
-        var margin = {
-            top: 40,
-            right: 20,
-            bottom: 30,
-            left: 40,
-          },
-          width = getWidth() - margin.left - margin.right,
-          height = getHeight() - margin.top - margin.bottom;
-
-        var now = new Date(),
-          start = d3.time.year.floor(now),
-          end = d3.time.year.ceil(now);
-        var x = d3.time.scale().range([0, width]).domain([start, end]);
-        var y = d3.scale.linear().range([height, 0]).domain([-90, 90]);
-        var color = d3.scale
-          .linear()
-          .domain([90, 60, 30, 0])
-          .range(["#D7191C", "#FDAE61", "#ABD9E9", "#2C7BB6"]);
-        var xAxis = d3.svg.axis().scale(x).orient("bottom");
-        var yAxis = d3.svg.axis().scale(y).orient("left");
-        var svg = d3
-          .select("#chartdiv_init")
-          .append("svg")
-          .attr("width", width + margin.left + margin.right)
-          .attr("height", height + margin.top + margin.bottom)
-          .append("g")
-          .attr(
-            "transform",
-            "translate(" + margin.left + "," + margin.top + ")"
-          );
-        var data = [],
-          latitudes = y.ticks(90),
-          days = d3.range(0, 365, 2).map(function (i) {
-            return d3.time.day.offset(start, i);
-          });
-        for (var i = 0, len = latitudes.length - 1; i < len; i++) {
-          for (var j = 0, len2 = days.length - 1; j < len2; j++) {
-            var day1 = days[j],
-              day2 = days[j + 1],
-              lat1 = latitudes[i],
-              lat2 = latitudes[i + 1],
-              day = new Date((day1.valueOf() + day2.valueOf()) / 2),
-              lat = (lat1 + lat2) / 2;
-            var solarNoon = SunCalc.getTimes(day, lat, 0).solarNoon;
-            var altitude =
-              (SunCalc.getPosition(solarNoon, lat, 0).altitude * 180) / Math.PI;
-            data.push({
-              day1: day1,
-              day2: day2,
-              lat1: lat1,
-              lat2: lat2,
-              altitude: altitude,
-            });
-          }
-        }
-        svg
-          .selectAll(".cell")
-          .data(data)
-          .enter()
-          .append("rect")
-          .attr("x", function (d) {
-            return x(d.day1);
-          })
-          .attr("y", function (d) {
-            return y(d.lat2);
-          })
-          .attr("width", function (d) {
-            return x(d.day2) - x(d.day1);
-          })
-          .attr("height", function (d) {
-            return y(d.lat1) - y(d.lat2);
-          })
-          .attr("fill", function (d) {
-            return color(d.altitude);
-          });
-        svg
-          .append("g")
-          .attr("class", "x axis")
-          .attr("transform", "translate(0," + height + ")")
-          .call(xAxis);
-        svg.append("g").attr("class", "y axis").call(yAxis);
-      }
-
-      function drawPolar() {
-        data = [
-          {
-            type: "scatterpolar",
-            mode: "lines",
-            r: [0, 1.5, 1.5, 0, 2.5, 2.5, 0],
-            theta: [0, 10, 25, 0, 205, 215, 0],
-            fill: "toself",
-            fillcolor: "#709BFF",
-            line: {
-              color: "black",
-            },
-          },
-          {
-            type: "scatterpolar",
-            mode: "lines",
-            r: [0, 3.5, 3.5, 0],
-            theta: [0, 55, 75, 0],
-            fill: "toself",
-            fillcolor: "#E4FF87",
-            line: {
-              color: "black",
-            },
-          },
-          {
-            type: "scatterpolar",
-            mode: "lines",
-            r: [0, 4.5, 4.5, 0, 4.5, 4.5, 0],
-            theta: [0, 100, 120, 0, 305, 320, 0],
-            fill: "toself",
-            fillcolor: "#FFAA70",
-            line: {
-              color: "black",
-            },
-          },
-          {
-            type: "scatterpolar",
-            mode: "lines",
-            r: [0, 4, 4, 0],
-            theta: [0, 165, 195, 0],
-            fill: "toself",
-            fillcolor: "#FFDF70",
-            line: {
-              color: "black",
-            },
-          },
-          {
-            type: "scatterpolar",
-            mode: "lines",
-            r: [0, 3, 3, 0],
-            theta: [0, 262.5, 277.5, 0],
-            fill: "toself",
-            fillcolor: "#B6FFB4",
-            line: {
-              color: "black",
-            },
-          },
-        ];
-
-        layout = {
-          polar: {
-            radialaxis: {
-              visible: true,
-              range: [0, 5],
-            },
-          },
-          showlegend: false,
-        };
-
-        Plotly.newPlot("chartdiv_init", data, layout, {
-          modeBarButtonsToRemove: [
-            "sendDataToCloud",
-            "autoScale2d",
-            "hoverClosestCartesian",
-            "hoverCompareCartesian",
-            "lasso2d",
-            "select2d",
-          ],
-          displaylogo: false,
-          showTips: true,
-        });
-        $(".modebar-container").hide();
-      }
-
-      function drawArea() {
-        var margin = {
-            top: 40,
-            right: 20,
-            bottom: 30,
-            left: 40,
-          },
-          width = getWidth() - margin.left - margin.right,
-          height = getHeight() - margin.top - margin.bottom;
-
-        var parseDate = d3.time.format("%b").parse;
-        //formatPercent = d3.format(".0%");
-
-        var x = d3.time.scale().range([0, width]);
-
-        var y = d3.scale.linear().range([height, 0]);
-
-        var color = d3.scale.category20();
-
-        var xAxis = d3.svg.axis().scale(x).orient("bottom");
-
-        var yAxis = d3.svg.axis().scale(y).orient("left");
-        //.tickFormat(formatPercent);
-
-        var area = d3.svg
-          .area()
-          .x(function (d) {
-            return x(d.date);
-          })
-          .y0(function (d) {
-            return y(d.y0);
-          })
-          .y1(function (d) {
-            return y(d.y0 + d.y);
-          });
-
-        var stack = d3.layout.stack().values(function (d) {
-          return d.values;
-        });
-
-        var svg = d3
-          .select("#chartdiv_init")
-          .append("svg")
-          .attr("width", width + margin.left + margin.right)
-          .attr("height", height + margin.top + margin.bottom)
-          .append("g")
-          .attr(
-            "transform",
-            "translate(" + margin.left + "," + margin.top + ")"
-          );
-
-        var data = [
-          {
-            date: "Oct",
-            Kermit: 113.44,
-            piggy: 435.15,
-            Gonzo: 19.57,
-            fuzzy: 60.55,
-            hogthrob: 53.02,
-            animal: 268.28,
-            floyd: 87.34,
-            sam: 11.31,
-          },
-          {
-            date: "Nov",
-            Kermit: 109.86,
-            piggy: 506.85,
-            Gonzo: 18.97,
-            fuzzy: 58.77,
-            hogthrob: 388.37,
-            animal: 131.48,
-            floyd: 85.34,
-            sam: 11.31,
-          },
-          {
-            date: "Dec",
-            Kermit: 113.46,
-            piggy: 644.88,
-            Gonzo: 19.57,
-            fuzzy: 60.57,
-            hogthrob: 669.47,
-            animal: 0,
-            floyd: 87.46,
-            sam: 11.43,
-          },
-        ];
-        color.domain(
-          d3.keys(data[0]).filter(function (key) {
-            return key !== "date";
-          })
-        );
-        data.forEach(function (d) {
-          d.date = parseDate(d.date);
-        });
-
-        var browsers = stack(
-          color.domain().map(function (name) {
-            return {
-              name: name,
-              values: data.map(function (d) {
-                return {
-                  date: d.date,
-                  y: d[name] * 1,
-                };
-              }),
-            };
-          })
-        );
-
-        // Find the value of the day with highest total value
-        var maxDateVal = d3.max(data, function (d) {
-          var vals = d3.keys(d).map(function (key) {
-            return key !== "date" ? d[key] : 0;
-          });
-          return d3.sum(vals);
-        });
-
-        // Set domains for axes
-        x.domain(
-          d3.extent(data, function (d) {
-            return d.date;
-          })
-        );
-        y.domain([0, maxDateVal]);
-
-        var browser = svg
-          .selectAll(".browser")
-          .data(browsers)
-          .enter()
-          .append("g")
-          .attr("class", "browser");
-
-        browser
-          .append("path")
-          .attr("class", "area")
-          .attr("d", function (d) {
-            return area(d.values);
-          })
-          .style("fill", function (d) {
-            return color(d.name);
-          });
-
-        browser
-          .append("text")
-          .datum(function (d) {
-            return {
-              name: d.name,
-              value: d.values[d.values.length - 1],
-            };
-          })
-          .attr("transform", function (d) {
-            return (
-              "translate(" +
-              x(d.value.date) +
-              "," +
-              y(d.value.y0 + d.value.y / 2) +
-              ")"
-            );
-          })
-          .attr("x", -6)
-          .attr("dy", ".35em")
-          .text(function (d) {
-            return d.name;
-          });
-
-        svg
-          .append("g")
-          .attr("class", "x axis")
-          .attr("transform", "translate(0," + height + ")")
-          .call(xAxis);
-
-        svg.append("g").attr("class", "y axis").call(yAxis);
-      }
-
-      function drawBarLine() {
-        var data = [
-          {
-            date: "1-May-12",
-            close: 58.13,
-            open: 7.41,
-          },
-          {
-            date: "2-May-12",
-            close: 53.98,
-            open: 45.55,
-          },
-          {
-            date: "3-May-12",
-            close: 67.0,
-            open: 11.78,
-          },
-        ];
-
-        var margin = {
-            top: 40,
-            right: 20,
-            bottom: 30,
-            left: 40,
-          },
-          width = getWidth() - margin.left - margin.right,
-          height = getHeight() - margin.top - margin.bottom;
-
-        var parseDate = d3.time.format("%d-%b-%y").parse;
-
-        var x = d3.scale.ordinal().rangeBands([0, width], 0.09); // <-- to change the width of the columns, change the .09 at the end to whatever
-        var y = d3.scale.linear().range([height, 0]);
-
-        var xAxis = d3.svg
-          .axis()
-          .scale(x)
-          .orient("bottom")
-          .tickFormat(d3.time.format("%d-%b-%y"));
-
-        var yAxisLeft = d3.svg.axis().scale(y).orient("left");
-
-        var valueline = d3.svg
-          .line()
-          .x(function (d) {
-            return x(d.date) + x.rangeBand() / 2;
-          })
-          .y(function (d) {
-            return y(d.open);
-          });
-
-        var svg = d3
-          .select("#chartdiv_init")
-          .append("svg")
-          .attr("width", width + margin.left + margin.right)
-          .attr("height", height + margin.top + margin.bottom)
-          .append("g")
-          .attr(
-            "transform",
-            "translate(" + margin.left + "," + margin.top + ")"
-          );
-
-        // Get the data
-        data.forEach(function (d) {
-          d.date = parseDate(d.date);
-          d.close = +d.close;
-          d.open = +d.open;
-        });
-
-        // Scale the range of the data
-        x.domain(
-          data.map(function (d) {
-            return d.date;
-          })
-        );
-        y.domain([
-          0,
-          d3.max(data, function (d) {
-            return d.close;
-          }),
-        ]);
-
-        // Add the X Axis
-        svg
-          .append("g")
-          .attr("class", "x axis")
-          .attr("transform", "translate(0," + height + ")")
-          .call(xAxis);
-
-        // Add the Y Axis
-        svg
-          .append("g")
-          .attr("class", "y axis")
-          .style("fill", "steelblue")
-          .call(yAxisLeft);
-
-        // Draw the bars
-        svg
-          .selectAll("bar")
-          .data(data)
-          .enter()
-          .append("rect")
-          .style("fill", "#99ffcc")
-          .attr("x", function (d) {
-            return x(d.date);
-          })
-          .attr("width", x.rangeBand())
-          .attr("y", function (d) {
-            return y(d.close);
-          })
-          .attr("height", function (d) {
-            return height - y(d.close);
-          });
-
-        // Add the valueline path
-        svg.append("path").attr("d", valueline(data));
-      }
-
-      function drawLine() {
-        // Set the dimensions of the canvas / graph
-        var margin = {
-            top: 40,
-            right: 20,
-            bottom: 30,
-            left: 40,
-          },
-          width = getWidth() - margin.left - margin.right,
-          height = getHeight() - margin.top - margin.bottom;
-
-        // Parse the date / time
-        var parseDate = d3.time.format("%d-%b-%y").parse;
-
-        // Set the ranges
-        var x = d3.time.scale().range([0, width]);
-        var y = d3.scale.linear().range([height, 0]);
-
-        // Define the axes
-        var xAxis = d3.svg.axis().scale(x).orient("bottom").ticks(5);
-
-        var yAxis = d3.svg.axis().scale(y).orient("left").ticks(5);
-
-        // Define the line
-        var valueline = d3.svg
-          .line()
-          .x(function (d) {
-            return x(d.date);
-          })
-          .y(function (d) {
-            return y(d.close);
-          });
-
-        // Adds the svg canvas
-        var svg = d3
-          .select("#chartdiv_init")
-          .append("svg")
-          .attr("width", width + margin.left + margin.right)
-          .attr("height", height + margin.top + margin.bottom)
-          .append("g")
-          .attr(
-            "transform",
-            "translate(" + margin.left + "," + margin.top + ")"
-          );
-
-        // Get the data
-        var data = [
-          {
-            date: "1-May-12",
-            close: 58.13,
-          },
-          {
-            date: "30-Apr-12",
-            close: 53.98,
-          },
-          {
-            date: "27-Apr-12",
-            close: 67,
-          },
-          {
-            date: "26-Apr-12",
-            close: 89.7,
-          },
-          {
-            date: "25-Apr-12",
-            close: 99,
-          },
-          {
-            date: "24-Apr-12",
-            close: 130.28,
-          },
-          {
-            date: "23-Apr-12",
-            close: 166.7,
-          },
-          {
-            date: "20-Apr-12",
-            close: 234.98,
-          },
-          {
-            date: "19-Apr-12",
-            close: 345.44,
-          },
-          {
-            date: "18-Apr-12",
-            close: 443.34,
-          },
-          {
-            date: "17-Apr-12",
-            close: 543.7,
-          },
-          {
-            date: "16-Apr-12",
-            close: 580.13,
-          },
-          {
-            date: "13-Apr-12",
-            close: 605.23,
-          },
-          {
-            date: "12-Apr-12",
-            close: 622.77,
-          },
-          {
-            date: "11-Apr-12",
-            close: 626.2,
-          },
-          {
-            date: "10-Apr-12",
-            close: 628.44,
-          },
-          {
-            date: "9-Apr-12",
-            close: 636.23,
-          },
-          {
-            date: "5-Apr-12",
-            close: 633.68,
-          },
-          {
-            date: "4-Apr-12",
-            close: 624.31,
-          },
-          {
-            date: "3-Apr-12",
-            close: 629.32,
-          },
-          {
-            date: "2-Apr-12",
-            close: 618.63,
-          },
-          {
-            date: "30-Mar-12",
-            close: 599.55,
-          },
-          {
-            date: "29-Mar-12",
-            close: 609.86,
-          },
-          {
-            date: "28-Mar-12",
-            close: 617.62,
-          },
-          {
-            date: "27-Mar-12",
-            close: 614.48,
-          },
-          {
-            date: "26-Mar-12",
-            close: 606.98,
-          },
-        ];
-        data.forEach(function (d) {
-          d.date = parseDate(d.date);
-          d.close = +d.close;
-        });
-
-        // Scale the range of the data
-        x.domain(
-          d3.extent(data, function (d) {
-            return d.date;
-          })
-        );
-        y.domain([
-          0,
-          d3.max(data, function (d) {
-            return d.close;
-          }),
-        ]);
-
-        // Add the valueline path.
-        svg.append("path").attr("class", "line").attr("d", valueline(data));
-
-        // Add the X Axis
-        svg
-          .append("g")
-          .attr("class", "x axis")
-          .attr("transform", "translate(0," + height + ")")
-          .call(xAxis);
-
-        // Add the Y Axis
-        svg.append("g").attr("class", "y axis").call(yAxis);
-      }
-
-      function drawRadar() {
-        var margin = {
-            top: 30,
-            right: 20,
-            bottom: 30,
-            left: 30,
-          },
-          width = getWidth() - margin.left - margin.right,
-          height = getHeight() - margin.top - margin.bottom;
-
-        var data = [
-          [
-            //iPhone
-            {
-              axis: "Battery",
-              value: 0.22,
-            },
-            {
-              axis: "Brand",
-              value: 0.28,
-            },
-            {
-              axis: "Contract",
-              value: 0.29,
-            },
-            {
-              axis: "Quality",
-              value: 0.17,
-            },
-            {
-              axis: "Internet",
-              value: 0.22,
-            },
-            {
-              axis: "Screen",
-              value: 0.02,
-            },
-            {
-              axis: "Price",
-              value: 0.21,
-            },
-            {
-              axis: "Smartphone",
-              value: 0.5,
-            },
-          ],
-          [
-            //Samsung
-            {
-              axis: "Battery",
-              value: 0.27,
-            },
-            {
-              axis: "Brand",
-              value: 0.16,
-            },
-            {
-              axis: "Contract",
-              value: 0.35,
-            },
-            {
-              axis: "Quality",
-              value: 0.13,
-            },
-            {
-              axis: "Internet",
-              value: 0.2,
-            },
-            {
-              axis: "Screen",
-              value: 0.13,
-            },
-            {
-              axis: "Device",
-              value: 0.35,
-            },
-            {
-              axis: "Smartphone",
-              value: 0.38,
-            },
-          ],
-          [
-            //Nokia Smartphone
-            {
-              axis: "Battery",
-              value: 0.26,
-            },
-            {
-              axis: "Brand",
-              value: 0.1,
-            },
-            {
-              axis: "Contract",
-              value: 0.3,
-            },
-            {
-              axis: "Quality",
-              value: 0.14,
-            },
-            {
-              axis: "Internet",
-              value: 0.22,
-            },
-            {
-              axis: "Screen",
-              value: 0.04,
-            },
-            {
-              axis: "Price",
-              value: 0.41,
-            },
-            {
-              axis: "Smartphone",
-              value: 0.3,
-            },
-          ],
-        ];
-        var color = d3.scale.ordinal().range(["#EDC951", "#CC333F", "#00A0B0"]);
-
-        var radarChartOptions = {
-          w: width,
-          h: height,
-          margin: margin,
-          maxValue: 0.5,
-          levels: 5,
-          roundStrokes: true,
-          color: color,
-        };
-        //Call function to draw the Radar chart
-        RadarChart.draw("#chartdiv_init", data, radarChartOptions);
-      }
-
-      function drawWaterfall() {
-        var margin = {
-            top: 40,
-            right: 20,
-            bottom: 30,
-            left: 40,
-          },
-          width = getWidth() - margin.left - margin.right,
-          height = getHeight() - margin.top - margin.bottom;
-        var x0 = d3.scale.ordinal().rangeRoundBands([0, width], 0, 0.1);
-
-        var x1 = d3.scale.ordinal();
-
-        var y = d3.scale.linear().range([height, 0]);
-
-        var color = d3.scale
-          .ordinal()
-          .range(["#2DBAD4", "#33CC33", "#00E6B8", "#C9081D"]);
-
-        var xAxis = d3.svg.axis().scale(x0).orient("bottom");
-
-        var yAxis = d3.svg
-          .axis()
-          .scale(y)
-          .orient("left")
-          .tickFormat(d3.format(".2s"));
-
-        var svg = d3
-          .select("#chartdiv_init")
-          .append("svg")
-          .attr("width", width + margin.left + margin.right)
-          .attr("height", height + margin.top + margin.bottom)
-          .append("g")
-          .attr(
-            "transform",
-            "translate(" + margin.left + "," + margin.top + ")"
-          );
-
-        var data = [
-          {
-            period: "Four Weeks Ago",
-            "start of period": 100,
-            new: 20,
-            returned: 30,
-            "went inactive": 40,
-          },
-          {
-            period: "Three Weeks Ago",
-            "start of period": 110,
-            new: 30,
-            returned: 20,
-            "went inactive": 30,
-          },
-          {
-            period: "Two Weeks Ago",
-            "start of period": 130,
-            new: 40,
-            returned: 25,
-            "went inactive": 40,
-          },
-          {
-            period: "One Week Ago",
-            "start of period": 155,
-            new: 30,
-            returned: 55,
-            "went inactive": 50,
-          },
-          {
-            period: "Current Week",
-            "start of period": 190,
-            new: 0,
-            returned: 0,
-            "went inactive": 0,
-          },
-        ];
-        var categories = d3.keys(data[0]).filter(function (key) {
-          return key !== "period";
-        });
-
-        data.forEach(function (d) {
-          //first calculate the starting height for each category
-          total = 0;
-          totals = {};
-          for (var i = 0; i < categories.length; i++) {
-            if (i == 3) {
-              total = total - +d[categories[i]];
-              totals[categories[i]] = total;
-            } else {
-              totals[categories[i]] = total;
-              total += +d[categories[i]];
-            }
-          }
-          //then map category name, value, and starting height to each observation
-          d.formatted = categories.map(function (category) {
-            return {
-              name: category,
-              value: +d[category],
-              baseHeight: +totals[category],
-            };
-          });
-        });
-
-        x0.domain(
-          data.map(function (d) {
-            return d.period;
-          })
-        );
-        x1.domain(categories).rangeRoundBands([0, x0.rangeBand()]);
-        y.domain([
-          0,
-          d3.max(data, function (d) {
-            return d3.max(d.formatted, function (d) {
-              return d.value + d.baseHeight;
-            });
-          }),
-        ]);
-
-        svg
-          .append("g")
-          .attr("class", "x axis")
-          .attr("transform", "translate(0," + height + ")")
-          .call(xAxis);
-
-        svg
-          .append("g")
-          .attr("class", "y axis")
-          .call(yAxis)
-          .append("text")
-          .attr("transform", "rotate(-90)")
-          .attr("y", 6)
-          .attr("dy", ".71em")
-          .style("text-anchor", "end")
-          .text("Customers");
-
-        var state = svg
-          .selectAll(".state")
-          .data(data)
-          .enter()
-          .append("g")
-          .attr("class", "g")
-          .attr("transform", function (d) {
-            return "translate(" + x0(d.period) + ",0)";
-          });
-
-        state
-          .selectAll("rect")
-          .data(function (d) {
-            return d.formatted;
-          })
-          .enter()
-          .append("rect")
-          .attr("width", x1.rangeBand())
-          .attr("x", function (d) {
-            return x1(d.name);
-          })
-          .attr("y", function (d) {
-            return y(d.value + d.baseHeight);
-          })
-          .attr("height", function (d) {
-            return height - y(d.value);
-          })
-          .style("fill", function (d) {
-            return color(d.name);
-          });
-      }
-
-      function drawBar() {
-        var margin = {
-            top: 40,
-            right: 20,
-            bottom: 30,
-            left: 40,
-          },
-          // width = 960 - margin.left - margin.right,
-          // height = 500 - margin.top - margin.bottom;
-          width = getWidth() - margin.left - margin.right,
-          height = getHeight() - margin.top - margin.bottom;
-
-        var formatPercent = d3.format(".0%");
-
-        var x = d3.scale.ordinal().rangeRoundBands([0, width], 0.1);
-
-        var y = d3.scale.linear().range([height, 0]);
-
-        var xAxis = d3.svg.axis().scale(x).orient("bottom");
-
-        var yAxis = d3.svg
-          .axis()
-          .scale(y)
-          .orient("left")
-          .tickFormat(formatPercent);
-
-        // var tip = d3.tip()
-        //     .attr('class', 'd3-tip')
-        //     .offset([-10, 0])
-        //     .html(function(d) {
-        //         return "<strong>Frequency:</strong> <span style='color:red'>" + d.frequency + "</span>";
-        //     })
-
-        var svg = d3
-          .select("#chartdiv_init")
-          .append("svg")
-          .attr("width", width + margin.left + margin.right)
-          .attr("height", height + margin.top + margin.bottom)
-          .append("g")
-          .attr(
-            "transform",
-            "translate(" + margin.left + "," + margin.top + ")"
-          );
-
-        // svg.call(tip);
-
-        // d3.tsv("data.tsv", type, function(error, data) {
-        var data = [
-          {
-            letter: "A",
-            frequency: ".08167",
-          },
-          {
-            letter: "B",
-            frequency: ".01492",
-          },
-          {
-            letter: "C",
-            frequency: ".02780",
-          },
-          {
-            letter: "D",
-            frequency: ".04253",
-          },
-          {
-            letter: "E",
-            frequency: ".12702",
-          },
-          {
-            letter: "F",
-            frequency: ".02288",
-          },
-          {
-            letter: "G",
-            frequency: ".02022",
-          },
-          {
-            letter: "H",
-            frequency: ".06094",
-          },
-          {
-            letter: "I",
-            frequency: ".06973",
-          },
-          {
-            letter: "J",
-            frequency: ".00153",
-          },
-          {
-            letter: "K",
-            frequency: ".00747",
-          },
-          {
-            letter: "L",
-            frequency: ".04025",
-          },
-          {
-            letter: "M",
-            frequency: ".02517",
-          },
-          {
-            letter: "N",
-            frequency: ".06749",
-          },
-          {
-            letter: "O",
-            frequency: ".07507",
-          },
-          {
-            letter: "P",
-            frequency: ".01929",
-          },
-          {
-            letter: "Q",
-            frequency: ".00098",
-          },
-          {
-            letter: "R",
-            frequency: ".05987",
-          },
-          {
-            letter: "S",
-            frequency: ".06333",
-          },
-          {
-            letter: "T",
-            frequency: ".09056",
-          },
-          {
-            letter: "U",
-            frequency: ".02758",
-          },
-          {
-            letter: "V",
-            frequency: ".01037",
-          },
-          {
-            letter: "W",
-            frequency: ".02465",
-          },
-          {
-            letter: "X",
-            frequency: ".00150",
-          },
-          {
-            letter: "Y",
-            frequency: ".01971",
-          },
-          {
-            letter: "Z",
-            frequency: ".00074",
-          },
-        ];
-        x.domain(
-          data.map(function (d) {
-            return d.letter;
-          })
-        );
-        y.domain([
-          0,
-          d3.max(data, function (d) {
-            return d.frequency;
-          }),
-        ]);
-
-        svg
-          .append("g")
-          .attr("class", "x axis")
-          .attr("transform", "translate(0," + height + ")")
-          .call(xAxis);
-
-        svg
-          .append("g")
-          .attr("class", "y axis")
-          .call(yAxis)
-          .append("text")
-          .attr("transform", "rotate(-90)")
-          .attr("y", 6)
-          .attr("dy", ".71em")
-          .style("text-anchor", "end")
-          .text("Frequency");
-
-        svg
-          .selectAll(".bar")
-          .data(data)
-          .enter()
-          .append("rect")
-          .attr("class", "bar")
-          .attr("x", function (d) {
-            return x(d.letter);
-          })
-          .attr("width", x.rangeBand())
-          .attr("y", function (d) {
-            return y(d.frequency);
-          })
-          .attr("height", function (d) {
-            return height - y(d.frequency);
-          });
-        // .on('mouseover', tip.show)
-        // .on('mouseout', tip.hide)
-
-        // });
-
-        function type(d) {
-          d.frequency = +d.frequency;
-          return d;
-        }
-      }
-
-      function drawPie() {
-        var width = getWidth(),
-          height = getHeight(),
-          radius = Math.min(width, height) / 2;
-
-        var color = d3.scale
-          .ordinal()
-          .range([
-            "#98abc5",
-            "#8a89a6",
-            "#7b6888",
-            "#6b486b",
-            "#a05d56",
-            "#d0743c",
-            "#ff8c00",
-          ]);
-
-        var arc = d3.svg
-          .arc()
-          .outerRadius(radius - 10)
-          .innerRadius(0);
-
-        var labelArc = d3.svg
-          .arc()
-          .outerRadius(radius - 40)
-          .innerRadius(radius - 40);
-
-        var pie = d3.layout
-          .pie()
-          .sort(null)
-          .value(function (d) {
-            return d.population;
-          });
-
-        var svg = d3
-          .select("#chartdiv_init")
-          .append("svg")
-          .attr("width", width)
-          .attr("height", height)
-          .append("g")
-          .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-
-        var data = [
-          {
-            age: "<5",
-            population: 2704659,
-          },
-          {
-            age: "5-13",
-            population: 4499890,
-          },
-          {
-            age: "14-17",
-            population: 2159981,
-          },
-          {
-            age: "18-24",
-            population: 3853788,
-          },
-          {
-            age: "25-44",
-            population: 14106543,
-          },
-          {
-            age: "45-64",
-            population: 8819342,
-          },
-          {
-            age: "≥65",
-            population: 612463,
-          },
-        ];
-
-        var g = svg
-          .selectAll(".arc")
-          .data(pie(data))
-          .enter()
-          .append("g")
-          .attr("class", "arc");
-
-        g.append("path")
-          .attr("d", arc)
-          .style("fill", function (d) {
-            return color(d.data.age);
-          });
-
-        g.append("text")
-          .attr("transform", function (d) {
-            return "translate(" + labelArc.centroid(d) + ")";
-          })
-          .attr("dy", ".35em")
-          .text(function (d) {
-            return d.data.age;
-          });
-
-        function type(d) {
-          d.population = +d.population;
-          return d;
-        }
-      }
-
-      function drawStandard() {
+      function drawBubble() {
         var options = {
           series: [
             {
@@ -7787,9 +6170,66 @@
           options
         ).render();
       }
-      $("#chart-selection").on("change", function () {
+
+      $("li.chart-type a").on("click", function () {
         drawChart();
       });
+
+      var options = {
+        series: [
+          {
+            name: "Website Blog",
+            type: "column",
+            data: [440, 505, 414, 671, 227, 413, 201],
+          },
+          {
+            name: "Social Media",
+            type: "column",
+            data: [23, 42, 35, 27, 43, 22, 17],
+          },
+        ],
+        chart: {
+          height: 323,
+          type: "line",
+        },
+        stroke: {
+          width: [0, 4],
+        },
+        dataLabels: {
+          enabled: false,
+          enabledOnSeries: [1],
+        },
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+        xaxis: {
+          title: {
+            text: "Period",
+            offsetY: 7,
+          },
+        },
+        yaxis: [
+          {
+            title: {
+              text: "$ (thousand)",
+            },
+          },
+          {
+            opposite: true,
+          },
+        ],
+        tooltip: {
+          fixed: {
+            enabled: true,
+            position: "topLeft", // topRight, topLeft, bottomRight, bottomLeft
+            offsetY: 30,
+            offsetX: 60,
+          },
+        },
+      };
+
+      var chart = new ApexCharts(
+        document.querySelector("#Columnchart"),
+        options
+      ).render();
     </script>
     <script src="../../assets/knockout-3.5.0.js"></script>
     <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
