@@ -5255,7 +5255,7 @@
 
       function initDateRangePicker(selector) {
         var orientation =
-          $("#dashboard-body .sub_initiatives").length % 2 === 0
+          ($("#dashboard-body .sub_initiatives").length % 2 === 0 || $("#dashboard-body .sub_initiatives").length % 3 === 0)
             ? "left"
             : "right";
         console.log("selector", selector, orientation);
