@@ -6038,7 +6038,6 @@
     <!-- Knob Js -->
     <script src="../../assets/jquery-ui.min.js"></script>
     <script src="../../assets/moment.js"></script>
-    <script src="../../assets/js/pages/core.js"></script>
     <script src="../../assets/js/pages/charts.js"></script>
     <script src="../../assets/js/pages/spiritedaway.js"></script>
     <script src="../../assets/js/pages/animated.js"></script>
@@ -6054,7 +6053,73 @@
     <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script>
-      drawChart(1)
+      var options = {
+          series: [
+            {
+              name: "Bubble1",
+              data: [
+                {
+                  x: 20,
+                  y: 54,
+                  z: 24,
+                },
+              ],
+            },
+            {
+              name: "Bubble2",
+              data: [
+                {
+                  x: 30,
+                  y: 24,
+                  z: 32,
+                },
+              ],
+            },
+            {
+              name: "Bubble3",
+              data: [
+                {
+                  x: 43,
+                  y: 34,
+                  z: 15,
+                },
+              ],
+            },
+          ],
+          chart: {
+            height: 323,
+            type: "bubble",
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          legend: {
+            position: "bottom",
+            horizontalAlign: "center",
+          },
+          fill: {
+            opacity: 0.8,
+          },
+          xaxis: {
+            tickAmount: 12,
+            type: "category",
+            title: {
+              text: "Period",
+            },
+          },
+          yaxis: {
+            max: 70,
+            title: {
+              text: "$ (thousand)",
+            },
+          },
+        };
+
+        var bubbleChart = new ApexCharts(
+          document.querySelector("#chartdiv_init"),
+          options
+        ).render();
+
       function drawChart(value) {
         if (value == "1") {
           $("#chartdiv_init").empty();
