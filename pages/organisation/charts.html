@@ -856,7 +856,7 @@
                       <img
                         ondragstart="dragStart(event)"
                         draggable="true"
-                        id="BubbleChart"
+                        id="BubbleChartDD"
                         src="../organisation/images/widgets/Bubble.png"
                         alt="Bubble Chart"
                       />
@@ -867,7 +867,7 @@
                       <img
                         ondragstart="dragStart(event)"
                         draggable="true"
-                        id="ColumnChart"
+                        id="ColumnChartDD"
                         src="../organisation/images/widgets/Column.png"
                         alt="Column Chart"
                       />
@@ -876,6 +876,9 @@
                   <div class="col-3 form-group chart-type">
                     <center data-toggle="tooltip" title="Line">
                       <img
+                        ondragstart="dragStart(event)"
+                        draggable="true"
+                        id="LineChartDD"
                         src="../organisation/images/widgets/Line.png"
                         alt="Line Chart"
                       />
@@ -886,7 +889,7 @@
                       <img
                         ondragstart="dragStart(event)"
                         draggable="true"
-                        id="AreaChart"
+                        id="AreaChartDD"
                         src="../organisation/images/widgets/Area.png"
                         alt="Area Chart"
                       />
@@ -897,7 +900,7 @@
                       <img
                         ondragstart="dragStart(event)"
                         draggable="true"
-                        id="MultiAxis"
+                        id="MultiAxisDD"
                         src="../organisation/images/widgets/Multiaxis.png"
                         alt="Multi axis Chart"
                       />
@@ -1307,216 +1310,8 @@
         <div class="collapse_arrow_left">
           <i class="arrow_collapse_size fas fa-caret-left"></i>
         </div>
-        <div class="row row-padding m-0" id="chart-body">
-          <div class="col-md-12 select-toggle myinitiative sub_initiatives">
-            <div class="card" style="padding: 8px 12px; height: auto;">
-              <div class="header flex-row">
-                <input
-                  class="top_datepicker daterangepicker-field-period"
-                  style="
-                    width: 20%;
-                    margin-top: -4px;
-                    text-align: left;
-                    border: none !important;
-                  "
-                />
-                <h5 class="prob flex-fill_47" style="margin-top: -42px;">
-                  <strong editable="true" contenteditable="true"
-                    >DrillDown</strong
-                  >
-                </h5>
-                <ul class="header-dropdown m-r--2">
-                  <li class="dropdown m-t--10">
-                    <a
-                      href="#"
-                      onclick="return false;"
-                      class="dropdown-toggle"
-                      data-toggle="dropdown"
-                      role="button"
-                      aria-haspopup="true"
-                      aria-expanded="true"
-                    >
-                      <i class="fas fa-ellipsis-h"></i>
-                    </a>
-                    <ul
-                      class="dropdown-menu pull-right"
-                      x-placement="bottom-start"
-                      style="
-                        position: absolute;
-                        will-change: transform;
-                        top: 0px;
-                        left: 0px;
-                        transform: translate3d(0px, 24px, 0px);
-                      "
-                    >
-                      <li>
-                        <a
-                          href="#"
-                          data-toggle="modal"
-                          data-target="#chart_setting"
-                          onclick="return false;"
-                          >Settings</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          data-toggle="modal"
-                          data-target="#bubble-large"
-                          >Enlarge</a
-                        >
-                      </li>
-
-                      <li>
-                        <a href="#" onclick="return false;">Delete</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-              <div class="row">
-                <div class="col-6">
-                  <div id="Multiaxs"></div>
-                  <div id="tag"></div>
-                </div>
-                <div class="col-6">
-                  <div
-                    class="d-flex flex-column employee_div_body_box activities-box"
-                    style="border-top: 1x dotted #888; height: 408px;"
-                  >
-                    <div class="table-responsive" style="height: 326px;">
-                      <table
-                        class="table dashboard-task-infos align-center dashboard-table"
-                        id="drilldownTable"
-                        style="margin-bottom: 0px !important;"
-                      >
-                        <thead>
-                          <tr>
-                            <th rowspan="2" style="width: 198px;">
-                              Name/Period
-                            </th>
-                            <th colspan="3">
-                              Q1 2020
-                            </th>
-                          </tr>
-                          <tr>
-                            <th style="width: 98px;">Actual</th>
-                            <th style="width: 98px;">Target</th>
-                            <th style="width: 98px;">Gap</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Sales and Marketing</td>
-                            <td>28.53425%</td>
-                            <td>24.53425%</td>
-                            <td>38.53425%</td>
-                          </tr>
-                          <tr>
-                            <td>Human Resource and admin</td>
-                            <td>28.53425%</td>
-                            <td>24.53425%</td>
-                            <td>38.53425%</td>
-                          </tr>
-                          <tr>
-                            <td>Product Design</td>
-                            <td>28.53425%</td>
-                            <td>24.53425%</td>
-                            <td>38.53425%</td>
-                          </tr>
-                          <tr>
-                            <td>Development Process</td>
-                            <td>28.53425%</td>
-                            <td>24.53425%</td>
-                            <td>38.53425%</td>
-                          </tr>
-                          <tr>
-                            <td>Marketing</td>
-                            <td>28.53425%</td>
-                            <td>24.53425%</td>
-                            <td>38.53425%</td>
-                          </tr>
-                          <tr>
-                            <td>Admin</td>
-                            <td>28.53425%</td>
-                            <td>24.53425%</td>
-                            <td>38.53425%</td>
-                          </tr>
-                          <tr>
-                            <td>Admin</td>
-                            <td>28.53425%</td>
-                            <td>24.53425%</td>
-                            <td>38.53425%</td>
-                          </tr>
-                          <tr>
-                            <td>Marketing</td>
-                            <td>28.53425%</td>
-                            <td>24.53425%</td>
-                            <td>38.53425%</td>
-                          </tr>
-                          <tr>
-                            <td>Admin</td>
-                            <td>28.53425%</td>
-                            <td>24.53425%</td>
-                            <td>38.53425%</td>
-                          </tr>
-                          <tr>
-                            <td>Admin</td>
-                            <td>28.53425%</td>
-                            <td>24.53425%</td>
-                            <td>38.53425%</td>
-                          </tr>
-                          <tr>
-                            <td>Marketing</td>
-                            <td>28.53425%</td>
-                            <td>24.53425%</td>
-                            <td>38.53425%</td>
-                          </tr>
-                          <tr>
-                            <td>Admin</td>
-                            <td>28.53425%</td>
-                            <td>24.53425%</td>
-                            <td>38.53425%</td>
-                          </tr>
-                          <tr>
-                            <td>Admin</td>
-                            <td>28.53425%</td>
-                            <td>24.53425%</td>
-                            <td>38.53425%</td>
-                          </tr>
-                          <tr>
-                            <td>Admin</td>
-                            <td>28.53425%</td>
-                            <td>24.53425%</td>
-                            <td>38.53425%</td>
-                          </tr>
-                          <tr>
-                            <td>Admin</td>
-                            <td>28.53425%</td>
-                            <td>24.53425%</td>
-                            <td>38.53425%</td>
-                          </tr>
-                          <tr>
-                            <td>Admin</td>
-                            <td>28.53425%</td>
-                            <td>24.53425%</td>
-                            <td>38.53425%</td>
-                          </tr>
-                          <tr>
-                            <td>Admin</td>
-                            <td>28.53425%</td>
-                            <td>24.53425%</td>
-                            <td>38.53425%</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="row row-padding m-0" id="drill-chart-body"></div>
+        <div class="row row-padding m-0" id="chart-body"></div>
       </div>
     </section>
 
@@ -3306,6 +3101,1106 @@
             });
           });
         }
+
+        if (data == "BubbleChartDD") {
+          $("#drill-chart-body").append(`
+          <div class="col-md-12 select-toggle myinitiative sub_initiatives">
+            <div class="card" style="padding: 8px 12px; height: auto;">
+              <div class="header row" style="margin: 0;">
+                  <div class="col-3">
+                    <input
+                      class="top_datepicker"
+                      id="datePickerBLDD"
+                      style="
+                        width: 100%;
+                        margin-top: -4px;
+                        text-align: left;
+                        font-size: 11px !important;
+                        font-weight: 600;
+                        border: none !important;
+                      "
+                    />
+                  </div>
+                  <div class="col-6">
+                    <h5 class="prob">
+                      <strong
+                        editable="true"
+                        contenteditable="true"
+                        onkeypress="return (this.innerText.length <= 36)"
+                        >% Customer conversion rate (measured)</strong
+                      >
+                    </h5>
+                  </div>
+                  <div class="col-3">
+                    <ul class="header-dropdown m-r--2">
+                      <li class="dropdown m-t--10">
+                        <a
+                          href="#"
+                          onclick="return false;"
+                          class="dropdown-toggle"
+                          data-toggle="dropdown"
+                          role="button"
+                          aria-haspopup="true"
+                          aria-expanded="true"
+                        >
+                          <i class="fas fa-ellipsis-h"></i>
+                        </a>
+                        <ul
+                          class="dropdown-menu pull-right"
+                          x-placement="bottom-start"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
+                        >
+                          <li>
+                            <a
+                              href="#"
+                              data-toggle="modal"
+                              data-target="#chart_setting"
+                              onclick="return false;"
+                              >Settings</a
+                            >
+                          </li>
+                          <li>
+                            <a href="#" onclick="return false;">Delete</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              <div class="row">
+                <div class="col-6">
+                  <div id="BubblechartDD"></div>
+                  <div id="tag"></div>
+                </div>
+                <div class="col-6">
+                  <div
+                    class="d-flex flex-column employee_div_body_box activities-box"
+                    style="border-top: 1x dotted #888; height: 338px;"
+                  >
+                    <div class="table-responsive" style="height: 326px;">
+                      <table
+                        class="table dashboard-task-infos align-center dashboard-table"
+                        id="drilldownTableDD1"
+                        style="margin-bottom: 0px !important;"
+                      >
+                        <thead>
+                          <tr>
+                            <th rowspan="2" style="width: 198px;">
+                              Name/Period
+                            </th>
+                            <th colspan="3">
+                              Q1 2020
+                            </th>
+                          </tr>
+                          <tr>
+                            <th style="width: 98px;">Actual</th>
+                            <th style="width: 98px;">Target</th>
+                            <th style="width: 98px;">Gap</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Sales and Marketing</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Human Resource and admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Product Design</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Development Process</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Marketing</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Marketing</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Marketing</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>`);
+          initDateRangePicker("#datePickerBLDD");
+          bubbleDDRender();
+          $(document).ready(function () {
+            $("#drilldownTableDD1").paging({ limit: 6 });
+          });
+        }
+
+        if (data == "ColumnChartDD") {
+          $("#drill-chart-body").append(`
+          <div class="col-md-12 select-toggle myinitiative sub_initiatives">
+            <div class="card" style="padding: 8px 12px; height: auto;">
+              <div class="header row" style="margin: 0;">
+                  <div class="col-3">
+                    <input
+                      class="top_datepicker"
+                      id="datePickerCLDD"
+                      style="
+                        width: 100%;
+                        margin-top: -4px;
+                        text-align: left;
+                        font-size: 11px !important;
+                        font-weight: 600;
+                        border: none !important;
+                      "
+                    />
+                  </div>
+                  <div class="col-6">
+                    <h5 class="prob">
+                      <strong
+                        editable="true"
+                        contenteditable="true"
+                        onkeypress="return (this.innerText.length <= 36)"
+                        >% Customer conversion rate (measured)</strong
+                      >
+                    </h5>
+                  </div>
+                  <div class="col-3">
+                    <ul class="header-dropdown m-r--2">
+                      <li class="dropdown m-t--10">
+                        <a
+                          href="#"
+                          onclick="return false;"
+                          class="dropdown-toggle"
+                          data-toggle="dropdown"
+                          role="button"
+                          aria-haspopup="true"
+                          aria-expanded="true"
+                        >
+                          <i class="fas fa-ellipsis-h"></i>
+                        </a>
+                        <ul
+                          class="dropdown-menu pull-right"
+                          x-placement="bottom-start"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
+                        >
+                          <li>
+                            <a
+                              href="#"
+                              data-toggle="modal"
+                              data-target="#chart_setting"
+                              onclick="return false;"
+                              >Settings</a
+                            >
+                          </li>
+                          <li>
+                            <a href="#" onclick="return false;">Delete</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              <div class="row">
+                <div class="col-6">
+                  <div id="ColumnchartDD"></div>
+                  <div id="tag"></div>
+                </div>
+                <div class="col-6">
+                  <div
+                    class="d-flex flex-column employee_div_body_box activities-box"
+                    style="border-top: 1x dotted #888; height: 338px;"
+                  >
+                    <div class="table-responsive" style="height: 326px;">
+                      <table
+                        class="table dashboard-task-infos align-center dashboard-table"
+                        id="drilldownTableDD2"
+                        style="margin-bottom: 0px !important;"
+                      >
+                        <thead>
+                          <tr>
+                            <th rowspan="2" style="width: 198px;">
+                              Name/Period
+                            </th>
+                            <th colspan="3">
+                              Q1 2020
+                            </th>
+                          </tr>
+                          <tr>
+                            <th style="width: 98px;">Actual</th>
+                            <th style="width: 98px;">Target</th>
+                            <th style="width: 98px;">Gap</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Sales and Marketing</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Human Resource and admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Product Design</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Development Process</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Marketing</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Marketing</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Marketing</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>`);
+          initDateRangePicker("#datePickerCLDD");
+          columnDDRender();
+          $(document).ready(function () {
+            $("#drilldownTableDD2").paging({ limit: 6 });
+          });
+        }
+
+        if (data == "LineChartDD") {
+          $("#drill-chart-body").append(`
+          <div class="col-md-12 select-toggle myinitiative sub_initiatives">
+            <div class="card" style="padding: 8px 12px; height: auto;">
+              <div class="header row" style="margin: 0;">
+                  <div class="col-3">
+                    <input
+                      class="top_datepicker"
+                      id="datePickerLDD"
+                      style="
+                        width: 100%;
+                        margin-top: -4px;
+                        text-align: left;
+                        font-size: 11px !important;
+                        font-weight: 600;
+                        border: none !important;
+                      "
+                    />
+                  </div>
+                  <div class="col-6">
+                    <h5 class="prob">
+                      <strong
+                        editable="true"
+                        contenteditable="true"
+                        onkeypress="return (this.innerText.length <= 36)"
+                        >% Customer conversion rate (measured)</strong
+                      >
+                    </h5>
+                  </div>
+                  <div class="col-3">
+                    <ul class="header-dropdown m-r--2">
+                      <li class="dropdown m-t--10">
+                        <a
+                          href="#"
+                          onclick="return false;"
+                          class="dropdown-toggle"
+                          data-toggle="dropdown"
+                          role="button"
+                          aria-haspopup="true"
+                          aria-expanded="true"
+                        >
+                          <i class="fas fa-ellipsis-h"></i>
+                        </a>
+                        <ul
+                          class="dropdown-menu pull-right"
+                          x-placement="bottom-start"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
+                        >
+                          <li>
+                            <a
+                              href="#"
+                              data-toggle="modal"
+                              data-target="#chart_setting"
+                              onclick="return false;"
+                              >Settings</a
+                            >
+                          </li>
+                          <li>
+                            <a href="#" onclick="return false;">Delete</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              <div class="row">
+                <div class="col-6">
+                  <div id="LinechartDD"></div>
+                  <div id="tag"></div>
+                </div>
+                <div class="col-6">
+                  <div
+                    class="d-flex flex-column employee_div_body_box activities-box"
+                    style="border-top: 1x dotted #888; height: 338px;"
+                  >
+                    <div class="table-responsive" style="height: 326px;">
+                      <table
+                        class="table dashboard-task-infos align-center dashboard-table"
+                        id="drilldownTableDD3"
+                        style="margin-bottom: 0px !important;"
+                      >
+                        <thead>
+                          <tr>
+                            <th rowspan="2" style="width: 198px;">
+                              Name/Period
+                            </th>
+                            <th colspan="3">
+                              Q1 2020
+                            </th>
+                          </tr>
+                          <tr>
+                            <th style="width: 98px;">Actual</th>
+                            <th style="width: 98px;">Target</th>
+                            <th style="width: 98px;">Gap</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Sales and Marketing</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Human Resource and admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Product Design</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Development Process</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Marketing</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Marketing</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Marketing</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>`);
+          initDateRangePicker("#datePickerLDD");
+          lineDDRender();
+          $(document).ready(function () {
+            $("#drilldownTableDD3").paging({ limit: 6 });
+          });
+        }
+
+        if (data == "AreaChartDD") {
+          $("#drill-chart-body").append(`
+          <div class="col-md-12 select-toggle myinitiative sub_initiatives">
+            <div class="card" style="padding: 8px 12px; height: auto;">
+              <div class="header row" style="margin: 0;">
+                  <div class="col-3">
+                    <input
+                      class="top_datepicker"
+                      id="datePickerARDD"
+                      style="
+                        width: 100%;
+                        margin-top: -4px;
+                        text-align: left;
+                        font-size: 11px !important;
+                        font-weight: 600;
+                        border: none !important;
+                      "
+                    />
+                  </div>
+                  <div class="col-6">
+                    <h5 class="prob">
+                      <strong
+                        editable="true"
+                        contenteditable="true"
+                        onkeypress="return (this.innerText.length <= 36)"
+                        >% Customer conversion rate (measured)</strong
+                      >
+                    </h5>
+                  </div>
+                  <div class="col-3">
+                    <ul class="header-dropdown m-r--2">
+                      <li class="dropdown m-t--10">
+                        <a
+                          href="#"
+                          onclick="return false;"
+                          class="dropdown-toggle"
+                          data-toggle="dropdown"
+                          role="button"
+                          aria-haspopup="true"
+                          aria-expanded="true"
+                        >
+                          <i class="fas fa-ellipsis-h"></i>
+                        </a>
+                        <ul
+                          class="dropdown-menu pull-right"
+                          x-placement="bottom-start"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
+                        >
+                          <li>
+                            <a
+                              href="#"
+                              data-toggle="modal"
+                              data-target="#chart_setting"
+                              onclick="return false;"
+                              >Settings</a
+                            >
+                          </li>
+                          <li>
+                            <a href="#" onclick="return false;">Delete</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              <div class="row">
+                <div class="col-6">
+                  <div id="AreachartDD"></div>
+                  <div id="tag"></div>
+                </div>
+                <div class="col-6">
+                  <div
+                    class="d-flex flex-column employee_div_body_box activities-box"
+                    style="border-top: 1x dotted #888; height: 338px;"
+                  >
+                    <div class="table-responsive" style="height: 326px;">
+                      <table
+                        class="table dashboard-task-infos align-center dashboard-table"
+                        id="drilldownTableDD4"
+                        style="margin-bottom: 0px !important;"
+                      >
+                        <thead>
+                          <tr>
+                            <th rowspan="2" style="width: 198px;">
+                              Name/Period
+                            </th>
+                            <th colspan="3">
+                              Q1 2020
+                            </th>
+                          </tr>
+                          <tr>
+                            <th style="width: 98px;">Actual</th>
+                            <th style="width: 98px;">Target</th>
+                            <th style="width: 98px;">Gap</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Sales and Marketing</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Human Resource and admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Product Design</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Development Process</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Marketing</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Marketing</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Marketing</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>`);
+          initDateRangePicker("#datePickerARDD");
+          areaDDRender();
+          $(document).ready(function () {
+            $("#drilldownTableDD4").paging({ limit: 6 });
+          });
+        }
+
+        if (data == "MultiAxisDD") {
+          $("#drill-chart-body").append(`
+          <div class="col-md-12 select-toggle myinitiative sub_initiatives">
+            <div class="card" style="padding: 8px 12px; height: auto;">
+              <div class="header row" style="margin: 0;">
+                  <div class="col-3">
+                    <input
+                      class="top_datepicker"
+                      id="datePickerMADD"
+                      style="
+                        width: 100%;
+                        margin-top: -4px;
+                        text-align: left;
+                        font-size: 11px !important;
+                        font-weight: 600;
+                        border: none !important;
+                      "
+                    />
+                  </div>
+                  <div class="col-6">
+                    <h5 class="prob">
+                      <strong
+                        editable="true"
+                        contenteditable="true"
+                        onkeypress="return (this.innerText.length <= 36)"
+                        >% Customer conversion rate (measured)</strong
+                      >
+                    </h5>
+                  </div>
+                  <div class="col-3">
+                    <ul class="header-dropdown m-r--2">
+                      <li class="dropdown m-t--10">
+                        <a
+                          href="#"
+                          onclick="return false;"
+                          class="dropdown-toggle"
+                          data-toggle="dropdown"
+                          role="button"
+                          aria-haspopup="true"
+                          aria-expanded="true"
+                        >
+                          <i class="fas fa-ellipsis-h"></i>
+                        </a>
+                        <ul
+                          class="dropdown-menu pull-right"
+                          x-placement="bottom-start"
+                          style="
+                            position: absolute;
+                            will-change: transform;
+                            top: 0px;
+                            left: 0px;
+                            transform: translate3d(0px, 24px, 0px);
+                          "
+                        >
+                          <li>
+                            <a
+                              href="#"
+                              data-toggle="modal"
+                              data-target="#chart_setting"
+                              onclick="return false;"
+                              >Settings</a
+                            >
+                          </li>
+                          <li>
+                            <a href="#" onclick="return false;">Delete</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              <div class="row">
+                <div class="col-6">
+                  <div id="MultiaxisDD"></div>
+                  <div id="tag"></div>
+                </div>
+                <div class="col-6">
+                  <div
+                    class="d-flex flex-column employee_div_body_box activities-box"
+                    style="border-top: 1x dotted #888; height: 338px;"
+                  >
+                    <div class="table-responsive" style="height: 326px;">
+                      <table
+                        class="table dashboard-task-infos align-center dashboard-table"
+                        id="drilldownTableDD5"
+                        style="margin-bottom: 0px !important;"
+                      >
+                        <thead>
+                          <tr>
+                            <th rowspan="2" style="width: 198px;">
+                              Name/Period
+                            </th>
+                            <th colspan="3">
+                              Q1 2020
+                            </th>
+                          </tr>
+                          <tr>
+                            <th style="width: 98px;">Actual</th>
+                            <th style="width: 98px;">Target</th>
+                            <th style="width: 98px;">Gap</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Sales and Marketing</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Human Resource and admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Product Design</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Development Process</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Marketing</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Marketing</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Marketing</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>`);
+          initDateRangePicker("#datePickerMADD");
+          multiaxisDDRender();
+          $(document).ready(function () {
+            $("#drilldownTableDD5").paging({ limit: 6 });
+          });
+        }
       }
 
       function bubbleRender() {
@@ -3381,6 +4276,75 @@
         ).render();
       }
 
+      function bubbleDDRender() {
+        var options = {
+          series: [
+            {
+              name: "Bubble1",
+              data: [
+                {
+                  x: 20,
+                  y: 54,
+                  z: 24,
+                },
+              ],
+            },
+            {
+              name: "Bubble2",
+              data: [
+                {
+                  x: 30,
+                  y: 24,
+                  z: 32,
+                },
+              ],
+            },
+            {
+              name: "Bubble3",
+              data: [
+                {
+                  x: 43,
+                  y: 34,
+                  z: 15,
+                },
+              ],
+            },
+          ],
+          chart: {
+            height: 323,
+            type: "bubble",
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          legend: {
+            position: "bottom",
+            horizontalAlign: "center",
+          },
+          fill: {
+            opacity: 0.8,
+          },
+          xaxis: {
+            tickAmount: 12,
+            type: "category",
+            title: {
+              text: "Period",
+            },
+          },
+          yaxis: {
+            max: 70,
+            title: {
+              text: "$ (thousand)",
+            },
+          },
+        };
+
+        var chart = new ApexCharts(
+          document.querySelector("#BubblechartDD"),
+          options
+        ).render();
+      }
+
       function columnRender() {
         var options = {
           series: [
@@ -3439,6 +4403,64 @@
         ).render();
         var columnChart = new ApexCharts(
           document.querySelector("#Columnlarge"),
+          options
+        ).render();
+      }
+
+      function columnDDRender() {
+        var options = {
+          series: [
+            {
+              name: "Website Blog",
+              type: "column",
+              data: [440, 505, 414, 671, 227, 413, 201],
+            },
+            {
+              name: "Social Media",
+              type: "column",
+              data: [23, 42, 35, 27, 43, 22, 17],
+            },
+          ],
+          chart: {
+            height: 323,
+            type: "line",
+          },
+          stroke: {
+            width: [0, 4],
+          },
+          dataLabels: {
+            enabled: false,
+            enabledOnSeries: [1],
+          },
+          labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+          xaxis: {
+            title: {
+              text: "Period",
+              offsetY: 7,
+            },
+          },
+          yaxis: [
+            {
+              title: {
+                text: "$ (thousand)",
+              },
+            },
+            {
+              opposite: true,
+            },
+          ],
+          tooltip: {
+            fixed: {
+              enabled: true,
+              position: "topLeft", // topRight, topLeft, bottomRight, bottomLeft
+              offsetY: 30,
+              offsetX: 60,
+            },
+          },
+        };
+
+        var chart = new ApexCharts(
+          document.querySelector("#ColumnchartDD"),
           options
         ).render();
       }
@@ -3516,6 +4538,75 @@
         ).render();
       }
 
+      function lineDDRender() {
+        var options = {
+          series: [
+            {
+              name: "High - 2013",
+              data: [24, 29, 33, 36, 32, 32, 33],
+            },
+            {
+              name: "Low - 2013",
+              data: [12, 11, 14, 18, 17, 13, 13],
+            },
+          ],
+          chart: {
+            height: 323,
+            type: "line",
+            dropShadow: {
+              enabled: true,
+              color: "#000",
+              top: 18,
+              left: 7,
+              blur: 10,
+              opacity: 0.2,
+            },
+            toolbar: {
+              show: true,
+            },
+          },
+          colors: ["#77B6EA", "#545454"],
+          dataLabels: {
+            enabled: true,
+          },
+          stroke: {
+            curve: "smooth",
+          },
+          grid: {
+            borderColor: "#e7e7e7",
+            row: {
+              colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on columns
+              opacity: 0.5,
+            },
+          },
+          markers: {
+            size: 1,
+          },
+          xaxis: {
+            categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+            title: {
+              text: "Month",
+            },
+          },
+          yaxis: {
+            title: {
+              text: "Temperature",
+            },
+            min: 5,
+            max: 40,
+          },
+          legend: {
+            position: "bottom",
+            horizontalAlign: "center",
+          },
+        };
+
+        var chart = new ApexCharts(
+          document.querySelector("#LinechartDD"),
+          options
+        ).render();
+      }
+
       function areaRender() {
         var options = {
           chart: {
@@ -3564,6 +4655,54 @@
         ).render();
         var areaChart = new ApexCharts(
           document.querySelector("#Arealarge"),
+          options
+        ).render();
+      }
+
+      function areaDDRender() {
+        var options = {
+          chart: {
+            height: 323,
+            type: "area",
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          series: [
+            {
+              name: "Series 1",
+              data: [45, 52, 38, 45, 19, 23, 2],
+            },
+          ],
+          fill: {
+            type: "gradient",
+            gradient: {
+              shadeIntensity: 1,
+              opacityFrom: 0.7,
+              opacityTo: 0.9,
+              stops: [0, 90, 100],
+            },
+          },
+          xaxis: {
+            categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+            title: {
+              text: "Period",
+            },
+          },
+          yaxis: {
+            title: {
+              text: "$ (thousand)",
+            },
+          },
+          legend: {
+            show: true,
+            position: "bottom",
+            horizontalAlign: "center",
+          },
+        };
+
+        var chart = new ApexCharts(
+          document.querySelector("#AreachartDD"),
           options
         ).render();
       }
@@ -3713,6 +4852,115 @@
 
         var multiChart = new ApexCharts(
           document.querySelector("#Multiaxislarge"),
+          options
+        ).render();
+      }
+
+      function multiaxisDDRender() {
+        var options = {
+          series: [
+            {
+              name: "Income",
+              type: "column",
+              data: [1.4, 2, 2.5, 1.5, 2.5, 2.8, 3.8, 4.6],
+            },
+            {
+              name: "Cashflow",
+              type: "column",
+              data: [1.1, 3, 3.1, 4, 4.1, 4.9, 6.5, 8.5],
+            },
+          ],
+          chart: {
+            height: 323,
+            type: "line",
+            stacked: false,
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          stroke: {
+            width: [1, 1, 4],
+          },
+          xaxis: {
+            categories: [
+              "Jan",
+              "Feb",
+              "Mar",
+              "Apr",
+              "May",
+              "Jun",
+              "Jul",
+              "Aug",
+            ],
+            title: {
+              text: "Period",
+              style: {
+                color: "#555",
+              },
+            },
+          },
+          yaxis: [
+            {
+              axisTicks: {
+                show: true,
+              },
+              axisBorder: {
+                show: true,
+                color: "#008FFB",
+              },
+              labels: {
+                style: {
+                  colors: "#008FFB",
+                },
+              },
+              title: {
+                text: "Income (thousand crores)",
+                style: {
+                  color: "#008FFB",
+                },
+              },
+              tooltip: {
+                enabled: true,
+              },
+            },
+            {
+              seriesName: "Income",
+              opposite: true,
+              axisTicks: {
+                show: true,
+              },
+              axisBorder: {
+                show: true,
+                color: "#00E396",
+              },
+              labels: {
+                style: {
+                  colors: "#00E396",
+                },
+              },
+              title: {
+                text: "Operating Cashflow (thousand crores)",
+                style: {
+                  color: "#00E396",
+                },
+              },
+            },
+          ],
+          tooltip: {
+            fixed: {
+              enabled: true,
+              position: "topLeft", // topRight, topLeft, bottomRight, bottomLeft
+              offsetY: 30,
+              offsetX: 60,
+            },
+          },
+          legend: {
+            horizontalAlign: "center",
+          },
+        };
+
+        var chart = new ApexCharts(
+          document.querySelector("#MultiaxisDD"),
           options
         ).render();
       }
