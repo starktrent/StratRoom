@@ -2476,6 +2476,25 @@
       </div>
       <!--#END Sub Activitie Edit -->
 
+      <!-- Bubble Large -->
+      <div
+        class="modal fade"
+        id="bubble-large"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myLargeModalLabel_1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-body">
+              <div id="Bubblelarge"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END Bubble Large -->
+
       <!--#START Sub Activitie View -->
       <div
         class="modal fade sub_activitie_view_popup"
@@ -3239,6 +3258,110 @@
         </div>
       </div>
       <!--#END Comment Description -->
+
+      <!-- Chart Setting -->
+      <div
+        class="modal fade"
+        id="chart_setting"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myLargeModalLabel_1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4>Chart Settings</h4>
+              <button
+                type="button"
+                class="close pull-right"
+                data-dismiss="modal"
+              >
+                &times;
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="form-group col-md-12 mt-2">
+                  <label for="kpi_fields">Data Fields</label>
+                  <ul class="d-flex flex-row flex-wrap ml-2">
+                    <li>
+                      <div class="form-check">
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                            />
+                            Actual
+                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-check">
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                            />
+                            Target
+                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-check">
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                            />
+                            Gap
+                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-12">
+                  <hr style="border: 1px solid #505050;" />
+                </div>
+                <div class="col-12">
+                  <div class="form-line right">
+                    <button
+                      type="button"
+                      class="btn-default1 btn"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      Cancel
+                    </button>
+                    <button class="initative_save_btn" value="Save">
+                      Save
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END Chart Setting -->
 
       <!--#START Comment View -->
       <div
@@ -4285,7 +4408,21 @@
                       "
                     >
                       <li>
-                        <a href="#" onclick="return false;">View</a>
+                        <a
+                          href="#"
+                          data-toggle="modal"
+                          data-target="#chart_setting"
+                          onclick="return false;"
+                          >Settings</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          data-toggle="modal"
+                          data-target="#bubble-large"
+                          >View</a
+                        >
                       </li>
                       <li>
                         <a href="#" onclick="return false;">Delete</a>
@@ -4295,7 +4432,14 @@
                 </ul>
               </div>
               <div>
-                <div id="chartdiv_init"></div>
+                <div
+                  id="chartdiv_init"
+                  style="
+                    padding-top: 6px !important;
+                    padding-right: 6px !important;
+                    padding-left: 6px !important;
+                  "
+                ></div>
                 <div id="tag"></div>
               </div>
             </div>
@@ -6054,71 +6198,76 @@
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script>
       var options = {
-          series: [
-            {
-              name: "Bubble1",
-              data: [
-                {
-                  x: 20,
-                  y: 54,
-                  z: 24,
-                },
-              ],
-            },
-            {
-              name: "Bubble2",
-              data: [
-                {
-                  x: 30,
-                  y: 24,
-                  z: 32,
-                },
-              ],
-            },
-            {
-              name: "Bubble3",
-              data: [
-                {
-                  x: 43,
-                  y: 34,
-                  z: 15,
-                },
-              ],
-            },
-          ],
-          chart: {
-            height: 323,
-            type: "bubble",
+        series: [
+          {
+            name: "Bubble1",
+            data: [
+              {
+                x: 20,
+                y: 54,
+                z: 24,
+              },
+            ],
           },
-          dataLabels: {
-            enabled: false,
+          {
+            name: "Bubble2",
+            data: [
+              {
+                x: 30,
+                y: 24,
+                z: 32,
+              },
+            ],
           },
-          legend: {
-            position: "bottom",
-            horizontalAlign: "center",
+          {
+            name: "Bubble3",
+            data: [
+              {
+                x: 43,
+                y: 34,
+                z: 15,
+              },
+            ],
           },
-          fill: {
-            opacity: 0.8,
+        ],
+        chart: {
+          height: 323,
+          type: "bubble",
+        },
+        dataLabels: {
+          enabled: false,
+        },
+        legend: {
+          position: "bottom",
+          horizontalAlign: "center",
+        },
+        fill: {
+          opacity: 0.8,
+        },
+        xaxis: {
+          tickAmount: 12,
+          type: "category",
+          title: {
+            text: "Period",
           },
-          xaxis: {
-            tickAmount: 12,
-            type: "category",
-            title: {
-              text: "Period",
-            },
+        },
+        yaxis: {
+          max: 70,
+          title: {
+            text: "$ (thousand)",
           },
-          yaxis: {
-            max: 70,
-            title: {
-              text: "$ (thousand)",
-            },
-          },
-        };
+        },
+      };
 
-        var bubbleChart = new ApexCharts(
-          document.querySelector("#chartdiv_init"),
-          options
-        ).render();
+      var bubbleChart = new ApexCharts(
+        document.querySelector("#chartdiv_init"),
+        options
+      ).render();
+
+      var BubbleLarge = new ApexCharts(
+        document.querySelector("#Bubblelarge"),
+        options
+      ).render();
 
       function drawChart(value) {
         if (value == "1") {
