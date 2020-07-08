@@ -535,11 +535,11 @@ div.edit1 {
 .btn-small:hover {
   background-color: initial !important;
 }
-
+/* 
 .btn {
   box-shadow: none !important;
   text-transform: lowercase !important;
-}
+} */
 
 .btn-black {
   color: #fff !important;

@@ -259,32 +259,47 @@
                   <a
                     class="addnewpagehover waves-effect waves-block"
                     data-toggle="modal"
-                    data-target=".page_description_popup"
+                    data-target="#dashboard_add_popup"
                     value="add"
                     style="background-color: #888;"
                     ><strong>Add New Page</strong></a
                   >
                 </li>
                 <li>
-                  <a href="dashboardview">BSC Dashboard</a>
+                  <a href="#">Scorecard</a>
                 </li>
                 <li>
-                  <a href="#">Strategy Map</a>
+                  <a href="#">Meeting</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="menu-toggle">
+                <i class="menu-icon ti-bar-chart"></i>
+                <span>Whiteboard</span>
+              </a>
+              <ul class="ml-menu">
+                <li>
+                  <a
+                    class="addnewpagehover waves-effect waves-block"
+                    data-toggle="modal"
+                    data-target="#whiteboard_add_popup"
+                    value="add"
+                    style="background-color: #888;"
+                    ><strong>Add New Page</strong></a
+                  >
+                </li>
+                <li>
+                  <a href="#">Cockpit</a>
                 </li>
               </ul>
             </li>
 
             <li class="">
               <a href="#" onClick="return false;" class="">
-                <i class="menu-icon ti-bar-chart"></i>
-                <span>Charts</span>
-              </a>
-            </li>
-
-            <li class="">
-              <a href="#" onClick="return false;" class="">
                 <i class="menu-icon ti-key"></i>
-                <span>Users & Access</span>
+                <span>Access Control</span>
               </a>
             </li>
 
@@ -298,12 +313,12 @@
             <li class="">
               <a href="#" onClick="return false;" class="">
                 <i class="menu-icon ti-bell"></i>
-                <span>Notifications & Alerts</span>
+                <span>Notifications</span>
               </a>
             </li>
 
             <li class="">
-              <a href="dataManagementHome" class="">
+              <a href="#" class="">
                 <i class="menu-icon ti-server"></i>
                 <span>Data Management</span>
               </a>
@@ -316,63 +331,28 @@
               </a>
               <ul class="ml-menu">
                 <li>
-                  <a
-                    href="#"
-                    id="sub-menu"
-                    onClick="return false;"
-                    class="menu-toggle"
-                  >
-                    Scorecard Layouts
-                  </a>
-                  <ul class="ml-menu">
-                    <li class="draggable">
-                      <a href="standardView">Standard BSC View</a>
-                    </li>
-                    <li><a href="dashBoardView">Dashboard View</a></li>
-                  </ul>
+                  <a href="#">Standard Scorecard</a>
                 </li>
                 <li>
-                  <a
-                    href="initiativesListView"
-                    id="sub-menu"
-                    class="menu-toggle"
-                  >
-                    Initiative
-                  </a>
-                  <ul class="ml-menu">
-                    <li><a href="#">Sub Initiatives</a></li>
-                    <li><a href="#">Tasks</a></li>
-                    <li><a href="#">Activities</a></li>
-                    <li><a href="#">Milestones</a></li>
-                  </ul>
+                  <a href="#">Custom Scorecard</a>
                 </li>
                 <li>
-                  <a href="#">Reports Table</a>
+                  <a href="#">Portfolio Program & Project (P3M)</a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    id="sub-menu"
-                    onClick="return false;"
-                    class="menu-toggle"
-                  >
-                    Comments
-                  </a>
-                  <ul class="ml-menu">
-                    <li><a href="#">Comments & Observations</a></li>
-                    <li><a href="#">Proof of Evidence</a></li>
-                  </ul>
+                  <a href="#">Appraisal (360 Degree Feedback)</a>
                 </li>
                 <li>
-                  <a href="employeeView">Employee Layout</a>
+                  <a href="#">Charts</a>
                 </li>
                 <li>
-                  <a href="#">Appraisal</a>
+                  <a href="#">Dashboards</a>
                 </li>
                 <li>
-                  <a data-toggle="modal" data-target=".data_collection_form"
-                    >Data Collection Form</a
-                  >
+                  <a href="#">Reports</a>
+                </li>
+                <li>
+                  <a href="#">Custom Page</a>
                 </li>
               </ul>
             </li>
@@ -380,7 +360,7 @@
             <li class="">
               <a href="#" onClick="return false;" class="">
                 <i class="menu-icon ti-home"></i>
-                <span>Widget Management</span>
+                <span>Control Panel</span>
               </a>
             </li>
 
@@ -848,6 +828,128 @@
         </div>
       </div>
     </div>
+
+    <!-- Dashboard Add Popup -->
+    <div
+      class="modal fade"
+      id="dashboard_add_popup"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Add Page</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="form-group col-md-6">
+                <label for="">Name</label>
+                <input type="text" class="form-control browser-default" />
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="">Page Type</label>
+                <select class="form-control browser-default">
+                  <option value="Scorecard">Scorecard</option>
+                  <option value="Initiatives">Initiatives</option>
+                  <option value="Risk">Risk</option>
+                  <option value="Employee Performance"
+                    >Employee Performance</option
+                  >
+                  <option value="Meeting">Meeting</option>
+                  <option value="SWOT Analysis">SWOT Analysis</option>
+                  <option value="PESTEL Analysis">PESTEL Analysis</option>
+                  <option value="Strategy Formulation"
+                    >Strategy Formulation</option
+                  >
+                  <option value="Budget & Forecast">Budget & Forecast</option>
+                  <option value="P3M">P3M</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <hr />
+              </div>
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Dashboard Add Popup -->
+
+    <!-- Whiteboard Add Popup -->
+    <div
+      class="modal fade"
+      id="whiteboard_add_popup"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Add Page</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="form-group col-md-6">
+                <label for="">Name</label>
+                <input type="text" class="form-control browser-default" />
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="">Page Type</label>
+                <select class="form-control browser-default">
+                  <option value="Cockpit">Cockpit</option>
+                  <option value="Chart">Chart</option>
+                  <option value="Report">Report</option>
+                  <option value="Strategy Map">Strategy Map</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <hr />
+              </div>
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Whiteboard Add Popup -->
 
     <section class="content">
       <!-- Page Header -->

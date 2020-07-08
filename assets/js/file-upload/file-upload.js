@@ -83,9 +83,16 @@ $("#next-btn-2").click(function () {
   $(".form-progressbar li:nth-child(2)").addClass("active");
 });
 
-$("#prev-btn").click(function () {
+$("#prev-btn1").click(function () {
   $("#file-upload").show();
   $("#file-validate").hide();
   $("#file-save").hide();
   $(".form-progressbar li:nth-child(1)").removeClass("active");
+});
+
+$("#prev-btn2").click(function () {
+  $("#file-upload").hide();
+  $("#file-validate").show();
+  $("#file-save").hide();
+  $(".form-progressbar li:nth-child(2)").removeClass("active");
 });
