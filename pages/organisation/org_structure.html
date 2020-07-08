@@ -1990,6 +1990,27 @@
               <div class="row" id="file-upload">
                 <div class="col-md-12">
                   <div class="form-group">
+                    <label
+                      for="risk_rating"
+                      style="font-size: 14px; font-weight: 600;"
+                    >
+                      Import Category</label
+                    >
+                    <select
+                      id="category"
+                      name="category"
+                      class="form-control browser-default"
+                    >
+                      <option value="">Choose</option>
+                      <option value="Organisation Import">Org chart</option>
+                      <option value="Scorecard Import">Scorecard</option>
+                      <option value="Initiative Import">Initiatives</option>
+                    </select>
+                    <span id="categoryerror" style="color: red; display: none;">
+                      Kindly select category to upload a file</span
+                    >
+                  </div>
+                  <div class="form-group">
                     <label class="control-label">Upload File</label>
                     <div class="preview-zone hidden">
                       <div class="box box-solid">
