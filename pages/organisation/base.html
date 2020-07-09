@@ -245,7 +245,7 @@
             <li class="active">
               <a href="organizationHome" class="">
                 <i class="fas fa-project-diagram"></i>
-                <span>Organisation Structure</span>
+                <span>Organisation</span>
               </a>
             </li>
 
@@ -328,10 +328,21 @@
             </li>
 
             <li class="">
-              <a href="#" class="">
+              <a href="#" class="menu-toggle">
                 <i class="fas fa-database"></i>
-                <span>Data Management</span>
+                <span>Data Sources</span>
               </a>
+              <ul class="ml-menu">
+                <li>
+                  <a href="#">Manual</a>
+                </li>
+                <li>
+                  <a href="#">Excel</a>
+                </li>
+                <li>
+                  <a href="#">Others</a>
+                </li>
+              </ul>
             </li>
 
             <li>
@@ -353,15 +364,6 @@
                   <a href="#">Appraisal (360 Degree Feedback)</a>
                 </li>
                 <li>
-                  <a href="#">Charts</a>
-                </li>
-                <li>
-                  <a href="#">Dashboards</a>
-                </li>
-                <li>
-                  <a href="#">Reports</a>
-                </li>
-                <li>
                   <a href="#">Custom Page</a>
                 </li>
               </ul>
@@ -369,7 +371,7 @@
 
             <li class="">
               <a href="#" onClick="return false;" class="">
-                <i class="fas fa-key"></i>
+                <i class="fas fa-sliders-h"></i>
                 <span>Control Panel</span>
               </a>
             </li>
@@ -859,6 +861,7 @@
               <div class="form-group col-md-6">
                 <label for="">Board Type</label>
                 <select class="form-control browser-default">
+                  <option value="#">Select Type</option>
                   <option value="Scorecard">Scorecard</option>
                   <option value="Initiatives">Initiatives</option>
                   <option value="Risk">Risk</option>
@@ -925,6 +928,7 @@
               <div class="form-group col-md-6">
                 <label for="">Board Type</label>
                 <select class="form-control browser-default">
+                  <option value="#">Select Type</option>
                   <option value="Cockpit">Cockpit</option>
                   <option value="Chart">Chart</option>
                   <option value="Report">Report</option>
