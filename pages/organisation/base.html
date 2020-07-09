@@ -244,14 +244,14 @@
           <ul class="list">
             <li class="active">
               <a href="organizationHome" class="">
-                <i class="menu-icon ti-home"></i>
+                <i class="fas fa-project-diagram"></i>
                 <span>Organisation Structure</span>
               </a>
             </li>
 
             <li>
               <a href="#" onClick="return false;" class="menu-toggle">
-                <i class="menu-icon ti-image"></i>
+                <i class="fas fa-th-large"></i>
                 <span>Dashboards</span>
               </a>
               <ul class="ml-menu">
@@ -261,8 +261,13 @@
                     data-toggle="modal"
                     data-target="#dashboard_add_popup"
                     value="add"
-                    style="background-color: #888;"
-                    ><strong>Add New Page</strong></a
+                    style="
+                      background-color: #4c4c4c;
+                      padding-left: 0;
+                      text-align: center;
+                      color: #fff !important;
+                    "
+                    ><strong>Add New Board</strong></a
                   >
                 </li>
                 <li>
@@ -276,7 +281,7 @@
 
             <li class="">
               <a href="#" onClick="return false;" class="menu-toggle">
-                <i class="menu-icon ti-bar-chart"></i>
+                <i class="fas fa-chalkboard"></i>
                 <span>Whiteboard</span>
               </a>
               <ul class="ml-menu">
@@ -286,8 +291,13 @@
                     data-toggle="modal"
                     data-target="#whiteboard_add_popup"
                     value="add"
-                    style="background-color: #888;"
-                    ><strong>Add New Page</strong></a
+                    style="
+                      background-color: #4c4c4c;
+                      padding-left: 0;
+                      text-align: center;
+                      color: #fff !important;
+                    "
+                    ><strong>Add New Board</strong></a
                   >
                 </li>
                 <li>
@@ -298,36 +308,36 @@
 
             <li class="">
               <a href="#" onClick="return false;" class="">
-                <i class="menu-icon ti-key"></i>
+                <i class="fas fa-user-lock"></i>
                 <span>Access Control</span>
               </a>
             </li>
 
             <li class="">
               <a href="#" onClick="return false;" class="">
-                <i class="menu-icon ti-vector"></i>
+                <i class="fas fa-briefcase"></i>
                 <span>Workflows</span>
               </a>
             </li>
 
             <li class="">
               <a href="#" onClick="return false;" class="">
-                <i class="menu-icon ti-bell"></i>
+                <i class="fas fa-bell"></i>
                 <span>Notifications</span>
               </a>
             </li>
 
             <li class="">
               <a href="#" class="">
-                <i class="menu-icon ti-server"></i>
+                <i class="fas fa-database"></i>
                 <span>Data Management</span>
               </a>
             </li>
 
             <li>
               <a href="#" onClick="return false;" class="menu-toggle">
-                <i class="menu-icon ti-layout-media-right-alt"></i>
-                <span>Template Management</span>
+                <i class="fas fa-copy"></i>
+                <span>Template</span>
               </a>
               <ul class="ml-menu">
                 <li>
@@ -359,15 +369,8 @@
 
             <li class="">
               <a href="#" onClick="return false;" class="">
-                <i class="menu-icon ti-home"></i>
+                <i class="fas fa-key"></i>
                 <span>Control Panel</span>
-              </a>
-            </li>
-
-            <li class="">
-              <a href="#" onClick="return false;" class="">
-                <i class="menu-icon ti-pie-chart"></i>
-                <span>Reports</span>
               </a>
             </li>
           </ul>
@@ -841,7 +844,7 @@
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h4>Add Page</h4>
+            <h4>Add Board</h4>
             <button type="button" class="close pull-right" data-dismiss="modal">
               &times;
             </button>
@@ -854,7 +857,7 @@
               </div>
 
               <div class="form-group col-md-6">
-                <label for="">Page Type</label>
+                <label for="">Board Type</label>
                 <select class="form-control browser-default">
                   <option value="Scorecard">Scorecard</option>
                   <option value="Initiatives">Initiatives</option>
@@ -907,7 +910,7 @@
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h4>Add Page</h4>
+            <h4>Add Board</h4>
             <button type="button" class="close pull-right" data-dismiss="modal">
               &times;
             </button>
@@ -920,7 +923,7 @@
               </div>
 
               <div class="form-group col-md-6">
-                <label for="">Page Type</label>
+                <label for="">Board Type</label>
                 <select class="form-control browser-default">
                   <option value="Cockpit">Cockpit</option>
                   <option value="Chart">Chart</option>

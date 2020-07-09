@@ -714,7 +714,11 @@ button {
 
 .theme-black .sidebar .menu .list li.active {
   background-color: #dcdcdc;
-  border-left: 4px solid #1e252d;
+  border-left: 5px solid #1e252d;
+}
+
+.theme-black .sidebar .menu .list li.active a:hover {
+  border-left: none;
 }
 
 table * {

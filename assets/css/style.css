@@ -4566,7 +4566,7 @@ img {
 }
 
 section.content {
-  margin: 140px 15px 0 240px;
+  margin: 140px 15px 0 246px;
   /*276*/
   /* margin: 60px 15px 0 276px; */
   -moz-transition: 0.5s;
@@ -10100,8 +10100,8 @@ input:not([type]) {
 
 .fa,
 .fas {
-  /* font-family: 'Font Awesome 5 Free';
-    font-weight: 900 */
+  font-family: 'Font Awesome 5 Free';
+    font-weight: 900
 }
 
 /*!
@@ -13605,10 +13605,10 @@ fieldset[disabled] .form-control {
   /*5s*/
   font-family: "Poppins", sans-serif;
   background: #ffffff;
-  width: 230px;
+  width: 240px;
   /* 260, 245*/
   /*overflow: hidden;*/
-  overflow: scroll;
+  overflow: auto;
   display: inline-block;
   height: calc(100vh - 60px);
   position: fixed;
@@ -13619,7 +13619,8 @@ fieldset[disabled] .form-control {
 }
 
 .sidebar::-webkit-scrollbar {
-  width: 1em;
+  width: 0px;
+  background: transparent;
 }
 
 .sidebar::-webkit-scrollbar-track {
@@ -13752,8 +13753,8 @@ fieldset[disabled] .form-control {
 .sidebar .menu .list .menu-toggle:after,
 .sidebar .menu .list .menu-toggle:before {
   position: absolute;
-  top: calc(50% - 6px);
-  right: 6px;
+  top: calc(50% - 12px);
+  right: 12px;
   /*12*/
   font-size: 16px;
   -moz-transform: scale(0);
@@ -13768,7 +13769,8 @@ fieldset[disabled] .form-control {
 }
 
 .sidebar .menu .list .menu-toggle:before {
-  content: "+";
+  content: "\203A";
+    font-size: 26px;
   -moz-transform: scale(1);
   -ms-transform: scale(1);
   -o-transform: scale(1);
@@ -13777,7 +13779,8 @@ fieldset[disabled] .form-control {
 }
 
 .sidebar .menu .list .menu-toggle:after {
-  content: "\2013";
+  content: "\203A";
+    font-size: 26px;
   -moz-transform: scale(0);
   -ms-transform: scale(0);
   -o-transform: scale(0);
@@ -13798,7 +13801,7 @@ fieldset[disabled] .form-control {
   -ms-transform: scale(1);
   -o-transform: scale(1);
   -webkit-transform: scale(1);
-  transform: scale(1);
+  transform: rotate(90deg);
 }
 
 .sidebar .menu .list a {
@@ -13809,15 +13812,15 @@ fieldset[disabled] .form-control {
   display: block;
   overflow: hidden;
   line-height: 1;
-  padding: 10px 4px 10px 10px;
+  padding: 16px 4px 16px 10px;
   margin: 0px 0 0 0;
-  border-bottom: 1px solid #cccccc;
-  border-left: 4px solid #ffffff;
+  /* border-bottom: 1px solid #cccccc; */
+  /* border-left: 4px solid #ffffff; */
 }
 
 .sidebar .menu .list a:hover,
 .sidebar .menu .list li.active {
-  border-left: 4px solid #1e252d;
+  border-left: 5px solid #1e252d;
   background-color: #f5f5f5;
 }
 
@@ -13859,10 +13862,11 @@ fieldset[disabled] .form-control {
 }
 
 .sidebar .menu .list .ml-menu li a {
-  padding-left: 50px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-left: 42px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   color: #333 !important;
+  line-height: 16px;
 }
 
 .sidebar .menu .list .ml-menu li a:before {
