@@ -15524,6 +15524,10 @@ nav.navbar {
   line-height: 2rem;
 }
 
+.addnewpagehover strong:hover {
+color: #fff !important;
+}
+
 .side-closed.side-closed-hover .sidebar .menu .list .ml-menu li a {
   padding-left: 50px;
   padding-top: 7px;
