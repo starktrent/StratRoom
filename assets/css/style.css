@@ -4566,7 +4566,7 @@ img {
 }
 
 section.content {
-  margin: 140px 15px 0 246px;
+  margin: 140px 15px 0 240px;
   /*276*/
   /* margin: 60px 15px 0 276px; */
   -moz-transition: 0.5s;
@@ -10100,8 +10100,8 @@ input:not([type]) {
 
 .fa,
 .fas {
-  font-family: 'Font Awesome 5 Free';
-    font-weight: 900
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
 }
 
 /*!
@@ -13605,7 +13605,7 @@ fieldset[disabled] .form-control {
   /*5s*/
   font-family: "Poppins", sans-serif;
   background: #ffffff;
-  width: 240px;
+  width: 230px;
   /* 260, 245*/
   /*overflow: hidden;*/
   overflow: auto;
@@ -13723,19 +13723,19 @@ fieldset[disabled] .form-control {
 }
 
 .sidebar .menu .list i.fas {
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .sidebar .menu .list i.far {
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .sidebar .menu .list i.fab {
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .sidebar .menu .list i.fa {
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .sidebar .menu .list i.menu-icon {
@@ -13771,7 +13771,7 @@ fieldset[disabled] .form-control {
 
 .sidebar .menu .list .menu-toggle:before {
   content: "\203A";
-    font-size: 26px;
+  font-size: 26px;
   -moz-transform: scale(1);
   -ms-transform: scale(1);
   -o-transform: scale(1);
@@ -13781,7 +13781,7 @@ fieldset[disabled] .form-control {
 
 .sidebar .menu .list .menu-toggle:after {
   content: "\203A";
-    font-size: 26px;
+  font-size: 26px;
   -moz-transform: scale(0);
   -ms-transform: scale(0);
   -o-transform: scale(0);
@@ -13809,7 +13809,7 @@ fieldset[disabled] .form-control {
   color: #111111;
   position: relative;
   vertical-align: middle;
-  font-size: 14px;
+  font-size: 13px;
   display: block;
   overflow: hidden;
   line-height: 1;
@@ -13846,7 +13846,7 @@ fieldset[disabled] .form-control {
 .sidebar .menu .list a span {
   margin: 7px 0 7px 12px;
   color: #111;
-  font-size: 15px;
+  font-size: 14px;
   overflow: hidden;
 }
 
@@ -15501,11 +15501,13 @@ nav.navbar {
 }
 
 .side-closed.side-closed-hover .sidebar .menu .list li .menu-toggle:before {
-  content: "+";
+  content: "\203A";
+  font-size: 26px;
 }
 
 .side-closed.side-closed-hover .sidebar .menu .list li .menu-toggle:after {
-  content: "\2013";
+  content: "\203A";
+  font-size: 26px;
 }
 
 .side-closed.side-closed-hover .sidebar .menu .list li span {
