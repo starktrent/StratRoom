@@ -15497,7 +15497,7 @@ nav.navbar {
 }
 
 .side-closed.side-closed-hover .sidebar {
-  width: 260px;
+  width: 230px;
 }
 
 .side-closed.side-closed-hover .sidebar .menu .list li .menu-toggle:before {
@@ -15516,7 +15516,7 @@ nav.navbar {
 }
 
 .side-closed.side-closed-hover .sidebar .menu .list li a {
-  padding: 9px 9px 9px 18px;
+  padding: 12px 9px 12px 18px;
 }
 
 .side-closed.side-closed-hover .sidebar .menu .list li i {
@@ -15532,7 +15532,7 @@ nav.navbar {
 }
 
 .side-closed.side-closed-hover section.content {
-  margin-left: 276px;
+  margin-left: 240px;
 }
 
 .sidemenu-collapse:hover {
