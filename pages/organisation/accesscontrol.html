@@ -62,7 +62,9 @@
       }
 
       .access-control-table thead tr th {
-        font-size: 14px;
+        font-size: 16px;
+        font-weight: 600;
+        z-index: 1;
         border: 1px solid #ececec !important;
         color: #333;
         position: sticky;
@@ -70,7 +72,8 @@
         border: 1px solid #ececec !important;
         box-shadow: inset 1px 1px #ececec, 0 1px #ececec;
         background-color: #f7f7f7;
-        padding: 12px 0px 12px 16px;
+        padding: 12px 0px;
+        text-align: center;
       }
 
       .access-control-table tbody tr td {
@@ -112,7 +115,7 @@
 
       .table-responsive {
         width: 100%;
-        height: 600px;
+        height: 560px;
         overflow-y: auto;
         box-shadow: inset 1px -1px #ececec;
       }
@@ -1082,13 +1085,13 @@
                     <table class="access-control-table">
                       <thead>
                         <tr>
-                          <th style="text-align: center; width: 180px;">
+                          <th style="width: 180px;">
                             Group
                           </th>
                           <th style="width: 280px;">Users</th>
                           <th style="width: 340px;">Modules</th>
                           <th style="width: 160px;">Permissions</th>
-                          <th style="text-align: center; width: 80px;">
+                          <th style="width: 80px;">
                             Action
                           </th>
                         </tr>
@@ -1099,32 +1102,44 @@
                             <h4>Pilot</h4>
                           </td>
                           <td>
-                            <i
-                              class="fas fa-minus-circle"
-                              style="
-                                font-size: 14px;
-                                padding-right: 2px;
-                                color: #1e252d;
-                              "
-                            ></i
-                            >Jaidon Hoover
-                            <a
-                              href="#"
-                              data-toggle="modal"
-                              data-target="#user_edit_popup"
-                              style="
-                                color: #1e252d !important;
-                                cursor: pointer;
-                                padding-left: 8px;
-                                font-weight: 600;
-                              "
-                            >
-                              <i
-                                class="fas fa-plus-circle"
-                                style="font-size: 14px; padding-right: 2px;"
-                              ></i>
-                              Add</a
-                            >
+                            <div class="fullscreen text-center">
+                              <ul
+                                class="list-unstyled order-list"
+                                data-toggle="modal"
+                                data-target="#user_edit_popup"
+                                style="cursor: pointer;"
+                              >
+                                <li class="avatar avatar-sm">
+                                  <img
+                                    class="rounded-circle"
+                                    src="../../assets/images/user/user7.jpg"
+                                    alt="user"
+                                  />
+                                </li>
+                                <div
+                                  class="image-upload"
+                                  style="display: unset;"
+                                >
+                                  <label for="file-input">
+                                    <li
+                                      _ngcontent-hhc-c5=""
+                                      class="avatar avatar-sm"
+                                    >
+                                      <a
+                                        href="#"
+                                        class="favgs"
+                                        data-toggle="modal"
+                                        data-target="#addpeople"
+                                      >
+                                        <span _ngcontent-hhc-c5="" class="badge"
+                                          >+</span
+                                        >
+                                      </a>
+                                    </li>
+                                  </label>
+                                </div>
+                              </ul>
+                            </div>
                           </td>
                           <td>
                             Scorecard, Initiatives, Risk, Employee, Dashboard,
@@ -1170,32 +1185,51 @@
                             <h4>Admin</h4>
                           </td>
                           <td>
-                            <i
-                              class="fas fa-minus-circle"
-                              style="
-                                font-size: 14px;
-                                padding-right: 2px;
-                                color: #1e252d;
-                              "
-                            ></i
-                            >Jaidon Hoover
-                            <a
-                              href="#"
-                              data-toggle="modal"
-                              data-target="#user_edit_popup"
-                              style="
-                                color: #1e252d !important;
-                                cursor: pointer;
-                                padding-left: 8px;
-                                font-weight: 600;
-                              "
-                            >
-                              <i
-                                class="fas fa-plus-circle"
-                                style="font-size: 14px; padding-right: 2px;"
-                              ></i>
-                              Add</a
-                            >
+                            <div class="fullscreen text-center">
+                              <ul
+                                class="list-unstyled order-list"
+                                data-toggle="modal"
+                                data-target="#user_edit_popup"
+                                style="cursor: pointer;"
+                              >
+                                <li class="avatar avatar-sm">
+                                  <img
+                                    class="rounded-circle"
+                                    src="../../assets/images/user/user7.jpg"
+                                    alt="user"
+                                  />
+                                </li>
+                                <li class="avatar avatar-sm">
+                                  <img
+                                    class="rounded-circle"
+                                    src="../../assets/images/user/user8.jpg"
+                                    alt="user"
+                                  />
+                                </li>
+                                <div
+                                  class="image-upload"
+                                  style="display: unset;"
+                                >
+                                  <label for="file-input">
+                                    <li
+                                      _ngcontent-hhc-c5=""
+                                      class="avatar avatar-sm"
+                                    >
+                                      <a
+                                        href="#"
+                                        class="favgs"
+                                        data-toggle="modal"
+                                        data-target="#addpeople"
+                                      >
+                                        <span _ngcontent-hhc-c5="" class="badge"
+                                          >+</span
+                                        >
+                                      </a>
+                                    </li>
+                                  </label>
+                                </div>
+                              </ul>
+                            </div>
                           </td>
                           <td>
                             Scorecard, Initiatives, Risk, Employee, Dashboard,
@@ -1240,24 +1274,66 @@
                             <h4>Developer</h4>
                           </td>
                           <td>
-                            All users in Admin group
-                            <a
-                              href="#"
-                              data-toggle="modal"
-                              data-target="#user_edit_popup"
-                              style="
-                                color: #1e252d !important;
-                                cursor: pointer;
-                                padding-left: 8px;
-                                font-weight: 600;
-                              "
-                            >
-                              <i
-                                class="fas fa-plus-circle"
-                                style="font-size: 14px; padding-right: 2px;"
-                              ></i>
-                              Add</a
-                            >
+                            <div class="fullscreen text-center">
+                              <ul
+                                class="list-unstyled order-list"
+                                data-toggle="modal"
+                                data-target="#user_edit_popup"
+                                style="cursor: pointer;"
+                              >
+                                <li class="avatar avatar-sm">
+                                  <img
+                                    class="rounded-circle"
+                                    src="../../assets/images/user/user7.jpg"
+                                    alt="user"
+                                  />
+                                </li>
+                                <li class="avatar avatar-sm">
+                                  <img
+                                    class="rounded-circle"
+                                    src="../../assets/images/user/user8.jpg"
+                                    alt="user"
+                                  />
+                                </li>
+
+                                <li class="avatar avatar-sm">
+                                  <img
+                                    class="rounded-circle"
+                                    src="../../assets/images/user/user6.jpg"
+                                    alt="user"
+                                  />
+                                </li>
+                                <li class="avatar avatar-sm">
+                                  <img
+                                    class="rounded-circle"
+                                    src="../../assets/images/user/user5.jpg"
+                                    alt="user"
+                                  />
+                                </li>
+                                <div
+                                  class="image-upload"
+                                  style="display: unset;"
+                                >
+                                  <label for="file-input">
+                                    <li
+                                      _ngcontent-hhc-c5=""
+                                      class="avatar avatar-sm"
+                                    >
+                                      <a
+                                        href="#"
+                                        class="favgs"
+                                        data-toggle="modal"
+                                        data-target="#addpeople"
+                                      >
+                                        <span _ngcontent-hhc-c5="" class="badge"
+                                          >+</span
+                                        >
+                                      </a>
+                                    </li>
+                                  </label>
+                                </div>
+                              </ul>
+                            </div>
                           </td>
                           <td>
                             Scorecard, Initiatives, Risk, Employee, Dashboard
@@ -1301,24 +1377,66 @@
                             <h4>Member</h4>
                           </td>
                           <td>
-                            All users in Developer group
-                            <a
-                              href="#"
-                              data-toggle="modal"
-                              data-target="#user_edit_popup"
-                              style="
-                                color: #1e252d !important;
-                                cursor: pointer;
-                                padding-left: 8px;
-                                font-weight: 600;
-                              "
-                            >
-                              <i
-                                class="fas fa-plus-circle"
-                                style="font-size: 14px; padding-right: 2px;"
-                              ></i>
-                              Add</a
-                            >
+                            <div class="fullscreen text-center">
+                              <ul
+                                class="list-unstyled order-list"
+                                data-toggle="modal"
+                                data-target="#user_edit_popup"
+                                style="cursor: pointer;"
+                              >
+                                <li class="avatar avatar-sm">
+                                  <img
+                                    class="rounded-circle"
+                                    src="../../assets/images/user/user7.jpg"
+                                    alt="user"
+                                  />
+                                </li>
+                                <li class="avatar avatar-sm">
+                                  <img
+                                    class="rounded-circle"
+                                    src="../../assets/images/user/user8.jpg"
+                                    alt="user"
+                                  />
+                                </li>
+
+                                <li class="avatar avatar-sm">
+                                  <img
+                                    class="rounded-circle"
+                                    src="../../assets/images/user/user6.jpg"
+                                    alt="user"
+                                  />
+                                </li>
+                                <li class="avatar avatar-sm">
+                                  <img
+                                    class="rounded-circle"
+                                    src="../../assets/images/user/user5.jpg"
+                                    alt="user"
+                                  />
+                                </li>
+                                <div
+                                  class="image-upload"
+                                  style="display: unset;"
+                                >
+                                  <label for="file-input">
+                                    <li
+                                      _ngcontent-hhc-c5=""
+                                      class="avatar avatar-sm"
+                                    >
+                                      <a
+                                        href="#"
+                                        class="favgs"
+                                        data-toggle="modal"
+                                        data-target="#addpeople"
+                                      >
+                                        <span _ngcontent-hhc-c5="" class="badge"
+                                          >+</span
+                                        >
+                                      </a>
+                                    </li>
+                                  </label>
+                                </div>
+                              </ul>
+                            </div>
                           </td>
                           <td>
                             Scorecard, Initiatives, Risk, Employee, Dashboard
@@ -1361,7 +1479,9 @@
                           <td style="text-align: center;">
                             <h4>Authenticated</h4>
                           </td>
-                          <td>Any logged in user</td>
+                          <td style="text-align: center;">
+                            Any logged in user
+                          </td>
                           <td>
                             Scorecard, Initiatives, Risk, Employee, Dashboard
                           </td>
@@ -1403,7 +1523,9 @@
                           <td style="text-align: center;">
                             <h4>Anonymous</h4>
                           </td>
-                          <td>Any users including those not logged in</td>
+                          <td style="text-align: center;">
+                            Any users including those not logged in
+                          </td>
                           <td>
                             Scorecard, Initiatives, Risk, Employee, Dashboard
                           </td>
