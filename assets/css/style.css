@@ -20066,8 +20066,8 @@ table.shoping-cart-table .text-price {
 
 .list-group .active,
 .list-group .list-group-item.active {
-  background-color: #2196f3;
-  border-color: #2196f3;
+  background-color: #1e252d;
+  border-color: #1e252d;
 }
 
 .list-group .active:hover,
@@ -20076,8 +20076,8 @@ table.shoping-cart-table .text-price {
 .list-group .list-group-item.active:hover,
 .list-group .list-group-item.active:focus,
 .list-group .list-group-item.active:active {
-  background-color: #2196f3;
-  border-color: #2196f3;
+  background-color: #11151a;
+  border-color: #11151a;
 }
 
 .list-group .active .list-group-item-text,
