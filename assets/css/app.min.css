@@ -6762,7 +6762,7 @@ textarea.materialize-textarea {
     pointer-events: none */
 }
 
-[type="checkbox"] + span:not(.lever) {
+/* [type="checkbox"] + span:not(.lever) {
   position: relative;
   padding-left: 35px;
   cursor: pointer;
@@ -6774,7 +6774,7 @@ textarea.materialize-textarea {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
+} */
 
 /* [type="checkbox"]+span:not(.lever):before,
 [type="checkbox"]:not(.filled-in)+span:not(.lever):after {
@@ -6800,7 +6800,7 @@ textarea.materialize-textarea {
 
 [type="checkbox"]:not(:checked):disabled + span:not(.lever):before {
   border: 0;
-  background-color: rgba(0, 0, 0, 0.42);
+  background-color: #fff;
 }
 
 [type="checkbox"].tabbed:focus + span:not(.lever):after {
@@ -6813,7 +6813,7 @@ textarea.materialize-textarea {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-[type="checkbox"]:checked + span:not(.lever):before {
+/* [type="checkbox"]:checked + span:not(.lever):before {
   top: -4px;
   left: -5px;
   width: 12px;
@@ -6821,21 +6821,21 @@ textarea.materialize-textarea {
   border-top: 2px solid transparent;
   border-left: 2px solid transparent;
   border-right: 2px solid #fff;
-  /* border-bottom: 2px solid #fff; */
+  border-bottom: 2px solid #fff;
   -webkit-transform: rotate(40deg);
   transform: rotate(40deg);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-transform-origin: 100% 100%;
   transform-origin: 100% 100%;
-}
+} */
 
-[type="checkbox"]:checked:disabled + span:before {
+/* [type="checkbox"]:checked:disabled + span:before {
   border-right: 2px solid rgba(0, 0, 0, 0.42);
   border-bottom: 2px solid rgba(0, 0, 0, 0.42);
-}
+} */
 
-[type="checkbox"]:indeterminate + span:not(.lever):before {
+/* [type="checkbox"]:indeterminate + span:not(.lever):before {
   top: -11px;
   left: -12px;
   width: 10px;
@@ -6850,7 +6850,7 @@ textarea.materialize-textarea {
   backface-visibility: hidden;
   -webkit-transform-origin: 100% 100%;
   transform-origin: 100% 100%;
-}
+} */
 
 [type="checkbox"]:indeterminate:disabled + span:not(.lever):before {
   border-right: 2px solid rgba(0, 0, 0, 0.42);

@@ -20,11 +20,11 @@
     <!-- <link rel="stylesheet" href="../../assets/daterangepicker.css"> -->
     <link rel="stylesheet" href="../../assets/datepickerair.css" />
     <link href="../../assets/jquery-ui.min.css" rel="stylesheet" />
+    <link href="../../assets/css/employee.css" rel="stylesheet" />
     <link
-      href="../../assets/daterangepicker/daterangepicker.min.css"
+      href="assets/daterangepicker/daterangepicker.min.css"
       rel="stylesheet"
     />
-    <link href="../../assets/css/employee.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="../../assets/nano.min.css" />
     <link rel="stylesheet" href="../../assets/monolith.min.css" />
@@ -42,34 +42,121 @@
         display: none;
       }
 
+      .list-group {
+        padding-right: 4px;
+      }
+
       .list-group .list-group-item.active {
+        background-color: #fff !important;
+      }
+
+      .list-group .list-group-item.active .card {
+        border: 1px solid #1e252d !important;
+        background-color: #1e252d;
         color: #fff !important;
+      }
+
+      .list-group .list-group-item.active .card:hover {
+        background-color: #1e252d !important;
+      }
+
+      .list-group .list-group-item.active .card i:hover {
+        color: #fff !important;
+      }
+
+      .list-group .list-group-item .card:hover {
+        background-color: #f5f5f5 !important;
+      }
+
+      .list-group .list-group-item:hover {
+        background-color: #fff;
       }
 
       .list-group .list-group-item {
-        font-size: 15px;
+        font-size: 13px;
         font-weight: 600;
+        padding: 0 24px;
         color: rgb(95, 95, 95) !important;
-        text-align: left !important;
+      }
+
+      .list-group .list-group-item .card {
+        padding: 16px 8px;
       }
 
       .list-group-item {
-        padding: 1.05rem 1.25rem;
+        padding: 0.85rem 1.25rem;
+        border: 0 !important;
       }
 
       .list-group-item i {
-        font-size: 16px;
-        padding-right: 8px;
-      }
-
-      .list-group .list-group-item.active i:hover {
-        color: #fff !important;
+        font-size: 28px;
+        padding-bottom: 8px;
       }
 
       .panel-tab-content h4 {
         color: #1e252d;
         padding-top: 8px;
         padding-bottom: 16px;
+      }
+
+      .control-switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 29px;
+      }
+
+      .control-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .control-slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+      }
+
+      .control-slider:before {
+        position: absolute;
+        content: "";
+        height: 23px;
+        width: 23px;
+        left: 4px;
+        bottom: 3px;
+        background-color: white;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+      }
+
+      input:checked + .control-slider {
+        background-color: #2196f3;
+      }
+
+      input:focus + .control-slider {
+        box-shadow: 0 0 1px #2196f3;
+      }
+
+      input:checked + .control-slider:before {
+        -webkit-transform: translateX(20px);
+        -ms-transform: translateX(20px);
+        transform: translateX(20px);
+      }
+
+      /* Rounded control-sliders */
+      .control-slider.round {
+        border-radius: 34px;
+      }
+
+      .control-slider.round:before {
+        border-radius: 50%;
       }
     </style>
   </head>
@@ -389,42 +476,67 @@
         <!-- COl -->
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12">
-            <div class="card" style="padding: 16px;">
+            <div class="" style="padding: 16px;">
               <div class="row">
                 <div class="col-md-12">
                   <div class="row">
                     <div
-                      class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel-tab-menu"
+                      class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel-tab-menu card"
+                      style="height: 600px;"
                     >
                       <div class="list-group">
-                        <a href="#" class="list-group-item active text-center">
-                          <i class="fas fa-cog"></i> General
-                        </a>
-                        <a href="#" class="list-group-item text-center">
-                          <i class="fas fa-tv"></i> Theme
-                        </a>
-                        <a href="#" class="list-group-item text-center">
-                          <i class="far fa-id-badge"></i> License
-                        </a>
-                        <a href="#" class="list-group-item text-center">
-                          <i class="fas fa-bell"></i> Notifications
-                        </a>
-                        <a href="#" class="list-group-item text-center">
-                          <i class="fas fa-shield-alt"></i> Security
-                        </a>
-                        <a href="#" class="list-group-item text-center">
-                          <i class="far fa-calendar-alt"></i> Scheduler
-                        </a>
-                        <a href="#" class="list-group-item text-center">
-                          <i class="fas fa-tablet-alt"></i> Device
-                        </a>
-                        <a href="#" class="list-group-item text-center">
-                          <i class="fas fa-cloud-upload-alt"></i> Back Up &
-                          Restore
-                        </a>
+                        <div class="row">
+                          <div class="col-6 list-group-item active">
+                            <a href="#" class="text-center card">
+                              <i class="fas fa-cog"></i> General
+                            </a>
+                          </div>
+                          <div class="col-6 list-group-item">
+                            <a href="#" class="text-center card">
+                              <i class="fas fa-tv"></i> Theme
+                            </a>
+                          </div>
+                          <div class="col-6 list-group-item">
+                            <a href="#" class="text-center card">
+                              <i class="far fa-id-badge"></i> License
+                            </a>
+                          </div>
+                          <div class="col-6 list-group-item">
+                            <a href="#" class="text-center card">
+                              <i class="fas fa-bell"></i> Notifications
+                            </a>
+                          </div>
+                          <div class="col-6 list-group-item">
+                            <a href="#" class="text-center card">
+                              <i class="fas fa-shield-alt"></i> Security
+                            </a>
+                          </div>
+                          <div class="col-6 list-group-item">
+                            <a href="#" class="text-center card">
+                              <i class="far fa-calendar-alt"></i> Scheduler
+                            </a>
+                          </div>
+                          <div class="col-6 list-group-item">
+                            <a href="#" class="text-center card">
+                              <i class="fas fa-tablet-alt"></i> Device
+                            </a>
+                          </div>
+                          <div class="col-6 list-group-item">
+                            <a href="#" class="text-center card">
+                              <i class="fas fa-laptop"></i>Back Up & Restore
+                            </a>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 panel-tab">
+                    <div
+                      class="col-lg-9 col-md-9 col-sm-9 col-xs-9 panel-tab card"
+                      style="
+                        height: auto;
+                        margin-left: 32px !important;
+                        padding: 18px 24px;
+                      "
+                    >
                       <!-- General section -->
                       <div class="panel-tab-content active">
                         <div class="row">
@@ -432,7 +544,7 @@
                             <h4>General Settings</h4>
                           </div>
                           <div
-                            class="form-group col-md-8"
+                            class="form-group col-md-6"
                             style="padding-bottom: 10px;"
                           >
                             <label for="">Site Name</label>
@@ -442,7 +554,7 @@
                             />
                           </div>
                           <div
-                            class="form-group col-md-4"
+                            class="form-group col-md-6"
                             style="padding-bottom: 10px;"
                           >
                             <label for="">Site Language</label>
@@ -1486,10 +1598,18 @@
                               </div>
                             </div>
                           </div>
+                          <div class="col-12">
+                            <button
+                              class="initative_save_btn pull-right"
+                              value="Save"
+                            >
+                              Save
+                            </button>
+                          </div>
                         </div>
                       </div>
 
-                      <!-- Theme -->
+                      <!-- License -->
                       <div class="panel-tab-content">
                         <div class="row">
                           <div class="col-md-12">
@@ -1518,6 +1638,154 @@
                               value="120 users"
                               readonly
                             />
+                          </div>
+                          <div class="form-group col-md-12">
+                            <hr />
+                            <h6>Modules Subscribed</h6>
+                          </div>
+                          <div class="col-6">
+                            <span style="font-size: 16px; color: #444444;"
+                              >Scorecard</span
+                            >
+                          </div>
+                          <div class="col-6">
+                            <label class="control-switch">
+                              <input type="checkbox" checked disabled />
+                              <span class="control-slider round"></span>
+                            </label>
+                          </div>
+                          <div class="col-6">
+                            <span style="font-size: 16px; color: #444444;"
+                              >Initiative</span
+                            >
+                          </div>
+                          <div class="col-6">
+                            <label class="control-switch">
+                              <input type="checkbox" disabled />
+                              <span class="control-slider round"></span>
+                            </label>
+                          </div>
+                          <div class="col-6">
+                            <span style="font-size: 16px; color: #444444;"
+                              >Risk</span
+                            >
+                          </div>
+                          <div class="col-6">
+                            <label class="control-switch">
+                              <input type="checkbox" checked disabled />
+                              <span class="control-slider round"></span>
+                            </label>
+                          </div>
+                          <div class="col-6">
+                            <span style="font-size: 16px; color: #444444;"
+                              >Employee</span
+                            >
+                          </div>
+                          <div class="col-6">
+                            <label class="control-switch">
+                              <input type="checkbox" checked disabled />
+                              <span class="control-slider round"></span>
+                            </label>
+                          </div>
+                          <div class="col-6">
+                            <span style="font-size: 16px; color: #444444;"
+                              >Meeting</span
+                            >
+                          </div>
+                          <div class="col-6">
+                            <label class="control-switch">
+                              <input type="checkbox" disabled />
+                              <span class="control-slider round"></span>
+                            </label>
+                          </div>
+                          <div class="col-6">
+                            <span style="font-size: 16px; color: #444444;"
+                              >SWOT</span
+                            >
+                          </div>
+                          <div class="col-6">
+                            <label class="control-switch">
+                              <input type="checkbox" checked disabled />
+                              <span class="control-slider round"></span>
+                            </label>
+                          </div>
+                          <div class="col-6">
+                            <span style="font-size: 16px; color: #444444;"
+                              >PESTEL</span
+                            >
+                          </div>
+                          <div class="col-6">
+                            <label class="control-switch">
+                              <input type="checkbox" checked disabled />
+                              <span class="control-slider round"></span>
+                            </label>
+                          </div>
+                          <div class="col-6">
+                            <span style="font-size: 16px; color: #444444;"
+                              >Strategy Formulation</span
+                            >
+                          </div>
+                          <div class="col-6">
+                            <label class="control-switch">
+                              <input type="checkbox" disabled />
+                              <span class="control-slider round"></span>
+                            </label>
+                          </div>
+                          <div class="col-6">
+                            <span style="font-size: 16px; color: #444444;"
+                              >Budgeting</span
+                            >
+                          </div>
+                          <div class="col-6">
+                            <label class="control-switch">
+                              <input type="checkbox" disabled />
+                              <span class="control-slider round"></span>
+                            </label>
+                          </div>
+                          <div class="col-6">
+                            <span style="font-size: 16px; color: #444444;"
+                              >Portfolio Program & Projects (P3M)</span
+                            >
+                          </div>
+                          <div class="col-6">
+                            <label class="control-switch">
+                              <input type="checkbox" checked disabled />
+                              <span class="control-slider round"></span>
+                            </label>
+                          </div>
+                          <div class="col-6">
+                            <span style="font-size: 16px; color: #444444;"
+                              >Dashboards</span
+                            >
+                          </div>
+                          <div class="col-6">
+                            <label class="control-switch">
+                              <input type="checkbox" disabled />
+                              <span class="control-slider round"></span>
+                            </label>
+                          </div>
+                          <div class="col-6">
+                            <span style="font-size: 16px; color: #444444;"
+                              >Forms</span
+                            >
+                          </div>
+                          <div class="col-6">
+                            <label class="control-switch">
+                              <input type="checkbox" disabled />
+                              <span class="control-slider round"></span>
+                            </label>
+                          </div>
+
+                          <div class="col-6">
+                            <span style="font-size: 16px; color: #444444;"
+                              >Reports</span
+                            >
+                          </div>
+                          <div class="col-6">
+                            <label class="control-switch">
+                              <input type="checkbox" checked disabled />
+                              <span class="control-slider round"></span>
+                            </label>
                           </div>
                         </div>
                       </div>
@@ -1549,9 +1817,9 @@
 
     <script>
       $(document).ready(function () {
-        $("div.panel-tab-menu>div.list-group>a").click(function (e) {
+        $("div.panel-tab-menu>div.list-group>div.row>div").click(function (e) {
           e.preventDefault();
-          $(this).siblings("a.active").removeClass("active");
+          $(this).siblings("div.active").removeClass("active");
           $(this).addClass("active");
           var index = $(this).index();
           $("div.panel-tab>div.panel-tab-content").removeClass("active");
