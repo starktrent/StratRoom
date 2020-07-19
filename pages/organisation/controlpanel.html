@@ -158,6 +158,62 @@
       .control-slider.round:before {
         border-radius: 50%;
       }
+
+      /* Style the tab */
+      .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+      }
+
+      /* Style the buttons inside the tab */
+      .tab button {
+        background-color: inherit;
+        float: center;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 16px;
+        width: 100%;
+      }
+
+      /* Change background color of buttons on hover */
+      .tab button:hover {
+        background-color: #ddd;
+      }
+
+      /* Create an active/current tablink class */
+      .tab button.active {
+        background-color: #ccc;
+      }
+
+      .tab .col-4 {
+        padding: 0;
+      }
+
+      /* Style the tab content */
+      .tabcontent {
+        padding: 24px 12px;
+        border-top: none;
+      }
+
+      [type="radio"]:not(:checked),
+      [type="radio"]:checked {
+        opacity: 1;
+      }
+
+      [type="radio"]:not(:checked) + label,
+      [type="radio"]:checked + label {
+        line-height: 14px;
+        font-size: 16px;
+      }
+
+      #configSAML,
+      #feedBack {
+        display: none;
+      }
     </style>
   </head>
 
@@ -1789,6 +1845,248 @@
                           </div>
                         </div>
                       </div>
+
+                      <!-- Notification -->
+                      <div class="panel-tab-content">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <h4>Notification</h4>
+                          </div>
+                          <div class="col-6">
+                            <span style="font-size: 16px; color: #444444;"
+                              >Enable</span
+                            >
+                          </div>
+                          <div class="col-6">
+                            <label class="control-switch">
+                              <input type="checkbox" checked />
+                              <span class="control-slider round"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Security -->
+                      <div class="panel-tab-content">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <h4>Security</h4>
+                          </div>
+                          <div class="col-12" style="padding: 0 30px;">
+                            <div class="tab row">
+                              <div class="col-4">
+                                <button
+                                  class="tablinks active"
+                                  onclick="openCity(event, 'soMethod')"
+                                >
+                                  Sign on method
+                                </button>
+                              </div>
+                              <div class="col-4">
+                                <button
+                                  class="tablinks"
+                                  onclick="openCity(event, 'configSAML')"
+                                >
+                                  Configure SAML
+                                </button>
+                              </div>
+                              <div class="col-4">
+                                <button
+                                  class="tablinks"
+                                  onclick="openCity(event, 'feedBack')"
+                                >
+                                  Feedback
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-12" style="padding: 0 25px;">
+                            <div id="soMethod" class="tabcontent">
+                              <input
+                                type="radio"
+                                id="swa"
+                                name="SOMethod"
+                                value="SWA"
+                                checked
+                              />
+                              <label for="swo"
+                                >Secure Web Authentication (SWA)</label
+                              ><br />
+                              <input
+                                type="radio"
+                                id="saml"
+                                name="SOMethod"
+                                value="SAML"
+                              />
+                              <label for="saml">SAML 2.0</label><br />
+                              <input
+                                type="radio"
+                                id="oc"
+                                name="SOMethod"
+                                value="OC"
+                              />
+                              <label for="oc">OpenID Connect</label>
+                              <div class="row">
+                                <div class="col-12">
+                                  <button
+                                    class="initative_save_btn pull-right"
+                                    value="Save"
+                                  >
+                                    Save
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div id="configSAML" class="tabcontent">
+                              <h4>SAML Settings</h4>
+                              <div class="row">
+                                <div class="col-12 form-group">
+                                  <label>Single sign on URL</label>
+                                  <span>
+                                    <input
+                                      type="text"
+                                      class="form-control browser-default"
+                                    />
+                                  </span>
+                                </div>
+                                <div class="col-12 form-group">
+                                  <label>Audience URL(SP Entity ID)</label>
+                                  <input
+                                    type="text"
+                                    class="form-control browser-default"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+
+                            <div id="feedBack" class="tabcontent">
+                              <h4>Feedback</h4>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Scheduler -->
+                      <div class="panel-tab-content">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <h4>Scheduler</h4>
+                          </div>
+                          <div class="col-8">
+                            <label for="">Archive</label>
+                            <select
+                              id="inputState"
+                              class="form-control browser-default"
+                            >
+                              <option value="6 months">6 months</option>
+                              <option value="3 months">3 months</option>
+                              <option value="Monthly">Monthly</option>
+                              <option value="Now">Now</option>
+                            </select>
+                          </div>
+                          <div class="col-4">
+                            <button
+                              class="initative_save_btn"
+                              value="Archive"
+                              style="margin-top: 26px;"
+                            >
+                              Archive
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Device -->
+                      <div class="panel-tab-content">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <h4>Device</h4>
+                          </div>
+                          <div class="col-6">
+                            <span style="font-size: 16px; color: #444444;"
+                              >Web</span
+                            >
+                          </div>
+                          <div class="col-6 form-group">
+                            <label class="control-switch">
+                              <input type="checkbox" checked />
+                              <span class="control-slider round"></span>
+                            </label>
+                          </div>
+
+                          <div class="col-6">
+                            <span style="font-size: 16px; color: #444444;"
+                              >Mobile App</span
+                            >
+                          </div>
+                          <div class="col-6 form-group">
+                            <label class="control-switch">
+                              <input type="checkbox" checked />
+                              <span class="control-slider round"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Back Up & Restore -->
+                      <div class="panel-tab-content">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <h4>Back Up & Restore</h4>
+                          </div>
+                          <div class="col-8">
+                            <label for="">Back Up</label>
+                            <select
+                              id="inputState"
+                              class="form-control browser-default"
+                            >
+                              <option value="6 months">6 months</option>
+                              <option value="3 months">3 months</option>
+                              <option value="Monthly">Monthly</option>
+                              <option value="Weekly">Weekly</option>
+                              <option value="Now">Now</option>
+                            </select>
+                          </div>
+                          <div class="col-4">
+                            <button
+                              class="initative_save_btn"
+                              value="Back up"
+                              style="margin-top: 26px;"
+                            >
+                              Back up
+                            </button>
+                          </div>
+
+                          <div
+                            class="col-md-12"
+                            style="padding-top: 24px; padding-bottom: 8px;"
+                          >
+                            <h5>Restore</h5>
+                          </div>
+                          <div
+                            class="form-group col-md-6"
+                            style="padding-bottom: 10px;"
+                          >
+                            <label for="">Application</label>
+                            <input
+                              type="file"
+                              class="form-control browser-default"
+                            />
+                          </div>
+                          <div
+                            class="form-group col-md-6"
+                            style="padding-bottom: 10px;"
+                          >
+                            <label for="">Database</label>
+                            <input
+                              type="file"
+                              class="form-control browser-default"
+                            />
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1826,6 +2124,20 @@
           $("div.panel-tab>div.panel-tab-content").eq(index).addClass("active");
         });
       });
+
+      function openCity(evt, securitySections) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(securitySections).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
     </script>
     <script>
       $(".daterangepicker-field").daterangepicker({
