@@ -6647,7 +6647,7 @@ textarea.materialize-textarea {
   pointer-events: none;
 }
 
-[type="radio"]:not(:checked) + span,
+/* [type="radio"]:not(:checked) + span,
 [type="radio"]:checked + span {
   position: relative;
   padding-left: 35px;
@@ -6662,7 +6662,7 @@ textarea.materialize-textarea {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
+} */
 
 [type="radio"] + span:before,
 [type="radio"] + span:after {
@@ -6689,7 +6689,7 @@ textarea.materialize-textarea {
 
 [type="radio"]:not(:checked) + span:before,
 [type="radio"]:not(:checked) + span:after {
-  border: 2px solid #5a5a5a;
+  /* border: 2px solid #5a5a5a; */
 }
 
 [type="radio"]:not(:checked) + span:after {
