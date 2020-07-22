@@ -1008,6 +1008,7 @@ label {
   padding: 6px 24px;
   width: fit-content;
   height: auto;
+  margin-right: -4px;
   font-weight: 600;
 }
 

@@ -327,7 +327,7 @@
               <a
                 href="#"
                 onclick="return false;"
-                class="dropdown-toggle js-right-sidebar"
+                class="dropdown-toggle"
                 data-close="true"
               >
                 <!-- <img src="../../assets/images/user.jpg" alt="user"> -->
@@ -492,6 +492,43 @@
       </aside>
     </div>
     <!-- #END# Left Sidebar -->
+
+    <!-- Right Sidebar -->
+    <aside id="rightsidebar" class="right-sidebar open">
+      <div class="tab-content">
+        <div
+          role="tabpanel"
+          class="tab-pane in active in active stretchLeft"
+          id="skins"
+        >
+          <div
+            class="slimScrollDiv"
+            style="position: relative; overflow: hidden; width: auto;"
+          >
+            <div
+              class="demo-skin"
+              style="overflow: hidden; width: auto; height: auto;"
+            >
+              <div class="row" style="padding: 12px;">
+                <div class="col-12">
+                  <h4>KPI's</h4>
+                  <hr />
+                </div>
+                <div class="col-12" style="text-align: left;">
+                  <span><strong>ID:</strong> 67282</span>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!-- #END# Right Sidebar -->
 
     <!-- Create Meeting Modal -->
     <div id="create_meeting" class="modal fade" role="dialog">
@@ -1655,6 +1692,63 @@
       <div class="container-fluid">
         <!-- COl -->
         <div class="row">
+          <div class="col-md-12" style="padding-top: 12px;">
+            <button
+              class="btn btn-custom-secondary"
+              onclick="addBtn('#content');"
+              style="margin-right: 2px;"
+            >
+              <i class="fas fa-plus"></i>
+            </button>
+            <div
+              id="custom-tab"
+              class="btn-group custom-tab-control"
+              role="group"
+              aria-label="Custom Tab"
+            >
+              <button
+                type="button"
+                class="btn btn-custom-secondary active"
+                data-value="StrategyFormulation"
+              >
+                Strategy Formulation
+              </button>
+              <button
+                type="button"
+                class="btn btn-custom-secondary"
+                data-value="Finance"
+              >
+                Finance
+              </button>
+              <button
+                type="button"
+                class="btn btn-custom-secondary"
+                data-value="Business"
+              >
+                Business
+              </button>
+            </div>
+          </div>
+
+          <script>
+            function addBtn(link) {
+              // hide other tabs
+              // $("#custom-tab button").removeClass("active");
+
+              // add new tab and related content
+              $("#custom-tab").append(
+                `<button
+                  type="button"
+                  class="btn btn-custom-secondary"
+                  data-value="NewTab"
+                >
+                  New Tab
+                </button>`
+              );
+            }
+          </script>
+        </div>
+        <div class="row customTabContent StrategyFormulation">
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <div class="card cardBox">
               <div class="row">
@@ -1665,7 +1759,7 @@
                   style="
                     text-align: center;
                     color: #c3c3c3;
-                    padding: 86px 0;
+                    padding: 78px 0;
                     cursor: pointer;
                   "
                 >
@@ -1690,7 +1784,7 @@
                       data-toggle="modal"
                       data-target="#edit_meeting"
                     ></i>
-                    <i class="far fa-times-circle"></i>
+                    <i class="fas fa-trash"></i>
                   </span>
                 </div>
                 <div class="col-12">
@@ -1750,7 +1844,7 @@
                     </ul>
                   </div>
                 </div>
-                <div class="col-6">
+                <div class="col-6" style="padding-bottom: 16px;">
                   <h6>Approved By</h6>
                   <div class="d-flex flex-column">
                     <ul class="list-unstyled order-list d-flex">
@@ -1766,76 +1860,98 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
 
-              <div
-                class="row text-center"
-                style="
-                  background-color: #1e252d;
-                  border-bottom-left-radius: 8px;
-                  border-bottom-right-radius: 8px;
-                "
-              >
-                <div class="col-md-12 card-footer">
-                  <a
-                    href="#"
-                    data-toggle="modal"
-                    data-target="#notes"
-                    class="card-footer-icon"
-                  >
+        <div class="row customTabContent Finance" style="display: none;">
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="card cardBox">
+              <div class="row">
+                <div
+                  class="col-12"
+                  data-toggle="modal"
+                  data-target="#create_meeting"
+                  style="
+                    text-align: center;
+                    color: #c3c3c3;
+                    padding: 78px 0;
+                    cursor: pointer;
+                  "
+                >
+                  <span>
                     <i
-                      class="fas fa-clipboard"
-                      data-toggle="tooltip"
-                      data-placement="bottom"
-                      title="Notes"
+                      style="font-size: 24px; padding-bottom: 8px;"
+                      class="fas fa-plus"
                     ></i>
-                  </a>
+                  </span>
+                  <h5>Create New</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="card cardBox">
+              <div class="row">
+                <div class="col-12">
+                  <span class="card-icons pull-right">
+                    <i
+                      class="fas fa-pen"
+                      data-toggle="modal"
+                      data-target="#edit_meeting"
+                    ></i>
+                    <i class="fas fa-trash"></i>
+                  </span>
+                </div>
+                <div class="col-12">
+                  <h4 class="page-card-title">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </h4>
 
-                  <a
-                    href="#"
-                    data-toggle="modal"
-                    data-target="#action"
-                    class="card-footer-icon"
-                  >
-                    <i
-                      class="fas fa-bolt"
-                      data-toggle="tooltip"
-                      data-placement="bottom"
-                      title="Action"
-                    ></i>
-                  </a>
+                  <p class="meeting-time">
+                    <span
+                      ><i class="far fa-calendar-alt"></i> 13 Mar, 2020 - 25
+                      Nov, 2020
+                    </span>
+                  </p>
 
-                  <a
-                    href="#"
-                    data-toggle="modal"
-                    data-target="#uploaded_files"
-                    class="card-footer-icon"
+                  <p class="meeting-location">
+                    <span><strong>Plan Type:</strong> Long Term </span> <br />
+                    <span><strong>Approved Date:</strong> 12 Mar, 2020 </span>
+                  </p>
+                </div>
+                <div class="col-6">
+                  <button
+                    value="KPI"
+                    style="margin-top: 8px;"
+                    onclick="return false;"
+                    class="dropdown-toggle js-right-sidebar initative_save_btn"
+                    data-close="true"
                   >
-                    <i
-                      class="fas fa-paperclip"
-                      data-toggle="tooltip"
-                      data-placement="bottom"
-                      title="Attachment"
-                    ></i>
-                  </a>
+                    KPI's
+                  </button>
+                </div>
+                <div class="col-6" style="padding-bottom: 16px;">
+                  <h6>Owner</h6>
+                  <div class="d-flex flex-column">
+                    <ul class="list-unstyled order-list d-flex">
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle sub_init_img"
+                          src="../../assets/images/user/user9.jpg"
+                          alt="user"
+                          width="55"
+                        />
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <div class="row customTabContent Business" style="display: none;"></div>
       </div>
-
-      <!-- Page Header -->
-      <div class="page-header row no-gutters py-2 m-t-20">
-        <div class="col-lg-6 col-md-6 text-center text-sm-left pt-2 mb-0 ml-4">
-          <h5
-            class="page-title"
-            style="font-weight: 600; text-transform: uppercase;"
-          >
-            OVERVIEW - CORPORATE STRATEGY
-          </h5>
-        </div>
-      </div>
-      <!-- End Page Header -->
     </section>
 
     <!-- Plugins Js -->
@@ -1878,6 +1994,21 @@
           var title = startDate.format("L") + " – " + endDate.format("L");
           $(this).val(title);
         },
+      });
+
+      $("#custom-tab").on("click", "button", function (e) {
+        var CustomTabValue = this.dataset.value;
+        if (CustomTabValue) {
+          $(".customTabContent")
+            .not("." + CustomTabValue)
+            .hide();
+          $("." + CustomTabValue).show();
+        } else {
+          $(".customTabContent").hide();
+        }
+        $(this).parent().find("button").removeClass("active");
+        $(this).addClass("active");
+        $(".active").attr("contenteditable", "true");
       });
 
       $("#timepicker_pop").timepicker();

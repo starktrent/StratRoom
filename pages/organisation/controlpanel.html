@@ -1960,40 +1960,13 @@
                           <div class="col-md-12">
                             <h4>Security</h4>
                           </div>
-                          <div class="col-md-6">
-                            <div
-                              id="control-view"
-                              class="btn-group"
-                              role="group"
-                              style="width: 100%;"
-                            >
-                              <button
-                                type="button"
-                                class="btn tablinks btn-custom-secondary active"
-                                onclick="openCity(event, 'soMethod')"
-                                style="
-                                  border-top-left-radius: 20px;
-                                  border-bottom-left-radius: 20px;
-                                "
-                              >
-                                Sign on method
-                              </button>
-                              <button
-                                type="button"
-                                class="btn tablinks btn-custom-secondary"
-                                onclick="openCity(event, 'configSAML')"
-                                style="
-                                  border-top-right-radius: 20px;
-                                  border-bottom-right-radius: 20px;
-                                "
-                              >
-                                Configure SAML
-                              </button>
-                            </div>
-                          </div>
 
                           <div class="col-12" style="padding: 0 25px;">
                             <div id="soMethod" class="tabcontent">
+                              <h5>
+                                Sign on method
+                              </h5>
+                              <hr style="padding-bottom: 8px;" />
                               <label class="som"
                                 >Secure Web Authentication (SWA)
                                 <input
@@ -2030,15 +2003,19 @@
                                   <button
                                     class="initative_save_btn"
                                     value="Save"
+                                    onclick="openCity(event, 'configSAML')"
                                   >
-                                    Save
+                                    Next
                                   </button>
                                 </div>
                               </div>
                             </div>
 
                             <div id="configSAML" class="tabcontent">
-                              <h4>SAML Settings</h4>
+                              <h5>
+                                SAML Settings
+                              </h5>
+                              <hr style="padding-bottom: 8px;" />
                               <div class="row">
                                 <div class="col-12 form-group">
                                   <label>Single sign on URL</label>
@@ -2142,6 +2119,13 @@
                               </div>
                               <div class="row">
                                 <div class="col-12">
+                                  <button
+                                    class="btn-default1 btn"
+                                    value="Back"
+                                    onclick="openCity(event, 'soMethod')"
+                                  >
+                                    Back
+                                  </button>
                                   <button
                                     class="initative_save_btn"
                                     value="Save"
