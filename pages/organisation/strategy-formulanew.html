@@ -71,129 +71,10 @@
         position: fixed;
       }
 
-      .cardBox {
-        border-radius: 8px !important;
-        border: none !important;
-        padding: 16px 16px 0 16px;
-      }
-
-      .card-icons i {
-        font-size: 12px;
-        color: #919191;
-        cursor: pointer;
-      }
-
-      .card-icons i:nth-child(2) {
-        margin-left: 8px;
-        font-size: 15px;
-      }
-
-      .page-card-title {
-        color: #1e252d;
-        font-size: 15px;
-      }
-
-      .meeting-time {
-        color: #919191;
-      }
-
-      .meeting-time span:nth-child(2) {
-        margin-left: 8px;
-      }
-
-      .meeting-time span:nth-child(3) {
-        text-align: right;
-      }
-
-      .meeting-location span {
-        color: #1e252d;
-        font-weight: 500;
-        font-size: 12px;
-      }
-
-      .card-footer {
-        display: flex !important;
-        -webkit-box-orient: horizontal !important;
-        -webkit-box-direction: normal !important;
-        flex-direction: row !important;
-        justify-content: space-evenly;
+      .side_border_p {
+        background-color: #9c2545 !important;
+        border-radius: 8px;
         text-align: center;
-        padding: 10px 0;
-      }
-
-      .card-footer-icon i {
-        font-size: 18px;
-        color: rgb(226, 226, 226) !important;
-        cursor: pointer;
-      }
-
-      .modal-custom-input {
-        border: 1px solid #e5e5e5 !important;
-        border-radius: 4px !important;
-        width: 98% !important;
-        height: 65% !important;
-        padding: 0 8px !important;
-        font-size: 14px !important;
-      }
-
-      .gj-datepicker-md [role="right-icon"] {
-        top: 6px;
-      }
-
-      .gj-timepicker-md [role="right-icon"] {
-        top: 5px;
-      }
-
-      .input-calender-icon {
-        color: #5a6169;
-        position: absolute;
-        bottom: 6%;
-        right: 8%;
-        font-size: 16px;
-      }
-
-      .input-calender-icon1 {
-        color: #5a6169;
-        position: absolute;
-        bottom: 40%;
-        right: 12%;
-        font-size: 16px;
-      }
-
-      .paging-nav {
-        text-align: right;
-        padding-top: 2px;
-      }
-
-      .paging-nav a {
-        margin: 6px 2px;
-        text-decoration: none;
-        display: inline-block;
-        padding: 4px 10px;
-        background: #71767a;
-        color: #fff !important;
-        border-radius: 3px;
-      }
-
-      .paging-nav .selected-page {
-        background: #1e252d;
-        font-weight: bold;
-      }
-
-      #fileuploadTable thead tr th {
-        border: 1px solid #cecece !important;
-        padding: 6px 4px 6px 4px;
-        font-size: 12px !important;
-        color: #4e4e4e;
-        background: #f7f7f7;
-        font-weight: 600;
-      }
-
-      #fileuploadTable tbody tr td {
-        border: 1px solid #cecece !important;
-        padding: 8px 4px 8px 4px !important;
-        font-size: 12px !important;
-        color: #535353;
       }
     </style>
   </head>
@@ -327,7 +208,7 @@
               <a
                 href="#"
                 onclick="return false;"
-                class="dropdown-toggle"
+                class="dropdown-toggle js-right-sidebar"
                 data-close="true"
               >
                 <!-- <img src="../../assets/images/user.jpg" alt="user"> -->
@@ -492,953 +373,6 @@
       </aside>
     </div>
     <!-- #END# Left Sidebar -->
-
-    <!-- Right Sidebar -->
-    <aside id="rightsidebar" class="right-sidebar open">
-      <div class="tab-content">
-        <div
-          role="tabpanel"
-          class="tab-pane in active in active stretchLeft"
-          id="skins"
-        >
-          <div
-            class="slimScrollDiv"
-            style="position: relative; overflow: hidden; width: auto;"
-          >
-            <div
-              class="demo-skin"
-              style="overflow: hidden; width: auto; height: auto;"
-            >
-              <div class="row" style="padding: 12px;">
-                <div class="col-12">
-                  <h4>KPI's</h4>
-                  <hr />
-                </div>
-                <div class="col-12" style="text-align: left;">
-                  <span><strong>ID:</strong> 67282</span>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </aside>
-    <!-- #END# Right Sidebar -->
-
-    <!-- Create Meeting Modal -->
-    <div id="create_meeting" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" style="margin-top: 8%;">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4>Create Meeting</h4>
-            <button type="button" class="close pull-right" data-dismiss="modal">
-              &times;
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="row">
-              <div class="form-group col-md-12">
-                <label for="meeting-name">Subject</label>
-                <input
-                  type="text"
-                  class="modal-custom-input"
-                  id="meeting-name"
-                />
-              </div>
-            </div>
-            <div class="row m-t-20">
-              <div class="form-group col-md-6">
-                <label for="datepicker">From Date & Time</label>
-                <i class="far fa-calendar input-calender-icon"></i>
-                <input
-                  type="text"
-                  class="modal-custom-input date_pickers_single"
-                  style="height: 70% !important; width: 94% !important;"
-                  data-language="en"
-                  data-timepicker="true"
-                  name="kpi_start_end_date"
-                  id="kpi_start_end_date"
-                />
-              </div>
-
-              <div class="form-group col-md-6">
-                <label for="datepicker">To Date & Time</label>
-                <i class="far fa-calendar input-calender-icon"></i>
-                <input
-                  type="text"
-                  class="modal-custom-input date_pickers_single"
-                  style="height: 70% !important; width: 94% !important;"
-                  data-language="en"
-                  data-timepicker="true"
-                  name="kpi_start_end_date"
-                  id="kpi_start_end_date"
-                />
-              </div>
-            </div>
-
-            <div class="row m-t-10">
-              <div class="form-group col-md-6">
-                <label for="location">Location</label>
-                <input
-                  type="text"
-                  class="modal-custom-input"
-                  id="location"
-                  style="height: 38px !important;"
-                />
-              </div>
-
-              <div class="form-group col-md-6">
-                <label for="type">Status</label>
-                <select
-                  id="type"
-                  class="modal-custom-select"
-                  style="height: 56% !important;"
-                >
-                  <option value="Scheduled">Scheduled</option>
-                  <option value="Rescheduled">Rescheduled</option>
-                  <option value="Ongoing">Ongoing</option>
-                  <option value="Completed">Completed</option>
-                  <option value="Cancelled">Cancelled</option>
-                </select>
-              </div>
-
-              <div class="form-group col-md-12">
-                <hr />
-              </div>
-              <div class="form-group col-lg-8 col-md-4 col-sm-12"></div>
-              <div
-                class="form-group col-lg-2 col-md-4 col-sm-6"
-                style="padding-right: 4px;"
-              >
-                <button
-                  type="button"
-                  class="btn custom-form-control btn-custom-secondary"
-                  data-dismiss="modal"
-                >
-                  Cancel
-                </button>
-              </div>
-              <div
-                class="form-group col-lg-2 col-md-4 col-sm-6"
-                style="padding-left: 4px;"
-              >
-                <button
-                  type="button"
-                  class="btn custom-form-control btn-custom-primary"
-                >
-                  Save
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Edit Meeting Modal -->
-    <div id="edit_meeting" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" style="margin-top: 8%;">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4>Edit Meeting</h4>
-            <button type="button" class="close pull-right" data-dismiss="modal">
-              &times;
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="row">
-              <div class="form-group col-md-12">
-                <label for="meeting-name">Subject</label>
-                <input
-                  type="text"
-                  class="modal-custom-input"
-                  id="meeting-name"
-                />
-              </div>
-            </div>
-            <div class="row m-t-20">
-              <div class="form-group col-md-6">
-                <label for="datepicker">From Date & Time</label>
-                <i class="far fa-calendar input-calender-icon"></i>
-                <input
-                  type="text"
-                  class="modal-custom-input date_pickers_single"
-                  style="height: 70% !important; width: 94% !important;"
-                  data-language="en"
-                  data-timepicker="true"
-                  name="kpi_start_end_date"
-                  id="kpi_start_end_date"
-                />
-              </div>
-
-              <div class="form-group col-md-6">
-                <label for="datepicker">To Date & Time</label>
-                <i class="far fa-calendar input-calender-icon"></i>
-                <input
-                  type="text"
-                  class="modal-custom-input date_pickers_single"
-                  style="height: 70% !important; width: 94% !important;"
-                  data-language="en"
-                  data-timepicker="true"
-                  name="kpi_start_end_date"
-                  id="kpi_start_end_date"
-                />
-              </div>
-            </div>
-
-            <div class="row m-t-10">
-              <div class="form-group col-md-6">
-                <label for="location">Location</label>
-                <input
-                  type="text"
-                  class="modal-custom-input"
-                  id="location"
-                  style="height: 38px !important; width: 94% !important;"
-                />
-              </div>
-
-              <div class="form-group col-md-6">
-                <label for="type">Status</label>
-                <select
-                  id="type"
-                  class="modal-custom-select"
-                  style="height: 56% !important;"
-                >
-                  <option value="Scheduled">Scheduled</option>
-                  <option value="Rescheduled">Rescheduled</option>
-                  <option value="Ongoing">Ongoing</option>
-                  <option value="Completed">Completed</option>
-                  <option value="Cancelled">Cancelled</option>
-                </select>
-              </div>
-
-              <div class="form-group col-md-12">
-                <hr />
-              </div>
-              <div class="form-group col-lg-8 col-md-4 col-sm-12"></div>
-              <div
-                class="form-group col-lg-2 col-md-4 col-sm-6"
-                style="padding-right: 4px;"
-              >
-                <button
-                  type="button"
-                  class="btn custom-form-control btn-custom-secondary"
-                  data-dismiss="modal"
-                >
-                  Cancel
-                </button>
-              </div>
-              <div
-                class="form-group col-lg-2 col-md-4 col-sm-6"
-                style="padding-left: 4px;"
-              >
-                <button
-                  type="button"
-                  class="btn custom-form-control btn-custom-primary"
-                >
-                  Save
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- File upload Modal -->
-    <div id="uploaded_files" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4>File Upload</h4>
-            <button type="button" class="close pull-right" data-dismiss="modal">
-              &times;
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="row" style="padding: 16px;">
-              <div
-                class="col-md-12"
-                style="margin-top: -12px; padding-bottom: 8px;"
-              >
-                <button
-                  class="btn btn-custom-secondary"
-                  data-toggle="modal"
-                  data-target="#file_upload_popup"
-                >
-                  <i class="fa fa-plus"></i>
-                </button>
-              </div>
-              <div class="col-md-12">
-                <div class="tableBody">
-                  <div class="table-responsive">
-                    <table
-                      class="table"
-                      id="fileuploadTable"
-                      style="margin-bottom: 0px !important;"
-                    >
-                      <thead>
-                        <tr>
-                          <th>Sr. No.</th>
-                          <th>File Name</th>
-                          <th>Uploaded On</th>
-                          <th>Size</th>
-                          <th>Type</th>
-                          <th>Actions</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>
-                            1
-                          </td>
-                          <td>End Report</td>
-                          <td>Oct 15, 2020</td>
-                          <td>22 MB</td>
-                          <td>PDF</td>
-                          <td>
-                            <i
-                              class="fas fa-pen"
-                              data-toggle="modal"
-                              data-target=".file_upload_edit_popup"
-                            ></i>
-                            <i
-                              class="fas fa-trash"
-                              style="margin-left: 16px;"
-                            ></i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            2
-                          </td>
-                          <td>End Report</td>
-                          <td>Oct 15, 2020</td>
-                          <td>22 MB</td>
-                          <td>PDF</td>
-                          <td>
-                            <i
-                              class="fas fa-pen"
-                              data-toggle="modal"
-                              data-target=".file_upload_edit_popup"
-                            ></i>
-                            <i
-                              class="fas fa-trash"
-                              style="margin-left: 16px;"
-                            ></i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            3
-                          </td>
-                          <td>End Report</td>
-                          <td>Oct 15, 2020</td>
-                          <td>22 MB</td>
-                          <td>PDF</td>
-                          <td>
-                            <i
-                              class="fas fa-pen"
-                              data-toggle="modal"
-                              data-target=".file_upload_edit_popup"
-                            ></i>
-                            <i
-                              class="fas fa-trash"
-                              style="margin-left: 16px;"
-                            ></i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            4
-                          </td>
-                          <td>End Report</td>
-                          <td>Oct 15, 2020</td>
-                          <td>22 MB</td>
-                          <td>PDF</td>
-                          <td>
-                            <i
-                              class="fas fa-pen"
-                              data-toggle="modal"
-                              data-target=".file_upload_edit_popup"
-                            ></i>
-                            <i
-                              class="fas fa-trash"
-                              style="margin-left: 16px;"
-                            ></i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            5
-                          </td>
-                          <td>End Report</td>
-                          <td>Oct 15, 2020</td>
-                          <td>22 MB</td>
-                          <td>PDF</td>
-                          <td>
-                            <i
-                              class="fas fa-pen"
-                              data-toggle="modal"
-                              data-target=".file_upload_edit_popup"
-                            ></i>
-                            <i
-                              class="fas fa-trash"
-                              style="margin-left: 16px;"
-                            ></i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            6
-                          </td>
-                          <td>End Report</td>
-                          <td>Oct 15, 2020</td>
-                          <td>22 MB</td>
-                          <td>PDF</td>
-                          <td>
-                            <i
-                              class="fas fa-pen"
-                              data-toggle="modal"
-                              data-target=".file_upload_edit_popup"
-                            ></i>
-                            <i
-                              class="fas fa-trash"
-                              style="margin-left: 16px;"
-                            ></i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            7
-                          </td>
-                          <td>End Report</td>
-                          <td>Oct 15, 2020</td>
-                          <td>22 MB</td>
-                          <td>PDF</td>
-                          <td>
-                            <i
-                              class="fas fa-pen"
-                              data-toggle="modal"
-                              data-target=".file_upload_edit_popup"
-                            ></i>
-                            <i
-                              class="fas fa-trash"
-                              style="margin-left: 16px;"
-                            ></i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            8
-                          </td>
-                          <td>End Report</td>
-                          <td>Oct 15, 2020</td>
-                          <td>22 MB</td>
-                          <td>PDF</td>
-                          <td>
-                            <i
-                              class="fas fa-pen"
-                              data-toggle="modal"
-                              data-target=".file_upload_edit_popup"
-                            ></i>
-                            <i
-                              class="fas fa-trash"
-                              style="margin-left: 16px;"
-                            ></i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            9
-                          </td>
-                          <td>End Report</td>
-                          <td>Oct 15, 2020</td>
-                          <td>22 MB</td>
-                          <td>PDF</td>
-                          <td>
-                            <i
-                              class="fas fa-pen"
-                              data-toggle="modal"
-                              data-target=".file_upload_edit_popup"
-                            ></i>
-                            <i
-                              class="fas fa-trash"
-                              style="margin-left: 16px;"
-                            ></i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            10
-                          </td>
-                          <td>End Report</td>
-                          <td>Oct 15, 2020</td>
-                          <td>22 MB</td>
-                          <td>PDF</td>
-                          <td>
-                            <i
-                              class="fas fa-pen"
-                              data-toggle="modal"
-                              data-target=".file_upload_edit_popup"
-                            ></i>
-                            <i
-                              class="fas fa-trash"
-                              style="margin-left: 16px;"
-                            ></i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            11
-                          </td>
-                          <td>End Report</td>
-                          <td>Oct 15, 2020</td>
-                          <td>22 MB</td>
-                          <td>PDF</td>
-                          <td>
-                            <i
-                              class="fas fa-pen"
-                              data-toggle="modal"
-                              data-target=".file_upload_edit_popup"
-                            ></i>
-                            <i
-                              class="fas fa-trash"
-                              style="margin-left: 16px;"
-                            ></i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            12
-                          </td>
-                          <td>End Report</td>
-                          <td>Oct 15, 2020</td>
-                          <td>22 MB</td>
-                          <td>PDF</td>
-                          <td>
-                            <i
-                              class="fas fa-pen"
-                              data-toggle="modal"
-                              data-target=".file_upload_edit_popup"
-                            ></i>
-                            <i
-                              class="fas fa-trash"
-                              style="margin-left: 16px;"
-                            ></i>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- File Upload PopUp -->
-    <div
-      class="modal fade"
-      id="file_upload_popup"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="myLargeModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4>File Upload</h4>
-            <button type="button" class="close pull-right" data-dismiss="modal">
-              &times;
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="row">
-              <div class="form-group col-md-10" style="padding-right: 4px;">
-                <input
-                  type="file"
-                  class="modal-custom-input"
-                  style="
-                    height: 38px !important;
-                    padding: 5px !important;
-                    margin-bottom: 8px;
-                  "
-                  accept=".pdf,.ppt,.jpeg,.xlsx,.doc,.docx"
-                />
-                <span>Supported file type (jpeg,pdf,pptx,xlsx,docx)</span>
-              </div>
-              <div class="form-group col-md-2" style="padding-left: 4px;">
-                <button
-                  type="button"
-                  class="btn custom-form-control btn-custom-primary"
-                >
-                  Upload
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Notes Modal -->
-    <div id="notes" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" style="margin-top: 8%;">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4>Notes</h4>
-            <div class="float-right">
-              <button
-                onclick="notes('note_table')"
-                class="form-control rounded-circle"
-                style="margin-top: -4px; border: none;"
-              >
-                <i class="fa fa-plus"></i>
-              </button>
-            </div>
-          </div>
-          <div class="modal-body">
-            <table id="note_table" class="table table-bordered">
-              <thead class="bg-light">
-                <tr>
-                  <th>
-                    Notes
-                  </th>
-                  <th style="width: 50px;">Responsible</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <textarea class="form-control" rows="5"> </textarea>
-                  </td>
-                  <td>
-                    <div class="fullscreen">
-                      <ul
-                        class="list-unstyled order-list"
-                        data-toggle="modal"
-                        data-target="#user_edit_popup"
-                        style="cursor: pointer;"
-                      >
-                        <li class="avatar avatar-sm">
-                          <img
-                            class="rounded-circle"
-                            src="../../assets/images/user/user7.jpg"
-                            alt="user"
-                          />
-                        </li>
-                        <li class="avatar avatar-sm">
-                          <img
-                            class="rounded-circle"
-                            src="../../assets/images/user/user8.jpg"
-                            alt="user"
-                          />
-                        </li>
-                        <div class="image-upload">
-                          <label for="file-input">
-                            <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
-                              <a
-                                href="#"
-                                class="favgs"
-                                data-toggle="modal"
-                                data-target="#addpeople"
-                              >
-                                <span _ngcontent-hhc-c5="" class="badge"
-                                  >+</span
-                                >
-                              </a>
-                            </li>
-                          </label>
-                        </div>
-                      </ul>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <textarea class="form-control" rows="5"> </textarea>
-                  </td>
-                  <td>
-                    <div class="fullscreen">
-                      <ul
-                        class="list-unstyled order-list"
-                        data-toggle="modal"
-                        data-target="#user_edit_popup"
-                        style="cursor: pointer;"
-                      >
-                        <li class="avatar avatar-sm">
-                          <img
-                            class="rounded-circle"
-                            src="../../assets/images/user/user7.jpg"
-                            alt="user"
-                          />
-                        </li>
-                        <li class="avatar avatar-sm">
-                          <img
-                            class="rounded-circle"
-                            src="../../assets/images/user/user8.jpg"
-                            alt="user"
-                          />
-                        </li>
-                        <div class="image-upload">
-                          <label for="file-input">
-                            <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
-                              <a
-                                href="#"
-                                class="favgs"
-                                data-toggle="modal"
-                                data-target="#addpeople"
-                              >
-                                <span _ngcontent-hhc-c5="" class="badge"
-                                  >+</span
-                                >
-                              </a>
-                            </li>
-                          </label>
-                        </div>
-                      </ul>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-            <div class="row">
-              <div class="form-group col-md-12">
-                <hr />
-              </div>
-              <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
-              <div
-                class="form-group col-lg-2 col-md-3 col-sm-6"
-                style="padding-right: 4px;"
-              >
-                <button
-                  type="button"
-                  class="btn custom-form-control btn-custom-secondary"
-                  data-dismiss="modal"
-                >
-                  Cancel
-                </button>
-              </div>
-              <div
-                class="form-group col-lg-2 col-md-3 col-sm-6"
-                style="padding-left: 4px;"
-              >
-                <button
-                  type="button"
-                  class="btn custom-form-control btn-custom-primary"
-                >
-                  Save
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Action Modal -->
-    <div id="action" class="modal fade" role="dialog">
-      <div
-        class="modal-dialog modal-lg"
-        style="margin-top: 6%; max-width: 60% !important;"
-      >
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4>Actions</h4>
-            <div class="float-right">
-              <button
-                onclick="action('action_table')"
-                class="form-control rounded-circle"
-                style="margin-top: -4px; border: none;"
-              >
-                <i class="fa fa-plus"></i>
-              </button>
-            </div>
-          </div>
-          <div class="modal-body">
-            <table id="action_table" class="table table-bordered">
-              <thead class="bg-light">
-                <tr>
-                  <th>Actions</th>
-                  <th style="width: 150px;">By Date</th>
-                  <th style="width: 50px;">Responsible</th>
-                  <th style="width: 50px;">Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <textarea class="form-control" cols="5" rows="5">
-                    </textarea>
-                  </td>
-                  <td>
-                    <div class="row">
-                      <div class="form-group col-md-12">
-                        <i class="far fa-calendar input-calender-icon1"></i>
-                        <input
-                          type="text"
-                          class="modal-custom-input date_pickers_single"
-                          style="
-                            height: 34px !important;
-                            width: 90% !important;
-                          "
-                          data-language="en"
-                          name="kpi_start_end_date"
-                          id="kpi_start_end_date"
-                        />
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="fullscreen">
-                      <ul
-                        class="list-unstyled order-list"
-                        data-toggle="modal"
-                        data-target="#user_edit_popup"
-                        style="cursor: pointer;"
-                      >
-                        <li class="avatar avatar-sm">
-                          <img
-                            class="rounded-circle"
-                            src="../../assets/images/user/user7.jpg"
-                            alt="user"
-                          />
-                        </li>
-
-                        <div class="image-upload">
-                          <label for="file-input">
-                            <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
-                              <a
-                                href="#"
-                                class="favgs"
-                                data-toggle="modal"
-                                data-target="#addpeople"
-                              >
-                                <span _ngcontent-hhc-c5="" class="badge"
-                                  >+</span
-                                >
-                              </a>
-                            </li>
-                          </label>
-                        </div>
-                      </ul>
-                    </div>
-                  </td>
-                  <td>
-                    <input type="checkbox" />
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <textarea class="form-control" cols="5" rows="5">
-                    </textarea>
-                  </td>
-                  <td>
-                    <div class="row">
-                      <div class="form-group col-md-12">
-                        <i class="far fa-calendar input-calender-icon1"></i>
-                        <input
-                          type="text"
-                          class="modal-custom-input date_pickers_single"
-                          style="
-                            height: 34px !important;
-                            width: 90% !important;
-                          "
-                          data-language="en"
-                          name="kpi_start_end_date"
-                          id="kpi_start_end_date"
-                        />
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="fullscreen">
-                      <ul
-                        class="list-unstyled order-list"
-                        data-toggle="modal"
-                        data-target="#user_edit_popup"
-                        style="cursor: pointer;"
-                      >
-                        <li class="avatar avatar-sm">
-                          <img
-                            class="rounded-circle"
-                            src="../../assets/images/user/user7.jpg"
-                            alt="user"
-                          />
-                        </li>
-
-                        <div class="image-upload">
-                          <label for="file-input">
-                            <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
-                              <a
-                                href="#"
-                                class="favgs"
-                                data-toggle="modal"
-                                data-target="#addpeople"
-                              >
-                                <span _ngcontent-hhc-c5="" class="badge"
-                                  >+</span
-                                >
-                              </a>
-                            </li>
-                          </label>
-                        </div>
-                      </ul>
-                    </div>
-                  </td>
-                  <td><input type="checkbox" /></td>
-                </tr>
-              </tbody>
-            </table>
-
-            <div class="row">
-              <div class="form-group col-md-12">
-                <hr />
-              </div>
-              <div class="form-group col-lg-8 col-md-6 col-sm-12"></div>
-              <div
-                class="form-group col-lg-2 col-md-3 col-sm-6"
-                style="padding-right: 4px;"
-              >
-                <button
-                  type="button"
-                  class="btn custom-form-control btn-custom-secondary"
-                  data-dismiss="modal"
-                >
-                  Cancel
-                </button>
-              </div>
-              <div
-                class="form-group col-lg-2 col-md-3 col-sm-6"
-                style="padding-left: 4px;"
-              >
-                <button
-                  type="button"
-                  class="btn custom-form-control btn-custom-primary"
-                >
-                  Save
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!--#Start User Edit Popup -->
     <div
@@ -1682,275 +616,471 @@
             class="page-title"
             style="font-weight: 600; text-transform: uppercase;"
           >
-            OVERVIEW - STRATEGY FORMULATION
+            Strategy Formulation
           </h5>
         </div>
       </div>
       <!-- End Page Header -->
 
-      <!-- Page Body -->
       <div class="container-fluid">
-        <!-- COl -->
         <div class="row">
-          <div class="col-md-12" style="padding-top: 12px;">
-            <button
-              class="btn btn-custom-secondary"
-              onclick="addBtn('#content');"
-              style="margin-right: 2px;"
-            >
-              <i class="fas fa-plus"></i>
-            </button>
-            <div
-              id="custom-tab"
-              class="btn-group custom-tab-control"
-              role="group"
-              aria-label="Custom Tab"
-            >
-              <button
-                type="button"
-                class="btn btn-custom-secondary active"
-                data-value="StrategyFormulation"
-              >
-                Strategy Formulation
-              </button>
-              <button
-                type="button"
-                class="btn btn-custom-secondary"
-                data-value="Finance"
-              >
-                Finance
-              </button>
-              <button
-                type="button"
-                class="btn btn-custom-secondary"
-                data-value="Business"
-              >
-                Business
-              </button>
-            </div>
-          </div>
-
-          <script>
-            function addBtn(link) {
-              // hide other tabs
-              // $("#custom-tab button").removeClass("active");
-
-              // add new tab and related content
-              $("#custom-tab").append(
-                `<button
-                  type="button"
-                  class="btn btn-custom-secondary"
-                  data-value="NewTab"
-                >
-                  New Tab
-                </button>`
-              );
-            }
-          </script>
-        </div>
-        <div class="row customTabContent StrategyFormulation">
-          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div class="card cardBox">
+          <div class="col-12 strategy-formula">
+            <div class="card" style="padding: 16px;">
               <div class="row">
-                <div
-                  class="col-12"
-                  data-toggle="modal"
-                  data-target="#create_meeting"
-                  style="
-                    text-align: center;
-                    color: #c3c3c3;
-                    padding: 78px 0;
-                    cursor: pointer;
-                  "
-                >
-                  <span>
-                    <i
-                      style="font-size: 24px; padding-bottom: 8px;"
-                      class="fas fa-plus"
-                    ></i>
-                  </span>
-                  <h5>Create New</h5>
+                <div class="col-12">
+                  <!-- <div class="heading">
+                    <p>Failure to meet compliance obligations</p>
+                  </div>
+                  <hr /> -->
+                  <div class="header-content">
+                    <ul>
+                      <li>
+                        <strong>Start Date</strong>
+                        <p>12/02/2020</p>
+                      </li>
+                      <li>
+                        <strong>End Date</strong>
+                        <p>20/09/2020</p>
+                      </li>
+                      <li>
+                        <strong>Plan Type</strong>
+                        <p>Long Term</p>
+                      </li>
+                      <li>
+                        <strong>Formulation Team</strong>
+                        <span>
+                          <ul class="list-unstyled order-list">
+                            <li class="avatar avatar-sm">
+                              <img
+                                class="rounded-circle"
+                                src="../../assets/images/user/user7.jpg"
+                                alt="user"
+                              />
+                            </li>
+                            <li class="avatar avatar-sm">
+                              <img
+                                class="rounded-circle"
+                                src="../../assets/images/user/user8.jpg"
+                                alt="user"
+                              />
+                            </li>
+                            <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                              <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                            </li>
+                          </ul>
+                        </span>
+                      </li>
+                      <li>
+                        <strong>Approved By</strong>
+                        <span>
+                          <ul class="list-unstyled order-list">
+                            <li class="avatar avatar-sm">
+                              <img
+                                class="rounded-circle"
+                                src="../../assets/images/user/user7.jpg"
+                                alt="user"
+                              />
+                            </li>
+                          </ul>
+                        </span>
+                      </li>
+                      <li>
+                        <strong>Approved Date</strong>
+                        <p>15/02/2020</p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div class="card cardBox">
-              <div class="row">
-                <div class="col-12">
-                  <span class="card-icons pull-right">
-                    <i
-                      class="fas fa-pen"
-                      data-toggle="modal"
-                      data-target="#edit_meeting"
-                    ></i>
-                    <i class="fas fa-trash"></i>
-                  </span>
-                </div>
-                <div class="col-12">
-                  <h4 class="page-card-title">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </h4>
-
-                  <p class="meeting-time">
+          <div class="col-12 sidebar-perspective" id="perspective_view">
+            <div class="row">
+              <div class="col-12" style="padding-bottom: 8px;">
+                <div class="perspective-heading">
+                  <h5>
+                    Perspectives View
                     <span
-                      ><i class="far fa-calendar-alt"></i> 13 Mar, 2020 - 25
-                      Nov, 2020
-                    </span>
-                  </p>
-
-                  <p class="meeting-location">
-                    <span><strong>Plan Type:</strong> Long Term </span> <br />
-                    <span><strong>Approved Date:</strong> 12 Mar, 2020 </span>
-                  </p>
-                </div>
-                <div class="col-6">
-                  <h6>Formulation Team</h6>
-                  <div class="d-flex flex-column">
-                    <ul
-                      class="list-unstyled order-list d-flex"
-                      data-toggle="modal"
-                      data-target="#user_edit_popup"
-                      style="cursor: pointer;"
+                      class="pull-right"
+                      onclick="closePerspective()"
+                      style="font-size: 15px; cursor: pointer;"
                     >
-                      <li class="avatar avatar-sm">
-                        <img
-                          class="rounded-circle sub_init_img"
-                          src="../../assets/images/user/user9.jpg"
-                          alt="user"
-                          width="50"
-                        />
-                      </li>
-                      <li class="avatar avatar-sm">
-                        <img
-                          class="rounded-circle sub_init_img"
-                          src="../../assets/images/user/user9.jpg"
-                          alt="user"
-                          width="50"
-                        />
-                      </li>
-                      <li class="avatar avatar-sm">
-                        <img
-                          class="rounded-circle sub_init_img"
-                          src="../../assets/images/user/user9.jpg"
-                          alt="user"
-                          width="50"
-                        />
-                      </li>
-
-                      <li class="avatar avatar-sm">
-                        <span _ngcontent-hhc-c5="" class="badge">+5</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-6" style="padding-bottom: 16px;">
-                  <h6>Approved By</h6>
-                  <div class="d-flex flex-column">
-                    <ul class="list-unstyled order-list d-flex">
-                      <li class="avatar avatar-sm">
-                        <img
-                          class="rounded-circle sub_init_img"
-                          src="../../assets/images/user/user9.jpg"
-                          alt="user"
-                          width="55"
-                        />
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row customTabContent Finance" style="display: none;">
-          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div class="card cardBox">
-              <div class="row">
-                <div
-                  class="col-12"
-                  data-toggle="modal"
-                  data-target="#create_meeting"
-                  style="
-                    text-align: center;
-                    color: #c3c3c3;
-                    padding: 78px 0;
-                    cursor: pointer;
-                  "
-                >
-                  <span>
-                    <i
-                      style="font-size: 24px; padding-bottom: 8px;"
-                      class="fas fa-plus"
-                    ></i>
-                  </span>
-                  <h5>Create New</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div class="card cardBox">
-              <div class="row">
-                <div class="col-12">
-                  <span class="card-icons pull-right">
-                    <i
-                      class="fas fa-pen"
-                      data-toggle="modal"
-                      data-target="#edit_meeting"
-                    ></i>
-                    <i class="fas fa-trash"></i>
-                  </span>
-                </div>
-                <div class="col-12">
-                  <h4 class="page-card-title">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </h4>
-
-                  <p class="meeting-time">
-                    <span
-                      ><i class="far fa-calendar-alt"></i> 13 Mar, 2020 - 25
-                      Nov, 2020
+                      &times;
                     </span>
-                  </p>
-
-                  <p class="meeting-location">
-                    <span><strong>Plan Type:</strong> Long Term </span> <br />
-                    <span><strong>Approved Date:</strong> 12 Mar, 2020 </span>
-                  </p>
+                  </h5>
                 </div>
-                <div class="col-6">
+                <hr />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Name</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input
+                  type="text"
+                  class="form-control browser-default"
+                  value="Internal Process & Systems"
+                  disabled
+                />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Start / End Date</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers datepicker-here"
+                  data-range="true"
+                  data-multiple-dates-separator=" - "
+                  data-language="en"
+                  disabled
+                  value="29/07/2020 - 31/07/2020"
+                  id="air-date-sub-init"
+                />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Owner</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <div class="owner" style="padding-right: 12px;">
+                  <ul class="list-unstyled order-list">
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Weight</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input
+                  type="text"
+                  class="form-control browser-default"
+                  value="123"
+                  disabled
+                />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Sub Weight</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input
+                  type="text"
+                  class="form-control browser-default"
+                  value="456"
+                  disabled
+                />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Status</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <select
+                  id="inputState"
+                  class="form-control browser-default"
+                  disabled
+                >
+                  <option>Choose</option>
+                  <option value="manual">Manual</option>
+                  <option value="weighted">Weighted</option>
+                  <option value="first">First</option>
+                  <option value="second">Second</option>
+                  <option value="third">Third</option>
+                  <option value="fourth">Fourth</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 perspective-div">
+            <div class="card" style="padding: 16px;">
+              <div class="row">
+                <div class="col-12">
+                  <div class="perspective-heading">
+                    <h5>
+                      Perspectives
+                      <span class="pull-right">
+                        <i class="fa fa-plus"></i>
+                      </span>
+                    </h5>
+                  </div>
+                  <hr />
+                </div>
+                <div class="col-12" style="height: 522px;">
+                  <div class="d-flex flex-column" id="perspective_sidebar">
+                    <div
+                      onclick="openPerspective()"
+                      class="d-flex flex-column sub_initiative_sidebar_details side_border_persp"
+                    >
+                      <div class="d-flex flex-row p-b-5">
+                        <div class="d-flex flex-column profile_content">
+                          <span>Internal Process & Systems</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="d-flex flex-column sub_initiative_sidebar_details side_border_persp"
+                    >
+                      <div class="d-flex flex-row p-b-5">
+                        <div class="d-flex flex-column profile_content">
+                          <span>PERSPECTIVE - 2</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="d-flex flex-column sub_initiative_sidebar_details side_border_persp"
+                    >
+                      <div class="d-flex flex-row p-b-5">
+                        <div class="d-flex flex-column profile_content">
+                          <span>PERSPECTIVE - 3</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="d-flex flex-column sub_initiative_sidebar_details side_border_persp"
+                    >
+                      <div class="d-flex flex-row p-b-5">
+                        <div class="d-flex flex-column profile_content">
+                          <span>PERSPECTIVE - 4</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="d-flex flex-column sub_initiative_sidebar_details side_border_persp"
+                    >
+                      <div class="d-flex flex-row p-b-5">
+                        <div class="d-flex flex-column profile_content">
+                          <span>PERSPECTIVE - 5</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="d-flex flex-column sub_initiative_sidebar_details side_border_persp"
+                    >
+                      <div class="d-flex flex-row p-b-5">
+                        <div class="d-flex flex-column profile_content">
+                          <span>PERSPECTIVE - 6</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-9 obj-kpi">
+            <div class="card" style="padding: 16px; height: 600px;">
+              <div class="row" style="margin-bottom: 16px !important;">
+                <div class="col-md-12">
                   <button
-                    value="KPI"
-                    style="margin-top: 8px;"
-                    onclick="return false;"
-                    class="dropdown-toggle js-right-sidebar initative_save_btn"
-                    data-close="true"
+                    class="btn btn-custom-secondary"
+                    onclick="addBtn('#content');"
+                    style="margin-right: 2px;"
                   >
-                    KPI's
+                    <i class="fas fa-plus"></i>
+                  </button>
+                  <div
+                    id="custom-tab"
+                    class="btn-group custom-tab-control"
+                    role="group"
+                    aria-label="Custom Tab"
+                  >
+                    <button
+                      type="button"
+                      class="btn btn-custom-secondary active"
+                      data-value="OBJECTIVES"
+                    >
+                      OBJECTIVES
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-custom-secondary"
+                      data-value="KPI"
+                    >
+                      KPI’s
+                    </button>
+                  </div>
+                </div>
+
+                <script>
+                  function addBtn(link) {
+                    $("#custom-tab").append(
+                      `<button
+                      type="button"
+                      class="btn btn-custom-secondary"
+                      data-value="NewTab"
+                    >
+                      New Tab
+                    </button>`
+                    );
+                  }
+                </script>
+              </div>
+              <div class="row search-section">
+                <div class="col-9">
+                  <input type="text" class="search" />
+                  <i class="fas fa-search"></i>
+                </div>
+                <div class="col-3" style="margin-left: -12px;">
+                  <button
+                    type="button"
+                    class="btn custom-form-control btn-custom-primary"
+                    style="height: 35px;"
+                  >
+                    Add Objective
                   </button>
                 </div>
-                <div class="col-6" style="padding-bottom: 16px;">
-                  <h6>Owner</h6>
-                  <div class="d-flex flex-column">
-                    <ul class="list-unstyled order-list d-flex">
-                      <li class="avatar avatar-sm">
-                        <img
-                          class="rounded-circle sub_init_img"
-                          src="../../assets/images/user/user9.jpg"
-                          alt="user"
-                          width="55"
-                        />
-                      </li>
-                    </ul>
+              </div>
+              <div class="row obj-content customTabContent OBJECTIVES">
+                <div
+                  class="col-12"
+                  style="padding-left: 32px; padding-right: 40px;"
+                >
+                  <div class="card">
+                    <div class="row">
+                      <div class="col-10">
+                        <div class="name pull-left">
+                          <span
+                            >Record zero fire incidents attributable to Alpha
+                            Mead across all locations in 2020</span
+                          >
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="period pull-right">
+                          <span>Quarter</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="row"
+                      style="
+                        padding-top: 12px;
+                        margin-bottom: -10px !important;
+                      "
+                    >
+                      <div class="col-9">
+                        <div class="target pull-left">
+                          <span> <strong>Target: </strong>70.45% </span>
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div
+                          class="owner pull-right"
+                          style="padding-right: 12px;"
+                        >
+                          <ul class="list-unstyled order-list">
+                            <li class="avatar avatar-sm">
+                              <img
+                                class="rounded-circle"
+                                src="../../assets/images/user/user7.jpg"
+                                alt="user"
+                              />
+                            </li>
+                            <li class="avatar avatar-sm">
+                              <img
+                                class="rounded-circle"
+                                src="../../assets/images/user/user8.jpg"
+                                alt="user"
+                              />
+                            </li>
+                            <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                              <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="row obj-content customTabContent KPI"
+                style="display: none;"
+              >
+                <div
+                  class="col-12"
+                  style="padding-left: 32px; padding-right: 40px;"
+                >
+                  <div class="card">
+                    <div class="row">
+                      <div class="col-10">
+                        <div class="name pull-left">
+                          <span
+                            >Record one fire incidents attributable to Alpha
+                            Mead across all locations in 2022</span
+                          >
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="period pull-right">
+                          <span>Quarter</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="row"
+                      style="
+                        padding-top: 12px;
+                        margin-bottom: -10px !important;
+                      "
+                    >
+                      <div class="col-9">
+                        <div class="target pull-left">
+                          <span> <strong>Target: </strong>70.45% </span>
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div
+                          class="owner pull-right"
+                          style="padding-right: 12px;"
+                        >
+                          <ul class="list-unstyled order-list">
+                            <li class="avatar avatar-sm">
+                              <img
+                                class="rounded-circle"
+                                src="../../assets/images/user/user7.jpg"
+                                alt="user"
+                              />
+                            </li>
+                            <li class="avatar avatar-sm">
+                              <img
+                                class="rounded-circle"
+                                src="../../assets/images/user/user8.jpg"
+                                alt="user"
+                              />
+                            </li>
+                            <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                              <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="row customTabContent Business" style="display: none;"></div>
       </div>
     </section>
 
@@ -1958,9 +1088,6 @@
     <script src="../../assets/js/app.min.js"></script>
     <!-- Custom Js -->
     <script src="../../assets/js/admin.js"></script>
-    <script src="../../assets/js/bundles/amcharts4/core.js"></script>
-    <script src="../../assets/js/bundles/amcharts4/charts.js"></script>
-    <script src="../../assets/js/bundles/amcharts4/animated.js"></script>
     <!-- Knob Js -->
     <script src="../../assets/js/paging.js"></script>
     <script src="../../assets/jquery-ui.min.js"></script>
@@ -1987,6 +1114,14 @@
       $(document).ready(function () {
         $("#fileuploadTable").paging({ limit: 5 });
       });
+
+      function openPerspective() {
+        document.getElementById("perspective_view").style.display = "block";
+      }
+
+      function closePerspective() {
+        document.getElementById("perspective_view").style.display = "none";
+      }
 
       $(".daterangepicker-field").daterangepicker({
         forceUpdate: true,
@@ -2027,113 +1162,6 @@
           }
         );
       });
-
-      $(document).ready(function () {
-        $("#multiSelect1, #multiSelect2, #multiSelect3").formSelect();
-        $("select.select_all")
-          .siblings("ul")
-          .prepend("<li id=sm_select_all><span>Select All</span></li>");
-        $("li#sm_select_all").on("click", function () {
-          var jq_elem = $(this),
-            jq_elem_span = jq_elem.find("span"),
-            select_all = jq_elem_span.text() == "Select All",
-            set_text = select_all ? "Select None" : "Select All";
-          jq_elem_span.text(set_text);
-          jq_elem
-            .siblings("li")
-            .filter(function () {
-              return $(this).find("input").prop("checked") != select_all;
-            })
-            .click();
-        });
-      });
-
-      function notes(tableID) {
-        var table = document.getElementById(tableID);
-
-        var rowCount = table.rows.length;
-        var row = table.insertRow(rowCount);
-
-        var cell1 = row.insertCell(0);
-        cell1.innerHTML =
-          '<textarea class="form-control" cols="5" rows="5" > </textarea>';
-
-        var cell2 = row.insertCell(1);
-        cell2.innerHTML =
-          '<div class="fullscreen"> <ul class="list-unstyled order-list" data-toggle="modal" data-target="#user_edit_popup" style="cursor: pointer;"> <li class="avatar avatar-sm"> <img class="rounded-circle" src="../../assets/images/user/user7.jpg" alt="user"> </li><li class="avatar avatar-sm"> <img class="rounded-circle" src="../../assets/images/user/user8.jpg" alt="user"> </li><div class="image-upload"> <label for="file-input"> <li _ngcontent-hhc-c5="" class="avatar avatar-sm" > <a href="#" class="favgs" data-toggle="modal" data-target="#addpeople" > <span _ngcontent-hhc-c5="" class="badge" >+<span id="count"> </span></span ></a> </li></label> </div></ul> </div>';
-      }
-
-      function notes_del(tableID) {
-        try {
-          var table = document.getElementById(tableID);
-          var rowCount = table.rows.length;
-
-          for (var i = 0; i < rowCount; i++) {
-            var row = table.rows[i];
-            var chkbox = row.cells[0].childNodes[0];
-            if (null != chkbox && true == chkbox.checked) {
-              table.deleteRow(i);
-              rowCount--;
-              i--;
-            }
-          }
-        } catch (e) {
-          alert(e);
-        }
-      }
-
-      function action(tableID) {
-        var table = document.getElementById(tableID);
-
-        var rowCount = table.rows.length;
-        var row = table.insertRow(rowCount);
-
-        var cell1 = row.insertCell(0);
-        var factor = rowCount;
-        cell1.innerHTML =
-          '<textarea class="form-control" cols="5" rows="5" > </textarea>';
-
-        var cell2 = row.insertCell(1);
-        cell2.innerHTML = `<div class="row">
-            <div class="form-group col-md-12">
-              <i class="far fa-calendar input-calender-icon1"></i>
-              <input
-                type="text"
-                class="modal-custom-input date_pickers_single"
-                style="height: 34px !important; width: 90% !important"
-                data-language="en"
-                name="kpi_start_end_date"
-                id="kpi_start_end_date"
-              />
-            </div>
-          </div>`;
-
-        var cell3 = row.insertCell(2);
-        cell3.innerHTML =
-          '<div class="fullscreen"> <ul class="list-unstyled order-list" data-toggle="modal" data-target="#user_edit_popup" style="cursor: pointer;"> <li class="avatar avatar-sm"> <img class="rounded-circle" src="../../assets/images/user/user7.jpg" alt="user"/> </li><div class="image-upload"> <label for="file-input"> <li _ngcontent-hhc-c5="" class="avatar avatar-sm"> <a href="#" class="favgs" data-toggle="modal" data-target="#addpeople" > <span _ngcontent-hhc-c5="" class="badge" >+</span > </a> </li></label> </div></ul> </div>';
-
-        var cell4 = row.insertCell(3);
-        cell4.innerHTML = '<input type="checkbox"  >';
-      }
-
-      function action_del(tableID) {
-        try {
-          var table = document.getElementById(tableID);
-          var rowCount = table.rows.length;
-
-          for (var i = 0; i < rowCount; i++) {
-            var row = table.rows[i];
-            var chkbox = row.cells[0].childNodes[0];
-            if (null != chkbox && true == chkbox.checked) {
-              table.deleteRow(i);
-              rowCount--;
-              i--;
-            }
-          }
-        } catch (e) {
-          alert(e);
-        }
-      }
     </script>
   </body></a
 >
