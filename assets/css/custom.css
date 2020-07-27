@@ -1,3 +1,19 @@
+/* width */
+::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1 !important;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(161, 161, 161) !important;
+  border-radius: 20px !important;
+}
+
 .colfp {
   background: #1e252d;
   color: #fff;
@@ -1115,6 +1131,10 @@ label {
   background-color: #ededee;
 }
 
+.strategy-formula {
+  margin-bottom: -20px;
+}
+
 .strategy-formula .heading p {
   font-size: 14px;
   font-weight: 600;
@@ -1131,8 +1151,9 @@ label {
 
 .strategy-formula .card {
   box-sizing: border-box;
-  box-shadow: 3px 6px 8px rgba(132, 132, 132, 0.12);
-  border-radius: 6px !important;
+  border: 2px solid #1e252d;
+  /* box-shadow: 3px 6px 8px rgba(132, 132, 132, 0.12); */
+  border-radius: 2px !important;
 }
 
 .perspective-div .card,
@@ -1230,6 +1251,7 @@ label {
   box-shadow: 3px 6px 8px rgba(132, 132, 132, 0.12);
   border-radius: 8px !important;
   padding: 12px;
+  cursor: pointer;
 }
 
 .obj-content div .card .name span {
@@ -1251,8 +1273,8 @@ label {
   margin-top: 8px;
 }
 
-.sidebar-perspective {
-  height: 522px;
+.sidebar-strategy {
+  height: 510px;
   padding: 16px 20px;
   width: 500px;
   position: fixed;

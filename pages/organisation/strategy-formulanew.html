@@ -625,19 +625,22 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-12 strategy-formula">
-            <div class="card" style="padding: 16px;">
+            <div class="card" style="padding: 8px 16px;">
               <div class="row">
                 <div class="col-12">
                   <div class="heading">
-                    <p>
+                    <p style="margin-bottom: -4px;">
                       Failure to meet compliance obligations
-                      <span class="pull-right">
+                      <span class="pull-right" onclick="openStrategy()">
                         <i class="fas fa-pencil-alt border-box"></i
                       ></span>
                     </p>
                   </div>
                   <hr />
-                  <div class="header-content">
+                  <div
+                    class="header-content"
+                    style="margin-top: -4px; margin-bottom: -20px;"
+                  >
                     <ul>
                       <li>
                         <strong>Start Date</strong>
@@ -699,12 +702,125 @@
               </div>
             </div>
           </div>
-          <div class="col-12 sidebar-perspective" id="perspective_view">
+          <div class="col-12 sidebar-strategy" id="strategy_edit">
             <div class="row">
               <div class="col-12" style="padding-bottom: 8px;">
                 <div class="perspective-heading">
                   <h5>
-                    Perspectives View
+                    Strategy Edit
+                    <span
+                      class="pull-right"
+                      onclick="closeStrategy()"
+                      style="font-size: 15px; cursor: pointer;"
+                    >
+                      &times;
+                    </span>
+                  </h5>
+                </div>
+                <hr />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Name</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input type="text" class="form-control browser-default" />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Start / End Date</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers datepicker-here"
+                  data-range="true"
+                  data-multiple-dates-separator=" - "
+                  data-language="en"
+                  id="air-date-sub-init"
+                />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Plan Type</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default"
+                >
+                  <option>Choose</option>
+                  <option value="Long Term">Long Term</option>
+                  <option value="Medium Term">Medium Term</option>
+                  <option value="Small Term">Small Term</option>
+                </select>
+              </div>
+
+              <div class="col-6 view-spacing">
+                <label for="Name">Formulation Team</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <div class="owner" style="padding-right: 12px;">
+                  <ul class="list-unstyled order-list">
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Approved By</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <div class="owner" style="padding-right: 12px;">
+                  <ul class="list-unstyled order-list">
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Approved Date</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers_single"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                />
+              </div>
+              <div class="col-12 view-spacing">
+                <button class="initative_save_btn pull-right" value="Save">
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 sidebar-strategy" id="perspective_view">
+            <div class="row">
+              <div class="col-12" style="padding-bottom: 8px;">
+                <div class="perspective-heading">
+                  <h5>
+                    Perspective View
                     <span
                       class="pull-right"
                       onclick="closePerspective()"
@@ -712,7 +828,11 @@
                     >
                       &times;
                     </span>
-                    <span class="pull-right" style="margin-right: 12px;">
+                    <span
+                      class="pull-right"
+                      id="edit_perspective"
+                      style="margin-right: 12px;"
+                    >
                       <i class="fas fa-pencil-alt border-box"></i
                     ></span>
                   </h5>
@@ -725,9 +845,9 @@
               <div class="col-6 view-spacing">
                 <input
                   type="text"
-                  class="form-control browser-default"
+                  class="form-control browser-default persp_name"
                   value="Internal Process & Systems"
-                  disabled
+                  disabled="true"
                 />
               </div>
               <div class="col-6 view-spacing">
@@ -736,11 +856,11 @@
               <div class="col-6 view-spacing">
                 <input
                   type="text"
-                  class="form-control browser-default date_pickers datepicker-here"
+                  class="form-control persp_date browser-default date_pickers datepicker-here"
                   data-range="true"
                   data-multiple-dates-separator=" - "
                   data-language="en"
-                  disabled
+                  disabled="true"
                   value="29/07/2020 - 31/07/2020"
                   id="air-date-sub-init"
                 />
@@ -777,9 +897,9 @@
               <div class="col-6 view-spacing">
                 <input
                   type="text"
-                  class="form-control browser-default"
+                  class="form-control browser-default persp_weight"
                   value="123"
-                  disabled
+                  disabled="true"
                 />
               </div>
               <div class="col-6 view-spacing">
@@ -788,9 +908,9 @@
               <div class="col-6 view-spacing">
                 <input
                   type="text"
-                  class="form-control browser-default"
+                  class="form-control browser-default persp_subweight"
                   value="456"
-                  disabled
+                  disabled="true"
                 />
               </div>
               <div class="col-6 view-spacing">
@@ -800,8 +920,8 @@
                 <select
                   id="inputState"
                   style="padding-left: 6px !important;"
-                  class="form-control browser-default"
-                  disabled
+                  class="form-control browser-default persp_status"
+                  disabled="true"
                 >
                   <option>Choose</option>
                   <option value="manual">Manual</option>
@@ -812,6 +932,453 @@
                   <option value="fourth">Fourth</option>
                 </select>
               </div>
+              <div class="col-12 view-spacing">
+                <button
+                  style="display: none;"
+                  class="initative_save_btn pull-right"
+                  value="Save"
+                  id="save_perspective"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 sidebar-strategy" id="objective_view">
+            <div class="row">
+              <div class="col-12" style="padding-bottom: 8px;">
+                <div class="perspective-heading">
+                  <h5>
+                    Objective View
+                    <span
+                      class="pull-right"
+                      onclick="closeObjective()"
+                      style="font-size: 15px; cursor: pointer;"
+                    >
+                      &times;
+                    </span>
+                    <span
+                      class="pull-right"
+                      id="edit_objective"
+                      style="margin-right: 12px;"
+                    >
+                      <i class="fas fa-pencil-alt border-box"></i
+                    ></span>
+                  </h5>
+                </div>
+                <hr />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Name</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input
+                  type="text"
+                  class="form-control browser-default obj_name"
+                  value="Internal Process & Systems"
+                  disabled="true"
+                />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Start / End Date</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input
+                  type="text"
+                  class="form-control obj_date browser-default date_pickers datepicker-here"
+                  data-range="true"
+                  data-multiple-dates-separator=" - "
+                  data-language="en"
+                  disabled="true"
+                  value="29/07/2020 - 31/07/2020"
+                  id="air-date-sub-init"
+                />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Owner</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <div class="owner" style="padding-right: 12px;">
+                  <ul class="list-unstyled order-list">
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Weight</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input
+                  type="text"
+                  class="form-control browser-default obj_weight"
+                  value="123"
+                  disabled="true"
+                />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Sub Weight</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input
+                  type="text"
+                  class="form-control browser-default obj_subweight"
+                  value="456"
+                  disabled="true"
+                />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Status</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default obj_status"
+                  disabled="true"
+                >
+                  <option>Choose</option>
+                  <option value="manual">Manual</option>
+                  <option value="weighted">Weighted</option>
+                  <option value="first">First</option>
+                  <option value="second">Second</option>
+                  <option value="third">Third</option>
+                  <option value="fourth">Fourth</option>
+                </select>
+              </div>
+              <div class="col-12 view-spacing">
+                <button
+                  style="display: none;"
+                  class="initative_save_btn pull-right"
+                  value="Save"
+                  id="save_objective"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 sidebar-strategy" id="perspective_add">
+            <div class="row">
+              <div class="col-12" style="padding-bottom: 8px;">
+                <div class="perspective-heading">
+                  <h5>
+                    Perspectives Add
+                    <span
+                      class="pull-right"
+                      onclick="closePerspectiveAdd()"
+                      style="font-size: 15px; cursor: pointer;"
+                    >
+                      &times;
+                    </span>
+                  </h5>
+                </div>
+                <hr />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Name</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input type="text" class="form-control browser-default" />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Start / End Date</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers datepicker-here"
+                  data-range="true"
+                  data-multiple-dates-separator=" - "
+                  data-language="en"
+                  id="air-date-sub-init"
+                />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Owner</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <div class="owner" style="padding-right: 12px;">
+                  <ul class="list-unstyled order-list">
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Weight</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input type="text" class="form-control browser-default" />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Sub Weight</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input type="text" class="form-control browser-default" />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Status</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default"
+                >
+                  <option>Choose</option>
+                  <option value="manual">Manual</option>
+                  <option value="weighted">Weighted</option>
+                  <option value="first">First</option>
+                  <option value="second">Second</option>
+                  <option value="third">Third</option>
+                  <option value="fourth">Fourth</option>
+                </select>
+              </div>
+              <div class="col-12 view-spacing">
+                <button
+                  style="display: none;"
+                  class="initative_save_btn pull-right"
+                  value="Save"
+                  id="save_perspective"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 sidebar-strategy" id="objective_add">
+            <div class="row">
+              <div class="col-12" style="padding-bottom: 8px;">
+                <div class="perspective-heading">
+                  <h5>
+                    Objective Add
+                    <span
+                      class="pull-right"
+                      onclick="closeObjectiveAdd()"
+                      style="font-size: 15px; cursor: pointer;"
+                    >
+                      &times;
+                    </span>
+                  </h5>
+                </div>
+                <hr />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Name</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input type="text" class="form-control browser-default" />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Start / End Date</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers datepicker-here"
+                  data-range="true"
+                  data-multiple-dates-separator=" - "
+                  data-language="en"
+                  id="air-date-sub-init"
+                />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Owner</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <div class="owner" style="padding-right: 12px;">
+                  <ul class="list-unstyled order-list">
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Weight</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input type="text" class="form-control browser-default" />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Sub Weight</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input type="text" class="form-control browser-default" />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Status</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default"
+                >
+                  <option>Choose</option>
+                  <option value="manual">Manual</option>
+                  <option value="weighted">Weighted</option>
+                  <option value="first">First</option>
+                  <option value="second">Second</option>
+                  <option value="third">Third</option>
+                  <option value="fourth">Fourth</option>
+                </select>
+              </div>
+              <div class="col-12 view-spacing">
+                <button class="initative_save_btn pull-right" value="Save">
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 sidebar-strategy" id="kpi_add">
+            <div class="row">
+              <div class="col-12" style="padding-bottom: 8px;">
+                <div class="perspective-heading">
+                  <h5>
+                    KPI Add
+                    <span
+                      class="pull-right"
+                      onclick="closeKPIAdd()"
+                      style="font-size: 15px; cursor: pointer;"
+                    >
+                      &times;
+                    </span>
+                  </h5>
+                </div>
+                <hr />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Name</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input type="text" class="form-control browser-default" />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Polarity">Polarity</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input type="text" class="form-control browser-default" />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Start / End Date</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers datepicker-here"
+                  data-range="true"
+                  data-multiple-dates-separator=" - "
+                  data-language="en"
+                  id="air-date-sub-init"
+                />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Owner</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <div class="owner" style="padding-right: 12px;">
+                  <ul class="list-unstyled order-list">
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Weight</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input type="text" class="form-control browser-default" />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Sub Weight</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input type="text" class="form-control browser-default" />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Status</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default"
+                >
+                  <option>Choose</option>
+                  <option value="manual">Manual</option>
+                  <option value="weighted">Weighted</option>
+                  <option value="first">First</option>
+                  <option value="second">Second</option>
+                  <option value="third">Third</option>
+                  <option value="fourth">Fourth</option>
+                </select>
+              </div>
+              <div class="col-12 view-spacing">
+                <button class="initative_save_btn pull-right" value="Save">
+                  Save
+                </button>
+              </div>
             </div>
           </div>
           <div class="col-md-3 perspective-div">
@@ -821,14 +1388,14 @@
                   <div class="perspective-heading">
                     <h5>
                       Perspectives
-                      <span class="pull-right">
+                      <span class="pull-right" onclick="openPerspectiveAdd()">
                         <i class="fa fa-plus border-box"></i>
                       </span>
                     </h5>
                   </div>
                   <hr />
                 </div>
-                <div class="col-12" style="height: 522px;">
+                <div class="col-12" style="height: 432px; overflow-y: auto;">
                   <div class="d-flex flex-column" id="perspective_sidebar">
                     <div
                       onclick="openPerspective()"
@@ -896,7 +1463,7 @@
             </div>
           </div>
           <div class="col-md-9 obj-kpi">
-            <div class="card" style="padding: 16px; height: 600px;">
+            <div class="card" style="padding: 16px; height: 510px;">
               <div class="row" style="margin-bottom: 16px !important;">
                 <div class="col-md-12">
                   <button
@@ -943,27 +1510,33 @@
                   }
                 </script>
               </div>
-              <div class="row search-section">
-                <div class="col-9">
+              <div
+                class="row obj-content customTabContent OBJECTIVES search-section"
+              >
+                <div class="col-9" style="padding-left: 20px;">
                   <input type="text" class="search" />
                   <i class="fas fa-search"></i>
                 </div>
                 <div class="col-3" style="margin-left: -12px;">
                   <button
                     type="button"
+                    onclick="openObjectiveAdd()"
                     class="btn custom-form-control btn-custom-primary"
                     style="height: 35px;"
                   >
                     Add Objective
                   </button>
                 </div>
-              </div>
-              <div class="row obj-content customTabContent OBJECTIVES">
                 <div
                   class="col-12"
-                  style="padding-left: 32px; padding-right: 40px;"
+                  style="
+                    padding-left: 32px;
+                    padding-right: 40px;
+                    height: 384px;
+                    overflow-y: auto;
+                  "
                 >
-                  <div class="card">
+                  <div class="card" onclick="openObjective()">
                     <div class="row">
                       <div class="col-10">
                         <div class="name pull-left">
@@ -1022,14 +1595,33 @@
                 </div>
               </div>
               <div
-                class="row obj-content customTabContent KPI"
+                class="row obj-content customTabContent KPI search-section"
                 style="display: none;"
               >
+                <div class="col-9" style="padding-left: 20px;">
+                  <input type="text" class="search" />
+                  <i class="fas fa-search"></i>
+                </div>
+                <div class="col-3" style="margin-left: -12px;">
+                  <button
+                    type="button"
+                    class="btn custom-form-control btn-custom-primary"
+                    style="height: 35px;"
+                    onclick="openKPIAdd()"
+                  >
+                    Add KPI
+                  </button>
+                </div>
                 <div
                   class="col-12"
-                  style="padding-left: 32px; padding-right: 40px;"
+                  style="
+                    padding-left: 32px;
+                    padding-right: 40px;
+                    height: 384px;
+                    overflow-y: auto;
+                  "
                 >
-                  <div class="card">
+                  <div class="card" onclick="openKPI()">
                     <div class="row">
                       <div class="col-10">
                         <div class="name pull-left">
@@ -1131,6 +1723,78 @@
       function closePerspective() {
         document.getElementById("perspective_view").style.display = "none";
       }
+
+      function openObjective() {
+        document.getElementById("objective_view").style.display = "block";
+      }
+
+      function closeObjective() {
+        document.getElementById("objective_view").style.display = "none";
+      }
+
+      function openPerspectiveAdd() {
+        document.getElementById("perspective_add").style.display = "block";
+      }
+
+      function closePerspectiveAdd() {
+        document.getElementById("perspective_add").style.display = "none";
+      }
+
+      function openObjectiveAdd() {
+        document.getElementById("objective_add").style.display = "block";
+      }
+
+      function closeObjectiveAdd() {
+        document.getElementById("objective_add").style.display = "none";
+      }
+
+      function openStrategy() {
+        document.getElementById("strategy_edit").style.display = "block";
+      }
+
+      function closeStrategy() {
+        document.getElementById("strategy_edit").style.display = "none";
+      }
+
+      $("#edit_perspective").click(function () {
+        $("#edit_perspective").hide();
+        $("#save_perspective").show();
+        $(".persp_name").prop("disabled", false);
+        $(".persp_date").prop("disabled", false);
+        $(".persp_weight").prop("disabled", false);
+        $(".persp_subweight").prop("disabled", false);
+        $(".persp_status").prop("disabled", false);
+      });
+
+      $("#save_perspective").click(function () {
+        $("#edit_perspective").show();
+        $("#save_perspective").hide();
+        $(".persp_name").prop("disabled", true);
+        $(".persp_date").prop("disabled", true);
+        $(".persp_weight").prop("disabled", true);
+        $(".persp_subweight").prop("disabled", true);
+        $(".persp_status").prop("disabled", true);
+      });
+
+      $("#edit_objective").click(function () {
+        $("#edit_objective").hide();
+        $("#save_objective").show();
+        $(".obj_name").prop("disabled", false);
+        $(".obj_date").prop("disabled", false);
+        $(".obj_weight").prop("disabled", false);
+        $(".obj_subweight").prop("disabled", false);
+        $(".obj_status").prop("disabled", false);
+      });
+
+      $("#save_objective").click(function () {
+        $("#edit_objective").show();
+        $("#save_objective").hide();
+        $(".obj_name").prop("disabled", true);
+        $(".obj_date").prop("disabled", true);
+        $(".obj_weight").prop("disabled", true);
+        $(".obj_subweight").prop("disabled", true);
+        $(".obj_status").prop("disabled", true);
+      });
 
       $(".daterangepicker-field").daterangepicker({
         forceUpdate: true,
