@@ -1165,16 +1165,6 @@
                   <option value="fourth">Fourth</option>
                 </select>
               </div>
-              <div class="col-12 view-spacing">
-                <button
-                  style="display: none;"
-                  class="initative_save_btn pull-right"
-                  value="Save"
-                  id="save_perspective"
-                >
-                  Save
-                </button>
-              </div>
             </div>
           </div>
           <div class="col-12 sidebar-strategy" id="objective_add">
@@ -1269,11 +1259,6 @@
                   <option value="fourth">Fourth</option>
                 </select>
               </div>
-              <div class="col-12 view-spacing">
-                <button class="initative_save_btn pull-right" value="Save">
-                  Save
-                </button>
-              </div>
             </div>
           </div>
           <div class="col-12 sidebar-strategy" id="kpi_add">
@@ -1303,20 +1288,29 @@
                 <label for="Polarity">Polarity</label>
               </div>
               <div class="col-6 view-spacing">
-                <input type="text" class="form-control browser-default" />
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default"
+                >
+                  <option>Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
               </div>
               <div class="col-6 view-spacing">
-                <label for="Name">Start / End Date</label>
+                <label for="Measurement Frequency">Measurement Frequency</label>
               </div>
               <div class="col-6 view-spacing">
-                <input
-                  type="text"
-                  class="form-control browser-default date_pickers datepicker-here"
-                  data-range="true"
-                  data-multiple-dates-separator=" - "
-                  data-language="en"
-                  id="air-date-sub-init"
-                />
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default"
+                >
+                  <option>Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
               </div>
               <div class="col-6 view-spacing">
                 <label for="Name">Owner</label>
@@ -1343,6 +1337,93 @@
                     </li>
                   </ul>
                 </div>
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Data Source">Data Source</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default"
+                >
+                  <option>Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="KPI Type">KPI Type</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default"
+                >
+                  <option>Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Currency">Currency</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default"
+                >
+                  <option>Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Threshold">Threshold</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default"
+                >
+                  <option>Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Actual">Actual</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input type="text" class="form-control browser-default" />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Target">Target</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input type="text" class="form-control browser-default" />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="YTD">YTD</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input type="text" class="form-control browser-default" />
+              </div>
+              <div class="col-6 view-spacing">
+                <label for="Name">Start / End Date</label>
+              </div>
+              <div class="col-6 view-spacing">
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers datepicker-here"
+                  data-range="true"
+                  data-multiple-dates-separator=" - "
+                  data-language="en"
+                  id="air-date-sub-init"
+                />
               </div>
               <div class="col-6 view-spacing">
                 <label for="Name">Weight</label>
@@ -1373,11 +1454,6 @@
                   <option value="third">Third</option>
                   <option value="fourth">Fourth</option>
                 </select>
-              </div>
-              <div class="col-12 view-spacing">
-                <button class="initative_save_btn pull-right" value="Save">
-                  Save
-                </button>
               </div>
             </div>
           </div>
@@ -1746,6 +1822,14 @@
 
       function closeObjectiveAdd() {
         document.getElementById("objective_add").style.display = "none";
+      }
+
+      function openKPIAdd() {
+        document.getElementById("kpi_add").style.display = "block";
+      }
+
+      function closeKPIAdd() {
+        document.getElementById("kpi_add").style.display = "none";
       }
 
       function openStrategy() {
