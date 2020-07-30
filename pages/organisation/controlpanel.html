@@ -105,7 +105,7 @@
         position: relative;
         display: inline-block;
         width: 50px;
-        height: 29px;
+        height: 25px;
       }
 
       .control-switch input {
@@ -129,8 +129,8 @@
       .control-slider:before {
         position: absolute;
         content: "";
-        height: 23px;
-        width: 23px;
+        height: 19px;
+        width: 19px;
         left: 4px;
         bottom: 3px;
         background-color: white;
@@ -147,14 +147,14 @@
       }
 
       input:checked + .control-slider:before {
-        -webkit-transform: translateX(20px);
-        -ms-transform: translateX(20px);
-        transform: translateX(20px);
+        -webkit-transform: translateX(23px);
+        -ms-transform: translateX(23px);
+        transform: translateX(23px);
       }
 
       /* Rounded control-sliders */
       .control-slider.round {
-        border-radius: 34px;
+        border-radius: 38px;
       }
 
       .control-slider.round:before {
@@ -1785,7 +1785,7 @@
                           </div>
                           <div class="form-group col-md-12">
                             <hr />
-                            <h6>Modules Subscribed</h6>
+                            <label>Modules Subscribed</label>
                           </div>
                           <div class="col-6">
                             <span style="font-size: 16px; color: #444444;"
@@ -2247,7 +2247,12 @@
                               Back up
                             </button>
                           </div>
-
+                          <div
+                            class="col-12"
+                            style="margin-top: 12px; margin-bottom: -12px;"
+                          >
+                            <hr />
+                          </div>
                           <div
                             class="col-md-12"
                             style="padding-top: 24px; padding-bottom: 8px;"
@@ -2259,35 +2264,6 @@
                             style="padding-bottom: 10px;"
                           >
                             <label for="">Application</label>
-                            <div class="dropzone-wrapper">
-                              <div class="dropzone-desc">
-                                <i
-                                  class="fas fa-file-upload"
-                                  style="font-size: 20px;"
-                                ></i>
-                                <p>Choose a file or drag it here.</p>
-                              </div>
-                              <input
-                                type="file"
-                                name="img_logo"
-                                class="dropzone"
-                                accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf"
-                              />
-                            </div>
-                            <div
-                              class="preview-zone hidden"
-                              style="padding-top: 8px;"
-                            >
-                              <div class="box box-solid">
-                                <div class="box-body"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div
-                            class="form-group col-md-6"
-                            style="padding-bottom: 10px;"
-                          >
-                            <label for="">Database</label>
                             <div class="dropzone-wrapper">
                               <div class="dropzone-desc">
                                 <i

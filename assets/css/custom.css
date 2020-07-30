@@ -1135,9 +1135,8 @@ label {
   margin-bottom: -20px;
 }
 
-.strategy-formula .heading p {
-  font-size: 14px;
-  font-weight: 600;
+.strategy-formula .heading h6 {
+  color: #1e252d;
 }
 
 .strategy-formula .header-content ul {
@@ -1162,12 +1161,12 @@ label {
 }
 
 .strategy-formula .header-content ul li strong {
-  font-size: 13px;
+  font-size: 11px;
   color: #1e252d;
 }
 
 .strategy-formula .header-content ul li p {
-  font-size: 12px;
+  font-size: 11px;
   color: #5a5a5a;
   margin-top: 8px;
 }
@@ -1182,6 +1181,15 @@ label {
 }
 
 .perspective-div .perspective-heading h5 span {
+  cursor: pointer;
+}
+
+.obj-kpi .perspective-heading h5 {
+  font-size: 15px;
+  color: #1e252d;
+}
+
+.obj-kpi .perspective-heading h5 span {
   cursor: pointer;
 }
 
@@ -1226,20 +1234,21 @@ label {
 }
 
 .search-section {
-  padding-left: 8px;
+  padding-left: 22px;
+  padding-right: 22px;
 }
 
-.search-section div .search {
+.search-section .search {
   border: 1px solid #e2e2e2 !important;
   box-sizing: border-box !important;
   border-radius: 4px !important;
   height: 35px !important;
-  padding-left: 40px !important;
+  padding-left: 32px !important;
 }
 
-.search-section div i {
+.search-section i {
   position: absolute;
-  left: 28px;
+  left: 30px;
   top: 10px;
   font-size: 15px;
   color: #c2c2c2;
@@ -1254,8 +1263,12 @@ label {
   cursor: pointer;
 }
 
+.obj-content div .card .name {
+  text-align: left;
+}
+
 .obj-content div .card .name span {
-  font-size: 14px;
+  font-size: 13px;
   color: #1e252d;
 }
 
@@ -1274,13 +1287,13 @@ label {
 }
 
 .sidebar-strategy {
-  height: 510px;
+  height: 675px;
   padding: 16px 20px;
-  width: 500px;
+  width: 460px;
   position: fixed;
   display: none;
   z-index: 1;
-  top: 244px;
+  top: 70px;
   right: 0;
   background-color: #fff;
   overflow-x: hidden;
@@ -1295,10 +1308,10 @@ label {
 
 .border-box {
   border: 1px solid #e9ecef;
-  padding: 6px;
+  font-size: 11px;
+  padding: 7px 8px 6px 8px;
   align-self: start;
   margin-top: -6px;
   cursor: pointer;
-  border-radius: 4px;
-  font-size: 13px;
+  border-radius: 2px;
 }

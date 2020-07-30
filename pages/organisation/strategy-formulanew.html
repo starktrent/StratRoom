@@ -123,7 +123,12 @@
         <div class="collapse navbar-collapse" id="navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="fullscreen" style="padding: 4px; left: -14px;">
-              <ul class="list-unstyled order-list">
+              <ul
+                class="list-unstyled order-list"
+                data-toggle="modal"
+                data-target="#user_edit_popup"
+                style="cursor: pointer;"
+              >
                 <li class="avatar avatar-sm">
                   <img
                     class="rounded-circle"
@@ -629,14 +634,17 @@
               <div class="row">
                 <div class="col-12">
                   <div class="heading">
-                    <p style="margin-bottom: -4px;">
+                    <h6 style="margin-bottom: -4px;">
                       Failure to meet compliance obligations
                       <span class="pull-right" onclick="openStrategy()">
-                        <i class="fas fa-pencil-alt border-box"></i
+                        <i
+                          class="fas fa-pencil-alt border-box"
+                          style="padding: 5px;"
+                        ></i
                       ></span>
-                    </p>
+                    </h6>
                   </div>
-                  <hr />
+                  <hr style="border-top: 2px solid #e9ecef;" />
                   <div
                     class="header-content"
                     style="margin-top: -4px; margin-bottom: -20px;"
@@ -657,7 +665,12 @@
                       <li>
                         <strong>Formulation Team</strong>
                         <span>
-                          <ul class="list-unstyled order-list">
+                          <ul
+                            class="list-unstyled order-list"
+                            data-toggle="modal"
+                            data-target="#user_edit_popup"
+                            style="cursor: pointer;"
+                          >
                             <li class="avatar avatar-sm">
                               <img
                                 class="rounded-circle"
@@ -681,7 +694,12 @@
                       <li>
                         <strong>Approved By</strong>
                         <span>
-                          <ul class="list-unstyled order-list">
+                          <ul
+                            class="list-unstyled order-list"
+                            data-toggle="modal"
+                            data-target="#user_edit_popup"
+                            style="cursor: pointer;"
+                          >
                             <li class="avatar avatar-sm">
                               <img
                                 class="rounded-circle"
@@ -719,16 +737,16 @@
                 </div>
                 <hr />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Name</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <input type="text" class="form-control browser-default" />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Start / End Date</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <input
                   type="text"
                   class="form-control browser-default date_pickers datepicker-here"
@@ -738,10 +756,10 @@
                   id="air-date-sub-init"
                 />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Plan Type</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <select
                   id="inputState"
                   style="padding-left: 6px !important;"
@@ -754,12 +772,17 @@
                 </select>
               </div>
 
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Formulation Team</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <div class="owner" style="padding-right: 12px;">
-                  <ul class="list-unstyled order-list">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer;"
+                  >
                     <li class="avatar avatar-sm">
                       <img
                         class="rounded-circle"
@@ -780,12 +803,17 @@
                   </ul>
                 </div>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Approved By</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <div class="owner" style="padding-right: 12px;">
-                  <ul class="list-unstyled order-list">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer;"
+                  >
                     <li class="avatar avatar-sm">
                       <img
                         class="rounded-circle"
@@ -796,10 +824,10 @@
                   </ul>
                 </div>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Approved Date</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <input
                   type="text"
                   class="form-control browser-default date_pickers_single"
@@ -808,11 +836,6 @@
                   id="kpi_start_end_date"
                 />
               </div>
-              <div class="col-12 view-spacing">
-                <button class="initative_save_btn pull-right" value="Save">
-                  Save
-                </button>
-              </div>
             </div>
           </div>
           <div class="col-12 sidebar-strategy" id="perspective_view">
@@ -820,7 +843,7 @@
               <div class="col-12" style="padding-bottom: 8px;">
                 <div class="perspective-heading">
                   <h5>
-                    Perspective View
+                    Perspective Details
                     <span
                       class="pull-right"
                       onclick="closePerspective()"
@@ -839,10 +862,10 @@
                 </div>
                 <hr />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Name</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <input
                   type="text"
                   class="form-control browser-default persp_name"
@@ -850,10 +873,10 @@
                   disabled="true"
                 />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Start / End Date</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <input
                   type="text"
                   class="form-control persp_date browser-default date_pickers datepicker-here"
@@ -865,12 +888,17 @@
                   id="air-date-sub-init"
                 />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Owner</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <div class="owner" style="padding-right: 12px;">
-                  <ul class="list-unstyled order-list">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer;"
+                  >
                     <li class="avatar avatar-sm">
                       <img
                         class="rounded-circle"
@@ -891,10 +919,10 @@
                   </ul>
                 </div>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Weight</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <input
                   type="text"
                   class="form-control browser-default persp_weight"
@@ -902,10 +930,10 @@
                   disabled="true"
                 />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Sub Weight</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <input
                   type="text"
                   class="form-control browser-default persp_subweight"
@@ -913,10 +941,10 @@
                   disabled="true"
                 />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Status</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <select
                   id="inputState"
                   style="padding-left: 6px !important;"
@@ -949,7 +977,7 @@
               <div class="col-12" style="padding-bottom: 8px;">
                 <div class="perspective-heading">
                   <h5>
-                    Objective View
+                    Objective Details
                     <span
                       class="pull-right"
                       onclick="closeObjective()"
@@ -968,10 +996,10 @@
                 </div>
                 <hr />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Name</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <input
                   type="text"
                   class="form-control browser-default obj_name"
@@ -979,10 +1007,10 @@
                   disabled="true"
                 />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Start / End Date</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <input
                   type="text"
                   class="form-control obj_date browser-default date_pickers datepicker-here"
@@ -994,12 +1022,17 @@
                   id="air-date-sub-init"
                 />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Owner</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <div class="owner" style="padding-right: 12px;">
-                  <ul class="list-unstyled order-list">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer;"
+                  >
                     <li class="avatar avatar-sm">
                       <img
                         class="rounded-circle"
@@ -1020,10 +1053,10 @@
                   </ul>
                 </div>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Weight</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <input
                   type="text"
                   class="form-control browser-default obj_weight"
@@ -1031,10 +1064,10 @@
                   disabled="true"
                 />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Sub Weight</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <input
                   type="text"
                   class="form-control browser-default obj_subweight"
@@ -1042,10 +1075,10 @@
                   disabled="true"
                 />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Status</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <select
                   id="inputState"
                   style="padding-left: 6px !important;"
@@ -1090,16 +1123,16 @@
                 </div>
                 <hr />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Name</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <input type="text" class="form-control browser-default" />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Start / End Date</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <input
                   type="text"
                   class="form-control browser-default date_pickers datepicker-here"
@@ -1109,12 +1142,17 @@
                   id="air-date-sub-init"
                 />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Owner</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <div class="owner" style="padding-right: 12px;">
-                  <ul class="list-unstyled order-list">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer;"
+                  >
                     <li class="avatar avatar-sm">
                       <img
                         class="rounded-circle"
@@ -1135,22 +1173,22 @@
                   </ul>
                 </div>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Weight</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <input type="text" class="form-control browser-default" />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Sub Weight</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <input type="text" class="form-control browser-default" />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Status</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <select
                   id="inputState"
                   style="padding-left: 6px !important;"
@@ -1184,16 +1222,16 @@
                 </div>
                 <hr />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Name</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <input type="text" class="form-control browser-default" />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Start / End Date</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <input
                   type="text"
                   class="form-control browser-default date_pickers datepicker-here"
@@ -1203,12 +1241,17 @@
                   id="air-date-sub-init"
                 />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Owner</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <div class="owner" style="padding-right: 12px;">
-                  <ul class="list-unstyled order-list">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer;"
+                  >
                     <li class="avatar avatar-sm">
                       <img
                         class="rounded-circle"
@@ -1229,22 +1272,22 @@
                   </ul>
                 </div>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Weight</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <input type="text" class="form-control browser-default" />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Sub Weight</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <input type="text" class="form-control browser-default" />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Status</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <select
                   id="inputState"
                   style="padding-left: 6px !important;"
@@ -1278,16 +1321,16 @@
                 </div>
                 <hr />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Name</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <input type="text" class="form-control browser-default" />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Polarity">Polarity</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <select
                   id="inputState"
                   style="padding-left: 6px !important;"
@@ -1298,10 +1341,10 @@
                   <option value="Option 2">Option 2</option>
                 </select>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Measurement Frequency">Measurement Frequency</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <select
                   id="inputState"
                   style="padding-left: 6px !important;"
@@ -1312,12 +1355,17 @@
                   <option value="Option 2">Option 2</option>
                 </select>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Owner</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <div class="owner" style="padding-right: 12px;">
-                  <ul class="list-unstyled order-list">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer;"
+                  >
                     <li class="avatar avatar-sm">
                       <img
                         class="rounded-circle"
@@ -1338,10 +1386,10 @@
                   </ul>
                 </div>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Data Source">Data Source</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <select
                   id="inputState"
                   style="padding-left: 6px !important;"
@@ -1352,10 +1400,10 @@
                   <option value="Option 2">Option 2</option>
                 </select>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="KPI Type">KPI Type</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <select
                   id="inputState"
                   style="padding-left: 6px !important;"
@@ -1366,10 +1414,10 @@
                   <option value="Option 2">Option 2</option>
                 </select>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Currency">Currency</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <select
                   id="inputState"
                   style="padding-left: 6px !important;"
@@ -1380,10 +1428,10 @@
                   <option value="Option 2">Option 2</option>
                 </select>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Threshold">Threshold</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <select
                   id="inputState"
                   style="padding-left: 6px !important;"
@@ -1394,28 +1442,28 @@
                   <option value="Option 2">Option 2</option>
                 </select>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Actual">Actual</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <input type="text" class="form-control browser-default" />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Target">Target</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <input type="text" class="form-control browser-default" />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="YTD">YTD</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <input type="text" class="form-control browser-default" />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Start / End Date</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <input
                   type="text"
                   class="form-control browser-default date_pickers datepicker-here"
@@ -1425,22 +1473,22 @@
                   id="air-date-sub-init"
                 />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Weight</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <input type="text" class="form-control browser-default" />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Sub Weight</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <input type="text" class="form-control browser-default" />
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-4 view-spacing">
                 <label for="Name">Status</label>
               </div>
-              <div class="col-6 view-spacing">
+              <div class="col-8 view-spacing">
                 <select
                   id="inputState"
                   style="padding-left: 6px !important;"
@@ -1457,7 +1505,256 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3 perspective-div">
+          <div class="col-12 sidebar-strategy" id="kpi_view">
+            <div class="row">
+              <div class="col-12" style="padding-bottom: 8px;">
+                <div class="perspective-heading">
+                  <h5>
+                    KPI Details
+                    <span
+                      class="pull-right"
+                      onclick="closeKPI()"
+                      style="font-size: 15px; cursor: pointer;"
+                    >
+                      &times;
+                    </span>
+                    <span
+                      class="pull-right"
+                      id="edit_kpi"
+                      style="margin-right: 12px;"
+                    >
+                      <i class="fas fa-pencil-alt border-box"></i
+                    ></span>
+                  </h5>
+                </div>
+                <hr />
+              </div>
+              <div class="col-4 view-spacing">
+                <label for="Name">Name</label>
+              </div>
+              <div class="col-8 view-spacing">
+                <input
+                  type="text"
+                  class="form-control browser-default kpi_name"
+                  disabled="true"
+                />
+              </div>
+              <div class="col-4 view-spacing">
+                <label for="Polarity">Polarity</label>
+              </div>
+              <div class="col-8 view-spacing">
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default kpi_polarity"
+                  disabled="true"
+                >
+                  <option>Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
+              </div>
+              <div class="col-4 view-spacing">
+                <label for="Measurement Frequency">Measurement Frequency</label>
+              </div>
+              <div class="col-8 view-spacing">
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default kpi_mf"
+                  disabled="true"
+                >
+                  <option>Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
+              </div>
+              <div class="col-4 view-spacing">
+                <label for="Name">Owner</label>
+              </div>
+              <div class="col-8 view-spacing">
+                <div class="owner" style="padding-right: 12px;">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer;"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-4 view-spacing">
+                <label for="Data Source">Data Source</label>
+              </div>
+              <div class="col-8 view-spacing">
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default kpi_data"
+                  disabled="true"
+                >
+                  <option>Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
+              </div>
+              <div class="col-4 view-spacing">
+                <label for="KPI Type">KPI Type</label>
+              </div>
+              <div class="col-8 view-spacing">
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default kpi_type"
+                  disabled="true"
+                >
+                  <option>Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
+              </div>
+              <div class="col-4 view-spacing">
+                <label for="Currency">Currency</label>
+              </div>
+              <div class="col-8 view-spacing">
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default kpi_currency"
+                  disabled="true"
+                >
+                  <option>Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
+              </div>
+              <div class="col-4 view-spacing">
+                <label for="Threshold">Threshold</label>
+              </div>
+              <div class="col-8 view-spacing">
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default kpi_threshold"
+                  disabled="true"
+                >
+                  <option>Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
+              </div>
+              <div class="col-4 view-spacing">
+                <label for="Actual">Actual</label>
+              </div>
+              <div class="col-8 view-spacing">
+                <input
+                  type="text"
+                  class="form-control browser-default kpi_actual"
+                  disabled="true"
+                />
+              </div>
+              <div class="col-4 view-spacing">
+                <label for="Target">Target</label>
+              </div>
+              <div class="col-8 view-spacing">
+                <input
+                  type="text"
+                  class="form-control browser-default kpi_target"
+                  disabled="true"
+                />
+              </div>
+              <div class="col-4 view-spacing">
+                <label for="YTD">YTD</label>
+              </div>
+              <div class="col-8 view-spacing">
+                <input
+                  type="text"
+                  class="form-control browser-default kpi_ytd"
+                  disabled="true"
+                />
+              </div>
+              <div class="col-4 view-spacing">
+                <label for="Name">Start / End Date</label>
+              </div>
+              <div class="col-8 view-spacing">
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers datepicker-here kpi_date"
+                  data-range="true"
+                  data-multiple-dates-separator=" - "
+                  data-language="en"
+                  id="air-date-sub-init"
+                />
+              </div>
+              <div class="col-4 view-spacing">
+                <label for="Name">Weight</label>
+              </div>
+              <div class="col-8 view-spacing">
+                <input
+                  type="text"
+                  class="form-control browser-default kpi_weight"
+                  disabled="true"
+                />
+              </div>
+              <div class="col-4 view-spacing">
+                <label for="Name">Sub Weight</label>
+              </div>
+              <div class="col-8 view-spacing">
+                <input
+                  type="text"
+                  class="form-control browser-default kpi_subweight"
+                  disabled="true"
+                />
+              </div>
+              <div class="col-4 view-spacing">
+                <label for="Name">Status</label>
+              </div>
+              <div class="col-8 view-spacing">
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default kpi_status"
+                  disabled="true"
+                >
+                  <option>Choose</option>
+                  <option value="manual">Manual</option>
+                  <option value="weighted">Weighted</option>
+                  <option value="first">First</option>
+                  <option value="second">Second</option>
+                  <option value="third">Third</option>
+                  <option value="fourth">Fourth</option>
+                </select>
+              </div>
+              <div class="col-12 view-spacing">
+                <button
+                  style="display: none;"
+                  class="initative_save_btn pull-right"
+                  value="Save"
+                  id="save_kpi"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 perspective-div">
             <div class="card" style="padding: 16px;">
               <div class="row">
                 <div class="col-12">
@@ -1465,13 +1762,29 @@
                     <h5>
                       Perspectives
                       <span class="pull-right" onclick="openPerspectiveAdd()">
-                        <i class="fa fa-plus border-box"></i>
+                        <i class="fas fa-plus border-box"></i>
+                      </span>
+                      <span
+                        class="pull-right"
+                        data-toggle="collapse"
+                        data-target="#search1"
+                        style="margin-right: 4px;"
+                      >
+                        <i class="fas fa-search border-box"></i>
                       </span>
                     </h5>
                   </div>
                   <hr />
                 </div>
                 <div class="col-12" style="height: 432px; overflow-y: auto;">
+                  <div
+                    class="col-12 search-section collapse"
+                    id="search1"
+                    style="padding-left: 10px; padding-right: 10px;"
+                  >
+                    <input type="text" class="search" placeholder="Search" />
+                    <i class="fas fa-search" style="left: 20px;"></i>
+                  </div>
                   <div class="d-flex flex-column" id="perspective_sidebar">
                     <div
                       onclick="openPerspective()"
@@ -1538,70 +1851,35 @@
               </div>
             </div>
           </div>
-          <div class="col-md-9 obj-kpi">
-            <div class="card" style="padding: 16px; height: 510px;">
-              <div class="row" style="margin-bottom: 16px !important;">
-                <div class="col-md-12">
-                  <button
-                    class="btn btn-custom-secondary"
-                    onclick="addBtn('#content');"
-                    style="margin-right: 2px;"
-                  >
-                    <i class="fas fa-plus"></i>
-                  </button>
-                  <div
-                    id="custom-tab"
-                    class="btn-group custom-tab-control"
-                    role="group"
-                    aria-label="Custom Tab"
-                  >
-                    <button
-                      type="button"
-                      class="btn btn-custom-secondary active"
-                      data-value="OBJECTIVES"
-                    >
-                      OBJECTIVES
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-custom-secondary"
-                      data-value="KPI"
-                    >
-                      KPI’s
-                    </button>
+          <div class="col-md-4 obj-kpi">
+            <div class="card" style="padding: 16px 10px; height: 510px;">
+              <div class="row obj-content">
+                <div class="col-12">
+                  <div class="perspective-heading">
+                    <h5>
+                      Objectives
+                      <span class="pull-right" onclick="openObjectiveAdd()">
+                        <i class="fas fa-plus border-box"></i>
+                      </span>
+                      <span
+                        class="pull-right"
+                        data-toggle="collapse"
+                        data-target="#search2"
+                        style="margin-right: 4px;"
+                      >
+                        <i class="fas fa-search border-box"></i>
+                      </span>
+                    </h5>
                   </div>
+                  <hr />
                 </div>
-
-                <script>
-                  function addBtn(link) {
-                    $("#custom-tab").append(
-                      `<button
-                      type="button"
-                      class="btn btn-custom-secondary"
-                      data-value="NewTab"
-                    >
-                      New Tab
-                    </button>`
-                    );
-                  }
-                </script>
-              </div>
-              <div
-                class="row obj-content customTabContent OBJECTIVES search-section"
-              >
-                <div class="col-9" style="padding-left: 20px;">
-                  <input type="text" class="search" />
+                <div
+                  class="col-12 search-section collapse"
+                  style="padding-left: 20px;"
+                  id="search2"
+                >
+                  <input type="text" class="search" placeholder="Search" />
                   <i class="fas fa-search"></i>
-                </div>
-                <div class="col-3" style="margin-left: -12px;">
-                  <button
-                    type="button"
-                    onclick="openObjectiveAdd()"
-                    class="btn custom-form-control btn-custom-primary"
-                    style="height: 35px;"
-                  >
-                    Add Objective
-                  </button>
                 </div>
                 <div
                   class="col-12"
@@ -1635,12 +1913,12 @@
                         margin-bottom: -10px !important;
                       "
                     >
-                      <div class="col-9">
+                      <div class="col-6">
                         <div class="target pull-left">
                           <span> <strong>Target: </strong>70.45% </span>
                         </div>
                       </div>
-                      <div class="col-3">
+                      <div class="col-6">
                         <div
                           class="owner pull-right"
                           style="padding-right: 12px;"
@@ -1670,23 +1948,37 @@
                   </div>
                 </div>
               </div>
-              <div
-                class="row obj-content customTabContent KPI search-section"
-                style="display: none;"
-              >
-                <div class="col-9" style="padding-left: 20px;">
-                  <input type="text" class="search" />
-                  <i class="fas fa-search"></i>
+            </div>
+          </div>
+          <div class="col-md-4 obj-kpi">
+            <div class="card" style="padding: 16px 10px; height: 510px;">
+              <div class="row obj-content">
+                <div class="col-12">
+                  <div class="perspective-heading">
+                    <h5>
+                      KPI
+                      <span class="pull-right" onclick="openKPIAdd()">
+                        <i class="fas fa-plus border-box"></i>
+                      </span>
+                      <span
+                        class="pull-right"
+                        data-toggle="collapse"
+                        data-target="#search3"
+                        style="margin-right: 4px;"
+                      >
+                        <i class="fas fa-search border-box"></i>
+                      </span>
+                    </h5>
+                  </div>
+                  <hr />
                 </div>
-                <div class="col-3" style="margin-left: -12px;">
-                  <button
-                    type="button"
-                    class="btn custom-form-control btn-custom-primary"
-                    style="height: 35px;"
-                    onclick="openKPIAdd()"
-                  >
-                    Add KPI
-                  </button>
+                <div
+                  class="col-12 search-section collapse"
+                  style="padding-left: 20px;"
+                  id="search3"
+                >
+                  <input type="text" class="search" placeholder="Search" />
+                  <i class="fas fa-search"></i>
                 </div>
                 <div
                   class="col-12"
@@ -1702,8 +1994,8 @@
                       <div class="col-10">
                         <div class="name pull-left">
                           <span
-                            >Record one fire incidents attributable to Alpha
-                            Mead across all locations in 2022</span
+                            >Record zero fire incidents attributable to Alpha
+                            Mead across all locations in 2020</span
                           >
                         </div>
                       </div>
@@ -1720,12 +2012,12 @@
                         margin-bottom: -10px !important;
                       "
                     >
-                      <div class="col-9">
+                      <div class="col-6">
                         <div class="target pull-left">
                           <span> <strong>Target: </strong>70.45% </span>
                         </div>
                       </div>
-                      <div class="col-3">
+                      <div class="col-6">
                         <div
                           class="owner pull-right"
                           style="padding-right: 12px;"
@@ -1792,8 +2084,26 @@
         $("#fileuploadTable").paging({ limit: 5 });
       });
 
+      $(document).keyup(function (e) {
+        if (e.key === "Escape") {
+          document.getElementById("perspective_view").style.display = "none";
+          document.getElementById("objective_view").style.display = "none";
+          document.getElementById("kpi_view").style.display = "none";
+          document.getElementById("perspective_add").style.display = "none";
+          document.getElementById("objective_add").style.display = "none";
+          document.getElementById("kpi_add").style.display = "none";
+          document.getElementById("strategy_edit").style.display = "none";
+        }
+      });
+
       function openPerspective() {
         document.getElementById("perspective_view").style.display = "block";
+        document.getElementById("objective_view").style.display = "none";
+        document.getElementById("kpi_view").style.display = "none";
+        document.getElementById("perspective_add").style.display = "none";
+        document.getElementById("objective_add").style.display = "none";
+        document.getElementById("kpi_add").style.display = "none";
+        document.getElementById("strategy_edit").style.display = "none";
       }
 
       function closePerspective() {
@@ -1801,15 +2111,41 @@
       }
 
       function openObjective() {
+        document.getElementById("perspective_view").style.display = "none";
         document.getElementById("objective_view").style.display = "block";
+        document.getElementById("kpi_view").style.display = "none";
+        document.getElementById("perspective_add").style.display = "none";
+        document.getElementById("objective_add").style.display = "none";
+        document.getElementById("kpi_add").style.display = "none";
+        document.getElementById("strategy_edit").style.display = "none";
       }
 
       function closeObjective() {
         document.getElementById("objective_view").style.display = "none";
       }
 
+      function openKPI() {
+        document.getElementById("perspective_view").style.display = "none";
+        document.getElementById("objective_view").style.display = "none";
+        document.getElementById("kpi_view").style.display = "block";
+        document.getElementById("perspective_add").style.display = "none";
+        document.getElementById("objective_add").style.display = "none";
+        document.getElementById("kpi_add").style.display = "none";
+        document.getElementById("strategy_edit").style.display = "none";
+      }
+
+      function closeKPI() {
+        document.getElementById("kpi_view").style.display = "none";
+      }
+
       function openPerspectiveAdd() {
+        document.getElementById("perspective_view").style.display = "none";
+        document.getElementById("objective_view").style.display = "none";
+        document.getElementById("kpi_view").style.display = "none";
         document.getElementById("perspective_add").style.display = "block";
+        document.getElementById("objective_add").style.display = "none";
+        document.getElementById("kpi_add").style.display = "none";
+        document.getElementById("strategy_edit").style.display = "none";
       }
 
       function closePerspectiveAdd() {
@@ -1817,7 +2153,13 @@
       }
 
       function openObjectiveAdd() {
+        document.getElementById("perspective_view").style.display = "none";
+        document.getElementById("objective_view").style.display = "none";
+        document.getElementById("kpi_view").style.display = "none";
+        document.getElementById("perspective_add").style.display = "none";
         document.getElementById("objective_add").style.display = "block";
+        document.getElementById("kpi_add").style.display = "none";
+        document.getElementById("strategy_edit").style.display = "none";
       }
 
       function closeObjectiveAdd() {
@@ -1825,7 +2167,13 @@
       }
 
       function openKPIAdd() {
+        document.getElementById("perspective_view").style.display = "none";
+        document.getElementById("objective_view").style.display = "none";
+        document.getElementById("kpi_view").style.display = "none";
+        document.getElementById("perspective_add").style.display = "none";
+        document.getElementById("objective_add").style.display = "none";
         document.getElementById("kpi_add").style.display = "block";
+        document.getElementById("strategy_edit").style.display = "none";
       }
 
       function closeKPIAdd() {
@@ -1833,6 +2181,12 @@
       }
 
       function openStrategy() {
+        document.getElementById("perspective_view").style.display = "none";
+        document.getElementById("objective_view").style.display = "none";
+        document.getElementById("kpi_view").style.display = "none";
+        document.getElementById("perspective_add").style.display = "none";
+        document.getElementById("objective_add").style.display = "none";
+        document.getElementById("kpi_add").style.display = "none";
         document.getElementById("strategy_edit").style.display = "block";
       }
 
@@ -1878,6 +2232,44 @@
         $(".obj_weight").prop("disabled", true);
         $(".obj_subweight").prop("disabled", true);
         $(".obj_status").prop("disabled", true);
+      });
+
+      $("#edit_kpi").click(function () {
+        $("#edit_kpi").hide();
+        $("#save_kpi").show();
+        $(".kpi_name").prop("disabled", false);
+        $(".kpi_polarity").prop("disabled", false);
+        $(".kpi_mf").prop("disabled", false);
+        $(".kpi_data").prop("disabled", false);
+        $(".kpi_type").prop("disabled", false);
+        $(".kpi_currency").prop("disabled", false);
+        $(".kpi_threshold").prop("disabled", false);
+        $(".kpi_actual").prop("disabled", false);
+        $(".kpi_target").prop("disabled", false);
+        $(".kpi_ytd").prop("disabled", false);
+        $(".kpi_date").prop("disabled", false);
+        $(".kpi_weight").prop("disabled", false);
+        $(".kpi_subweight").prop("disabled", false);
+        $(".kpi_status").prop("disabled", false);
+      });
+
+      $("#save_kpi").click(function () {
+        $("#edit_kpi").show();
+        $("#save_kpi").hide();
+        $(".kpi_name").prop("disabled", true);
+        $(".kpi_polarity").prop("disabled", true);
+        $(".kpi_mf").prop("disabled", true);
+        $(".kpi_data").prop("disabled", true);
+        $(".kpi_type").prop("disabled", true);
+        $(".kpi_currency").prop("disabled", true);
+        $(".kpi_threshold").prop("disabled", true);
+        $(".kpi_actual").prop("disabled", true);
+        $(".kpi_target").prop("disabled", true);
+        $(".kpi_ytd").prop("disabled", true);
+        $(".kpi_date").prop("disabled", true);
+        $(".kpi_weight").prop("disabled", true);
+        $(".kpi_subweight").prop("disabled", true);
+        $(".kpi_status").prop("disabled", true);
       });
 
       $(".daterangepicker-field").daterangepicker({
