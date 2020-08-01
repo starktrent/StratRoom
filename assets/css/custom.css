@@ -1136,7 +1136,7 @@ label {
 }
 
 .strategy-formula .heading h6 {
-  color: #1e252d;
+  color: #fff;
 }
 
 .strategy-formula .header-content ul {
@@ -1150,9 +1150,10 @@ label {
 
 .strategy-formula .card {
   box-sizing: border-box;
-  border: 2px solid #1e252d;
+  /* border: 2px solid #1e252d; */
   /* box-shadow: 3px 6px 8px rgba(132, 132, 132, 0.12); */
   border-radius: 2px !important;
+  background-color: #525252;
 }
 
 .perspective-div .card,
@@ -1162,12 +1163,12 @@ label {
 
 .strategy-formula .header-content ul li strong {
   font-size: 11px;
-  color: #1e252d;
+  color: #fff;
 }
 
 .strategy-formula .header-content ul li p {
   font-size: 11px;
-  color: #5a5a5a;
+  color: #fff;
   margin-top: 8px;
 }
 
@@ -1234,23 +1235,36 @@ label {
 }
 
 .search-section {
-  padding-left: 22px;
-  padding-right: 22px;
+  /* padding-left: 22px; */
+  margin-right: 4px;
+  margin-top: -4px;
 }
 
 .search-section .search {
-  border: 1px solid #e2e2e2 !important;
+  border: 1px solid #e9ecef !important;
   box-sizing: border-box !important;
-  border-radius: 4px !important;
-  height: 35px !important;
-  padding-left: 32px !important;
+  border-radius: 2px !important;
+  height: 26px !important;
+  padding-left: 28px !important;
 }
 
-.search-section i {
+.search-section input::placeholder {
+  color: #c2c2c2 !important;
+}
+
+.search-section .fa-search {
   position: absolute;
-  left: 30px;
-  top: 10px;
-  font-size: 15px;
+  left: 32.3%;
+  top: 3px;
+  font-size: 13px;
+  color: #c2c2c2;
+}
+
+.search-section .fa-times {
+  position: absolute;
+  right: 56px;
+  top: 3px;
+  font-size: 13px;
   color: #c2c2c2;
 }
 
@@ -1296,7 +1310,7 @@ label {
   top: 70px;
   right: 0;
   background-color: #fff;
-  overflow-x: hidden;
+  overflow: hidden;
   transition: 0.5s;
   box-shadow: -8px 8px 16px rgba(145, 145, 145, 0.15);
 }
