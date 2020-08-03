@@ -1243,7 +1243,7 @@ label {
 .search-section .search {
   border: 1px solid #e9ecef !important;
   box-sizing: border-box !important;
-  border-radius: 2px !important;
+  border-radius: 12px !important;
   height: 26px !important;
   padding-left: 28px !important;
 }
@@ -1254,7 +1254,7 @@ label {
 
 .search-section .fa-search {
   position: absolute;
-  left: 32.3%;
+  left: 142px;
   top: 3px;
   font-size: 13px;
   color: #c2c2c2;
