@@ -1177,7 +1177,7 @@ label {
 }
 
 .perspective-div .perspective-heading h5 {
-  font-size: 15px;
+  font-size: 16px !important;
   color: #1e252d;
 }
 
@@ -1228,7 +1228,7 @@ label {
 }
 
 #perspective_sidebar .side_border_persp .profile_content span {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   color: #fff;
   margin: 12px 0 6px 0px;
@@ -1282,7 +1282,7 @@ label {
 }
 
 .obj-content div .card .name span {
-  font-size: 13px;
+  font-size: 12px;
   color: #1e252d;
 }
 
