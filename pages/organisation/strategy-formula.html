@@ -8,27 +8,21 @@
     <!-- Favicon-->
     <!-- <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon"> -->
     <!-- Plugins Core Css -->
-    <link
-      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
     <link href="../../assets/css/app.min.css" rel="stylesheet" />
     <!-- Custom Css -->
+    <link href="../../assets/css/app.min.css" rel="stylesheet" />
     <link href="../../assets/css/style.css" rel="stylesheet" />
     <link href="../../assets/css/custom.css" rel="stylesheet" />
     <link href="../../assets/css/initatives.css" rel="stylesheet" />
     <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" />
     <!-- You can choose a theme from css/styles instead of get all themes -->
     <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
-    <!-- <link href="../../assets/css/table-view.css" rel="stylesheet" /> -->
-    <!-- <link rel="stylesheet" href="../../assets/daterangepicker.css"> -->
-    <!-- <link rel="stylesheet" href="../../assets/datepickerair.css"> -->
+    <link rel="stylesheet" href="../../assets/datepickerair.css" />
     <link href="../../assets/jquery-ui.min.css" rel="stylesheet" />
-    <!-- <link href="../../assets/daterangepicker/daterangepicker.min.css" rel="stylesheet"> -->
+    <!-- <link
+      href="../../assets/daterangepicker/daterangepicker.min.css"
+      rel="stylesheet"
+    /> -->
     <link href="../../assets/css/employee.css" rel="stylesheet" />
     <!-- <link href="../../assets/bootstrap-datepicker.min.css" rel="stylesheet" /> -->
 
@@ -60,12 +54,31 @@
 
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
+    <!-- Font Awsome Icons -->
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <style>
       .orientation-right {
         top: 60px !important;
         right: 0 !important;
         left: auto !important;
         position: fixed;
+      }
+
+      .side_border_p {
+        background-color: #9c2545 !important;
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      label {
+        font-size: 12px !important;
       }
     </style>
   </head>
@@ -114,7 +127,12 @@
         <div class="collapse navbar-collapse" id="navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="fullscreen" style="padding: 4px; left: -14px;">
-              <ul class="list-unstyled order-list">
+              <ul
+                class="list-unstyled order-list"
+                data-toggle="modal"
+                data-target="#user_edit_popup"
+                style="cursor: pointer;"
+              >
                 <li class="avatar avatar-sm">
                   <img
                     class="rounded-circle"
@@ -185,8 +203,8 @@
               <a
                 href="#"
                 onClick="return false;"
-                class="dropdown-toggle"
-                data-toggle="dropdown"
+                data-toggle="modal"
+                data-target="#settings"
                 role="button"
               >
                 <i class="nav-hdr-btn ti-settings" style="color: gray;"></i>
@@ -364,591 +382,6 @@
       </aside>
     </div>
     <!-- #END# Left Sidebar -->
-
-    <!-- Right Sidebar -->
-    <aside id="rightsidebar" class="right-sidebar open">
-      <div class="tab-content">
-        <div
-          role="tabpanel"
-          class="tab-pane in active in active stretchLeft"
-          id="skins"
-        >
-          <div
-            class="slimScrollDiv"
-            style="position: relative; overflow: hidden; width: auto;"
-          >
-            <div
-              class="demo-skin"
-              style="overflow: hidden; width: auto; height: auto;"
-            >
-              <div class="rightSetting">
-                <p class="left">Profile</p>
-                <a href="#">
-                  <p class="right editProfile">Edit</p>
-                  <p class="right editProfile"></p>
-                </a>
-                <ul
-                  class="setting-list profile-default list-unstyled m-t-20 center"
-                >
-                  <!-- <li class="center">
-                                                <i class="fas fa-user-circle" style="font-size: 110px"></i>
-                                            </li> -->
-                  <li
-                    _ngcontent-hhc-c5=""
-                    class="center avatar avatar-sm"
-                    style="width: 85px;"
-                  >
-                    <img
-                      _ngcontent-hhc-c5=""
-                      alt="user"
-                      width="110"
-                      class="rounded-circle"
-                      src="../../assets/images/user/usrbig7.jpg"
-                    />
-                  </li>
-                  <li>
-                    <p class="center name">Karthick, C001</p>
-                  </li>
-                  <li>
-                    <p class="center grey1">Manager, Chennai, TN, India</p>
-                  </li>
-                  <li>
-                    <p class="center grey1">karthick@stratroom.com</p>
-                  </li>
-                </ul>
-                <ul
-                  class="setting-list profile-replace list-unstyled m-t-20"
-                  style="display: none;"
-                >
-                  <li class="center">
-                    <form id="profileForm">
-                      <div class="form-group">
-                        <div class="form-line profile-pic">
-                          <!-- <i  class="fas fa-user-circle" style="font-size: 100px; opacity:0.5"></i> -->
-                          <li
-                            id="profileImage"
-                            _ngcontent-hhc-c5=""
-                            class="center avatar avatar-sm"
-                            style="width: 85px; z-index: -1;"
-                          >
-                            <img
-                              _ngcontent-hhc-c5=""
-                              alt="user"
-                              width="110"
-                              class="rounded-circle"
-                              src="../../assets/images/user/usrbig7.jpg"
-                            />
-                          </li>
-                          <input
-                            id="imageUpload"
-                            type="file"
-                            name="profile_photo"
-                            placeholder="Photo"
-                            required=""
-                            capture=""
-                          />
-                          <div class="edit">
-                            <a href="#"><i class="fa fa-pencil-alt"></i></a>
-                          </div>
-                        </div>
-                        <div class="form-line">
-                          <label for="name" class="left">Name</label>
-                          <input type="text" name="name" class="form-control" />
-                        </div>
-                        <div class="form-line">
-                          <label for="id" class="left">Employee ID</label>
-                          <input type="text" name="id" class="form-control" />
-                        </div>
-
-                        <div class="form-line">
-                          <label for="title" class="left">Title</label>
-                          <input
-                            type="text"
-                            name="title"
-                            class="form-control"
-                          />
-                        </div>
-
-                        <div class="form-line">
-                          <label for="email" class="left">Email</label>
-                          <input
-                            type="email"
-                            name="email"
-                            class="form-control"
-                          />
-                        </div>
-
-                        <div class="form-line">
-                          <label for="location" class="left">Location</label>
-                          <input
-                            type="text"
-                            name="location"
-                            class="form-control"
-                          />
-                        </div>
-
-                        <div class="form-line center">
-                          <button
-                            class="btn-default1 btn cancelEditProfile"
-                            value="Cancel"
-                          >
-                            Cancel
-                          </button>
-                          <button class="initative_save_btn" value="Submit">
-                            Submit
-                          </button>
-                        </div>
-                      </div>
-                    </form>
-                  </li>
-                  <li>
-                    <!-- <p class="center name">Karthick</p> -->
-                  </li>
-                </ul>
-              </div>
-
-              <div class="row clearfix">
-                <!-- Basic Examples -->
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <div class="">
-                    <div class="body">
-                      <div class="row clearfix">
-                        <div class="col-xs-12 ol-sm-12 col-md-12 col-lg-12">
-                          <div
-                            class="panel-group"
-                            id="accordion_1"
-                            role="tablist"
-                            aria-multiselectable="true"
-                          >
-                            <div class="panel">
-                              <div
-                                class="panel-heading profile_report"
-                                role="tab"
-                                id="headingOne_1"
-                              >
-                                <h4 class="panel-title">
-                                  <a
-                                    role="button"
-                                    data-toggle="collapse"
-                                    data-parent="#accordion_1"
-                                    href="#collapseOne_1"
-                                    aria-expanded="true"
-                                    aria-controls="collapseOne_1"
-                                  >
-                                    Reporting To
-                                  </a>
-                                </h4>
-                              </div>
-                              <div
-                                id="collapseOne_1"
-                                class="panel-collapse collapse in"
-                                role="tabpanel"
-                                aria-labelledby="headingOne_1"
-                              >
-                                <div class="panel-body profile_edit">
-                                  <div class="rightSetting">
-                                    <!-- <p class="left">Reporting To</p> -->
-                                    <a href="#" id="reportingAdd">
-                                      <p class="right">Add</p>
-                                    </a>
-                                    <ul
-                                      class="setting-list reporting-default list-unstyled m-t-20"
-                                    >
-                                      <li class="row reportingRow">
-                                        <div class="col-md-3 p-b-10">
-                                          <!-- <li id="profileImage" _ngcontent-hhc-c5="" class="center avatar avatar-sm" style="width:85px; z-index:-1"> -->
-                                          <img
-                                            _ngcontent-hhc-c5=""
-                                            alt="user"
-                                            width="110"
-                                            class="rounded-circle"
-                                            src="../../assets/images/user/usrbig7.jpg"
-                                          />
-                                          <!-- </li> -->
-                                        </div>
-                                        <div class="col-md-7 p-t-5">
-                                          <p class="center name">Arun</p>
-                                          <p class="center grey1">Developer</p>
-                                        </div>
-                                        <div
-                                          class="col-md-1"
-                                          style="float: right;"
-                                        >
-                                          <a href="#" class="reportingEdit"
-                                            ><i
-                                              class="fas fa-pencil-alt"
-                                              style="font-size: 14px;"
-                                            ></i
-                                          ></a>
-                                        </div>
-                                      </li>
-                                      <li class="row reportingRow">
-                                        <div class="col-md-3 p-b-10">
-                                          <img
-                                            _ngcontent-hhc-c5=""
-                                            alt="user"
-                                            width="110"
-                                            class="rounded-circle"
-                                            src="../../assets/images/user/usrbig8.jpg"
-                                          />
-                                        </div>
-                                        <div class="col-md-7 p-t-5">
-                                          <p class="center name">Santhosh</p>
-                                          <p class="center grey1">CTO</p>
-                                        </div>
-                                        <div
-                                          class="col-md-1"
-                                          style="float: right;"
-                                        >
-                                          <a href="#" class="reportingEdit"
-                                            ><i
-                                              class="fas fa-pencil-alt"
-                                              style="font-size: 14px;"
-                                            ></i
-                                          ></a>
-                                        </div>
-                                      </li>
-                                    </ul>
-                                    <ul
-                                      class="setting-list reporting-replace-add list-unstyled m-t-20"
-                                      style="display: none;"
-                                    >
-                                      <li class="row">
-                                        <form id="reportingAddForm">
-                                          <div class="form-group">
-                                            <div
-                                              class="form-line center profile-pic"
-                                            >
-                                              <img
-                                                _ngcontent-hhc-c5=""
-                                                alt="user"
-                                                width="60"
-                                                class="rounded-circle"
-                                                src="../../assets/images/user/usrbig7.jpg"
-                                              />
-                                              <input
-                                                id="reportingImageUpload"
-                                                type="file"
-                                                name="profile_photo1"
-                                                placeholder="Photo"
-                                                required=""
-                                                capture=""
-                                              />
-                                              <div class="edit1">
-                                                <a href="#"
-                                                  ><i
-                                                    class="fa fa-pencil-alt"
-                                                  ></i
-                                                ></a>
-                                              </div>
-                                            </div>
-                                            <div class="form-line">
-                                              <label for="name" class="left"
-                                                >Name</label
-                                              >
-                                              <input
-                                                type="text"
-                                                name="name"
-                                                class="form-control"
-                                              />
-                                            </div>
-                                            <div class="form-line">
-                                              <label for="title" class="left"
-                                                >Title</label
-                                              >
-                                              <input
-                                                type="text"
-                                                name="title"
-                                                class="form-control"
-                                              />
-                                            </div>
-
-                                            <div class="form-line center">
-                                              <button
-                                                class="btn-default1 btn canceladdReporting"
-                                                value="Cancel"
-                                              >
-                                                Cancel
-                                              </button>
-                                              <button
-                                                class="initative_save_btn"
-                                                value="Submit"
-                                              >
-                                                Submit
-                                              </button>
-                                            </div>
-                                          </div>
-                                        </form>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row clearfix">
-                <!-- Basic Examples -->
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <div class="">
-                    <div class="body">
-                      <div class="row clearfix">
-                        <div class="col-xs-12 ol-sm-12 col-md-12 col-lg-12">
-                          <div
-                            class="panel-group"
-                            id="accordion_2"
-                            role="tablist"
-                            aria-multiselectable="true"
-                          >
-                            <div class="panel">
-                              <div
-                                class="panel-heading profile_direct"
-                                role="tab"
-                                id="headingOne_2"
-                              >
-                                <h4 class="panel-title">
-                                  <a
-                                    role="button"
-                                    data-toggle="collapse"
-                                    data-parent="#accordion_2"
-                                    href="#collapseOne_2"
-                                    aria-expanded="true"
-                                    aria-controls="collapseOne_2"
-                                  >
-                                    Direct Reportees
-                                  </a>
-                                </h4>
-                              </div>
-                              <div
-                                id="collapseOne_2"
-                                class="panel-collapse collapse in"
-                                role="tabpanel"
-                                aria-labelledby="headingOne_2"
-                              >
-                                <div class="panel-body profile_edit">
-                                  <div class="rightSetting">
-                                    <!-- <p class="left">Direct Reportees</p> -->
-                                    <a href="#" id="directAdd">
-                                      <p class="right">Add</p>
-                                    </a>
-                                    <ul
-                                      class="setting-list direct-default list-unstyled m-t-20"
-                                    >
-                                      <li class="row reportingRow">
-                                        <div class="col-md-3 p-b-10">
-                                          <img
-                                            _ngcontent-hhc-c5=""
-                                            alt="user"
-                                            width="110"
-                                            class="rounded-circle"
-                                            src="../../assets/images/user/usrbig6.jpg"
-                                          />
-                                        </div>
-                                        <div class="col-md-7 p-t-5">
-                                          <p class="center name">Karthick</p>
-                                          <p class="center grey1">Manager</p>
-                                        </div>
-                                        <div
-                                          class="col-md-1"
-                                          style="float: right;"
-                                        >
-                                          <a href="#" class="directEdit"
-                                            ><i
-                                              class="fas fa-pencil-alt"
-                                              style="font-size: 14px;"
-                                            ></i
-                                          ></a>
-                                        </div>
-                                      </li>
-                                      <li class="row reportingRow">
-                                        <div class="col-md-3 p-b-10">
-                                          <img
-                                            _ngcontent-hhc-c5=""
-                                            alt="user"
-                                            width="110"
-                                            class="rounded-circle"
-                                            src="../../assets/images/user/usrbig9.jpg"
-                                          />
-                                        </div>
-                                        <div class="col-md-7 p-t-5">
-                                          <p class="center name">Naren</p>
-                                          <p class="center grey1">Designer</p>
-                                        </div>
-                                        <div
-                                          class="col-md-1"
-                                          style="float: right;"
-                                        >
-                                          <a href="#" class="directEdit"
-                                            ><i
-                                              class="fas fa-pencil-alt"
-                                              style="font-size: 14px;"
-                                            ></i
-                                          ></a>
-                                        </div>
-                                      </li>
-                                    </ul>
-                                    <ul
-                                      class="setting-list direct-replace-add list-unstyled m-t-20"
-                                      style="display: none;"
-                                    >
-                                      <li class="row">
-                                        <form id="directAddForm">
-                                          <div class="form-group">
-                                            <div
-                                              class="form-line center profile-pic"
-                                            >
-                                              <img
-                                                _ngcontent-hhc-c5=""
-                                                alt="user"
-                                                width="60"
-                                                class="rounded-circle"
-                                                src="../../assets/images/user/usrbig7.jpg"
-                                              />
-                                              <input
-                                                id="directImageUpload"
-                                                type="file"
-                                                name="profile_photo1"
-                                                placeholder="Photo"
-                                                required=""
-                                                capture=""
-                                              />
-                                              <div class="edit1">
-                                                <a href="#"
-                                                  ><i
-                                                    class="fa fa-pencil-alt"
-                                                  ></i
-                                                ></a>
-                                              </div>
-                                            </div>
-                                            <div class="form-line">
-                                              <label for="name" class="left"
-                                                >Name</label
-                                              >
-                                              <input
-                                                type="text"
-                                                name="name"
-                                                class="form-control"
-                                              />
-                                            </div>
-                                            <div class="form-line">
-                                              <label for="title" class="left"
-                                                >Title</label
-                                              >
-                                              <input
-                                                type="text"
-                                                name="title"
-                                                class="form-control"
-                                              />
-                                            </div>
-
-                                            <div class="form-line center">
-                                              <button
-                                                class="btn-default1 btn canceladdDirect"
-                                                value="Cancel"
-                                              >
-                                                Cancel
-                                              </button>
-                                              <button
-                                                class="initative_save_btn"
-                                                value="Submit"
-                                              >
-                                                Submit
-                                              </button>
-                                            </div>
-                                          </div>
-                                        </form>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row clearfix">
-                <!-- Basic Examples -->
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <div class="">
-                    <div class="body">
-                      <div class="row clearfix">
-                        <div class="col-xs-12 ol-sm-12 col-md-12 col-lg-12">
-                          <div
-                            class="panel-group"
-                            id="accordion_3"
-                            role="tablist"
-                            aria-multiselectable="true"
-                          >
-                            <div class="panel">
-                              <div
-                                class="panel-heading profile_responsilities"
-                                role="tab"
-                                id="headingOne_3"
-                              >
-                                <h4 class="panel-title">
-                                  <a
-                                    role="button"
-                                    data-toggle="collapse"
-                                    data-parent="#accordion_3"
-                                    href="#collapseOne_3"
-                                    aria-expanded="true"
-                                    aria-controls="collapseOne_3"
-                                  >
-                                    My Responsibilities
-                                  </a>
-                                </h4>
-                              </div>
-                              <div
-                                id="collapseOne_3"
-                                class="panel-collapse collapse in"
-                                role="tabpanel"
-                                aria-labelledby="headingOne_3"
-                              >
-                                <div class="panel-body profile_edit">
-                                  <ul class="ml-menu profile_accordion">
-                                    <li>
-                                      <a href="#">My KPI's</a>
-                                    </li>
-                                    <li>
-                                      <a href="#">My Initiatives</a>
-                                    </li>
-                                    <li>
-                                      <a href="#">My Activities</a>
-                                    </li>
-                                    <li>
-                                      <a href="#">My Tasks</a>
-                                    </li>
-                                    <li>
-                                      <a href="#">My Forms</a>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- <div class="slimScrollBar" style="background: rgba(0, 0, 0, 0.5); width: 6px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 0px; z-index: 99; right: 1px; height: 482px;"></div>
-                                <div class="slimScrollRail" style="width: 6px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 0px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div> -->
-          </div>
-        </div>
-      </div>
-    </aside>
-    <!-- #END# Right Sidebar -->
 
     <!--#Start User Edit Popup -->
     <div
@@ -1186,768 +619,1385 @@
 
     <section class="content">
       <!-- Page Header -->
-      <div
-        class="page-header row no-gutters py-2 m-t--60"
-        style="margin-bottom: 8px !important;"
-      >
+      <div class="page-header row no-gutters py-2 m-t--70">
         <div class="col-lg-6 col-md-6 text-center text-sm-left pt-2 mb-0 ml-4">
           <h5
             class="page-title"
             style="font-weight: 600; text-transform: uppercase;"
           >
-            Overview - Strategy Formulation
+            Strategy Formulation
           </h5>
         </div>
       </div>
       <!-- End Page Header -->
 
-      <!-- Default Light Table -->
-      <div class="card card-small crdbg" style="margin: 0 !important;">
-        <div class="card-body p-0 pb-3">
-          <div class="form-row mt-5 mb-4 ml-4">
-            <div class="form-group col-md-3">
-              <label for="blog-overview-date-range"
-                >Strategic Plan Period</label
-              >
-              <div
-                id="blog-overview-date-range"
-                class="input-daterange input-group input-group-sm my-auto ml-auto mr-auto ml-sm-auto mr-sm-0 pt-2"
-              >
-                <input
-                  class="form-control datepicker-stat"
-                  name="start"
-                  placeholder="Start Date"
-                  id="datepicker-stat"
-                  width="120px"
-                />
-                <script>
-                  $(".datepicker-stat").datepicker();
-                </script>
-
-                <input
-                  class="form-control datepicker-end"
-                  name="start"
-                  placeholder="End Date"
-                  id="datepicker2"
-                  width="120px"
-                />
-                <script>
-                  console.log();
-                  $(".datepicker-end").datepicker();
-                </script>
-              </div>
-            </div>
-
-            <div class="form-group col-md-3">
-              <label for="plan_type">Plan Type</label>
-              <select id="plan_type" class="form-control mt-2">
-                <option value=""> Long Term</option>
-                <option value=""> Medium Term</option>
-                <option value=""> Small Term</option>
-              </select>
-            </div>
-
-            <div class="form-group col-md-3" style="padding-left: 50px;">
-              <label for="plan_type">Formulation Team</label>
-              <div class="d-flex flex-column mt-2">
-                <ul
-                  class="list-unstyled order-list d-flex"
-                  data-toggle="modal"
-                  data-target="#user_edit_popup"
-                  style="cursor: pointer;"
-                >
-                  <li class="avatar avatar-sm">
-                    <img
-                      class="rounded-circle sub_init_img"
-                      src="../../assets/images/user/user9.jpg"
-                      alt="user"
-                      width="50"
-                    />
-                  </li>
-                  <li class="avatar avatar-sm">
-                    <img
-                      class="rounded-circle sub_init_img"
-                      src="../../assets/images/user/user8.jpg"
-                      alt="user"
-                      width="50"
-                    />
-                  </li>
-                  <li class="avatar avatar-sm">
-                    <img
-                      class="rounded-circle sub_init_img"
-                      src="../../assets/images/user/user9.jpg"
-                      alt="user"
-                      width="50"
-                    />
-                  </li>
-
-                  <li class="avatar avatar-sm">
-                    <span _ngcontent-hhc-c5="" class="badge">+3</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="form-group col-md-1">
-              <label for="plan_type">Approved By</label>
-              <div class="mt-2">
-                <ul
-                  class="list-unstyled order-list d-flex"
-                  data-toggle="modal"
-                  data-target="#user_edit_popup"
-                  style="cursor: pointer;"
-                >
-                  <li class="avatar avatar-sm">
-                    <img
-                      class="rounded-circle sub_init_img"
-                      src="../../assets/images/user/user9.jpg"
-                      alt="user"
-                      width="50"
-                    />
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="form-group col-md-2">
-              <label for="plan_type">Approved Date</label>
-              <div class="mt-2">
-                <input
-                  class="form-control datepicker"
-                  name="start"
-                  placeholder="Approval Date"
-                  id="datepicker3"
-                  width="140px"
-                />
-                <script>
-                  console.log();
-                  $("#datepicker3").datepicker();
-                </script>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Default Light Table -->
-
-      <!-- Page Header -->
-      <div
-        class="page-header row no-gutters py-2 m-t-20"
-        style="margin-bottom: 8px !important;"
-      >
-        <div class="col-lg-6 col-md-6 text-center text-sm-left pt-2 mb-0 ml-4">
-          <h5
-            class="page-title"
-            style="font-weight: 600; text-transform: uppercase;"
-          >
-            Overview - Corporate Strategy
-          </h5>
-        </div>
-      </div>
-      <!-- End Page Header -->
-
-      <div
-        class="row container-fluid"
-        style="background-color: #fff; margin: 0 !important;"
-      >
-        <div class="col-lg-12">
-          <ul class="nav nav-tabs" id="tabs">
-            <li class="nabti">
-              <button class="" onclick="addTab('#');">
-                <i class="fa fa-save"></i>
-              </button>
-            </li>
-
-            <li class="nabti">
-              <button class="" onclick="addTab('#content');">
-                <i class="fa fa-plus"></i>
-              </button>
-            </li>
-
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                onclick="active();"
-                data-toggle="tab"
-                href="#finance"
-              >
-                <input
-                  class=""
-                  type="text"
-                  value="Finance"
-                  style="font-weight: 600; text-transform: uppercase;"
-                />
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                onclick="active();"
-                data-toggle="tab"
-                href="#business"
-              >
-                <input
-                  class=""
-                  type="text"
-                  value="Business"
-                  style="font-weight: 600; text-transform: uppercase;"
-                />
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <script>
-          function active() {
-            $("#tabs li").removeClass("active");
-            $(".tab-content .tab-pane").removeClass("active");
-          }
-
-          function addTab(link) {
-            // hide other tabs
-            $("#tabs li").removeClass("active");
-
-            // add new tab and related content
-            $("#tabs").append(
-              "<li class='nav-item '><a class='nav-link' data-toggle='tab' href='#content'> <input class='' type='text' value='New Tab' style='font-weight: 600; text-transform: uppercase;'> </a></li>"
-            );
-          }
-        </script>
-      </div>
-
-      <div class="tab-content" id="tab-content">
-        <div class="tab-pane body content-view" id="content">
-          <div
-            class="card card-small crdbg objective"
-            style="margin: 0 !important;"
-          >
-            <div class="card-body p-0 pb-3" id="objective_extra">
-              <div class="row" style="background-color: #dee2e6;">
-                <div class="col-lg-12 pt-2 pb-2">
-                  <div class="float-right p-1 pr-4">
-                    <button class="form-control contentViewButton">
-                      <i class="fa fa-external-link"></i>
-                    </button>
-                  </div>
-                  <div class="float-right p-1">
-                    <button
-                      id="add_objective"
-                      onclick="objective_extra('objective_extra')"
-                      class="form-control"
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 sidebar-strategy" id="strategy_edit">
+            <div class="row">
+              <div class="col-12" style="padding-bottom: 8px;">
+                <div class="perspective-heading">
+                  <h5>
+                    Strategy Formulation Details
+                    <span
+                      class="pull-right"
+                      onclick="closeStrategy()"
+                      style="font-size: 15px; cursor: pointer;"
                     >
-                      <i class="fa fa-plus"></i>
-                    </button>
-                  </div>
+                      &times;
+                    </span>
+                  </h5>
+                </div>
+                <hr />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Name</label>
+                <input type="text" class="form-control browser-default" />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Start / End Date</label>
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers_bottom datepicker-here"
+                  data-range="true"
+                  data-multiple-dates-separator=" - "
+                  data-language="en"
+                  id="air-date-sub-init"
+                />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Plan Type</label>
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default"
+                >
+                  <option>Choose</option>
+                  <option value="Long Term">Long Term</option>
+                  <option value="Medium Term">Medium Term</option>
+                  <option value="Small Term">Small Term</option>
+                </select>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Formulation Team</label>
+                <div class="owner" style="padding-right: 12px;">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer;"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
 
-              <div class="row mt-4 ml-4" id="row_objective">
-                <div class="col-md-4">
-                  <div class="row">
-                    <div class="col-md-10">
-                      <label
-                        for="plan_type"
-                        style="font-size: 15px; color: #222;"
-                        >Objectives</label
-                      >
-                    </div>
-                    <div class="col-md-2">
-                      <button
-                        id="btn_copy"
-                        onclick="initiative('obj_extra')"
-                        class="form-control"
-                        style="border: none;"
-                      >
-                        <i
-                          class="fas fa-plus-circle pull-right"
-                          style="font-size: 18px; color: #1e252d;"
-                        ></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="form-row mt-4" id="obj_extra">
-                    <div class="col-md-2 form-group">
-                      <input
-                        type="text"
-                        class="form-control browser-default"
-                        placeholder="ID"
-                        style="height: 47px;"
+              <div class="col-12 form-group">
+                <label for="Name">Approved By</label>
+                <div class="owner" style="padding-right: 12px;">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer;"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
                       />
-                    </div>
-                    <div class="col-md-10 form-group">
-                      <textarea
-                        class="form-control browser-default"
-                        placeholder=""
-                        cols=""
-                        rows="2"
-                      ></textarea>
-                    </div>
-                  </div>
+                    </li>
+                  </ul>
                 </div>
-                <div class="col-md-8">
-                  <div class="row">
-                    <div class="col-md-10">
-                      <label
-                        for="plan_type"
-                        style="font-size: 15px; color: #222;"
-                        >KPI'S</label
-                      >
-                    </div>
-                    <div class="col-md-2">
-                      <button
-                        id="btn_copy"
-                        onclick="kpi('kpi_extra')"
-                        class="form-control"
-                        style="border: none;"
-                      >
-                        <i
-                          class="fas fa-plus-circle"
-                          style="font-size: 18px; color: #1e252d;"
-                        ></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="form-row mt-4" id="kpi_extra">
-                    <div class="col-md-1 form-group">
-                      <input
-                        type="text"
-                        class="form-control browser-default"
-                        placeholder="ID"
-                        style="height: 47px;"
-                      />
-                    </div>
-                    <div class="col-md-5 form-group">
-                      <textarea
-                        class="form-control browser-default"
-                        placeholder=""
-                        cols="2"
-                        rows="2"
-                      ></textarea>
-                    </div>
-                    <div class="col-md-2 form-group">
-                      <select
-                        id="plan_type"
-                        class="form-control"
-                        style="height: 47px;"
-                      >
-                        <option value=""> Frequency</option>
-                        <option value=""> Daily</option>
-                        <option value=""> Weekly</option>
-                        <option value=""> Monthly</option>
-                        <option value=""> Annual</option>
-                      </select>
-                    </div>
-                    <div class="col-md-2 form-group">
-                      <input
-                        type="text"
-                        class="form-control browser-default"
-                        placeholder="Target"
-                        style="height: 47px;"
-                      />
-                    </div>
-                    <div class="col-md-2 form-group" style="margin-top: 10px;">
-                      <ul
-                        class="list-unstyled order-list d-flex"
-                        data-toggle="modal"
-                        data-target="#user_edit_popup"
-                        style="cursor: pointer;"
-                      >
-                        <li class="avatar avatar-sm">
-                          <img
-                            class="rounded-circle sub_init_img"
-                            src="../../assets/images/user/user9.jpg"
-                            alt="user"
-                            width="50"
-                          />
-                        </li>
-                        <li class="avatar avatar-sm">
-                          <img
-                            class="rounded-circle sub_init_img"
-                            src="../../assets/images/user/user8.jpg"
-                            alt="user"
-                            width="50"
-                          />
-                        </li>
+              </div>
 
-                        <li class="avatar avatar-sm">
-                          <span _ngcontent-hhc-c5="" class="badge">+3</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+              <div class="col-12 form-group">
+                <label for="Name">Approved Date</label>
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers_single"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                />
               </div>
             </div>
           </div>
-        </div>
-        <div class="tab-content" id="tab-content">
-          <div class="tab-pane body active finance-view" id="finance">
-            <!-- Default Light Table -->
-            <div
-              class="card card-small crdbg objective"
-              style="margin: 0 !important;"
-            >
-              <div class="card-body p-0 pb-3" id="objective_first">
-                <div class="row" style="background-color: #dee2e6;">
-                  <div class="col-lg-12 pt-2 pb-2">
-                    <div class="float-right p-1 pr-4">
-                      <button class="form-control financeViewButton">
-                        <i class="fa fa-external-link"></i>
-                      </button>
-                    </div>
-                    <div class="float-right p-1">
-                      <button
-                        id="add_objective"
-                        onclick="objective_first('objective_first')"
-                        class="form-control"
-                      >
-                        <i class="fa fa-plus"></i>
-                      </button>
-                    </div>
-                  </div>
+          <div class="col-12 sidebar-strategy" id="perspective_view">
+            <div class="row">
+              <div class="col-12" style="padding-bottom: 8px;">
+                <div class="perspective-heading">
+                  <h5>
+                    Prespective Details
+                    <span
+                      class="pull-right"
+                      onclick="closePerspective()"
+                      style="font-size: 15px; cursor: pointer;"
+                    >
+                      &times;
+                    </span>
+                    <span
+                      class="pull-right"
+                      id="edit_perspective"
+                      style="margin-right: 12px;"
+                    >
+                      <i class="fas fa-pencil-alt border-box"></i
+                    ></span>
+                  </h5>
                 </div>
+                <hr />
+              </div>
 
-                <div class="row mt-4 ml-4" id="row_objective">
-                  <div class="col-md-4">
-                    <div class="row">
-                      <div class="col-md-10">
-                        <label
-                          for="plan_type"
-                          style="font-size: 15px; color: #222;"
-                          >Objectives</label
-                        >
-                      </div>
-                      <div class="col-md-2">
-                        <button
-                          id="btn_copy"
-                          onclick="initiative('obj_first')"
-                          class="form-control"
-                          style="border: none;"
-                        >
-                          <i
-                            class="fas fa-plus-circle pull-right"
-                            style="font-size: 18px; color: #1e252d;"
-                          ></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="form-row mt-4" id="obj_first">
-                      <div class="col-md-2 form-group">
-                        <input
-                          type="text"
-                          class="form-control browser-default"
-                          placeholder="ID"
-                          style="height: 47px;"
-                        />
-                      </div>
-                      <div class="col-md-10 form-group">
-                        <textarea
-                          class="form-control browser-default"
-                          placeholder=""
-                          cols=""
-                          rows="2"
-                        ></textarea>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-8">
-                    <div class="row">
-                      <div class="col-md-10">
-                        <label
-                          for="plan_type"
-                          style="font-size: 15px; color: #222;"
-                          >KPI'S</label
-                        >
-                      </div>
-                      <div class="col-md-2">
-                        <button
-                          id="btn_copy"
-                          onclick="kpi('kpi_first')"
-                          class="form-control"
-                          style="border: none;"
-                        >
-                          <i
-                            class="fas fa-plus-circle"
-                            style="font-size: 18px; color: #1e252d;"
-                          ></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="form-row mt-4" id="kpi_first">
-                      <div class="col-md-1 form-group">
-                        <input
-                          type="text"
-                          class="form-control browser-default"
-                          placeholder="ID"
-                          style="height: 47px;"
-                        />
-                      </div>
-                      <div class="col-md-5 form-group">
-                        <textarea
-                          class="form-control browser-default"
-                          placeholder=""
-                          cols="2"
-                          rows="2"
-                        ></textarea>
-                      </div>
-                      <div class="col-md-2 form-group">
-                        <select
-                          id="plan_type"
-                          class="form-control"
-                          style="height: 47px;"
-                        >
-                          <option value=""> Frequency</option>
-                          <option value=""> Daily</option>
-                          <option value=""> Weekly</option>
-                          <option value=""> Monthly</option>
-                          <option value=""> Annual</option>
-                        </select>
-                      </div>
-                      <div class="col-md-2 form-group">
-                        <input
-                          type="text"
-                          class="form-control browser-default"
-                          placeholder="Target"
-                          style="height: 47px;"
-                        />
-                      </div>
-                      <div
-                        class="col-md-2 form-group"
-                        style="margin-top: 10px;"
-                      >
-                        <ul class="list-unstyled order-list d-flex"
-                        data-toggle="modal"
-                        data-target="#user_edit_popup"
-                        style="cursor: pointer;">
-                          <li class="avatar avatar-sm">
-                            <img
-                              class="rounded-circle sub_init_img"
-                              src="../../assets/images/user/user9.jpg"
-                              alt="user"
-                              width="50"
-                            />
-                          </li>
-                          <li class="avatar avatar-sm">
-                            <img
-                              class="rounded-circle sub_init_img"
-                              src="../../assets/images/user/user8.jpg"
-                              alt="user"
-                              width="50"
-                            />
-                          </li>
+              <div class="col-12 form-group">
+                <label for="Name">Name</label>
+                <input
+                  type="text"
+                  class="form-control browser-default persp_name"
+                  value="Internal Process & Systems"
+                  disabled="true"
+                />
+              </div>
 
-                          <li class="avatar avatar-sm">
-                            <span _ngcontent-hhc-c5="" class="badge">+3</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
+              <div class="col-12 form-group">
+                <label for="Name">Start / End Date</label>
+                <input
+                  type="text"
+                  class="form-control persp_date browser-default date_pickers_bottom datepicker-here"
+                  data-range="true"
+                  data-multiple-dates-separator=" - "
+                  data-language="en"
+                  disabled="true"
+                  value="29/07/2020 - 31/07/2020"
+                  id="air-date-sub-init"
+                />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Owner</label>
+                <div class="owner" style="padding-right: 12px;">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer;"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
                 </div>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Weight (%)</label>
+                <input
+                  type="text"
+                  class="form-control browser-default persp_weight"
+                  value="123"
+                  disabled="true"
+                />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Sub Weight (%)</label>
+                <input
+                  type="text"
+                  class="form-control browser-default persp_subweight"
+                  value="456"
+                  disabled="true"
+                />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Status</label>
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default persp_status"
+                  disabled="true"
+                >
+                  <option>Choose</option>
+                  <option value="manual">Manual</option>
+                  <option value="weighted">Weighted</option>
+                  <option value="first">First</option>
+                  <option value="second">Second</option>
+                  <option value="third">Third</option>
+                  <option value="fourth">Fourth</option>
+                </select>
+              </div>
+              <div class="col-12 form-group">
+                <button
+                  style="display: none;"
+                  class="initative_save_btn pull-right"
+                  value="Save"
+                  id="save_perspective"
+                >
+                  Save
+                </button>
               </div>
             </div>
           </div>
-          <div class="tab-pane body business-view" id="business">
-            <!-- Default Light Table -->
-            <div
-              class="card card-small crdbg objective"
-              style="margin: 0 !important;"
-            >
-              <div class="card-body p-0 pb-3" id="objective">
-                <div class="row" style="background-color: #dee2e6;">
-                  <div class="col-lg-12 pt-2 pb-2">
-                    <div class="float-right p-1 pr-4">
-                      <button class="form-control businessViewButton">
-                        <i class="fa fa-external-link"></i>
-                      </button>
-                    </div>
-                    <div class="float-right p-1">
-                      <button
-                        id="add_objective"
-                        onclick="objective('objective')"
-                        class="form-control"
-                      >
-                        <i class="fa fa-plus"></i>
-                      </button>
-                    </div>
-                  </div>
+          <div class="col-12 sidebar-strategy" id="objective_view">
+            <div class="row">
+              <div class="col-12" style="padding-bottom: 8px;">
+                <div class="perspective-heading">
+                  <h5>
+                    Objective Details
+                    <span
+                      class="pull-right"
+                      onclick="closeObjective()"
+                      style="font-size: 15px; cursor: pointer;"
+                    >
+                      &times;
+                    </span>
+                    <span
+                      class="pull-right"
+                      id="edit_objective"
+                      style="margin-right: 12px;"
+                    >
+                      <i class="fas fa-pencil-alt border-box"></i
+                    ></span>
+                  </h5>
                 </div>
+                <hr />
+              </div>
 
-                <div class="row mt-4 ml-4" id="row_objective">
-                  <div class="col-md-4">
-                    <div class="row">
-                      <div class="col-md-10">
-                        <label
-                          for="plan_type"
-                          style="font-size: 15px; color: #222;"
-                          >Objectives</label
-                        >
-                      </div>
-                      <div class="col-md-2">
-                        <button
-                          id="btn_copy"
-                          onclick="initiative('busi_obj')"
-                          class="form-control"
-                          style="border: none;"
-                        >
-                          <i
-                            class="fas fa-plus-circle pull-right"
-                            style="font-size: 18px; color: #1e252d;"
-                          ></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="form-row mt-4" id="busi_obj">
-                      <div class="col-md-2 form-group">
-                        <input
-                          type="text"
-                          class="form-control browser-default"
-                          placeholder="ID"
-                          style="height: 47px;"
-                        />
-                      </div>
-                      <div class="col-md-10 form-group">
-                        <textarea
-                          class="form-control browser-default"
-                          placeholder=""
-                          cols=""
-                          rows="2"
-                        ></textarea>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-8">
-                    <div class="row">
-                      <div class="col-md-10">
-                        <label
-                          for="plan_type"
-                          style="font-size: 15px; color: #222;"
-                          >KPI'S</label
-                        >
-                      </div>
-                      <div class="col-md-2">
-                        <button
-                          id="btn_copy"
-                          onclick="kpi('kpi')"
-                          class="form-control"
-                          style="border: none;"
-                        >
-                          <i
-                            class="fas fa-plus-circle"
-                            style="font-size: 18px; color: #1e252d;"
-                          ></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="form-row mt-4" id="kpi">
-                      <div class="col-md-1 form-group">
-                        <input
-                          type="text"
-                          class="form-control browser-default"
-                          placeholder="ID"
-                          style="height: 47px;"
-                        />
-                      </div>
-                      <div class="col-md-5 form-group">
-                        <textarea
-                          class="form-control browser-default"
-                          placeholder=""
-                          cols="2"
-                          rows="2"
-                        ></textarea>
-                      </div>
-                      <div class="col-md-2 form-group">
-                        <select
-                          id="plan_type"
-                          class="form-control"
-                          style="height: 47px;"
-                        >
-                          <option value=""> Frequency</option>
-                          <option value=""> Daily</option>
-                          <option value=""> Weekly</option>
-                          <option value=""> Monthly</option>
-                          <option value=""> Annual</option>
-                        </select>
-                      </div>
-                      <div class="col-md-2 form-group">
-                        <input
-                          type="text"
-                          class="form-control browser-default"
-                          placeholder="Target"
-                          style="height: 47px;"
-                        />
-                      </div>
-                      <div
-                        class="col-md-2 form-group"
-                        style="margin-top: 10px;"
-                      >
-                        <ul class="list-unstyled order-list d-flex"
-                        data-toggle="modal"
-                        data-target="#user_edit_popup"
-                        style="cursor: pointer;">
-                          <li class="avatar avatar-sm">
-                            <img
-                              class="rounded-circle sub_init_img"
-                              src="../../assets/images/user/user9.jpg"
-                              alt="user"
-                              width="50"
-                            />
-                          </li>
-                          <li class="avatar avatar-sm">
-                            <img
-                              class="rounded-circle sub_init_img"
-                              src="../../assets/images/user/user8.jpg"
-                              alt="user"
-                              width="50"
-                            />
-                          </li>
+              <div class="col-12 form-group">
+                <label for="Name">Name</label>
+                <input
+                  type="text"
+                  class="form-control browser-default obj_name"
+                  value="Internal Process & Systems"
+                  disabled="true"
+                />
+              </div>
 
-                          <li class="avatar avatar-sm">
-                            <span _ngcontent-hhc-c5="" class="badge">+3</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
+              <div class="col-12 form-group">
+                <label for="Name">Start / End Date</label>
+                <input
+                  type="text"
+                  class="form-control obj_date browser-default date_pickers_bottom datepicker-here"
+                  data-range="true"
+                  data-multiple-dates-separator=" - "
+                  data-language="en"
+                  disabled="true"
+                  value="29/07/2020 - 31/07/2020"
+                  id="air-date-sub-init"
+                />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Owner</label>
+                <div class="owner" style="padding-right: 12px;">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer;"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
                 </div>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Weight (%)</label>
+                <input
+                  type="text"
+                  class="form-control browser-default obj_weight"
+                  value="123"
+                  disabled="true"
+                />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Sub Weight (%)</label>
+                <input
+                  type="text"
+                  class="form-control browser-default obj_subweight"
+                  value="456"
+                  disabled="true"
+                />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Status</label>
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default obj_status"
+                  disabled="true"
+                >
+                  <option>Choose</option>
+                  <option value="manual">Manual</option>
+                  <option value="weighted">Weighted</option>
+                  <option value="first">First</option>
+                  <option value="second">Second</option>
+                  <option value="third">Third</option>
+                  <option value="fourth">Fourth</option>
+                </select>
+              </div>
+              <div class="col-12 form-group">
+                <button
+                  style="display: none;"
+                  class="initative_save_btn pull-right"
+                  value="Save"
+                  id="save_objective"
+                >
+                  Save
+                </button>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+          <div class="col-12 sidebar-strategy" id="perspective_add">
+            <div class="row">
+              <div class="col-12" style="padding-bottom: 8px;">
+                <div class="perspective-heading">
+                  <h5>
+                    Add Prespective
+                    <span
+                      class="pull-right"
+                      onclick="closePerspectiveAdd()"
+                      style="font-size: 15px; cursor: pointer;"
+                    >
+                      &times;
+                    </span>
+                  </h5>
+                </div>
+                <hr />
+              </div>
 
-      <!-- View Objective Modal -->
-      <div id="max" class="modal fade" role="dialog">
-        <div
-          class="modal-dialog modal-lg"
-          style="margin-top: 8%; max-width: 80%;"
-        >
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4>View Objectives</h4>
-              <button
-                type="button"
-                class="close pull-right"
-                data-dismiss="modal"
+              <div class="col-12 form-group">
+                <label for="Name">Name</label>
+                <input type="text" class="form-control browser-default" />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Start / End Date</label>
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers_bottom datepicker-here"
+                  data-range="true"
+                  data-multiple-dates-separator=" - "
+                  data-language="en"
+                  id="air-date-sub-init"
+                />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Owner</label>
+                <div class="owner" style="padding-right: 12px;">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer;"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Weight (%)</label>
+                <input type="text" class="form-control browser-default" />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Sub Weight (%)</label>
+                <input type="text" class="form-control browser-default" />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Status</label>
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default"
+                >
+                  <option>Choose</option>
+                  <option value="manual">Manual</option>
+                  <option value="weighted">Weighted</option>
+                  <option value="first">First</option>
+                  <option value="second">Second</option>
+                  <option value="third">Third</option>
+                  <option value="fourth">Fourth</option>
+                </select>
+              </div>
+              <div class="col-12 form-group">
+                <button class="initative_save_btn pull-right" value="Save">
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 sidebar-strategy" id="objective_add">
+            <div class="row">
+              <div class="col-12" style="padding-bottom: 8px;">
+                <div class="perspective-heading">
+                  <h5>
+                    Add Objective
+                    <span
+                      class="pull-right"
+                      onclick="closeObjectiveAdd()"
+                      style="font-size: 15px; cursor: pointer;"
+                    >
+                      &times;
+                    </span>
+                  </h5>
+                </div>
+                <hr />
+              </div>
+              <div class="col-12 form-group">
+                <label for="Name">Name</label>
+                <input type="text" class="form-control browser-default" />
+              </div>
+              <div class="col-12 form-group">
+                <label for="Name">Start / End Date</label>
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers_bottom datepicker-here"
+                  data-range="true"
+                  data-multiple-dates-separator=" - "
+                  data-language="en"
+                  id="air-date-sub-init"
+                />
+              </div>
+              <div class="col-12 form-group">
+                <label for="Name">Owner</label>
+                <div class="owner" style="padding-right: 12px;">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer;"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 form-group">
+                <label for="Name">Weight (%)</label>
+                <input type="text" class="form-control browser-default" />
+              </div>
+              <div class="col-12 form-group">
+                <label for="Name">Sub Weight (%)</label>
+                <input type="text" class="form-control browser-default" />
+              </div>
+              <div class="col-12 form-group">
+                <label for="Name">Status</label>
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default"
+                >
+                  <option>Choose</option>
+                  <option value="manual">Manual</option>
+                  <option value="weighted">Weighted</option>
+                  <option value="first">First</option>
+                  <option value="second">Second</option>
+                  <option value="third">Third</option>
+                  <option value="fourth">Fourth</option>
+                </select>
+              </div>
+              <div class="col-12 form-group">
+                <button class="initative_save_btn pull-right" value="Save">
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 sidebar-strategy" id="kpi_add">
+            <div class="row">
+              <div class="col-12" style="padding-bottom: 8px;">
+                <div class="perspective-heading">
+                  <h5>
+                    Add KPI
+                    <span
+                      class="pull-right"
+                      onclick="closeKPIAdd()"
+                      style="font-size: 15px; cursor: pointer;"
+                    >
+                      &times;
+                    </span>
+                  </h5>
+                </div>
+                <hr />
+              </div>
+            </div>
+            <div class="row" style="height: 594px; overflow-y: auto;">
+              <div class="col-12 form-group">
+                <label for="Name">Name</label>
+                <input type="text" class="form-control browser-default" />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Polarity">Polarity</label>
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default"
+                >
+                  <option>Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Measurement Frequency">Measurement Frequency</label>
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default"
+                >
+                  <option>Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Owner</label>
+                <div class="owner" style="padding-right: 12px;">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer;"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Data Source">Data Source</label>
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default"
+                >
+                  <option>Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="KPI Type">KPI Type</label>
+                <select
+                  id="kpi_type_select"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default"
+                >
+                  <option>Choose</option>
+                  <option value="Currency">Currency</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
+              </div>
+
+              <div
+                class="col-12 form-group"
+                id="currency_input"
+                style="display: none;"
               >
-                &times;
-              </button>
+                <label for="Currency">Currency</label>
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default"
+                >
+                  <option>Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Threshold">Threshold</label>
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default"
+                >
+                  <option>Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Actual">Actual</label>
+                <input type="text" class="form-control browser-default" />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Target">Target</label>
+                <input type="text" class="form-control browser-default" />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="YTD">YTD</label>
+                <input type="text" class="form-control browser-default" />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Start / End Date</label>
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers_bottom datepicker-here"
+                  data-range="true"
+                  data-multiple-dates-separator=" - "
+                  data-language="en"
+                  id="air-date-sub-init"
+                />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Weight (%)</label>
+                <input type="text" class="form-control browser-default" />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Sub Weight (%)</label>
+                <input type="text" class="form-control browser-default" />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Status</label>
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default"
+                >
+                  <option>Choose</option>
+                  <option value="manual">Manual</option>
+                  <option value="weighted">Weighted</option>
+                  <option value="first">First</option>
+                  <option value="second">Second</option>
+                  <option value="third">Third</option>
+                  <option value="fourth">Fourth</option>
+                </select>
+              </div>
+              <div class="col-12 form-group">
+                <button class="initative_save_btn pull-right" value="Save">
+                  Save
+                </button>
+              </div>
             </div>
-            <div class="modal-body">
-              <!-- Default Light Table -->
+          </div>
+          <div class="col-12 sidebar-strategy" id="kpi_view">
+            <div class="row">
+              <div class="col-12" style="padding-bottom: 8px;">
+                <div class="perspective-heading">
+                  <h5>
+                    KPI Details
+                    <span
+                      class="pull-right"
+                      onclick="closeKPI()"
+                      style="font-size: 15px; cursor: pointer;"
+                    >
+                      &times;
+                    </span>
+                    <span
+                      class="pull-right"
+                      id="edit_kpi"
+                      style="margin-right: 12px;"
+                    >
+                      <i class="fas fa-pencil-alt border-box"></i
+                    ></span>
+                  </h5>
+                </div>
+                <hr />
+              </div>
             </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-custom-secondary"
-                data-dismiss="modal"
-              >
-                <i class="fas fa-ban"></i> Close
-              </button>
-              <button type="button" class="btn btn-custom-primary">
-                <i class="fas fa-download"></i> Download
-              </button>
+            <div class="row" style="height: 594px; overflow-y: auto;">
+              <div class="col-12 form-group">
+                <label for="Name">Name</label>
+                <input
+                  type="text"
+                  class="form-control browser-default kpi_name"
+                  disabled="true"
+                />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Polarity">Polarity</label>
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default kpi_polarity"
+                  disabled="true"
+                >
+                  <option>Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Measurement Frequency">Measurement Frequency</label>
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default kpi_mf"
+                  disabled="true"
+                >
+                  <option>Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Owner</label>
+                <div class="owner" style="padding-right: 12px;">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer;"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Data Source">Data Source</label>
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default kpi_data"
+                  disabled="true"
+                >
+                  <option>Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="KPI Type">KPI Type</label>
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default kpi_type"
+                  disabled="true"
+                >
+                  <option>Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Currency">Currency</label>
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default kpi_currency"
+                  disabled="true"
+                >
+                  <option>Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Threshold">Threshold</label>
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default kpi_threshold"
+                  disabled="true"
+                >
+                  <option>Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Actual">Actual</label>
+                <input
+                  type="text"
+                  class="form-control browser-default kpi_actual"
+                  disabled="true"
+                />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Target">Target</label>
+                <input
+                  type="text"
+                  class="form-control browser-default kpi_target"
+                  disabled="true"
+                />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="YTD">YTD</label>
+                <input
+                  type="text"
+                  class="form-control browser-default kpi_ytd"
+                  disabled="true"
+                />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Start / End Date</label>
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers_bottom datepicker-here kpi_date"
+                  data-range="true"
+                  data-multiple-dates-separator=" - "
+                  data-language="en"
+                  id="air-date-sub-init"
+                />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Weight (%)</label>
+                <input
+                  type="text"
+                  class="form-control browser-default kpi_weight"
+                  disabled="true"
+                />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Sub Weight (%)</label>
+                <input
+                  type="text"
+                  class="form-control browser-default kpi_subweight"
+                  disabled="true"
+                />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Status</label>
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default kpi_status"
+                  disabled="true"
+                >
+                  <option>Choose</option>
+                  <option value="manual">Manual</option>
+                  <option value="weighted">Weighted</option>
+                  <option value="first">First</option>
+                  <option value="second">Second</option>
+                  <option value="third">Third</option>
+                  <option value="fourth">Fourth</option>
+                </select>
+              </div>
+              <div class="col-12 form-group">
+                <button
+                  style="display: none;"
+                  class="initative_save_btn pull-right"
+                  value="Save"
+                  id="save_kpi"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 strategy-formula">
+            <div class="card" style="padding: 12px 16px;">
+              <div class="row">
+                <div class="col-12">
+                  <div class="heading">
+                    <h6 style="margin-bottom: -4px;">
+                      Failure to meet compliance obligations
+                      <span class="pull-right" onclick="openStrategy()">
+                        <i
+                          class="fas fa-pencil-alt border-box"
+                          style="padding: 5px;"
+                        ></i
+                      ></span>
+                    </h6>
+                  </div>
+                  <hr style="border-top: 2px solid #e9ecef;" />
+                  <div
+                    class="header-content"
+                    style="margin-top: -4px; margin-bottom: -20px;"
+                  >
+                    <ul>
+                      <li>
+                        <strong>Start Date</strong>
+                        <p>12/02/2020</p>
+                      </li>
+                      <li>
+                        <strong>End Date</strong>
+                        <p>20/09/2020</p>
+                      </li>
+                      <li>
+                        <strong>Plan Type</strong>
+                        <p>Long Term</p>
+                      </li>
+                      <li>
+                        <strong>Formulation Team</strong>
+                        <span>
+                          <ul
+                            class="list-unstyled order-list"
+                            data-toggle="modal"
+                            data-target="#user_edit_popup"
+                            style="cursor: pointer;"
+                          >
+                            <li class="avatar avatar-sm">
+                              <img
+                                class="rounded-circle"
+                                src="../../assets/images/user/user7.jpg"
+                                alt="user"
+                              />
+                            </li>
+                            <li class="avatar avatar-sm">
+                              <img
+                                class="rounded-circle"
+                                src="../../assets/images/user/user8.jpg"
+                                alt="user"
+                              />
+                            </li>
+                            <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                              <span
+                                _ngcontent-hhc-c5=""
+                                class="badge"
+                                style="margin-top: 6px;"
+                                >+2</span
+                              >
+                            </li>
+                          </ul>
+                        </span>
+                      </li>
+                      <li>
+                        <strong>Approved By</strong>
+                        <span>
+                          <ul
+                            class="list-unstyled order-list"
+                            data-toggle="modal"
+                            data-target="#user_edit_popup"
+                            style="cursor: pointer;"
+                          >
+                            <li class="avatar avatar-sm">
+                              <img
+                                class="rounded-circle"
+                                src="../../assets/images/user/user7.jpg"
+                                alt="user"
+                              />
+                            </li>
+                          </ul>
+                        </span>
+                      </li>
+                      <li>
+                        <strong>Approved Date</strong>
+                        <p>15/02/2020</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 perspective-div">
+            <div class="card" style="padding: 16px;">
+              <div class="row">
+                <div class="col-12">
+                  <div class="perspective-heading">
+                    <h5>
+                      Prespectives
+                      <span class="pull-right" onclick="openPerspectiveAdd()">
+                        <i class="fas fa-plus border-box"></i>
+                      </span>
+                      <span
+                        class="pull-right"
+                        id="search1"
+                        style="margin-right: 4px;"
+                      >
+                        <i class="fas fa-search border-box"></i>
+                      </span>
+                      <span
+                        class="pull-right search-section"
+                        style="padding-left: 20px; display: none;"
+                        id="search_section1"
+                      >
+                        <input
+                          type="text"
+                          class="search"
+                          placeholder="Search"
+                        />
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-times" id="close_search1"></i>
+                      </span>
+                    </h5>
+                  </div>
+                  <hr />
+                </div>
+                <div class="col-12" style="height: 432px; overflow-y: auto;">
+                  <div class="d-flex flex-column" id="perspective_sidebar">
+                    <div
+                      onclick="openPerspective()"
+                      class="d-flex flex-column sub_initiative_sidebar_details side_border_persp"
+                    >
+                      <div class="d-flex flex-row p-b-5">
+                        <div class="d-flex flex-column profile_content">
+                          <span
+                            >Record zero fire incidents attributable to Alpha
+                            Mead across all locations in 2020</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="d-flex flex-column sub_initiative_sidebar_details side_border_persp"
+                    >
+                      <div class="d-flex flex-row p-b-5">
+                        <div class="d-flex flex-column profile_content">
+                          <span
+                            >Record zero fire incidents attributable to Alpha
+                            Mead across all locations in 2020</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="d-flex flex-column sub_initiative_sidebar_details side_border_persp"
+                    >
+                      <div class="d-flex flex-row p-b-5">
+                        <div class="d-flex flex-column profile_content">
+                          <span
+                            >Record zero fire incidents attributable to Alpha
+                            Mead across all locations in 2020</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="d-flex flex-column sub_initiative_sidebar_details side_border_persp"
+                    >
+                      <div class="d-flex flex-row p-b-5">
+                        <div class="d-flex flex-column profile_content">
+                          <span
+                            >Record zero fire incidents attributable to Alpha
+                            Mead across all locations in 2020</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="d-flex flex-column sub_initiative_sidebar_details side_border_persp"
+                    >
+                      <div class="d-flex flex-row p-b-5">
+                        <div class="d-flex flex-column profile_content">
+                          <span
+                            >Record zero fire incidents attributable to Alpha
+                            Mead across all locations in 2020</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="d-flex flex-column sub_initiative_sidebar_details side_border_persp"
+                    >
+                      <div class="d-flex flex-row p-b-5">
+                        <div class="d-flex flex-column profile_content">
+                          <span
+                            >Record zero fire incidents attributable to Alpha
+                            Mead across all locations in 2020</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 obj-kpi">
+            <div class="card" style="padding: 16px;">
+              <div class="row obj-content">
+                <div class="col-12">
+                  <div class="perspective-heading">
+                    <h5>
+                      Objectives
+                      <span class="pull-right" onclick="openObjectiveAdd()">
+                        <i class="fas fa-plus border-box"></i>
+                      </span>
+                      <span
+                        class="pull-right"
+                        id="search2"
+                        style="margin-right: 4px;"
+                      >
+                        <i class="fas fa-search border-box"></i>
+                      </span>
+                      <span
+                        class="pull-right search-section"
+                        style="padding-left: 20px; display: none;"
+                        id="search_section2"
+                      >
+                        <input
+                          type="text"
+                          class="search"
+                          placeholder="Search"
+                        />
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-times" id="close_search2"></i>
+                      </span>
+                    </h5>
+                  </div>
+                  <hr />
+                </div>
+                <div
+                  class="col-12"
+                  style="
+                    padding-left: 32px;
+                    padding-right: 40px;
+                    height: 432px;
+                    overflow-y: auto;
+                  "
+                >
+                  <div class="card" onclick="openObjective()">
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="name pull-left">
+                          <span
+                            >Record zero fire incidents attributable to Alpha
+                            Mead across all locations in 2020</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 obj-kpi">
+            <div class="card" style="padding: 16px;">
+              <div class="row obj-content">
+                <div class="col-12">
+                  <div class="perspective-heading">
+                    <h5>
+                      KPI
+                      <span class="pull-right" onclick="openKPIAdd()">
+                        <i class="fas fa-plus border-box"></i>
+                      </span>
+                      <span
+                        class="pull-right"
+                        id="search3"
+                        style="margin-right: 4px;"
+                      >
+                        <i class="fas fa-search border-box"></i>
+                      </span>
+                      <span
+                        class="pull-right search-section"
+                        style="padding-left: 20px; display: none;"
+                        id="search_section3"
+                      >
+                        <input
+                          type="text"
+                          class="search"
+                          placeholder="Search"
+                        />
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-times" id="close_search3"></i>
+                      </span>
+                    </h5>
+                  </div>
+                  <hr />
+                </div>
+                <div
+                  class="col-12"
+                  style="
+                    padding-left: 32px;
+                    padding-right: 40px;
+                    height: 432px;
+                    overflow-y: auto;
+                  "
+                >
+                  <div class="card" onclick="openKPI()">
+                    <div class="row">
+                      <div class="col-10">
+                        <div class="name pull-left">
+                          <span
+                            >Record zero fire incidents attributable to Alpha
+                            Mead across all locations in 2020</span
+                          >
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="period pull-right">
+                          <span>Quarter</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="row"
+                      style="
+                        padding-top: 12px;
+                        margin-bottom: -10px !important;
+                      "
+                    >
+                      <div class="col-6">
+                        <div class="target pull-left">
+                          <span> <strong>Target: </strong>70.45% </span>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div
+                          class="owner pull-right"
+                          style="padding-right: 12px;"
+                        >
+                          <ul class="list-unstyled order-list">
+                            <li class="avatar avatar-sm">
+                              <img
+                                class="rounded-circle"
+                                src="../../assets/images/user/user7.jpg"
+                                alt="user"
+                              />
+                            </li>
+                            <li class="avatar avatar-sm">
+                              <img
+                                class="rounded-circle"
+                                src="../../assets/images/user/user8.jpg"
+                                alt="user"
+                              />
+                            </li>
+                            <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                              <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1958,10 +2008,8 @@
     <script src="../../assets/js/app.min.js"></script>
     <!-- Custom Js -->
     <script src="../../assets/js/admin.js"></script>
-    <script src="../../assets/js/bundles/amcharts4/core.js"></script>
-    <script src="../../assets/js/bundles/amcharts4/charts.js"></script>
-    <script src="../../assets/js/bundles/amcharts4/animated.js"></script>
     <!-- Knob Js -->
+    <script src="../../assets/js/paging.js"></script>
     <script src="../../assets/jquery-ui.min.js"></script>
     <script src="../../assets/moment.js"></script>
     <script src="../../assets/js/pages/core.js"></script>
@@ -1977,29 +2025,233 @@
     <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
     <script src="../../assets/knockout-3.5.0.js"></script>
     <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
-
-    <script>
-      $(".daterangepicker-field").daterangepicker({
-        forceUpdate: true,
-        callback: function (startDate, endDate, period) {
-          var title = startDate.format("L") + " – " + endDate.format("L");
-          $(this).val(title);
-        },
-      });
-    </script>
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"
-    ></script>
-
+    <script src="../../assets/js/colors.js"></script>
     <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
-    <script src="js/extras.1.1.0.min.js"></script>
-    <script src="js/shards-dashboards.1.1.0.min.js"></script>
-
+    <script src="assets/daterangepicker/daterangepicker.min.js"></script>
     <script>
+      $(document).ready(function () {
+        $("#fileuploadTable").paging({ limit: 5 });
+      });
+
+      $(document).keyup(function (e) {
+        if (e.key === "Escape") {
+          document.getElementById("perspective_view").style.display = "none";
+          document.getElementById("objective_view").style.display = "none";
+          document.getElementById("kpi_view").style.display = "none";
+          document.getElementById("perspective_add").style.display = "none";
+          document.getElementById("objective_add").style.display = "none";
+          document.getElementById("kpi_add").style.display = "none";
+          document.getElementById("strategy_edit").style.display = "none";
+        }
+      });
+
+      function openPerspective() {
+        document.getElementById("perspective_view").style.display = "block";
+        document.getElementById("objective_view").style.display = "none";
+        document.getElementById("kpi_view").style.display = "none";
+        document.getElementById("perspective_add").style.display = "none";
+        document.getElementById("objective_add").style.display = "none";
+        document.getElementById("kpi_add").style.display = "none";
+        document.getElementById("strategy_edit").style.display = "none";
+      }
+
+      function closePerspective() {
+        document.getElementById("perspective_view").style.display = "none";
+      }
+
+      function openObjective() {
+        document.getElementById("perspective_view").style.display = "none";
+        document.getElementById("objective_view").style.display = "block";
+        document.getElementById("kpi_view").style.display = "none";
+        document.getElementById("perspective_add").style.display = "none";
+        document.getElementById("objective_add").style.display = "none";
+        document.getElementById("kpi_add").style.display = "none";
+        document.getElementById("strategy_edit").style.display = "none";
+      }
+
+      function closeObjective() {
+        document.getElementById("objective_view").style.display = "none";
+      }
+
+      function openKPI() {
+        document.getElementById("perspective_view").style.display = "none";
+        document.getElementById("objective_view").style.display = "none";
+        document.getElementById("kpi_view").style.display = "block";
+        document.getElementById("perspective_add").style.display = "none";
+        document.getElementById("objective_add").style.display = "none";
+        document.getElementById("kpi_add").style.display = "none";
+        document.getElementById("strategy_edit").style.display = "none";
+      }
+
+      function closeKPI() {
+        document.getElementById("kpi_view").style.display = "none";
+      }
+
+      function openPerspectiveAdd() {
+        document.getElementById("perspective_view").style.display = "none";
+        document.getElementById("objective_view").style.display = "none";
+        document.getElementById("kpi_view").style.display = "none";
+        document.getElementById("perspective_add").style.display = "block";
+        document.getElementById("objective_add").style.display = "none";
+        document.getElementById("kpi_add").style.display = "none";
+        document.getElementById("strategy_edit").style.display = "none";
+      }
+
+      function closePerspectiveAdd() {
+        document.getElementById("perspective_add").style.display = "none";
+      }
+
+      function openObjectiveAdd() {
+        document.getElementById("perspective_view").style.display = "none";
+        document.getElementById("objective_view").style.display = "none";
+        document.getElementById("kpi_view").style.display = "none";
+        document.getElementById("perspective_add").style.display = "none";
+        document.getElementById("objective_add").style.display = "block";
+        document.getElementById("kpi_add").style.display = "none";
+        document.getElementById("strategy_edit").style.display = "none";
+      }
+
+      function closeObjectiveAdd() {
+        document.getElementById("objective_add").style.display = "none";
+      }
+
+      function openKPIAdd() {
+        document.getElementById("perspective_view").style.display = "none";
+        document.getElementById("objective_view").style.display = "none";
+        document.getElementById("kpi_view").style.display = "none";
+        document.getElementById("perspective_add").style.display = "none";
+        document.getElementById("objective_add").style.display = "none";
+        document.getElementById("kpi_add").style.display = "block";
+        document.getElementById("strategy_edit").style.display = "none";
+      }
+
+      function closeKPIAdd() {
+        document.getElementById("kpi_add").style.display = "none";
+      }
+
+      function openStrategy() {
+        document.getElementById("perspective_view").style.display = "none";
+        document.getElementById("objective_view").style.display = "none";
+        document.getElementById("kpi_view").style.display = "none";
+        document.getElementById("perspective_add").style.display = "none";
+        document.getElementById("objective_add").style.display = "none";
+        document.getElementById("kpi_add").style.display = "none";
+        document.getElementById("strategy_edit").style.display = "block";
+      }
+
+      function closeStrategy() {
+        document.getElementById("strategy_edit").style.display = "none";
+      }
+
+      $("#edit_perspective").click(function () {
+        $("#edit_perspective").hide();
+        $("#save_perspective").show();
+        $(".persp_name").prop("disabled", false);
+        $(".persp_date").prop("disabled", false);
+        $(".persp_weight").prop("disabled", false);
+        $(".persp_subweight").prop("disabled", false);
+        $(".persp_status").prop("disabled", false);
+      });
+
+      $("#save_perspective").click(function () {
+        $("#edit_perspective").show();
+        $("#save_perspective").hide();
+        $(".persp_name").prop("disabled", true);
+        $(".persp_date").prop("disabled", true);
+        $(".persp_weight").prop("disabled", true);
+        $(".persp_subweight").prop("disabled", true);
+        $(".persp_status").prop("disabled", true);
+      });
+
+      $("#edit_objective").click(function () {
+        $("#edit_objective").hide();
+        $("#save_objective").show();
+        $(".obj_name").prop("disabled", false);
+        $(".obj_date").prop("disabled", false);
+        $(".obj_weight").prop("disabled", false);
+        $(".obj_subweight").prop("disabled", false);
+        $(".obj_status").prop("disabled", false);
+      });
+
+      $("#save_objective").click(function () {
+        $("#edit_objective").show();
+        $("#save_objective").hide();
+        $(".obj_name").prop("disabled", true);
+        $(".obj_date").prop("disabled", true);
+        $(".obj_weight").prop("disabled", true);
+        $(".obj_subweight").prop("disabled", true);
+        $(".obj_status").prop("disabled", true);
+      });
+
+      $("#edit_kpi").click(function () {
+        $("#edit_kpi").hide();
+        $("#save_kpi").show();
+        $(".kpi_name").prop("disabled", false);
+        $(".kpi_polarity").prop("disabled", false);
+        $(".kpi_mf").prop("disabled", false);
+        $(".kpi_data").prop("disabled", false);
+        $(".kpi_type").prop("disabled", false);
+        $(".kpi_currency").prop("disabled", false);
+        $(".kpi_threshold").prop("disabled", false);
+        $(".kpi_actual").prop("disabled", false);
+        $(".kpi_target").prop("disabled", false);
+        $(".kpi_ytd").prop("disabled", false);
+        $(".kpi_date").prop("disabled", false);
+        $(".kpi_weight").prop("disabled", false);
+        $(".kpi_subweight").prop("disabled", false);
+        $(".kpi_status").prop("disabled", false);
+      });
+
+      $("#save_kpi").click(function () {
+        $("#edit_kpi").show();
+        $("#save_kpi").hide();
+        $(".kpi_name").prop("disabled", true);
+        $(".kpi_polarity").prop("disabled", true);
+        $(".kpi_mf").prop("disabled", true);
+        $(".kpi_data").prop("disabled", true);
+        $(".kpi_type").prop("disabled", true);
+        $(".kpi_currency").prop("disabled", true);
+        $(".kpi_threshold").prop("disabled", true);
+        $(".kpi_actual").prop("disabled", true);
+        $(".kpi_target").prop("disabled", true);
+        $(".kpi_ytd").prop("disabled", true);
+        $(".kpi_date").prop("disabled", true);
+        $(".kpi_weight").prop("disabled", true);
+        $(".kpi_subweight").prop("disabled", true);
+        $(".kpi_status").prop("disabled", true);
+      });
+
+      $("#search1").click(function () {
+        $("#search_section1").show();
+        $("#search1").hide();
+      });
+
+      $("#close_search1").click(function () {
+        $("#search1").show();
+        $("#search_section1").hide();
+      });
+
+      $("#search2").click(function () {
+        $("#search_section2").show();
+        $("#search2").hide();
+      });
+
+      $("#close_search2").click(function () {
+        $("#search2").show();
+        $("#search_section2").hide();
+      });
+
+      $("#search3").click(function () {
+        $("#search_section3").show();
+        $("#search3").hide();
+      });
+
+      $("#close_search3").click(function () {
+        $("#search3").show();
+        $("#search_section3").hide();
+      });
+
       $(".daterangepicker-field").daterangepicker({
         forceUpdate: true,
         callback: function (startDate, endDate, period) {
@@ -2008,83 +2260,34 @@
         },
       });
 
+      $("#custom-tab").on("click", "button", function (e) {
+        var CustomTabValue = this.dataset.value;
+        if (CustomTabValue) {
+          $(".customTabContent")
+            .not("." + CustomTabValue)
+            .hide();
+          $("." + CustomTabValue).show();
+        } else {
+          $(".customTabContent").hide();
+        }
+        $(this).parent().find("button").removeClass("active");
+        $(this).addClass("active");
+        $(".active").attr("contenteditable", "true");
+      });
+
+      $("#timepicker_pop").timepicker();
+
       $(document).ready(function () {
-        $("#my_id").change(function (e) {
-          var files = $(this)[0].files;
-          var fileName = files.length;
-          alert('The file "' + fileName + '" has been selected.');
+        $("#kpi_type_select").change(function () {
+          var value = $("#kpi_type_select").val();
+          if (value == "Currency") {
+            $("#currency_input").show();
+          } else {
+            $("#currency_input").hide();
+          }
         });
       });
-    </script>
-    <script>
-      function kpi(divID) {
-        var div = document.getElementById(divID);
-        div.innerHTML += `<div class="col-md-1 form-group"> <input type="text" class="form-control browser-default" placeholder="ID" style="height: 47px;"> </div><div class="col-md-5 form-group"> <textarea class="form-control browser-default" placeholder="" cols="2" rows="2"></textarea> </div><div class="col-md-2 form-group"> <select id="plan_type" class="form-control" style="height: 47px;"> <option value=""> Frequency</option> <option value=""> Daily</option> <option value=""> Weekly</option> <option value=""> Monthly</option> <option value=""> Annual</option> </select> </div><div class="col-md-2 form-group"> <input type="text" class="form-control browser-default" placeholder="Target" style="height: 47px;"> </div><div class="col-md-2 form-group" style="margin-top: 10px;"> <ul class="list-unstyled order-list d-flex"> <li class="avatar avatar-sm"> <img class="rounded-circle sub_init_img" src="../../assets/images/user/user9.jpg" alt="user" width="50"> </li><li class="avatar avatar-sm"> <img class="rounded-circle sub_init_img" src="../../assets/images/user/user8.jpg" alt="user" width="50"> </li><li class="avatar avatar-sm"> <span _ngcontent-hhc-c5="" class="badge">+3</span> </li><div class="image-upload"> <label for="file-input"> <li _ngcontent-hhc-c5="" class="avatar avatar-sm"> <a href="#" class="favgs" data-toggle="modal" data-target="#addpeople"> <span _ngcontent-hhc-c5="" class="badge">+<span id="count"> </span></span> </a> </li></label> </div></ul> </div>`;
-      }
-      function kpi1() {
-        var div = document.getElementById("kpi1");
-        div.innerHTML += `<div class="col-md-1 form-group"> <input type="text" class="form-control browser-default" placeholder="ID" style="height: 47px;"> </div><div class="col-md-5 form-group"> <textarea class="form-control browser-default" placeholder="" cols="2" rows="2"></textarea> </div><div class="col-md-2 form-group"> <select id="plan_type" class="form-control" style="height: 47px;"> <option value=""> Frequency</option> <option value=""> Daily</option> <option value=""> Weekly</option> <option value=""> Monthly</option> <option value=""> Annual</option> </select> </div><div class="col-md-2 form-group"> <input type="text" class="form-control browser-default" placeholder="Target" style="height: 47px;"> </div><div class="col-md-2 form-group" style="margin-top: 10px;"> <ul class="list-unstyled order-list d-flex"> <li class="avatar avatar-sm"> <img class="rounded-circle sub_init_img" src="../../assets/images/user/user9.jpg" alt="user" width="50"> </li><li class="avatar avatar-sm"> <img class="rounded-circle sub_init_img" src="../../assets/images/user/user8.jpg" alt="user" width="50"> </li><li class="avatar avatar-sm"> <span _ngcontent-hhc-c5="" class="badge">+3</span> </li><div class="image-upload"> <label for="file-input"> <li _ngcontent-hhc-c5="" class="avatar avatar-sm"> <a href="#" class="favgs" data-toggle="modal" data-target="#addpeople"> <span _ngcontent-hhc-c5="" class="badge">+<span id="count"> </span></span> </a> </li></label> </div></ul> </div>`;
-      }
-      function kpi2() {
-        var div = document.getElementById("kpi2");
-        div.innerHTML += `<div class="col-md-1 form-group"> <input type="text" class="form-control browser-default" placeholder="ID" style="height: 47px;"> </div><div class="col-md-5 form-group"> <textarea class="form-control browser-default" placeholder="" cols="2" rows="2"></textarea> </div><div class="col-md-2 form-group"> <select id="plan_type" class="form-control" style="height: 47px;"> <option value=""> Frequency</option> <option value=""> Daily</option> <option value=""> Weekly</option> <option value=""> Monthly</option> <option value=""> Annual</option> </select> </div><div class="col-md-2 form-group"> <input type="text" class="form-control browser-default" placeholder="Target" style="height: 47px;"> </div><div class="col-md-2 form-group" style="margin-top: 10px;"> <ul class="list-unstyled order-list d-flex"> <li class="avatar avatar-sm"> <img class="rounded-circle sub_init_img" src="../../assets/images/user/user9.jpg" alt="user" width="50"> </li><li class="avatar avatar-sm"> <img class="rounded-circle sub_init_img" src="../../assets/images/user/user8.jpg" alt="user" width="50"> </li><li class="avatar avatar-sm"> <span _ngcontent-hhc-c5="" class="badge">+3</span> </li><div class="image-upload"> <label for="file-input"> <li _ngcontent-hhc-c5="" class="avatar avatar-sm"> <a href="#" class="favgs" data-toggle="modal" data-target="#addpeople"> <span _ngcontent-hhc-c5="" class="badge">+<span id="count"> </span></span> </a> </li></label> </div></ul> </div>`;
-      }
-      function kpi3() {
-        var div = document.getElementById("kpi3");
-        div.innerHTML += `<div class="col-md-1 form-group"> <input type="text" class="form-control browser-default" placeholder="ID" style="height: 47px;"> </div><div class="col-md-5 form-group"> <textarea class="form-control browser-default" placeholder="" cols="2" rows="2"></textarea> </div><div class="col-md-2 form-group"> <select id="plan_type" class="form-control" style="height: 47px;"> <option value=""> Frequency</option> <option value=""> Daily</option> <option value=""> Weekly</option> <option value=""> Monthly</option> <option value=""> Annual</option> </select> </div><div class="col-md-2 form-group"> <input type="text" class="form-control browser-default" placeholder="Target" style="height: 47px;"> </div><div class="col-md-2 form-group" style="margin-top: 10px;"> <ul class="list-unstyled order-list d-flex"> <li class="avatar avatar-sm"> <img class="rounded-circle sub_init_img" src="../../assets/images/user/user9.jpg" alt="user" width="50"> </li><li class="avatar avatar-sm"> <img class="rounded-circle sub_init_img" src="../../assets/images/user/user8.jpg" alt="user" width="50"> </li><li class="avatar avatar-sm"> <span _ngcontent-hhc-c5="" class="badge">+3</span> </li><div class="image-upload"> <label for="file-input"> <li _ngcontent-hhc-c5="" class="avatar avatar-sm"> <a href="#" class="favgs" data-toggle="modal" data-target="#addpeople"> <span _ngcontent-hhc-c5="" class="badge">+<span id="count"> </span></span> </a> </li></label> </div></ul> </div>`;
-      }
-      function remove() {
-        $(this).parents(".clonedInput").remove();
-      }
 
-      function initiative(divID) {
-        var div = document.getElementById(divID);
-        div.innerHTML += `<div class="col-md-2 form-group"> <input type="text" class="form-control browser-default" placeholder="ID" style="height: 47px;"> </div><div class="col-md-10 form-group"> <textarea class="form-control browser-default" placeholder="" cols="" rows="2"></textarea> </div>`;
-      }
-      function initiative1() {
-        var div = document.getElementById("initiative1");
-        div.innerHTML += `<div class="col-md-2 form-group"> <input type="text" class="form-control browser-default" placeholder="ID" style="height: 47px;"> </div><div class="col-md-10 form-group"> <textarea class="form-control browser-default" placeholder="" cols="" rows="2"></textarea> </div>`;
-      }
-      function obj1() {
-        var div = document.getElementById("obj1");
-        div.innerHTML += `<div class="col-md-2 form-group"> <input type="text" class="form-control browser-default" placeholder="ID" style="height: 47px;"> </div><div class="col-md-10 form-group"> <textarea class="form-control browser-default" placeholder="" cols="" rows="2"></textarea> </div>`;
-      }
-      function obj2() {
-        var div = document.getElementById("obj2");
-        div.innerHTML += `<div class="col-md-2 form-group"> <input type="text" class="form-control browser-default" placeholder="ID" style="height: 47px;"> </div><div class="col-md-10 form-group"> <textarea class="form-control browser-default" placeholder="" cols="" rows="2"></textarea> </div>`;
-      }
-      function obj3() {
-        var div = document.getElementById("obj3");
-        div.innerHTML += `<div class="col-md-2 form-group"> <input type="text" class="form-control browser-default" placeholder="ID" style="height: 47px;"> </div><div class="col-md-10 form-group"> <textarea class="form-control browser-default" placeholder="" cols="" rows="2"></textarea> </div>`;
-      }
-      function initiative2() {
-        var div = document.getElementById("initiative2");
-        div.innerHTML += `<div class="col-md-2 form-group"> <input type="text" class="form-control browser-default" placeholder="ID" style="height: 47px;"> </div><div class="col-md-10 form-group"> <textarea class="form-control browser-default" placeholder="" cols="" rows="2"></textarea> </div>`;
-      }
-      function initiative3() {
-        var div = document.getElementById("initiative3");
-        div.innerHTML += `<div class="col-md-2 form-group"> <input type="text" class="form-control browser-default" placeholder="ID" style="height: 47px;"> </div><div class="col-md-10 form-group"> <textarea class="form-control browser-default" placeholder="" cols="" rows="2"></textarea> </div>`;
-      }
-
-      function objective(divID) {
-        var div = document.getElementById(divID);
-        div.innerHTML += `<hr/><div class="row mt-2 ml-4"> <div class="col-md-4"> <div class="row"> <div class="col-md-10"> <label for="plan_type" style="font-size: 15px; color: #222;">Objectives</label> </div><div class="col-md-2"> <button id="btn_copy" onclick="obj1()" class="form-control" style="border: none;"> <i class="fas fa-plus-circle pull-right" style="font-size: 18px; color:#1e252d"></i> </button> </div></div><div class="form-row mt-4" id="obj1"> <div class="col-md-2 form-group"> <input type="text" class="form-control browser-default" placeholder="ID" style="height: 47px;"> </div><div class="col-md-10 form-group"> <textarea class="form-control browser-default" placeholder="" cols="" rows="2"></textarea> </div></div></div><div class="col-md-8"> <div class="row"> <div class="col-md-10"> <label for="plan_type" style="font-size: 15px; color: #222;">KPI'S</label> </div><div class="col-md-2"> <button id="btn_copy" onclick="initiative1()" class="form-control" style="border: none;"> <i class="fas fa-plus-circle" style="font-size: 18px; color:#1e252d"></i> </button> </div></div><div class="form-row mt-4" id="initiative1"> <div class="col-md-1 form-group"> <input type="text" class="form-control browser-default" placeholder="ID" style="height: 47px;"> </div><div class="col-md-5 form-group"> <textarea class="form-control browser-default" placeholder="" cols="2" rows="2"></textarea> </div><div class="col-md-2 form-group"> <select id="plan_type" class="form-control" style="height: 47px;"> <option value=""> Frequency</option> <option value=""> Daily</option> <option value=""> Weekly</option> <option value=""> Monthly</option> <option value=""> Annual</option> </select> </div><div class="col-md-2 form-group"> <input type="text" class="form-control browser-default" placeholder="Target" style="height: 47px;"> </div><div class="col-md-2 form-group" style="margin-top: 10px;"> <ul class="list-unstyled order-list d-flex"> <li class="avatar avatar-sm"> <img class="rounded-circle sub_init_img" src="../../assets/images/user/user9.jpg" alt="user" width="50"> </li><li class="avatar avatar-sm"> <img class="rounded-circle sub_init_img" src="../../assets/images/user/user8.jpg" alt="user" width="50"> </li><li class="avatar avatar-sm"> <span _ngcontent-hhc-c5="" class="badge">+3</span> </li><div class="image-upload"> <label for="file-input"> <li _ngcontent-hhc-c5="" class="avatar avatar-sm"> <a href="#" class="favgs" data-toggle="modal" data-target="#addpeople"> <span _ngcontent-hhc-c5="" class="badge">+<span id="count"> </span></span> </a> </li></label> </div></ul> </div></div></div></div>`;
-      }
-      function objective_first(divID) {
-        var div = document.getElementById(divID);
-        div.innerHTML += `<hr/><div class="row mt-2 ml-4"> <div class="col-md-4"> <div class="row"> <div class="col-md-10"> <label for="plan_type" style="font-size: 15px; color: #222;">Objectives</label> </div><div class="col-md-2"> <button id="btn_copy" onclick="obj2()" class="form-control" style="border: none;"> <i class="fas fa-plus-circle pull-right" style="font-size: 18px; color:#1e252d"></i> </button> </div></div><div class="form-row mt-4" id="obj2"> <div class="col-md-2 form-group"> <input type="text" class="form-control browser-default" placeholder="ID" style="height: 47px;"> </div><div class="col-md-10 form-group"> <textarea class="form-control browser-default" placeholder="" cols="" rows="2"></textarea> </div></div></div><div class="col-md-8"> <div class="row"> <div class="col-md-10"> <label for="plan_type" style="font-size: 15px; color: #222;">KPI'S</label> </div><div class="col-md-2"> <button id="btn_copy" onclick="kpi1()" class="form-control" style="border: none;"> <i class="fas fa-plus-circle" style="font-size: 18px; color:#1e252d"></i> </button> </div></div><div class="form-row mt-4" id="kpi1"> <div class="col-md-1 form-group"> <input type="text" class="form-control browser-default" placeholder="ID" style="height: 47px;"> </div><div class="col-md-5 form-group"> <textarea class="form-control browser-default" placeholder="" cols="2" rows="2"></textarea> </div><div class="col-md-2 form-group"> <select id="plan_type" class="form-control" style="height: 47px;"> <option value=""> Frequency</option> <option value=""> Daily</option> <option value=""> Weekly</option> <option value=""> Monthly</option> <option value=""> Annual</option> </select> </div><div class="col-md-2 form-group"> <input type="text" class="form-control browser-default" placeholder="Target" style="height: 47px;"> </div><div class="col-md-2 form-group" style="margin-top: 10px;"> <ul class="list-unstyled order-list d-flex"> <li class="avatar avatar-sm"> <img class="rounded-circle sub_init_img" src="../../assets/images/user/user9.jpg" alt="user" width="50"> </li><li class="avatar avatar-sm"> <img class="rounded-circle sub_init_img" src="../../assets/images/user/user8.jpg" alt="user" width="50"> </li><li class="avatar avatar-sm"> <span _ngcontent-hhc-c5="" class="badge">+3</span> </li><div class="image-upload"> <label for="file-input"> <li _ngcontent-hhc-c5="" class="avatar avatar-sm"> <a href="#" class="favgs" data-toggle="modal" data-target="#addpeople"> <span _ngcontent-hhc-c5="" class="badge">+<span id="count"> </span></span> </a> </li></label> </div></ul> </div></div></div></div>`;
-      }
-
-      function objective_extra(divID) {
-        var div = document.getElementById(divID);
-        div.innerHTML += `<hr/><div class="row mt-2 ml-4"> <div class="col-md-4"> <div class="row"> <div class="col-md-10"> <label for="plan_type" style="font-size: 15px; color: #222;">Objectives</label> </div><div class="col-md-2"> <button id="btn_copy" onclick="obj3()" class="form-control" style="border: none;"> <i class="fas fa-plus-circle pull-right" style="font-size: 18px; color:#1e252d"></i> </button> </div></div><div class="form-row mt-4" id="obj3"> <div class="col-md-2 form-group"> <input type="text" class="form-control browser-default" placeholder="ID" style="height: 47px;"> </div><div class="col-md-10 form-group"> <textarea class="form-control browser-default" placeholder="" cols="" rows="2"></textarea> </div></div></div><div class="col-md-8"> <div class="row"> <div class="col-md-10"> <label for="plan_type" style="font-size: 15px; color: #222;">KPI'S</label> </div><div class="col-md-2"> <button id="btn_copy" onclick="kpi3()" class="form-control" style="border: none;"> <i class="fas fa-plus-circle" style="font-size: 18px; color:#1e252d"></i> </button> </div></div><div class="form-row mt-4" id="kpi3"> <div class="col-md-1 form-group"> <input type="text" class="form-control browser-default" placeholder="ID" style="height: 47px;"> </div><div class="col-md-5 form-group"> <textarea class="form-control browser-default" placeholder="" cols="2" rows="2"></textarea> </div><div class="col-md-2 form-group"> <select id="plan_type" class="form-control" style="height: 47px;"> <option value=""> Frequency</option> <option value=""> Daily</option> <option value=""> Weekly</option> <option value=""> Monthly</option> <option value=""> Annual</option> </select> </div><div class="col-md-2 form-group"> <input type="text" class="form-control browser-default" placeholder="Target" style="height: 47px;"> </div><div class="col-md-2 form-group" style="margin-top: 10px;"> <ul class="list-unstyled order-list d-flex"> <li class="avatar avatar-sm"> <img class="rounded-circle sub_init_img" src="../../assets/images/user/user9.jpg" alt="user" width="50"> </li><li class="avatar avatar-sm"> <img class="rounded-circle sub_init_img" src="../../assets/images/user/user8.jpg" alt="user" width="50"> </li><li class="avatar avatar-sm"> <span _ngcontent-hhc-c5="" class="badge">+3</span> </li><div class="image-upload"> <label for="file-input"> <li _ngcontent-hhc-c5="" class="avatar avatar-sm"> <a href="#" class="favgs" data-toggle="modal" data-target="#addpeople"> <span _ngcontent-hhc-c5="" class="badge">+<span id="count"> </span></span> </a> </li></label> </div></ul> </div></div></div></div>`;
-      }
-    </script>
-
-    <script>
-      $("#timepicker_pop").timepicker();
-    </script>
-    <script>
       $(function () {
         $('input[name="date"]').daterangepicker(
           {
@@ -2100,71 +2303,5 @@
         );
       });
     </script>
-
-    <script type="text/javascript">
-      function cloneRow() {
-        var row = document.getElementById("rowToClone"); // find row to copy
-        var table = document.getElementById("tableToModify"); // find table to append to
-        var clone = row.cloneNode(true); // copy children too
-        clone.id = "newID"; // change id or other attributes/contents
-        table.appendChild(clone); // add new row to end of table
-      }
-
-      function createRow() {
-        var row = document.createElement("tr"); // create row node
-        var col = document.createElement("td"); // create column node
-        var col2 = document.createElement("td"); // create second column node
-        row.appendChild(col); // append first column to row
-
-        row.appendChild(col2); // append second column to row
-        col.innerHTML =
-          "Impact <button class='btn btn-primary'> <i class='fa fa-plus' aria-hidden='true'></i>  Add </button>"; // put data in first column
-        col2.innerHTML =
-          "<label for='file-input'><img src='images/plus.png' width='50px' height='50px'></label><input style='display:none' id='file-input' type='file'/> "; // put data in second column
-        var table = document.getElementById("tableToModify"); // find table to append to
-        table.appendChild(row); // append row to table
-      }
-    </script>
-
-    <script>
-      $(document).ready(function () {
-        // $('select').val([1]);
-        $("#objective_owner").formSelect();
-        $("select.select_all")
-          .siblings("ul")
-          .prepend("<li id=sm_select_all><span>Select All</span></li>");
-        $("li#sm_select_all").on("click", function () {
-          var jq_elem = $(this),
-            jq_elem_span = jq_elem.find("span"),
-            select_all = jq_elem_span.text() == "Select All",
-            set_text = select_all ? "Select None" : "Select All";
-          jq_elem_span.text(set_text);
-          jq_elem
-            .siblings("li")
-            .filter(function () {
-              return $(this).find("input").prop("checked") != select_all;
-            })
-            .click();
-        });
-      });
-
-      $(".contentViewButton").click(function () {
-        var newRow = $(".content-view").html();
-        $("#max .modal-body").html(newRow);
-        $("#max").modal();
-      });
-
-      $(".financeViewButton").click(function () {
-        var newRow = $(".finance-view").html();
-        $("#max .modal-body").html(newRow);
-        $("#max").modal();
-      });
-
-      $(".businessViewButton").click(function () {
-        var newRow = $(".business-view").html();
-        $("#max .modal-body").html(newRow);
-        $("#max").modal();
-      });
-    </script>
-  </body>
-</a>
+  </body></a
+>
