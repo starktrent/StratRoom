@@ -1329,3 +1329,10 @@ label {
   cursor: pointer;
   border-radius: 2px;
 }
+
+.obj-kpi .card .name {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
