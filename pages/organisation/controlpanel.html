@@ -192,7 +192,8 @@
         display: none;
       }
 
-      .som {
+      .som,
+      .config {
         display: block !important;
         position: relative !important;
         padding-left: 35px !important;
@@ -207,7 +208,8 @@
       }
 
       /* Hide the browser's default radio button */
-      .som input {
+      .som input,
+      .config input {
         position: absolute;
         opacity: 0;
         cursor: pointer;
@@ -225,12 +227,14 @@
       }
 
       /* On mouse-over, add a grey background color */
-      .som:hover input ~ .checkmark {
+      .som:hover input ~ .checkmark,
+      .config:hover input ~ .checkmark {
         background-color: #ccc;
       }
 
       /* When the radio button is checked, add a blue background */
-      .som input:checked ~ .checkmark {
+      .som input:checked ~ .checkmark,
+      .config input:checked ~ .checkmark {
         background-color: #1e252d;
       }
 
@@ -242,12 +246,14 @@
       }
 
       /* Show the indicator (dot/circle) when checked */
-      .som input:checked ~ .checkmark:after {
+      .som input:checked ~ .checkmark:after,
+      .config input:checked ~ .checkmark:after {
         display: block;
       }
 
       /* Style the indicator (dot/circle) */
-      .som .checkmark:after {
+      .som .checkmark:after,
+      .config .checkmark:after {
         top: 3.4px;
         left: 3.4px;
         width: 6px;
@@ -1961,13 +1967,20 @@
                             <h4>Security</h4>
                           </div>
 
-                          <div class="col-12" style="padding: 0 25px;">
-                            <div id="soMethod" class="tabcontent">
+                          <div
+                            class="col-12"
+                            style="
+                              padding: 0 25px;
+                              height: 506px;
+                              overflow-y: auto;
+                            "
+                          >
+                            <div id="soMethod">
                               <h5>
                                 Sign on method
                               </h5>
                               <hr style="padding-bottom: 8px;" />
-                              <label class="som"
+                              <!-- <label class="som"
                                 >Secure Web Authentication (SWA)
                                 <input
                                   type="radio"
@@ -1977,7 +1990,7 @@
                                   checked="checked"
                                 />
                                 <span class="checkmark"></span>
-                              </label>
+                              </label> -->
                               <label class="som"
                                 >SAML 2.0
                                 <input
@@ -2003,7 +2016,7 @@
                                   <button
                                     class="initative_save_btn"
                                     value="Save"
-                                    onclick="openCity(event, 'configSAML')"
+                                    id="next_btn"
                                   >
                                     Next
                                   </button>
@@ -2011,7 +2024,7 @@
                               </div>
                             </div>
 
-                            <div id="configSAML" class="tabcontent">
+                            <div id="configSAML" style="display: none;">
                               <h5>
                                 SAML Settings
                               </h5>
@@ -2021,128 +2034,352 @@
                                   class="col-12 form-group"
                                   style="padding-bottom: 8px;"
                                 >
-                                  <label>Single sign on URL</label>
+                                  <label>Name</label>
                                   <input
                                     type="text"
                                     class="form-control browser-default"
                                   />
-                                  <div
-                                    class="form-check"
-                                    style="padding-top: 12px;"
-                                  >
-                                    <label
-                                      class="form-check-label"
-                                      style="font-weight: 500;"
-                                    >
-                                      <input
-                                        class="form-check-input"
-                                        type="checkbox"
-                                        value=""
-                                      />
-                                      Use this for Recipient URL and Destination
-                                      URL
-                                      <span class="form-check-sign">
-                                        <span class="check"></span>
-                                      </span>
-                                    </label>
-                                  </div>
-                                  <div
-                                    class="form-check"
-                                    style="padding-top: 6px;"
-                                  >
-                                    <label
-                                      class="form-check-label"
-                                      style="font-weight: 500;"
-                                    >
-                                      <input
-                                        class="form-check-input"
-                                        type="checkbox"
-                                        value=""
-                                      />
-                                      Allow this app to request other SSO URLs
-                                      <span class="form-check-sign">
-                                        <span class="check"></span>
-                                      </span>
-                                    </label>
-                                  </div>
+                                </div>
+                                <div class="col-12 form-group">
+                                  <label>Configure Using</label>
+                                </div>
+                                <div
+                                  class="col-4 form-group"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <label class="config"
+                                    >Metadata URL
+                                    <input
+                                      type="radio"
+                                      id="url"
+                                      name="Config"
+                                      value="URL"
+                                      checked
+                                    />
+                                    <span class="checkmark"></span>
+                                  </label>
+                                </div>
+                                <div
+                                  class="col-4 form-group"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <label class="config"
+                                    >Metadata File
+                                    <input
+                                      type="radio"
+                                      id="file"
+                                      name="Config"
+                                      value="File"
+                                    />
+                                    <span class="checkmark"></span>
+                                  </label>
+                                </div>
+                                <div
+                                  class="col-4 form-group"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <label class="config"
+                                    >Manual Settings
+                                    <input
+                                      type="radio"
+                                      id="m_settings"
+                                      name="Config"
+                                      value="MSettings"
+                                    />
+                                    <span class="checkmark"></span>
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="row samldiv" id="URL">
+                                <div
+                                  class="col-12 form-group"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <label>Metadata URL</label>
+                                  <input
+                                    type="text"
+                                    class="form-control browser-default"
+                                  />
                                 </div>
                                 <div
                                   class="col-12 form-group"
                                   style="padding-bottom: 8px;"
                                 >
-                                  <label>Audience URL(SP Entity ID)</label>
+                                  <label>SAML Consumer URL</label>
                                   <input
                                     type="text"
                                     class="form-control browser-default"
                                   />
                                 </div>
                                 <div
-                                  class="col-6 form-group"
+                                  class="col-12 form-group"
                                   style="padding-bottom: 8px;"
                                 >
-                                  <label>Default RelayState</label>
+                                  <label
+                                    >SAML Service Provider Metadata URL</label
+                                  >
                                   <input
                                     type="text"
                                     class="form-control browser-default"
                                   />
                                 </div>
                                 <div
-                                  class="col-6 form-group"
+                                  class="col-12 form-group"
                                   style="padding-bottom: 8px;"
                                 >
-                                  <label>Name ID Format</label>
-                                  <select
-                                    id="inputState"
+                                  <label>SAML Entity ID</label>
+                                  <input
+                                    type="text"
                                     class="form-control browser-default"
-                                  >
-                                    <option value="Unspecified"
-                                      >Unspecified</option
-                                    >
-                                    <option value="Option 1">Option 1</option>
-                                    <option value="Option 2">Option 2</option>
-                                  </select>
+                                  />
                                 </div>
                                 <div
-                                  class="col-6 form-group"
+                                  class="col-12 form-group"
                                   style="padding-bottom: 8px;"
                                 >
-                                  <label>Application Username</label>
-                                  <select
-                                    id="inputState"
-                                    class="form-control browser-default"
+                                  <label
+                                    >Certificate Fingerprint Algorithm</label
                                   >
-                                    <option value="OKta username"
-                                      >OKta Username</option
-                                    >
-                                    <option value="Option 1">Option 1</option>
-                                    <option value="Option 2">Option 2</option>
-                                  </select>
+                                  <input
+                                    type="text"
+                                    class="form-control browser-default"
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="row samldiv"
+                                id="File"
+                                style="display: none;"
+                              >
+                                <div
+                                  class="col-12 form-group"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <label>Metadata URL</label>
+                                  <input
+                                    type="text"
+                                    class="form-control browser-default"
+                                  />
                                 </div>
                                 <div
-                                  class="col-6 form-group"
+                                  class="col-12 form-group"
                                   style="padding-bottom: 8px;"
                                 >
-                                  <label>Update Application Username On</label>
-                                  <select
-                                    id="inputState"
+                                  <label>SAML Consumer URL</label>
+                                  <input
+                                    type="text"
                                     class="form-control browser-default"
+                                  />
+                                </div>
+                                <div
+                                  class="col-12 form-group"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <label
+                                    >SAML Service Provider Metadata URL</label
                                   >
-                                    <option value="Create and Update"
-                                      >Create and Update</option
-                                    >
-                                    <option value="Option 1">Option 1</option>
-                                    <option value="Option 2">Option 2</option>
-                                  </select>
+                                  <input
+                                    type="text"
+                                    class="form-control browser-default"
+                                  />
+                                </div>
+                                <div
+                                  class="col-12 form-group"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <label>SAML Entity ID</label>
+                                  <input
+                                    type="text"
+                                    class="form-control browser-default"
+                                  />
+                                </div>
+                                <div
+                                  class="col-12 form-group"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <label
+                                    >Certificate Fingerprint Algorithm</label
+                                  >
+                                  <input
+                                    type="text"
+                                    class="form-control browser-default"
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="row samldiv"
+                                id="MSettings"
+                                style="display: none;"
+                              >
+                                <div
+                                  class="col-12 form-group"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <label>Single Sign On Endpoint</label>
+                                  <input
+                                    type="text"
+                                    class="form-control browser-default"
+                                  />
+                                </div>
+                                <div
+                                  class="col-12 form-group"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <label>Certificate Fingerprint</label>
+                                  <input
+                                    type="text"
+                                    class="form-control browser-default"
+                                  />
+                                </div>
+                                <div
+                                  class="col-12 form-group"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <label>SAML Consumer URL</label>
+                                  <input
+                                    type="text"
+                                    class="form-control browser-default"
+                                  />
+                                </div>
+                                <div
+                                  class="col-12 form-group"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <label
+                                    >SAML Service Provider Metadata URL</label
+                                  >
+                                  <input
+                                    type="text"
+                                    class="form-control browser-default"
+                                  />
+                                </div>
+                                <div
+                                  class="col-12 form-group"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <label>SAML Entity ID</label>
+                                  <input
+                                    type="text"
+                                    class="form-control browser-default"
+                                  />
+                                </div>
+                                <div
+                                  class="col-12 form-group"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <label
+                                    >Certificate Fingerprint Algorithm</label
+                                  >
+                                  <input
+                                    type="text"
+                                    class="form-control browser-default"
+                                  />
                                 </div>
                               </div>
                               <div class="row">
                                 <div class="col-12">
                                   <button
                                     class="btn-default1 btn"
-                                    value="Back"
-                                    onclick="openCity(event, 'soMethod')"
+                                    id="cancel_btn1"
                                   >
-                                    Back
+                                    Cancel
+                                  </button>
+                                  <button
+                                    class="initative_save_btn"
+                                    value="Save"
+                                  >
+                                    Save
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                            <div id="openID" style="display: none;">
+                              <h5>
+                                OpenID Connect
+                              </h5>
+                              <hr style="padding-bottom: 8px;" />
+                              <div class="row">
+                                <div
+                                  class="col-12 form-group"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <label>Application Name</label>
+                                  <input
+                                    type="text"
+                                    class="form-control browser-default"
+                                  />
+                                </div>
+                                <div
+                                  class="col-12 form-group"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <label>Client Name</label>
+                                  <input
+                                    type="text"
+                                    class="form-control browser-default"
+                                  />
+                                </div>
+                                <div
+                                  class="col-12 form-group"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <label>Redirect URL</label>
+                                  <input
+                                    type="text"
+                                    class="form-control browser-default"
+                                  />
+                                </div>
+                                <div
+                                  class="col-12 form-group"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <label>Description</label>
+                                  <input
+                                    type="text"
+                                    class="form-control browser-default"
+                                  />
+                                </div>
+                                <div
+                                  class="col-4 form-group"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <label>Access Token Expiry (in hours)</label>
+                                  <input
+                                    type="number"
+                                    class="form-control browser-default"
+                                    value="1"
+                                  />
+                                </div>
+                                <div
+                                  class="col-4 form-group"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <label>JWT Token Expiry (in hours)</label>
+                                  <input
+                                    type="number"
+                                    class="form-control browser-default"
+                                    value="1"
+                                  />
+                                </div>
+                                <div
+                                  class="col-4 form-group"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <label>Refresh Token Expiry (in days)</label>
+                                  <input
+                                    type="number"
+                                    class="form-control browser-default"
+                                    value="14"
+                                  />
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-12">
+                                  <button
+                                    class="btn-default1 btn"
+                                    id="cancel_btn2"
+                                  >
+                                    Cancel
                                   </button>
                                   <button
                                     class="initative_save_btn"
@@ -2336,19 +2573,36 @@
         });
       });
 
-      function openCity(evt, securitySections) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(securitySections).style.display = "block";
-        evt.currentTarget.className += " active";
-      }
+      $(document).ready(function () {
+        $("#next_btn").click(function () {
+          var radioValue = $("input[name='SOMethod']:checked").val();
+          if (radioValue == "SAML") {
+            $("#configSAML").show();
+            $("#openID").hide();
+            $("#soMethod").hide();
+          }
+          if (radioValue == "OC") {
+            $("#openID").show();
+            $("#configSAML").hide();
+            $("#soMethod").hide();
+          }
+        });
+        $("#cancel_btn1").click(function () {
+          $("#soMethod").show();
+          $("#openID").hide();
+          $("#configSAML").hide();
+        });
+        $("#cancel_btn2").click(function () {
+          $("#soMethod").show();
+          $("#openID").hide();
+          $("#configSAML").hide();
+        });
+      });
+
+      $("input[name=Config]").click(function () {
+        $(".samldiv").hide();
+        $("#" + $(this).val()).show();
+      });
     </script>
     <script>
       $(".daterangepicker-field").daterangepicker({
