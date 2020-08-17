@@ -678,7 +678,7 @@
                   <option>Choose</option>
                   <option value="Long Term">Long Term</option>
                   <option value="Medium Term">Medium Term</option>
-                  <option value="Small Term">Small Term</option>
+                  <option value="Short Term">Short Term</option>
                 </select>
               </div>
 
@@ -1507,18 +1507,22 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
               <div class="col-12 form-group">
                 <label for="KPI Type">KPI Type</label>
                 <select
-                  id="inputState"
+                  id="kpi_type_select"
                   style="padding-left: 6px !important;"
                   class="form-control browser-default kpi_type"
                   disabled="true"
                 >
                   <option>Choose</option>
-                  <option value="Option 1">Option 1</option>
+                  <option value="Currency">Currency</option>
                   <option value="Option 2">Option 2</option>
                 </select>
               </div>
 
-              <div class="col-12 form-group">
+              <div
+                class="col-12 form-group"
+                id="currency_input"
+                style="display: none;"
+              >
                 <label for="Currency">Currency</label>
                 <select
                   id="inputState"
@@ -1765,14 +1769,36 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                   <hr />
                 </div>
                 <div class="col-12" style="height: 432px; overflow-y: auto;">
-                  <div class="d-flex flex-column" id="perspective_sidebar">
+                  <div
+                    class="d-flex flex-column"
+                    id="perspective_sidebar"
+                    style="padding-top: 7px;"
+                  >
                     <div
                       onclick="openPerspective()"
                       class="d-flex flex-column sub_initiative_sidebar_details side_border_persp"
                     >
                       <div class="d-flex flex-row p-b-5">
                         <div class="d-flex flex-column profile_content">
-                          <span
+                          <span class="line-shortner"
+                            >Record zero fire incidents attributable to Alpha
+                            Mead across all locations in 2020 Record zero fire
+                            incidents attributable to Alpha Mead across all
+                            locations in 2020 Record zero fire incidents
+                            attributable to Alpha Mead across all locations in
+                            2020 Record zero fire incidents attributable to
+                            Alpha Mead across all locations in 2020</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="d-flex flex-column sub_initiative_sidebar_details side_border_persp"
+                    >
+                      <div class="d-flex flex-row p-b-5">
+                        <div class="d-flex flex-column profile_content">
+                          <span class="line-shortner"
                             >Record zero fire incidents attributable to Alpha
                             Mead across all locations in 2020</span
                           >
@@ -1785,7 +1811,7 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                     >
                       <div class="d-flex flex-row p-b-5">
                         <div class="d-flex flex-column profile_content">
-                          <span
+                          <span class="line-shortner"
                             >Record zero fire incidents attributable to Alpha
                             Mead across all locations in 2020</span
                           >
@@ -1798,7 +1824,7 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                     >
                       <div class="d-flex flex-row p-b-5">
                         <div class="d-flex flex-column profile_content">
-                          <span
+                          <span class="line-shortner"
                             >Record zero fire incidents attributable to Alpha
                             Mead across all locations in 2020</span
                           >
@@ -1811,7 +1837,7 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                     >
                       <div class="d-flex flex-row p-b-5">
                         <div class="d-flex flex-column profile_content">
-                          <span
+                          <span class="line-shortner"
                             >Record zero fire incidents attributable to Alpha
                             Mead across all locations in 2020</span
                           >
@@ -1824,20 +1850,7 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                     >
                       <div class="d-flex flex-row p-b-5">
                         <div class="d-flex flex-column profile_content">
-                          <span
-                            >Record zero fire incidents attributable to Alpha
-                            Mead across all locations in 2020</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      class="d-flex flex-column sub_initiative_sidebar_details side_border_persp"
-                    >
-                      <div class="d-flex flex-row p-b-5">
-                        <div class="d-flex flex-column profile_content">
-                          <span
+                          <span class="line-shortner"
                             >Record zero fire incidents attributable to Alpha
                             Mead across all locations in 2020</span
                           >
@@ -1895,10 +1908,12 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                   <div class="card" onclick="openObjective()">
                     <div class="row">
                       <div class="col-12">
-                        <div class="name pull-left">
+                        <div class="line-shortner name pull-left">
                           <span
                             >Record zero fire incidents attributable to Alpha
-                            Mead across all locations in 2020</span
+                            Mead across all locations in 2020 Record zero fire
+                            incidents attributable to Alpha Mead across all
+                            locations in 2020</span
                           >
                         </div>
                       </div>
@@ -1954,7 +1969,7 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                   <div class="card" onclick="openKPI()">
                     <div class="row">
                       <div class="col-10">
-                        <div class="name pull-left">
+                        <div class="line-shortner name pull-left">
                           <span
                             >Record zero fire incidents attributable to Alpha
                             Mead across all locations in 2020 Record zero fire
