@@ -80,6 +80,73 @@
       label {
         font-size: 12px !important;
       }
+
+      .btn-secondary {
+        color: #fff;
+        background-color: #6c757d;
+        border-color: #6c757d;
+        padding: 0px 12px;
+        font-size: 12px;
+        background-color: #02162a;
+        margin-right: 3px;
+        margin-bottom: 9px;
+        border-radius: 8px !important;
+        margin-top: 8px;
+      }
+
+      .btn-secondary:hover {
+        color: #fff !important;
+        background-color: #6c757d !important;
+        border-color: #6c757d !important;
+        padding: 0px 12px !important;
+        font-size: 12px !important;
+        background-color: #02162a !important;
+        margin-right: 3px !important;
+        margin-bottom: 9px !important;
+        border-radius: 8px !important;
+        margin-top: 8px !important;
+      }
+
+      #result_panel > .panelbody > .list-group > .list-group-item {
+        padding: 5px 10px !important;
+      }
+
+      #formula_builder,
+      #summary_calculation {
+        font-size: 11px !important;
+      }
+
+      #kpi_formula_popup > .modal-content > .modal-body {
+        padding: 0 25px !important;
+      }
+
+      #kpi_formula_popup > .modal-content > .modal-body.card > .tab-content {
+        padding: 0;
+      }
+
+      #formula_builder {
+        padding-bottom: 0px;
+      }
+
+      .panel:hover {
+        cursor: pointer;
+      }
+
+      #formula-builder .col-md-4 {
+        margin-bottom: 0px;
+      }
+
+      .modal #kpi_formula_popup {
+        background-color: rgba(238, 238, 238, 0) !important;
+      }
+
+      .modal-backdrop {
+        opacity: 0.5 !important;
+      }
+
+      #kpi_formula_popup .modal-content .nav li a.nav-link {
+        font-size: 12px !important;
+      }
     </style>
   </head>
 
@@ -616,6 +683,254 @@
       </div>
     </div>
     <!--#End User Edit Popup -->
+
+    <!-- KPI Calculator -->
+    <div
+      class="modal fade"
+      id="kpi_formula_popup"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel"
+      aria-hidden="true"
+      modal-backdrop="false"
+      data-backdrop="false"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h6 class="modal-title" id="myLargeModalLabel">KPI Calculator</h6>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" style="padding: 0 25px;">
+            <div class="col-md-8" style="padding: 0;">
+              Field Name: &nbsp;
+              <select class="form-control browser-default">
+                <option value="Actual">Actual</option>
+                <option value="Target">Target</option>
+                <option value="Budget">Budget</option>
+                <option value="Forecast">Forecast</option>
+                <option value="Gap">Gap</option>
+              </select>
+            </div>
+            <div class="card">
+              <ul
+                class="nav nav-tabs"
+                role="tablist"
+                style="padding-bottom: 10px;"
+              >
+                <li
+                  class="nav-item m-l-10"
+                  style="top: -4px; background: transparent;"
+                >
+                  <a
+                    class="nav-link active"
+                    data-toggle="tab"
+                    style="max-width: 170px;"
+                    href="#formula_builder"
+                    >Formula Builder</a
+                  >
+                </li>
+                <li
+                  class="nav-item m-l-10"
+                  style="top: -4px; background: transparent;"
+                >
+                  <a
+                    class="nav-link"
+                    data-toggle="tab"
+                    style="max-width: 170px;"
+                    href="#summary_calculation"
+                    >Summary Calculation</a
+                  >
+                </li>
+              </ul>
+              <div class="tab-content" style="padding: 0;">
+                <div class="tab-pane body active" id="formula_builder">
+                  <div class="row col-md-12">
+                    <textarea
+                      class="browser-default"
+                      name="formula"
+                      id="formula"
+                      placeholder=""
+                      cols=""
+                      rows="1"
+                    ></textarea>
+                    <!-- <textarea name="formula" id="formula"></textarea> -->
+                  </div>
+                  <div class="row col-md-12">
+                    <button type="button" class="opr btn btn-secondary">
+                      +
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      -
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      *
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      /
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      %
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      (
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      )
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      :
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      AND
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      OR
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      NOT
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      IN
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      ==
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      !=
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      >
+                    </button>
+                    <button
+                      type="button"
+                      class="opr btn btn-secondary"
+                    ></button>
+                    <button type="button" class="opr btn btn-secondary">
+                      >=
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      =
+                    </button>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="panel panel-primary" id="result_panel">
+                        <div class="panel-heading">
+                          <h6 class="panel-title">Fields and measures:</h6>
+                        </div>
+                        <div class="panel-body" data-spy="scroll">
+                          <ul class="list-group">
+                            <li class="list-group-item">State</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="panel panel-primary" id="result_panel1">
+                        <div class="panel-heading">
+                          <h6 class="panel-title">Functions:</h6>
+                        </div>
+                        <div class="panel-body">
+                          <ul class="list-group">
+                            <li class="list-group-item">Elapsed Year</li>
+                            <li class="list-group-item">Ends With</li>
+                            <li class="list-group-item">If</li>
+                            <li class="list-group-item">Is Null</li>
+                            <li class="list-group-item">Max</li>
+                            <li class="list-group-item">Min</li>
+                            <li class="list-group-item">Median</li>
+                            <li class="list-group-item">Mid</li>
+                            <li class="list-group-item">Test</li>
+                            <li class="list-group-item">Test</li>
+                            <li class="list-group-item">Test</li>
+                            <li class="list-group-item">Test</li>
+                            <li class="list-group-item">Test</li>
+                            <li class="list-group-item">Test</li>
+                            <li class="list-group-item">Test</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="panel panel-primary" id="result_panel1">
+                        <div class="panel-heading">
+                          <h6 class="panel-title">Function Description:</h6>
+                        </div>
+                        <div class="panel-body">
+                          <h6>IF</h6>
+                          <p>
+                            Returns second argument if first argument is true;
+                            Returns optional third argument if first argument is
+                            false; IF('element', 'trueCalc', 'falseCalc')
+                          </p>
+                        </div>
+                        <input type="checkbox" name="check" /> Show argumnets in
+                        formula
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4" style="margin-bottom: 0px;">
+                      <button
+                        name="validate"
+                        id="validate"
+                        class="btn btn-secondary"
+                      >
+                        Validate
+                      </button>
+                      <button name="add" id="add" class="btn btn-secondary">
+                        Add
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane body" id="summary_calculation">
+                  <div class="col-md-12">
+                    <div class="panel panel-primary" id="final_panel">
+                      <div class="panel-heading">
+                        <h6 class="panel-title">Formula</h6>
+                      </div>
+                      <div class="panel-body">
+                        <ul class="list-group formula-panel">
+                          <li class="list-group-item">Elapsed Year</li>
+                          <li class="list-group-item">Ends With</li>
+                          <li class="list-group-item">If</li>
+                          <li class="list-group-item">Is Null</li>
+                          <li class="list-group-item">Max</li>
+                          <li class="list-group-item">Min</li>
+                          <li class="list-group-item">Median</li>
+                          <li class="list-group-item">Mid</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END KPI Calculator -->
 
     <section class="content">
       <!-- Page Header -->
@@ -1335,17 +1650,41 @@
 
               <div class="col-12 form-group">
                 <label for="Actual">Actual</label>
-                <input type="text" class="form-control browser-default" />
+                <input
+                  type="text"
+                  class="form-control browser-default"
+                  id="kpi_formula"
+                  readonly
+                  data-toggle="modal"
+                  data-target="#kpi_formula_popup"
+                  role="button"
+                />
               </div>
 
               <div class="col-12 form-group">
                 <label for="Target">Target</label>
-                <input type="text" class="form-control browser-default" />
+                <input
+                  type="text"
+                  class="form-control browser-default"
+                  id="kpi_formula"
+                  readonly
+                  data-toggle="modal"
+                  data-target="#kpi_formula_popup"
+                  role="button"
+                />
               </div>
 
               <div class="col-12 form-group">
                 <label for="YTD">YTD</label>
-                <input type="text" class="form-control browser-default" />
+                <input
+                  type="text"
+                  class="form-control browser-default"
+                  id="kpi_formula"
+                  readonly
+                  data-toggle="modal"
+                  data-target="#kpi_formula_popup"
+                  role="button"
+                />
               </div>
 
               <div class="col-12 form-group">
@@ -1507,7 +1846,7 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
               <div class="col-12 form-group">
                 <label for="KPI Type">KPI Type</label>
                 <select
-                  id="kpi_type_select"
+                  id="kpi_type_select_edit"
                   style="padding-left: 6px !important;"
                   class="form-control browser-default kpi_type"
                   disabled="true"
@@ -1520,7 +1859,7 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
 
               <div
                 class="col-12 form-group"
-                id="currency_input"
+                id="currency_input_edit"
                 style="display: none;"
               >
                 <label for="Currency">Currency</label>
@@ -1555,6 +1894,11 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                 <input
                   type="text"
                   class="form-control browser-default kpi_actual"
+                  id="kpi_formula"
+                  readonly
+                  data-toggle="modal"
+                  data-target="#kpi_formula_popup"
+                  role="button"
                   disabled="true"
                 />
               </div>
@@ -1564,6 +1908,11 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                 <input
                   type="text"
                   class="form-control browser-default kpi_target"
+                  id="kpi_formula"
+                  readonly
+                  data-toggle="modal"
+                  data-target="#kpi_formula_popup"
+                  role="button"
                   disabled="true"
                 />
               </div>
@@ -1573,6 +1922,11 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                 <input
                   type="text"
                   class="form-control browser-default kpi_ytd"
+                  id="kpi_formula"
+                  readonly
+                  data-toggle="modal"
+                  data-target="#kpi_formula_popup"
+                  role="button"
                   disabled="true"
                 />
               </div>
@@ -2312,6 +2666,17 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
             $("#currency_input").show();
           } else {
             $("#currency_input").hide();
+          }
+        });
+      });
+
+      $(document).ready(function () {
+        $("#kpi_type_select_edit").change(function () {
+          var value = $("#kpi_type_select_edit").val();
+          if (value == "Currency") {
+            $("#currency_input_edit").show();
+          } else {
+            $("#currency_input_edit").hide();
           }
         });
       });

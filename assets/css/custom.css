@@ -1254,8 +1254,8 @@ label {
 
 .search-section .fa-search {
   position: absolute;
-  left: 142px;
-  top: 3px;
+  left: 40%;
+  top: 2px;
   font-size: 13px;
   color: #c2c2c2;
 }
