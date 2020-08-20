@@ -1965,11 +1965,7 @@
                         <div class="row">
                           <div
                             class="col-12"
-                            style="
-                              padding: 0 25px;
-                              height: 506px;
-                              overflow-y: auto;
-                            "
+                            style="padding: 0 25px; height: auto;"
                           >
                             <div id="soMethod">
                               <h4>Security</h4>
@@ -2023,6 +2019,11 @@
 
                             <div id="configSAML" style="display: none;">
                               <h5>
+                                <i
+                                  class="fas fa-arrow-left"
+                                  style="margin-right: 8px; cursor: pointer;"
+                                  id="back_btn1"
+                                ></i>
                                 SAML Settings
                               </h5>
                               <hr style="padding-bottom: 8px;" />
@@ -2275,23 +2276,30 @@
                               </div>
                               <div class="row">
                                 <div class="col-12">
-                                  <button
-                                    class="btn-default1 btn"
-                                    id="cancel_btn1"
-                                  >
-                                    Cancel
-                                  </button>
-                                  <button
-                                    class="initative_save_btn"
-                                    value="Save"
-                                  >
-                                    Save
-                                  </button>
+                                  <div class="form-line left">
+                                    <button
+                                      class="btn-default1 btn"
+                                      id="cancel_btn1"
+                                    >
+                                      Cancel
+                                    </button>
+                                    <button
+                                      class="initative_save_btn"
+                                      value="Save"
+                                    >
+                                      Save
+                                    </button>
+                                  </div>
                                 </div>
                               </div>
                             </div>
                             <div id="openID" style="display: none;">
                               <h5>
+                                <i
+                                  class="fas fa-arrow-left"
+                                  style="margin-right: 8px; cursor: pointer;"
+                                  id="back_btn2"
+                                ></i>
                                 OpenID Connect
                               </h5>
                               <hr style="padding-bottom: 8px;" />
@@ -2590,6 +2598,16 @@
           $("#configSAML").hide();
         });
         $("#cancel_btn2").click(function () {
+          $("#soMethod").show();
+          $("#openID").hide();
+          $("#configSAML").hide();
+        });
+        $("#back_btn1").click(function () {
+          $("#soMethod").show();
+          $("#openID").hide();
+          $("#configSAML").hide();
+        });
+        $("#back_btn2").click(function () {
           $("#soMethod").show();
           $("#openID").hide();
           $("#configSAML").hide();

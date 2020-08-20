@@ -25112,6 +25112,12 @@ body.stop-scrolling {
     0 0 8px rgba(204, 204, 204, 0.6);
 }
 
+.btn-default1 {
+  width: 70px;
+  height: 36px;
+  padding: 2px 4px;
+}
+
 .sweet-alert .btn-success:focus {
   border-color: #4cae4c;
   outline: 0;

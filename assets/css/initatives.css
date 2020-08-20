@@ -773,7 +773,9 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .initative_save_btn {
-  padding: 5px 30px;
+  padding: 5px 12px;
+  width: 90px;
+  height: 28px;
   font-size: 12px;
   background-color: #1e252d;
   color: #fff;

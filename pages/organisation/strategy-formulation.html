@@ -147,6 +147,18 @@
       #kpi_formula_popup .modal-content .nav li a.nav-link {
         font-size: 12px !important;
       }
+
+      .bg-layer {
+        height: 675px;
+        padding: 16px 20px;
+        width: 100%;
+        position: fixed;
+        display: none;
+        z-index: 1;
+        background-color: transparent;
+        top: 70px;
+        right: 0;
+      }
     </style>
   </head>
 
@@ -948,7 +960,12 @@
 
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12 sidebar-strategy" id="strategy_edit">
+          <div class="col-12 bg-layer" onclick="bgClick()"></div>
+          <div
+            class="col-12 sidebar-strategy"
+            id="strategy_edit"
+            style="display: none;"
+          >
             <div class="row">
               <div class="col-12" style="padding-bottom: 8px;">
                 <div class="perspective-heading">
@@ -1059,7 +1076,11 @@
               </div>
             </div>
           </div>
-          <div class="col-12 sidebar-strategy" id="perspective_view">
+          <div
+            class="col-12 sidebar-strategy"
+            id="perspective_view"
+            style="display: none;"
+          >
             <div class="row">
               <div class="col-12" style="padding-bottom: 8px;">
                 <div class="perspective-heading">
@@ -1187,7 +1208,11 @@
               </div>
             </div>
           </div>
-          <div class="col-12 sidebar-strategy" id="objective_view">
+          <div
+            class="col-12 sidebar-strategy"
+            id="objective_view"
+            style="display: none;"
+          >
             <div class="row">
               <div class="col-12" style="padding-bottom: 8px;">
                 <div class="perspective-heading">
@@ -1315,7 +1340,11 @@
               </div>
             </div>
           </div>
-          <div class="col-12 sidebar-strategy" id="perspective_add">
+          <div
+            class="col-12 sidebar-strategy"
+            id="perspective_add"
+            style="display: none;"
+          >
             <div class="row">
               <div class="col-12" style="padding-bottom: 8px;">
                 <div class="perspective-heading">
@@ -1413,7 +1442,11 @@
               </div>
             </div>
           </div>
-          <div class="col-12 sidebar-strategy" id="objective_add">
+          <div
+            class="col-12 sidebar-strategy"
+            id="objective_add"
+            style="display: none;"
+          >
             <div class="row">
               <div class="col-12" style="padding-bottom: 8px;">
                 <div class="perspective-heading">
@@ -1505,7 +1538,11 @@
               </div>
             </div>
           </div>
-          <div class="col-12 sidebar-strategy" id="kpi_add">
+          <div
+            class="col-12 sidebar-strategy"
+            id="kpi_add"
+            style="display: none;"
+          >
             <div class="row">
               <div class="col-12" style="padding-bottom: 8px;">
                 <div class="perspective-heading">
@@ -1624,15 +1661,7 @@
                 style="display: none;"
               >
                 <label for="Currency">Currency</label>
-                <select
-                  id="inputState"
-                  style="padding-left: 6px !important;"
-                  class="form-control browser-default"
-                >
-                  <option>Choose</option>
-                  <option value="Option 1">Option 1</option>
-                  <option value="Option 2">Option 2</option>
-                </select>
+                <input type="text" class="form-control browser-default" />
               </div>
 
               <div class="col-12 form-group">
@@ -1732,7 +1761,11 @@
               </div>
             </div>
           </div>
-          <div class="col-12 sidebar-strategy" id="kpi_view">
+          <div
+            class="col-12 sidebar-strategy"
+            id="kpi_view"
+            style="display: none;"
+          >
             <div class="row">
               <div class="col-12" style="padding-bottom: 8px;">
                 <div class="perspective-heading">
@@ -1863,16 +1896,7 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                 style="display: none;"
               >
                 <label for="Currency">Currency</label>
-                <select
-                  id="inputState"
-                  style="padding-left: 6px !important;"
-                  class="form-control browser-default kpi_currency"
-                  disabled="true"
-                >
-                  <option>Choose</option>
-                  <option value="Option 1">Option 1</option>
-                  <option value="Option 2">Option 2</option>
-                </select>
+                <input type="text" class="form-control browser-default" />
               </div>
 
               <div class="col-12 form-group">
@@ -2094,7 +2118,7 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                 <div class="col-12">
                   <div class="perspective-heading">
                     <h5>
-                      Prespectives
+                      Prespective
                       <span class="pull-right" onclick="openPerspectiveAdd()">
                         <i class="fas fa-plus border-box"></i>
                       </span>
@@ -2418,112 +2442,151 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
 
       $(document).keyup(function (e) {
         if (e.key === "Escape") {
-          document.getElementById("perspective_view").style.display = "none";
-          document.getElementById("objective_view").style.display = "none";
-          document.getElementById("kpi_view").style.display = "none";
-          document.getElementById("perspective_add").style.display = "none";
-          document.getElementById("objective_add").style.display = "none";
-          document.getElementById("kpi_add").style.display = "none";
-          document.getElementById("strategy_edit").style.display = "none";
+          $(".sidebar-strategy").hide();
+          $("#edit_perspective").show();
+          $("#save_perspective").hide();
+          $(".persp_name").prop("disabled", true);
+          $(".persp_date").prop("disabled", true);
+          $(".persp_weight").prop("disabled", true);
+          $(".persp_subweight").prop("disabled", true);
+          $(".persp_status").prop("disabled", true);
+          $("#edit_objective").show();
+          $("#save_objective").hide();
+          $(".obj_name").prop("disabled", true);
+          $(".obj_date").prop("disabled", true);
+          $(".obj_weight").prop("disabled", true);
+          $(".obj_subweight").prop("disabled", true);
+          $(".obj_status").prop("disabled", true);
+          $("#edit_kpi").show();
+          $("#save_kpi").hide();
+          $(".kpi_name").prop("disabled", true);
+          $(".kpi_polarity").prop("disabled", true);
+          $(".kpi_mf").prop("disabled", true);
+          $(".kpi_data").prop("disabled", true);
+          $(".kpi_type").prop("disabled", true);
+          $(".kpi_currency").prop("disabled", true);
+          $(".kpi_threshold").prop("disabled", true);
+          $(".kpi_actual").prop("disabled", true);
+          $(".kpi_target").prop("disabled", true);
+          $(".kpi_ytd").prop("disabled", true);
+          $(".kpi_date").prop("disabled", true);
+          $(".kpi_weight").prop("disabled", true);
+          $(".kpi_subweight").prop("disabled", true);
+          $(".kpi_status").prop("disabled", true);
+          $(".bg-layer").hide();
         }
       });
 
+      function bgClick() {
+        $(".sidebar-strategy").hide();
+        $("#edit_perspective").show();
+        $("#save_perspective").hide();
+        $(".persp_name").prop("disabled", true);
+        $(".persp_date").prop("disabled", true);
+        $(".persp_weight").prop("disabled", true);
+        $(".persp_subweight").prop("disabled", true);
+        $(".persp_status").prop("disabled", true);
+        $("#edit_objective").show();
+        $("#save_objective").hide();
+        $(".obj_name").prop("disabled", true);
+        $(".obj_date").prop("disabled", true);
+        $(".obj_weight").prop("disabled", true);
+        $(".obj_subweight").prop("disabled", true);
+        $(".obj_status").prop("disabled", true);
+        $("#edit_kpi").show();
+        $("#save_kpi").hide();
+        $(".kpi_name").prop("disabled", true);
+        $(".kpi_polarity").prop("disabled", true);
+        $(".kpi_mf").prop("disabled", true);
+        $(".kpi_data").prop("disabled", true);
+        $(".kpi_type").prop("disabled", true);
+        $(".kpi_currency").prop("disabled", true);
+        $(".kpi_threshold").prop("disabled", true);
+        $(".kpi_actual").prop("disabled", true);
+        $(".kpi_target").prop("disabled", true);
+        $(".kpi_ytd").prop("disabled", true);
+        $(".kpi_date").prop("disabled", true);
+        $(".kpi_weight").prop("disabled", true);
+        $(".kpi_subweight").prop("disabled", true);
+        $(".kpi_status").prop("disabled", true);
+        $(".bg-layer").hide();
+      }
+
       function openPerspective() {
-        document.getElementById("perspective_view").style.display = "block";
-        document.getElementById("objective_view").style.display = "none";
-        document.getElementById("kpi_view").style.display = "none";
-        document.getElementById("perspective_add").style.display = "none";
-        document.getElementById("objective_add").style.display = "none";
-        document.getElementById("kpi_add").style.display = "none";
-        document.getElementById("strategy_edit").style.display = "none";
+        $(".sidebar-strategy").hide();
+        $("#perspective_view").show();
+        $(".bg-layer").show();
       }
 
       function closePerspective() {
-        document.getElementById("perspective_view").style.display = "none";
+        $("#perspective_view").hide();
+        $(".bg-layer").hide();
       }
 
       function openObjective() {
-        document.getElementById("perspective_view").style.display = "none";
-        document.getElementById("objective_view").style.display = "block";
-        document.getElementById("kpi_view").style.display = "none";
-        document.getElementById("perspective_add").style.display = "none";
-        document.getElementById("objective_add").style.display = "none";
-        document.getElementById("kpi_add").style.display = "none";
-        document.getElementById("strategy_edit").style.display = "none";
+        $(".sidebar-strategy").hide();
+        $("#objective_view").show();
+        $(".bg-layer").show();
       }
 
       function closeObjective() {
-        document.getElementById("objective_view").style.display = "none";
+        $("#objective_view").hide();
+        $(".bg-layer").hide();
       }
 
       function openKPI() {
-        document.getElementById("perspective_view").style.display = "none";
-        document.getElementById("objective_view").style.display = "none";
-        document.getElementById("kpi_view").style.display = "block";
-        document.getElementById("perspective_add").style.display = "none";
-        document.getElementById("objective_add").style.display = "none";
-        document.getElementById("kpi_add").style.display = "none";
-        document.getElementById("strategy_edit").style.display = "none";
+        $(".sidebar-strategy").hide();
+        $("#kpi_view").show();
+        $(".bg-layer").show();
       }
 
       function closeKPI() {
-        document.getElementById("kpi_view").style.display = "none";
+        $("#kpi_view").hide();
+        $(".bg-layer").hide();
       }
 
       function openPerspectiveAdd() {
-        document.getElementById("perspective_view").style.display = "none";
-        document.getElementById("objective_view").style.display = "none";
-        document.getElementById("kpi_view").style.display = "none";
-        document.getElementById("perspective_add").style.display = "block";
-        document.getElementById("objective_add").style.display = "none";
-        document.getElementById("kpi_add").style.display = "none";
-        document.getElementById("strategy_edit").style.display = "none";
+        $(".sidebar-strategy").hide();
+        $("#perspective_add").show();
+        $(".bg-layer").show();
       }
 
       function closePerspectiveAdd() {
-        document.getElementById("perspective_add").style.display = "none";
+        $("#perspective_add").hide();
+        $(".bg-layer").hide();
       }
 
       function openObjectiveAdd() {
-        document.getElementById("perspective_view").style.display = "none";
-        document.getElementById("objective_view").style.display = "none";
-        document.getElementById("kpi_view").style.display = "none";
-        document.getElementById("perspective_add").style.display = "none";
-        document.getElementById("objective_add").style.display = "block";
-        document.getElementById("kpi_add").style.display = "none";
-        document.getElementById("strategy_edit").style.display = "none";
+        $(".sidebar-strategy").hide();
+        $("#objective_add").show();
+        $(".bg-layer").show();
       }
 
       function closeObjectiveAdd() {
-        document.getElementById("objective_add").style.display = "none";
+        $("#objective_add").hide();
+        $(".bg-layer").hide();
       }
 
       function openKPIAdd() {
-        document.getElementById("perspective_view").style.display = "none";
-        document.getElementById("objective_view").style.display = "none";
-        document.getElementById("kpi_view").style.display = "none";
-        document.getElementById("perspective_add").style.display = "none";
-        document.getElementById("objective_add").style.display = "none";
-        document.getElementById("kpi_add").style.display = "block";
-        document.getElementById("strategy_edit").style.display = "none";
+        $(".sidebar-strategy").hide();
+        $("#kpi_add").show();
+        $(".bg-layer").show();
       }
 
       function closeKPIAdd() {
-        document.getElementById("kpi_add").style.display = "none";
+        $("#kpi_add").hide();
+        $(".bg-layer").hide();
       }
 
       function openStrategy() {
-        document.getElementById("perspective_view").style.display = "none";
-        document.getElementById("objective_view").style.display = "none";
-        document.getElementById("kpi_view").style.display = "none";
-        document.getElementById("perspective_add").style.display = "none";
-        document.getElementById("objective_add").style.display = "none";
-        document.getElementById("kpi_add").style.display = "none";
-        document.getElementById("strategy_edit").style.display = "block";
+        $(".sidebar-strategy").hide();
+        $("#strategy_edit").show();
+        $(".bg-layer").show();
       }
 
       function closeStrategy() {
-        document.getElementById("strategy_edit").style.display = "none";
+        $("#strategy_edit").hide();
+        $(".bg-layer").hide();
       }
 
       $("#edit_perspective").click(function () {

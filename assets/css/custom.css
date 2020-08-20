@@ -1245,11 +1245,11 @@ label {
   box-sizing: border-box !important;
   border-radius: 12px !important;
   height: 26px !important;
-  padding-left: 28px !important;
 }
 
 .search-section input::placeholder {
   color: #c2c2c2 !important;
+  padding-left: 28px;
 }
 
 .search-section .fa-search {
