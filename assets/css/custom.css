@@ -1236,8 +1236,9 @@ label {
 
 .search-section {
   /* padding-left: 22px; */
-  margin-right: 4px;
-  margin-top: -4px;
+  /* margin-right: 4px; */
+  margin-top: -6px;
+  width: 100% !important;
 }
 
 .search-section .search {
@@ -1245,27 +1246,30 @@ label {
   box-sizing: border-box !important;
   border-radius: 12px !important;
   height: 26px !important;
+  margin: 0 !important;
+  padding-left: 30px !important;
 }
 
 .search-section input::placeholder {
   color: #c2c2c2 !important;
-  padding-left: 28px;
+  /* padding-left: 28px; */
 }
 
 .search-section .fa-search {
   position: absolute;
-  left: 40%;
-  top: 2px;
+  left: 24px;
+  top: 1px;
   font-size: 13px;
   color: #c2c2c2;
 }
 
 .search-section .fa-times {
   position: absolute;
-  right: 56px;
-  top: 3px;
+  right: 26px;
+  top: 2px;
   font-size: 13px;
   color: #c2c2c2;
+  cursor: pointer;
 }
 
 .obj-content div .card {
