@@ -91,6 +91,10 @@
       .active-org {
         display: block;
       }
+
+      .oc-export-btn {
+        display: none;
+      }
     </style>
   </head>
 
@@ -126,7 +130,7 @@
           ></a>
           <a href="#" onClick="return false;" class="bars"></a>
           <a href="#" onClick="return false;" class="bar_nav sidemenu-collapse"
-            ><i class="nav-hdr-btn ti-menu" style="color: #000;"></i
+            ><i class="nav-hdr-btn ti-menu" style="color: #000"></i
           ></a>
           <a class="navbar-brand nav_float" href="#">
             <img
@@ -138,7 +142,7 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="fullscreen" style="padding: 4px; left: -14px;">
+            <li class="fullscreen" style="padding: 4px; left: -14px">
               <ul class="list-unstyled order-list">
                 <li class="avatar avatar-sm">
                   <img
@@ -177,13 +181,13 @@
               <form class="form-header" action="" method="POST">
                 <input
                   class="au-input au-input--xl"
-                  style="min-width: 20%;"
+                  style="min-width: 20%"
                   type="text"
                   name="search"
                   placeholder="Search"
                 />
                 <button class="au-btn--submit" type="submit">
-                  <i class="fa fa-search" style="color: gray;"></i>
+                  <i class="fa fa-search" style="color: gray"></i>
                 </button>
               </form>
             </li>
@@ -204,7 +208,7 @@
                 data-toggle="dropdown"
                 role="button"
               >
-                <i class="nav-hdr-btn ti-bell" style="color: gray;"></i>
+                <i class="nav-hdr-btn ti-bell" style="color: gray"></i>
                 <span class="notify"></span>
                 <span class="heartbeat"></span>
               </a>
@@ -217,7 +221,7 @@
                 data-toggle="dropdown"
                 role="button"
               >
-                <i class="nav-hdr-btn ti-settings" style="color: gray;"></i>
+                <i class="nav-hdr-btn ti-settings" style="color: gray"></i>
                 <span class="notify"></span>
                 <span class="heartbeat"></span>
               </a>
@@ -395,11 +399,11 @@
           >
             <div
               class="slimScrollDiv"
-              style="position: relative; overflow: hidden; width: auto;"
+              style="position: relative; overflow: hidden; width: auto"
             >
               <div
                 class="demo-skin"
-                style="overflow: hidden; width: auto; height: auto;"
+                style="overflow: hidden; width: auto; height: auto"
               >
                 <div class="rightSetting">
                   <p class="left">Profile</p>
@@ -416,7 +420,7 @@
                     <li
                       _ngcontent-hhc-c5=""
                       class="center avatar avatar-sm"
-                      style="width: 85px;"
+                      style="width: 85px"
                     >
                       <img
                         _ngcontent-hhc-c5=""
@@ -438,7 +442,7 @@
                   </ul>
                   <ul
                     class="setting-list profile-replace list-unstyled m-t-20"
-                    style="display: none;"
+                    style="display: none"
                   >
                     <li class="center">
                       <form id="profileForm">
@@ -449,7 +453,7 @@
                               id="profileImage"
                               _ngcontent-hhc-c5=""
                               class="center avatar avatar-sm"
-                              style="width: 85px; z-index: -1;"
+                              style="width: 85px; z-index: -1"
                             >
                               <img
                                 _ngcontent-hhc-c5=""
@@ -601,12 +605,12 @@
                                           </div>
                                           <div
                                             class="col-md-1"
-                                            style="float: right;"
+                                            style="float: right"
                                           >
                                             <a href="#" class="reportingEdit"
                                               ><i
                                                 class="fas fa-pencil-alt"
-                                                style="font-size: 14px;"
+                                                style="font-size: 14px"
                                               ></i
                                             ></a>
                                           </div>
@@ -627,12 +631,12 @@
                                           </div>
                                           <div
                                             class="col-md-1"
-                                            style="float: right;"
+                                            style="float: right"
                                           >
                                             <a href="#" class="reportingEdit"
                                               ><i
                                                 class="fas fa-pencil-alt"
-                                                style="font-size: 14px;"
+                                                style="font-size: 14px"
                                               ></i
                                             ></a>
                                           </div>
@@ -640,7 +644,7 @@
                                       </ul>
                                       <ul
                                         class="setting-list reporting-replace-add list-unstyled m-t-20"
-                                        style="display: none;"
+                                        style="display: none"
                                       >
                                         <li class="row">
                                           <form id="reportingAddForm">
@@ -784,12 +788,12 @@
                                           </div>
                                           <div
                                             class="col-md-1"
-                                            style="float: right;"
+                                            style="float: right"
                                           >
                                             <a href="#" class="directEdit"
                                               ><i
                                                 class="fas fa-pencil-alt"
-                                                style="font-size: 14px;"
+                                                style="font-size: 14px"
                                               ></i
                                             ></a>
                                           </div>
@@ -810,12 +814,12 @@
                                           </div>
                                           <div
                                             class="col-md-1"
-                                            style="float: right;"
+                                            style="float: right"
                                           >
                                             <a href="#" class="directEdit"
                                               ><i
                                                 class="fas fa-pencil-alt"
-                                                style="font-size: 14px;"
+                                                style="font-size: 14px"
                                               ></i
                                             ></a>
                                           </div>
@@ -823,7 +827,7 @@
                                       </ul>
                                       <ul
                                         class="setting-list direct-replace-add list-unstyled m-t-20"
-                                        style="display: none;"
+                                        style="display: none"
                                       >
                                         <li class="row">
                                           <form id="directAddForm">
@@ -978,11 +982,11 @@
           <div role="tabpanel" class="tab-pane stretchRight" id="settings">
             <div
               class="slimScrollDiv"
-              style="position: relative; overflow: hidden; width: auto;"
+              style="position: relative; overflow: hidden; width: auto"
             >
               <div
                 class="demo-settings"
-                style="overflow: hidden; width: auto; height: auto;"
+                style="overflow: hidden; width: auto; height: auto"
               >
                 <p>GENERAL SETTINGS</p>
                 <ul class="setting-list">
@@ -1351,7 +1355,7 @@
                 src="../../assets/images/media.png"
                 alt=""
               />
-              <input id="upload2" type="file" style="display: none;" />
+              <input id="upload2" type="file" style="display: none" />
               <div class="edit1">
                 <a href="#"><i class="fa fa-pencil-alt"></i></a>
               </div>
@@ -1428,7 +1432,7 @@
                 src=""
                 alt=""
               />
-              <input id="upload1" type="file" style="display: none;" />
+              <input id="upload1" type="file" style="display: none" />
               <div class="edit1">
                 <a href="#"><i class="fa fa-pencil-alt"></i></a>
               </div>
@@ -1517,274 +1521,274 @@
                 class="form-control browser-default mt-1"
               >
                 <option selected value="">Select currency</option>
-                <option value="America (United States) Dollars - USD"
-                  >America (United States) Dollars – USD</option
-                >
-                <option value="Afghanistan Afghanis - AFN"
-                  >Afghanistan Afghanis – AFN
+                <option value="America (United States) Dollars - USD">
+                  America (United States) Dollars – USD
+                </option>
+                <option value="Afghanistan Afghanis - AFN">
+                  Afghanistan Afghanis – AFN
                 </option>
                 <option value="Albania Leke - ALL">Albania Leke – ALL</option>
-                <option value="Algeria Dinars - DZD"
-                  >Algeria Dinars – DZD</option
-                >
-                <option value="Argentina Pesos - ARS"
-                  >Argentina Pesos – ARS</option
-                >
-                <option value="Australia Dollars - AUD"
-                  >Australia Dollars – AUD</option
-                >
-                <option value="Austria Schillings - ATS"
-                  >Austria Schillings – ATS</option
-                >
+                <option value="Algeria Dinars - DZD">
+                  Algeria Dinars – DZD
+                </option>
+                <option value="Argentina Pesos - ARS">
+                  Argentina Pesos – ARS
+                </option>
+                <option value="Australia Dollars - AUD">
+                  Australia Dollars – AUD
+                </option>
+                <option value="Austria Schillings - ATS">
+                  Austria Schillings – ATS
+                </option>
 
-                <option value="Bahamas Dollars - BSD"
-                  >Bahamas Dollars – BSD</option
-                >
-                <option value="Bahrain Dinars - BHD"
-                  >Bahrain Dinars – BHD</option
-                >
-                <option value="Bangladesh Taka - BDT"
-                  >Bangladesh Taka – BDT</option
-                >
-                <option value="Barbados Dollars - BBD"
-                  >Barbados Dollars – BBD</option
-                >
-                <option value="Belgium Francs - BEF"
-                  >Belgium Francs – BEF</option
-                >
-                <option value="Bermuda Dollars - BMD"
-                  >Bermuda Dollars – BMD</option
-                >
+                <option value="Bahamas Dollars - BSD">
+                  Bahamas Dollars – BSD
+                </option>
+                <option value="Bahrain Dinars - BHD">
+                  Bahrain Dinars – BHD
+                </option>
+                <option value="Bangladesh Taka - BDT">
+                  Bangladesh Taka – BDT
+                </option>
+                <option value="Barbados Dollars - BBD">
+                  Barbados Dollars – BBD
+                </option>
+                <option value="Belgium Francs - BEF">
+                  Belgium Francs – BEF
+                </option>
+                <option value="Bermuda Dollars - BMD">
+                  Bermuda Dollars – BMD
+                </option>
 
                 <option value="Brazil Reais - BRL">Brazil Reais – BRL</option>
                 <option value="Bulgaria Leva - BGN">Bulgaria Leva – BGN</option>
-                <option value="Canada Dollars - CAD"
-                  >Canada Dollars – CAD</option
-                >
-                <option value="CFA BCEAO Francs - XOF"
-                  >CFA BCEAO Francs – XOF</option
-                >
-                <option value="CFA BEAC Francs - XAF"
-                  >CFA BEAC Francs – XAF</option
-                >
+                <option value="Canada Dollars - CAD">
+                  Canada Dollars – CAD
+                </option>
+                <option value="CFA BCEAO Francs - XOF">
+                  CFA BCEAO Francs – XOF
+                </option>
+                <option value="CFA BEAC Francs - XAF">
+                  CFA BEAC Francs – XAF
+                </option>
                 <option value="Chile Pesos - CLP">Chile Pesos – CLP</option>
 
-                <option value="China Yuan Renminbi - CNY"
-                  >China Yuan Renminbi – CNY</option
-                >
-                <option value="RMB (China Yuan Renminbi) - CNY"
-                  >RMB (China Yuan Renminbi) – CNY
+                <option value="China Yuan Renminbi - CNY">
+                  China Yuan Renminbi – CNY
                 </option>
-                <option value="Colombia Pesos - COP"
-                  >Colombia Pesos – COP</option
-                >
+                <option value="RMB (China Yuan Renminbi) - CNY">
+                  RMB (China Yuan Renminbi) – CNY
+                </option>
+                <option value="Colombia Pesos - COP">
+                  Colombia Pesos – COP
+                </option>
                 <option value="CFP Francs - XPF">CFP Francs – XPF</option>
-                <option value="Costa Rica Colones - CRC"
-                  >Costa Rica Colones – CRC</option
-                >
+                <option value="Costa Rica Colones - CRC">
+                  Costa Rica Colones – CRC
+                </option>
                 <option value="Croatia Kuna - HRK">Croatia Kuna – HRK</option>
 
                 <option value="Cyprus Pounds - CYP">Cyprus Pounds – CYP</option>
-                <option value="Czech Republic Koruny - CZK"
-                  >Czech Republic Koruny – CZK
+                <option value="Czech Republic Koruny - CZK">
+                  Czech Republic Koruny – CZK
                 </option>
-                <option value="Denmark Kroner - DKK"
-                  >Denmark Kroner – DKK</option
-                >
-                <option value="Deutsche (Germany) Marks - DEM"
-                  >Deutsche (Germany) Marks – DEM
+                <option value="Denmark Kroner - DKK">
+                  Denmark Kroner – DKK
                 </option>
-                <option value="Dominican Republic Pesos - DOP"
-                  >Dominican Republic Pesos – DOP
+                <option value="Deutsche (Germany) Marks - DEM">
+                  Deutsche (Germany) Marks – DEM
                 </option>
-                <option value="Dutch (Netherlands) Guilders - NLG"
-                  >Dutch (Netherlands) Guilders – NLG</option
-                >
+                <option value="Dominican Republic Pesos - DOP">
+                  Dominican Republic Pesos – DOP
+                </option>
+                <option value="Dutch (Netherlands) Guilders - NLG">
+                  Dutch (Netherlands) Guilders – NLG
+                </option>
 
-                <option value="Eastern Caribbean Dollars - XCD"
-                  >Eastern Caribbean Dollars – XCD
+                <option value="Eastern Caribbean Dollars - XCD">
+                  Eastern Caribbean Dollars – XCD
                 </option>
                 <option value="Egypt Pounds - EGP">Egypt Pounds – EGP</option>
-                <option value="Estonia Krooni - EEK"
-                  >Estonia Krooni – EEK</option
-                >
+                <option value="Estonia Krooni - EEK">
+                  Estonia Krooni – EEK
+                </option>
                 <option value="Euro - EUR">Euro – EUR</option>
                 <option value="Fiji Dollars - FJD">Fiji Dollars – FJD</option>
-                <option value="Finland Markkaa - FIM"
-                  >Finland Markkaa – FIM</option
-                >
+                <option value="Finland Markkaa - FIM">
+                  Finland Markkaa – FIM
+                </option>
 
-                <option value="France Francs - FRF*"
-                  >France Francs – FRF*</option
-                >
-                <option value="Germany Deutsche Marks - DEM"
-                  >Germany Deutsche Marks – DEM
+                <option value="France Francs - FRF*">
+                  France Francs – FRF*
+                </option>
+                <option value="Germany Deutsche Marks - DEM">
+                  Germany Deutsche Marks – DEM
                 </option>
                 <option value="Gold Ounces - XAU">Gold Ounces – XAU</option>
-                <option value="Greece Drachmae - GRD"
-                  >Greece Drachmae – GRD</option
-                >
-                <option value="Guatemalan Quetzal - GTQ"
-                  >Guatemalan Quetzal – GTQ</option
-                >
-                <option value="Holland (Netherlands) Guilders - NLG"
-                  >Holland (Netherlands) Guilders – NLG</option
-                >
-                <option value="Hong Kong Dollars - HKD"
-                  >Hong Kong Dollars – HKD</option
-                >
+                <option value="Greece Drachmae - GRD">
+                  Greece Drachmae – GRD
+                </option>
+                <option value="Guatemalan Quetzal - GTQ">
+                  Guatemalan Quetzal – GTQ
+                </option>
+                <option value="Holland (Netherlands) Guilders - NLG">
+                  Holland (Netherlands) Guilders – NLG
+                </option>
+                <option value="Hong Kong Dollars - HKD">
+                  Hong Kong Dollars – HKD
+                </option>
 
-                <option value="Hungary Forint - HUF"
-                  >Hungary Forint – HUF</option
-                >
-                <option value="Iceland Kronur - ISK"
-                  >Iceland Kronur – ISK</option
-                >
-                <option value="IMF Special Drawing Right - XDR"
-                  >IMF Special Drawing Right – XDR
+                <option value="Hungary Forint - HUF">
+                  Hungary Forint – HUF
+                </option>
+                <option value="Iceland Kronur - ISK">
+                  Iceland Kronur – ISK
+                </option>
+                <option value="IMF Special Drawing Right - XDR">
+                  IMF Special Drawing Right – XDR
                 </option>
                 <option value="India Rupees - INR">India Rupees – INR</option>
-                <option value="Indonesia Rupiahs - IDR"
-                  >Indonesia Rupiahs – IDR</option
-                >
+                <option value="Indonesia Rupiahs - IDR">
+                  Indonesia Rupiahs – IDR
+                </option>
                 <option value="Iran Rials - IRR">Iran Rials – IRR</option>
 
                 <option value="Iraq Dinars - IQD">Iraq Dinars – IQD</option>
-                <option value="Ireland Pounds - IEP*"
-                  >Ireland Pounds – IEP*</option
-                >
-                <option value="Israel New Shekels - ILS"
-                  >Israel New Shekels – ILS</option
-                >
+                <option value="Ireland Pounds - IEP*">
+                  Ireland Pounds – IEP*
+                </option>
+                <option value="Israel New Shekels - ILS">
+                  Israel New Shekels – ILS
+                </option>
                 <option value="Italy Lire - ITL*">Italy Lire – ITL*</option>
-                <option value="Jamaica Dollars - JMD"
-                  >Jamaica Dollars – JMD</option
-                >
+                <option value="Jamaica Dollars - JMD">
+                  Jamaica Dollars – JMD
+                </option>
                 <option value="Japan Yen - JPY">Japan Yen – JPY</option>
 
                 <option value="Jordan Dinars - JOD">Jordan Dinars – JOD</option>
-                <option value="Kenya Shillings - KES"
-                  >Kenya Shillings – KES</option
-                >
-                <option value="Korea (South) Won - KRW"
-                  >Korea (South) Won – KRW</option
-                >
+                <option value="Kenya Shillings - KES">
+                  Kenya Shillings – KES
+                </option>
+                <option value="Korea (South) Won - KRW">
+                  Korea (South) Won – KRW
+                </option>
                 <option value="Kuwait Dinars - KWD">Kuwait Dinars – KWD</option>
-                <option value="Lebanon Pounds - LBP"
-                  >Lebanon Pounds – LBP</option
-                >
-                <option value="Luxembourg Francs - LUF"
-                  >Luxembourg Francs – LUF</option
-                >
-
-                <option value="Malaysia Ringgits - MYR"
-                  >Malaysia Ringgits – MYR</option
-                >
-                <option value="Malta Liri - MTL">Malta Liri – MTL</option>
-                <option value="Mauritius Rupees - MUR"
-                  >Mauritius Rupees – MUR</option
-                >
-                <option value="Mexico Pesos - MXN">Mexico Pesos – MXN</option>
-                <option value="Morocco Dirhams - MAD"
-                  >Morocco Dirhams – MAD</option
-                >
-                <option value="Netherlands Guilders - NLG"
-                  >Netherlands Guilders – NLG
+                <option value="Lebanon Pounds - LBP">
+                  Lebanon Pounds – LBP
+                </option>
+                <option value="Luxembourg Francs - LUF">
+                  Luxembourg Francs – LUF
                 </option>
 
-                <option value="New Zealand Dollars - NZD"
-                  >New Zealand Dollars – NZD</option
-                >
+                <option value="Malaysia Ringgits - MYR">
+                  Malaysia Ringgits – MYR
+                </option>
+                <option value="Malta Liri - MTL">Malta Liri – MTL</option>
+                <option value="Mauritius Rupees - MUR">
+                  Mauritius Rupees – MUR
+                </option>
+                <option value="Mexico Pesos - MXN">Mexico Pesos – MXN</option>
+                <option value="Morocco Dirhams - MAD">
+                  Morocco Dirhams – MAD
+                </option>
+                <option value="Netherlands Guilders - NLG">
+                  Netherlands Guilders – NLG
+                </option>
+
+                <option value="New Zealand Dollars - NZD">
+                  New Zealand Dollars – NZD
+                </option>
                 <option value="Norway Kroner - NOK">Norway Kroner – NOK</option>
                 <option value="Oman Rials - OMR">Oman Rials – OMR</option>
-                <option value="Pakistan Rupees - PKR"
-                  >Pakistan Rupees – PKR</option
-                >
-                <option value="Palladium Ounces - XPD"
-                  >Palladium Ounces – XPD</option
-                >
-                <option value="Peru Nuevos Soles - PEN"
-                  >Peru Nuevos Soles – PEN</option
-                >
+                <option value="Pakistan Rupees - PKR">
+                  Pakistan Rupees – PKR
+                </option>
+                <option value="Palladium Ounces - XPD">
+                  Palladium Ounces – XPD
+                </option>
+                <option value="Peru Nuevos Soles - PEN">
+                  Peru Nuevos Soles – PEN
+                </option>
 
-                <option value="Philippines Pesos - PHP"
-                  >Philippines Pesos – PHP</option
-                >
-                <option value="Platinum Ounces - XPT"
-                  >Platinum Ounces – XPT</option
-                >
-                <option value="Poland Zlotych - PLN"
-                  >Poland Zlotych – PLN</option
-                >
-                <option value="Portugal Escudos - PTE"
-                  >Portugal Escudos – PTE</option
-                >
+                <option value="Philippines Pesos - PHP">
+                  Philippines Pesos – PHP
+                </option>
+                <option value="Platinum Ounces - XPT">
+                  Platinum Ounces – XPT
+                </option>
+                <option value="Poland Zlotych - PLN">
+                  Poland Zlotych – PLN
+                </option>
+                <option value="Portugal Escudos - PTE">
+                  Portugal Escudos – PTE
+                </option>
                 <option value="Qatar Riyals - QAR">Qatar Riyals – QAR</option>
-                <option value="Romania New Lei - RON"
-                  >Romania New Lei – RON</option
-                >
+                <option value="Romania New Lei - RON">
+                  Romania New Lei – RON
+                </option>
 
                 <option value="Romania Lei - ROL">Romania Lei – ROL</option>
                 <option value="Russia Rubles - RUB">Russia Rubles – RUB</option>
-                <option value="Saudi Arabia Riyals - SAR"
-                  >Saudi Arabia Riyals – SAR</option
-                >
+                <option value="Saudi Arabia Riyals - SAR">
+                  Saudi Arabia Riyals – SAR
+                </option>
                 <option value="Silver Ounces - XAG">Silver Ounces – XAG</option>
-                <option value="Singapore Dollars - SGD"
-                  >Singapore Dollars – SGD</option
-                >
-                <option value="Slovakia Koruny - SKK"
-                  >Slovakia Koruny – SKK</option
-                >
+                <option value="Singapore Dollars - SGD">
+                  Singapore Dollars – SGD
+                </option>
+                <option value="Slovakia Koruny - SKK">
+                  Slovakia Koruny – SKK
+                </option>
 
-                <option value="Slovenia Tolars - SIT"
-                  >Slovenia Tolars – SIT</option
-                >
-                <option value="South Africa Rand - ZAR"
-                  >South Africa Rand – ZAR</option
-                >
-                <option value="South Korea Won - KRW"
-                  >South Korea Won – KRW</option
-                >
+                <option value="Slovenia Tolars - SIT">
+                  Slovenia Tolars – SIT
+                </option>
+                <option value="South Africa Rand - ZAR">
+                  South Africa Rand – ZAR
+                </option>
+                <option value="South Korea Won - KRW">
+                  South Korea Won – KRW
+                </option>
                 <option value="Spain Pesetas - ESP">Spain Pesetas – ESP</option>
-                <option value="Special Drawing Rights (IMF) - XDR"
-                  >Special Drawing Rights (IMF) – XDR</option
-                >
-                <option value="Sri Lanka Rupees - LKR"
-                  >Sri Lanka Rupees – LKR</option
-                >
+                <option value="Special Drawing Rights (IMF) - XDR">
+                  Special Drawing Rights (IMF) – XDR
+                </option>
+                <option value="Sri Lanka Rupees - LKR">
+                  Sri Lanka Rupees – LKR
+                </option>
 
                 <option value="Sudan Dinars - SDD">Sudan Dinars – SDD</option>
                 <option value="Sweden Kronor - SEK">Sweden Kronor – SEK</option>
-                <option value="Switzerland Francs - CHF"
-                  >Switzerland Francs – CHF</option
-                >
-                <option value="Taiwan New Dollars - TWD"
-                  >Taiwan New Dollars – TWD</option
-                >
+                <option value="Switzerland Francs - CHF">
+                  Switzerland Francs – CHF
+                </option>
+                <option value="Taiwan New Dollars - TWD">
+                  Taiwan New Dollars – TWD
+                </option>
                 <option value="Thailand Baht - THB">Thailand Baht – THB</option>
-                <option value="Trinidad and Tobago Dollars - TTD"
-                  >Trinidad and Tobago Dollars – TTD</option
-                >
+                <option value="Trinidad and Tobago Dollars - TTD">
+                  Trinidad and Tobago Dollars – TTD
+                </option>
 
-                <option value="Tunisia Dinars - TND"
-                  >Tunisia Dinars – TND</option
-                >
-                <option value="Turkey New Lira - TRY"
-                  >Turkey New Lira – TRY</option
-                >
-                <option value="United Arab Emirates Dirhams - AED"
-                  >United Arab Emirates Dirhams – AED</option
-                >
-                <option value="United Kingdom Pounds - GBP"
-                  >United Kingdom Pounds – GBP
+                <option value="Tunisia Dinars - TND">
+                  Tunisia Dinars – TND
                 </option>
-                <option value="United States Dollars - USD"
-                  >United States Dollars – USD
+                <option value="Turkey New Lira - TRY">
+                  Turkey New Lira – TRY
                 </option>
-                <option value="Venezuela Bolivares - VEB"
-                  >Venezuela Bolivares – VEB</option
-                >
+                <option value="United Arab Emirates Dirhams - AED">
+                  United Arab Emirates Dirhams – AED
+                </option>
+                <option value="United Kingdom Pounds - GBP">
+                  United Kingdom Pounds – GBP
+                </option>
+                <option value="United States Dollars - USD">
+                  United States Dollars – USD
+                </option>
+                <option value="Venezuela Bolivares - VEB">
+                  Venezuela Bolivares – VEB
+                </option>
 
                 <option value="Vietnam Dong - VND">Vietnam Dong – VND</option>
                 <option value="Zambia Kwacha - ZMK">Zambia Kwacha – ZMK</option>
@@ -1814,7 +1818,7 @@
 
       <!-- Org Structure Modal -->
       <div id="org_structure" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg" style="margin-top: 10%;">
+        <div class="modal-dialog modal-lg" style="margin-top: 10%">
           <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-header">
@@ -1829,7 +1833,7 @@
             </div>
             <div class="modal-body">
               <div class="row">
-                <div class="col-md-12" style="margin-left: 40px;">
+                <div class="col-md-12" style="margin-left: 40px">
                   <ul id="tree">
                     <li>
                       <a href="#">Lao Lao - General Manager</a>
@@ -1939,7 +1943,7 @@
                   <div class="form-group">
                     <label
                       for="risk_rating"
-                      style="font-size: 14px; font-weight: 600;"
+                      style="font-size: 14px; font-weight: 600"
                     >
                       Import Category</label
                     >
@@ -1953,7 +1957,7 @@
                       <option value="Scorecard Import">Scorecard</option>
                       <option value="Initiative Import">Initiatives</option>
                     </select>
-                    <span id="categoryerror" style="color: red; display: none;">
+                    <span id="categoryerror" style="color: red; display: none">
                       Kindly select category to upload a file</span
                     >
                   </div>
@@ -1968,7 +1972,7 @@
                       <div class="dropzone-desc">
                         <i
                           class="fas fa-file-upload"
-                          style="font-size: 20px;"
+                          style="font-size: 20px"
                         ></i>
                         <p>Choose a file or drag it here.</p>
                       </div>
@@ -1989,7 +1993,7 @@
                     <button
                       class="initative_save_btn"
                       id="next-btn-1"
-                      style="font-weight: 600;"
+                      style="font-weight: 600"
                     >
                       Next
                     </button>
@@ -1997,7 +2001,7 @@
                 </div>
               </div>
 
-              <div class="row" id="file-validate" style="display: none;">
+              <div class="row" id="file-validate" style="display: none">
                 <div class="col-md-12 img-center">
                   <!-- <img
                     src="../organisation/images/Verified.png"
@@ -2011,33 +2015,33 @@
                     <table class="error-table">
                       <thead>
                         <tr>
-                          <th style="width: 150px;">Row</th>
+                          <th style="width: 150px">Row</th>
                           <th>Error</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td style="width: 150px;">1</td>
+                          <td style="width: 150px">1</td>
                           <td>Contain Special Character</td>
                         </tr>
                         <tr>
-                          <td style="width: 150px;">3</td>
+                          <td style="width: 150px">3</td>
                           <td>Contain Special Character</td>
                         </tr>
                         <tr>
-                          <td style="width: 150px;">5</td>
+                          <td style="width: 150px">5</td>
                           <td>Contain Special Character</td>
                         </tr>
                         <tr>
-                          <td style="width: 150px;">8</td>
+                          <td style="width: 150px">8</td>
                           <td>Contain Special Character</td>
                         </tr>
                         <tr>
-                          <td style="width: 150px;">10</td>
+                          <td style="width: 150px">10</td>
                           <td>Contain Special Character</td>
                         </tr>
                         <tr>
-                          <td style="width: 150px;">19</td>
+                          <td style="width: 150px">19</td>
                           <td>Contain Special Character</td>
                         </tr>
                       </tbody>
@@ -2053,14 +2057,14 @@
                       type="button"
                       class="btn-default1 btn"
                       id="prev-btn1"
-                      style="font-weight: 600;"
+                      style="font-weight: 600"
                     >
                       Previous
                     </button>
                     <button
                       class="initative_save_btn pull-right"
                       id="next-btn-2"
-                      style="font-weight: 600;"
+                      style="font-weight: 600"
                     >
                       Next
                     </button>
@@ -2068,7 +2072,7 @@
                 </div>
               </div>
 
-              <div class="row" id="file-save" style="display: none;">
+              <div class="row" id="file-save" style="display: none">
                 <div class="col-md-12">
                   <div class="col-md-12 img-center">
                     <img
@@ -2086,14 +2090,14 @@
                       type="button"
                       class="btn-default1 btn"
                       id="prev-btn2"
-                      style="font-weight: 600;"
+                      style="font-weight: 600"
                     >
                       Previous
                     </button>
                     <button
                       class="initative_save_btn pull-right"
                       id="done-btn"
-                      style="font-weight: 600;"
+                      style="font-weight: 600"
                       data-dismiss="modal"
                       aria-label="Close"
                     >
@@ -2112,18 +2116,18 @@
       <section class="content">
         <div class="container-fluid">
           <div class="row m-t--50">
-            <div class="col-md-11"></div>
-            <div class="col-md-1 custom-space-even">
+            <div class="col-md-10"></div>
+            <div class="col-md-2 custom-space-even">
               <button
                 class="btn btn-custom-secondary"
                 data-toggle="modal"
                 data-target="#org_structure"
               >
-                <i class="fas fa-project-diagram" style="font-size: 14px;"></i>
+                <i class="fas fa-project-diagram" style="font-size: 14px"></i>
               </button>
 
               <button class="btn btn-custom-secondary">
-                <i class="fas fa-filter" style="font-size: 14px;"></i>
+                <i class="fas fa-filter" style="font-size: 14px"></i>
               </button>
 
               <div>
@@ -2133,6 +2137,24 @@
                   data-target="#file-validate-form"
                 >
                   <i class="fas fa-upload"></i>
+                </button>
+              </div>
+
+              <div>
+                <button class="btn btn-custom-secondary zoomIn">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+
+              <div>
+                <button class="btn btn-custom-secondary zoomOff">
+                  <i class="far fa-dot-circle"></i>
+                </button>
+              </div>
+
+              <div>
+                <button class="btn btn-custom-secondary zoomOut">
+                  <i class="fas fa-minus"></i>
                 </button>
               </div>
             </div>
@@ -2173,6 +2195,38 @@
           this.classList.toggle("caret-org-down");
         });
       }
+
+      $(document).ready(function () {
+        var currZoom = $("#chart-container").css("zoom");
+        if (currZoom == "normal") currZoom = 1;
+
+        $(".zoomIn").click(function () {
+          currZoom *= 1.2;
+          $("#chart-container").css("zoom", currZoom);
+          $("#chart-container").css(
+            "-moz-transform",
+            "Scale(" + currZoom + ")"
+          );
+          $("#chart-container").css("-moz-transform-origin", "0 0");
+        });
+        $(".zoomOff").click(function () {
+          $("#chart-container").css("zoom", 1);
+          $("#chart-container").css(
+            "-moz-transform",
+            "Scale(" + currZoom + ")"
+          );
+          $("#chart-container").css("-moz-transform-origin", "0 0");
+        });
+        $(".zoomOut").click(function () {
+          currZoom *= 0.8;
+          $("#chart-container").css("zoom", currZoom);
+          $("#chart-container").css(
+            "-moz-transform",
+            "Scale(" + currZoom + ")"
+          );
+          $("#chart-container").css("-moz-transform-origin", "0 0");
+        });
+      });
     </script>
   </body>
 </html>

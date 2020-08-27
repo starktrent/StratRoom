@@ -162,7 +162,7 @@
     </style>
   </head>
 
-  <body class="light">
+  <body class="light" oncontextmenu="return false">
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
       <div class="loader">
@@ -1230,6 +1230,13 @@
                       id="edit_objective"
                       style="margin-right: 12px;"
                     >
+                      <i class="fas fa-trash border-box"></i
+                    ></span>
+                    <span
+                      class="pull-right"
+                      id="edit_objective"
+                      style="margin-right: 12px;"
+                    >
                       <i class="fas fa-pencil-alt border-box"></i
                     ></span>
                   </h5>
@@ -1259,6 +1266,20 @@
                   value="29/07/2020 - 31/07/2020"
                   id="air-date-sub-init"
                 />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Import">Import Formulation</label>
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default obj_imp"
+                  disabled="true"
+                >
+                  <option>Choose</option>
+                  <option value="2019">Strategy Formulation 2019</option>
+                  <option value="2020">Strategy Formulation 2020</option>
+                </select>
               </div>
 
               <div class="col-12 form-group">
@@ -1477,6 +1498,18 @@
                   data-language="en"
                   id="air-date-sub-init"
                 />
+              </div>
+              <div class="col-12 form-group">
+                <label for="Import">Import Formulation</label>
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important;"
+                  class="form-control browser-default"
+                >
+                  <option>Choose</option>
+                  <option value="2019">Strategy Formulation 2019</option>
+                  <option value="2020">Strategy Formulation 2020</option>
+                </select>
               </div>
               <div class="col-12 form-group">
                 <label for="Name">Owner</label>
@@ -2112,6 +2145,28 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
             </div>
           </div>
 
+          <div style="display: none; z-index: 1;" id="contextMenu">
+            <table
+              cellpadding="0"
+              cellspacing="0"
+              style="
+                border: 1px solid #e2e2e2;
+                box-sizing: border-box;
+                box-shadow: 3px 6px 8px rgba(132, 132, 132, 0.12);
+                padding: 4px 6px;
+                width: 100px;
+                background: #fff;
+                cursor: pointer;
+              "
+            >
+              <tr>
+                <td>
+                  <div class="ContextItem">Delete</div>
+                </td>
+              </tr>
+            </table>
+          </div>
+
           <div class="col-md-4 perspective-div">
             <div class="card" style="padding: 16px;">
               <div class="row">
@@ -2266,7 +2321,7 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                   </span>
                 </div>
                 <div class="col-1">
-                  <span class="pull-right" onclick="closeObjectiveAdd()">
+                  <span class="pull-right" onclick="openObjectiveAdd()">
                     <i class="fas fa-plus border-box"></i>
                   </span>
                 </div>
@@ -2285,7 +2340,13 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                     overflow-y: auto;
                   "
                 >
-                  <div class="card" onclick="openObjective()">
+                  <div
+                    class="card"
+                    onclick="openObjective()"
+                    onmousedown="HideMenu('contextMenu');"
+                    onmouseup="HideMenu('contextMenu');"
+                    oncontextmenu="ShowMenu('contextMenu',event);"
+                  >
                     <div class="row">
                       <div class="col-12">
                         <div class="line-shortner name pull-left">
@@ -2457,6 +2518,8 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
           $("#save_objective").hide();
           $(".obj_name").prop("disabled", true);
           $(".obj_date").prop("disabled", true);
+          $(".obj_imp").prop("disabled", true);
+          $(".obj_imp").prop("disabled", true);
           $(".obj_weight").prop("disabled", true);
           $(".obj_subweight").prop("disabled", true);
           $(".obj_status").prop("disabled", true);
@@ -2493,6 +2556,7 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
         $("#save_objective").hide();
         $(".obj_name").prop("disabled", true);
         $(".obj_date").prop("disabled", true);
+        $(".obj_imp").prop("disabled", true);
         $(".obj_weight").prop("disabled", true);
         $(".obj_subweight").prop("disabled", true);
         $(".obj_status").prop("disabled", true);
@@ -2617,6 +2681,7 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
         $("#save_objective").show();
         $(".obj_name").prop("disabled", false);
         $(".obj_date").prop("disabled", false);
+        $(".obj_imp").prop("disabled", false);
         $(".obj_weight").prop("disabled", false);
         $(".obj_subweight").prop("disabled", false);
         $(".obj_status").prop("disabled", false);
@@ -2627,6 +2692,7 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
         $("#save_objective").hide();
         $(".obj_name").prop("disabled", true);
         $(".obj_date").prop("disabled", true);
+        $(".obj_imp").prop("disabled", true);
         $(".obj_weight").prop("disabled", true);
         $(".obj_subweight").prop("disabled", true);
         $(".obj_status").prop("disabled", true);
@@ -2761,6 +2827,18 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
           }
         );
       });
+
+      function ShowMenu(control, e) {
+        var posx = e.clientX + window.pageXOffset + "px"; //Left Position of Mouse Pointer
+        var posy = e.clientY + window.pageYOffset + "px"; //Top Position of Mouse Pointer
+        document.getElementById(control).style.position = "absolute";
+        document.getElementById(control).style.display = "inline";
+        document.getElementById(control).style.left = posx;
+        document.getElementById(control).style.top = posy;
+      }
+      function HideMenu(control) {
+        document.getElementById(control).style.display = "none";
+      }
     </script>
   </body></a
 >
