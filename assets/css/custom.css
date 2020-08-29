@@ -1203,28 +1203,28 @@ label {
   cursor: pointer;
 }
 
-#perspective_sidebar .side_border_persp:nth-child(1) {
+#persp-colored-div div:nth-child(6n + 1) .card {
   background-color: #9c2545 !important;
 }
 
-#perspective_sidebar .side_border_persp:nth-child(2) {
-  background-color: #002f73 !important;
+#persp-colored-div div:nth-child(6n + 2) .card {
+  background-color: #002f73;
 }
 
-#perspective_sidebar .side_border_persp:nth-child(3) {
-  background-color: #a4730d !important;
+#persp-colored-div div:nth-child(6n + 3) .card {
+  background-color: #a4730d;
 }
 
-#perspective_sidebar .side_border_persp:nth-child(4) {
-  background-color: #af3c00 !important;
+#persp-colored-div div:nth-child(6n + 4) .card {
+  background-color: #af3c00;
 }
 
-#perspective_sidebar .side_border_persp:nth-child(5) {
-  background-color: #437204 !important;
+#persp-colored-div div:nth-child(6n + 5) .card {
+  background-color: #437204;
 }
 
-#perspective_sidebar .side_border_persp:nth-child(6) {
-  background-color: #490136 !important;
+#persp-colored-div div:nth-child(6n + 6) .card {
+  background-color: #490136;
 }
 
 #perspective_sidebar .side_border_persp .profile_content span {
