@@ -1334,7 +1334,7 @@ label {
   border-radius: 2px;
 }
 
-.line-shortner {
+.line-shortner span {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;

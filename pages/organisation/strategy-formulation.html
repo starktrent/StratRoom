@@ -148,18 +148,6 @@
         font-size: 12px !important;
       }
 
-      .bg-layer {
-        height: 675px;
-        padding: 16px 20px;
-        width: 100%;
-        position: fixed;
-        display: none;
-        z-index: 1;
-        background-color: transparent;
-        top: 70px;
-        right: 0;
-      }
-
       .card-full-div {
         margin-top: -12px;
         color: #fff;
@@ -167,6 +155,17 @@
 
       #persp-colored-div .card-full-div div .card .name span {
         color: #fff;
+      }
+
+      .form-check {
+        margin-bottom: 1.9rem;
+        padding-left: 0;
+      }
+
+      .card-full-div .col-1 {
+        height: initial;
+        display: flex;
+        align-items: center;
       }
     </style>
   </head>
@@ -969,7 +968,6 @@
 
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12 bg-layer" onclick="bgClick()"></div>
           <div
             class="col-12 sidebar-strategy"
             id="strategy_edit"
@@ -2178,68 +2176,6 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
             </table>
           </div>
 
-          <!-- <div class="col-md-4 perspective-div">
-            <div class="card" style="padding: 16px">
-              <div class="row">
-                <div class="col-4">
-                  <div class="perspective-heading">
-                    <h5>Prespective</h5>
-                  </div>
-                </div>
-                <div class="col-7">
-                  <span class="pull-right" id="search1">
-                    <i class="fas fa-search border-box"></i>
-                  </span>
-                  <span
-                    class="pull-right search-section"
-                    style="display: none"
-                    id="search_section1"
-                  >
-                    <input type="text" class="search" placeholder="Search" />
-                    <i class="fas fa-search"></i>
-                    <i class="fas fa-times" id="close_search1"></i>
-                  </span>
-                </div>
-                <div class="col-1">
-                  <span class="pull-right" onclick="openPerspectiveAdd()">
-                    <i class="fas fa-plus border-box"></i>
-                  </span>
-                </div>
-                <div
-                  class="col-12"
-                  style="margin-top: -6px; margin-bottom: -4px"
-                >
-                  <hr />
-                </div>
-                <div class="col-12" style="height: 432px; overflow-y: auto">
-                  <div
-                    class="d-flex flex-column"
-                    id="perspective_sidebar"
-                    style="padding-top: 7px"
-                  >
-                    <div
-                      onclick="openPerspective()"
-                      class="d-flex flex-column sub_initiative_sidebar_details side_border_persp"
-                    >
-                      <div class="d-flex flex-row p-b-5">
-                        <div class="d-flex flex-column profile_content">
-                          <span class="line-shortner"
-                            >Record zero fire incidents attributable to Alpha
-                            Mead across all locations in 2020 Record zero fire
-                            incidents attributable to Alpha Mead across all
-                            locations in 2020 Record zero fire incidents
-                            attributable to Alpha Mead across all locations in
-                            2020 Record zero fire incidents attributable to
-                            Alpha Mead across all locations in 2020</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
           <div class="col-md-4 obj-kpi">
             <div class="card" style="padding: 16px">
               <div class="row obj-content">
@@ -2289,8 +2225,19 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                   "
                 >
                   <div class="row card-full-div">
-                    <div class="col-1" style="padding-top: 50px">
-                      <input type="checkbox" />
+                    <div class="col-1">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
                     </div>
                     <div class="col-11">
                       <div class="card" onclick="openPerspective()">
@@ -2310,8 +2257,19 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                     </div>
                   </div>
                   <div class="row card-full-div">
-                    <div class="col-1" style="padding-top: 50px">
-                      <input type="checkbox" />
+                    <div class="col-1">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
                     </div>
                     <div class="col-11">
                       <div class="card" onclick="openPerspective()">
@@ -2331,8 +2289,19 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                     </div>
                   </div>
                   <div class="row card-full-div">
-                    <div class="col-1" style="padding-top: 50px">
-                      <input type="checkbox" />
+                    <div class="col-1">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
                     </div>
                     <div class="col-11">
                       <div class="card" onclick="openPerspective()">
@@ -2352,8 +2321,19 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                     </div>
                   </div>
                   <div class="row card-full-div">
-                    <div class="col-1" style="padding-top: 50px">
-                      <input type="checkbox" />
+                    <div class="col-1">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
                     </div>
                     <div class="col-11">
                       <div class="card" onclick="openPerspective()">
@@ -2373,8 +2353,19 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                     </div>
                   </div>
                   <div class="row card-full-div">
-                    <div class="col-1" style="padding-top: 50px">
-                      <input type="checkbox" />
+                    <div class="col-1">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
                     </div>
                     <div class="col-11">
                       <div class="card" onclick="openPerspective()">
@@ -2394,8 +2385,19 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                     </div>
                   </div>
                   <div class="row card-full-div">
-                    <div class="col-1" style="padding-top: 50px">
-                      <input type="checkbox" />
+                    <div class="col-1">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
                     </div>
                     <div class="col-11">
                       <div class="card" onclick="openPerspective()">
@@ -2466,8 +2468,19 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                   "
                 >
                   <div class="row card-full-div">
-                    <div class="col-1" style="padding-top: 50px">
-                      <input type="checkbox" />
+                    <div class="col-1">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
                     </div>
                     <div class="col-11">
                       <div class="card" onclick="openObjective()">
@@ -2538,8 +2551,19 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                   "
                 >
                   <div class="row card-full-div">
-                    <div class="col-1" style="padding-top: 70px">
-                      <input type="checkbox" />
+                    <div class="col-1">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
                     </div>
                     <div class="col-11">
                       <div class="card" onclick="openKPI()">
@@ -2680,7 +2704,6 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
           $(".kpi_weight").prop("disabled", true);
           $(".kpi_subweight").prop("disabled", true);
           $(".kpi_status").prop("disabled", true);
-          $(".bg-layer").hide();
         }
       });
 
@@ -2717,18 +2740,16 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
         $(".kpi_weight").prop("disabled", true);
         $(".kpi_subweight").prop("disabled", true);
         $(".kpi_status").prop("disabled", true);
-        $(".bg-layer").hide();
       }
 
       function openPerspective() {
         $(".sidebar-strategy").hide();
         $("#perspective_view").show();
-        $(".bg-layer").show();
       }
 
       function closePerspective() {
         $("#perspective_view").hide();
-        $(".bg-layer").hide();
+
         $("#edit_perspective").show();
         $("#save_perspective").hide();
         $(".persp_name").prop("disabled", true);
@@ -2741,12 +2762,11 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
       function openObjective() {
         $(".sidebar-strategy").hide();
         $("#objective_view").show();
-        $(".bg-layer").show();
       }
 
       function closeObjective() {
         $("#objective_view").hide();
-        $(".bg-layer").hide();
+
         $("#edit_objective").show();
         $("#save_objective").hide();
         $(".obj_name").prop("disabled", true);
@@ -2761,12 +2781,11 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
       function openKPI() {
         $(".sidebar-strategy").hide();
         $("#kpi_view").show();
-        $(".bg-layer").show();
       }
 
       function closeKPI() {
         $("#kpi_view").hide();
-        $(".bg-layer").hide();
+
         $("#edit_kpi").show();
         $("#save_kpi").hide();
         $(".kpi_name").prop("disabled", true);
@@ -2783,51 +2802,42 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
         $(".kpi_weight").prop("disabled", true);
         $(".kpi_subweight").prop("disabled", true);
         $(".kpi_status").prop("disabled", true);
-        $(".bg-layer").hide();
       }
 
       function openPerspectiveAdd() {
         $(".sidebar-strategy").hide();
         $("#perspective_add").show();
-        $(".bg-layer").show();
       }
 
       function closePerspectiveAdd() {
         $("#perspective_add").hide();
-        $(".bg-layer").hide();
       }
 
       function openObjectiveAdd() {
         $(".sidebar-strategy").hide();
         $("#objective_add").show();
-        $(".bg-layer").show();
       }
 
       function closeObjectiveAdd() {
         $("#objective_add").hide();
-        $(".bg-layer").hide();
       }
 
       function openKPIAdd() {
         $(".sidebar-strategy").hide();
         $("#kpi_add").show();
-        $(".bg-layer").show();
       }
 
       function closeKPIAdd() {
         $("#kpi_add").hide();
-        $(".bg-layer").hide();
       }
 
       function openStrategy() {
         $(".sidebar-strategy").hide();
         $("#strategy_edit").show();
-        $(".bg-layer").show();
       }
 
       function closeStrategy() {
         $("#strategy_edit").hide();
-        $(".bg-layer").hide();
       }
 
       $("#edit_perspective").click(function () {

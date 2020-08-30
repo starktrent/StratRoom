@@ -12995,7 +12995,7 @@ fieldset[disabled] .form-control {
 }
 
 .form-check .form-check-input:checked + .form-check-sign .check {
-  background: #9c27b0;
+  background: #1e252d;
 }
 
 .form-check .form-check-input:checked + .form-check-sign .check:before {
@@ -15525,7 +15525,7 @@ nav.navbar {
 }
 
 .addnewpagehover strong:hover {
-color: #fff !important;
+  color: #fff !important;
 }
 
 .side-closed.side-closed-hover .sidebar .menu .list .ml-menu li a {
