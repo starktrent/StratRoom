@@ -36,8 +36,11 @@
 }
 
 .page-header {
-  background-color: #1e252d;
-  border-radius: 24px;
+  /* background-color: #1e252d; */
+  background-image: url("../images/Header.png");
+  background-size: cover;
+  border-radius: 8px;
+  background-repeat: no-repeat;
 }
 
 .page-title {

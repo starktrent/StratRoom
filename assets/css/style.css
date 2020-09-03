@@ -21522,7 +21522,7 @@ span.badge {
 
 .modal .modal-header {
   border: 0;
-  padding: 16px 16px 10px 16px;
+  padding: 17px 16px 8px 16px;
   margin: -10px -10px 12px -10px;
   background-color: #1e252d;
   color: #fff;
@@ -21532,7 +21532,7 @@ span.badge {
 
 .modal .modal-header h4 {
   font-weight: bold;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .modal .modal-content {
