@@ -193,6 +193,18 @@ $("#kpi_threshold").on("change", function () {
     : $(".color_picks_3").css("display", "none");
 });
 
+$("#kpi_threshold_edit").on("change", function () {
+  $(this).val() == "option_1"
+    ? $(".color_picks_edit_1").css("display", "block")
+    : $(".color_picks_edit_1").css("display", "none");
+  $(this).val() == "option_2"
+    ? $(".color_picks_edit_2").css("display", "block")
+    : $(".color_picks_edit_2").css("display", "none");
+  $(this).val() == "option_3"
+    ? $(".color_picks_edit_3").css("display", "block")
+    : $(".color_picks_edit_3").css("display", "none");
+});
+
 const inputElements = document.querySelectorAll(".pickr");
 inputElements.forEach((inputElement) => {
   const pickr = new Pickr({

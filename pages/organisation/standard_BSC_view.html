@@ -1335,7 +1335,7 @@
                       <div class="col-8">
                         <select
                           id="ca_input"
-                          disabled
+                          style="display: none"
                           class="form-control browser-default"
                         >
                           <option>Choose</option>
@@ -1538,7 +1538,6 @@
       <!-- #END# perspective Desc Sidebar -->
 
       <!-- #Start Objective Desc PopUp -->
-
       <div
         class="modal fade objective_description_popup"
         tabindex="-1"
@@ -1562,6 +1561,149 @@
               <form id="objectiveForm">
                 <div class="form-row">
                   <div class="form-group col-md-12">
+                    <label for="objective_name">Name</label>
+                    <input type="text" class="form-control browser-default" />
+                  </div>
+                </div>
+                <hr />
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label for="objective_description">Description</label>
+                    <textarea
+                      class="form-control browser-default"
+                      placeholder=""
+                      rows="6"
+                    ></textarea>
+                  </div>
+                </div>
+                <hr />
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="multiSelect3">Owner</label>
+                    <select
+                      name="owner_select"
+                      class="form-control browser-default"
+                    >
+                      <option value="1">Option 1</option>
+                      <option value="2">Option 2</option>
+                      <option value="3">Option 3</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="kpi_start_end_date">Start/End Date</label>
+                    <input
+                      type="text"
+                      class="form-control browser-default date_pickers"
+                      data-range="true"
+                      data-multiple-dates-separator=" - "
+                      data-language="en"
+                      class="datepicker-here date_pickers"
+                      id="air-date-score"
+                    />
+                  </div>
+                </div>
+                <hr />
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="weight">Weight (%)</label>
+                    <input
+                      type="text"
+                      class="form-control browser-default"
+                      name="weight"
+                      id="weight"
+                    />
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="weight">Sub Weight (%)</label>
+                    <input
+                      type="text"
+                      class="form-control browser-default"
+                      name="weight"
+                      id="weight"
+                    />
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="">Status</label>
+                    <select id="" name="" class="form-control browser-default">
+                      <option>Choose</option>
+                      <option value="manual">Manual</option>
+                      <option value="weighted">Weighted</option>
+                      <option value="first">First</option>
+                      <option value="second">Second</option>
+                      <option value="third">Third</option>
+                      <option value="fourth">Fourth</option>
+                    </select>
+                  </div>
+                </div>
+                <hr />
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </form>
+            </div>
+            <hr />
+            <div class="modal-footer">
+              <div
+                class="d-flex flex-column flex-fill ml-4 mb-5 text-left font-11"
+              >
+                <div class="d-flex flex-row">
+                  <p class="kpi_audit">Audit</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <div class="d-flex flex-column">
+                    <p><span>Created By : </span><span>Arun</span></p>
+                    <p><span>Created Date : </span><span>Oct 02, 2019</span></p>
+                  </div>
+                  <div class="d-flex flex-column pl-5">
+                    <p><span>Modified By : </span><span>Karthik</span></p>
+                    <p>
+                      <span>Modified Date : </span><span>Oct 02, 2019</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- #END# Objective Desc PopUp -->
+
+      <!-- #Start Edit Objective Desc PopUp -->
+      <div
+        class="modal fade objective_edit_description_popup"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myLargeModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4>Objective Description</h4>
+              <button
+                type="button"
+                class="close pull-right"
+                data-dismiss="modal"
+              >
+                &times;
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="objectiveForm">
+                <div class="form-row">
+                  <div class="form-group col-md-2">
+                    <label for="objective_name">ID</label>
+                    <input type="text" class="form-control browser-default" />
+                  </div>
+                  <div class="form-group col-md-10">
                     <label for="objective_name">Name</label>
                     <input type="text" class="form-control browser-default" />
                   </div>
@@ -1934,12 +2076,14 @@
                       <option value="Currency">Currency</option>
                     </select>
                   </div>
-                  <div class="form-group col-md-3">
+                  <div
+                    class="form-group col-md-3"
+                    id="currency_input"
+                    style="display: none"
+                  >
                     <label for="objective_name">KPI Currency</label>
                     <input
                       type="text"
-                      disabled
-                      id="currency_input"
                       class="form-control browser-default"
                       name="name"
                     />
@@ -2411,7 +2555,7 @@
                   <div class="form-group col-md-3">
                     <label for="kpi_type">KPI Type</label>
                     <select
-                      id="kpi_type_select"
+                      id="kpi_type_select_1"
                       class="form-control browser-default"
                     >
                       <option>Choose</option>
@@ -2420,12 +2564,14 @@
                       <option value="Currency">Currency</option>
                     </select>
                   </div>
-                  <div class="form-group col-md-3">
+                  <div
+                    class="form-group col-md-3"
+                    id="currency_input_1"
+                    style="display: none"
+                  >
                     <label for="objective_name">KPI Currency</label>
                     <input
                       type="text"
-                      disabled
-                      id="currency_input"
                       class="form-control browser-default"
                       name="name"
                     />
@@ -2434,9 +2580,9 @@
                 <hr />
                 <div class="form-row">
                   <div class="form-group col-md-3">
-                    <label for="kpi_threshold">Threshold</label>
+                    <label for="kpi_threshold_edit">Threshold</label>
                     <select
-                      id="kpi_threshold"
+                      id="kpi_threshold_edit"
                       class="form-control browser-default"
                     >
                       <option>Choose</option>
@@ -2446,7 +2592,7 @@
                     </select>
                   </div>
                   <div
-                    class="form-group col-md-3 color_picks_1"
+                    class="form-group col-md-3 color_picks_edit_1"
                     style="display: none"
                   >
                     <div class="input-group m-t-24">
@@ -2465,7 +2611,7 @@
                     </div>
                   </div>
                   <div
-                    class="form-group col-md-3 color_picks_2"
+                    class="form-group col-md-3 color_picks_edit_2"
                     style="display: none"
                   >
                     <div class="input-group m-t-24">
@@ -2484,7 +2630,7 @@
                     </div>
                   </div>
                   <div
-                    class="form-group col-md-3 color_picks_2"
+                    class="form-group col-md-3 color_picks_edit_2"
                     style="display: none"
                   >
                     <div class="input-group m-t-24">
@@ -2503,7 +2649,7 @@
                     </div>
                   </div>
                   <div
-                    class="form-group col-md-3 color_picks_3"
+                    class="form-group col-md-3 color_picks_edit_3"
                     style="display: none"
                   >
                     <div class="input-group m-t-24">
@@ -2522,7 +2668,7 @@
                     </div>
                   </div>
                   <div
-                    class="form-group col-md-3 color_picks_3"
+                    class="form-group col-md-3 color_picks_edit_3"
                     style="display: none"
                   >
                     <div class="input-group m-t-24">
@@ -2541,7 +2687,7 @@
                     </div>
                   </div>
                   <div
-                    class="form-group col-md-3 color_picks_3"
+                    class="form-group col-md-3 color_picks_edit_3"
                     style="display: none"
                   >
                     <div class="input-group m-t-24">
@@ -3632,7 +3778,7 @@
                                       <a
                                         href="#"
                                         data-toggle="modal"
-                                        data-target=".objective_description_popup"
+                                        data-target=".objective_edit_description_popup"
                                         class="objectivedescription"
                                         class="objectivedesc"
                                         onclick="return false;"
@@ -3792,7 +3938,7 @@
                                       <a
                                         href="#"
                                         data-toggle="modal"
-                                        data-target=".objective_description_popup"
+                                        data-target=".objective_edit_description_popup"
                                         class="objectivedescription"
                                         onclick="return false;"
                                         >Edit</a
@@ -3951,7 +4097,7 @@
                                       <a
                                         href="#"
                                         data-toggle="modal"
-                                        data-target=".objective_description_popup"
+                                        data-target=".objective_edit_description_popup"
                                         class="objectivedescription"
                                         class="objectivedesc"
                                         onclick="return false;"
@@ -4285,7 +4431,7 @@
                                       <a
                                         href="#"
                                         data-toggle="modal"
-                                        data-target=".objective_description_popup"
+                                        data-target=".objective_edit_description_popup"
                                         class="objectivedescription"
                                         class="objectivedesc"
                                         onclick="return false;"
@@ -4607,7 +4753,7 @@
                                       <a
                                         href="#"
                                         data-toggle="modal"
-                                        data-target=".objective_description_popup"
+                                        data-target=".objective_edit_description_popup"
                                         class="objectivedescription"
                                         class="objectivedesc"
                                         onclick="return false;"
@@ -4943,7 +5089,7 @@
                                       <a
                                         href="#"
                                         data-toggle="modal"
-                                        data-target=".objective_description_popup"
+                                        data-target=".objective_edit_description_popup"
                                         class="objectivedescription"
                                         class="objectivedesc"
                                         onclick="return false;"
@@ -5268,7 +5414,7 @@
                                       <a
                                         href="#"
                                         data-toggle="modal"
-                                        data-target=".objective_description_popup"
+                                        data-target=".objective_edit_description_popup"
                                         class="objectivedescription"
                                         class="objectivedesc"
                                         onclick="return false;"
@@ -5591,7 +5737,7 @@
                                       <a
                                         href="#"
                                         data-toggle="modal"
-                                        data-target=".objective_description_popup"
+                                        data-target=".objective_edit_description_popup"
                                         class="objectivedescription"
                                         class="objectivedesc"
                                         onclick="return false;"
@@ -5753,7 +5899,7 @@
                                       <a
                                         href="#"
                                         data-toggle="modal"
-                                        data-target=".objective_description_popup"
+                                        data-target=".objective_edit_description_popup"
                                         class="objectivedescription"
                                         class="objectivedesc"
                                         onclick="return false;"
@@ -5915,7 +6061,7 @@
                                       <a
                                         href="#"
                                         data-toggle="modal"
-                                        data-target=".objective_description_popup"
+                                        data-target=".objective_edit_description_popup"
                                         class="objectivedescription"
                                         class="objectivedesc"
                                         onclick="return false;"
@@ -6162,10 +6308,10 @@
       $(function () {
         $("#ca_checkbox").click(function () {
           if ($(this).is(":checked")) {
-            $("#ca_input").removeAttr("disabled");
+            $("#ca_input").show();
             $("#ca_input").focus();
           } else {
-            $("#ca_input").attr("disabled", "disabled");
+            $("#ca_input").hide();
           }
         });
       });
@@ -6174,10 +6320,22 @@
         $("#kpi_type_select").change(function () {
           var value = $("#kpi_type_select").val();
           if (value == "Currency") {
-            $("#currency_input").prop("disabled", false);
+            $("#currency_input").show();
             $("#currency_input").focus();
           } else {
-            $("#currency_input").prop("disabled", true);
+            $("#currency_input").hide();
+          }
+        });
+      });
+
+      $(document).ready(function () {
+        $("#kpi_type_select_1").change(function () {
+          var value = $("#kpi_type_select_1").val();
+          if (value == "Currency") {
+            $("#currency_input_1").show();
+            $("#currency_input_1").focus();
+          } else {
+            $("#currency_input_1").hide();
           }
         });
       });
