@@ -19,6 +19,7 @@
     <!-- <link rel="stylesheet" href="../../assets/daterangepicker.css"> -->
     <link rel="stylesheet" href="../../assets/datepickerair.css" />
     <link href="../../assets/jquery-ui.min.css" rel="stylesheet" />
+    <link href="../../assets/select2.min.css" rel="stylesheet" />
     <link
       href="../../assets/daterangepicker/daterangepicker.min.css"
       rel="stylesheet"
@@ -204,6 +205,18 @@
 
       .input-group {
         margin-bottom: 0;
+      }
+
+      .modal-content {
+        height: 720px;
+      }
+
+      .modal-body {
+        overflow-y: auto;
+      }
+
+      .modal-footer {
+        margin-top: 12px;
       }
     </style>
   </head>
@@ -1332,16 +1345,29 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-12 mt-2">
+                      <div
+                        class="col-12 mt-2"
+                        style="display: none"
+                        id="ca_input"
+                      >
                         <select
-                          id="ca_input"
-                          style="display: none"
-                          class="form-control browser-default"
+                          class="js-example-basic-multiple"
+                          name="states[]"
+                          multiple="multiple"
                         >
-                          <option>Choose</option>
-                          <option value="Option 1">Option 1</option>
-                          <option value="Option 2">Option 2</option>
-                          <option value="Option 3">Option 3</option>
+                          <option value="971">Raman V</option>
+                          <option value="972">Bryan Adams</option>
+                          <option value="973">Abdul Khalid</option>
+                          <option value="974">Wole Kingsley</option>
+                          <option value="975">Monica Geller</option>
+                          <option value="976">Thomas Craig</option>
+                          <option value="977">William T</option>
+                          <option value="978">Radha Krishnan</option>
+                          <option value="979">Consultant 3</option>
+                          <option value="980">Consultant 4</option>
+                          <option value="960">Seema Chatterjee</option>
+                          <option value="981">Bindu T</option>
+                          <option value="982">Prathap K</option>
                         </select>
                       </div>
                     </div>
@@ -6262,6 +6288,7 @@
     <script src="../../assets/js/bundles/datamaps/datamaps.world.min.js"></script>
     <script src="../../assets/js/pages/maps/datamap.js"></script>
     <script src="../../assets/jquery-ui.min.js"></script>
+    <script src="../../assets/select2.min.js"></script>
     <script src="../../assets/moment.js"></script>
     <script src="../../assets/js/bootstrap.bundle.min.js"></script>
     <script src="../../assets/pickr.es5.min.js"></script>
@@ -6306,7 +6333,6 @@
         $("#ca_checkbox").click(function () {
           if ($(this).is(":checked")) {
             $("#ca_input").show();
-            $("#ca_input").focus();
           } else {
             $("#ca_input").hide();
           }
@@ -6350,6 +6376,10 @@
 
       $("#OpenImgUpload").click(function () {
         $("#imgupload").trigger("click");
+      });
+
+      $(document).ready(function () {
+        $(".js-example-basic-multiple").select2();
       });
     </script>
   </body></a
