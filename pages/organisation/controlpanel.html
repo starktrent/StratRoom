@@ -40,6 +40,83 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <style>
+      .btn-secondary {
+        color: #fff;
+        background-color: #6c757d;
+        border-color: #6c757d;
+        padding: 0px 12px;
+        font-size: 12px;
+        background-color: #02162a;
+        margin-right: 3px;
+        margin-bottom: 9px;
+        border-radius: 8px !important;
+        margin-top: 8px;
+      }
+
+      .btn-secondary:hover {
+        color: #fff !important;
+        background-color: #6c757d !important;
+        border-color: #6c757d !important;
+        padding: 0px 12px !important;
+        font-size: 12px !important;
+        background-color: #02162a !important;
+        margin-right: 3px !important;
+        margin-bottom: 9px !important;
+        border-radius: 8px !important;
+        margin-top: 8px !important;
+      }
+
+      .list-group-form {
+        max-height: 215px;
+        margin-bottom: 10px;
+        overflow: scroll;
+        overflow-x: inherit;
+        -webkit-overflow-scrolling: touch;
+        font-size: 11px;
+        border: 1px solid #e9ecef;
+      }
+
+      #result_panel > .panelbody > .list-group-form > .list-group-item {
+        padding: 5px 10px !important;
+      }
+
+      #formula_builder,
+      #summary_calculation {
+        font-size: 11px !important;
+      }
+
+      #kpi_formula_popup > .modal-content > .modal-body {
+        padding: 0 25px !important;
+      }
+
+      #kpi_formula_popup > .modal-content > .modal-body.card > .tab-content {
+        padding: 0;
+      }
+
+      #formula_builder {
+        padding-bottom: 0px;
+      }
+
+      .panel:hover {
+        cursor: pointer;
+      }
+
+      #formula-builder .col-md-4 {
+        margin-bottom: 0px;
+      }
+
+      .modal #kpi_formula_popup {
+        background-color: rgba(238, 238, 238, 0) !important;
+      }
+
+      .modal-backdrop {
+        opacity: 0.5 !important;
+      }
+
+      #kpi_formula_popup .modal-content .nav li a.nav-link {
+        font-size: 12px !important;
+      }
+
       div.panel-tab div.panel-tab-content:not(.active) {
         display: none;
       }
@@ -269,6 +346,10 @@
         font-size: 13px;
         font-weight: normal;
         vertical-align: middle;
+      }
+
+      .input-group {
+        margin-bottom: 0;
       }
     </style>
   </head>
@@ -567,6 +648,252 @@
       </aside>
     </div>
     <!-- #END# Left Sidebar -->
+
+    <div
+      class="modal fade kpi_formula_popup"
+      id="kpi_formula_popup"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel"
+      aria-hidden="true"
+      modal-backdrop="false"
+      data-backdrop="false"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h6 class="modal-title" id="myLargeModalLabel">KPI Calculator</h6>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" style="padding: 0 25px">
+            <div class="col-md-8" style="padding: 0">
+              Field Name: &nbsp;
+              <input
+                type="text"
+                class="browser-default"
+                name="objective_id"
+                id="objective_id"
+                placeholder=""
+              />
+            </div>
+            <div class="card">
+              <ul
+                class="nav nav-tabs"
+                role="tablist"
+                style="padding-bottom: 10px"
+              >
+                <li
+                  class="nav-item m-l-10"
+                  style="top: -4px; background: transparent"
+                >
+                  <a
+                    class="nav-link active"
+                    data-toggle="tab"
+                    style="max-width: 170px"
+                    href="#formula_builder"
+                    >Formula Builder</a
+                  >
+                </li>
+                <li
+                  class="nav-item m-l-10"
+                  style="top: -4px; background: transparent"
+                >
+                  <a
+                    class="nav-link"
+                    data-toggle="tab"
+                    style="max-width: 170px"
+                    href="#summary_calculation"
+                    >Summary Calculation</a
+                  >
+                </li>
+              </ul>
+              <div class="tab-content" style="padding: 0">
+                <div class="tab-pane body active" id="formula_builder">
+                  <div class="row col-md-12">
+                    <textarea
+                      class="browser-default"
+                      name="formula"
+                      id="formula"
+                      placeholder=""
+                      cols=""
+                      rows="1"
+                    ></textarea>
+                    <!-- <textarea name="formula" id="formula"></textarea> -->
+                  </div>
+                  <div class="row col-md-12">
+                    <button type="button" class="opr btn btn-secondary">
+                      +
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      -
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      *
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      /
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      %
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      (
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      )
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      :
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      AND
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      OR
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      NOT
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      IN
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      ==
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      !=
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      >
+                    </button>
+                    <button
+                      type="button"
+                      class="opr btn btn-secondary"
+                    ></button>
+                    <button type="button" class="opr btn btn-secondary">
+                      >=
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      =
+                    </button>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="panel panel-primary" id="result_panel">
+                        <div class="panel-heading">
+                          <h6 class="panel-title">Fields and measures:</h6>
+                        </div>
+                        <div class="panel-body" data-spy="scroll">
+                          <ul class="list-group-form">
+                            <li class="list-group-item">State</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="panel panel-primary" id="result_panel1">
+                        <div class="panel-heading">
+                          <h6 class="panel-title">Functions:</h6>
+                        </div>
+                        <div class="panel-body">
+                          <ul class="list-group-form">
+                            <li class="list-group-item">Elapsed Year</li>
+                            <li class="list-group-item">Ends With</li>
+                            <li class="list-group-item">If</li>
+                            <li class="list-group-item">Is Null</li>
+                            <li class="list-group-item">Max</li>
+                            <li class="list-group-item">Min</li>
+                            <li class="list-group-item">Median</li>
+                            <li class="list-group-item">Mid</li>
+                            <li class="list-group-item">Test</li>
+                            <li class="list-group-item">Test</li>
+                            <li class="list-group-item">Test</li>
+                            <li class="list-group-item">Test</li>
+                            <li class="list-group-item">Test</li>
+                            <li class="list-group-item">Test</li>
+                            <li class="list-group-item">Test</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="panel panel-primary" id="result_panel1">
+                        <div class="panel-heading">
+                          <h6 class="panel-title">Function Description:</h6>
+                        </div>
+                        <div class="panel-body">
+                          <h6>IF</h6>
+                          <p>
+                            Returns second argument if first argument is true;
+                            Returns optional third argument if first argument is
+                            false; IF('element', 'trueCalc', 'falseCalc')
+                          </p>
+                        </div>
+                        <input type="checkbox" name="check" /> Show argumnets in
+                        formula
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4" style="margin-bottom: 0px">
+                      <button
+                        name="validate"
+                        id="validate"
+                        class="btn btn-secondary"
+                      >
+                        Validate
+                      </button>
+                      <button name="add" id="add" class="btn btn-secondary">
+                        Add
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane body" id="summary_calculation">
+                  <div class="col-md-12">
+                    <div class="panel panel-primary" id="final_panel">
+                      <div class="panel-heading">
+                        <h6 class="panel-title">Formula</h6>
+                      </div>
+                      <div class="panel-body">
+                        <ul class="list-group formula-panel">
+                          <li class="list-group-item">Elapsed Year</li>
+                          <li class="list-group-item">Ends With</li>
+                          <li class="list-group-item">If</li>
+                          <li class="list-group-item">Is Null</li>
+                          <li class="list-group-item">Max</li>
+                          <li class="list-group-item">Min</li>
+                          <li class="list-group-item">Median</li>
+                          <li class="list-group-item">Mid</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Content Start -->
     <section class="content">
@@ -2630,6 +2957,269 @@
                           <div class="col-md-12">
                             <h4>Scorecard Settings</h4>
                           </div>
+                          <div class="col-4">
+                            <label for="custom_performance"
+                              >Custom Performance</label
+                            >
+                            <select
+                              id="custom_performance"
+                              class="form-control browser-default"
+                            >
+                              <option value="No">No</option>
+                              <option value="Yes">Yes</option>
+                            </select>
+                          </div>
+                          <div class="col-4">
+                            <label for="ytd">Year to Date (YTD)</label>
+                            <select
+                              id="ytd"
+                              class="form-control browser-default"
+                            >
+                              <option value="No">No</option>
+                              <option value="Yes">Yes</option>
+                            </select>
+                          </div>
+                          <div class="col-4">
+                            <label for="custom_agg">Custom Aggregation</label>
+                            <select
+                              id="custom_agg"
+                              class="form-control browser-default"
+                            >
+                              <option value="No">No</option>
+                              <option value="Yes">Yes</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div
+                          class="row mt-4"
+                          style="display: none"
+                          id="cust_thres"
+                        >
+                          <div class="col-md-3">
+                            <label for="kpi_threshold">Custom Threshold</label>
+                            <select
+                              id="kpi_threshold"
+                              class="form-control browser-default"
+                            >
+                              <option>Choose</option>
+                              <option value="option_1">One Status</option>
+                              <option value="option_2">Two Status</option>
+                              <option value="option_3">Three Status</option>
+                            </select>
+                          </div>
+                          <div
+                            class="col-md-3 color_picks_1"
+                            style="display: none"
+                          >
+                            <div class="input-group m-t-24">
+                              <input
+                                id="option1color1"
+                                type="text"
+                                class="form-control browser-default"
+                              />
+                              <div class="input-group-append">
+                                <span
+                                  class="input-group-text pickr"
+                                  role="button"
+                                  aria-label="toggle color picker dialog"
+                                ></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="col-md-3 color_picks_2"
+                            style="display: none"
+                          >
+                            <div class="input-group m-t-24">
+                              <input
+                                id="option1color1"
+                                type="text"
+                                class="form-control browser-default"
+                              />
+                              <div class="input-group-append">
+                                <span
+                                  class="input-group-text pickr"
+                                  role="button"
+                                  aria-label="toggle color picker dialog"
+                                ></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="col-md-3 color_picks_2"
+                            style="display: none"
+                          >
+                            <div class="input-group m-t-24">
+                              <input
+                                id="option1color1"
+                                type="text"
+                                class="form-control browser-default"
+                              />
+                              <div class="input-group-append">
+                                <span
+                                  class="input-group-text pickr"
+                                  role="button"
+                                  aria-label="toggle color picker dialog"
+                                ></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="col-md-3 color_picks_3"
+                            style="display: none"
+                          >
+                            <div class="input-group m-t-24">
+                              <input
+                                id="option1color1"
+                                type="text"
+                                class="form-control browser-default"
+                              />
+                              <div class="input-group-append">
+                                <span
+                                  class="input-group-text pickr"
+                                  role="button"
+                                  aria-label="toggle color picker dialog"
+                                ></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="col-md-3 color_picks_3"
+                            style="display: none"
+                          >
+                            <div class="input-group m-t-24">
+                              <input
+                                id="option1color1"
+                                type="text"
+                                class="form-control browser-default"
+                              />
+                              <div class="input-group-append">
+                                <span
+                                  class="input-group-text pickr"
+                                  role="button"
+                                  aria-label="toggle color picker dialog"
+                                ></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="col-md-3 color_picks_3"
+                            style="display: none"
+                          >
+                            <div class="input-group m-t-24">
+                              <input
+                                id="option1color1"
+                                type="text"
+                                class="form-control browser-default"
+                              />
+                              <div class="input-group-append">
+                                <span
+                                  class="input-group-text pickr"
+                                  role="button"
+                                  aria-label="toggle color picker dialog"
+                                ></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="row mt-4"
+                          style="display: none"
+                          id="kpi_perform"
+                        >
+                          <div class="col-3">
+                            <label for="custom_kpi"
+                              >Custom KPI Performance</label
+                            >
+                            <select
+                              id="custom_kpi"
+                              class="form-control browser-default"
+                            >
+                              <option value="No">No</option>
+                              <option value="Yes">Yes</option>
+                            </select>
+                          </div>
+                          <div
+                            class="col-md-9 kpi_formula"
+                            style="display: none"
+                          >
+                            <label for="objective_name">Actual</label>
+                            <input
+                              type="text"
+                              class="form-control browser-default"
+                              id="kpi_formula"
+                              readonly
+                              data-toggle="modal"
+                              data-target="#kpi_formula_popup"
+                              role="button"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="row mt-4"
+                          style="display: none"
+                          id="obj_perform"
+                        >
+                          <div class="col-3">
+                            <label for="custom_obj"
+                              >Custom Objective Performance</label
+                            >
+                            <select
+                              id="custom_obj"
+                              class="form-control browser-default"
+                            >
+                              <option value="No">No</option>
+                              <option value="Yes">Yes</option>
+                            </select>
+                          </div>
+                          <div
+                            class="col-md-9 obj_formula"
+                            style="display: none"
+                          >
+                            <label for="objective_name">Actual</label>
+                            <input
+                              type="text"
+                              class="form-control browser-default"
+                              id="kpi_formula"
+                              readonly
+                              data-toggle="modal"
+                              data-target="#kpi_formula_popup"
+                              role="button"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="row mt-4"
+                          style="display: none"
+                          id="persp_perform"
+                        >
+                          <div class="col-3">
+                            <label for="custom_persp"
+                              >Custom Perspective Performance</label
+                            >
+                            <select
+                              id="custom_persp"
+                              class="form-control browser-default"
+                            >
+                              <option value="No">No</option>
+                              <option value="Yes">Yes</option>
+                            </select>
+                          </div>
+                          <div
+                            class="col-md-9 persp_formula"
+                            style="display: none"
+                          >
+                            <label for="objective_name">Actual</label>
+                            <input
+                              type="text"
+                              class="form-control browser-default"
+                              id="kpi_formula"
+                              readonly
+                              data-toggle="modal"
+                              data-target="#kpi_formula_popup"
+                              role="button"
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -2719,6 +3309,56 @@
           var title = startDate.format("L") + " – " + endDate.format("L");
           $(this).val(title);
         },
+      });
+
+      $(document).ready(function () {
+        $("#custom_performance").change(function () {
+          var value = $("#custom_performance").val();
+          if (value == "Yes") {
+            $("#cust_thres").show();
+            $("#kpi_perform").show();
+            $("#obj_perform").show();
+            $("#persp_perform").show();
+          } else {
+            $("#cust_thres").hide();
+            $("#kpi_perform").hide();
+            $("#obj_perform").hide();
+            $("#persp_perform").hide();
+          }
+        });
+      });
+
+      $(document).ready(function () {
+        $("#custom_kpi").change(function () {
+          var value = $("#custom_kpi").val();
+          if (value == "Yes") {
+            $(".kpi_formula").show();
+          } else {
+            $(".kpi_formula").hide();
+          }
+        });
+      });
+
+      $(document).ready(function () {
+        $("#custom_obj").change(function () {
+          var value = $("#custom_obj").val();
+          if (value == "Yes") {
+            $(".obj_formula").show();
+          } else {
+            $(".obj_formula").hide();
+          }
+        });
+      });
+
+      $(document).ready(function () {
+        $("#custom_persp").change(function () {
+          var value = $("#custom_persp").val();
+          if (value == "Yes") {
+            $(".persp_formula").show();
+          } else {
+            $(".persp_formula").hide();
+          }
+        });
       });
 
       $(".calender-year").daterangepicker({
