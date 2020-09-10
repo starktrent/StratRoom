@@ -1325,58 +1325,31 @@
                 <hr />
                 <div class="form-row">
                   <div class="form-group col-md-12">
-                    <!-- <label for="objective_name">Custom Aggregation</label> -->
-                    <div class="row">
-                      <div class="col-4">
-                        <div class="form-check" style="margin-top: 8px">
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input
-                                class="form-check-input"
-                                type="checkbox"
-                                id="ca_checkbox"
-                                value=""
-                              />
-                              Custom Aggregation
-                              <span class="form-check-sign">
-                                <span class="check"></span>
-                              </span>
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="col-12 mt-2"
-                        style="display: none"
-                        id="ca_input"
-                      >
-                        <select
-                          class="js-example-basic-multiple"
-                          name="states[]"
-                          multiple="multiple"
-                        >
-                          <option value="971">Raman V</option>
-                          <option value="972">Bryan Adams</option>
-                          <option value="973">Abdul Khalid</option>
-                          <option value="974">Wole Kingsley</option>
-                          <option value="975">Monica Geller</option>
-                          <option value="976">Thomas Craig</option>
-                          <option value="977">William T</option>
-                          <option value="978">Radha Krishnan</option>
-                          <option value="979">Consultant 3</option>
-                          <option value="980">Consultant 4</option>
-                          <option value="960">Seema Chatterjee</option>
-                          <option value="981">Bindu T</option>
-                          <option value="982">Prathap K</option>
-                        </select>
-                      </div>
-                    </div>
+                    <label for="objective_name">Custom Aggregation</label>
+                    <select
+                      class="js-example-basic-multiple"
+                      name="states[]"
+                      multiple="multiple"
+                    >
+                      <option value="971">Raman V</option>
+                      <option value="972">Bryan Adams</option>
+                      <option value="973">Abdul Khalid</option>
+                      <option value="974">Wole Kingsley</option>
+                      <option value="975">Monica Geller</option>
+                      <option value="976">Thomas Craig</option>
+                      <option value="977">William T</option>
+                      <option value="978">Radha Krishnan</option>
+                      <option value="979">Consultant 3</option>
+                      <option value="980">Consultant 4</option>
+                      <option value="960">Seema Chatterjee</option>
+                      <option value="981">Bindu T</option>
+                      <option value="982">Prathap K</option>
+                    </select>
                   </div>
                 </div>
               </form>
             </div>
-            <hr />
-            <div class="row">
+            <div class="row mt-2">
               <div class="col-12">
                 <div class="form-line right">
                   <button
@@ -1522,7 +1495,10 @@
                     </select>
                   </div>
                 </div>
-                <hr />
+              </form>
+            </div>
+            <div class="row mt-2">
+              <div class="col-12">
                 <div class="form-line right">
                   <button
                     type="button"
@@ -1534,7 +1510,7 @@
                   </button>
                   <button class="initative_save_btn" value="Save">Save</button>
                 </div>
-              </form>
+              </div>
             </div>
             <hr />
             <div class="modal-footer">
@@ -1662,7 +1638,10 @@
                     </select>
                   </div>
                 </div>
-                <hr />
+              </form>
+            </div>
+            <div class="row mt-2">
+              <div class="col-12">
                 <div class="form-line right">
                   <button
                     type="button"
@@ -1674,7 +1653,7 @@
                   </button>
                   <button class="initative_save_btn" value="Save">Save</button>
                 </div>
-              </form>
+              </div>
             </div>
             <hr />
             <div class="modal-footer">
@@ -1805,7 +1784,10 @@
                     </select>
                   </div>
                 </div>
-                <hr />
+              </form>
+            </div>
+            <div class="row mt-2">
+              <div class="col-12">
                 <div class="form-line right">
                   <button
                     type="button"
@@ -1817,7 +1799,7 @@
                   </button>
                   <button class="initative_save_btn" value="Save">Save</button>
                 </div>
-              </form>
+              </div>
             </div>
             <hr />
             <div class="modal-footer">
@@ -2079,6 +2061,22 @@
                 </div>
                 <hr />
                 <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label for="objective_name">Performance</label>
+                    <input
+                      type="text"
+                      class="form-control browser-default"
+                      name="name"
+                      id="kpi_formula"
+                      readonly
+                      data-toggle="modal"
+                      data-target="#kpi_formula_popup"
+                      role="button"
+                    />
+                  </div>
+                </div>
+                <hr />
+                <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="objective_name">Year To Date (YTD)</label>
                     <input
@@ -2290,7 +2288,10 @@
                     </select>
                   </div>
                 </div>
-                <hr />
+              </form>
+            </div>
+            <div class="row mt-2">
+              <div class="col-12">
                 <div class="form-line right">
                   <button
                     type="button"
@@ -2302,7 +2303,7 @@
                   </button>
                   <button class="initative_save_btn" value="Save">Save</button>
                 </div>
-              </form>
+              </div>
             </div>
             <hr />
             <div class="modal-footer">
@@ -2567,6 +2568,22 @@
                 </div>
                 <hr />
                 <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label for="objective_name">Performance</label>
+                    <input
+                      type="text"
+                      class="form-control browser-default"
+                      name="name"
+                      id="kpi_formula"
+                      readonly
+                      data-toggle="modal"
+                      data-target="#kpi_formula_popup"
+                      role="button"
+                    />
+                  </div>
+                </div>
+                <hr />
+                <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="objective_name">Year To Date (YTD)</label>
                     <input
@@ -2778,7 +2795,10 @@
                     </select>
                   </div>
                 </div>
-                <hr />
+              </form>
+            </div>
+            <div class="row mt-2">
+              <div class="col-12">
                 <div class="form-line right">
                   <button
                     type="button"
@@ -2790,7 +2810,7 @@
                   </button>
                   <button class="initative_save_btn" value="Save">Save</button>
                 </div>
-              </form>
+              </div>
             </div>
             <hr />
             <div class="modal-footer">
