@@ -2733,13 +2733,19 @@
                               <span class="control-slider round"></span>
                             </label>
                           </div>
-                          <div class="col-8"></div>
+                          <div class="col-6"></div>
+                          <div
+                            class="col-2 form-group"
+                            id="agg_type_label"
+                            style="display: none"
+                          >
+                            <label for="ag-type" class="pull-right">Type</label>
+                          </div>
                           <div
                             class="col-4 form-group"
                             id="agg_type"
                             style="display: none"
                           >
-                            <label for="ag-type">Type</label>
                             <select
                               id="ag-type"
                               class="form-control browser-default"
@@ -3070,8 +3076,10 @@
         $("#aggregation").change(function () {
           if (this.checked) {
             $("#agg_type").show();
+            $("#agg_type_label").show();
           } else {
             $("#agg_type").hide();
+            $("#agg_type_label").hide();
           }
         });
       });
