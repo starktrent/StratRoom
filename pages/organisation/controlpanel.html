@@ -2724,14 +2724,30 @@
                           </div>
                           <div class="col-5">
                             <span style="font-size: 16px; color: #444444"
-                              >Custom Aggregation</span
+                              >Aggregation</span
                             >
                           </div>
                           <div class="col-1 form-group">
                             <label class="control-switch">
-                              <input type="checkbox" />
+                              <input type="checkbox" id="aggregation" />
                               <span class="control-slider round"></span>
                             </label>
+                          </div>
+                          <div class="col-8"></div>
+                          <div
+                            class="col-4 form-group"
+                            id="agg_type"
+                            style="display: none"
+                          >
+                            <label for="ag-type">Type</label>
+                            <select
+                              id="ag-type"
+                              class="form-control browser-default"
+                            >
+                              <option>Choose</option>
+                              <option value="Default">Default</option>
+                              <option value="Custom">Custom</option>
+                            </select>
                           </div>
                         </div>
                         <hr style="margin-top: 0; margin-bottom: 16px" />
@@ -2770,7 +2786,7 @@
                             class="col-md-2 color_picks_1"
                             style="display: none"
                           >
-                            <div class="input-group m-t-24">
+                            <div class="input-group m-t-24 p-r-20">
                               <input
                                 id="option1color1"
                                 type="text"
@@ -2789,7 +2805,7 @@
                             class="col-md-2 color_picks_2"
                             style="display: none"
                           >
-                            <div class="input-group m-t-24">
+                            <div class="input-group m-t-24 p-r-20">
                               <input
                                 id="option1color1"
                                 type="text"
@@ -2808,7 +2824,7 @@
                             class="col-md-2 color_picks_2"
                             style="display: none"
                           >
-                            <div class="input-group m-t-24">
+                            <div class="input-group m-t-24 p-r-20">
                               <input
                                 id="option1color1"
                                 type="text"
@@ -2827,7 +2843,7 @@
                             class="col-md-2 color_picks_3"
                             style="display: none"
                           >
-                            <div class="input-group m-t-24">
+                            <div class="input-group m-t-24 p-r-20">
                               <input
                                 id="option1color1"
                                 type="text"
@@ -2846,7 +2862,7 @@
                             class="col-md-2 color_picks_3"
                             style="display: none"
                           >
-                            <div class="input-group m-t-24">
+                            <div class="input-group m-t-24 p-r-20">
                               <input
                                 id="option1color1"
                                 type="text"
@@ -2865,7 +2881,7 @@
                             class="col-md-2 color_picks_3"
                             style="display: none"
                           >
-                            <div class="input-group m-t-24">
+                            <div class="input-group m-t-24 p-r-20">
                               <input
                                 id="option1color1"
                                 type="text"
@@ -3046,6 +3062,16 @@
             $("#persp_derivation").show();
           } else {
             $("#persp_derivation").hide();
+          }
+        });
+      });
+
+      $(document).ready(function () {
+        $("#aggregation").change(function () {
+          if (this.checked) {
+            $("#agg_type").show();
+          } else {
+            $("#agg_type").hide();
           }
         });
       });
