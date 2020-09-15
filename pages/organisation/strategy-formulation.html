@@ -167,6 +167,42 @@
         display: flex;
         align-items: center;
       }
+
+      #section .container-fluid .collapse_arrow_left .arrow_collapse_size {
+        position: fixed;
+        background: #fff;
+        font-size: 20px !important;
+        top: 22%;
+        z-index: 999;
+        color: #a3a3a3;
+        margin-left: -30px;
+        padding: 14px 6px 14px 2px;
+        border-top: 1px solid #e9ecef;
+        border-right: 1px solid #e9ecef;
+        border-bottom: 1px solid #e9ecef;
+        border-left: 0px solid #e9ecef;
+        border-radius: 0px 12px 12px 0px;
+        cursor: pointer;
+        transition: 0.5s;
+      }
+
+      #section .container-fluid .collapse_arrow_right .arrow_collapse_size {
+        position: fixed;
+        background: #fff;
+        font-size: 20px !important;
+        top: 22%;
+        z-index: 999;
+        color: #a3a3a3;
+        margin-left: -30px;
+        padding: 14px 6px 14px 2px;
+        border-top: 1px solid #e9ecef;
+        border-right: 1px solid #e9ecef;
+        border-bottom: 1px solid #e9ecef;
+        border-left: 0px solid #e9ecef;
+        border-radius: 0px 12px 12px 0px;
+        cursor: pointer;
+        transition: 0.5s;
+      }
     </style>
   </head>
 
@@ -469,6 +505,58 @@
       </aside>
     </div>
     <!-- #END# Left Sidebar -->
+
+    <aside id="initiative_sidebar" class="initiative_sidebar">
+      <div class="sub_initiatives" id="sub_initiatives" style="height: 100%">
+        <div class="card" style="height: 100%">
+          <div
+            class="header d-flex flex-row initiate_sidebar"
+            style="margin-top: 5%; padding: 5px 16px 14px 5px"
+          >
+            <h5 class="prob flex-fill">
+              <strong style="color: #333; font-size: 14px"
+                >Formulation Register</strong
+              >
+            </h5>
+            <div class="initativesdescription" onclick="openStrategyAdd()">
+              <i
+                class="fa fa-plus-circle"
+                style="color: #1aa243; font-size: 18px"
+              ></i>
+            </div>
+          </div>
+          <div class="d-flex flex-column" id="initiate_sidebar">
+            <div
+              class="d-flex flex-column sub_initiative_sidebar_details"
+              onclick="openStrategy()"
+            >
+              <div class="d-flex flex-row p-b-5">
+                <div class="flex-column profile_image">
+                  <img
+                    src="images/user/usrbig1.jpg"
+                    class="rounded-circle"
+                    alt="User"
+                    width="25"
+                  />
+                </div>
+                <div class="d-flex flex-column profile_content">
+                  <p>Failure to meet compliance obligations</p>
+                </div>
+              </div>
+              <div class="d-flex flex-row justify-content-between m-t--10">
+                <div class="flex-column ini_side_depart_bar">
+                  <div class="employee_info">Department 1</div>
+                  <p>Human Resource</p>
+                </div>
+                <!-- <div class="d-flex flex-column ini_side_due">
+                  <p>Long Term</p>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
 
     <!--#Start User Edit Popup -->
     <div
@@ -952,9 +1040,9 @@
     </div>
     <!-- END KPI Calculator -->
 
-    <section class="content">
+    <section class="content" id="section">
       <!-- Page Header -->
-      <div class="page-header row no-gutters py-2 m-t--70">
+      <div class="page-header row no-gutters py-2 m-t-70">
         <div class="col-lg-6 col-md-6 text-center text-sm-left pt-2 mb-0 ml-4">
           <h5
             class="page-title"
@@ -967,6 +1055,12 @@
       <!-- End Page Header -->
 
       <div class="container-fluid">
+        <div class="collapse_arrow_right" style="display: none">
+          <i class="arrow_collapse_size fas fa-caret-right"></i>
+        </div>
+        <div class="collapse_arrow_left">
+          <i class="arrow_collapse_size fas fa-caret-left"></i>
+        </div>
         <div class="row">
           <div
             class="col-12 sidebar-strategy"
@@ -985,6 +1079,13 @@
                     >
                       &times;
                     </span>
+                    <span
+                      class="pull-right"
+                      id="edit_strategy"
+                      style="margin-right: 12px"
+                    >
+                      <i class="fas fa-pencil-alt border-box"></i
+                    ></span>
                   </h5>
                 </div>
                 <hr />
@@ -992,23 +1093,32 @@
 
               <div class="col-12 form-group">
                 <label for="Name">Name</label>
-                <input type="text" class="form-control browser-default" />
+                <input
+                  type="text"
+                  class="form-control browser-default str_name"
+                  disabled="true"
+                />
               </div>
 
               <div class="col-12 form-group">
                 <label for="Department">Department</label>
-                <input type="text" class="form-control browser-default" />
+                <input
+                  type="text"
+                  class="form-control browser-default str_dept"
+                  disabled="true"
+                />
               </div>
 
               <div class="col-12 form-group">
                 <label for="Name">Start / End Date</label>
                 <input
                   type="text"
-                  class="form-control browser-default date_pickers_bottom datepicker-here"
+                  class="form-control browser-default date_pickers_bottom datepicker-here str_sedate"
                   data-range="true"
                   data-multiple-dates-separator=" - "
                   data-language="en"
                   id="air-date-sub-init"
+                  disabled="true"
                 />
               </div>
 
@@ -1017,7 +1127,8 @@
                 <select
                   id="inputState"
                   style="padding-left: 6px !important"
-                  class="form-control browser-default"
+                  class="form-control browser-default str_type"
+                  disabled="true"
                 >
                   <option>Choose</option>
                   <option value="Long Term">Long Term</option>
@@ -1031,7 +1142,8 @@
                 <select
                   id="inputState"
                   style="padding-left: 6px !important"
-                  class="form-control browser-default"
+                  class="form-control browser-default str_import"
+                  disabled="true"
                 >
                   <option>Choose</option>
                   <option value="2019">Strategy Formulation 2019</option>
@@ -1093,11 +1205,23 @@
                 <label for="Name">Approved Date</label>
                 <input
                   type="text"
-                  class="form-control browser-default date_pickers_single"
+                  class="form-control browser-default date_pickers_single str_date"
                   data-language="en"
                   name="kpi_start_end_date"
                   id="kpi_start_end_date"
+                  disabled="true"
                 />
+              </div>
+
+              <div class="col-12 form-group">
+                <button
+                  style="display: none"
+                  class="initative_save_btn pull-right"
+                  value="Save"
+                  id="save_str"
+                >
+                  Save
+                </button>
               </div>
             </div>
           </div>
@@ -1366,6 +1490,144 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                   value="Save"
                   id="save_objective"
                 >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-12 sidebar-strategy"
+            id="strategy_add"
+            style="display: none"
+          >
+            <div class="row">
+              <div class="col-12" style="padding-bottom: 8px">
+                <div class="perspective-heading">
+                  <h5>
+                    Add Formualtion Details
+                    <span
+                      class="pull-right"
+                      onclick="closeStrategyAdd()"
+                      style="font-size: 15px; cursor: pointer"
+                    >
+                      &times;
+                    </span>
+                  </h5>
+                </div>
+                <hr />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Name</label>
+                <input type="text" class="form-control browser-default" />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Department">Department</label>
+                <input type="text" class="form-control browser-default" />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Start / End Date</label>
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers_bottom datepicker-here"
+                  data-range="true"
+                  data-multiple-dates-separator=" - "
+                  data-language="en"
+                  id="air-date-sub-init"
+                />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Plan Type</label>
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important"
+                  class="form-control browser-default"
+                >
+                  <option>Choose</option>
+                  <option value="Long Term">Long Term</option>
+                  <option value="Medium Term">Medium Term</option>
+                  <option value="Short Term">Short Term</option>
+                </select>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Import">Import Formulation</label>
+                <select
+                  id="inputState"
+                  style="padding-left: 6px !important"
+                  class="form-control browser-default"
+                >
+                  <option>Choose</option>
+                  <option value="2019">Strategy Formulation 2019</option>
+                  <option value="2020">Strategy Formulation 2020</option>
+                </select>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Formulation Team</label>
+                <div class="owner" style="padding-right: 12px">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Approved By</label>
+                <div class="owner" style="padding-right: 12px">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Approved Date</label>
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers_single"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                />
+              </div>
+              <div class="col-12 form-group">
+                <button class="initative_save_btn pull-right" value="Save">
                   Save
                 </button>
               </div>
@@ -2069,12 +2331,12 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                   <div class="heading">
                     <h6 style="margin-bottom: -4px">
                       Failure to meet compliance obligations
-                      <span class="pull-right" onclick="openStrategy()">
+                      <!-- <span class="pull-right" onclick="openStrategy()">
                         <i
                           class="fas fa-pencil-alt border-box"
                           style="padding: 5px"
                         ></i
-                      ></span>
+                      ></span> -->
                     </h6>
                   </div>
                   <hr style="border-top: 2px solid #e9ecef" />
@@ -2683,6 +2945,7 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
           $(".sidebar-strategy").hide();
           $("#edit_perspective").show();
           $("#save_perspective").hide();
+          $("#strategy_add").hide();
           $(".persp_name").prop("disabled", true);
           $(".persp_date").prop("disabled", true);
           $(".persp_weight").prop("disabled", true);
@@ -2715,41 +2978,6 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
           $(".kpi_status").prop("disabled", true);
         }
       });
-
-      function bgClick() {
-        $(".sidebar-strategy").hide();
-        $("#edit_perspective").show();
-        $("#save_perspective").hide();
-        $(".persp_name").prop("disabled", true);
-        $(".persp_date").prop("disabled", true);
-        $(".persp_weight").prop("disabled", true);
-        $(".persp_subweight").prop("disabled", true);
-        $(".persp_status").prop("disabled", true);
-        $("#edit_objective").show();
-        $("#save_objective").hide();
-        $(".obj_name").prop("disabled", true);
-        $(".obj_date").prop("disabled", true);
-        $(".obj_imp").prop("disabled", true);
-        $(".obj_weight").prop("disabled", true);
-        $(".obj_subweight").prop("disabled", true);
-        $(".obj_status").prop("disabled", true);
-        $("#edit_kpi").show();
-        $("#save_kpi").hide();
-        $(".kpi_name").prop("disabled", true);
-        $(".kpi_polarity").prop("disabled", true);
-        $(".kpi_mf").prop("disabled", true);
-        $(".kpi_data").prop("disabled", true);
-        $(".kpi_type").prop("disabled", true);
-        $(".kpi_currency").prop("disabled", true);
-        $(".kpi_threshold").prop("disabled", true);
-        $(".kpi_actual").prop("disabled", true);
-        $(".kpi_target").prop("disabled", true);
-        $(".kpi_ytd").prop("disabled", true);
-        $(".kpi_date").prop("disabled", true);
-        $(".kpi_weight").prop("disabled", true);
-        $(".kpi_subweight").prop("disabled", true);
-        $(".kpi_status").prop("disabled", true);
-      }
 
       function openPerspective() {
         $(".sidebar-strategy").hide();
@@ -2813,6 +3041,15 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
         $(".kpi_status").prop("disabled", true);
       }
 
+      function openStrategyAdd() {
+        $(".sidebar-strategy").hide();
+        $("#strategy_add").show();
+      }
+
+      function closeStrategyAdd() {
+        $("#strategy_add").hide();
+      }
+
       function openPerspectiveAdd() {
         $(".sidebar-strategy").hide();
         $("#perspective_add").show();
@@ -2848,6 +3085,28 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
       function closeStrategy() {
         $("#strategy_edit").hide();
       }
+
+      $("#edit_strategy").click(function () {
+        $("#edit_strategy").hide();
+        $("#save_str").show();
+        $(".str_name").prop("disabled", false);
+        $(".str_dept").prop("disabled", false);
+        $(".str_sedate").prop("disabled", false);
+        $(".str_type").prop("disabled", false);
+        $(".str_import").prop("disabled", false);
+        $(".str_date").prop("disabled", false);
+      });
+
+      $("#save_str").click(function () {
+        $("#save_str").hide();
+        $("#edit_strategy").show();
+        $(".str_name").prop("disabled", true);
+        $(".str_dept").prop("disabled", true);
+        $(".str_sedate").prop("disabled", true);
+        $(".str_type").prop("disabled", true);
+        $(".str_import").prop("disabled", true);
+        $(".str_date").prop("disabled", true);
+      });
 
       $("#edit_perspective").click(function () {
         $("#edit_perspective").hide();
