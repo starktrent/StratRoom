@@ -1344,7 +1344,7 @@
                   <div class="form-group col-md-12">
                     <label for="objective_name">Custom Aggregation</label>
                     <select
-                      class="js-example-basic-multiple"
+                      class="multi-select"
                       name="states[]"
                       multiple="multiple"
                     >
@@ -1352,15 +1352,6 @@
                       <option value="972">Bryan Adams</option>
                       <option value="973">Abdul Khalid</option>
                       <option value="974">Wole Kingsley</option>
-                      <option value="975">Monica Geller</option>
-                      <option value="976">Thomas Craig</option>
-                      <option value="977">William T</option>
-                      <option value="978">Radha Krishnan</option>
-                      <option value="979">Consultant 3</option>
-                      <option value="980">Consultant 4</option>
-                      <option value="960">Seema Chatterjee</option>
-                      <option value="981">Bindu T</option>
-                      <option value="982">Prathap K</option>
                     </select>
                   </div>
                 </div>
@@ -3413,9 +3404,14 @@
                           width="25"
                         />
                       </div>
-                      <div class="d-flex flex-column profile_content line-shortner">
-                        <p>Failure to meet compliance obligations Failure to meet compliance obligations
-                        Failure to meet compliance obligations</p>
+                      <div
+                        class="d-flex flex-column profile_content line-shortner"
+                      >
+                        <p>
+                          Failure to meet compliance obligations Failure to meet
+                          compliance obligations Failure to meet compliance
+                          obligations
+                        </p>
                       </div>
                     </div>
                     <div
@@ -3442,7 +3438,9 @@
                           width="25"
                         />
                       </div>
-                      <div class="d-flex flex-column profile_content line-shortner">
+                      <div
+                        class="d-flex flex-column profile_content line-shortner"
+                      >
                         <p>Failure to meet compliance obligations</p>
                       </div>
                     </div>
@@ -3470,7 +3468,9 @@
                           width="25"
                         />
                       </div>
-                      <div class="d-flex flex-column profile_content line-shortner">
+                      <div
+                        class="d-flex flex-column profile_content line-shortner"
+                      >
                         <p>Failure to meet compliance obligations</p>
                       </div>
                     </div>
@@ -3759,7 +3759,7 @@
         </div>
         <div class="row">
           <div class="col-md-10"></div>
-          <div class="col-md-2">
+          <div class="col-md-2 mt-2">
             <button
               class="btn btn-custom-secondary pull-right"
               data-toggle="modal"
@@ -3784,7 +3784,8 @@
               data-target="#formulation_popup"
               style="margin-left: 4px"
             >
-              <i class="fas fa-file-alt" style="font-size: 14px"></i>
+              <!-- <i class="fas fa-file-alt" style="font-size: 14px"></i> -->
+              <img src="../../assets/img/12.jpeg" style="width: 16px" alt="" />
             </button>
 
             <button
@@ -6706,7 +6707,7 @@
       });
 
       $(document).ready(function () {
-        $(".js-example-basic-multiple").select2();
+        $(".multi-select").select2();
       });
     </script>
   </body></a

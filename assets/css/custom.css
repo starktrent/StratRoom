@@ -1105,6 +1105,7 @@ label {
 .notifics li h6 {
   font-size: 13px;
   color: #49494d;
+  font-weight: 500;
   margin-left: 54px;
   margin-top: -32px;
 }

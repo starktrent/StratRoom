@@ -18,6 +18,7 @@
     <!-- You can choose a theme from css/styles instead of get all themes -->
     <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
     <link rel="stylesheet" href="../../assets/datepickerair.css" />
+    <link href="../../assets/select2.min.css" rel="stylesheet" />
     <link href="../../assets/jquery-ui.min.css" rel="stylesheet" />
     <!-- <link
       href="../../assets/daterangepicker/daterangepicker.min.css"
@@ -1102,11 +1103,15 @@
 
               <div class="col-12 form-group">
                 <label for="Department">Department</label>
-                <input
-                  type="text"
-                  class="form-control browser-default str_dept"
-                  disabled="true"
-                />
+                <select
+                  class="multi-select"
+                  name="states[]"
+                  multiple="multiple"
+                >
+                  <option value="971">Human Resource</option>
+                  <option value="972">Designer</option>
+                  <option value="973">Developer</option>
+                </select>
               </div>
 
               <div class="col-12 form-group">
@@ -1504,7 +1509,7 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
               <div class="col-12" style="padding-bottom: 8px">
                 <div class="perspective-heading">
                   <h5>
-                    Add Formualtion Details
+                    Add Formulation Details
                     <span
                       class="pull-right"
                       onclick="closeStrategyAdd()"
@@ -1524,7 +1529,15 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
 
               <div class="col-12 form-group">
                 <label for="Department">Department</label>
-                <input type="text" class="form-control browser-default" />
+                <select
+                  class="multi-select-2"
+                  name="states[]"
+                  multiple="multiple"
+                >
+                  <option value="971">Human Resource</option>
+                  <option value="972">Designer</option>
+                  <option value="973">Developer</option>
+                </select>
               </div>
 
               <div class="col-12 form-group">
@@ -2927,6 +2940,7 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
     <script src="../../assets/pickr.es5.min.js"></script>
     <script src="../../assets/datepickerair.js"></script>
     <script src="../../assets/datepicker.en.js"></script>
+    <script src="../../assets/select2.min.js"></script>
     <script src="../../assets/js/widgets.js"></script>
     <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
     <script src="../../assets/knockout-3.5.0.js"></script>
@@ -3278,6 +3292,11 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
             alert("You are " + years + " years old!");
           }
         );
+      });
+
+      $(document).ready(function () {
+        $(".multi-select").select2();
+        $(".multi-select-2").select2();
       });
     </script>
   </body></a
