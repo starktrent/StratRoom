@@ -12,6 +12,7 @@
     <!-- Custom Css -->
     <link href="../../assets/css/style.css" rel="stylesheet" />
     <link href="../../assets/css/custom.css" rel="stylesheet" />
+    <link href="../../assets/css/initatives.css" rel="stylesheet" />
     <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" />
     <!-- You can choose a theme from css/styles instead of get all themes -->
     <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
@@ -3106,11 +3107,9 @@
           </div>
         </div>
       </div>
-
       <!-- #END# Perspective PopUp -->
 
       <!-- #Start Objective Desc PopUp -->
-
       <div
         class="modal fade customer_perspective_popup"
         tabindex="-1"
@@ -3379,6 +3378,122 @@
       </div>
 
       <div
+        class="modal fade"
+        tabindex="-1"
+        role="dialog"
+        id="formulation_popup"
+        aria-labelledby="myLargeModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-md">
+          <div class="modal-content" style="height: 360px; overflow: hidden">
+            <div class="modal-header">
+              <h4>Formulation Register</h4>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div style="height: 300px">
+                <div class="d-flex flex-column" id="initiate_sidebar">
+                  <div
+                    class="d-flex flex-column sub_initiative_sidebar_details"
+                  >
+                    <div class="d-flex flex-row p-b-5">
+                      <div class="flex-column profile_image">
+                        <img
+                          src="images/user/usrbig1.jpg"
+                          class="rounded-circle"
+                          alt="User"
+                          width="25"
+                        />
+                      </div>
+                      <div class="d-flex flex-column profile_content line-shortner">
+                        <p>Failure to meet compliance obligations Failure to meet compliance obligations
+                        Failure to meet compliance obligations</p>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row justify-content-between m-t--10"
+                    >
+                      <div class="flex-column ini_side_depart_bar">
+                        <div class="employee_info">Department 1</div>
+                        <p>Human Resource</p>
+                      </div>
+                      <!-- <div class="d-flex flex-column ini_side_due">
+                      <p>Long Term</p>
+                    </div> -->
+                    </div>
+                  </div>
+                  <div
+                    class="d-flex flex-column sub_initiative_sidebar_details"
+                  >
+                    <div class="d-flex flex-row p-b-5">
+                      <div class="flex-column profile_image">
+                        <img
+                          src="images/user/usrbig1.jpg"
+                          class="rounded-circle"
+                          alt="User"
+                          width="25"
+                        />
+                      </div>
+                      <div class="d-flex flex-column profile_content line-shortner">
+                        <p>Failure to meet compliance obligations</p>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row justify-content-between m-t--10"
+                    >
+                      <div class="flex-column ini_side_depart_bar">
+                        <div class="employee_info">Department 1</div>
+                        <p>Human Resource</p>
+                      </div>
+                      <!-- <div class="d-flex flex-column ini_side_due">
+                      <p>Long Term</p>
+                    </div> -->
+                    </div>
+                  </div>
+                  <div
+                    class="d-flex flex-column sub_initiative_sidebar_details"
+                  >
+                    <div class="d-flex flex-row p-b-5">
+                      <div class="flex-column profile_image">
+                        <img
+                          src="images/user/usrbig1.jpg"
+                          class="rounded-circle"
+                          alt="User"
+                          width="25"
+                        />
+                      </div>
+                      <div class="d-flex flex-column profile_content line-shortner">
+                        <p>Failure to meet compliance obligations</p>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row justify-content-between m-t--10"
+                    >
+                      <div class="flex-column ini_side_depart_bar">
+                        <div class="employee_info">Department 1</div>
+                        <p>Human Resource</p>
+                      </div>
+                      <!-- <div class="d-flex flex-column ini_side_due">
+                      <p>Long Term</p>
+                    </div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
         class="modal fade kpi_formula_popup"
         id="kpi_formula_popup"
         tabindex="-1"
@@ -3629,8 +3744,132 @@
       <!-- #END# KPI Desc PopUp -->
 
       <section class="content">
+        <!-- Page Header -->
+        <div class="page-header row no-gutters py-2 m-t--70">
+          <div
+            class="col-lg-6 col-md-6 text-center text-sm-left pt-2 mb-0 ml-4"
+          >
+            <h5
+              class="page-title"
+              style="font-weight: 600; text-transform: uppercase"
+            >
+              SCORECARD <span class="scorecard_status">Good</span>
+            </h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-10"></div>
+          <div class="col-md-2">
+            <button
+              class="btn btn-custom-secondary pull-right"
+              data-toggle="modal"
+              data-target=".scorecard_description_popup"
+              style="margin-left: 4px"
+            >
+              <i class="fas fa-cog" style="font-size: 14px"></i>
+            </button>
+
+            <input type="file" id="imgupload" style="display: none" />
+            <button
+              class="btn btn-custom-secondary pull-right"
+              id="OpenImgUpload"
+              style="margin-left: 4px"
+            >
+              <i class="fas fa-upload"></i>
+            </button>
+
+            <button
+              class="btn btn-custom-secondary pull-right"
+              data-toggle="modal"
+              data-target="#formulation_popup"
+              style="margin-left: 4px"
+            >
+              <i class="fas fa-file-alt" style="font-size: 14px"></i>
+            </button>
+
+            <button
+              class="btn btn-custom-secondary dropdown-toggle pull-right"
+              data-toggle="dropdown"
+            >
+              <i class="far fa-eye"></i>
+
+              <ul
+                class="dropdown-menu dropdown-hide multi-column columns pull-right"
+                x-placement="bottom-start"
+                style="
+                  position: absolute;
+                  will-change: transform;
+                  top: 0px;
+                  left: 0px;
+                  width: 180px;
+                  transform: translate3d(0px, 24px, 0px);
+                "
+              >
+                <div class="row">
+                  <div class="col-sm-12">
+                    <ul class="multi-column-dropdown">
+                      <li>
+                        <a href="#">
+                          <label>
+                            <input
+                              type="checkbox"
+                              name="financial"
+                              value="financial"
+                              checked
+                            />
+                            Financial</label
+                          >
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <label>
+                            <input
+                              type="checkbox"
+                              name="customer"
+                              value="customer"
+                              checked
+                            />
+                            Customer</label
+                          >
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <label>
+                            <input
+                              type="checkbox"
+                              name="internal-process"
+                              value="internal-process"
+                              checked
+                            />
+                            Internal Process</label
+                          >
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <label>
+                            <input
+                              type="checkbox"
+                              name="learning-growth"
+                              value="learning-growth"
+                              checked
+                            />
+                            Learning and Growth</label
+                          >
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </ul>
+            </button>
+          </div>
+        </div>
+        <!-- End Page Header -->
         <div class="container-fluid">
-          <div class="row py-2 scorecard-title">
+          <!-- <div class="row py-2 scorecard-title">
             <div class="col-md-10">
               <h5 style="padding-top: 10px">
                 SCORECARD <span class="scorecard_status">Good</span>
@@ -3742,7 +3981,7 @@
                 </ul>
               </button>
             </div>
-          </div>
+          </div> -->
           <!--  -->
           <div class="tableview">
             <div class="row">
