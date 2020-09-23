@@ -541,13 +541,67 @@
                   />
                 </div>
                 <div class="d-flex flex-column profile_content">
-                  <p>Failure to meet compliance obligations</p>
+                  <p>Group Strategic plan</p>
                 </div>
               </div>
-              <div class="d-flex flex-row justify-content-between m-t--10">
+              <div class="flex-row justify-content-between m-t--10">
                 <div class="flex-column ini_side_depart_bar">
-                  <div class="employee_info">Department 1</div>
-                  <p>Human Resource</p>
+                  <div class="employee_info">Department</div>
+                  <p>Corporate</p>
+                </div>
+                <!-- <div class="d-flex flex-column ini_side_due">
+                  <p>Long Term</p>
+                </div> -->
+              </div>
+            </div>
+            <div
+              class="d-flex flex-column sub_initiative_sidebar_details"
+              onclick="openStrategy()"
+            >
+              <div class="d-flex flex-row p-b-5">
+                <div class="flex-column profile_image">
+                  <img
+                    src="images/user/usrbig3.jpg"
+                    class="rounded-circle"
+                    alt="User"
+                    width="25"
+                  />
+                </div>
+                <div class="d-flex flex-column profile_content">
+                  <p>Finance Strategic plan</p>
+                </div>
+              </div>
+              <div class="flex-row justify-content-between m-t--10">
+                <div class="flex-column ini_side_depart_bar">
+                  <div class="employee_info">Department</div>
+                  <p>Finance</p>
+                </div>
+                <!-- <div class="d-flex flex-column ini_side_due">
+                  <p>Long Term</p>
+                </div> -->
+              </div>
+            </div>
+            <div
+              class="d-flex flex-column sub_initiative_sidebar_details"
+              onclick="openStrategy()"
+            >
+              <div class="d-flex flex-row p-b-5">
+                <div class="flex-column profile_image">
+                  <img
+                    src="images/user/usrbig7.jpg"
+                    class="rounded-circle"
+                    alt="User"
+                    width="25"
+                  />
+                </div>
+                <div class="d-flex flex-column profile_content">
+                  <p>Customer Strategic Plan</p>
+                </div>
+              </div>
+              <div class="flex-row justify-content-between m-t--10">
+                <div class="flex-column ini_side_depart_bar">
+                  <div class="employee_info">Department</div>
+                  <p>Business Development</p>
                 </div>
                 <!-- <div class="d-flex flex-column ini_side_due">
                   <p>Long Term</p>
@@ -1226,6 +1280,23 @@
                   id="save_str"
                 >
                   Save
+                </button>
+
+                <button
+                  class="initative_save_btn pull-right"
+                  value="Save"
+                  id="approve_str"
+                >
+                  Approved
+                </button>
+
+                <button
+                  style="display: none"
+                  class="initative_save_btn pull-right"
+                  value="Save"
+                  id="reset_str"
+                >
+                  Reset
                 </button>
               </div>
             </div>
@@ -2343,7 +2414,7 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                 <div class="col-12">
                   <div class="heading">
                     <h6 style="margin-bottom: -4px">
-                      Failure to meet compliance obligations
+                      Group Strategic plan
                       <!-- <span class="pull-right" onclick="openStrategy()">
                         <i
                           class="fas fa-pencil-alt border-box"
@@ -2360,7 +2431,7 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                     <ul>
                       <li>
                         <strong>Department</strong>
-                        <p>Human Resource</p>
+                        <p>Corporate</p>
                       </li>
                       <li>
                         <strong>Start Date</strong>
@@ -2528,11 +2599,116 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                         <div class="row">
                           <div class="col-12">
                             <div class="line-shortner name pull-left">
+                              <span>Financial</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row card-full-div">
+                    <div class="col-1">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-11">
+                      <div class="card" onclick="openPerspective()">
+                        <div class="row">
+                          <div class="col-12">
+                            <div class="line-shortner name pull-left">
+                              <span>Customer</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row card-full-div">
+                    <div class="col-1">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-11">
+                      <div class="card" onclick="openPerspective()">
+                        <div class="row">
+                          <div class="col-12">
+                            <div class="line-shortner name pull-left">
+                              <span>Internal Process</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row card-full-div">
+                    <div class="col-1">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-11">
+                      <div class="card" onclick="openPerspective()">
+                        <div class="row">
+                          <div class="col-12">
+                            <div class="line-shortner name pull-left">
+                              <span>Leraning & Growth</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="row card-full-div">
+                    <div class="col-1">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-11">
+                      <div class="card" onclick="openPerspective()">
+                        <div class="row">
+                          <div class="col-12">
+                            <div class="line-shortner name pull-left">
                               <span
-                                >Record zero fire incidents attributable to
-                                Alpha Mead across all locations in 2020 Record
-                                zero fire incidents attributable to Alpha Mead
-                                across all locations in 2020</span
+                                >Financial</span
                               >
                             </div>
                           </div>
@@ -2561,145 +2737,14 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                           <div class="col-12">
                             <div class="line-shortner name pull-left">
                               <span
-                                >Record zero fire incidents attributable to
-                                Alpha Mead across all locations in 2020 Record
-                                zero fire incidents attributable to Alpha Mead
-                                across all locations in 2020</span
+                                >Financial</span
                               >
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="row card-full-div">
-                    <div class="col-1">
-                      <div class="form-check">
-                        <label class="form-check-label">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            value=""
-                          />
-                          <span class="form-check-sign">
-                            <span class="check"></span>
-                          </span>
-                        </label>
-                      </div>
-                    </div>
-                    <div class="col-11">
-                      <div class="card" onclick="openPerspective()">
-                        <div class="row">
-                          <div class="col-12">
-                            <div class="line-shortner name pull-left">
-                              <span
-                                >Record zero fire incidents attributable to
-                                Alpha Mead across all locations in 2020 Record
-                                zero fire incidents attributable to Alpha Mead
-                                across all locations in 2020</span
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row card-full-div">
-                    <div class="col-1">
-                      <div class="form-check">
-                        <label class="form-check-label">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            value=""
-                          />
-                          <span class="form-check-sign">
-                            <span class="check"></span>
-                          </span>
-                        </label>
-                      </div>
-                    </div>
-                    <div class="col-11">
-                      <div class="card" onclick="openPerspective()">
-                        <div class="row">
-                          <div class="col-12">
-                            <div class="line-shortner name pull-left">
-                              <span
-                                >Record zero fire incidents attributable to
-                                Alpha Mead across all locations in 2020 Record
-                                zero fire incidents attributable to Alpha Mead
-                                across all locations in 2020</span
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row card-full-div">
-                    <div class="col-1">
-                      <div class="form-check">
-                        <label class="form-check-label">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            value=""
-                          />
-                          <span class="form-check-sign">
-                            <span class="check"></span>
-                          </span>
-                        </label>
-                      </div>
-                    </div>
-                    <div class="col-11">
-                      <div class="card" onclick="openPerspective()">
-                        <div class="row">
-                          <div class="col-12">
-                            <div class="line-shortner name pull-left">
-                              <span
-                                >Record zero fire incidents attributable to
-                                Alpha Mead across all locations in 2020 Record
-                                zero fire incidents attributable to Alpha Mead
-                                across all locations in 2020</span
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row card-full-div">
-                    <div class="col-1">
-                      <div class="form-check">
-                        <label class="form-check-label">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            value=""
-                          />
-                          <span class="form-check-sign">
-                            <span class="check"></span>
-                          </span>
-                        </label>
-                      </div>
-                    </div>
-                    <div class="col-11">
-                      <div class="card" onclick="openPerspective()">
-                        <div class="row">
-                          <div class="col-12">
-                            <div class="line-shortner name pull-left">
-                              <span
-                                >Record zero fire incidents attributable to
-                                Alpha Mead across all locations in 2020 Record
-                                zero fire incidents attributable to Alpha Mead
-                                across all locations in 2020</span
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -2771,12 +2816,63 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                         <div class="row">
                           <div class="col-12">
                             <div class="line-shortner name pull-left">
-                              <span
-                                >Record zero fire incidents attributable to
-                                Alpha Mead across all locations in 2020 Record
-                                zero fire incidents attributable to Alpha Mead
-                                across all locations in 2020</span
-                              >
+                              <span>Increase Revenue</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row card-full-div">
+                    <div class="col-1">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-11">
+                      <div class="card" onclick="openObjective()">
+                        <div class="row">
+                          <div class="col-12">
+                            <div class="line-shortner name pull-left">
+                              <span>Increase Profitability</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row card-full-div">
+                    <div class="col-1">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-11">
+                      <div class="card" onclick="openObjective()">
+                        <div class="row">
+                          <div class="col-12">
+                            <div class="line-shortner name pull-left">
+                              <span>Cost Effectiveness</span>
                             </div>
                           </div>
                         </div>
@@ -2854,17 +2950,12 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                         <div class="row">
                           <div class="col-10">
                             <div class="line-shortner name pull-left">
-                              <span
-                                >Record zero fire incidents attributable to
-                                Alpha Mead across all locations in 2020 Record
-                                zero fire incidents attributable to Alpha Mead
-                                across all locations in 2020</span
-                              >
+                              <span>% Revenue Growth</span>
                             </div>
                           </div>
                           <div class="col-2">
                             <div class="period pull-right">
-                              <span>Quarter</span>
+                              <span>Quarterly</span>
                             </div>
                           </div>
                         </div>
@@ -2877,7 +2968,7 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                         >
                           <div class="col-6">
                             <div class="target pull-left">
-                              <span> <strong>Target: </strong>70.45% </span>
+                              <span> <strong>Target: </strong>59.25%</span>
                             </div>
                           </div>
                           <div class="col-6">
@@ -2897,6 +2988,158 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                                   <img
                                     class="rounded-circle"
                                     src="../../assets/images/user/user8.jpg"
+                                    alt="user"
+                                  />
+                                </li>
+                                <li
+                                  _ngcontent-hhc-c5=""
+                                  class="avatar avatar-sm"
+                                >
+                                  <span _ngcontent-hhc-c5="" class="badge"
+                                    >+2</span
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row card-full-div">
+                    <div class="col-1">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-11">
+                      <div class="card" onclick="openKPI()">
+                        <div class="row">
+                          <div class="col-10">
+                            <div class="line-shortner name pull-left">
+                              <span>% Gross Profit</span>
+                            </div>
+                          </div>
+                          <div class="col-2">
+                            <div class="period pull-right">
+                              <span>Quarterly</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="row"
+                          style="
+                            padding-top: 12px;
+                            margin-bottom: -10px !important;
+                          "
+                        >
+                          <div class="col-6">
+                            <div class="target pull-left">
+                              <span> <strong>Target: </strong>37.5%</span>
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div
+                              class="owner pull-right"
+                              style="padding-right: 12px"
+                            >
+                              <ul class="list-unstyled order-list">
+                                <li class="avatar avatar-sm">
+                                  <img
+                                    class="rounded-circle"
+                                    src="../../assets/images/user/user1.jpg"
+                                    alt="user"
+                                  />
+                                </li>
+                                <li class="avatar avatar-sm">
+                                  <img
+                                    class="rounded-circle"
+                                    src="../../assets/images/user/user2.jpg"
+                                    alt="user"
+                                  />
+                                </li>
+                                <li
+                                  _ngcontent-hhc-c5=""
+                                  class="avatar avatar-sm"
+                                >
+                                  <span _ngcontent-hhc-c5="" class="badge"
+                                    >+2</span
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row card-full-div">
+                    <div class="col-1">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-11">
+                      <div class="card" onclick="openKPI()">
+                        <div class="row">
+                          <div class="col-10">
+                            <div class="line-shortner name pull-left">
+                              <span>$ Net Income</span>
+                            </div>
+                          </div>
+                          <div class="col-2">
+                            <div class="period pull-right">
+                              <span>Quarterly</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="row"
+                          style="
+                            padding-top: 12px;
+                            margin-bottom: -10px !important;
+                          "
+                        >
+                          <div class="col-6">
+                            <div class="target pull-left">
+                              <span> <strong>Target: </strong>$ 0.0035 M</span>
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div
+                              class="owner pull-right"
+                              style="padding-right: 12px"
+                            >
+                              <ul class="list-unstyled order-list">
+                                <li class="avatar avatar-sm">
+                                  <img
+                                    class="rounded-circle"
+                                    src="../../assets/images/user/user6.jpg"
+                                    alt="user"
+                                  />
+                                </li>
+                                <li class="avatar avatar-sm">
+                                  <img
+                                    class="rounded-circle"
+                                    src="../../assets/images/user/user5.jpg"
                                     alt="user"
                                   />
                                 </li>
@@ -3103,6 +3346,8 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
       $("#edit_strategy").click(function () {
         $("#edit_strategy").hide();
         $("#save_str").show();
+        $("#approve_str").hide();
+        $("#reset_str").hide();
         $(".str_name").prop("disabled", false);
         $(".str_dept").prop("disabled", false);
         $(".str_sedate").prop("disabled", false);
@@ -3113,6 +3358,8 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
 
       $("#save_str").click(function () {
         $("#save_str").hide();
+        $("#approve_str").show();
+        $("#reset_str").hide();
         $("#edit_strategy").show();
         $(".str_name").prop("disabled", true);
         $(".str_dept").prop("disabled", true);
@@ -3120,6 +3367,16 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
         $(".str_type").prop("disabled", true);
         $(".str_import").prop("disabled", true);
         $(".str_date").prop("disabled", true);
+      });
+
+      $("#approve_str").click(function () {
+        $("#approve_str").hide();
+        $("#reset_str").show();
+      });
+
+      $("#reset_str").click(function () {
+        $("#reset_str").hide();
+        $("#approve_str").show();
       });
 
       $("#edit_perspective").click(function () {
