@@ -1351,3 +1351,24 @@ label {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+
+.kpi_data_form h4 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.kpi_data_form .form-heading {
+  padding-top: 12px;
+  padding-bottom: 16px;
+}
+
+.kpi_data_form img {
+  padding-bottom: 16px;
+}
+
+.kpi_data_form .form-group {
+  padding-bottom: 6px;
+}
