@@ -43,6 +43,15 @@
   background-repeat: no-repeat;
 }
 
+@media all and (max-width: 767px) {
+  .page-header {
+    /* background-color: #1e252d; */
+    background: #1e252d url("../images/Header-mobile.png") no-repeat left bottom;
+    background-size: cover;
+  }
+
+}
+
 .page-title {
   color: #fff;
   font-weight: 600;
@@ -1371,4 +1380,24 @@ label {
 
 .kpi_data_form .form-group {
   padding-bottom: 6px;
+}
+
+/*  */
+
+
+@media all and (max-width: 767px) {
+  .strategic-plan {
+    flex-direction:column !important;
+    align-items:center;
+  }
+  
+  .strategic-plan li span {
+    /* display:block; */
+  }
+}
+
+@media all and (max-width: 767px) {
+  .navbar-brand img {
+    max-width:120px;
+  }
 }
