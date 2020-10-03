@@ -43,13 +43,24 @@
   background-repeat: no-repeat;
 }
 
-@media all and (max-width: 767px) {
+@media all and (max-width: 1024px) {
   .page-header {
     /* background-color: #1e252d; */
     background: #1e252d url("../images/Header-mobile.png") no-repeat left bottom;
     background-size: cover;
   }
+}
 
+@media only screen and (max-width: 768px) {
+  .page-header {
+    margin-top: 110px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .page-header {
+    margin-top: 70px;
+  }
 }
 
 .page-title {
@@ -1390,10 +1401,6 @@ label {
     flex-direction:column !important;
     align-items:center;
   }
-  
-  .strategic-plan li span {
-    /* display:block; */
-  }
 }
 
 @media all and (max-width: 767px) {
@@ -1401,3 +1408,13 @@ label {
     max-width:120px;
   }
 }
+
+@media all and (max-width: 1024px) and (min-width: 768px) {
+  .tab-12 {
+    -ms-flex: 0 0 100%;
+    -webkit-box-flex: 0;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
