@@ -14,6 +14,10 @@
     <link href="../../assets/css/style.css" rel="stylesheet" />
     <link href="../../assets/css/custom.css" rel="stylesheet" />
     <link href="../../assets/css/initatives.css" rel="stylesheet" />
+    <link
+      href="../../assets/css/custom-colors/custom-colors.css"
+      rel="stylesheet"
+    />
     <link href="../../assets/css/icheck-bootstrap.min.css" rel="stylesheet" />
     <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" />
     <!-- You can choose a theme from css/styles instead of get all themes -->
@@ -416,6 +420,11 @@
       .apexcharts-menu-item.exportSVG {
         display: none;
       }
+
+      .remove-btn {
+        background-color: #fff;
+        float: right;
+      }
     </style>
   </head>
 
@@ -448,7 +457,7 @@
           ></a>
           <a href="#" onClick="return false;" class="bars"></a>
           <a href="#" onClick="return false;" class="bar_nav sidemenu-collapse"
-            ><i class="nav-hdr-btn ti-menu" style="color: #000;"></i
+            ><i class="nav-hdr-btn ti-menu" style="color: #000"></i
           ></a>
           <a class="navbar-brand nav_float" href="#">
             <img
@@ -460,7 +469,7 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="fullscreen" style="padding: 4px; left: -14px;">
+            <li class="fullscreen" style="padding: 4px; left: -14px">
               <ul class="list-unstyled order-list">
                 <li class="avatar avatar-sm">
                   <img
@@ -499,13 +508,13 @@
               <form class="form-header" action="" method="POST">
                 <input
                   class="au-input au-input--xl"
-                  style="min-width: 20%;"
+                  style="min-width: 20%"
                   type="text"
                   name="search"
                   placeholder="Search"
                 />
                 <button class="au-btn--submit" type="submit">
-                  <i class="fa fa-search" style="color: gray;"></i>
+                  <i class="fa fa-search" style="color: gray"></i>
                 </button>
               </form>
             </li>
@@ -523,7 +532,7 @@
                 data-toggle="dropdown"
                 role="button"
               >
-                <i class="nav-hdr-btn ti-bell" style="color: gray;"></i>
+                <i class="nav-hdr-btn ti-bell" style="color: gray"></i>
                 <span class="notify"></span>
                 <span class="heartbeat"></span>
               </a>
@@ -536,7 +545,7 @@
                 data-target="#settings"
                 role="button"
               >
-                <i class="nav-hdr-btn ti-settings" style="color: gray;"></i>
+                <i class="nav-hdr-btn ti-settings" style="color: gray"></i>
                 <span class="notify"></span>
                 <span class="heartbeat"></span>
               </a>
@@ -711,25 +720,25 @@
       </aside>
 
       <aside id="initiative_sidebar" class="initiative_sidebar">
-        <div class="sub_initiatives" id="sub_initiatives" style="height: 100%;">
-          <div class="card" style="height: 100%;">
+        <div class="sub_initiatives" id="sub_initiatives" style="height: 100%">
+          <div class="card" style="height: 100%">
             <div
               class="header d-flex flex-row initiate_sidebar"
-              style="margin-top: 5%; padding: 5px 30px 5px 5px;"
+              style="margin-top: 5%; padding: 5px 30px 5px 5px"
             >
               <h5 class="prob flex-fill">
-                <strong style="color: #333; font-size: 16px;">Settings</strong>
+                <strong style="color: #333; font-size: 16px">Settings</strong>
               </h5>
             </div>
             <div class="d-flex flex-column" id="initiate_sidebar">
               <div
                 class="d-flex flex-column sub_initiative_sidebar_details side_border_p"
-                style="cursor: auto;"
+                style="cursor: auto"
               >
                 <div class="d-flex flex-row p-b-5">
                   <div
                     class="d-flex flex-column profile_content"
-                    style="border-bottom: 1px solid #ececec;"
+                    style="border-bottom: 1px solid #ececec"
                   >
                     <span
                       style="
@@ -742,7 +751,7 @@
                     >
                   </div>
                 </div>
-                <div class="row" style="padding-top: 8px;">
+                <div class="row" style="padding-top: 8px">
                   <div class="form-group browser-default col-12">
                     <select
                       id="widget_type"
@@ -756,7 +765,7 @@
                   </div>
                 </div>
 
-                <div class="row widget Chart" style="padding: 8px;">
+                <div class="row widget Chart" style="padding: 8px">
                   <div class="col-3 form-group chart-type">
                     <center data-toggle="tooltip" title="Bubble">
                       <img
@@ -849,7 +858,7 @@
 
                 <div
                   class="row widget Drilldown"
-                  style="padding: 8px; display: none;"
+                  style="padding: 8px; display: none"
                 >
                   <div class="col-3 form-group chart-type">
                     <center data-toggle="tooltip" title="Bubble">
@@ -937,12 +946,12 @@
             <table id="chart_table" class="table table-bordered">
               <thead class="bg-light">
                 <tr>
-                  <th style="font-size: 14px !important;">
+                  <th style="font-size: 14px !important">
                     Data Fields
                     <div class="focused pull-right">
                       <button
                         class="form-control rounded-circle"
-                        id="chart-setting"
+                        id="add-chart-setting"
                       >
                         <i class="fa fa-plus"></i>
                       </button>
@@ -958,7 +967,7 @@
                 "
               >
                 <tr>
-                  <td style="text-align: left;">
+                  <td style="text-align: left">
                     <div class="row">
                       <div class="form-group col-md-6">
                         <label for="">Display Name</label>
@@ -979,82 +988,93 @@
                       </div>
 
                       <div class="col-12">
-                        <hr style="border: 1px solid #505050;" />
+                        <hr style="border: 1px solid #505050" />
                       </div>
                     </div>
-                    <div class="row" id="chart-setting-div">
-                      <div class="form-group col-md-10">
-                        <label for="">Display Name</label>
-                        <input
-                          type="text"
-                          class="form-control browser-default"
-                        />
-                      </div>
-                      <div class="form-group col-md-2 color_picks_1">
-                        <label
-                          for="sub_initative_progress"
-                          style="text-align: left;"
-                          >Color</label
-                        >
-                        <div class="input-group" style="margin-bottom: 0;">
-                          <div class="input-group-append">
-                            <span
-                              class="input-group-text pickr"
-                              style="
-                                width: 90px;
-                                border-radius: 0px;
-                                height: 30px;
-                              "
-                            ></span>
+                    <div id="chart-setting-div">
+                      <div class="row">
+                        <div class="form-group col-md-10">
+                          <label for="">Display Name</label>
+                          <input
+                            type="text"
+                            class="form-control browser-default"
+                          />
+                        </div>
+                        <div class="form-group col-md-2 color_picks_1">
+                          <label
+                            for="sub_initative_progress"
+                            style="text-align: left"
+                            >Color</label
+                          >
+                          <div class="" style="margin-bottom: 0">
+                            <div class="">
+                              <a
+                                href="#"
+                                id="color_trigger1"
+                                data-toggle="modal"
+                                data-target="#color_palette_popup"
+                              >
+                                <span
+                                  class="input-group-text"
+                                  id="color-holder"
+                                  style="
+                                    width: 90px;
+                                    border-radius: 0px;
+                                    height: 30px;
+                                    background: #eeeeee;
+                                  "
+                                ></span>
+                              </a>
+                            </div>
                           </div>
                         </div>
-                      </div>
 
-                      <div class="form-group col-md-12">
-                        <label for="">Data Field</label>
-                        <input
-                          type="text"
-                          class="form-control browser-default"
-                          id="kpi_formula"
-                          readonly
-                          data-toggle="modal"
-                          data-target="#kpi_formula_popup"
-                          role="button"
-                        />
-                        <a
-                          href="#"
-                          id="kpi_trigger1"
-                          data-toggle="modal"
-                          data-target=".kpi_formula_popup"
-                        ></a>
-                      </div>
+                        <div class="form-group col-md-12">
+                          <label for="">Data Field</label>
+                          <input
+                            type="text"
+                            class="form-control browser-default"
+                            id="kpi_formula"
+                            readonly
+                            data-toggle="modal"
+                            data-target="#kpi_formula_popup"
+                            role="button"
+                          />
+                          <a
+                            href="#"
+                            id="kpi_trigger1"
+                            data-toggle="modal"
+                            data-target=".kpi_formula_popup"
+                          ></a>
+                        </div>
 
-                      <div class="form-group col-md-6">
-                        <label for="">Axis</label>
-                        <select class="form-control browser-default">
-                          <option value="Y-axis">Y-axis</option>
-                          <option value="Z-axis">Z-axis</option>
-                        </select>
-                      </div>
-                      <div class="form-group col-md-6">
-                        <label for="">Type</label>
-                        <select class="form-control browser-default">
-                          <option value="Actual">Actual</option>
-                          <option value="Target">Target</option>
-                          <option value="Budget">Budget</option>
-                          <option value="Forecast">Forecast</option>
-                          <option value="Gap">Gap</option>
-                        </select>
-                      </div>
-                      <div class="col-12">
-                        <hr style="border: 1px solid #505050;" />
+                        <div class="form-group col-md-6">
+                          <label for="">Axis</label>
+                          <select class="form-control browser-default">
+                            <option value="Y-axis">Y-axis</option>
+                            <option value="Z-axis">Z-axis</option>
+                          </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="">Type</label>
+                          <select class="form-control browser-default">
+                            <option value="Actual">Actual</option>
+                            <option value="Target">Target</option>
+                            <option value="Budget">Budget</option>
+                            <option value="Forecast">Forecast</option>
+                            <option value="Gap">Gap</option>
+                          </select>
+                        </div>
+                        <div class="col-12">
+                          <hr style="border: 1px solid #505050" />
+                        </div>
                       </div>
                     </div>
                   </td>
                 </tr>
               </tbody>
             </table>
-            <div class="row" style="padding-bottom: 6px;">
+            <div class="row" style="padding-bottom: 6px">
               <div class="col-12">
                 <div class="form-line right">
                   <button
@@ -1065,9 +1085,7 @@
                   >
                     Cancel
                   </button>
-                  <button class="initative_save_btn" value="Save">
-                    Save
-                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
                 </div>
               </div>
             </div>
@@ -1125,7 +1143,7 @@
                 </select>
               </div>
               <div class="col-12">
-                <hr style="border: 1px solid #505050;" />
+                <hr style="border: 1px solid #505050" />
               </div>
               <div class="col-12">
                 <div class="form-line right">
@@ -1137,11 +1155,57 @@
                   >
                     Cancel
                   </button>
-                  <button class="initative_save_btn" value="Save">
-                    Save
-                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Setting -->
+
+    <!-- Color Palette -->
+    <div
+      class="modal fade"
+      id="color_palette_popup"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="flex-flow: column-reverse; margin-top: 8%"
+      >
+        <div class="modal-content" style="width: auto">
+          <div class="modal-body">
+            <div class="displayNone">
+              <div class="color-box" id="color-div-box">
+                <i class="fas fa-check" id="color-check"></i>
+              </div>
+            </div>
+
+            <!-- Colors Container -->
+            <div class="colors-container">
+              <div id="color1"></div>
+              <div id="color2"></div>
+              <div id="color3"></div>
+              <div id="color4"></div>
+              <div id="color5"></div>
+              <div id="color6"></div>
+              <div id="color7"></div>
+              <div id="color8"></div>
+              <div id="color9"></div>
+              <div id="color10"></div>
+              <div id="color11"></div>
+              <div id="color12"></div>
+              <div id="color13"></div>
+              <div id="color14"></div>
+              <div id="color15"></div>
+              <div id="color16"></div>
+              <div id="color17"></div>
+              <div id="color18"></div>
             </div>
           </div>
         </div>
@@ -1307,7 +1371,7 @@
         <div class="col-lg-6 col-md-6 text-center text-sm-left pt-2 mb-0 ml-4">
           <h5
             class="page-title"
-            style="font-weight: 600; text-transform: uppercase;"
+            style="font-weight: 600; text-transform: uppercase"
           >
             Charts
           </h5>
@@ -1318,12 +1382,12 @@
       <!-- Page Body -->
       <div
         class="container-fluid"
-        style="height: 600px;"
+        style="height: 600px"
         ondrop="drop(event)"
         ondragover="allowDrop(event)"
       >
         <!-- COl -->
-        <div class="collapse_arrow_right" style="display: none;">
+        <div class="collapse_arrow_right" style="display: none">
           <i class="arrow_collapse_size fas fa-caret-right"></i>
         </div>
         <div class="collapse_arrow_left">
@@ -1350,6 +1414,7 @@
     <script src="../../assets/jquery-ui.min.js"></script>
     <script src="../../assets/moment.js"></script>
     <script src="../../assets/js/paging.js"></script>
+    <script src="../../assets/css/custom-colors/custom-colors.js"></script>
     <script src="../../assets/js/pages/spiritedaway.js"></script>
     <script src="../../assets/jquery.editable.min.js"></script>
     <script src="../../assets/js/bootstrap.bundle.min.js"></script>
@@ -5514,16 +5579,91 @@
         });
       }
 
-      document.getElementById("chart-setting").onclick = duplicateChart;
+      $("#add-chart-setting").click(function () {
+        $("#chart-setting-div").append(`
+          <div class="row chart-setting-clone">
+            <div class="form-group col-md-12">
+              <button class="remove-btn" type="button">
+                <i class="fas fa-trash border-box"></i>
+              </button>
+            </div>
+            <div class="form-group col-md-10">
+              <label for="">Display Name</label>
+              <input
+                type="text"
+                class="form-control browser-default"
+              />
+            </div>
+            <div class="form-group col-md-2 color_picks_1">
+              <label
+                for="sub_initative_progress"
+                style="text-align: left"
+                >Color</label
+              >
+              <a
+                href="#"
+                id="color_trigger1"
+                data-toggle="modal"
+                data-target="#color_palette_popup"
+              >
+                <span
+                  class="input-group-text"
+                  id="color-holder"
+                  style="
+                    width: 90px;
+                    border-radius: 0px;
+                    height: 30px;
+                    background: #eeeeee;
+                  "
+                ></span>
+              </a>
+            </div>
 
-      var i = 0;
-      var originalChart = document.getElementById("chart-setting-div");
+            <div class="form-group col-md-12">
+              <label for="">Data Field</label>
+              <input
+                type="text"
+                class="form-control browser-default"
+                id="kpi_formula"
+                readonly
+                data-toggle="modal"
+                data-target="#kpi_formula_popup"
+                role="button"
+              />
+              <a
+                href="#"
+                id="kpi_trigger1"
+                data-toggle="modal"
+                data-target=".kpi_formula_popup"
+              ></a>
+            </div>
 
-      function duplicateChart() {
-        var clone = originalChart.cloneNode(true); // "deep" clone
-        clone.id = "chart" + ++i; // there can only be one element with an ID
-        originalChart.parentNode.appendChild(clone);
-      }
+            <div class="form-group col-md-6">
+              <label for="">Axis</label>
+              <select class="form-control browser-default">
+                <option value="Y-axis">Y-axis</option>
+                <option value="Z-axis">Z-axis</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="">Type</label>
+              <select class="form-control browser-default">
+                <option value="Actual">Actual</option>
+                <option value="Target">Target</option>
+                <option value="Budget">Budget</option>
+                <option value="Forecast">Forecast</option>
+                <option value="Gap">Gap</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <hr style="border: 1px solid #505050" />
+            </div>
+          </div>`);
+      });
+
+      $("#chart-setting-div").on("click", ".remove-btn", function (e) {
+        $(this).parents(".chart-setting-clone").remove();
+      });
     </script>
   </body>
 </html>

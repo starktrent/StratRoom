@@ -16,6 +16,7 @@
     <link href="../../assets/css/initatives.css" rel="stylesheet" />
     <link href="../../assets/css/icheck-bootstrap.min.css" rel="stylesheet" />
     <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" />
+    <link href="../../assets/select2.min.css" rel="stylesheet" />
     <!-- You can choose a theme from css/styles instead of get all themes -->
     <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
     <!-- <link href="../../assets/css/table-view.css" rel="stylesheet" /> -->
@@ -433,6 +434,11 @@
       .apexcharts-menu-item.exportSVG {
         display: none;
       }
+
+      .remove-btn {
+        background-color: #fff;
+        float: right;
+      }
     </style>
   </head>
 
@@ -465,7 +471,7 @@
           ></a>
           <a href="#" onClick="return false;" class="bars"></a>
           <a href="#" onClick="return false;" class="bar_nav sidemenu-collapse"
-            ><i class="nav-hdr-btn ti-menu" style="color: #000;"></i
+            ><i class="nav-hdr-btn ti-menu" style="color: #000"></i
           ></a>
           <a class="navbar-brand nav_float" href="#">
             <img
@@ -477,7 +483,7 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="fullscreen" style="padding: 4px; left: -14px;">
+            <li class="fullscreen" style="padding: 4px; left: -14px">
               <ul class="list-unstyled order-list">
                 <li class="avatar avatar-sm">
                   <img
@@ -516,13 +522,13 @@
               <form class="form-header" action="" method="POST">
                 <input
                   class="au-input au-input--xl"
-                  style="min-width: 20%;"
+                  style="min-width: 20%"
                   type="text"
                   name="search"
                   placeholder="Search"
                 />
                 <button class="au-btn--submit" type="submit">
-                  <i class="fa fa-search" style="color: gray;"></i>
+                  <i class="fa fa-search" style="color: gray"></i>
                 </button>
               </form>
             </li>
@@ -540,7 +546,7 @@
                 data-toggle="dropdown"
                 role="button"
               >
-                <i class="nav-hdr-btn ti-bell" style="color: gray;"></i>
+                <i class="nav-hdr-btn ti-bell" style="color: gray"></i>
                 <span class="notify"></span>
                 <span class="heartbeat"></span>
               </a>
@@ -553,7 +559,7 @@
                 data-target="#settings"
                 role="button"
               >
-                <i class="nav-hdr-btn ti-settings" style="color: gray;"></i>
+                <i class="nav-hdr-btn ti-settings" style="color: gray"></i>
                 <span class="notify"></span>
                 <span class="heartbeat"></span>
               </a>
@@ -728,25 +734,25 @@
       </aside>
 
       <aside id="initiative_sidebar" class="initiative_sidebar">
-        <div class="sub_initiatives" id="sub_initiatives" style="height: 100%;">
-          <div class="card" style="height: 100%;">
+        <div class="sub_initiatives" id="sub_initiatives" style="height: 100%">
+          <div class="card" style="height: 100%">
             <div
               class="header d-flex flex-row initiate_sidebar"
-              style="margin-top: 5%; padding: 5px 30px 5px 5px;"
+              style="margin-top: 5%; padding: 5px 30px 5px 5px"
             >
               <h5 class="prob flex-fill">
-                <strong style="color: #333; font-size: 16px;">Settings</strong>
+                <strong style="color: #333; font-size: 16px">Settings</strong>
               </h5>
             </div>
             <div class="d-flex flex-column" id="initiate_sidebar">
               <div
                 class="d-flex flex-column sub_initiative_sidebar_details side_border_p"
-                style="cursor: auto;"
+                style="cursor: auto"
               >
                 <div class="d-flex flex-row">
                   <div
                     class="d-flex flex-column profile_content"
-                    style="border-bottom: 1px solid #ececec;"
+                    style="border-bottom: 1px solid #ececec"
                   >
                     <span
                       style="
@@ -759,7 +765,7 @@
                     >
                   </div>
                 </div>
-                <div class="row" style="padding: 8px 28px;">
+                <div class="row" style="padding: 8px 28px">
                   <div
                     class="col-12 custom-control custom-radio"
                     onclick="twoColumn()"
@@ -774,7 +780,7 @@
                     <label
                       class="custom-control-label"
                       for="defaultChecked1"
-                      style="padding-left: 8px;"
+                      style="padding-left: 8px"
                     >
                       Two Column
                     </label>
@@ -793,7 +799,7 @@
                     <label
                       class="custom-control-label"
                       for="defaultChecked2"
-                      style="padding-left: 8px;"
+                      style="padding-left: 8px"
                     >
                       Three Column
                     </label>
@@ -803,12 +809,12 @@
 
               <div
                 class="d-flex flex-column sub_initiative_sidebar_details side_border_p"
-                style="cursor: auto;"
+                style="cursor: auto"
               >
                 <div class="d-flex flex-row p-b-5">
                   <div
                     class="d-flex flex-column profile_content"
-                    style="border-bottom: 1px solid #ececec;"
+                    style="border-bottom: 1px solid #ececec"
                   >
                     <span
                       style="
@@ -821,7 +827,7 @@
                     >
                   </div>
                 </div>
-                <div class="row" style="padding-top: 8px;">
+                <div class="row" style="padding-top: 8px">
                   <div class="form-group browser-default col-12">
                     <select
                       id="widget_type"
@@ -839,7 +845,7 @@
 
                 <div
                   class="row widget Chart"
-                  style="padding: 8px; display: none;"
+                  style="padding: 8px; display: none"
                 >
                   <div class="col-3 form-group chart-type">
                     <center data-toggle="tooltip" title="Bubble">
@@ -971,16 +977,16 @@
 
                 <div
                   class="row widget Text"
-                  style="padding: 2px; display: none; padding-top: 8px;"
+                  style="padding: 2px; display: none; padding-top: 8px"
                 >
                   <div class="col-12 form-group">
                     <div
                       class="d-flex flex-row employe_content_border sub_initiative_details"
-                      style="padding: 0; border-radius: 8px;"
+                      style="padding: 0; border-radius: 8px"
                     >
                       <div
                         class="flex-column flex-fill profile_content"
-                        style="padding: 0;"
+                        style="padding: 0"
                       >
                         <div
                           class="text-type-card-mini bg-blue"
@@ -996,7 +1002,7 @@
                             </div>
                             <div
                               class="col-12"
-                              style="margin-bottom: 6%; margin-top: -2%;"
+                              style="margin-bottom: 6%; margin-top: -2%"
                             >
                               <h4>Total Revenue</h4>
                               <strong>$ 202.35 M</strong>
@@ -1019,10 +1025,10 @@
                               "
                             >
                               <div class="card-icon">
-                                <i
-                                  class="fas fa-dollar-sign"
-                                  style="color: #10316b;"
-                                ></i>
+                                <img
+                                  src="../organisation/images/widgets/Currency.png"
+                                  style="width: 26px"
+                                />
                               </div>
                             </div>
                           </div>
@@ -1032,11 +1038,11 @@
 
                     <div
                       class="d-flex flex-row employe_content_border sub_initiative_details"
-                      style="padding: 0; border-radius: 8px;"
+                      style="padding: 0; border-radius: 8px"
                     >
                       <div
                         class="flex-column flex-fill profile_content"
-                        style="padding: 0;"
+                        style="padding: 0"
                       >
                         <div
                           class="text-type-card-mini bg-green"
@@ -1052,7 +1058,7 @@
                             </div>
                             <div
                               class="col-12"
-                              style="margin-bottom: 6%; margin-top: -2%;"
+                              style="margin-bottom: 6%; margin-top: -2%"
                             >
                               <h4>Total Revenue</h4>
                               <strong>$ 202.35 M</strong>
@@ -1077,7 +1083,7 @@
                               <div class="card-icon">
                                 <i
                                   class="fas fa-hashtag"
-                                  style="color: #1e6262;"
+                                  style="color: #1e6262"
                                 ></i>
                               </div>
                             </div>
@@ -1088,11 +1094,11 @@
 
                     <div
                       class="d-flex flex-row employe_content_border sub_initiative_details"
-                      style="padding: 0; border-radius: 8px;"
+                      style="padding: 0; border-radius: 8px"
                     >
                       <div
                         class="flex-column flex-fill profile_content"
-                        style="padding: 0;"
+                        style="padding: 0"
                       >
                         <div
                           class="text-type-card-mini bg-purple"
@@ -1108,7 +1114,7 @@
                             </div>
                             <div
                               class="col-12"
-                              style="margin-bottom: 6%; margin-top: -2%;"
+                              style="margin-bottom: 6%; margin-top: -2%"
                             >
                               <h4>Total Revenue</h4>
                               <strong>$ 202.35 M</strong>
@@ -1144,11 +1150,11 @@
 
                     <div
                       class="d-flex flex-row employe_content_border sub_initiative_details"
-                      style="padding: 0; border-radius: 8px;"
+                      style="padding: 0; border-radius: 8px"
                     >
                       <div
                         class="flex-column flex-fill profile_content"
-                        style="padding: 0;"
+                        style="padding: 0"
                       >
                         <div
                           class="text-type-card-mini bg-pink"
@@ -1164,7 +1170,7 @@
                             </div>
                             <div
                               class="col-12"
-                              style="margin-bottom: 6%; margin-top: -2%;"
+                              style="margin-bottom: 6%; margin-top: -2%"
                             >
                               <h4>Total Revenue</h4>
                               <strong>$ 202.35 M</strong>
@@ -1189,7 +1195,7 @@
                               <div class="card-icon">
                                 <i
                                   class="fas fa-percent"
-                                  style="color: #fd3270;"
+                                  style="color: #fd3270"
                                 ></i>
                               </div>
                             </div>
@@ -1202,7 +1208,7 @@
 
                 <div
                   class="row widget Table"
-                  style="padding: 8px 16px; display: none;"
+                  style="padding: 8px 16px; display: none"
                 >
                   <label for="drilldown">Drill Down Table</label>
                   <div
@@ -1217,7 +1223,7 @@
                     />
                   </div>
 
-                  <label for="data" style="padding-top: 6%;">Data Table</label>
+                  <label for="data" style="padding-top: 6%">Data Table</label>
                   <div
                     class="col-12 form-group chart-type employe_content_border sub_initiative_details"
                   >
@@ -1231,10 +1237,7 @@
                   </div>
                 </div>
 
-                <div
-                  class="row widget Map"
-                  style="padding: 8px; display: none;"
-                >
+                <div class="row widget Map" style="padding: 8px; display: none">
                   <div class="col-12 form-group">
                     <div
                       class="col-12 form-group employe_content_border sub_initiative_details"
@@ -1432,12 +1435,12 @@
             <table id="chart_table" class="table table-bordered">
               <thead class="bg-light">
                 <tr>
-                  <th style="font-size: 14px !important;">
+                  <th style="font-size: 14px !important">
                     Data Fields
                     <div class="focused pull-right">
                       <button
                         class="form-control rounded-circle"
-                        id="chart-setting"
+                        id="add-chart-setting"
                       >
                         <i class="fa fa-plus"></i>
                       </button>
@@ -1453,7 +1456,7 @@
                 "
               >
                 <tr>
-                  <td style="text-align: left;">
+                  <td style="text-align: left">
                     <div class="row">
                       <div class="form-group col-md-6">
                         <label for="">Display Name</label>
@@ -1472,84 +1475,99 @@
                           <option value="Z-axis">Z-axis</option>
                         </select>
                       </div>
+                      <div class="form-group col-md-12">
+                        <label for="">Measurement Frequency</label>
+                        <select
+                          class="form-control browser-default"
+                          name="chartfrequency"
+                          id="chartfrequency"
+                        >
+                          <option value="Monthly">Monthly</option>
+                          <option value="Quarterly">Quarterly</option>
+                          <option value="Half Yearly">Half Yearly</option>
+                          <option value="Annually">Annually</option>
+                        </select>
+                      </div>
 
                       <div class="col-12">
-                        <hr style="border: 1px solid #505050;" />
+                        <hr style="border: 1px solid #505050" />
                       </div>
                     </div>
-                    <div class="row" id="chart-setting-div">
-                      <div class="form-group col-md-10">
-                        <label for="">Display Name</label>
-                        <input
-                          type="text"
-                          class="form-control browser-default"
-                        />
-                      </div>
-                      <div class="form-group col-md-2 color_picks_1">
-                        <label
-                          for="sub_initative_progress"
-                          style="text-align: left;"
-                          >Color</label
-                        >
-                        <div class="input-group" style="margin-bottom: 0;">
-                          <div class="input-group-append">
-                            <span
-                              class="input-group-text pickr"
-                              style="
-                                width: 90px;
-                                border-radius: 0px;
-                                height: 30px;
-                              "
-                            ></span>
+                    <div id="chart-setting-div">
+                      <div class="row">
+                        <div class="form-group col-md-10">
+                          <label for="">Display Name</label>
+                          <input
+                            type="text"
+                            class="form-control browser-default"
+                          />
+                        </div>
+                        <div class="form-group col-md-2 color_picks_1">
+                          <label
+                            for="sub_initative_progress"
+                            style="text-align: left"
+                            >Color</label
+                          >
+                          <div class="input-group" style="margin-bottom: 0">
+                            <div class="input-group-append">
+                              <span
+                                class="input-group-text pickr"
+                                style="
+                                  width: 90px;
+                                  border-radius: 0px;
+                                  height: 30px;
+                                "
+                              ></span>
+                            </div>
                           </div>
                         </div>
-                      </div>
 
-                      <div class="form-group col-md-12">
-                        <label for="">Data Field</label>
-                        <input
-                          type="text"
-                          class="form-control browser-default"
-                          id="kpi_formula"
-                          readonly
-                          data-toggle="modal"
-                          data-target="#kpi_formula_popup"
-                          role="button"
-                        />
-                        <a
-                          href="#"
-                          id="kpi_trigger1"
-                          data-toggle="modal"
-                          data-target=".kpi_formula_popup"
-                        ></a>
-                      </div>
+                        <div class="form-group col-md-12">
+                          <label for="">Data Field</label>
+                          <input
+                            type="text"
+                            class="form-control browser-default"
+                            id="kpi_formula"
+                            readonly
+                            data-toggle="modal"
+                            data-target="#kpi_formula_popup"
+                            role="button"
+                          />
+                          <a
+                            href="#"
+                            id="kpi_trigger1"
+                            data-toggle="modal"
+                            data-target=".kpi_formula_popup"
+                          ></a>
+                        </div>
 
-                      <div class="form-group col-md-6">
-                        <label for="">Axis</label>
-                        <select class="form-control browser-default">
-                          <option value="Y-axis">Y-axis</option>
-                          <option value="Z-axis">Z-axis</option>
-                        </select>
-                      </div>
-                      <div class="form-group col-md-6">
-                        <label for="">Type</label>
-                        <select class="form-control browser-default">
-                          <option value="Actual">Actual</option>
-                          <option value="Target">Target</option>
-                          <option value="Budget">Budget</option>
-                          <option value="Forecast">Forecast</option>
-                          <option value="Gap">Gap</option>
-                        </select>
-                      </div>
-                      <div class="col-12">
-                        <hr style="border: 1px solid #505050;" />
+                        <div class="form-group col-md-6">
+                          <label for="">Axis</label>
+                          <select class="form-control browser-default">
+                            <option value="Y-axis">Y-axis</option>
+                            <option value="Z-axis">Z-axis</option>
+                          </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="">Type</label>
+                          <select class="form-control browser-default">
+                            <option value="Actual">Actual</option>
+                            <option value="Target">Target</option>
+                            <option value="Budget">Budget</option>
+                            <option value="Forecast">Forecast</option>
+                            <option value="Gap">Gap</option>
+                          </select>
+                        </div>
+                        <div class="col-12">
+                          <hr style="border: 1px solid #505050" />
+                        </div>
                       </div>
                     </div>
                   </td>
                 </tr>
               </tbody>
             </table>
-            <div class="row" style="padding-bottom: 6px;">
+            <div class="row" style="padding-bottom: 6px">
               <div class="col-12">
                 <div class="form-line right">
                   <button
@@ -1560,9 +1578,77 @@
                   >
                     Cancel
                   </button>
-                  <button class="initative_save_btn" value="Save">
-                    Save
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Chart Setting -->
+
+    <!-- Heatmap Setting -->
+    <div
+      class="modal fade"
+      id="heatmap_setting"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Chart Settings</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row" style="padding-bottom: 6px">
+              <div class="form-group col-md-12">
+                <label for="">Measurement Frequency</label>
+                <select
+                  class="form-control browser-default"
+                  name="chartfrequency"
+                  id="chartfrequency"
+                >
+                  <option value="Monthly">Monthly</option>
+                  <option value="Quarterly">Quarterly</option>
+                  <option value="Half Yearly">Half Yearly</option>
+                  <option value="Annually">Annually</option>
+                </select>
+              </div>
+              <div class="col-12 form-group">
+                <label for="Risk">Risk Fields</label>
+                <select
+                  class="multi-select"
+                  name="states[]"
+                  multiple="multiple"
+                >
+                  <option value="971">
+                    Failure to meet compliance obligations
+                  </option>
+                  <option value="972">
+                    Failure to meet compliance obligations
+                  </option>
+                  <option value="973">
+                    Failure to meet compliance obligations
+                  </option>
+                </select>
+              </div>
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
                   </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
                 </div>
               </div>
             </div>
@@ -1677,7 +1763,7 @@
                 </ul>
               </div>
               <div class="col-12">
-                <hr style="border: 1px solid #505050;" />
+                <hr style="border: 1px solid #505050" />
               </div>
               <div class="col-12">
                 <div class="form-line right">
@@ -1689,9 +1775,7 @@
                   >
                     Cancel
                   </button>
-                  <button class="initative_save_btn" value="Save">
-                    Save
-                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
                 </div>
               </div>
             </div>
@@ -1722,25 +1806,21 @@
             <table
               class="table dashboard-task-infos align-center dashboard-table"
               id="drilldownTableView"
-              style="margin-bottom: 0px !important;"
+              style="margin-bottom: 0px !important"
             >
               <thead>
                 <tr>
-                  <th rowspan="2" style="width: 40px;">
+                  <th rowspan="2" style="width: 40px">
                     <i class="fas fa-arrow-up"></i>
                     <i class="fas fa-arrow-down"></i>
                   </th>
-                  <th rowspan="2" style="width: 198px;">
-                    Name/Period
-                  </th>
-                  <th colspan="3">
-                    Q1 2020
-                  </th>
+                  <th rowspan="2" style="width: 198px">Name/Period</th>
+                  <th colspan="3">Q1 2020</th>
                 </tr>
                 <tr>
-                  <th style="width: 98px;">Actual</th>
-                  <th style="width: 98px;">Target</th>
-                  <th style="width: 98px;">Gap</th>
+                  <th style="width: 98px">Actual</th>
+                  <th style="width: 98px">Target</th>
+                  <th style="width: 98px">Gap</th>
                 </tr>
               </thead>
               <tbody>
@@ -1948,7 +2028,7 @@
                 </ul>
               </div>
               <div class="col-12">
-                <hr style="border: 1px solid #505050;" />
+                <hr style="border: 1px solid #505050" />
               </div>
               <div class="col-12">
                 <div class="form-line right">
@@ -1960,9 +2040,7 @@
                   >
                     Cancel
                   </button>
-                  <button class="initative_save_btn" value="Save">
-                    Save
-                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
                 </div>
               </div>
             </div>
@@ -1993,15 +2071,15 @@
             <table
               class="table dashboard-task-infos align-center dashboard-table"
               id="dataTableView"
-              style="margin-bottom: 0px !important;"
+              style="margin-bottom: 0px !important"
             >
               <thead>
                 <tr>
-                  <th style="width: 80px;">Period</th>
-                  <th style="width: 98px;">Actual</th>
-                  <th style="width: 98px;">Target</th>
-                  <th style="width: 98px;">Gap</th>
-                  <th style="width: 98px;">YTD</th>
+                  <th style="width: 80px">Period</th>
+                  <th style="width: 98px">Actual</th>
+                  <th style="width: 98px">Target</th>
+                  <th style="width: 98px">Gap</th>
+                  <th style="width: 98px">YTD</th>
                 </tr>
               </thead>
               <tbody>
@@ -2320,7 +2398,7 @@
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-body">
-            <div style="height: 400px;" id="Maplarge"></div>
+            <div style="height: 400px" id="Maplarge"></div>
           </div>
         </div>
       </div>
@@ -2351,8 +2429,8 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body" style="padding: 0 25px;">
-            <div class="col-md-8" style="padding: 0;">
+          <div class="modal-body" style="padding: 0 25px">
+            <div class="col-md-8" style="padding: 0">
               Field Name: &nbsp;
               <select class="form-control browser-default">
                 <option value="Actual">Actual</option>
@@ -2366,34 +2444,34 @@
               <ul
                 class="nav nav-tabs"
                 role="tablist"
-                style="padding-bottom: 10px;"
+                style="padding-bottom: 10px"
               >
                 <li
                   class="nav-item m-l-10"
-                  style="top: -4px; background: transparent;"
+                  style="top: -4px; background: transparent"
                 >
                   <a
                     class="nav-link active"
                     data-toggle="tab"
-                    style="max-width: 170px;"
+                    style="max-width: 170px"
                     href="#formula_builder"
                     >Formula Builder</a
                   >
                 </li>
                 <li
                   class="nav-item m-l-10"
-                  style="top: -4px; background: transparent;"
+                  style="top: -4px; background: transparent"
                 >
                   <a
                     class="nav-link"
                     data-toggle="tab"
-                    style="max-width: 170px;"
+                    style="max-width: 170px"
                     href="#summary_calculation"
                     >Summary Calculation</a
                   >
                 </li>
               </ul>
-              <div class="tab-content" style="padding: 0;">
+              <div class="tab-content" style="padding: 0">
                 <div class="tab-pane body active" id="formula_builder">
                   <div class="row col-md-12">
                     <textarea
@@ -2532,7 +2610,7 @@
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-md-4" style="margin-bottom: 0px;">
+                    <div class="col-md-4" style="margin-bottom: 0px">
                       <button
                         name="validate"
                         id="validate"
@@ -2581,9 +2659,9 @@
         <div class="col-lg-6 col-md-6 text-center text-sm-left pt-2 mb-0 ml-4">
           <h5
             class="page-title"
-            style="font-weight: 600; text-transform: uppercase;"
+            style="font-weight: 600; text-transform: uppercase"
           >
-            Dashboard
+            Cockpit
           </h5>
         </div>
       </div>
@@ -2592,12 +2670,12 @@
       <!-- Page Body -->
       <div
         class="container-fluid"
-        style="height: 600px;"
+        style="height: 600px"
         ondrop="drop(event)"
         ondragover="allowDrop(event)"
       >
         <!-- COl -->
-        <div class="collapse_arrow_right" style="display: none;">
+        <div class="collapse_arrow_right" style="display: none">
           <i class="arrow_collapse_size fas fa-caret-right"></i>
         </div>
         <div class="collapse_arrow_left">
@@ -2635,6 +2713,7 @@
     <script src="../../assets/js/bootstrap.bundle.min.js"></script>
     <script src="../../assets/pickr.es5.min.js"></script>
     <script src="../../assets/datepickerair.js"></script>
+    <script src="../../assets/select2.min.js"></script>
     <script src="../../assets/datepicker.en.js"></script>
     <script src="../../assets/js/widgets.js"></script>
     <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
@@ -2733,7 +2812,10 @@
                   style="position: absolute; margin-top: 12%; left: 65%;"
                 >
                   <div class="card-icon">
-                    <i class="fas fa-dollar-sign" style="color: #10316b;"></i>
+                    <img
+                      src="../organisation/images/widgets/Currency.png"
+                      style="width: 34px"
+                    />
                   </div>
                 </div>
               </div>
@@ -3794,7 +3876,7 @@
                           <a
                             href="#"
                             data-toggle="modal"
-                            data-target="#chart_setting"
+                            data-target="#heatmap_setting"
                             onclick="return false;"
                             >Settings</a
                           >
@@ -3822,6 +3904,9 @@
 
           initDateRangePicker("#datePickerHM");
           heatmapRender();
+          $(document).ready(function () {
+            $(".multi-select").select2();
+          });
         }
 
         if (data == "drilldownDragDiv") {
@@ -5233,38 +5318,86 @@
         },
       });
 
-      document.getElementById("chart-setting").onclick = duplicateChart;
+      $("#add-chart-setting").click(function () {
+        $("#chart-setting-div").append(`
+          <div class="row chart-setting-clone">
+            <div class="form-group col-md-12">
+              <button class="remove-btn" type="button">
+                <i class="fas fa-trash border-box"></i>
+              </button>
+            </div>
+            <div class="form-group col-md-10">
+              <label for="">Display Name</label>
+              <input
+                type="text"
+                class="form-control browser-default"
+              />
+            </div>
+            <div class="form-group col-md-2 color_picks_1">
+              <label
+                for="sub_initative_progress"
+                style="text-align: left"
+                >Color</label
+              >
+              <div class="input-group" style="margin-bottom: 0">
+                <div class="input-group-append">
+                  <span
+                    class="input-group-text pickr"
+                    style="
+                      width: 90px;
+                      border-radius: 0px;
+                      height: 30px;
+                    "
+                  ></span>
+                </div>
+              </div>
+            </div>
 
-      var i = 0;
-      var originalChart = document.getElementById("chart-setting-div");
+            <div class="form-group col-md-12">
+              <label for="">Data Field</label>
+              <input
+                type="text"
+                class="form-control browser-default"
+                id="kpi_formula"
+                readonly
+                data-toggle="modal"
+                data-target="#kpi_formula_popup"
+                role="button"
+              />
+              <a
+                href="#"
+                id="kpi_trigger1"
+                data-toggle="modal"
+                data-target=".kpi_formula_popup"
+              ></a>
+            </div>
 
-      function duplicateChart() {
-        var clone = originalChart.cloneNode(true); // "deep" clone
-        clone.id = "chart" + ++i; // there can only be one element with an ID
-        originalChart.parentNode.appendChild(clone);
-      }
+            <div class="form-group col-md-6">
+              <label for="">Axis</label>
+              <select class="form-control browser-default">
+                <option value="Y-axis">Y-axis</option>
+                <option value="Z-axis">Z-axis</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="">Type</label>
+              <select class="form-control browser-default">
+                <option value="Actual">Actual</option>
+                <option value="Target">Target</option>
+                <option value="Budget">Budget</option>
+                <option value="Forecast">Forecast</option>
+                <option value="Gap">Gap</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <hr style="border: 1px solid #505050" />
+            </div>
+          </div>`);
+      });
 
-      document.getElementById("drilldown-setting").onclick = duplicateDrilldown;
-
-      var i = 0;
-      var originalDrilldown = document.getElementById("drilldown-setting-div");
-
-      function duplicateDrilldown() {
-        var clone = originalDrilldown.cloneNode(true); // "deep" clone
-        clone.id = "drilldown" + ++i; // there can only be one element with an ID
-        originalDrilldown.parentNode.appendChild(clone);
-      }
-
-      document.getElementById("datatable-setting").onclick = duplicateDatatable;
-
-      var i = 0;
-      var originalDatatable = document.getElementById("datatable-setting-div");
-
-      function duplicateDatatable() {
-        var clone = originalDatatable.cloneNode(true); // "deep" clone
-        clone.id = "datatable" + ++i; // there can only be one element with an ID
-        originalDatatable.parentNode.appendChild(clone);
-      }
+      $("#chart-setting-div").on("click", ".remove-btn", function (e) {
+        $(this).parents(".chart-setting-clone").remove();
+      });
 
       function initDateRangePicker(selector) {
         var orientation =
