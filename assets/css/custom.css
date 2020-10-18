@@ -1418,3 +1418,17 @@ label {
   }
 }
 
+.project-panel-div {
+  padding: 8px;
+  margin-top: 20px;
+}
+
+.project-panel {
+  width: 100%;
+  background: #FFFFFF;
+  border: 2px solid #C9C9C9;
+  box-sizing: border-box;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  padding: 12px !important;
+}

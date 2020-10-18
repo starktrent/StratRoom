@@ -18,7 +18,10 @@
     <!-- You can choose a theme from css/styles instead of get all themes -->
     <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
     <link rel="stylesheet" href="../../assets/datepickerair.css" />
-    <link href="../../assets/select2.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
     <link href="../../assets/jquery-ui.min.css" rel="stylesheet" />
     <!-- <link
       href="../../assets/daterangepicker/daterangepicker.min.css"
@@ -203,6 +206,35 @@
         border-radius: 0px 12px 12px 0px;
         cursor: pointer;
         transition: 0.5s;
+      }
+
+      .select2-container {
+        width: 100% !important;
+      }
+
+      .select2-container--default.select2-container--focus
+        .select2-selection--multiple {
+        border: solid #ced4da 1px;
+        outline: 0;
+      }
+
+      .select2-container .select2-search--inline .select2-search__field {
+        box-sizing: border-box;
+        border: none;
+        font-size: 100%;
+        margin-top: -4px;
+        margin-left: 5px;
+        padding: 0;
+        margin-bottom: -10px;
+      }
+
+      .select2-container--default .select2-selection--multiple {
+        background-color: white;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        cursor: text;
+        padding-bottom: 5px;
+        padding-right: 5px;
       }
     </style>
   </head>
@@ -519,12 +551,18 @@
                 >Formulation Register</strong
               >
             </h5>
-            <div class="initativesdescription" onclick="openStrategyAdd()">
+            <span class="pull-right" style="margin-right: 2px">
               <i
-                class="fa fa-plus-circle"
-                style="color: #1aa243; font-size: 18px"
+                class="fas fa-filter border-box"
+                style="font-size: 11px; color: #212529"
               ></i>
-            </div>
+            </span>
+            <span class="pull-right" onclick="openStrategyAdd()">
+              <i
+                class="fas fa-plus border-box"
+                style="font-size: 11px; color: #212529"
+              ></i>
+            </span>
           </div>
           <div class="d-flex flex-column" id="initiate_sidebar">
             <div
@@ -1131,9 +1169,9 @@
                     <span
                       class="pull-right"
                       onclick="closeStrategy()"
-                      style="font-size: 15px; cursor: pointer"
+                      style="cursor: pointer"
                     >
-                      &times;
+                      <i class="fas fa-times border-box"></i>
                     </span>
                     <span
                       class="pull-right"
@@ -1315,9 +1353,9 @@
                     <span
                       class="pull-right"
                       onclick="closePerspective()"
-                      style="font-size: 15px; cursor: pointer"
+                      style="cursor: pointer"
                     >
-                      &times;
+                      <i class="fas fa-times border-box"></i>
                     </span>
                     <span
                       class="pull-right"
@@ -1450,9 +1488,9 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                     <span
                       class="pull-right"
                       onclick="closeObjective()"
-                      style="font-size: 15px; cursor: pointer"
+                      style="cursor: pointer"
                     >
-                      &times;
+                      <i class="fas fa-times border-box"></i>
                     </span>
                     <span
                       class="pull-right"
@@ -1585,9 +1623,9 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                     <span
                       class="pull-right"
                       onclick="closeStrategyAdd()"
-                      style="font-size: 15px; cursor: pointer"
+                      style="cursor: pointer"
                     >
-                      &times;
+                      <i class="fas fa-times border-box"></i>
                     </span>
                   </h5>
                 </div>
@@ -1731,9 +1769,9 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                     <span
                       class="pull-right"
                       onclick="closePerspectiveAdd()"
-                      style="font-size: 15px; cursor: pointer"
+                      style="cursor: pointer"
                     >
-                      &times;
+                      <i class="fas fa-times border-box"></i>
                     </span>
                   </h5>
                 </div>
@@ -1840,9 +1878,9 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                     <span
                       class="pull-right"
                       onclick="closeObjectiveAdd()"
-                      style="font-size: 15px; cursor: pointer"
+                      style="cursor: pointer"
                     >
-                      &times;
+                      <i class="fas fa-times border-box"></i>
                     </span>
                   </h5>
                 </div>
@@ -1944,9 +1982,9 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                     <span
                       class="pull-right"
                       onclick="closeKPIAdd()"
-                      style="font-size: 15px; cursor: pointer"
+                      style="cursor: pointer"
                     >
-                      &times;
+                      <i class="fas fa-times border-box"></i>
                     </span>
                   </h5>
                 </div>
@@ -2164,12 +2202,8 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                 <div class="perspective-heading">
                   <h5>
                     KPI Details
-                    <span
-                      class="pull-right"
-                      onclick="closeKPI()"
-                      style="font-size: 15px; cursor: pointer"
-                    >
-                      &times;
+                    <span class="pull-right" onclick="closeKPI()">
+                      <i class="fas fa-times border-box"></i>
                     </span>
                     <span
                       class="pull-right"
@@ -2416,12 +2450,12 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
                   <div class="heading">
                     <h6 style="margin-bottom: -4px">
                       Group Strategic plan
-                      <!-- <span class="pull-right" onclick="openStrategy()">
+                      <span class="pull-right">
                         <i
-                          class="fas fa-pencil-alt border-box"
+                          class="fas fa-trash border-box"
                           style="padding: 5px"
                         ></i
-                      ></span> -->
+                      ></span>
                     </h6>
                   </div>
                   <hr style="border-top: 2px solid #e9ecef" />
@@ -3184,7 +3218,7 @@ Record zero fire incidents attributable to Alpha Mead across all locations in 20
     <script src="../../assets/pickr.es5.min.js"></script>
     <script src="../../assets/datepickerair.js"></script>
     <script src="../../assets/datepicker.en.js"></script>
-    <script src="../../assets/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <script src="../../assets/js/widgets.js"></script>
     <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
     <script src="../../assets/knockout-3.5.0.js"></script>

@@ -16,7 +16,11 @@
     <link href="../../assets/css/initatives.css" rel="stylesheet" />
     <link href="../../assets/css/icheck-bootstrap.min.css" rel="stylesheet" />
     <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" />
-    <link href="../../assets/select2.min.css" rel="stylesheet" />
+    <!-- <link href="../../assets/select2.min.css" rel="stylesheet" /> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
     <!-- You can choose a theme from css/styles instead of get all themes -->
     <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
     <!-- <link href="../../assets/css/table-view.css" rel="stylesheet" /> -->
@@ -438,6 +442,35 @@
       .remove-btn {
         background-color: #fff;
         float: right;
+      }
+
+      .select2-container {
+        width: 100% !important;
+      }
+
+      .select2-container--default.select2-container--focus
+        .select2-selection--multiple {
+        border: solid #ced4da 1px;
+        outline: 0;
+      }
+
+      .select2-container .select2-search--inline .select2-search__field {
+        box-sizing: border-box;
+        border: none;
+        font-size: 100%;
+        margin-top: -4px;
+        margin-left: 5px;
+        padding: 0;
+        margin-bottom: -10px;
+      }
+
+      .select2-container--default .select2-selection--multiple {
+        background-color: white;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        cursor: text;
+        padding-bottom: 5px;
+        padding-right: 5px;
       }
     </style>
   </head>
@@ -1435,7 +1468,13 @@
             <table id="chart_table" class="table table-bordered">
               <thead class="bg-light">
                 <tr>
-                  <th style="font-size: 14px !important">
+                  <th
+                    style="
+                      font-size: 14px !important;
+                      font-weight: 600;
+                      text-align: center;
+                    "
+                  >
                     Data Fields
                     <div class="focused pull-right">
                       <button
@@ -1623,7 +1662,7 @@
               <div class="col-12 form-group">
                 <label for="Risk">Risk Fields</label>
                 <select
-                  class="multi-select"
+                  class="risk-multi-select"
                   name="states[]"
                   multiple="multiple"
                 >
@@ -1633,9 +1672,28 @@
                   <option value="972">
                     Failure to meet compliance obligations
                   </option>
-                  <option value="973">
+                  <option value="973">Failure to meet</option>
+                  <option value="971">
                     Failure to meet compliance obligations
                   </option>
+                  <option value="972">
+                    Failure to meet compliance obligations
+                  </option>
+                  <option value="973">Failure to meet</option>
+                  <option value="971">
+                    Failure to meet compliance obligations
+                  </option>
+                  <option value="972">
+                    Failure to meet compliance obligations
+                  </option>
+                  <option value="973">Failure to meet</option>
+                  <option value="971">
+                    Failure to meet compliance obligations
+                  </option>
+                  <option value="972">
+                    Failure to meet compliance obligations
+                  </option>
+                  <option value="973">Failure to meet</option>
                 </select>
               </div>
               <div class="col-12">
@@ -2713,7 +2771,8 @@
     <script src="../../assets/js/bootstrap.bundle.min.js"></script>
     <script src="../../assets/pickr.es5.min.js"></script>
     <script src="../../assets/datepickerair.js"></script>
-    <script src="../../assets/select2.min.js"></script>
+    <!-- <script src="../../assets/select2.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <script src="../../assets/datepicker.en.js"></script>
     <script src="../../assets/js/widgets.js"></script>
     <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
@@ -3905,7 +3964,7 @@
           initDateRangePicker("#datePickerHM");
           heatmapRender();
           $(document).ready(function () {
-            $(".multi-select").select2();
+            $(".risk-multi-select").select2();
           });
         }
 

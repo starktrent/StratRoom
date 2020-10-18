@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>StratRoom</title>
+    <!-- Favicon-->
+    <!-- <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon"> -->
+    <!-- Plugins Core Css -->
+    <link href="../../assets/css/app.min.css" rel="stylesheet" />
+    <!-- Custom Css -->
+    <link href="../../assets/css/style.css" rel="stylesheet" />
+    <link href="../../assets/css/custom.css" rel="stylesheet" />
+    <link href="../../assets/css/initatives.css" rel="stylesheet" />
+    <link href="../../assets/css/risk.css" rel="stylesheet" />
+    <link href="../../assets/css/icheck-bootstrap.min.css" rel="stylesheet" />
+    <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" />
+    <!-- You can choose a theme from css/styles instead of get all themes -->
+    <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
+    <link href="../../assets/css/startroom/org.css" rel="stylesheet" />
+    <!-- You can choose a theme from css/styles instead of get all themes -->
+    <link rel="stylesheet" href="../../assets/css/jquery.treegrid.css" />
+    <link rel="stylesheet" href="../../assets/css/bootstrap-treefy.css" />
+    <!-- <link rel="stylesheet" href="../../assets/jquery.comiseo.daterangepicker.css"> -->
+    <link href="../../assets/jquery-ui.min.css" rel="stylesheet" />
+    <link href="../../assets/css/employee.css" rel="stylesheet" />
+    <link
+      href="../../assets/daterangepicker/daterangepicker.min.css"
+      rel="stylesheet"
+    />
+    <link href="../../assets/jquery.orgchart.css" rel="stylesheet" />
+    <link href="../../assets/js/file-upload/file-upload.css" rel="stylesheet" />
+
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      .orientation-right {
+        top: 60px !important;
+        right: 0 !important;
+        left: auto !important;
+        position: fixed;
+      }
+
+      #tree ul {
+        padding-left: 20px !important;
+        list-style-type: none !important;
+      }
+
+      #tree {
+        margin: 0;
+        padding: 0;
+      }
+
+      .caret-org {
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      .caret-org::before {
+        content: "\25B6";
+        color: #1e252d;
+        display: inline-block;
+        margin-right: 12px;
+        font-size: 12px;
+      }
+
+      .caret-org-down::before {
+        -ms-transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+
+      .nested-org {
+        display: none;
+        padding-left: 20px;
+      }
+
+      .nested-org li {
+        margin-top: 8px !important;
+      }
+
+      .active-org {
+        display: block;
+      }
+
+      .oc-export-btn {
+        display: none;
+      }
+
+.panel-group .panel .panel-body {
+  color: #555;
+  border-top: none;
+  padding: 12px;
+}
+    </style>
+  </head>
+
+  <body class="light">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+      <div class="loader">
+        <div class="m-t-30">
+          <!-- <img class="loading-img-spin" src="../../assets/images/loading.png" alt="admin"> -->
+          <img width="100" src="../../assets/images/logo_1.gif" alt="admin" />
+        </div>
+        <p>Please wait...</p>
+      </div>
+    </div>
+    <!-- <div>
+        <img src="../../assets/images/.png" alt="">
+    </div> -->
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a
+            href="#"
+            onClick="return false;"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#navbar-collapse"
+            aria-expanded="false"
+          ></a>
+          <a href="#" onClick="return false;" class="bars"></a>
+          <a href="#" onClick="return false;" class="bar_nav sidemenu-collapse"
+            ><i class="nav-hdr-btn ti-menu" style="color: #000"></i
+          ></a>
+          <a class="navbar-brand nav_float" href="#">
+            <img
+              src="../../assets/images/Startroom_Final logo-01_1.png"
+              alt=""
+            />
+            <!-- <span class="logo-name">Img</span> -->
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="fullscreen" style="padding: 4px; left: -14px">
+              <ul class="list-unstyled order-list">
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user7.jpg"
+                    alt="user"
+                  />
+                </li>
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user8.jpg"
+                    alt="user"
+                  />
+                </li>
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user9.jpg"
+                    alt="user"
+                  />
+                </li>
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user9.jpg"
+                    alt="user"
+                  />
+                </li>
+                <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                  <span _ngcontent-hhc-c5="" class="badge">+3</span>
+                </li>
+              </ul>
+            </li>
+            <li class="fullscreen">
+              <form class="form-header" action="" method="POST">
+                <input
+                  class="au-input au-input--xl"
+                  style="min-width: 20%"
+                  type="text"
+                  name="search"
+                  placeholder="Search"
+                />
+                <button class="au-btn--submit" type="submit">
+                  <i class="fa fa-search" style="color: gray"></i>
+                </button>
+              </form>
+            </li>
+            <li class="fullscreen">
+              <!-- <a href="" class=""> -->
+              <!-- <i class="nav-hdr-btn ti-calendar" style="color: gray"></i> -->
+              <!-- <input id="e4" name="e4"> -->
+              <input class="daterangepicker-field top_datepicker" />
+              <!-- </a> -->
+            </li>
+            <!-- #END# Full Screen Button -->
+            <!-- #START# Notifications-->
+            <li class="dropdown">
+              <a
+                href="#"
+                onClick="return false;"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+              >
+                <i class="nav-hdr-btn ti-bell" style="color: gray"></i>
+                <span class="notify"></span>
+                <span class="heartbeat"></span>
+              </a>
+            </li>
+            <li class="dropdown">
+              <a
+                href="#"
+                onClick="return false;"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+              >
+                <i class="nav-hdr-btn ti-settings" style="color: gray"></i>
+                <span class="notify"></span>
+                <span class="heartbeat"></span>
+              </a>
+            </li>
+            <!-- #END# Notifications-->
+            <li class="">
+              <a
+                href="#"
+                onclick="return false;"
+                class="dropdown-toggle js-right-sidebar"
+                data-close="true"
+              >
+                <!-- <img src="../../assets/images/user.jpg" alt="user"> -->
+                <i class="fas fa-user-circle"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- #Top Bar -->
+    <div>
+      <!-- Left Sidebar -->
+      <aside id="leftsidebar" class="sidebar">
+        <!-- Menu -->
+        <div class="menu">
+          <ul class="list">
+            <li class="active">
+              <a href="organizationHome" class="">
+                <i class="fas fa-project-diagram"></i>
+                <span style="line-height: 18px; margin-top: 4px"
+                  >Organisation</span
+                >
+              </a>
+            </li>
+
+            <li>
+              <a href="#" onClick="return false;" class="menu-toggle">
+                <i class="fas fa-th-large"></i>
+                <span>Dashboards</span>
+              </a>
+              <ul class="ml-menu">
+                <li>
+                  <a
+                    class="addnewpagehover waves-effect waves-block"
+                    data-toggle="modal"
+                    data-target="#dashboard_add_popup"
+                    value="add"
+                    style="
+                      background-color: #4c4c4c;
+                      padding-left: 0;
+                      text-align: center;
+                      color: #fff !important;
+                    "
+                    ><strong>Add New Board</strong></a
+                  >
+                </li>
+                <li>
+                  <a href="#">Scorecard</a>
+                </li>
+                <li>
+                  <a href="#">Meeting</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="menu-toggle">
+                <i class="fas fa-chalkboard"></i>
+                <span>Whiteboard</span>
+              </a>
+              <ul class="ml-menu">
+                <li>
+                  <a
+                    class="addnewpagehover waves-effect waves-block"
+                    data-toggle="modal"
+                    data-target="#whiteboard_add_popup"
+                    value="add"
+                    style="
+                      background-color: #4c4c4c;
+                      padding-left: 0;
+                      text-align: center;
+                      color: #fff !important;
+                    "
+                    ><strong>Add New Board</strong></a
+                  >
+                </li>
+                <li>
+                  <a href="#">Cockpit</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="fas fa-user-lock"></i>
+                <span>Access Control</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="fas fa-briefcase"></i>
+                <span>Workflows</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="fas fa-bell"></i>
+                <span>Notifications</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="#" class="menu-toggle">
+                <i class="fas fa-database"></i>
+                <span>Data Sources</span>
+              </a>
+              <ul class="ml-menu">
+                <li>
+                  <a href="#">Manual</a>
+                </li>
+                <li>
+                  <a href="#">Excel</a>
+                </li>
+                <li>
+                  <a href="#">Others</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#" onClick="return false;" class="menu-toggle">
+                <i class="fas fa-copy"></i>
+                <span>Template</span>
+              </a>
+              <ul class="ml-menu">
+                <li>
+                  <a href="#">Standard Scorecard</a>
+                </li>
+                <li>
+                  <a href="#">Custom Scorecard</a>
+                </li>
+                <li>
+                  <a href="#">Portfolio Program & Project (P3M)</a>
+                </li>
+                <li>
+                  <a href="#">Appraisal (360 Degree Feedback)</a>
+                </li>
+                <li>
+                  <a href="#">Custom Page</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="fas fa-sliders-h"></i>
+                <span>Control Panel</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- #Menu -->
+      </aside>
+    </div>
+    <!-- #END# Left Sidebar -->
+
+    <section class="content">
+      <!-- Page Header -->
+      <div class="page-header row no-gutters py-2 m-t--70">
+        <div class="col-lg-6 col-md-6 text-center text-sm-left pt-2 mb-0 ml-4">
+          <h5
+            class="page-title"
+            style="font-weight: 600; text-transform: uppercase"
+          >
+            Project Formulation
+          </h5>
+        </div>
+      </div>
+      <!-- End Page Header -->
+
+      <!-- Page Body -->
+      <div class="container-fluid">
+        <!-- COl -->
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12 project-panel-div">
+            <div
+              class="panel-group level1 project-panel"
+              id="accordion"
+              role="tablist"
+              aria-multiselectable="true"
+            >
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading1">
+                  <h4 class="panel-title">
+                    <a
+                      role="button"
+                      class="collapsed"
+                      data-toggle="collapse"
+                      data-parent="#accordion"
+                      href="#collapse1"
+                      aria-expanded="true"
+                      aria-controls="collapse1"
+                    >
+                      Level 1
+                    </a>
+                  </h4>
+                </div>
+                <div
+                  id="collapse1"
+                  class="panel-collapse collapse"
+                  role="tabpanel"
+                  aria-labelledby="heading1"
+                >
+                  <div class="panel-body">
+                    <div
+                      class="panel-group level2"
+                      id="accordion1"
+                      role="tablist"
+                      aria-multiselectable="true"
+                    >
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="heading1_1">
+                          <h4 class="panel-title">
+                            <a
+                              role="button"
+                              class="collapsed"
+                              data-toggle="collapse"
+                              data-parent="#accordion1"
+                              href="#collapse1_1"
+                              aria-expanded="true"
+                              aria-controls="collapse1_1"
+                            >
+                              Level 2
+                            </a>
+                          </h4>
+                        </div>
+                        <div
+                          id="collapse1_1"
+                          class="panel-collapse collapse"
+                          role="tabpanel"
+                          aria-labelledby="heading1_1"
+                        >
+                          <div class="panel-body">
+                            <div
+                              class="panel-group level3"
+                              id="accordion2"
+                              role="tablist"
+                              aria-multiselectable="true"
+                            >
+                              <div class="panel panel-default">
+                                <div
+                                  class="panel-heading"
+                                  role="tab"
+                                  id="heading1_1_1"
+                                >
+                                  <h4 class="panel-title">
+                                    <a
+                                      role="button"
+                                      class="collapsed"
+                                      data-toggle="collapse"
+                                      data-parent="#accordion2"
+                                      href="#collapse1_1_1"
+                                      aria-expanded="true"
+                                      aria-controls="collapse1_1_1"
+                                    >
+                                      Level 3
+                                    </a>
+                                  </h4>
+                                </div>
+                                <div
+                                  id="collapse1_1_1"
+                                  class="panel-collapse collapse"
+                                  role="tabpanel"
+                                  aria-labelledby="heading1_1_1"
+                                >
+                                  <div class="panel-body">
+                                    <div
+                                      class="panel-group level4"
+                                      id="accordion3"
+                                      role="tablist"
+                                      aria-multiselectable="true"
+                                    >
+                                      <div class="panel panel-default">
+                                        <div
+                                          class="panel-heading"
+                                          role="tab"
+                                          id="heading1_1_1_1"
+                                        >
+                                          <h4 class="panel-title">
+                                            <a
+                                              role="button"
+                                              class="collapsed"
+                                              data-toggle="collapse"
+                                              data-parent="#accordion2"
+                                              href="#collapse1_1_1_1"
+                                              aria-expanded="true"
+                                              aria-controls="collapse1_1_1_1"
+                                            >
+                                              Level 4
+                                            </a>
+                                          </h4>
+                                        </div>
+                                        <div
+                                          id="collapse1_1_1_1"
+                                          class="panel-collapse collapse"
+                                          role="tabpanel"
+                                          aria-labelledby="heading1_1_1_1"
+                                        >
+                                          <div class="panel-body">Level 5</div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  id="collapse1"
+                  class="panel-collapse collapse"
+                  role="tabpanel"
+                  aria-labelledby="heading1"
+                >
+                  <div class="panel-body">
+                    <div
+                      class="panel-group level2"
+                      id="accordion1"
+                      role="tablist"
+                      aria-multiselectable="true"
+                    >
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="heading1_1">
+                          <h4 class="panel-title">
+                            <a
+                              role="button"
+                              class="collapsed"
+                              data-toggle="collapse"
+                              data-parent="#accordion1"
+                              href="#collapse1_2"
+                              aria-expanded="true"
+                              aria-controls="collapse1_2"
+                            >
+                              Level 2.2
+                            </a>
+                          </h4>
+                        </div>
+                        <div
+                          id="collapse1_2"
+                          class="panel-collapse collapse"
+                          role="tabpanel"
+                          aria-labelledby="heading1_1"
+                        >
+                          <div class="panel-body">Level 2.3</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Plugins Js -->
+    <script src="../../assets/js/app.min.js"></script>
+    <script src="../../assets/js/widgets.js"></script>
+    <!-- Custom Js -->
+    <script src="../../assets/js/admin.js"></script>
+    <script src="../../assets/org-tree-view/MultiNestedList.js"></script>
+    <script src="../../assets/jquery.orgchart.js"></script>
+    <script src="../../assets/js/org_structure.js"></script>
+    <script src="../../assets/knockout-3.5.0.js"></script>
+    <script src="../../assets/jquery-ui.min.js"></script>
+    <script src="../../assets/js/file-upload/file-upload.js"></script>
+    <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
+  </body>
+</html>
