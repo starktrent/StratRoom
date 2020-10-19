@@ -9,9 +9,8 @@
   border-radius: 8px;
 }
 .color-box {
-  padding: 9px;
-  height: 32px;
-  width: 32px;
+  height: 18px;
+  width: 18px;
   margin: 6px;
   border-radius: 4px;
   background-color: #777;
@@ -19,7 +18,7 @@
 }
 
 .color-box:hover {
-  border: 2px solid #fff;
+  border: 1px solid #fff;
   transition: 0.2s;
   padding: 8px;
 }
@@ -27,6 +26,8 @@
 #color-check {
   color: #fff;
   display: none;
+  font-size: 10px;
+  margin-left: 4px;
 }
 
 .brown_v1_10 {
