@@ -14,24 +14,51 @@
     <link href="../../assets/css/custom.css" rel="stylesheet" />
     <link href="../../assets/css/initatives.css" rel="stylesheet" />
     <link href="../../assets/css/risk.css" rel="stylesheet" />
-    <link href="../../assets/css/icheck-bootstrap.min.css" rel="stylesheet" />
     <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" />
     <!-- You can choose a theme from css/styles instead of get all themes -->
     <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
-    <link href="../../assets/css/startroom/org.css" rel="stylesheet" />
-    <!-- You can choose a theme from css/styles instead of get all themes -->
-    <link rel="stylesheet" href="../../assets/css/jquery.treegrid.css" />
-    <link rel="stylesheet" href="../../assets/css/bootstrap-treefy.css" />
-    <!-- <link rel="stylesheet" href="../../assets/jquery.comiseo.daterangepicker.css"> -->
-    <link href="../../assets/jquery-ui.min.css" rel="stylesheet" />
-    <link href="../../assets/css/employee.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../assets/datepickerair.css" />
     <link
-      href="../../assets/daterangepicker/daterangepicker.min.css"
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css"
       rel="stylesheet"
     />
-    <link href="../../assets/jquery.orgchart.css" rel="stylesheet" />
-    <link href="../../assets/js/file-upload/file-upload.css" rel="stylesheet" />
+    <link href="../../assets/jquery-ui.min.css" rel="stylesheet" />
+    <!-- <link
+      href="../../assets/daterangepicker/daterangepicker.min.css"
+      rel="stylesheet"
+    /> -->
+    <link href="../../assets/css/employee.css" rel="stylesheet" />
+    <!-- <link href="../../assets/bootstrap-datepicker.min.css" rel="stylesheet" /> -->
 
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      id="main-stylesheet"
+      data-version="1.1.0"
+      href="css/shards-dashboards.1.1.0.min.css"
+    />
+
+    <link
+      href="assets/daterangepicker/daterangepicker.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script
+      src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"
+      type="text/javascript"
+    ></script>
+    <link
+      href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <!-- Font Awsome Icons -->
     <link
       href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
       rel="stylesheet"
@@ -97,11 +124,31 @@
         display: none;
       }
 
-.panel-group .panel .panel-body {
-  color: #555;
-  border-top: none;
-  padding: 12px;
-}
+      .panel-group .panel .panel-body {
+        color: #555;
+        border-top: none;
+        padding: 4px 0 4px 12px;
+        list-style-type: none;
+        border-left: 2px solid #c6c6c6;
+        margin-left: 1em;
+      }
+
+      .panel-group .panel .panel-body .branch-border::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -4px;
+        bottom: 56%;
+        width: 0.75em;
+        border: 2px solid #c6c6c6;
+        border-top: 0 none transparent;
+        border-right: 0 none transparent;
+        border-left: 0 none transparent;
+      }
+
+      .panel-group .panel:last-child {
+        border-left: 2px solid transparent;
+      }
     </style>
   </head>
 
@@ -412,139 +459,699 @@
       </div>
       <!-- End Page Header -->
 
+      <!-- Add Formulation -->
+      <div
+        class="modal fade"
+        id="add_formulation"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myLargeModalLabel_1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4>Add Formulation</h4>
+              <button
+                type="button"
+                class="close pull-right"
+                data-dismiss="modal"
+              >
+                &times;
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row" id="drilldown-setting-div">
+                <div class="form-group col-md-12">
+                  <label for="">Display Name</label>
+                  <textarea
+                    name="name"
+                    cols="30"
+                    rows="3"
+                    class="form-control browser-default persp_name"
+                  ></textarea>
+                </div>
+
+                <div class="col-12 form-group">
+                  <label for="Name">Start / End Date</label>
+                  <input
+                    type="text"
+                    class="form-control persp_date browser-default date_pickers_bottom datepicker-here"
+                    data-range="true"
+                    data-multiple-dates-separator=" - "
+                    data-language="en"
+                    value="29/07/2020 - 31/07/2020"
+                    id="air-date-sub-init"
+                  />
+                </div>
+                <div class="col-12">
+                  <hr style="border: 1px solid #505050" />
+                </div>
+                <div class="col-12">
+                  <div class="form-line right">
+                    <button
+                      type="button"
+                      class="btn-default1 btn"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      Cancel
+                    </button>
+                    <button class="initative_save_btn" value="Save">
+                      Save
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Add Formulation -->
+
+      <!-- Edit Formulation -->
+      <div
+        class="modal fade"
+        id="edit_formulation"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myLargeModalLabel_1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4>Edit Formulation</h4>
+              <button
+                type="button"
+                class="close pull-right"
+                data-dismiss="modal"
+              >
+                &times;
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row" id="drilldown-setting-div">
+                <div class="form-group col-md-12">
+                  <label for="">Display Name</label>
+                  <textarea
+                    name="name"
+                    cols="30"
+                    rows="3"
+                    class="form-control browser-default persp_name"
+                  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</textarea
+                  >
+                </div>
+
+                <div class="col-12 form-group">
+                  <label for="Name">Start / End Date</label>
+                  <input
+                    type="text"
+                    class="form-control persp_date browser-default date_pickers_bottom datepicker-here"
+                    data-range="true"
+                    data-multiple-dates-separator=" - "
+                    data-language="en"
+                    value="29/07/2020 - 31/07/2020"
+                    id="air-date-sub-init"
+                  />
+                </div>
+                <div class="col-12">
+                  <hr style="border: 1px solid #505050" />
+                </div>
+                <div class="col-12">
+                  <div class="form-line right">
+                    <button
+                      type="button"
+                      class="btn-default1 btn"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      Cancel
+                    </button>
+                    <button class="initative_save_btn" value="Save">
+                      Save
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Edit Formulation -->
+
       <!-- Page Body -->
       <div class="container-fluid">
+        <div class="row" style="padding-top: 16px; text-align: end">
+          <div class="col-12">
+            <span data-toggle="modal" data-target="#">
+              <i style="background: #fff" class="fas fa-upload border-box"></i>
+            </span>
+            <span data-toggle="modal" data-target="#add_formulation">
+              <i style="background: #fff" class="fas fa-plus border-box"></i>
+            </span>
+          </div>
+        </div>
         <!-- COl -->
-        <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-12 project-panel-div">
+        <div
+          class="panel-group level1 project-panel-row row"
+          id="accordion"
+          role="tablist"
+          aria-multiselectable="true"
+        >
+          <div class="col-lg-6 col-md-6 col-sm-12 project-panel-col">
             <div
-              class="panel-group level1 project-panel"
-              id="accordion"
-              role="tablist"
-              aria-multiselectable="true"
+              class="panel panel-default project-panel"
+              style="border-left: 2px solid #c9c9c9"
             >
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="heading1">
-                  <h4 class="panel-title">
-                    <a
-                      role="button"
-                      class="collapsed"
-                      data-toggle="collapse"
-                      data-parent="#accordion"
-                      href="#collapse1"
-                      aria-expanded="true"
-                      aria-controls="collapse1"
-                    >
-                      Level 1
-                    </a>
-                  </h4>
-                </div>
-                <div
-                  id="collapse1"
-                  class="panel-collapse collapse"
-                  role="tabpanel"
-                  aria-labelledby="heading1"
-                >
-                  <div class="panel-body">
-                    <div
-                      class="panel-group level2"
-                      id="accordion1"
-                      role="tablist"
-                      aria-multiselectable="true"
-                    >
-                      <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="heading1_1">
-                          <h4 class="panel-title">
+              <div class="panel-heading" role="tab" id="heading1">
+                <div class="panel-title">
+                  <a
+                    role="button"
+                    class="collapsed"
+                    data-toggle="collapse"
+                    data-parent="#accordion"
+                    href="#collapse1"
+                    aria-expanded="true"
+                    aria-controls="collapse1"
+                  >
+                    <div class="row">
+                      <div class="col-auto pr-0 branch-border">
+                        <span><i class="fas fa-chevron-right"></i></span>
+                      </div>
+                      <div class="col">
+                        <h4>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua. Lorem ipsum dolor sit amet
+                          consectetur adipiscing elit.
+                        </h4>
+                      </div>
+                      <div class="col-md-auto">
+                        <h5>Start / End Date</h5>
+                        <p>4 Dec 2020 - 7 Dec 2020</p>
+                      </div>
+                      <div class="col-lg-1">
+                        <ul class="header-dropdown">
+                          <li class="dropdown">
                             <a
+                              href="#"
+                              onclick="return false;"
+                              style="margin-top: -3px"
+                              class="dropdown-toggle"
+                              data-toggle="dropdown"
                               role="button"
-                              class="collapsed"
-                              data-toggle="collapse"
-                              data-parent="#accordion1"
-                              href="#collapse1_1"
+                              aria-haspopup="true"
                               aria-expanded="true"
-                              aria-controls="collapse1_1"
                             >
-                              Level 2
+                              <i class="fas fa-ellipsis-v"></i>
                             </a>
-                          </h4>
-                        </div>
-                        <div
-                          id="collapse1_1"
-                          class="panel-collapse collapse"
-                          role="tabpanel"
-                          aria-labelledby="heading1_1"
-                        >
-                          <div class="panel-body">
-                            <div
-                              class="panel-group level3"
-                              id="accordion2"
-                              role="tablist"
-                              aria-multiselectable="true"
+                            <ul
+                              class="dropdown-menu pull-right"
+                              x-placement="bottom-start"
+                              style="
+                                position: absolute;
+                                will-change: transform;
+                                top: 0px;
+                                left: 0px;
+                                transform: translate3d(0px, 24px, 0px);
+                              "
                             >
-                              <div class="panel panel-default">
-                                <div
-                                  class="panel-heading"
-                                  role="tab"
-                                  id="heading1_1_1"
+                              <li style="padding: 6px">
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#edit_formulation"
+                                  onclick="return false;"
+                                  >Edit</a
                                 >
-                                  <h4 class="panel-title">
+                              </li>
+
+                              <li style="padding: 6px">
+                                <a href="#" onclick="return false;">Delete</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div
+                id="collapse1"
+                class="panel-collapse collapse"
+                role="tabpanel"
+                aria-labelledby="heading1"
+              >
+                <div class="panel-body">
+                  <div
+                    class="panel-group level2"
+                    id="accordion1"
+                    role="tablist"
+                    aria-multiselectable="true"
+                  >
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="heading1_1">
+                        <div class="panel-title">
+                          <a
+                            role="button"
+                            class="collapsed"
+                            data-toggle="collapse"
+                            data-parent="#accordion1"
+                            href="#collapse1_1"
+                            aria-expanded="true"
+                            aria-controls="collapse1_1"
+                          >
+                            <div class="row">
+                              <div
+                                class="col-auto pr-0 branch-border branch-border"
+                              >
+                                <span
+                                  ><i class="fas fa-chevron-right"></i
+                                ></span>
+                              </div>
+                              <div class="col">
+                                <h4>
+                                  Lorem ipsum dolor sit amet, consectetur
+                                  adipiscing elit, sed do eiusmod tempor
+                                  incididunt ut labore et dolore magna aliqua.
+                                  Lorem ipsum dolor sit amet consectetur
+                                  adipiscing elit.
+                                </h4>
+                              </div>
+                              <div class="col-md-auto">
+                                <h5>Start / End Date</h5>
+                                <p>4 Dec 2020 - 7 Dec 2020</p>
+                              </div>
+                              <div class="col-lg-1">
+                                <ul class="header-dropdown">
+                                  <li class="dropdown">
                                     <a
+                                      href="#"
+                                      onclick="return false;"
+                                      style="margin-top: -3px"
+                                      class="dropdown-toggle"
+                                      data-toggle="dropdown"
                                       role="button"
-                                      class="collapsed"
-                                      data-toggle="collapse"
-                                      data-parent="#accordion2"
-                                      href="#collapse1_1_1"
+                                      aria-haspopup="true"
                                       aria-expanded="true"
-                                      aria-controls="collapse1_1_1"
                                     >
-                                      Level 3
+                                      <i class="fas fa-ellipsis-v"></i>
                                     </a>
-                                  </h4>
-                                </div>
-                                <div
-                                  id="collapse1_1_1"
-                                  class="panel-collapse collapse"
-                                  role="tabpanel"
-                                  aria-labelledby="heading1_1_1"
-                                >
-                                  <div class="panel-body">
-                                    <div
-                                      class="panel-group level4"
-                                      id="accordion3"
-                                      role="tablist"
-                                      aria-multiselectable="true"
+                                    <ul
+                                      class="dropdown-menu pull-right"
+                                      x-placement="bottom-start"
+                                      style="
+                                        position: absolute;
+                                        will-change: transform;
+                                        top: 0px;
+                                        left: 0px;
+                                        transform: translate3d(0px, 24px, 0px);
+                                      "
                                     >
-                                      <div class="panel panel-default">
-                                        <div
-                                          class="panel-heading"
-                                          role="tab"
-                                          id="heading1_1_1_1"
+                                      <li style="padding: 6px">
+                                        <a
+                                          href="#"
+                                          data-toggle="modal"
+                                          data-target="#edit_formulation"
+                                          onclick="return false;"
+                                          >Edit</a
                                         >
-                                          <h4 class="panel-title">
+                                      </li>
+
+                                      <li style="padding: 6px">
+                                        <a href="#" onclick="return false;"
+                                          >Delete</a
+                                        >
+                                      </li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div
+                        id="collapse1_1"
+                        class="panel-collapse collapse"
+                        role="tabpanel"
+                        aria-labelledby="heading1_1"
+                      >
+                        <div class="panel-body">
+                          <div
+                            class="panel-group level3"
+                            id="accordion2"
+                            role="tablist"
+                            aria-multiselectable="true"
+                          >
+                            <div class="panel panel-default">
+                              <div
+                                class="panel-heading"
+                                role="tab"
+                                id="heading1_1_1"
+                              >
+                                <div class="panel-title">
+                                  <a
+                                    role="button"
+                                    class="collapsed"
+                                    data-toggle="collapse"
+                                    data-parent="#accordion2"
+                                    href="#collapse1_1_1"
+                                    aria-expanded="true"
+                                    aria-controls="collapse1_1_1"
+                                  >
+                                    <div class="row">
+                                      <div class="col-auto pr-0 branch-border">
+                                        <span
+                                          ><i class="fas fa-chevron-right"></i
+                                        ></span>
+                                      </div>
+                                      <div class="col">
+                                        <h4>
+                                          Lorem ipsum dolor sit amet,
+                                          consectetur adipiscing elit, sed do
+                                          eiusmod tempor incididunt ut labore et
+                                          dolore magna aliqua. Lorem ipsum dolor
+                                          sit amet consectetur adipiscing elit.
+                                        </h4>
+                                      </div>
+                                      <div class="col-md-auto">
+                                        <h5>Start / End Date</h5>
+                                        <p>4 Dec 2020 - 7 Dec 2020</p>
+                                      </div>
+                                      <div class="col-lg-1">
+                                        <ul class="header-dropdown">
+                                          <li class="dropdown">
                                             <a
+                                              href="#"
+                                              onclick="return false;"
+                                              style="margin-top: -3px"
+                                              class="dropdown-toggle"
+                                              data-toggle="dropdown"
                                               role="button"
-                                              class="collapsed"
-                                              data-toggle="collapse"
-                                              data-parent="#accordion2"
-                                              href="#collapse1_1_1_1"
+                                              aria-haspopup="true"
                                               aria-expanded="true"
-                                              aria-controls="collapse1_1_1_1"
                                             >
-                                              Level 4
+                                              <i class="fas fa-ellipsis-v"></i>
                                             </a>
-                                          </h4>
+                                            <ul
+                                              class="dropdown-menu pull-right"
+                                              x-placement="bottom-start"
+                                              style="
+                                                position: absolute;
+                                                will-change: transform;
+                                                top: 0px;
+                                                left: 0px;
+                                                transform: translate3d(
+                                                  0px,
+                                                  24px,
+                                                  0px
+                                                );
+                                              "
+                                            >
+                                              <li style="padding: 6px">
+                                                <a
+                                                  href="#"
+                                                  data-toggle="modal"
+                                                  data-target="#edit_formulation"
+                                                  onclick="return false;"
+                                                  >Edit</a
+                                                >
+                                              </li>
+
+                                              <li style="padding: 6px">
+                                                <a
+                                                  href="#"
+                                                  onclick="return false;"
+                                                  >Delete</a
+                                                >
+                                              </li>
+                                            </ul>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </div>
+                              </div>
+                              <div
+                                id="collapse1_1_1"
+                                class="panel-collapse collapse"
+                                role="tabpanel"
+                                aria-labelledby="heading1_1_1"
+                              >
+                                <div class="panel-body">
+                                  <div
+                                    class="panel-group level4"
+                                    id="accordion3"
+                                    role="tablist"
+                                    aria-multiselectable="true"
+                                  >
+                                    <div class="panel panel-default">
+                                      <div
+                                        class="panel-heading"
+                                        role="tab"
+                                        id="heading1_1_1_1"
+                                      >
+                                        <div class="panel-title">
+                                          <a
+                                            role="button"
+                                            class="collapsed"
+                                            data-toggle="collapse"
+                                            data-parent="#accordion2"
+                                            href="#collapse1_1_1_1"
+                                            aria-expanded="true"
+                                            aria-controls="collapse1_1_1_1"
+                                          >
+                                            <div class="row">
+                                              <div
+                                                class="col-auto pr-0 branch-border"
+                                              >
+                                                <span
+                                                  ><i
+                                                    class="fas fa-chevron-right"
+                                                  ></i
+                                                ></span>
+                                              </div>
+                                              <div class="col">
+                                                <h4>
+                                                  Lorem ipsum dolor sit amet,
+                                                  consectetur adipiscing elit,
+                                                  sed do eiusmod tempor
+                                                  incididunt ut labore et dolore
+                                                  magna aliqua. Lorem ipsum
+                                                  dolor sit amet consectetur
+                                                  adipiscing elit.
+                                                </h4>
+                                              </div>
+                                              <div class="col-md-auto">
+                                                <h5>Start / End Date</h5>
+                                                <p>4 Dec 2020 - 7 Dec 2020</p>
+                                              </div>
+                                              <div class="col-lg-1">
+                                                <ul class="header-dropdown">
+                                                  <li class="dropdown">
+                                                    <a
+                                                      href="#"
+                                                      onclick="return false;"
+                                                      style="margin-top: -3px"
+                                                      class="dropdown-toggle"
+                                                      data-toggle="dropdown"
+                                                      role="button"
+                                                      aria-haspopup="true"
+                                                      aria-expanded="true"
+                                                    >
+                                                      <i
+                                                        class="fas fa-ellipsis-v"
+                                                      ></i>
+                                                    </a>
+                                                    <ul
+                                                      class="dropdown-menu pull-right"
+                                                      x-placement="bottom-start"
+                                                      style="
+                                                        position: absolute;
+                                                        will-change: transform;
+                                                        top: 0px;
+                                                        left: 0px;
+                                                        transform: translate3d(
+                                                          0px,
+                                                          24px,
+                                                          0px
+                                                        );
+                                                      "
+                                                    >
+                                                      <li style="padding: 6px">
+                                                        <a
+                                                          href="#"
+                                                          data-toggle="modal"
+                                                          data-target="#edit_formulation"
+                                                          onclick="return false;"
+                                                          >Edit</a
+                                                        >
+                                                      </li>
+
+                                                      <li style="padding: 6px">
+                                                        <a
+                                                          href="#"
+                                                          onclick="return false;"
+                                                          >Delete</a
+                                                        >
+                                                      </li>
+                                                    </ul>
+                                                  </li>
+                                                </ul>
+                                              </div>
+                                            </div>
+                                          </a>
                                         </div>
-                                        <div
-                                          id="collapse1_1_1_1"
-                                          class="panel-collapse collapse"
-                                          role="tabpanel"
-                                          aria-labelledby="heading1_1_1_1"
-                                        >
-                                          <div class="panel-body">Level 5</div>
+                                      </div>
+                                      <div
+                                        id="collapse1_1_1_1"
+                                        class="panel-collapse collapse"
+                                        role="tabpanel"
+                                        aria-labelledby="heading1_1_1_1"
+                                      >
+                                        <div class="panel-body">
+                                          <div class="panel-title">
+                                            <div
+                                              class="row"
+                                              style="margin-left: -8px"
+                                            >
+                                              <div
+                                                class="col-auto pr-0 branch-border"
+                                              >
+                                                <span
+                                                  ><i
+                                                    class="fas fa-chevron-right"
+                                                  ></i
+                                                ></span>
+                                              </div>
+                                              <div class="col">
+                                                <h4>
+                                                  Lorem ipsum dolor sit amet,
+                                                  consectetur adipiscing elit,
+                                                  sed do eiusmod tempor
+                                                  incididunt ut labore et dolore
+                                                  magna aliqua. Lorem ipsum
+                                                  dolor sit amet consectetur
+                                                  adipiscing elit.
+                                                </h4>
+                                              </div>
+                                              <div class="col-md-auto">
+                                                <h5>Start / End Date</h5>
+                                                <p>4 Dec 2020 - 8 Dec 2020</p>
+                                              </div>
+                                              <div class="col-lg-1">
+                                                <ul class="header-dropdown">
+                                                  <li class="dropdown">
+                                                    <a
+                                                      href="#"
+                                                      onclick="return false;"
+                                                      style="margin-top: -3px"
+                                                      class="dropdown-toggle"
+                                                      data-toggle="dropdown"
+                                                      role="button"
+                                                      aria-haspopup="true"
+                                                      aria-expanded="true"
+                                                    >
+                                                      <i
+                                                        class="fas fa-ellipsis-v"
+                                                      ></i>
+                                                    </a>
+                                                    <ul
+                                                      class="dropdown-menu pull-right"
+                                                      x-placement="bottom-start"
+                                                      style="
+                                                        position: absolute;
+                                                        will-change: transform;
+                                                        top: 0px;
+                                                        left: 0px;
+                                                        transform: translate3d(
+                                                          0px,
+                                                          24px,
+                                                          0px
+                                                        );
+                                                      "
+                                                    >
+                                                      <li style="padding: 6px">
+                                                        <a
+                                                          href="#"
+                                                          data-toggle="modal"
+                                                          data-target="#edit_formulation"
+                                                          onclick="return false;"
+                                                          >Edit</a
+                                                        >
+                                                      </li>
+
+                                                      <li style="padding: 6px">
+                                                        <a
+                                                          href="#"
+                                                          onclick="return false;"
+                                                          >Delete</a
+                                                        >
+                                                      </li>
+                                                    </ul>
+                                                  </li>
+                                                </ul>
+                                              </div>
+                                            </div>
+                                          </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
+                                  <div
+                                    class="panel-group level4"
+                                    id="accordion3"
+                                    role="tablist"
+                                    aria-multiselectable="true"
+                                  >
+                                    <div class="panel panel-default">
+                                      <div
+                                        class="panel-heading"
+                                        role="tab"
+                                        id="heading1_1_1_1"
+                                      >
+                                        <div class="panel-title">
+                                          <span
+                                            data-toggle="modal"
+                                            data-target="#add_formulation"
+                                          >
+                                            <i
+                                              class="fas fa-plus border-box"
+                                            ></i>
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div
+                            class="panel-group level3"
+                            id="accordion2"
+                            role="tablist"
+                            aria-multiselectable="true"
+                          >
+                            <div class="panel panel-default">
+                              <div
+                                class="panel-heading"
+                                role="tab"
+                                id="heading1_1_1"
+                              >
+                                <div class="panel-title">
+                                  <span
+                                    data-toggle="modal"
+                                    data-target="#add_formulation"
+                                  >
+                                    <i class="fas fa-plus border-box"></i>
+                                  </span>
                                 </div>
                               </div>
                             </div>
@@ -554,64 +1161,497 @@
                     </div>
                   </div>
                 </div>
-                <div
-                  id="collapse1"
-                  class="panel-collapse collapse"
-                  role="tabpanel"
-                  aria-labelledby="heading1"
-                >
-                  <div class="panel-body">
-                    <div
-                      class="panel-group level2"
-                      id="accordion1"
-                      role="tablist"
-                      aria-multiselectable="true"
-                    >
-                      <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="heading1_1">
-                          <h4 class="panel-title">
-                            <a
-                              role="button"
-                              class="collapsed"
-                              data-toggle="collapse"
-                              data-parent="#accordion1"
-                              href="#collapse1_2"
-                              aria-expanded="true"
-                              aria-controls="collapse1_2"
-                            >
-                              Level 2.2
-                            </a>
-                          </h4>
+              </div>
+
+              <div
+                id="collapse1"
+                class="panel-collapse collapse"
+                role="tabpanel"
+                aria-labelledby="heading1"
+              >
+                <div class="panel-body">
+                  <div
+                    class="panel-group level2"
+                    id="accordion1"
+                    role="tablist"
+                    aria-multiselectable="true"
+                  >
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="heading1_1">
+                        <div class="panel-title">
+                          <a
+                            role="button"
+                            class="collapsed"
+                            data-toggle="collapse"
+                            data-parent="#accordion1"
+                            href="#collapse1_2"
+                            aria-expanded="true"
+                            aria-controls="collapse1_2"
+                          >
+                            <div class="row">
+                              <div class="col-auto pr-0 branch-border">
+                                <span
+                                  ><i class="fas fa-chevron-right"></i
+                                ></span>
+                              </div>
+                              <div class="col">
+                                <h4>
+                                  Lorem ipsum dolor sit amet, consectetur
+                                  adipiscing elit, sed do eiusmod tempor
+                                  incididunt ut labore et dolore magna aliqua.
+                                  Lorem ipsum dolor sit amet consectetur
+                                  adipiscing elit.
+                                </h4>
+                              </div>
+                              <div class="col-md-auto">
+                                <h5>Start / End Date</h5>
+                                <p>4 Dec 2020 - 7 Dec 2020</p>
+                              </div>
+                              <div class="col-lg-1">
+                                <ul class="header-dropdown">
+                                  <li class="dropdown">
+                                    <a
+                                      href="#"
+                                      onclick="return false;"
+                                      style="margin-top: -3px"
+                                      class="dropdown-toggle"
+                                      data-toggle="dropdown"
+                                      role="button"
+                                      aria-haspopup="true"
+                                      aria-expanded="true"
+                                    >
+                                      <i class="fas fa-ellipsis-v"></i>
+                                    </a>
+                                    <ul
+                                      class="dropdown-menu pull-right"
+                                      x-placement="bottom-start"
+                                      style="
+                                        position: absolute;
+                                        will-change: transform;
+                                        top: 0px;
+                                        left: 0px;
+                                        transform: translate3d(0px, 24px, 0px);
+                                      "
+                                    >
+                                      <li style="padding: 6px">
+                                        <a
+                                          href="#"
+                                          data-toggle="modal"
+                                          data-target="#edit_formulation"
+                                          onclick="return false;"
+                                          >Edit</a
+                                        >
+                                      </li>
+
+                                      <li style="padding: 6px">
+                                        <a href="#" onclick="return false;"
+                                          >Delete</a
+                                        >
+                                      </li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </a>
                         </div>
-                        <div
-                          id="collapse1_2"
-                          class="panel-collapse collapse"
-                          role="tabpanel"
-                          aria-labelledby="heading1_1"
-                        >
-                          <div class="panel-body">Level 2.3</div>
+                      </div>
+
+                      <div
+                        id="collapse1_2"
+                        class="panel-collapse collapse"
+                        role="tabpanel"
+                        aria-labelledby="heading1_1"
+                      >
+                        <div class="panel-body">
+                          <div class="panel-title">
+                            <div class="row" style="margin-left: -8px">
+                              <div class="col-auto pr-0 branch-border">
+                                <span
+                                  ><i class="fas fa-chevron-right"></i
+                                ></span>
+                              </div>
+                              <div class="col">
+                                <h4>
+                                  Lorem ipsum dolor sit amet, consectetur
+                                  adipiscing elit, sed do eiusmod tempor
+                                  incididunt ut labore et dolore magna aliqua.
+                                  Lorem ipsum dolor sit amet consectetur
+                                  adipiscing elit.
+                                </h4>
+                              </div>
+                              <div class="col-md-auto">
+                                <h5>Start / End Date</h5>
+                                <p>4 Dec 2020 - 7 Dec 2020</p>
+                              </div>
+                              <div class="col-lg-1">
+                                <ul class="header-dropdown">
+                                  <li class="dropdown">
+                                    <a
+                                      href="#"
+                                      onclick="return false;"
+                                      style="margin-top: -3px"
+                                      class="dropdown-toggle"
+                                      data-toggle="dropdown"
+                                      role="button"
+                                      aria-haspopup="true"
+                                      aria-expanded="true"
+                                    >
+                                      <i class="fas fa-ellipsis-v"></i>
+                                    </a>
+                                    <ul
+                                      class="dropdown-menu pull-right"
+                                      x-placement="bottom-start"
+                                      style="
+                                        position: absolute;
+                                        will-change: transform;
+                                        top: 0px;
+                                        left: 0px;
+                                        transform: translate3d(0px, 24px, 0px);
+                                      "
+                                    >
+                                      <li style="padding: 6px">
+                                        <a
+                                          href="#"
+                                          data-toggle="modal"
+                                          data-target="#edit_formulation"
+                                          onclick="return false;"
+                                          >Edit</a
+                                        >
+                                      </li>
+
+                                      <li style="padding: 6px">
+                                        <a href="#" onclick="return false;"
+                                          >Delete</a
+                                        >
+                                      </li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+
+              <div
+                id="collapse1"
+                class="panel-collapse collapse"
+                role="tabpanel"
+                aria-labelledby="heading1"
+              >
+                <div class="panel-body">
+                  <div class="panel-title">
+                    <span data-toggle="modal" data-target="#add_formulation">
+                      <i class="fas fa-plus border-box"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-12 project-panel-col">
+            <div
+              class="panel panel-default project-panel"
+              style="border-left: 2px solid #c9c9c9"
+            >
+              <div class="panel-heading" role="tab" id="heading1">
+                <div class="panel-title">
+                  <a
+                    role="button"
+                    class="collapsed"
+                    data-toggle="collapse"
+                    data-parent="#accordion"
+                    href="#collapse2"
+                    aria-expanded="true"
+                    aria-controls="collapse2"
+                  >
+                    <div class="row">
+                      <div class="col-auto pr-0 branch-border">
+                        <span><i class="fas fa-chevron-right"></i></span>
+                      </div>
+                      <div class="col">
+                        <h4>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua. Lorem ipsum dolor sit amet
+                          consectetur adipiscing elit.
+                        </h4>
+                      </div>
+                      <div class="col-md-auto">
+                        <h5>Start / End Date</h5>
+                        <p>4 Dec 2020 - 7 Dec 2020</p>
+                      </div>
+                      <div class="col-lg-1">
+                        <ul class="header-dropdown">
+                          <li class="dropdown">
+                            <a
+                              href="#"
+                              onclick="return false;"
+                              style="margin-top: -3px"
+                              class="dropdown-toggle"
+                              data-toggle="dropdown"
+                              role="button"
+                              aria-haspopup="true"
+                              aria-expanded="true"
+                            >
+                              <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                            <ul
+                              class="dropdown-menu pull-right"
+                              x-placement="bottom-start"
+                              style="
+                                position: absolute;
+                                will-change: transform;
+                                top: 0px;
+                                left: 0px;
+                                transform: translate3d(0px, 24px, 0px);
+                              "
+                            >
+                              <li style="padding: 6px">
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#edit_formulation"
+                                  onclick="return false;"
+                                  >Edit</a
+                                >
+                              </li>
+
+                              <li style="padding: 6px">
+                                <a href="#" onclick="return false;">Delete</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div
+                id="collapse2"
+                class="panel-collapse collapse"
+                role="tabpanel"
+                aria-labelledby="heading1"
+              >
+                <div class="panel-body">
+                  <div class="panel-title">
+                    <div class="row" style="margin-left: -8px">
+                      <div class="col-auto pr-0 branch-border">
+                        <span><i class="fas fa-chevron-right"></i></span>
+                      </div>
+                      <div class="col">
+                        <h4>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua. Lorem ipsum dolor sit amet
+                          consectetur adipiscing elit.
+                        </h4>
+                      </div>
+                      <div class="col-md-auto">
+                        <h5>Start / End Date</h5>
+                        <p>4 Dec 2020 - 7 Dec 2020</p>
+                      </div>
+                      <div class="col-lg-1">
+                        <ul class="header-dropdown">
+                          <li class="dropdown">
+                            <a
+                              href="#"
+                              onclick="return false;"
+                              style="margin-top: -3px"
+                              class="dropdown-toggle"
+                              data-toggle="dropdown"
+                              role="button"
+                              aria-haspopup="true"
+                              aria-expanded="true"
+                            >
+                              <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                            <ul
+                              class="dropdown-menu pull-right"
+                              x-placement="bottom-start"
+                              style="
+                                position: absolute;
+                                will-change: transform;
+                                top: 0px;
+                                left: 0px;
+                                transform: translate3d(0px, 24px, 0px);
+                              "
+                            >
+                              <li style="padding: 6px">
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#edit_formulation"
+                                  onclick="return false;"
+                                  >Edit</a
+                                >
+                              </li>
+
+                              <li style="padding: 6px">
+                                <a href="#" onclick="return false;">Delete</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                id="collapse2"
+                class="panel-collapse collapse"
+                role="tabpanel"
+                aria-labelledby="heading1"
+              >
+                <div class="panel-body">
+                  <div class="panel-title">
+                    <span data-toggle="modal" data-target="#add_formulation">
+                      <i class="fas fa-plus border-box"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="col-lg-6 col-md-6 col-sm-12 project-panel-col">
+            <div
+              class="panel panel-default project-panel"
+              style="border-left: 2px solid #c9c9c9"
+            >
+              <div class="panel-heading" role="tab" id="heading1">
+                <h4 class="panel-title">
+                  <a
+                    role="button"
+                    class="collapsed"
+                    data-toggle="collapse"
+                    data-parent="#accordion"
+                    href="#collapse3"
+                    aria-expanded="true"
+                    aria-controls="collapse3"
+                  >
+                    <div class="row">
+                      <div class="col-auto">
+                        <h4>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua.
+                        </h4>
+                      </div>
+                    </div>
+                  </a>
+                </h4>
+              </div>
+              <div
+                id="collapse3"
+                class="panel-collapse collapse"
+                role="tabpanel"
+                aria-labelledby="heading1"
+              >
+                <div class="panel-body">Level 2</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-12 project-panel-col">
+            <div
+              class="panel panel-default project-panel"
+              style="border-left: 2px solid #c9c9c9"
+            >
+              <div class="panel-heading" role="tab" id="heading1">
+                <h4 class="panel-title">
+                  <a
+                    role="button"
+                    class="collapsed"
+                    data-toggle="collapse"
+                    data-parent="#accordion"
+                    href="#collapse4"
+                    aria-expanded="true"
+                    aria-controls="collapse4"
+                  >
+                    <div class="row">
+                      <div class="col-auto">
+                        <h4>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua.
+                        </h4>
+                      </div>
+                    </div>
+                  </a>
+                </h4>
+              </div>
+              <div
+                id="collapse4"
+                class="panel-collapse collapse"
+                role="tabpanel"
+                aria-labelledby="heading1"
+              >
+                <div class="panel-body">Level 2</div>
+              </div>
+            </div>
+          </div> -->
         </div>
       </div>
     </section>
     <!-- Plugins Js -->
     <script src="../../assets/js/app.min.js"></script>
-    <script src="../../assets/js/widgets.js"></script>
     <!-- Custom Js -->
     <script src="../../assets/js/admin.js"></script>
-    <script src="../../assets/org-tree-view/MultiNestedList.js"></script>
-    <script src="../../assets/jquery.orgchart.js"></script>
-    <script src="../../assets/js/org_structure.js"></script>
-    <script src="../../assets/knockout-3.5.0.js"></script>
+    <script src="../../assets/js/file-preview.js"></script>
+    <!-- Knob Js -->
     <script src="../../assets/jquery-ui.min.js"></script>
-    <script src="../../assets/js/file-upload/file-upload.js"></script>
+    <script src="../../assets/moment.js"></script>
+    <script src="../../assets/js/pages/core.js"></script>
+    <script src="../../assets/js/pages/charts.js"></script>
+    <script src="../../assets/js/pages/spiritedaway.js"></script>
+    <script src="../../assets/js/pages/animated.js"></script>
+    <script src="../../assets/jquery.editable.min.js"></script>
+
+    <script src="../../assets/jquery-resize.js"></script>
+    <script src="../../assets/datepickerair.js"></script>
+    <script src="../../assets/datepicker.en.js"></script>
+    <script src="../../assets/js/widgets.js"></script>
+    <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
+    <script src="../../assets/knockout-3.5.0.js"></script>
     <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
+    <script src="../../assets/select2.min.js"></script>
+    <script src="../../assets/js/risk.js"></script>
+
+    <script>
+      $(".daterangepicker-field").daterangepicker({
+        forceUpdate: true,
+        callback: function (startDate, endDate, period) {
+          var title = startDate.format("L") + " – " + endDate.format("L");
+          $(this).val(title);
+        },
+      });
+
+      $("li:last-child").each(function () {
+        $this = $(this);
+        // Check if LI has children
+        if ($this.children("ul").length === 0) {
+          // Add border-left in every UL where the last LI has not children
+          $this.closest("#tree ul").css("border-left", "1px solid gray");
+        } else {
+          $this.closest("ul").css("margin-top", "20px");
+          // Add margin in other levels of the list
+          $this
+            .closest("ul")
+            .find("li")
+            .children("ul")
+            .css("margin-top", "20px");
+        }
+      });
+    </script>
   </body>
 </html>
