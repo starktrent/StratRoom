@@ -1012,25 +1012,16 @@
                             style="text-align: left"
                             >Color</label
                           >
-                          <div class="" style="margin-bottom: 0">
-                            <div class="">
-                              <a
-                                href="#"
-                                id="color_trigger1"
-                                data-toggle="modal"
-                                data-target="#color_palette_popup"
-                              >
-                                <span
-                                  class="input-group-text"
-                                  id="color-holder"
-                                  style="
-                                    width: 90px;
-                                    border-radius: 0px;
-                                    height: 30px;
-                                    background: #eeeeee;
-                                  "
-                                ></span>
-                              </a>
+                          <div class="input-group" style="margin-bottom: 0">
+                            <div class="input-group-append">
+                              <span
+                                class="input-group-text pickr"
+                                style="
+                                  width: 90px;
+                                  border-radius: 0px;
+                                  height: 30px;
+                                "
+                              ></span>
                             </div>
                           </div>
                         </div>
@@ -1101,7 +1092,7 @@
     </div>
     <!-- END Chart Setting -->
 
-    <!-- Setting -->
+    <!-- DrillDown Setting -->
     <div
       class="modal fade"
       id="drilldown_setting"
@@ -1119,38 +1110,144 @@
             </button>
           </div>
           <div class="modal-body">
-            <div class="row" id="drilldown-setting-div">
-              <div class="form-group col-md-12">
-                <label for="">Display Name</label>
-                <input type="text" class="form-control browser-default" />
-              </div>
+            <table id="chart_table" class="table table-bordered">
+              <thead class="bg-light">
+                <tr>
+                  <th
+                    style="
+                      font-size: 14px !important;
+                      font-weight: 600;
+                      text-align: center;
+                    "
+                  >
+                    Data Fields
+                    <div class="focused pull-right">
+                      <button
+                        class="form-control rounded-circle"
+                        id="add-dd-chart-dd-setting"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </button>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                style="
+                  display: -webkit-inline-box;
+                  height: 410px;
+                  overflow-x: hidden;
+                "
+              >
+                <tr>
+                  <td style="text-align: left">
+                    <div class="row">
+                      <div class="form-group col-md-6">
+                        <label for="">Display Name</label>
+                        <input
+                          type="text"
+                          class="form-control browser-default"
+                          value="Period"
+                          disabled
+                        />
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="">Axis</label>
+                        <select class="form-control browser-default" disabled>
+                          <option value="X-axis">X-axis</option>
+                          <option value="Y-axis">Y-axis</option>
+                          <option value="Z-axis">Z-axis</option>
+                        </select>
+                      </div>
 
-              <div class="form-group col-md-6">
-                <label for="">Data Field</label>
-                <input
-                  type="text"
-                  class="form-control browser-default"
-                  id="kpi_formula"
-                  readonly
-                  data-toggle="modal"
-                  data-target="#kpi_formula_popup"
-                  role="button"
-                />
-              </div>
+                      <div class="col-12">
+                        <hr style="border: 1px solid #505050" />
+                      </div>
+                    </div>
+                    <div id="dd-chart-setting-div">
+                      <div class="row">
+                        <div class="form-group col-md-10">
+                          <label for="">Display Name</label>
+                          <input
+                            type="text"
+                            class="form-control browser-default"
+                          />
+                        </div>
+                        <div class="form-group col-md-2 color_picks_1">
+                          <label
+                            for="sub_initative_progress"
+                            style="text-align: left"
+                            >Color</label
+                          >
+                          <div class="" style="margin-bottom: 0">
+                            <div class="">
+                              <a
+                                href="#"
+                                id="color_trigger1"
+                                data-toggle="modal"
+                                data-target="#color_palette_popup"
+                              >
+                                <span
+                                  class="input-group-text"
+                                  id="color-holder"
+                                  style="
+                                    width: 90px;
+                                    border-radius: 0px;
+                                    height: 30px;
+                                    background: #eeeeee;
+                                  "
+                                ></span>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
 
-              <div class="form-group col-md-6">
-                <label for="">Type</label>
-                <select class="form-control browser-default">
-                  <option value="Actual">Actual</option>
-                  <option value="Target">Target</option>
-                  <option value="Budget">Budget</option>
-                  <option value="Forecast">Forecast</option>
-                  <option value="Gap">Gap</option>
-                </select>
-              </div>
-              <div class="col-12">
-                <hr style="border: 1px solid #505050" />
-              </div>
+                        <div class="form-group col-md-12">
+                          <label for="">Data Field</label>
+                          <input
+                            type="text"
+                            class="form-control browser-default"
+                            id="kpi_formula"
+                            readonly
+                            data-toggle="modal"
+                            data-target="#kpi_formula_popup"
+                            role="button"
+                          />
+                          <a
+                            href="#"
+                            id="kpi_trigger1"
+                            data-toggle="modal"
+                            data-target=".kpi_formula_popup"
+                          ></a>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label for="">Axis</label>
+                          <select class="form-control browser-default">
+                            <option value="Y-axis">Y-axis</option>
+                            <option value="Z-axis">Z-axis</option>
+                          </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="">Type</label>
+                          <select class="form-control browser-default">
+                            <option value="Actual">Actual</option>
+                            <option value="Target">Target</option>
+                            <option value="Budget">Budget</option>
+                            <option value="Forecast">Forecast</option>
+                            <option value="Gap">Gap</option>
+                          </select>
+                        </div>
+                        <div class="col-12">
+                          <hr style="border: 1px solid #505050" />
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="row" style="padding-bottom: 6px">
               <div class="col-12">
                 <div class="form-line right">
                   <button
@@ -3512,7 +3609,7 @@
                             <a
                               href="#"
                               data-toggle="modal"
-                              data-target="#chart_setting"
+                              data-target="#drilldown_setting"
                               onclick="return false;"
                               >Settings</a
                             >
@@ -3732,7 +3829,7 @@
                             <a
                               href="#"
                               data-toggle="modal"
-                              data-target="#chart_setting"
+                              data-target="#drilldown_setting"
                               onclick="return false;"
                               >Settings</a
                             >
@@ -3952,7 +4049,7 @@
                             <a
                               href="#"
                               data-toggle="modal"
-                              data-target="#chart_setting"
+                              data-target="#drilldown_setting"
                               onclick="return false;"
                               >Settings</a
                             >
@@ -4172,7 +4269,7 @@
                             <a
                               href="#"
                               data-toggle="modal"
-                              data-target="#chart_setting"
+                              data-target="#drilldown_setting"
                               onclick="return false;"
                               >Settings</a
                             >
@@ -4392,7 +4489,7 @@
                             <a
                               href="#"
                               data-toggle="modal"
-                              data-target="#chart_setting"
+                              data-target="#drilldown_setting"
                               onclick="return false;"
                               >Settings</a
                             >
@@ -5619,6 +5716,83 @@
                 style="text-align: left"
                 >Color</label
               >
+              <div class="input-group" style="margin-bottom: 0">
+                <div class="input-group-append">
+                  <span
+                    class="input-group-text pickr"
+                    style="
+                      width: 90px;
+                      border-radius: 0px;
+                      height: 30px;
+                    "
+                  ></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group col-md-12">
+              <label for="">Data Field</label>
+              <input
+                type="text"
+                class="form-control browser-default"
+                id="kpi_formula"
+                readonly
+                data-toggle="modal"
+                data-target="#kpi_formula_popup"
+                role="button"
+              />
+              <a
+                href="#"
+                id="kpi_trigger1"
+                data-toggle="modal"
+                data-target=".kpi_formula_popup"
+              ></a>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="">Axis</label>
+              <select class="form-control browser-default">
+                <option value="Y-axis">Y-axis</option>
+                <option value="Z-axis">Z-axis</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="">Type</label>
+              <select class="form-control browser-default">
+                <option value="Actual">Actual</option>
+                <option value="Target">Target</option>
+                <option value="Budget">Budget</option>
+                <option value="Forecast">Forecast</option>
+                <option value="Gap">Gap</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <hr style="border: 1px solid #505050" />
+            </div>
+          </div>`);
+      });
+
+      $("#add-dd-chart-setting").click(function () {
+        $("#dd-chart-setting-div").append(`
+          <div class="row dd-chart-setting-clone">
+            <div class="form-group col-md-12">
+              <button class="remove-btn2" type="button">
+                <i class="fas fa-trash border-box"></i>
+              </button>
+            </div>
+            <div class="form-group col-md-10">
+              <label for="">Display Name</label>
+              <input
+                type="text"
+                class="form-control browser-default"
+              />
+            </div>
+            <div class="form-group col-md-2 color_picks_1">
+              <label
+                for="sub_initative_progress"
+                style="text-align: left"
+                >Color</label
+              >
               <a
                 href="#"
                 id="color_trigger1"
@@ -5682,6 +5856,10 @@
 
       $("#chart-setting-div").on("click", ".remove-btn", function (e) {
         $(this).parents(".chart-setting-clone").remove();
+      });
+
+      $("#dd-chart-setting-div").on("click", ".remove-btn2", function (e) {
+        $(this).parents(".dd-chart-setting-clone").remove();
       });
     </script>
   </body>

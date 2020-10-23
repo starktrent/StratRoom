@@ -149,6 +149,23 @@
       .panel-group .panel:last-child {
         border-left: 2px solid transparent;
       }
+
+      .search-section .fa-times {
+        position: absolute;
+        right: 2px;
+        top: 2px;
+        font-size: 13px;
+        color: #c2c2c2;
+        cursor: pointer;
+      }
+
+      .search-section .fa-search {
+        position: absolute;
+        left: 36px;
+        top: 1px;
+        font-size: 13px;
+        color: #c2c2c2;
+      }
     </style>
   </head>
 
@@ -464,6 +481,50 @@
           </div>
           <div class="modal-body">
             <div class="row">
+              <div class="col-12 form-group">
+                <label for="Name">Name</label>
+                <textarea
+                  name="name"
+                  cols="30"
+                  rows="6"
+                  disabled="true"
+                  class="form-control browser-default persp_name"
+                ></textarea>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Start / End Date</label>
+                <input
+                  type="text"
+                  class="form-control persp_date browser-default date_pickers_bottom datepicker-here"
+                  data-range="true"
+                  data-multiple-dates-separator=" - "
+                  data-language="en"
+                  value="29/07/2020 - 31/07/2020"
+                  id="air-date-sub-init"
+                />
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Budget</label>
+                <input
+                  type="text"
+                  class="form-control browser-default persp_subweight"
+                  value=""
+                  disabled="true"
+                />
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Forecast</label>
+                <input
+                  type="text"
+                  class="form-control browser-default persp_subweight"
+                  value=""
+                  disabled="true"
+                />
+              </div>
+
               <div class="col-6 form-group">
                 <label for="Name">Owner</label>
                 <div class="owner" style="padding-right: 12px">
@@ -494,18 +555,6 @@
                 </div>
               </div>
 
-              <div class="col-6 form-group">
-                <label for="Name">Start / End Date</label>
-                <input
-                  type="text"
-                  class="form-control persp_date browser-default date_pickers_bottom datepicker-here"
-                  data-range="true"
-                  data-multiple-dates-separator=" - "
-                  data-language="en"
-                  value="29/07/2020 - 31/07/2020"
-                  id="air-date-sub-init"
-                />
-              </div>
               <div class="col-12">
                 <div class="form-line right">
                   <button
@@ -545,6 +594,52 @@
           </div>
           <div class="modal-body">
             <div class="row">
+              <div class="col-12 form-group">
+                <label for="Name">Name</label>
+                <textarea
+                  name="name"
+                  cols="30"
+                  rows="6"
+                  disabled="true"
+                  class="form-control browser-default persp_name"
+                >
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet consectetur adipiscing elit.</textarea
+                >
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Start / End Date</label>
+                <input
+                  type="text"
+                  class="form-control persp_date browser-default date_pickers_bottom datepicker-here"
+                  data-range="true"
+                  data-multiple-dates-separator=" - "
+                  data-language="en"
+                  value="29/07/2020 - 31/07/2020"
+                  id="air-date-sub-init"
+                />
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Budget</label>
+                <input
+                  type="text"
+                  class="form-control browser-default persp_subweight"
+                  value=""
+                  disabled="true"
+                />
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Forecast</label>
+                <input
+                  type="text"
+                  class="form-control browser-default persp_subweight"
+                  value=""
+                  disabled="true"
+                />
+              </div>
+
               <div class="col-6 form-group">
                 <label for="Name">Owner</label>
                 <div class="owner" style="padding-right: 12px">
@@ -575,18 +670,6 @@
                 </div>
               </div>
 
-              <div class="col-6 form-group">
-                <label for="Name">Start / End Date</label>
-                <input
-                  type="text"
-                  class="form-control persp_date browser-default date_pickers_bottom datepicker-here"
-                  data-range="true"
-                  data-multiple-dates-separator=" - "
-                  data-language="en"
-                  value="29/07/2020 - 31/07/2020"
-                  id="air-date-sub-init"
-                />
-              </div>
               <div class="col-12">
                 <div class="form-line right">
                   <button
@@ -630,7 +713,7 @@
                 class="col-12"
                 style="text-align: center; padding-bottom: 12px"
               >
-                <h6>Do you really want to delete?</h6>
+                <h5>Do you really want to delete?</h5>
               </div>
               <div class="col-12">
                 <div class="form-line right">
@@ -645,7 +728,7 @@
                   <button
                     class="initative_save_btn"
                     value="Save"
-                    style="background-color: #f2675f ;"
+                    style="background-color: #f2675f"
                   >
                     Delete
                   </button>
@@ -675,6 +758,47 @@
               &times;
             </button>
           </div>
+          <div
+            class="row"
+            style="
+              padding: 0 50px;
+              margin-bottom: 10px !important;
+              margin-top: 10px;
+            "
+          >
+            <div class="col-5">
+              <div class="form-check">
+                <label class="form-check-label" style="padding-left: 12px"
+                  ><input
+                    id="selectall"
+                    class="form-check-input"
+                    name="sub_initiative_owner[]"
+                    type="checkbox"
+                    value="960"
+                  /><span class="form-check-sign">
+                    <span
+                      class="check"
+                      style="margin-left: -17px; margin-top: 0"
+                    ></span></span
+                  >All Users</label
+                >
+              </div>
+            </div>
+            <div class="col-7 pr-0">
+              <span class="pull-right" id="search2" style="margin-right: -12px">
+                <i class="fas fa-search border-box"></i>
+              </span>
+              <span
+                class="pull-right search-section"
+                style="display: none; margin-right: -12px"
+                id="search_section2"
+              >
+                <input type="text" class="search" placeholder="Search" />
+                <i class="fas fa-search"></i>
+                <i class="fas fa-times" id="close_search2"></i>
+              </span>
+            </div>
+          </div>
           <div class="">
             <div class="col-lg-12 col-md-12 sub_initiatives">
               <div
@@ -689,7 +813,12 @@
                 <div
                   class="d-flex flex-column employee_div_body_box sub-ini-box"
                   id="sub-ini-box_view"
-                  style="overflow: hidden; width: auto; height: 340px"
+                  style="
+                    overflow: hidden;
+                    width: auto;
+                    overflow-y: auto;
+                    height: 340px;
+                  "
                 >
                   <span id="sub-ini-box_view_users"
                     ><div
@@ -698,7 +827,7 @@
                       <div class="d-flex flex-column flex-fill profile_content">
                         <div class="d-flex flex-row">
                           <div class="form-check">
-                            <label class="form-check-label"
+                            <label class="form-check-label user-select-check"
                               ><input
                                 id=""
                                 class="form-check-input"
@@ -730,7 +859,7 @@
                       <div class="d-flex flex-column flex-fill profile_content">
                         <div class="d-flex flex-row">
                           <div class="form-check">
-                            <label class="form-check-label"
+                            <label class="form-check-label user-select-check"
                               ><input
                                 id=""
                                 class="form-check-input"
@@ -762,7 +891,7 @@
                       <div class="d-flex flex-column flex-fill profile_content">
                         <div class="d-flex flex-row">
                           <div class="form-check">
-                            <label class="form-check-label"
+                            <label class="form-check-label user-select-check"
                               ><input
                                 id=""
                                 class="form-check-input"
@@ -794,7 +923,7 @@
                       <div class="d-flex flex-column flex-fill profile_content">
                         <div class="d-flex flex-row">
                           <div class="form-check">
-                            <label class="form-check-label"
+                            <label class="form-check-label user-select-check"
                               ><input
                                 id=""
                                 class="form-check-input"
@@ -826,7 +955,103 @@
                       <div class="d-flex flex-column flex-fill profile_content">
                         <div class="d-flex flex-row">
                           <div class="form-check">
-                            <label class="form-check-label"
+                            <label class="form-check-label user-select-check"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                type="checkbox"
+                                value="962" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center"
+                          >
+                            <h5>Prakash Raj</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%">
+                            <img
+                              alt="Prakash Raj"
+                              src="images/user/usrbig6.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label user-select-check"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                type="checkbox"
+                                value="962" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center"
+                          >
+                            <h5>Prakash Raj</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%">
+                            <img
+                              alt="Prakash Raj"
+                              src="images/user/usrbig6.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label user-select-check"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                type="checkbox"
+                                value="962" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center"
+                          >
+                            <h5>Prakash Raj</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%">
+                            <img
+                              alt="Prakash Raj"
+                              src="images/user/usrbig6.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label user-select-check"
                               ><input
                                 id=""
                                 class="form-check-input"
@@ -910,6 +1135,12 @@
       <div class="container-fluid">
         <div class="row" style="padding-top: 16px; text-align: end">
           <div class="col-12">
+            <span data-toggle="modal" data-target="#">
+              <i
+                style="background: #fff; font-size: 14px"
+                class="far fa-check-circle border-box"
+              ></i>
+            </span>
             <span data-toggle="modal" data-target="#">
               <i
                 style="background: #fff; font-size: 14px"
@@ -1965,6 +2196,14 @@
         },
       });
 
+      $("#selectall").click(function () {
+        if ($(this).is(":checked")) {
+          $(".user-select-check input").attr("checked", true);
+        } else {
+          $(".user-select-check input").attr("checked", false);
+        }
+      });
+
       $("li:last-child").each(function () {
         $this = $(this);
         // Check if LI has children
@@ -1980,6 +2219,16 @@
             .children("ul")
             .css("margin-top", "20px");
         }
+      });
+
+      $("#search2").click(function () {
+        $("#search_section2").show();
+        $("#search2").hide();
+      });
+
+      $("#close_search2").click(function () {
+        $("#search2").show();
+        $("#search_section2").hide();
       });
     </script>
   </body>
