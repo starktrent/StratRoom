@@ -166,6 +166,18 @@
         font-size: 13px;
         color: #c2c2c2;
       }
+
+      .selected-group {
+        background-color: #eeeeee;
+      }
+
+      .selected-group a:focus {
+        background-color: #eeeeee !important;
+      }
+
+      .active-icon .panel-title .row a .branch-border span i {
+        color: rgb(44, 44, 255);
+      }
     </style>
   </head>
 
@@ -690,6 +702,194 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
     </div>
     <!-- Edit Formulation -->
 
+    <!-- Add Formulation -->
+    <div
+      class="modal fade"
+      id="add_lv_formulation"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Add</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-12 form-group">
+                <label for="Name">Name</label>
+                <textarea
+                  name="name"
+                  cols="30"
+                  rows="6"
+                  disabled="true"
+                  class="form-control browser-default persp_name"
+                ></textarea>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Start / End Date</label>
+                <input
+                  type="text"
+                  class="form-control persp_date browser-default date_pickers_bottom datepicker-here"
+                  data-range="true"
+                  data-multiple-dates-separator=" - "
+                  data-language="en"
+                  value="29/07/2020 - 31/07/2020"
+                  id="air-date-sub-init"
+                />
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Owner</label>
+                <div class="owner" style="padding-right: 12px">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Add Formulation -->
+
+    <!-- Edit Formulation -->
+    <div
+      class="modal fade"
+      id="edit_lv_formulation"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Edit</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-12 form-group">
+                <label for="Name">Name</label>
+                <textarea
+                  name="name"
+                  cols="30"
+                  rows="6"
+                  disabled="true"
+                  class="form-control browser-default persp_name"
+                >
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet consectetur adipiscing elit.</textarea
+                >
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Start / End Date</label>
+                <input
+                  type="text"
+                  class="form-control persp_date browser-default date_pickers_bottom datepicker-here"
+                  data-range="true"
+                  data-multiple-dates-separator=" - "
+                  data-language="en"
+                  value="29/07/2020 - 31/07/2020"
+                  id="air-date-sub-init"
+                />
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Owner</label>
+                <div class="owner" style="padding-right: 12px">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Edit Formulation -->
+
     <!-- Delete Formulation -->
     <div
       class="modal fade"
@@ -1131,30 +1331,83 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
       </div>
       <!-- End Page Header -->
 
-      <!-- Page Body -->
-      <div class="container-fluid">
-        <div class="row" style="padding-top: 16px; text-align: end">
-          <div class="col-12">
-            <span data-toggle="modal" data-target="#">
-              <i
-                style="background: #fff; font-size: 14px"
-                class="far fa-check-circle border-box"
-              ></i>
-            </span>
-            <span data-toggle="modal" data-target="#">
-              <i
-                style="background: #fff; font-size: 14px"
-                class="fas fa-upload border-box"
-              ></i>
-            </span>
-            <span data-toggle="modal" data-target="#add_formulation">
-              <i
-                style="background: #fff; font-size: 14px"
-                class="fas fa-plus border-box"
-              ></i>
-            </span>
+      <div class="row" style="padding-right: 14px">
+        <div class="col-md-4 mt-2">
+          <div style="margin-top: -19px">
+            <ul
+              class="navbar-nav"
+              style="margin-left: 14px; margin-top: 0 !important"
+            >
+              <button
+                class="btn btn-custom-secondary pull-right"
+                style="padding-top: 8px"
+              >
+                <li class="nav-item dropdown">
+                  <a
+                    class="dropdown-toggle"
+                    href="#"
+                    id="navbarDropdownMenuLink"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    style="
+                      font-size: 12px;
+                      color: #2e2e2e !important;
+                      font-weight: 500;
+                    "
+                  >
+                    Group By
+                    <span style="top: 0"><i class="fas fa-sort-down"></i></span>
+                  </a>
+
+                  <ul
+                    class="dropdown-menu groupby-dropdown"
+                    aria-labelledby="navbarDropdownMenuLink"
+                  >
+                    <li><a class="dropdown-item all-item" href="#">All</a></li>
+                    <li><a class="dropdown-item" href="#">Department 1</a></li>
+                    <li><a class="dropdown-item" href="#">Department 2</a></li>
+                    <li><a class="dropdown-item" href="#">Department 3</a></li>
+                    <li><a class="dropdown-item" href="#">Department 4</a></li>
+                    <li><a class="dropdown-item" href="#">Department 5</a></li>
+                  </ul>
+                </li>
+              </button>
+            </ul>
           </div>
         </div>
+        <div class="col-md-6"></div>
+        <div class="col-md-2 mt-2">
+          <button
+            class="btn btn-custom-secondary pull-right"
+            style="margin-left: 4px"
+            data-toggle="modal"
+            data-target="#edit_formulation"
+          >
+            <i style="font-size: 14px" class="fas fa-plus"></i>
+          </button>
+
+          <button
+            class="btn btn-custom-secondary pull-right"
+            style="margin-left: 4px"
+          >
+            <i style="font-size: 14px" class="fas fa-download"></i>
+          </button>
+
+          <button
+            class="btn btn-custom-secondary pull-right"
+            style="margin-left: 4px"
+          >
+            <i
+              style="font-size: 14px; font-weight: 600"
+              class="far fa-check-circle"
+            ></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Page Body -->
+      <div class="container-fluid">
         <!-- COl -->
         <div
           class="panel-group level1 project-panel-row row"
@@ -1323,7 +1576,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                         <a
                                           href="#"
                                           data-toggle="modal"
-                                          data-target="#edit_formulation"
+                                          data-target="#edit_lv_formulation"
                                           onclick="return false;"
                                           >Edit</a
                                         >
@@ -1424,7 +1677,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                 <a
                                                   href="#"
                                                   data-toggle="modal"
-                                                  data-target="#edit_formulation"
+                                                  data-target="#edit_lv_formulation"
                                                   onclick="return false;"
                                                   >Edit</a
                                                 >
@@ -1535,7 +1788,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                         <a
                                                           href="#"
                                                           data-toggle="modal"
-                                                          data-target="#edit_formulation"
+                                                          data-target="#edit_lv_formulation"
                                                           onclick="return false;"
                                                           >Edit</a
                                                         >
@@ -1628,7 +1881,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                         <a
                                                           href="#"
                                                           data-toggle="modal"
-                                                          data-target="#edit_formulation"
+                                                          data-target="#edit_lv_formulation"
                                                           onclick="return false;"
                                                           >Edit</a
                                                         >
@@ -1666,7 +1919,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                         <div class="panel-title">
                                           <span
                                             data-toggle="modal"
-                                            data-target="#add_formulation"
+                                            data-target="#add_lv_formulation"
                                           >
                                             <i
                                               class="fas fa-plus border-box"
@@ -1696,7 +1949,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 <div class="panel-title">
                                   <span
                                     data-toggle="modal"
-                                    data-target="#add_formulation"
+                                    data-target="#add_lv_formulation"
                                   >
                                     <i class="fas fa-plus border-box"></i>
                                   </span>
@@ -1785,7 +2038,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                         <a
                                           href="#"
                                           data-toggle="modal"
-                                          data-target="#edit_formulation"
+                                          data-target="#edit_lv_formulation"
                                           onclick="return false;"
                                           >Edit</a
                                         >
@@ -1862,7 +2115,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                         <a
                                           href="#"
                                           data-toggle="modal"
-                                          data-target="#edit_formulation"
+                                          data-target="#edit_lv_formulation"
                                           onclick="return false;"
                                           >Edit</a
                                         >
@@ -1894,7 +2147,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
               >
                 <div class="panel-body">
                   <div class="panel-title">
-                    <span data-toggle="modal" data-target="#add_formulation">
+                    <span data-toggle="modal" data-target="#add_lv_formulation">
                       <i class="fas fa-plus border-box"></i>
                     </span>
                   </div>
@@ -2042,7 +2295,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 <a
                                   href="#"
                                   data-toggle="modal"
-                                  data-target="#edit_formulation"
+                                  data-target="#edit_lv_formulation"
                                   onclick="return false;"
                                   >Edit</a
                                 >
@@ -2074,7 +2327,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
               >
                 <div class="panel-body">
                   <div class="panel-title">
-                    <span data-toggle="modal" data-target="#add_formulation">
+                    <span data-toggle="modal" data-target="#add_lv_formulation">
                       <i class="fas fa-plus border-box"></i>
                     </span>
                   </div>
@@ -2083,7 +2336,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             </div>
           </div>
 
-          <!-- <div class="col-lg-6 col-md-6 col-sm-12 project-panel-col">
+          <div class="col-lg-6 col-md-6 col-sm-12 project-panel-col">
             <div
               class="panel panel-default project-panel"
               style="border-left: 2px solid #c9c9c9"
@@ -2100,12 +2353,69 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                     aria-controls="collapse3"
                   >
                     <div class="row">
-                      <div class="col-auto">
+                      <div class="col-auto pr-0 branch-border">
+                        <span><i class="fas fa-chevron-right"></i></span>
+                      </div>
+                      <div class="col">
                         <h4>
                           Lorem ipsum dolor sit amet, consectetur adipiscing
                           elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua.
+                          dolore magna aliqua. Lorem ipsum dolor sit amet
+                          consectetur adipiscing elit.
                         </h4>
+                      </div>
+                      <div class="col-md-auto">
+                        <h5>Start / End Date</h5>
+                        <p>4 Dec 2020 - 7 Dec 2020</p>
+                      </div>
+                      <div class="col-lg-1">
+                        <ul class="header-dropdown">
+                          <li class="dropdown">
+                            <a
+                              href="#"
+                              onclick="return false;"
+                              style="margin-top: -3px"
+                              class="dropdown-toggle"
+                              data-toggle="dropdown"
+                              role="button"
+                              aria-haspopup="true"
+                              aria-expanded="true"
+                            >
+                              <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                            <ul
+                              class="dropdown-menu pull-right"
+                              x-placement="bottom-start"
+                              style="
+                                position: absolute;
+                                will-change: transform;
+                                top: 0px;
+                                left: 0px;
+                                transform: translate3d(0px, 24px, 0px);
+                              "
+                            >
+                              <li style="padding: 6px">
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#edit_formulation"
+                                  onclick="return false;"
+                                  >Edit</a
+                                >
+                              </li>
+
+                              <li style="padding: 6px">
+                                <a
+                                  href="#"
+                                  onclick="return false;"
+                                  data-toggle="modal"
+                                  data-target="#delete_formulation"
+                                  >Delete</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
                       </div>
                     </div>
                   </a>
@@ -2117,7 +2427,90 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 role="tabpanel"
                 aria-labelledby="heading1"
               >
-                <div class="panel-body">Level 2</div>
+                <div class="panel-body">
+                  <div class="panel-title">
+                    <div class="row" style="margin-left: -8px">
+                      <div class="col-auto pr-0 branch-border">
+                        <span><i class="fas fa-chevron-right"></i></span>
+                      </div>
+                      <div class="col">
+                        <h4>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua. Lorem ipsum dolor sit amet
+                          consectetur adipiscing elit.
+                        </h4>
+                      </div>
+                      <div class="col-md-auto">
+                        <h5>Start / End Date</h5>
+                        <p>4 Dec 2020 - 7 Dec 2020</p>
+                      </div>
+                      <div class="col-lg-1">
+                        <ul class="header-dropdown">
+                          <li class="dropdown">
+                            <a
+                              href="#"
+                              onclick="return false;"
+                              style="margin-top: -3px"
+                              class="dropdown-toggle"
+                              data-toggle="dropdown"
+                              role="button"
+                              aria-haspopup="true"
+                              aria-expanded="true"
+                            >
+                              <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                            <ul
+                              class="dropdown-menu pull-right"
+                              x-placement="bottom-start"
+                              style="
+                                position: absolute;
+                                will-change: transform;
+                                top: 0px;
+                                left: 0px;
+                                transform: translate3d(0px, 24px, 0px);
+                              "
+                            >
+                              <li style="padding: 6px">
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#edit_lv_formulation"
+                                  onclick="return false;"
+                                  >Edit</a
+                                >
+                              </li>
+
+                              <li style="padding: 6px">
+                                <a
+                                  href="#"
+                                  onclick="return false;"
+                                  data-toggle="modal"
+                                  data-target="#delete_formulation"
+                                  >Delete</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="collapse3"
+                class="panel-collapse collapse"
+                role="tabpanel"
+                aria-labelledby="heading1"
+              >
+                <div class="panel-body">
+                  <div class="panel-title">
+                    <span data-toggle="modal" data-target="#add_lv_formulation">
+                      <i class="fas fa-plus border-box"></i>
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -2139,12 +2532,69 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                     aria-controls="collapse4"
                   >
                     <div class="row">
-                      <div class="col-auto">
+                      <div class="col-auto pr-0 branch-border">
+                        <span><i class="fas fa-chevron-right"></i></span>
+                      </div>
+                      <div class="col">
                         <h4>
                           Lorem ipsum dolor sit amet, consectetur adipiscing
                           elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua.
+                          dolore magna aliqua. Lorem ipsum dolor sit amet
+                          consectetur adipiscing elit.
                         </h4>
+                      </div>
+                      <div class="col-md-auto">
+                        <h5>Start / End Date</h5>
+                        <p>4 Dec 2020 - 7 Dec 2020</p>
+                      </div>
+                      <div class="col-lg-1">
+                        <ul class="header-dropdown">
+                          <li class="dropdown">
+                            <a
+                              href="#"
+                              onclick="return false;"
+                              style="margin-top: -3px"
+                              class="dropdown-toggle"
+                              data-toggle="dropdown"
+                              role="button"
+                              aria-haspopup="true"
+                              aria-expanded="true"
+                            >
+                              <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                            <ul
+                              class="dropdown-menu pull-right"
+                              x-placement="bottom-start"
+                              style="
+                                position: absolute;
+                                will-change: transform;
+                                top: 0px;
+                                left: 0px;
+                                transform: translate3d(0px, 24px, 0px);
+                              "
+                            >
+                              <li style="padding: 6px">
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#edit_formulation"
+                                  onclick="return false;"
+                                  >Edit</a
+                                >
+                              </li>
+
+                              <li style="padding: 6px">
+                                <a
+                                  href="#"
+                                  onclick="return false;"
+                                  data-toggle="modal"
+                                  data-target="#delete_formulation"
+                                  >Delete</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
                       </div>
                     </div>
                   </a>
@@ -2156,10 +2606,93 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 role="tabpanel"
                 aria-labelledby="heading1"
               >
-                <div class="panel-body">Level 2</div>
+                <div class="panel-body">
+                  <div class="panel-title">
+                    <div class="row" style="margin-left: -8px">
+                      <div class="col-auto pr-0 branch-border">
+                        <span><i class="fas fa-chevron-right"></i></span>
+                      </div>
+                      <div class="col">
+                        <h4>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua. Lorem ipsum dolor sit amet
+                          consectetur adipiscing elit.
+                        </h4>
+                      </div>
+                      <div class="col-md-auto">
+                        <h5>Start / End Date</h5>
+                        <p>4 Dec 2020 - 7 Dec 2020</p>
+                      </div>
+                      <div class="col-lg-1">
+                        <ul class="header-dropdown">
+                          <li class="dropdown">
+                            <a
+                              href="#"
+                              onclick="return false;"
+                              style="margin-top: -3px"
+                              class="dropdown-toggle"
+                              data-toggle="dropdown"
+                              role="button"
+                              aria-haspopup="true"
+                              aria-expanded="true"
+                            >
+                              <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                            <ul
+                              class="dropdown-menu pull-right"
+                              x-placement="bottom-start"
+                              style="
+                                position: absolute;
+                                will-change: transform;
+                                top: 0px;
+                                left: 0px;
+                                transform: translate3d(0px, 24px, 0px);
+                              "
+                            >
+                              <li style="padding: 6px">
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#edit_lv_formulation"
+                                  onclick="return false;"
+                                  >Edit</a
+                                >
+                              </li>
+
+                              <li style="padding: 6px">
+                                <a
+                                  href="#"
+                                  onclick="return false;"
+                                  data-toggle="modal"
+                                  data-target="#delete_formulation"
+                                  >Delete</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="collapse4"
+                class="panel-collapse collapse"
+                role="tabpanel"
+                aria-labelledby="heading1"
+              >
+                <div class="panel-body">
+                  <div class="panel-title">
+                    <span data-toggle="modal" data-target="#add_lv_formulation">
+                      <i class="fas fa-plus border-box"></i>
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
-          </div> -->
+          </div>
         </div>
       </div>
     </section>
@@ -2229,6 +2762,22 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
       $("#close_search2").click(function () {
         $("#search2").show();
         $("#search_section2").hide();
+      });
+
+      $(".panel-collapse").click(function () {
+        var active = $(this).parent().attr("class");
+      });
+
+      $(".panel-title").click(function () {
+        $(this).parent().toggleClass("active-icon");
+      });
+
+      $(".groupby-dropdown li a").click(function () {
+        $(this).parent().toggleClass("selected-group");
+      });
+
+      $(".groupby-dropdown").on("click", function (e) {
+        e.stopPropagation();
       });
     </script>
   </body>

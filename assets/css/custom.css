@@ -1466,3 +1466,22 @@ label {
   font-weight: 500;
   color: #1e252d;
 }
+
+.groupby-dropdown > li > a {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.groupby-dropdown {
+  padding: 4px 0 !important;
+  width: 130px !important;
+  top: -40px !important;
+}
+
+.navbar-nav .groupby-dropdown::before {
+  right: 39px;
+}
+
+.navbar-nav .groupby-dropdown::after {
+  right: 40px;
+}
