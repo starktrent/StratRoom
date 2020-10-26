@@ -1418,7 +1418,7 @@ label {
 }
 
 .project-panel-row {
-  padding: 0 8px 8px 8px;
+  padding: 0 38px 8px 8px;
   /* margin-top: 14px; */
 }
 
@@ -1484,4 +1484,71 @@ label {
 
 .navbar-nav .groupby-dropdown::after {
   right: 40px;
+}
+
+.modal-body .row div h4 {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.project-details {
+  height: 580px;
+  padding: 16px 20px;
+  width: 50px;
+  position: fixed;
+  z-index: 2;
+  top: 175px;
+  right: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  background-color: #fff;
+  border: 2px solid #1e252d;
+  border-radius: 4px;
+  /* box-shadow: -8px 8px 16px rgba(145, 145, 145, 0.15); */
+}
+
+.project-view {
+  height: 580px;
+  padding: 16px 20px;
+  width: 400px;
+  position: fixed;
+  z-index: 2;
+  top: 175px;
+  right: 50px;
+  background-color: #fff;
+  overflow: hidden;
+  display: none;
+  transition: 0.5s;
+  box-shadow: -8px 8px 16px rgba(145, 145, 145, 0.15);
+  border-radius: 4px;
+}
+
+.project-view .row div h4 {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.project-details .row .col-12 div i {
+  font-size: 14px;
+  color: #1e252d;
+}
+
+.project-details .row .col-12 div {
+  padding-bottom: 30px;
+  cursor: pointer;
+}
+
+.panel-group .panel .panel-body .branch-border-plus::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 28px;
+  bottom: 16%;
+  width: 0.75em;
+  border: 2px solid #c6c6c6;
+  border-top: 0 none transparent;
+  border-right: 0 none transparent;
+  border-left: 0 none transparent;
 }

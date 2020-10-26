@@ -180,6 +180,10 @@
         transform: rotate(90deg);
         transition: 0.4s;
       }
+
+      .panel-title .row a:hover .branch-border span i {
+        color: gray !important;
+      }
     </style>
   </head>
 
@@ -703,6 +707,85 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
       </div>
     </div>
     <!-- Edit Formulation -->
+
+    <!-- View Formulation -->
+    <div
+      class="modal fade"
+      id="view_formulation"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>View</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-12 form-group">
+                <label for="Name">Name</label>
+                <h4>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Lorem ipsum dolor sit amet consectetur adipiscing elit.
+                </h4>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Start / End Date</label>
+                <h4>29/07/2020 - 31/07/2020</h4>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Budget</label>
+                <h4>$234.567</h4>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Forecast</label>
+                <h4>$123.567</h4>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Owner</label>
+                <div class="owner" style="padding-right: 12px">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#"
+                    style="cursor: pointer"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- View Formulation -->
 
     <!-- Add Formulation -->
     <div
@@ -1358,7 +1441,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                       font-weight: 500;
                     "
                   >
-                    Group By
+                    Group
                     <span style="top: 0"><i class="fas fa-sort-down"></i></span>
                   </a>
 
@@ -1366,7 +1449,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                     class="dropdown-menu groupby-dropdown"
                     aria-labelledby="navbarDropdownMenuLink"
                   >
-                    <li><a class="dropdown-item all-item" href="#">All</a></li>
                     <li><a class="dropdown-item" href="#">Department 1</a></li>
                     <li><a class="dropdown-item" href="#">Department 2</a></li>
                     <li><a class="dropdown-item" href="#">Department 3</a></li>
@@ -1410,6 +1492,182 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
       <!-- Page Body -->
       <div class="container-fluid" style="height: 600px; overflow-y: auto">
+        <div class="row">
+          <div class="col-12 project-details">
+            <div class="row">
+              <div class="col-12">
+                <div onclick="viewProject()">
+                  <i class="fas fa-info"></i>
+                </div>
+                <div onclick="editProject()">
+                  <i class="fas fa-pen"></i>
+                </div>
+                <div
+                  onclick="return false;"
+                  data-toggle="modal"
+                  data-target="#delete_formulation"
+                >
+                  <i class="fas fa-trash"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 project-view" id="view-project-detail">
+            <div class="row">
+              <div class="col-12 form-group" style="margin-top: 8px">
+                <h5 style="font-size: 14px">
+                  <i class="fas fa-info pr-3"></i> Details
+                  <i
+                    class="fas fa-times pull-right"
+                    onclick="closeAll()"
+                    style="cursor: pointer"
+                  ></i>
+                </h5>
+                <hr style="margin-top: 20px" />
+              </div>
+              <div class="col-12 form-group">
+                <label for="Name">Name</label>
+                <h4>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Lorem ipsum dolor sit amet consectetur adipiscing elit.
+                </h4>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Start / End Date</label>
+                <h4>29/07/2020 - 31/07/2020</h4>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Budget</label>
+                <h4>$234.567</h4>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Forecast</label>
+                <h4>$123.567</h4>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Owner</label>
+                <div class="owner" style="padding-right: 12px">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#"
+                    style="cursor: pointer"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 project-view" id="edit-project-detail">
+            <div class="row">
+              <div class="col-12 form-group" style="margin-top: 8px">
+                <h5 style="font-size: 14px">
+                  <i class="fas fa-pen pr-3"></i> Edit
+                  <i
+                    class="fas fa-times pull-right"
+                    onclick="closeAll()"
+                    style="cursor: pointer"
+                  ></i>
+                </h5>
+                <hr style="margin-top: 20px" />
+              </div>
+              <div class="col-12 form-group">
+                <label for="Name">Name</label>
+                <textarea
+                  name="name"
+                  cols="30"
+                  rows="6"
+                  class="form-control browser-default persp_name"
+                >
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet consectetur adipiscing elit.</textarea
+                >
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Start / End Date</label>
+                <input
+                  type="text"
+                  class="form-control persp_date browser-default date_pickers_bottom datepicker-here"
+                  data-range="true"
+                  data-multiple-dates-separator=" - "
+                  data-language="en"
+                  value="29/07/2020 - 31/07/2020"
+                  id="air-date-sub-init"
+                />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Budget</label>
+                <input
+                  type="text"
+                  class="form-control browser-default persp_subweight"
+                  value="$267.3"
+                />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Forecast</label>
+                <input
+                  type="text"
+                  class="form-control browser-default persp_subweight"
+                  value="$267.3"
+                />
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Owner</label>
+                <div class="owner" style="padding-right: 12px">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- COl -->
         <div
           class="panel-group level1 project-panel-row row"
@@ -1475,6 +1733,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 transform: translate3d(0px, 24px, 0px);
                               "
                             >
+                              <li style="padding: 6px">
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#view_formulation"
+                                  onclick="return false;"
+                                  >View</a
+                                >
+                              </li>
+
                               <li style="padding: 6px">
                                 <a
                                   href="#"
@@ -1578,6 +1846,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                         <a
                                           href="#"
                                           data-toggle="modal"
+                                          data-target="#view_formulation"
+                                          onclick="return false;"
+                                          >View</a
+                                        >
+                                      </li>
+
+                                      <li style="padding: 6px">
+                                        <a
+                                          href="#"
+                                          data-toggle="modal"
                                           data-target="#edit_lv_formulation"
                                           onclick="return false;"
                                           >Edit</a
@@ -1675,6 +1953,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                 );
                                               "
                                             >
+                                              <li style="padding: 6px">
+                                                <a
+                                                  href="#"
+                                                  data-toggle="modal"
+                                                  data-target="#view_formulation"
+                                                  onclick="return false;"
+                                                  >View</a
+                                                >
+                                              </li>
+
                                               <li style="padding: 6px">
                                                 <a
                                                   href="#"
@@ -1790,6 +2078,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                         <a
                                                           href="#"
                                                           data-toggle="modal"
+                                                          data-target="#view_formulation"
+                                                          onclick="return false;"
+                                                          >View</a
+                                                        >
+                                                      </li>
+
+                                                      <li style="padding: 6px">
+                                                        <a
+                                                          href="#"
+                                                          data-toggle="modal"
                                                           data-target="#edit_lv_formulation"
                                                           onclick="return false;"
                                                           >Edit</a
@@ -1879,6 +2177,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                         );
                                                       "
                                                     >
+                                                      <li style="padding: 6px">
+                                                        <a
+                                                          href="#"
+                                                          data-toggle="modal"
+                                                          data-target="#view_formulation"
+                                                          onclick="return false;"
+                                                          >View</a
+                                                        >
+                                                      </li>
+
                                                       <li style="padding: 6px">
                                                         <a
                                                           href="#"
@@ -2059,6 +2367,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                         <a
                                           href="#"
                                           data-toggle="modal"
+                                          data-target="#view_formulation"
+                                          onclick="return false;"
+                                          >View</a
+                                        >
+                                      </li>
+
+                                      <li style="padding: 6px">
+                                        <a
+                                          href="#"
+                                          data-toggle="modal"
                                           data-target="#edit_lv_formulation"
                                           onclick="return false;"
                                           >Edit</a
@@ -2132,6 +2450,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                         transform: translate3d(0px, 24px, 0px);
                                       "
                                     >
+                                      <li style="padding: 6px">
+                                        <a
+                                          href="#"
+                                          data-toggle="modal"
+                                          data-target="#view_formulation"
+                                          onclick="return false;"
+                                          >View</a
+                                        >
+                                      </li>
+
                                       <li style="padding: 6px">
                                         <a
                                           href="#"
@@ -2235,6 +2563,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 transform: translate3d(0px, 24px, 0px);
                               "
                             >
+                              <li style="padding: 6px">
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#view_formulation"
+                                  onclick="return false;"
+                                  >View</a
+                                >
+                              </li>
+
                               <li style="padding: 6px">
                                 <a
                                   href="#"
@@ -2419,6 +2757,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 <a
                                   href="#"
                                   data-toggle="modal"
+                                  data-target="#view_formulation"
+                                  onclick="return false;"
+                                  >View</a
+                                >
+                              </li>
+
+                              <li style="padding: 6px">
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
                                   data-target="#edit_formulation"
                                   onclick="return false;"
                                   >Edit</a
@@ -2594,6 +2942,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 transform: translate3d(0px, 24px, 0px);
                               "
                             >
+                              <li style="padding: 6px">
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#view_formulation"
+                                  onclick="return false;"
+                                  >View</a
+                                >
+                              </li>
+
                               <li style="padding: 6px">
                                 <a
                                   href="#"
@@ -2777,6 +3135,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 <a
                                   href="#"
                                   data-toggle="modal"
+                                  data-target="#view_formulation"
+                                  onclick="return false;"
+                                  >View</a
+                                >
+                              </li>
+
+                              <li style="padding: 6px">
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
                                   data-target="#edit_formulation"
                                   onclick="return false;"
                                   >Edit</a
@@ -2952,6 +3320,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 transform: translate3d(0px, 24px, 0px);
                               "
                             >
+                              <li style="padding: 6px">
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#view_formulation"
+                                  onclick="return false;"
+                                  >View</a
+                                >
+                              </li>
+
                               <li style="padding: 6px">
                                 <a
                                   href="#"
@@ -3135,6 +3513,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 <a
                                   href="#"
                                   data-toggle="modal"
+                                  data-target="#view_formulation"
+                                  onclick="return false;"
+                                  >View</a
+                                >
+                              </li>
+
+                              <li style="padding: 6px">
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
                                   data-target="#edit_formulation"
                                   onclick="return false;"
                                   >Edit</a
@@ -3310,6 +3698,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 transform: translate3d(0px, 24px, 0px);
                               "
                             >
+                              <li style="padding: 6px">
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#view_formulation"
+                                  onclick="return false;"
+                                  >View</a
+                                >
+                              </li>
+
                               <li style="padding: 6px">
                                 <a
                                   href="#"
@@ -3493,6 +3891,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 <a
                                   href="#"
                                   data-toggle="modal"
+                                  data-target="#view_formulation"
+                                  onclick="return false;"
+                                  >View</a
+                                >
+                              </li>
+
+                              <li style="padding: 6px">
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
                                   data-target="#edit_formulation"
                                   onclick="return false;"
                                   >Edit</a
@@ -3668,6 +4076,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 transform: translate3d(0px, 24px, 0px);
                               "
                             >
+                              <li style="padding: 6px">
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#view_formulation"
+                                  onclick="return false;"
+                                  >View</a
+                                >
+                              </li>
+
                               <li style="padding: 6px">
                                 <a
                                   href="#"
@@ -3859,21 +4277,36 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         $("#search_section2").hide();
       });
 
-      $(".panel-collapse").click(function () {
-        var active = $(this).parent().attr("class");
-      });
+      // $(".panel-collapse").click(function () {
+      //   var active = $(this).parent().attr("class");
+      // });
+
+      function viewProject() {
+        $(".project-view").hide();
+        $("#view-project-detail").show();
+      }
+
+      function editProject() {
+        $(".project-view").hide();
+        $("#edit-project-detail").show();
+      }
+
+      function closeAll() {
+        $(".project-view").hide();
+      }
 
       $(".panel-title").click(function () {
         $(this).parent().toggleClass("active-icon");
       });
 
       $(".groupby-dropdown li a").click(function () {
-        $(this).parent().toggleClass("selected-group");
+        $(".groupby-dropdown li a").removeClass("selected-group");
+        $(this).addClass("selected-group");
       });
 
-      $(".groupby-dropdown").on("click", function (e) {
-        e.stopPropagation();
-      });
+      // $(".groupby-dropdown").on("click", function (e) {
+      //   e.stopPropagation();
+      // });
     </script>
   </body>
 </html>
