@@ -184,6 +184,17 @@
       .panel-title .row a:hover .branch-border span i {
         color: gray !important;
       }
+
+      #project-options li a {
+        padding: 3px 12px !important;
+        font-weight: 500;
+        color: gray !important;
+      }
+
+      select {
+        display: block !important;
+        height: 2.4rem !important;
+      }
     </style>
   </head>
 
@@ -511,6 +522,26 @@
               </div>
 
               <div class="col-6 form-group">
+                <label for="Name">Department</label>
+                <select class="form-control browser-default">
+                  <option value="Department 1">Department 1</option>
+                  <option value="Department 2">Department 2</option>
+                  <option value="Department 3">Department 3</option>
+                  <option value="Department 4">Department 4</option>
+                </select>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Type</label>
+                <select class="form-control browser-default">
+                  <option value="Initiative">Initiative</option>
+                  <option value="Sub Initiative">Sub Initiative</option>
+                  <option value="Activity">Activity</option>
+                  <option value="Milestone">Milestone</option>
+                </select>
+              </div>
+
+              <div class="col-6 form-group">
                 <label for="Name">Start / End Date</label>
                 <input
                   type="text"
@@ -626,6 +657,26 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
               </div>
 
               <div class="col-6 form-group">
+                <label for="Name">Department</label>
+                <select class="form-control browser-default">
+                  <option value="Department 1">Department 1</option>
+                  <option value="Department 2">Department 2</option>
+                  <option value="Department 3">Department 3</option>
+                  <option value="Department 4">Department 4</option>
+                </select>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Type</label>
+                <select class="form-control browser-default">
+                  <option value="Initiative">Initiative</option>
+                  <option value="Sub Initiative">Sub Initiative</option>
+                  <option value="Activity">Activity</option>
+                  <option value="Milestone">Milestone</option>
+                </select>
+              </div>
+
+              <div class="col-6 form-group">
                 <label for="Name">Start / End Date</label>
                 <input
                   type="text"
@@ -737,6 +788,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
               </div>
 
               <div class="col-6 form-group">
+                <label for="Name">Department</label>
+                <h4>Department 1</h4>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Type</label>
+                <h4>Activity</h4>
+              </div>
+
+              <div class="col-6 form-group">
                 <label for="Name">Start / End Date</label>
                 <h4>29/07/2020 - 31/07/2020</h4>
               </div>
@@ -815,6 +876,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                   disabled="true"
                   class="form-control browser-default persp_name"
                 ></textarea>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Type</label>
+                <select class="form-control browser-default">
+                  <option value="Initiative">Initiative</option>
+                  <option value="Sub Initiative">Sub Initiative</option>
+                  <option value="Activity">Activity</option>
+                  <option value="Milestone">Milestone</option>
+                </select>
               </div>
 
               <div class="col-6 form-group">
@@ -908,8 +979,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                   disabled="true"
                   class="form-control browser-default persp_name"
                 >
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet consectetur adipiscing elit.</textarea
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet consectetur adipiscing elit.</textarea
                 >
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Type</label>
+                <select class="form-control browser-default">
+                  <option value="Initiative">Initiative</option>
+                  <option value="Sub Initiative">Sub Initiative</option>
+                  <option value="Activity">Activity</option>
+                  <option value="Milestone">Milestone</option>
+                </select>
               </div>
 
               <div class="col-6 form-group">
@@ -974,6 +1055,80 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
       </div>
     </div>
     <!-- Edit Formulation -->
+
+    <!-- View Formulation -->
+    <div
+      class="modal fade"
+      id="view_lv_formulation"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>View</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-12 form-group">
+                <label for="Name">Name</label>
+                <h4>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Lorem ipsum dolor sit amet consectetur adipiscing elit.
+                </h4>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Type</label>
+                <h4>Activity</h4>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Start / End Date</label>
+                <h4>29/07/2020 - 31/07/2020</h4>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Owner</label>
+                <div class="owner" style="padding-right: 12px">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#"
+                    style="cursor: pointer"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- View Formulation -->
 
     <!-- Delete Formulation -->
     <div
@@ -1443,6 +1598,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                   >
                     Group
                     <span style="top: 0"><i class="fas fa-sort-down"></i></span>
+                    <span id="displayText"></span>
                   </a>
 
                   <ul
@@ -1466,7 +1622,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             class="btn btn-custom-secondary pull-right"
             style="margin-left: 4px"
             data-toggle="modal"
-            data-target="#edit_formulation"
+            data-target="#add_formulation"
           >
             <i style="font-size: 14px" class="fas fa-plus"></i>
           </button>
@@ -1492,182 +1648,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
       <!-- Page Body -->
       <div class="container-fluid" style="height: 600px; overflow-y: auto">
-        <div class="row">
-          <div class="col-12 project-details">
-            <div class="row">
-              <div class="col-12">
-                <div onclick="viewProject()">
-                  <i class="fas fa-info"></i>
-                </div>
-                <div onclick="editProject()">
-                  <i class="fas fa-pen"></i>
-                </div>
-                <div
-                  onclick="return false;"
-                  data-toggle="modal"
-                  data-target="#delete_formulation"
-                >
-                  <i class="fas fa-trash"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 project-view" id="view-project-detail">
-            <div class="row">
-              <div class="col-12 form-group" style="margin-top: 8px">
-                <h5 style="font-size: 14px">
-                  <i class="fas fa-info pr-3"></i> Details
-                  <i
-                    class="fas fa-times pull-right"
-                    onclick="closeAll()"
-                    style="cursor: pointer"
-                  ></i>
-                </h5>
-                <hr style="margin-top: 20px" />
-              </div>
-              <div class="col-12 form-group">
-                <label for="Name">Name</label>
-                <h4>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Lorem ipsum dolor sit amet consectetur adipiscing elit.
-                </h4>
-              </div>
-
-              <div class="col-12 form-group">
-                <label for="Name">Start / End Date</label>
-                <h4>29/07/2020 - 31/07/2020</h4>
-              </div>
-
-              <div class="col-12 form-group">
-                <label for="Name">Budget</label>
-                <h4>$234.567</h4>
-              </div>
-
-              <div class="col-12 form-group">
-                <label for="Name">Forecast</label>
-                <h4>$123.567</h4>
-              </div>
-
-              <div class="col-12 form-group">
-                <label for="Name">Owner</label>
-                <div class="owner" style="padding-right: 12px">
-                  <ul
-                    class="list-unstyled order-list"
-                    data-toggle="modal"
-                    data-target="#"
-                    style="cursor: pointer"
-                  >
-                    <li class="avatar avatar-sm">
-                      <img
-                        class="rounded-circle"
-                        src="../../assets/images/user/user7.jpg"
-                        alt="user"
-                      />
-                    </li>
-                    <li class="avatar avatar-sm">
-                      <img
-                        class="rounded-circle"
-                        src="../../assets/images/user/user8.jpg"
-                        alt="user"
-                      />
-                    </li>
-                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
-                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 project-view" id="edit-project-detail">
-            <div class="row">
-              <div class="col-12 form-group" style="margin-top: 8px">
-                <h5 style="font-size: 14px">
-                  <i class="fas fa-pen pr-3"></i> Edit
-                  <i
-                    class="fas fa-times pull-right"
-                    onclick="closeAll()"
-                    style="cursor: pointer"
-                  ></i>
-                </h5>
-                <hr style="margin-top: 20px" />
-              </div>
-              <div class="col-12 form-group">
-                <label for="Name">Name</label>
-                <textarea
-                  name="name"
-                  cols="30"
-                  rows="6"
-                  class="form-control browser-default persp_name"
-                >
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet consectetur adipiscing elit.</textarea
-                >
-              </div>
-
-              <div class="col-12 form-group">
-                <label for="Name">Start / End Date</label>
-                <input
-                  type="text"
-                  class="form-control persp_date browser-default date_pickers_bottom datepicker-here"
-                  data-range="true"
-                  data-multiple-dates-separator=" - "
-                  data-language="en"
-                  value="29/07/2020 - 31/07/2020"
-                  id="air-date-sub-init"
-                />
-              </div>
-
-              <div class="col-12 form-group">
-                <label for="Name">Budget</label>
-                <input
-                  type="text"
-                  class="form-control browser-default persp_subweight"
-                  value="$267.3"
-                />
-              </div>
-
-              <div class="col-12 form-group">
-                <label for="Name">Forecast</label>
-                <input
-                  type="text"
-                  class="form-control browser-default persp_subweight"
-                  value="$267.3"
-                />
-              </div>
-
-              <div class="col-12 form-group">
-                <label for="Name">Owner</label>
-                <div class="owner" style="padding-right: 12px">
-                  <ul
-                    class="list-unstyled order-list"
-                    data-toggle="modal"
-                    data-target="#user_edit_popup"
-                    style="cursor: pointer"
-                  >
-                    <li class="avatar avatar-sm">
-                      <img
-                        class="rounded-circle"
-                        src="../../assets/images/user/user7.jpg"
-                        alt="user"
-                      />
-                    </li>
-                    <li class="avatar avatar-sm">
-                      <img
-                        class="rounded-circle"
-                        src="../../assets/images/user/user8.jpg"
-                        alt="user"
-                      />
-                    </li>
-                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
-                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         <!-- COl -->
         <div
           class="panel-group level1 project-panel-row row"
@@ -1724,6 +1704,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             </a>
                             <ul
                               class="dropdown-menu pull-right"
+                              id="project-options"
                               x-placement="bottom-start"
                               style="
                                 position: absolute;
@@ -1733,7 +1714,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 transform: translate3d(0px, 24px, 0px);
                               "
                             >
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -1743,7 +1724,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -1753,7 +1734,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   onclick="return false;"
@@ -1833,6 +1814,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                     </a>
                                     <ul
                                       class="dropdown-menu pull-right"
+                                      id="project-options"
                                       x-placement="bottom-start"
                                       style="
                                         position: absolute;
@@ -1842,17 +1824,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                         transform: translate3d(0px, 24px, 0px);
                                       "
                                     >
-                                      <li style="padding: 6px">
+                                      <li>
                                         <a
                                           href="#"
                                           data-toggle="modal"
-                                          data-target="#view_formulation"
+                                          data-target="#view_lv_formulation"
                                           onclick="return false;"
                                           >View</a
                                         >
                                       </li>
 
-                                      <li style="padding: 6px">
+                                      <li>
                                         <a
                                           href="#"
                                           data-toggle="modal"
@@ -1862,7 +1844,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                         >
                                       </li>
 
-                                      <li style="padding: 6px">
+                                      <li>
                                         <a href="#" onclick="return false;"
                                           >Delete</a
                                         >
@@ -1940,6 +1922,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                             </a>
                                             <ul
                                               class="dropdown-menu pull-right"
+                                              id="project-options"
                                               x-placement="bottom-start"
                                               style="
                                                 position: absolute;
@@ -1953,17 +1936,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                 );
                                               "
                                             >
-                                              <li style="padding: 6px">
+                                              <li>
                                                 <a
                                                   href="#"
                                                   data-toggle="modal"
-                                                  data-target="#view_formulation"
+                                                  data-target="#view_lv_formulation"
                                                   onclick="return false;"
                                                   >View</a
                                                 >
                                               </li>
 
-                                              <li style="padding: 6px">
+                                              <li>
                                                 <a
                                                   href="#"
                                                   data-toggle="modal"
@@ -1973,7 +1956,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                 >
                                               </li>
 
-                                              <li style="padding: 6px">
+                                              <li>
                                                 <a
                                                   href="#"
                                                   onclick="return false;"
@@ -2061,6 +2044,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                     </a>
                                                     <ul
                                                       class="dropdown-menu pull-right"
+                                                      id="project-options"
                                                       x-placement="bottom-start"
                                                       style="
                                                         position: absolute;
@@ -2074,17 +2058,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                         );
                                                       "
                                                     >
-                                                      <li style="padding: 6px">
+                                                      <li>
                                                         <a
                                                           href="#"
                                                           data-toggle="modal"
-                                                          data-target="#view_formulation"
+                                                          data-target="#view_lv_formulation"
                                                           onclick="return false;"
                                                           >View</a
                                                         >
                                                       </li>
 
-                                                      <li style="padding: 6px">
+                                                      <li>
                                                         <a
                                                           href="#"
                                                           data-toggle="modal"
@@ -2094,7 +2078,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                         >
                                                       </li>
 
-                                                      <li style="padding: 6px">
+                                                      <li>
                                                         <a
                                                           href="#"
                                                           onclick="return false;"
@@ -2121,15 +2105,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                               class="row"
                                               style="margin-left: -8px"
                                             >
-                                              <!-- <div
+                                              <div
                                                 class="col-auto pr-0 branch-border"
                                               >
-                                                <span
-                                                  ><i
-                                                    class="fas fa-chevron-right"
-                                                  ></i
-                                                ></span>
-                                              </div> -->
+                                                <span> </span>
+                                              </div>
                                               <div class="col">
                                                 <h4>
                                                   Lorem ipsum dolor sit amet,
@@ -2164,6 +2144,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                     </a>
                                                     <ul
                                                       class="dropdown-menu pull-right"
+                                                      id="project-options"
                                                       x-placement="bottom-start"
                                                       style="
                                                         position: absolute;
@@ -2177,17 +2158,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                         );
                                                       "
                                                     >
-                                                      <li style="padding: 6px">
+                                                      <li>
                                                         <a
                                                           href="#"
                                                           data-toggle="modal"
-                                                          data-target="#view_formulation"
+                                                          data-target="#view_lv_formulation"
                                                           onclick="return false;"
                                                           >View</a
                                                         >
                                                       </li>
 
-                                                      <li style="padding: 6px">
+                                                      <li>
                                                         <a
                                                           href="#"
                                                           data-toggle="modal"
@@ -2197,7 +2178,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                         >
                                                       </li>
 
-                                                      <li style="padding: 6px">
+                                                      <li>
                                                         <a
                                                           href="#"
                                                           onclick="return false;"
@@ -2220,14 +2201,26 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                       >
                                         <div class="panel-body">
                                           <div class="panel-title">
-                                            <span
-                                              data-toggle="modal"
-                                              data-target="#add_lv_formulation"
+                                            <div
+                                              class="row"
+                                              style="margin-left: -8px"
                                             >
-                                              <i
-                                                class="fas fa-plus border-box"
-                                              ></i>
-                                            </span>
+                                              <div
+                                                class="col-auto pr-0 branch-border"
+                                              >
+                                                <span> </span>
+                                              </div>
+                                              <div class="col">
+                                                <span
+                                                  data-toggle="modal"
+                                                  data-target="#add_lv_formulation"
+                                                >
+                                                  <i
+                                                    class="fas fa-plus border-box"
+                                                  ></i>
+                                                </span>
+                                              </div>
+                                            </div>
                                           </div>
                                         </div>
                                       </div>
@@ -2246,14 +2239,26 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                         id="heading1_1_1_1"
                                       >
                                         <div class="panel-title">
-                                          <span
-                                            data-toggle="modal"
-                                            data-target="#add_lv_formulation"
+                                          <div
+                                            class="row"
+                                            style="margin-left: -8px"
                                           >
-                                            <i
-                                              class="fas fa-plus border-box"
-                                            ></i>
-                                          </span>
+                                            <div
+                                              class="col-auto pr-0 branch-border"
+                                            >
+                                              <span> </span>
+                                            </div>
+                                            <div class="col">
+                                              <span
+                                                data-toggle="modal"
+                                                data-target="#add_lv_formulation"
+                                              >
+                                                <i
+                                                  class="fas fa-plus border-box"
+                                                ></i>
+                                              </span>
+                                            </div>
+                                          </div>
                                         </div>
                                       </div>
                                     </div>
@@ -2276,12 +2281,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 id="heading1_1_1"
                               >
                                 <div class="panel-title">
-                                  <span
-                                    data-toggle="modal"
-                                    data-target="#add_lv_formulation"
-                                  >
-                                    <i class="fas fa-plus border-box"></i>
-                                  </span>
+                                  <div class="row" style="margin-left: -8px">
+                                    <div class="col-auto pr-0 branch-border">
+                                      <span> </span>
+                                    </div>
+                                    <div class="col">
+                                      <span
+                                        data-toggle="modal"
+                                        data-target="#add_lv_formulation"
+                                      >
+                                        <i class="fas fa-plus border-box"></i>
+                                      </span>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -2354,6 +2366,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                     </a>
                                     <ul
                                       class="dropdown-menu pull-right"
+                                      id="project-options"
                                       x-placement="bottom-start"
                                       style="
                                         position: absolute;
@@ -2363,17 +2376,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                         transform: translate3d(0px, 24px, 0px);
                                       "
                                     >
-                                      <li style="padding: 6px">
+                                      <li>
                                         <a
                                           href="#"
                                           data-toggle="modal"
-                                          data-target="#view_formulation"
+                                          data-target="#view_lv_formulation"
                                           onclick="return false;"
                                           >View</a
                                         >
                                       </li>
 
-                                      <li style="padding: 6px">
+                                      <li>
                                         <a
                                           href="#"
                                           data-toggle="modal"
@@ -2383,7 +2396,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                         >
                                       </li>
 
-                                      <li style="padding: 6px">
+                                      <li>
                                         <a href="#" onclick="return false;"
                                           >Delete</a
                                         >
@@ -2406,11 +2419,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                         <div class="panel-body">
                           <div class="panel-title">
                             <div class="row" style="margin-left: -8px">
-                              <!-- <div class="col-auto pr-0 branch-border">
-                                <span
-                                  ><i class="fas fa-chevron-right"></i
-                                ></span>
-                              </div> -->
+                              <div class="col-auto pr-0 branch-border">
+                                <span> </span>
+                              </div>
                               <div class="col">
                                 <h4>
                                   Lorem ipsum dolor sit amet, consectetur
@@ -2441,6 +2452,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                     </a>
                                     <ul
                                       class="dropdown-menu pull-right"
+                                      id="project-options"
                                       x-placement="bottom-start"
                                       style="
                                         position: absolute;
@@ -2450,17 +2462,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                         transform: translate3d(0px, 24px, 0px);
                                       "
                                     >
-                                      <li style="padding: 6px">
+                                      <li>
                                         <a
                                           href="#"
                                           data-toggle="modal"
-                                          data-target="#view_formulation"
+                                          data-target="#view_lv_formulation"
                                           onclick="return false;"
                                           >View</a
                                         >
                                       </li>
 
-                                      <li style="padding: 6px">
+                                      <li>
                                         <a
                                           href="#"
                                           data-toggle="modal"
@@ -2470,7 +2482,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                         >
                                       </li>
 
-                                      <li style="padding: 6px">
+                                      <li>
                                         <a href="#" onclick="return false;"
                                           >Delete</a
                                         >
@@ -2496,9 +2508,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
               >
                 <div class="panel-body">
                   <div class="panel-title">
-                    <span data-toggle="modal" data-target="#add_lv_formulation">
-                      <i class="fas fa-plus border-box"></i>
-                    </span>
+                    <div class="row" style="margin-left: -8px">
+                      <div class="col-auto pr-0 branch-border">
+                        <span> </span>
+                      </div>
+                      <div class="col">
+                        <span
+                          data-toggle="modal"
+                          data-target="#add_lv_formulation"
+                        >
+                          <i class="fas fa-plus border-box"></i>
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2554,6 +2576,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             </a>
                             <ul
                               class="dropdown-menu pull-right"
+                              id="project-options"
                               x-placement="bottom-start"
                               style="
                                 position: absolute;
@@ -2563,7 +2586,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 transform: translate3d(0px, 24px, 0px);
                               "
                             >
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -2573,7 +2596,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -2583,7 +2606,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   onclick="return false;"
@@ -2609,9 +2632,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 <div class="panel-body">
                   <div class="panel-title">
                     <div class="row" style="margin-left: -8px">
-                      <!-- <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-right"></i></span>
-                      </div> -->
+                      <div class="col-auto pr-0 branch-border">
+                        <span> </span>
+                      </div>
                       <div class="col">
                         <h4>
                           Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -2641,6 +2664,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             </a>
                             <ul
                               class="dropdown-menu pull-right"
+                              id="project-options"
                               x-placement="bottom-start"
                               style="
                                 position: absolute;
@@ -2650,7 +2674,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 transform: translate3d(0px, 24px, 0px);
                               "
                             >
-                              <li style="padding: 6px">
+                              <li>
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#view_lv_formulation"
+                                  onclick="return false;"
+                                  >View</a
+                                >
+                              </li>
+
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -2660,7 +2694,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   onclick="return false;"
@@ -2686,9 +2720,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
               >
                 <div class="panel-body">
                   <div class="panel-title">
-                    <span data-toggle="modal" data-target="#add_lv_formulation">
-                      <i class="fas fa-plus border-box"></i>
-                    </span>
+                    <div class="row" style="margin-left: -8px">
+                      <div class="col-auto pr-0 branch-border">
+                        <span> </span>
+                      </div>
+                      <div class="col">
+                        <span
+                          data-toggle="modal"
+                          data-target="#add_lv_formulation"
+                        >
+                          <i class="fas fa-plus border-box"></i>
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2744,6 +2788,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             </a>
                             <ul
                               class="dropdown-menu pull-right"
+                              id="project-options"
                               x-placement="bottom-start"
                               style="
                                 position: absolute;
@@ -2753,7 +2798,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 transform: translate3d(0px, 24px, 0px);
                               "
                             >
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -2763,7 +2808,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -2773,7 +2818,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   onclick="return false;"
@@ -2799,9 +2844,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 <div class="panel-body">
                   <div class="panel-title">
                     <div class="row" style="margin-left: -8px">
-                      <!-- <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-right"></i></span>
-                      </div> -->
+                      <div class="col-auto pr-0 branch-border">
+                        <span> </span>
+                      </div>
                       <div class="col">
                         <h4>
                           Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -2831,6 +2876,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             </a>
                             <ul
                               class="dropdown-menu pull-right"
+                              id="project-options"
                               x-placement="bottom-start"
                               style="
                                 position: absolute;
@@ -2840,7 +2886,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 transform: translate3d(0px, 24px, 0px);
                               "
                             >
-                              <li style="padding: 6px">
+                              <li>
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#view_lv_formulation"
+                                  onclick="return false;"
+                                  >View</a
+                                >
+                              </li>
+
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -2850,7 +2906,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   onclick="return false;"
@@ -2875,9 +2931,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
               >
                 <div class="panel-body">
                   <div class="panel-title">
-                    <span data-toggle="modal" data-target="#add_lv_formulation">
-                      <i class="fas fa-plus border-box"></i>
-                    </span>
+                    <div class="row" style="margin-left: -8px">
+                      <div class="col-auto pr-0 branch-border">
+                        <span> </span>
+                      </div>
+                      <div class="col">
+                        <span
+                          data-toggle="modal"
+                          data-target="#add_lv_formulation"
+                        >
+                          <i class="fas fa-plus border-box"></i>
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2933,6 +2999,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             </a>
                             <ul
                               class="dropdown-menu pull-right"
+                              id="project-options"
                               x-placement="bottom-start"
                               style="
                                 position: absolute;
@@ -2942,7 +3009,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 transform: translate3d(0px, 24px, 0px);
                               "
                             >
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -2952,7 +3019,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -2962,7 +3029,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   onclick="return false;"
@@ -2988,9 +3055,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 <div class="panel-body">
                   <div class="panel-title">
                     <div class="row" style="margin-left: -8px">
-                      <!-- <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-right"></i></span>
-                      </div> -->
+                      <div class="col-auto pr-0 branch-border">
+                        <span> </span>
+                      </div>
                       <div class="col">
                         <h4>
                           Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -3020,6 +3087,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             </a>
                             <ul
                               class="dropdown-menu pull-right"
+                              id="project-options"
                               x-placement="bottom-start"
                               style="
                                 position: absolute;
@@ -3029,7 +3097,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 transform: translate3d(0px, 24px, 0px);
                               "
                             >
-                              <li style="padding: 6px">
+                              <li>
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#view_lv_formulation"
+                                  onclick="return false;"
+                                  >View</a
+                                >
+                              </li>
+
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -3039,7 +3117,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   onclick="return false;"
@@ -3064,9 +3142,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
               >
                 <div class="panel-body">
                   <div class="panel-title">
-                    <span data-toggle="modal" data-target="#add_lv_formulation">
-                      <i class="fas fa-plus border-box"></i>
-                    </span>
+                    <div class="row" style="margin-left: -8px">
+                      <div class="col-auto pr-0 branch-border">
+                        <span> </span>
+                      </div>
+                      <div class="col">
+                        <span
+                          data-toggle="modal"
+                          data-target="#add_lv_formulation"
+                        >
+                          <i class="fas fa-plus border-box"></i>
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -3122,6 +3210,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             </a>
                             <ul
                               class="dropdown-menu pull-right"
+                              id="project-options"
                               x-placement="bottom-start"
                               style="
                                 position: absolute;
@@ -3131,7 +3220,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 transform: translate3d(0px, 24px, 0px);
                               "
                             >
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -3141,7 +3230,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -3151,7 +3240,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   onclick="return false;"
@@ -3177,9 +3266,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 <div class="panel-body">
                   <div class="panel-title">
                     <div class="row" style="margin-left: -8px">
-                      <!-- <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-right"></i></span>
-                      </div> -->
+                      <div class="col-auto pr-0 branch-border">
+                        <span> </span>
+                      </div>
                       <div class="col">
                         <h4>
                           Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -3209,6 +3298,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             </a>
                             <ul
                               class="dropdown-menu pull-right"
+                              id="project-options"
                               x-placement="bottom-start"
                               style="
                                 position: absolute;
@@ -3218,7 +3308,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 transform: translate3d(0px, 24px, 0px);
                               "
                             >
-                              <li style="padding: 6px">
+                              <li>
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#view_lv_formulation"
+                                  onclick="return false;"
+                                  >View</a
+                                >
+                              </li>
+
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -3228,7 +3328,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   onclick="return false;"
@@ -3253,9 +3353,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
               >
                 <div class="panel-body">
                   <div class="panel-title">
-                    <span data-toggle="modal" data-target="#add_lv_formulation">
-                      <i class="fas fa-plus border-box"></i>
-                    </span>
+                    <div class="row" style="margin-left: -8px">
+                      <div class="col-auto pr-0 branch-border">
+                        <span> </span>
+                      </div>
+                      <div class="col">
+                        <span
+                          data-toggle="modal"
+                          data-target="#add_lv_formulation"
+                        >
+                          <i class="fas fa-plus border-box"></i>
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -3311,6 +3421,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             </a>
                             <ul
                               class="dropdown-menu pull-right"
+                              id="project-options"
                               x-placement="bottom-start"
                               style="
                                 position: absolute;
@@ -3320,7 +3431,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 transform: translate3d(0px, 24px, 0px);
                               "
                             >
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -3330,7 +3441,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -3340,7 +3451,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   onclick="return false;"
@@ -3366,9 +3477,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 <div class="panel-body">
                   <div class="panel-title">
                     <div class="row" style="margin-left: -8px">
-                      <!-- <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-right"></i></span>
-                      </div> -->
+                      <div class="col-auto pr-0 branch-border">
+                        <span> </span>
+                      </div>
                       <div class="col">
                         <h4>
                           Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -3398,6 +3509,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             </a>
                             <ul
                               class="dropdown-menu pull-right"
+                              id="project-options"
                               x-placement="bottom-start"
                               style="
                                 position: absolute;
@@ -3407,7 +3519,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 transform: translate3d(0px, 24px, 0px);
                               "
                             >
-                              <li style="padding: 6px">
+                              <li>
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#view_lv_formulation"
+                                  onclick="return false;"
+                                  >View</a
+                                >
+                              </li>
+
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -3417,7 +3539,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   onclick="return false;"
@@ -3442,9 +3564,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
               >
                 <div class="panel-body">
                   <div class="panel-title">
-                    <span data-toggle="modal" data-target="#add_lv_formulation">
-                      <i class="fas fa-plus border-box"></i>
-                    </span>
+                    <div class="row" style="margin-left: -8px">
+                      <div class="col-auto pr-0 branch-border">
+                        <span> </span>
+                      </div>
+                      <div class="col">
+                        <span
+                          data-toggle="modal"
+                          data-target="#add_lv_formulation"
+                        >
+                          <i class="fas fa-plus border-box"></i>
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -3500,6 +3632,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             </a>
                             <ul
                               class="dropdown-menu pull-right"
+                              id="project-options"
                               x-placement="bottom-start"
                               style="
                                 position: absolute;
@@ -3509,7 +3642,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 transform: translate3d(0px, 24px, 0px);
                               "
                             >
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -3519,7 +3652,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -3529,7 +3662,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   onclick="return false;"
@@ -3555,9 +3688,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 <div class="panel-body">
                   <div class="panel-title">
                     <div class="row" style="margin-left: -8px">
-                      <!-- <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-right"></i></span>
-                      </div> -->
+                      <div class="col-auto pr-0 branch-border">
+                        <span> </span>
+                      </div>
                       <div class="col">
                         <h4>
                           Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -3587,6 +3720,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             </a>
                             <ul
                               class="dropdown-menu pull-right"
+                              id="project-options"
                               x-placement="bottom-start"
                               style="
                                 position: absolute;
@@ -3596,7 +3730,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 transform: translate3d(0px, 24px, 0px);
                               "
                             >
-                              <li style="padding: 6px">
+                              <li>
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#view_lv_formulation"
+                                  onclick="return false;"
+                                  >View</a
+                                >
+                              </li>
+
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -3606,7 +3750,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   onclick="return false;"
@@ -3631,9 +3775,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
               >
                 <div class="panel-body">
                   <div class="panel-title">
-                    <span data-toggle="modal" data-target="#add_lv_formulation">
-                      <i class="fas fa-plus border-box"></i>
-                    </span>
+                    <div class="row" style="margin-left: -8px">
+                      <div class="col-auto pr-0 branch-border">
+                        <span> </span>
+                      </div>
+                      <div class="col">
+                        <span
+                          data-toggle="modal"
+                          data-target="#add_lv_formulation"
+                        >
+                          <i class="fas fa-plus border-box"></i>
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -3689,6 +3843,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             </a>
                             <ul
                               class="dropdown-menu pull-right"
+                              id="project-options"
                               x-placement="bottom-start"
                               style="
                                 position: absolute;
@@ -3698,7 +3853,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 transform: translate3d(0px, 24px, 0px);
                               "
                             >
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -3708,7 +3863,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -3718,7 +3873,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   onclick="return false;"
@@ -3744,9 +3899,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 <div class="panel-body">
                   <div class="panel-title">
                     <div class="row" style="margin-left: -8px">
-                      <!-- <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-right"></i></span>
-                      </div> -->
+                      <div class="col-auto pr-0 branch-border">
+                        <span> </span>
+                      </div>
                       <div class="col">
                         <h4>
                           Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -3776,6 +3931,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             </a>
                             <ul
                               class="dropdown-menu pull-right"
+                              id="project-options"
                               x-placement="bottom-start"
                               style="
                                 position: absolute;
@@ -3785,7 +3941,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 transform: translate3d(0px, 24px, 0px);
                               "
                             >
-                              <li style="padding: 6px">
+                              <li>
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#view_lv_formulation"
+                                  onclick="return false;"
+                                  >View</a
+                                >
+                              </li>
+
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -3795,7 +3961,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   onclick="return false;"
@@ -3820,9 +3986,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
               >
                 <div class="panel-body">
                   <div class="panel-title">
-                    <span data-toggle="modal" data-target="#add_lv_formulation">
-                      <i class="fas fa-plus border-box"></i>
-                    </span>
+                    <div class="row" style="margin-left: -8px">
+                      <div class="col-auto pr-0 branch-border">
+                        <span> </span>
+                      </div>
+                      <div class="col">
+                        <span
+                          data-toggle="modal"
+                          data-target="#add_lv_formulation"
+                        >
+                          <i class="fas fa-plus border-box"></i>
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -3878,6 +4054,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             </a>
                             <ul
                               class="dropdown-menu pull-right"
+                              id="project-options"
                               x-placement="bottom-start"
                               style="
                                 position: absolute;
@@ -3887,7 +4064,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 transform: translate3d(0px, 24px, 0px);
                               "
                             >
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -3897,7 +4074,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -3907,7 +4084,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   onclick="return false;"
@@ -3933,9 +4110,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 <div class="panel-body">
                   <div class="panel-title">
                     <div class="row" style="margin-left: -8px">
-                      <!-- <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-right"></i></span>
-                      </div> -->
+                      <div class="col-auto pr-0 branch-border">
+                        <span> </span>
+                      </div>
                       <div class="col">
                         <h4>
                           Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -3965,6 +4142,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             </a>
                             <ul
                               class="dropdown-menu pull-right"
+                              id="project-options"
                               x-placement="bottom-start"
                               style="
                                 position: absolute;
@@ -3974,7 +4152,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 transform: translate3d(0px, 24px, 0px);
                               "
                             >
-                              <li style="padding: 6px">
+                              <li>
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#view_lv_formulation"
+                                  onclick="return false;"
+                                  >View</a
+                                >
+                              </li>
+
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -3984,7 +4172,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   onclick="return false;"
@@ -4009,9 +4197,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
               >
                 <div class="panel-body">
                   <div class="panel-title">
-                    <span data-toggle="modal" data-target="#add_lv_formulation">
-                      <i class="fas fa-plus border-box"></i>
-                    </span>
+                    <div class="row" style="margin-left: -8px">
+                      <div class="col-auto pr-0 branch-border">
+                        <span> </span>
+                      </div>
+                      <div class="col">
+                        <span
+                          data-toggle="modal"
+                          data-target="#add_lv_formulation"
+                        >
+                          <i class="fas fa-plus border-box"></i>
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -4067,6 +4265,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             </a>
                             <ul
                               class="dropdown-menu pull-right"
+                              id="project-options"
                               x-placement="bottom-start"
                               style="
                                 position: absolute;
@@ -4076,7 +4275,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 transform: translate3d(0px, 24px, 0px);
                               "
                             >
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -4086,7 +4285,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -4096,7 +4295,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   onclick="return false;"
@@ -4122,9 +4321,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 <div class="panel-body">
                   <div class="panel-title">
                     <div class="row" style="margin-left: -8px">
-                      <!-- <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-right"></i></span>
-                      </div> -->
+                      <div class="col-auto pr-0 branch-border">
+                        <span> </span>
+                      </div>
                       <div class="col">
                         <h4>
                           Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -4154,6 +4353,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             </a>
                             <ul
                               class="dropdown-menu pull-right"
+                              id="project-options"
                               x-placement="bottom-start"
                               style="
                                 position: absolute;
@@ -4163,7 +4363,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 transform: translate3d(0px, 24px, 0px);
                               "
                             >
-                              <li style="padding: 6px">
+                              <li>
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#view_lv_formulation"
+                                  onclick="return false;"
+                                  >View</a
+                                >
+                              </li>
+
+                              <li>
                                 <a
                                   href="#"
                                   data-toggle="modal"
@@ -4173,7 +4383,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 >
                               </li>
 
-                              <li style="padding: 6px">
+                              <li>
                                 <a
                                   href="#"
                                   onclick="return false;"
@@ -4198,9 +4408,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
               >
                 <div class="panel-body">
                   <div class="panel-title">
-                    <span data-toggle="modal" data-target="#add_lv_formulation">
-                      <i class="fas fa-plus border-box"></i>
-                    </span>
+                    <div class="row" style="margin-left: -8px">
+                      <div class="col-auto pr-0 branch-border">
+                        <span> </span>
+                      </div>
+                      <div class="col">
+                        <span
+                          data-toggle="modal"
+                          data-target="#add_lv_formulation"
+                        >
+                          <i class="fas fa-plus border-box"></i>
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -4281,27 +4501,32 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
       //   var active = $(this).parent().attr("class");
       // });
 
-      function viewProject() {
-        $(".project-view").hide();
-        $("#view-project-detail").show();
-      }
-
-      function editProject() {
-        $(".project-view").hide();
-        $("#edit-project-detail").show();
-      }
-
-      function closeAll() {
-        $(".project-view").hide();
-      }
-
       $(".panel-title").click(function () {
         $(this).parent().toggleClass("active-icon");
       });
 
       $(".groupby-dropdown li a").click(function () {
         $(".groupby-dropdown li a").removeClass("selected-group");
-        $(this).addClass("selected-group");
+        if ($(this).text() == "Department 1") {
+          $("#displayText").text("Department 1");
+          $(this).addClass("selected-group");
+        }
+        if ($(this).text() == "Department 2") {
+          $("#displayText").text("Department 2");
+          $(this).addClass("selected-group");
+        }
+        if ($(this).text() == "Department 3") {
+          $("#displayText").text("Department 3");
+          $(this).addClass("selected-group");
+        }
+        if ($(this).text() == "Department 4") {
+          $("#displayText").text("Department 4");
+          $(this).addClass("selected-group");
+        }
+        if ($(this).text() == "Department 5") {
+          $("#displayText").text("Department 5");
+          $(this).addClass("selected-group");
+        }
       });
 
       // $(".groupby-dropdown").on("click", function (e) {
