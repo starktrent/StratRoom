@@ -1436,7 +1436,7 @@ label {
   padding: 12px 2px 6px 10px !important;
 }
 
-.project-panel .panel-title span .fa-chevron-right {
+.project-panel .panel-title span .fa-chevron-down {
   margin-top: 15px;
 }
 
@@ -1507,4 +1507,6 @@ label {
 
 #displayText {
   top: 1px;
+  font-weight: 600;
+  color: #1e252d;
 }

@@ -18,6 +18,7 @@
     <!-- You can choose a theme from css/styles instead of get all themes -->
     <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
     <link rel="stylesheet" href="../../assets/datepickerair.css" />
+    <link href="../../assets/js/file-upload/file-upload.css" rel="stylesheet" />
     <link
       href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css"
       rel="stylesheet"
@@ -146,9 +147,17 @@
         border-left: 0 none transparent;
       }
 
-      .panel-group .panel:last-child {
-        border-left: 2px solid transparent;
+      /* #last-child {
+        border-left: none;
       }
+
+      #last-child::before {
+        border-left: 2px solid #c6c6c6;
+      } */
+
+      /* .panel-group .panel:last-child {
+        border-left: 2px solid transparent;
+      } */
 
       .search-section .fa-times {
         position: absolute;
@@ -175,13 +184,18 @@
         background-color: #eeeeee !important;
       }
 
-      .active-icon .panel-title .row a .branch-border span i {
-        -ms-transform: rotate(90deg); /* IE 9 */
-        transform: rotate(90deg);
+      .collapsed .branch-border span i {
+        -ms-transform: rotate(-90deg); /* IE 9 */
+        transform: rotate(-90deg);
         transition: 0.4s;
+        color: gray !important;
       }
 
-      .panel-title .row a:hover .branch-border span i {
+      a:not(.collapsed) .branch-border span i {
+        color: rgb(51, 47, 255) !important;
+      }
+
+      .panel-title .row .collapsed:hover .branch-border span i {
         color: gray !important;
       }
 
@@ -194,6 +208,10 @@
       select {
         display: block !important;
         height: 2.4rem !important;
+      }
+
+      .branch-border span {
+        margin-left: -10px;
       }
     </style>
   </head>
@@ -1557,6 +1575,209 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
     </div>
     <!--#End User Edit Popup -->
 
+    <!-- File Validate Form -->
+    <div
+      class="modal fade"
+      id="file-validate-form"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>File Upload</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-12">
+                <ul class="form-progressbar">
+                  <li>Upload</li>
+                  <li>Validation</li>
+                  <li>Import</li>
+                </ul>
+              </div>
+              <div class="col-md-12">
+                <hr />
+              </div>
+            </div>
+            <!-- <form> -->
+            <div class="row" id="file-upload">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label
+                    for="risk_rating"
+                    style="font-size: 14px; font-weight: 600"
+                  >
+                    Import Category</label
+                  >
+                  <select
+                    id="category"
+                    name="category"
+                    class="form-control browser-default"
+                  >
+                    <option value="">Choose</option>
+                    <option value="Organisation Import">Org chart</option>
+                    <option value="Scorecard Import">Scorecard</option>
+                    <option value="Initiative Import">Initiatives</option>
+                  </select>
+                  <span id="categoryerror" style="color: red; display: none">
+                    Kindly select category to upload a file</span
+                  >
+                </div>
+                <div class="form-group">
+                  <label class="control-label">Upload File</label>
+                  <div class="preview-zone hidden">
+                    <div class="box box-solid">
+                      <div class="box-body"></div>
+                    </div>
+                  </div>
+                  <div class="dropzone-wrapper">
+                    <div class="dropzone-desc">
+                      <i class="fas fa-file-upload" style="font-size: 20px"></i>
+                      <p>Choose a file or drag it here.</p>
+                    </div>
+                    <input
+                      type="file"
+                      name="img_logo"
+                      class="dropzone"
+                      accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <hr />
+              </div>
+              <div class="col-md-12">
+                <div class="form-line right">
+                  <button
+                    class="initative_save_btn"
+                    id="next-btn-1"
+                    style="font-weight: 600"
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="row" id="file-validate" style="display: none">
+              <div class="col-md-12 img-center">
+                <!-- <img
+                      src="../organisation/images/Verified.png"
+                      alt="Verified"
+                    /> -->
+                <img
+                  src="../organisation/images/Not-Verified.png"
+                  alt="Not-Verified"
+                />
+                <div class="error-div">
+                  <table class="error-table">
+                    <thead>
+                      <tr>
+                        <th style="width: 150px">Row</th>
+                        <th>Error</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="width: 150px">1</td>
+                        <td>Contain Special Character</td>
+                      </tr>
+                      <tr>
+                        <td style="width: 150px">3</td>
+                        <td>Contain Special Character</td>
+                      </tr>
+                      <tr>
+                        <td style="width: 150px">5</td>
+                        <td>Contain Special Character</td>
+                      </tr>
+                      <tr>
+                        <td style="width: 150px">8</td>
+                        <td>Contain Special Character</td>
+                      </tr>
+                      <tr>
+                        <td style="width: 150px">10</td>
+                        <td>Contain Special Character</td>
+                      </tr>
+                      <tr>
+                        <td style="width: 150px">19</td>
+                        <td>Contain Special Character</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <hr />
+              </div>
+              <div class="col-md-12">
+                <div class="form-line">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    id="prev-btn1"
+                    style="font-weight: 600"
+                  >
+                    Previous
+                  </button>
+                  <button
+                    class="initative_save_btn pull-right"
+                    id="next-btn-2"
+                    style="font-weight: 600"
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="row" id="file-save" style="display: none">
+              <div class="col-md-12">
+                <div class="col-md-12 img-center">
+                  <img
+                    src="../organisation/images/Success.png"
+                    alt="Verified"
+                  />
+                </div>
+              </div>
+              <div class="col-md-12">
+                <hr />
+              </div>
+              <div class="col-md-12">
+                <div class="form-line">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    id="prev-btn2"
+                    style="font-weight: 600"
+                  >
+                    Previous
+                  </button>
+                  <button
+                    class="initative_save_btn pull-right"
+                    id="done-btn"
+                    style="font-weight: 600"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Done
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- </form> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END File Validate Form -->
+
     <section class="content">
       <!-- Page Header -->
       <div class="page-header row no-gutters py-2 m-t--70">
@@ -1596,9 +1817,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                       font-weight: 500;
                     "
                   >
-                    Group
-                    <span style="top: 0"><i class="fas fa-sort-down"></i></span>
+                    Group:
                     <span id="displayText"></span>
+                    <span style="top: 0"><i class="fas fa-sort-down"></i></span>
                   </a>
 
                   <ul
@@ -1630,6 +1851,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
           <button
             class="btn btn-custom-secondary pull-right"
             style="margin-left: 4px"
+            data-toggle="modal"
+            data-target="#file-validate-form"
           >
             <i style="font-size: 14px" class="fas fa-download"></i>
           </button>
@@ -1673,7 +1896,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                   >
                     <div class="row">
                       <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-right"></i></span>
+                        <span><i class="fas fa-chevron-down"></i></span>
                       </div>
                       <div class="col">
                         <h4>
@@ -1683,8 +1906,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                           consectetur adipiscing elit.
                         </h4>
                       </div>
-                      <div class="col-md-auto">
-                        <h5>Start / End Date</h5>
+                      <div class="col-md-auto pt-4">
+                        <p>Human Resource</p>
+                      </div>
+                      <div class="col-md-auto pt-4">
                         <p>4 Dec 2020 - 7 Dec 2020</p>
                       </div>
                       <div class="col-lg-1">
@@ -1777,12 +2002,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             aria-controls="collapse1_1"
                           >
                             <div class="row">
-                              <div
-                                class="col-auto pr-0 branch-border branch-border"
-                              >
-                                <span
-                                  ><i class="fas fa-chevron-right"></i
-                                ></span>
+                              <div class="col-auto pr-0 branch-border">
+                                <span><i class="fas fa-chevron-down"></i></span>
                               </div>
                               <div class="col">
                                 <h4>
@@ -1889,7 +2110,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                     <div class="row">
                                       <div class="col-auto pr-0 branch-border">
                                         <span
-                                          ><i class="fas fa-chevron-right"></i
+                                          ><i class="fas fa-chevron-down"></i
                                         ></span>
                                       </div>
                                       <div class="col">
@@ -2006,7 +2227,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                               >
                                                 <span
                                                   ><i
-                                                    class="fas fa-chevron-right"
+                                                    class="fas fa-chevron-down"
                                                   ></i
                                                 ></span>
                                               </div>
@@ -2214,6 +2435,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                 <span
                                                   data-toggle="modal"
                                                   data-target="#add_lv_formulation"
+                                                  style="margin-left: -20px"
                                                 >
                                                   <i
                                                     class="fas fa-plus border-box"
@@ -2252,6 +2474,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                               <span
                                                 data-toggle="modal"
                                                 data-target="#add_lv_formulation"
+                                                style="margin-left: -20px"
                                               >
                                                 <i
                                                   class="fas fa-plus border-box"
@@ -2289,6 +2512,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                       <span
                                         data-toggle="modal"
                                         data-target="#add_lv_formulation"
+                                        style="margin-left: -20px"
                                       >
                                         <i class="fas fa-plus border-box"></i>
                                       </span>
@@ -2332,9 +2556,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                           >
                             <div class="row">
                               <div class="col-auto pr-0 branch-border">
-                                <span
-                                  ><i class="fas fa-chevron-right"></i
-                                ></span>
+                                <span><i class="fas fa-chevron-down"></i></span>
                               </div>
                               <div class="col">
                                 <h4>
@@ -2516,6 +2738,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                         <span
                           data-toggle="modal"
                           data-target="#add_lv_formulation"
+                          style="margin-left: -20px"
                         >
                           <i class="fas fa-plus border-box"></i>
                         </span>
@@ -2545,7 +2768,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                   >
                     <div class="row">
                       <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-right"></i></span>
+                        <span><i class="fas fa-chevron-down"></i></span>
                       </div>
                       <div class="col">
                         <h4>
@@ -2555,8 +2778,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                           consectetur adipiscing elit.
                         </h4>
                       </div>
-                      <div class="col-md-auto">
-                        <h5>Start / End Date</h5>
+                      <div class="col-md-auto pt-4">
+                        <p>Human Resource</p>
+                      </div>
+                      <div class="col-md-auto pt-4">
                         <p>4 Dec 2020 - 7 Dec 2020</p>
                       </div>
                       <div class="col-lg-1">
@@ -2718,7 +2943,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 role="tabpanel"
                 aria-labelledby="heading1"
               >
-                <div class="panel-body">
+                <div class="panel-body" id="last-child">
                   <div class="panel-title">
                     <div class="row" style="margin-left: -8px">
                       <div class="col-auto pr-0 branch-border">
@@ -2728,6 +2953,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                         <span
                           data-toggle="modal"
                           data-target="#add_lv_formulation"
+                          style="margin-left: -20px"
                         >
                           <i class="fas fa-plus border-box"></i>
                         </span>
@@ -2757,7 +2983,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                   >
                     <div class="row">
                       <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-right"></i></span>
+                        <span><i class="fas fa-chevron-down"></i></span>
                       </div>
                       <div class="col">
                         <h4>
@@ -2767,8 +2993,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                           consectetur adipiscing elit.
                         </h4>
                       </div>
-                      <div class="col-md-auto">
-                        <h5>Start / End Date</h5>
+                      <div class="col-md-auto pt-4">
+                        <p>Human Resource</p>
+                      </div>
+                      <div class="col-md-auto pt-4">
                         <p>4 Dec 2020 - 7 Dec 2020</p>
                       </div>
                       <div class="col-lg-1">
@@ -2939,6 +3167,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                         <span
                           data-toggle="modal"
                           data-target="#add_lv_formulation"
+                          style="margin-left: -20px"
                         >
                           <i class="fas fa-plus border-box"></i>
                         </span>
@@ -2968,7 +3197,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                   >
                     <div class="row">
                       <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-right"></i></span>
+                        <span><i class="fas fa-chevron-down"></i></span>
                       </div>
                       <div class="col">
                         <h4>
@@ -2978,8 +3207,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                           consectetur adipiscing elit.
                         </h4>
                       </div>
-                      <div class="col-md-auto">
-                        <h5>Start / End Date</h5>
+                      <div class="col-md-auto pt-4">
+                        <p>Human Resource</p>
+                      </div>
+                      <div class="col-md-auto pt-4">
                         <p>4 Dec 2020 - 7 Dec 2020</p>
                       </div>
                       <div class="col-lg-1">
@@ -3150,6 +3381,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                         <span
                           data-toggle="modal"
                           data-target="#add_lv_formulation"
+                          style="margin-left: -20px"
                         >
                           <i class="fas fa-plus border-box"></i>
                         </span>
@@ -3179,7 +3411,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                   >
                     <div class="row">
                       <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-right"></i></span>
+                        <span><i class="fas fa-chevron-down"></i></span>
                       </div>
                       <div class="col">
                         <h4>
@@ -3189,8 +3421,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                           consectetur adipiscing elit.
                         </h4>
                       </div>
-                      <div class="col-md-auto">
-                        <h5>Start / End Date</h5>
+                      <div class="col-md-auto pt-4">
+                        <p>Human Resource</p>
+                      </div>
+                      <div class="col-md-auto pt-4">
                         <p>4 Dec 2020 - 7 Dec 2020</p>
                       </div>
                       <div class="col-lg-1">
@@ -3361,6 +3595,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                         <span
                           data-toggle="modal"
                           data-target="#add_lv_formulation"
+                          style="margin-left: -20px"
                         >
                           <i class="fas fa-plus border-box"></i>
                         </span>
@@ -3390,7 +3625,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                   >
                     <div class="row">
                       <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-right"></i></span>
+                        <span><i class="fas fa-chevron-down"></i></span>
                       </div>
                       <div class="col">
                         <h4>
@@ -3400,8 +3635,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                           consectetur adipiscing elit.
                         </h4>
                       </div>
-                      <div class="col-md-auto">
-                        <h5>Start / End Date</h5>
+                      <div class="col-md-auto pt-4">
+                        <p>Human Resource</p>
+                      </div>
+                      <div class="col-md-auto pt-4">
                         <p>4 Dec 2020 - 7 Dec 2020</p>
                       </div>
                       <div class="col-lg-1">
@@ -3572,6 +3809,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                         <span
                           data-toggle="modal"
                           data-target="#add_lv_formulation"
+                          style="margin-left: -20px"
                         >
                           <i class="fas fa-plus border-box"></i>
                         </span>
@@ -3601,7 +3839,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                   >
                     <div class="row">
                       <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-right"></i></span>
+                        <span><i class="fas fa-chevron-down"></i></span>
                       </div>
                       <div class="col">
                         <h4>
@@ -3611,8 +3849,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                           consectetur adipiscing elit.
                         </h4>
                       </div>
-                      <div class="col-md-auto">
-                        <h5>Start / End Date</h5>
+                      <div class="col-md-auto pt-4">
+                        <p>Human Resource</p>
+                      </div>
+                      <div class="col-md-auto pt-4">
                         <p>4 Dec 2020 - 7 Dec 2020</p>
                       </div>
                       <div class="col-lg-1">
@@ -3783,6 +4023,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                         <span
                           data-toggle="modal"
                           data-target="#add_lv_formulation"
+                          style="margin-left: -20px"
                         >
                           <i class="fas fa-plus border-box"></i>
                         </span>
@@ -3812,7 +4053,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                   >
                     <div class="row">
                       <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-right"></i></span>
+                        <span><i class="fas fa-chevron-down"></i></span>
                       </div>
                       <div class="col">
                         <h4>
@@ -3822,8 +4063,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                           consectetur adipiscing elit.
                         </h4>
                       </div>
-                      <div class="col-md-auto">
-                        <h5>Start / End Date</h5>
+                      <div class="col-md-auto pt-4">
+                        <p>Human Resource</p>
+                      </div>
+                      <div class="col-md-auto pt-4">
                         <p>4 Dec 2020 - 7 Dec 2020</p>
                       </div>
                       <div class="col-lg-1">
@@ -3994,6 +4237,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                         <span
                           data-toggle="modal"
                           data-target="#add_lv_formulation"
+                          style="margin-left: -20px"
                         >
                           <i class="fas fa-plus border-box"></i>
                         </span>
@@ -4023,7 +4267,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                   >
                     <div class="row">
                       <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-right"></i></span>
+                        <span><i class="fas fa-chevron-down"></i></span>
                       </div>
                       <div class="col">
                         <h4>
@@ -4033,8 +4277,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                           consectetur adipiscing elit.
                         </h4>
                       </div>
-                      <div class="col-md-auto">
-                        <h5>Start / End Date</h5>
+                      <div class="col-md-auto pt-4">
+                        <p>Human Resource</p>
+                      </div>
+                      <div class="col-md-auto pt-4">
                         <p>4 Dec 2020 - 7 Dec 2020</p>
                       </div>
                       <div class="col-lg-1">
@@ -4205,6 +4451,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                         <span
                           data-toggle="modal"
                           data-target="#add_lv_formulation"
+                          style="margin-left: -20px"
                         >
                           <i class="fas fa-plus border-box"></i>
                         </span>
@@ -4234,7 +4481,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                   >
                     <div class="row">
                       <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-right"></i></span>
+                        <span><i class="fas fa-chevron-down"></i></span>
                       </div>
                       <div class="col">
                         <h4>
@@ -4244,8 +4491,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                           consectetur adipiscing elit.
                         </h4>
                       </div>
-                      <div class="col-md-auto">
-                        <h5>Start / End Date</h5>
+                      <div class="col-md-auto pt-4">
+                        <p>Human Resource</p>
+                      </div>
+                      <div class="col-md-auto pt-4">
                         <p>4 Dec 2020 - 7 Dec 2020</p>
                       </div>
                       <div class="col-lg-1">
@@ -4416,6 +4665,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                         <span
                           data-toggle="modal"
                           data-target="#add_lv_formulation"
+                          style="margin-left: -20px"
                         >
                           <i class="fas fa-plus border-box"></i>
                         </span>
@@ -4451,6 +4701,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
     <script src="../../assets/knockout-3.5.0.js"></script>
     <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
     <script src="../../assets/select2.min.js"></script>
+    <script src="../../assets/js/file-upload/file-upload.js"></script>
     <script src="../../assets/js/risk.js"></script>
 
     <script>
@@ -4501,9 +4752,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
       //   var active = $(this).parent().attr("class");
       // });
 
-      $(".panel-title").click(function () {
-        $(this).parent().toggleClass("active-icon");
-      });
+      // $(".panel-title").click(function () {
+      //   $(this).parent().toggleClass("active-icon");
+      // });
 
       $(".groupby-dropdown li a").click(function () {
         $(".groupby-dropdown li a").removeClass("selected-group");
