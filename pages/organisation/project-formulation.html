@@ -1826,6 +1826,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                     class="dropdown-menu groupby-dropdown"
                     aria-labelledby="navbarDropdownMenuLink"
                   >
+                    <li>
+                      <a class="dropdown-item selected-group" href="#">All</a>
+                    </li>
                     <li><a class="dropdown-item" href="#">Department 1</a></li>
                     <li><a class="dropdown-item" href="#">Department 2</a></li>
                     <li><a class="dropdown-item" href="#">Department 3</a></li>
@@ -2014,7 +2017,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                   adipiscing elit.
                                 </h4>
                               </div>
-                              <div class="col-md-auto">
+                              <div class="col-md-auto pt-4">
                                 <p>4 Dec 2020 - 7 Dec 2020</p>
                               </div>
                               <div class="col-lg-1">
@@ -2121,7 +2124,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                           sit amet consectetur adipiscing elit.
                                         </h4>
                                       </div>
-                                      <div class="col-md-auto">
+                                      <div class="col-md-auto pt-4">
                                         <p>4 Dec 2020 - 7 Dec 2020</p>
                                       </div>
                                       <div class="col-lg-1">
@@ -2240,7 +2243,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                   adipiscing elit.
                                                 </h4>
                                               </div>
-                                              <div class="col-md-auto">
+                                              <div class="col-md-auto pt-4">
                                                 <p>4 Dec 2020 - 7 Dec 2020</p>
                                               </div>
                                               <div class="col-lg-1">
@@ -2339,7 +2342,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                   adipiscing elit.
                                                 </h4>
                                               </div>
-                                              <div class="col-md-auto">
+                                              <div class="col-md-auto pt-4">
                                                 <p>4 Dec 2020 - 8 Dec 2020</p>
                                               </div>
                                               <div class="col-lg-1">
@@ -2862,7 +2865,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                           consectetur adipiscing elit.
                         </h4>
                       </div>
-                      <div class="col-md-auto">
+                      <div class="col-md-auto pt-4">
                         <p>4 Dec 2020 - 7 Dec 2020</p>
                       </div>
                       <div class="col-lg-1">
@@ -3076,7 +3079,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                           consectetur adipiscing elit.
                         </h4>
                       </div>
-                      <div class="col-md-auto">
+                      <div class="col-md-auto pt-4">
                         <p>4 Dec 2020 - 7 Dec 2020</p>
                       </div>
                       <div class="col-lg-1">
@@ -3289,7 +3292,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                           consectetur adipiscing elit.
                         </h4>
                       </div>
-                      <div class="col-md-auto">
+                      <div class="col-md-auto pt-4">
                         <p>4 Dec 2020 - 7 Dec 2020</p>
                       </div>
                       <div class="col-lg-1">
@@ -3502,7 +3505,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                           consectetur adipiscing elit.
                         </h4>
                       </div>
-                      <div class="col-md-auto">
+                      <div class="col-md-auto pt-4">
                         <p>4 Dec 2020 - 7 Dec 2020</p>
                       </div>
                       <div class="col-lg-1">
@@ -3715,7 +3718,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                           consectetur adipiscing elit.
                         </h4>
                       </div>
-                      <div class="col-md-auto">
+                      <div class="col-md-auto pt-4">
                         <p>4 Dec 2020 - 7 Dec 2020</p>
                       </div>
                       <div class="col-lg-1">
@@ -3928,7 +3931,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                           consectetur adipiscing elit.
                         </h4>
                       </div>
-                      <div class="col-md-auto">
+                      <div class="col-md-auto pt-4">
                         <p>4 Dec 2020 - 7 Dec 2020</p>
                       </div>
                       <div class="col-lg-1">
@@ -4141,7 +4144,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                           consectetur adipiscing elit.
                         </h4>
                       </div>
-                      <div class="col-md-auto">
+                      <div class="col-md-auto pt-4">
                         <p>4 Dec 2020 - 7 Dec 2020</p>
                       </div>
                       <div class="col-lg-1">
@@ -4354,7 +4357,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                           consectetur adipiscing elit.
                         </h4>
                       </div>
-                      <div class="col-md-auto">
+                      <div class="col-md-auto pt-4">
                         <p>4 Dec 2020 - 7 Dec 2020</p>
                       </div>
                       <div class="col-lg-1">
@@ -4567,7 +4570,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                           consectetur adipiscing elit.
                         </h4>
                       </div>
-                      <div class="col-md-auto">
+                      <div class="col-md-auto pt-4">
                         <p>4 Dec 2020 - 7 Dec 2020</p>
                       </div>
                       <div class="col-lg-1">
@@ -4743,6 +4746,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
       $(".groupby-dropdown li a").click(function () {
         $(".groupby-dropdown li a").removeClass("selected-group");
+        if ($(this).text() == "All") {
+          $("#displayText").text("All");
+          $(this).addClass("selected-group");
+        }
         if ($(this).text() == "Department 1") {
           $("#displayText").text("Department 1");
           $(this).addClass("selected-group");
