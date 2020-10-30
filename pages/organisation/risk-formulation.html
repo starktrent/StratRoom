@@ -509,10 +509,10 @@
     </div>
     <!-- #END# Left Sidebar -->
 
-    <!-- Add Formulation -->
+    <!-- Add Risk L1 -->
     <div
       class="modal fade"
-      id="add_formulation"
+      id="add_risk_l1"
       tabindex="-1"
       role="dialog"
       aria-labelledby="myLargeModalLabel_1"
@@ -534,92 +534,88 @@
                   name="name"
                   cols="30"
                   rows="6"
-                  disabled="true"
                   class="form-control browser-default persp_name"
                 ></textarea>
               </div>
 
               <div class="col-6 form-group">
-                <label for="Name">Department</label>
+                <label for="Name">Likelihood</label>
                 <select class="form-control browser-default">
-                  <option value="Department 1">Department 1</option>
-                  <option value="Department 2">Department 2</option>
-                  <option value="Department 3">Department 3</option>
-                  <option value="Department 4">Department 4</option>
+                  <option value="Low">Low</option>
+                  <option value="Medium">Medium</option>
+                  <option value="High">High</option>
                 </select>
               </div>
 
               <div class="col-6 form-group">
-                <label for="Name">Type</label>
+                <label for="Name">Impact</label>
                 <select class="form-control browser-default">
-                  <option value="Initiative">Initiative</option>
-                  <option value="Sub Initiative">Sub Initiative</option>
-                  <option value="Activity">Activity</option>
-                  <option value="Milestone">Milestone</option>
+                  <option value="Insigniﬁcant">Insigniﬁcant</option>
+                  <option value="Signiﬁcant">Signiﬁcant</option>
                 </select>
               </div>
 
               <div class="col-6 form-group">
-                <label for="Name">Start / End Date</label>
+                <label for="Name">Risk Category</label>
                 <input
                   type="text"
-                  class="form-control persp_date browser-default date_pickers_bottom datepicker-here"
-                  data-range="true"
-                  data-multiple-dates-separator=" - "
+                  class="form-control browser-default persp_subweight"
+                  value=""
+                />
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Risk Score</label>
+                <input
+                  type="text"
+                  class="form-control browser-default persp_subweight"
+                  value=""
+                />
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Status</label>
+                <input
+                  type="text"
+                  class="form-control browser-default persp_subweight"
+                  value=""
+                />
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Date Raised</label>
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers_single"
                   data-language="en"
-                  value="29/07/2020 - 31/07/2020"
-                  id="air-date-sub-init"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                  value=""
                 />
               </div>
 
               <div class="col-6 form-group">
-                <label for="Name">Budget</label>
+                <label for="Name">Date Completed</label>
                 <input
                   type="text"
-                  class="form-control browser-default persp_subweight"
+                  class="form-control browser-default date_pickers_single"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
                   value=""
-                  disabled="true"
                 />
               </div>
 
               <div class="col-6 form-group">
-                <label for="Name">Forecast</label>
+                <label for="Name">Date Next Assessment</label>
                 <input
                   type="text"
-                  class="form-control browser-default persp_subweight"
+                  class="form-control browser-default date_pickers_single"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
                   value=""
-                  disabled="true"
                 />
-              </div>
-
-              <div class="col-6 form-group">
-                <label for="Name">Owner</label>
-                <div class="owner" style="padding-right: 12px">
-                  <ul
-                    class="list-unstyled order-list"
-                    data-toggle="modal"
-                    data-target="#user_edit_popup"
-                    style="cursor: pointer"
-                  >
-                    <li class="avatar avatar-sm">
-                      <img
-                        class="rounded-circle"
-                        src="../../assets/images/user/user7.jpg"
-                        alt="user"
-                      />
-                    </li>
-                    <li class="avatar avatar-sm">
-                      <img
-                        class="rounded-circle"
-                        src="../../assets/images/user/user8.jpg"
-                        alt="user"
-                      />
-                    </li>
-                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
-                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
-                    </li>
-                  </ul>
-                </div>
               </div>
 
               <div class="col-12">
@@ -640,12 +636,12 @@
         </div>
       </div>
     </div>
-    <!-- Add Formulation -->
+    <!-- Add Risk L1 -->
 
-    <!-- Edit Formulation -->
+    <!-- Edit Risk L1 -->
     <div
       class="modal fade"
-      id="edit_formulation"
+      id="edit_risk_l1"
       tabindex="-1"
       role="dialog"
       aria-labelledby="myLargeModalLabel_1"
@@ -667,94 +663,90 @@
                   name="name"
                   cols="30"
                   rows="6"
-                  disabled="true"
                   class="form-control browser-default persp_name"
                 >
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet consectetur adipiscing elit.</textarea
+Failure to meet compliance obligations</textarea
                 >
               </div>
 
               <div class="col-6 form-group">
-                <label for="Name">Department</label>
+                <label for="Name">Likelihood</label>
                 <select class="form-control browser-default">
-                  <option value="Department 1">Department 1</option>
-                  <option value="Department 2">Department 2</option>
-                  <option value="Department 3">Department 3</option>
-                  <option value="Department 4">Department 4</option>
+                  <option value="Low">Low</option>
+                  <option value="Medium">Medium</option>
+                  <option value="High">High</option>
                 </select>
               </div>
 
               <div class="col-6 form-group">
-                <label for="Name">Type</label>
+                <label for="Name">Impact</label>
                 <select class="form-control browser-default">
-                  <option value="Initiative">Initiative</option>
-                  <option value="Sub Initiative">Sub Initiative</option>
-                  <option value="Activity">Activity</option>
-                  <option value="Milestone">Milestone</option>
+                  <option value="Insigniﬁcant">Insigniﬁcant</option>
+                  <option value="Signiﬁcant">Signiﬁcant</option>
                 </select>
               </div>
 
               <div class="col-6 form-group">
-                <label for="Name">Start / End Date</label>
+                <label for="Name">Risk Category</label>
                 <input
                   type="text"
-                  class="form-control persp_date browser-default date_pickers_bottom datepicker-here"
-                  data-range="true"
-                  data-multiple-dates-separator=" - "
+                  class="form-control browser-default persp_subweight"
+                  value="Category-1"
+                />
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Risk Score</label>
+                <input
+                  type="text"
+                  class="form-control browser-default persp_subweight"
+                  value="1"
+                />
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Status</label>
+                <input
+                  type="text"
+                  class="form-control browser-default persp_subweight"
+                  value="High Risk"
+                />
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Date Raised</label>
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers_single"
                   data-language="en"
-                  value="29/07/2020 - 31/07/2020"
-                  id="air-date-sub-init"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                  value="31/10/2020"
                 />
               </div>
 
               <div class="col-6 form-group">
-                <label for="Name">Budget</label>
+                <label for="Name">Date Completed</label>
                 <input
                   type="text"
-                  class="form-control browser-default persp_subweight"
-                  value=""
-                  disabled="true"
+                  class="form-control browser-default date_pickers_single"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                  value="31/10/2020"
                 />
               </div>
 
               <div class="col-6 form-group">
-                <label for="Name">Forecast</label>
+                <label for="Name">Date Next Assessment</label>
                 <input
                   type="text"
-                  class="form-control browser-default persp_subweight"
-                  value=""
-                  disabled="true"
+                  class="form-control browser-default date_pickers_single"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                  value="31/10/2020"
                 />
-              </div>
-
-              <div class="col-6 form-group">
-                <label for="Name">Owner</label>
-                <div class="owner" style="padding-right: 12px">
-                  <ul
-                    class="list-unstyled order-list"
-                    data-toggle="modal"
-                    data-target="#user_edit_popup"
-                    style="cursor: pointer"
-                  >
-                    <li class="avatar avatar-sm">
-                      <img
-                        class="rounded-circle"
-                        src="../../assets/images/user/user7.jpg"
-                        alt="user"
-                      />
-                    </li>
-                    <li class="avatar avatar-sm">
-                      <img
-                        class="rounded-circle"
-                        src="../../assets/images/user/user8.jpg"
-                        alt="user"
-                      />
-                    </li>
-                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
-                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
-                    </li>
-                  </ul>
-                </div>
               </div>
 
               <div class="col-12">
@@ -775,12 +767,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </div>
       </div>
     </div>
-    <!-- Edit Formulation -->
+    <!-- Edit Risk L1 -->
 
-    <!-- View Formulation -->
+    <!-- View Risk L1 -->
     <div
       class="modal fade"
-      id="view_formulation"
+      id="view_risk_l1"
       tabindex="-1"
       role="dialog"
       aria-labelledby="myLargeModalLabel_1"
@@ -798,78 +790,64 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             <div class="row">
               <div class="col-12 form-group">
                 <label for="Name">Name</label>
-                <h4>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Lorem ipsum dolor sit amet consectetur adipiscing elit.
-                </h4>
+                <h4>Failure to meet compliance obligations</h4>
               </div>
 
-              <div class="col-6 form-group">
+              <!-- <div class="col-6 form-group">
                 <label for="Name">Department</label>
                 <h4>Department 1</h4>
+              </div> -->
+
+              <div class="col-6 form-group">
+                <label for="Name">Likelihood</label>
+                <h4>Low</h4>
               </div>
 
               <div class="col-6 form-group">
-                <label for="Name">Type</label>
-                <h4>Activity</h4>
+                <label for="Name">Impact</label>
+                <h4>Insigniﬁcant</h4>
               </div>
 
               <div class="col-6 form-group">
-                <label for="Name">Start / End Date</label>
-                <h4>29/07/2020 - 31/07/2020</h4>
+                <label for="Name">Risk Category</label>
+                <h4>Category-1</h4>
               </div>
 
               <div class="col-6 form-group">
-                <label for="Name">Budget</label>
-                <h4>$234.567</h4>
+                <label for="Name">Risk Score</label>
+                <h4>1</h4>
               </div>
 
               <div class="col-6 form-group">
-                <label for="Name">Forecast</label>
-                <h4>$123.567</h4>
+                <label for="Name">Status</label>
+                <h4>High Risk</h4>
               </div>
 
               <div class="col-6 form-group">
-                <label for="Name">Owner</label>
-                <div class="owner" style="padding-right: 12px">
-                  <ul
-                    class="list-unstyled order-list"
-                    data-toggle="modal"
-                    data-target="#"
-                    style="cursor: pointer"
-                  >
-                    <li class="avatar avatar-sm">
-                      <img
-                        class="rounded-circle"
-                        src="../../assets/images/user/user7.jpg"
-                        alt="user"
-                      />
-                    </li>
-                    <li class="avatar avatar-sm">
-                      <img
-                        class="rounded-circle"
-                        src="../../assets/images/user/user8.jpg"
-                        alt="user"
-                      />
-                    </li>
-                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
-                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
-                    </li>
-                  </ul>
-                </div>
+                <label for="Name">Date Raised</label>
+                <h4>31/10/2020</h4>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Date Completed</label>
+                <h4>31/10/2020</h4>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Date Next Assessment</label>
+                <h4>31/10/2020</h4>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- View Formulation -->
+    <!-- View Risk L1 -->
 
-    <!-- Add Formulation -->
+    <!-- Add Risk L2 -->
     <div
       class="modal fade"
-      id="add_lv_formulation"
+      id="add_risk_l2"
       tabindex="-1"
       role="dialog"
       aria-labelledby="myLargeModalLabel_1"
@@ -897,56 +875,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
               </div>
 
               <div class="col-6 form-group">
-                <label for="Name">Type</label>
-                <select class="form-control browser-default">
-                  <option value="Initiative">Initiative</option>
-                  <option value="Sub Initiative">Sub Initiative</option>
-                  <option value="Activity">Activity</option>
-                  <option value="Milestone">Milestone</option>
-                </select>
-              </div>
-
-              <div class="col-6 form-group">
-                <label for="Name">Start / End Date</label>
+                <label for="Name">Rating</label>
                 <input
                   type="text"
-                  class="form-control persp_date browser-default date_pickers_bottom datepicker-here"
-                  data-range="true"
-                  data-multiple-dates-separator=" - "
-                  data-language="en"
-                  value="29/07/2020 - 31/07/2020"
-                  id="air-date-sub-init"
+                  class="form-control browser-default persp_subweight"
+                  value=""
                 />
-              </div>
-
-              <div class="col-6 form-group">
-                <label for="Name">Owner</label>
-                <div class="owner" style="padding-right: 12px">
-                  <ul
-                    class="list-unstyled order-list"
-                    data-toggle="modal"
-                    data-target="#user_edit_popup"
-                    style="cursor: pointer"
-                  >
-                    <li class="avatar avatar-sm">
-                      <img
-                        class="rounded-circle"
-                        src="../../assets/images/user/user7.jpg"
-                        alt="user"
-                      />
-                    </li>
-                    <li class="avatar avatar-sm">
-                      <img
-                        class="rounded-circle"
-                        src="../../assets/images/user/user8.jpg"
-                        alt="user"
-                      />
-                    </li>
-                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
-                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
-                    </li>
-                  </ul>
-                </div>
               </div>
 
               <div class="col-12">
@@ -967,12 +901,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </div>
       </div>
     </div>
-    <!-- Add Formulation -->
+    <!-- Add Risk L2 -->
 
-    <!-- Edit Formulation -->
+    <!-- Edit Risk L2 -->
     <div
       class="modal fade"
-      id="edit_lv_formulation"
+      id="edit_risk_l2"
       tabindex="-1"
       role="dialog"
       aria-labelledby="myLargeModalLabel_1"
@@ -994,64 +928,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                   name="name"
                   cols="30"
                   rows="6"
-                  disabled="true"
                   class="form-control browser-default persp_name"
                 >
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet consectetur adipiscing elit.</textarea
+Failure to meet compliance obligations</textarea
                 >
               </div>
 
               <div class="col-6 form-group">
-                <label for="Name">Type</label>
-                <select class="form-control browser-default">
-                  <option value="Initiative">Initiative</option>
-                  <option value="Sub Initiative">Sub Initiative</option>
-                  <option value="Activity">Activity</option>
-                  <option value="Milestone">Milestone</option>
-                </select>
-              </div>
-
-              <div class="col-6 form-group">
-                <label for="Name">Start / End Date</label>
+                <label for="Name">Rating</label>
                 <input
                   type="text"
-                  class="form-control persp_date browser-default date_pickers_bottom datepicker-here"
-                  data-range="true"
-                  data-multiple-dates-separator=" - "
-                  data-language="en"
-                  value="29/07/2020 - 31/07/2020"
-                  id="air-date-sub-init"
+                  class="form-control browser-default persp_subweight"
+                  value=""
                 />
-              </div>
-
-              <div class="col-6 form-group">
-                <label for="Name">Owner</label>
-                <div class="owner" style="padding-right: 12px">
-                  <ul
-                    class="list-unstyled order-list"
-                    data-toggle="modal"
-                    data-target="#user_edit_popup"
-                    style="cursor: pointer"
-                  >
-                    <li class="avatar avatar-sm">
-                      <img
-                        class="rounded-circle"
-                        src="../../assets/images/user/user7.jpg"
-                        alt="user"
-                      />
-                    </li>
-                    <li class="avatar avatar-sm">
-                      <img
-                        class="rounded-circle"
-                        src="../../assets/images/user/user8.jpg"
-                        alt="user"
-                      />
-                    </li>
-                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
-                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
-                    </li>
-                  </ul>
-                </div>
               </div>
 
               <div class="col-12">
@@ -1072,12 +961,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </div>
       </div>
     </div>
-    <!-- Edit Formulation -->
+    <!-- Edit Risk L2 -->
 
-    <!-- View Formulation -->
+    <!-- View Risk L2 -->
     <div
       class="modal fade"
-      id="view_lv_formulation"
+      id="view_risk_l2"
       tabindex="-1"
       role="dialog"
       aria-labelledby="myLargeModalLabel_1"
@@ -1095,21 +984,64 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             <div class="row">
               <div class="col-12 form-group">
                 <label for="Name">Name</label>
-                <h4>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Lorem ipsum dolor sit amet consectetur adipiscing elit.
-                </h4>
+                <h4>Failure to meet compliance obligations</h4>
               </div>
 
               <div class="col-6 form-group">
-                <label for="Name">Type</label>
-                <h4>Activity</h4>
+                <label for="Name">Rating</label>
+                <h4>2.4</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- View Risk L2 -->
+
+    <!-- Add Risk L3 -->
+    <div
+      class="modal fade"
+      id="add_risk_l3"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Add</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-12 form-group">
+                <label for="Name">Name</label>
+                <textarea
+                  name="name"
+                  cols="30"
+                  rows="6"
+                  class="form-control browser-default persp_name"
+                ></textarea>
               </div>
 
               <div class="col-6 form-group">
-                <label for="Name">Start / End Date</label>
-                <h4>29/07/2020 - 31/07/2020</h4>
+                <label for="Name">Action</label>
+                <select class="form-control browser-default">
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                  <option value="Option 3">Option 3</option>
+                </select>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Cause</label>
+                <select class="form-control browser-default">
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
               </div>
 
               <div class="col-6 form-group">
@@ -1141,12 +1073,222 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                   </ul>
                 </div>
               </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Resolve By</label>
+                <input
+                  type="text"
+                  class="form-control browser-default persp_subweight"
+                  value=""
+                />
+              </div>
+
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- View Formulation -->
+    <!-- Add Risk L3 -->
+
+    <!-- Edit Risk L3 -->
+    <div
+      class="modal fade"
+      id="edit_risk_l3"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Edit</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-12 form-group">
+                <label for="Name">Name</label>
+                <textarea
+                  name="name"
+                  cols="30"
+                  rows="6"
+                  class="form-control browser-default persp_name"
+                >
+Failure to meet compliance obligations</textarea
+                >
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Action</label>
+                <select class="form-control browser-default">
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                  <option value="Option 3">Option 3</option>
+                </select>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Cause</label>
+                <select class="form-control browser-default">
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Owner</label>
+                <div class="owner" style="padding-right: 12px">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#"
+                    style="cursor: pointer"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Resolve By</label>
+                <input
+                  type="text"
+                  class="form-control browser-default persp_subweight"
+                  value="Star Hilton"
+                />
+              </div>
+
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Edit Risk L3 -->
+
+    <!-- View Risk L3 -->
+    <div
+      class="modal fade"
+      id="view_risk_l3"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>View</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-12 form-group">
+                <label for="Name">Name</label>
+                <h4>Failure to meet compliance obligations</h4>
+              </div>
+
+              <!-- <div class="col-6 form-group">
+                  <label for="Name">Department</label>
+                  <h4>Department 1</h4>
+                </div> -->
+
+              <div class="col-6 form-group">
+                <label for="Name">Action</label>
+                <h4>Option 1</h4>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Cause</label>
+                <h4>Option 1</h4>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Owner</label>
+                <div class="owner" style="padding-right: 12px">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#"
+                    style="cursor: pointer"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Resolve By</label>
+                <h4>Star Hilton</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- View Risk L3 -->
 
     <!-- Delete Formulation -->
     <div
@@ -1786,7 +1928,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             class="page-title"
             style="font-weight: 600; text-transform: uppercase"
           >
-            Project Formulation
+            Risk Formulation
           </h5>
         </div>
       </div>
@@ -1846,7 +1988,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             class="btn btn-custom-secondary pull-right"
             style="margin-left: 4px"
             data-toggle="modal"
-            data-target="#add_formulation"
+            data-target="#add_risk_l1"
           >
             <i style="font-size: 14px" class="fas fa-plus"></i>
           </button>
@@ -1902,18 +2044,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                         <span><i class="fas fa-chevron-down"></i></span>
                       </div>
                       <div class="col">
-                        <h4>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Lorem ipsum dolor sit amet
-                          consectetur adipiscing elit.
-                        </h4>
+                        <h4>Failure to meet compliance obligations.</h4>
                       </div>
                       <div class="col-md-auto">
                         <p>Human Resource</p>
                       </div>
                       <div class="col-md-auto">
-                        <p>4 Dec 2020 - 7 Dec 2020</p>
+                        <p>Insigniﬁcant</p>
+                      </div>
+                      <div class="col-md-auto">
+                        <p>Low</p>
                       </div>
                       <div class="col-lg-1">
                         <ul class="header-dropdown">
@@ -1946,7 +2086,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 <a
                                   href="#"
                                   data-toggle="modal"
-                                  data-target="#view_formulation"
+                                  data-target="#view_risk_l1"
                                   onclick="return false;"
                                   >View</a
                                 >
@@ -1956,7 +2096,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 <a
                                   href="#"
                                   data-toggle="modal"
-                                  data-target="#edit_formulation"
+                                  data-target="#edit_risk_l1"
                                   onclick="return false;"
                                   >Edit</a
                                 >
@@ -2010,15 +2150,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                               </div>
                               <div class="col">
                                 <h4>
-                                  Lorem ipsum dolor sit amet, consectetur
-                                  adipiscing elit, sed do eiusmod tempor
-                                  incididunt ut labore et dolore magna aliqua.
-                                  Lorem ipsum dolor sit amet consectetur
-                                  adipiscing elit.
+                                  Failure to collect receivables in a timely
+                                  manner
                                 </h4>
                               </div>
                               <div class="col-md-auto">
-                                <p>4 Dec 2020 - 7 Dec 2020</p>
+                                <p>4.5</p>
                               </div>
                               <div class="col-lg-1">
                                 <ul class="header-dropdown">
@@ -2051,7 +2188,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                         <a
                                           href="#"
                                           data-toggle="modal"
-                                          data-target="#view_lv_formulation"
+                                          data-target="#view_risk_l2"
                                           onclick="return false;"
                                           >View</a
                                         >
@@ -2061,7 +2198,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                         <a
                                           href="#"
                                           data-toggle="modal"
-                                          data-target="#edit_lv_formulation"
+                                          data-target="#edit_risk_l2"
                                           onclick="return false;"
                                           >Edit</a
                                         >
@@ -2116,16 +2253,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                         ></span>
                                       </div>
                                       <div class="col">
-                                        <h4>
-                                          Lorem ipsum dolor sit amet,
-                                          consectetur adipiscing elit, sed do
-                                          eiusmod tempor incididunt ut labore et
-                                          dolore magna aliqua. Lorem ipsum dolor
-                                          sit amet consectetur adipiscing elit.
-                                        </h4>
+                                        <h4>Loss of Practitioner</h4>
                                       </div>
                                       <div class="col-md-auto">
-                                        <p>4 Dec 2020 - 7 Dec 2020</p>
+                                        <p>5.2</p>
                                       </div>
                                       <div class="col-lg-1">
                                         <ul class="header-dropdown">
@@ -2162,7 +2293,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                 <a
                                                   href="#"
                                                   data-toggle="modal"
-                                                  data-target="#view_lv_formulation"
+                                                  data-target="#view_risk_l2"
                                                   onclick="return false;"
                                                   >View</a
                                                 >
@@ -2172,7 +2303,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                 <a
                                                   href="#"
                                                   data-toggle="modal"
-                                                  data-target="#edit_lv_formulation"
+                                                  data-target="#edit_risk_l2"
                                                   onclick="return false;"
                                                   >Edit</a
                                                 >
@@ -2234,17 +2365,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                               </div>
                                               <div class="col">
                                                 <h4>
-                                                  Lorem ipsum dolor sit amet,
-                                                  consectetur adipiscing elit,
-                                                  sed do eiusmod tempor
-                                                  incididunt ut labore et dolore
-                                                  magna aliqua. Lorem ipsum
-                                                  dolor sit amet consectetur
-                                                  adipiscing elit.
+                                                  Project X is launching the
+                                                  website
                                                 </h4>
                                               </div>
                                               <div class="col-md-auto">
-                                                <p>4 Dec 2020 - 7 Dec 2020</p>
+                                                <p>Elmer Roberts</p>
                                               </div>
                                               <div class="col-lg-1">
                                                 <ul class="header-dropdown">
@@ -2283,7 +2409,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                         <a
                                                           href="#"
                                                           data-toggle="modal"
-                                                          data-target="#view_lv_formulation"
+                                                          data-target="#view_risk_l3"
                                                           onclick="return false;"
                                                           >View</a
                                                         >
@@ -2293,7 +2419,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                         <a
                                                           href="#"
                                                           data-toggle="modal"
-                                                          data-target="#edit_lv_formulation"
+                                                          data-target="#edit_risk_l3"
                                                           onclick="return false;"
                                                           >Edit</a
                                                         >
@@ -2332,18 +2458,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                 <span> </span>
                                               </div>
                                               <div class="col">
-                                                <h4>
-                                                  Lorem ipsum dolor sit amet,
-                                                  consectetur adipiscing elit,
-                                                  sed do eiusmod tempor
-                                                  incididunt ut labore et dolore
-                                                  magna aliqua. Lorem ipsum
-                                                  dolor sit amet consectetur
-                                                  adipiscing elit.
-                                                </h4>
+                                                <h4>Project X to be delayed</h4>
                                               </div>
                                               <div class="col-md-auto">
-                                                <p>4 Dec 2020 - 8 Dec 2020</p>
+                                                <p>Jerome Rice</p>
                                               </div>
                                               <div class="col-lg-1">
                                                 <ul class="header-dropdown">
@@ -2382,7 +2500,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                         <a
                                                           href="#"
                                                           data-toggle="modal"
-                                                          data-target="#view_lv_formulation"
+                                                          data-target="#view_risk_l3"
                                                           onclick="return false;"
                                                           >View</a
                                                         >
@@ -2392,7 +2510,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                         <a
                                                           href="#"
                                                           data-toggle="modal"
-                                                          data-target="#edit_lv_formulation"
+                                                          data-target="#edit_risk_l3"
                                                           onclick="return false;"
                                                           >Edit</a
                                                         >
@@ -2433,7 +2551,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                               <div class="col">
                                                 <span
                                                   data-toggle="modal"
-                                                  data-target="#add_lv_formulation"
+                                                  data-target="#add_risk_l3"
                                                   style="margin-left: -20px"
                                                 >
                                                   <i
@@ -2472,7 +2590,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                             <div class="col">
                                               <span
                                                 data-toggle="modal"
-                                                data-target="#add_lv_formulation"
+                                                data-target="#add_risk_l3"
                                                 style="margin-left: -20px"
                                               >
                                                 <i
@@ -2510,7 +2628,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                     <div class="col">
                                       <span
                                         data-toggle="modal"
-                                        data-target="#add_lv_formulation"
+                                        data-target="#add_risk_l2"
                                         style="margin-left: -20px"
                                       >
                                         <i class="fas fa-plus border-box"></i>
@@ -2559,15 +2677,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                               </div>
                               <div class="col">
                                 <h4>
-                                  Lorem ipsum dolor sit amet, consectetur
-                                  adipiscing elit, sed do eiusmod tempor
-                                  incididunt ut labore et dolore magna aliqua.
-                                  Lorem ipsum dolor sit amet consectetur
-                                  adipiscing elit.
+                                  Failure to collect receivables in a timely
+                                  manner
                                 </h4>
                               </div>
                               <div class="col-md-auto">
-                                <p>4 Dec 2020 - 7 Dec 2020</p>
+                                <p>4.5</p>
                               </div>
                               <div class="col-lg-1">
                                 <ul class="header-dropdown">
@@ -2600,7 +2715,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                         <a
                                           href="#"
                                           data-toggle="modal"
-                                          data-target="#view_lv_formulation"
+                                          data-target="#view_risk_l2"
                                           onclick="return false;"
                                           >View</a
                                         >
@@ -2610,7 +2725,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                         <a
                                           href="#"
                                           data-toggle="modal"
-                                          data-target="#edit_lv_formulation"
+                                          data-target="#edit_risk_l2"
                                           onclick="return false;"
                                           >Edit</a
                                         >
@@ -2643,16 +2758,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 <span> </span>
                               </div>
                               <div class="col">
-                                <h4>
-                                  Lorem ipsum dolor sit amet, consectetur
-                                  adipiscing elit, sed do eiusmod tempor
-                                  incididunt ut labore et dolore magna aliqua.
-                                  Lorem ipsum dolor sit amet consectetur
-                                  adipiscing elit.
-                                </h4>
+                                <h4>Loss of Practitioner</h4>
                               </div>
                               <div class="col-md-auto">
-                                <p>4 Dec 2020 - 7 Dec 2020</p>
+                                <p>5.2</p>
                               </div>
                               <div class="col-lg-1">
                                 <ul class="header-dropdown">
@@ -2685,7 +2794,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                         <a
                                           href="#"
                                           data-toggle="modal"
-                                          data-target="#view_lv_formulation"
+                                          data-target="#view_risk_l2"
                                           onclick="return false;"
                                           >View</a
                                         >
@@ -2695,7 +2804,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                         <a
                                           href="#"
                                           data-toggle="modal"
-                                          data-target="#edit_lv_formulation"
+                                          data-target="#edit_risk_l2"
                                           onclick="return false;"
                                           >Edit</a
                                         >
@@ -2734,7 +2843,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                       <div class="col">
                         <span
                           data-toggle="modal"
-                          data-target="#add_lv_formulation"
+                          data-target="#add_risk_l2"
                           style="margin-left: -20px"
                         >
                           <i class="fas fa-plus border-box"></i>
@@ -2768,18 +2877,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                         <span><i class="fas fa-chevron-down"></i></span>
                       </div>
                       <div class="col">
-                        <h4>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Lorem ipsum dolor sit amet
-                          consectetur adipiscing elit.
-                        </h4>
+                        <h4>Failure to meet compliance obligations.</h4>
                       </div>
                       <div class="col-md-auto">
                         <p>Human Resource</p>
                       </div>
                       <div class="col-md-auto">
-                        <p>4 Dec 2020 - 7 Dec 2020</p>
+                        <p>Insigniﬁcant</p>
+                      </div>
+                      <div class="col-md-auto">
+                        <p>Low</p>
                       </div>
                       <div class="col-lg-1">
                         <ul class="header-dropdown">
@@ -2812,7 +2919,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 <a
                                   href="#"
                                   data-toggle="modal"
-                                  data-target="#view_formulation"
+                                  data-target="#view_risk_l1"
                                   onclick="return false;"
                                   >View</a
                                 >
@@ -2822,7 +2929,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 <a
                                   href="#"
                                   data-toggle="modal"
-                                  data-target="#edit_formulation"
+                                  data-target="#edit_risk_l1"
                                   onclick="return false;"
                                   >Edit</a
                                 >
@@ -2859,14 +2966,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                       </div>
                       <div class="col">
                         <h4>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Lorem ipsum dolor sit amet
-                          consectetur adipiscing elit.
+                          Failure to collect receivables in a timely manner
                         </h4>
                       </div>
                       <div class="col-md-auto">
-                        <p>4 Dec 2020 - 7 Dec 2020</p>
+                        <p>4.5</p>
                       </div>
                       <div class="col-lg-1">
                         <ul class="header-dropdown">
@@ -2899,7 +3003,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 <a
                                   href="#"
                                   data-toggle="modal"
-                                  data-target="#view_lv_formulation"
+                                  data-target="#view_risk_l2"
                                   onclick="return false;"
                                   >View</a
                                 >
@@ -2909,7 +3013,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 <a
                                   href="#"
                                   data-toggle="modal"
-                                  data-target="#edit_lv_formulation"
+                                  data-target="#edit_risk_l2"
                                   onclick="return false;"
                                   >Edit</a
                                 >
@@ -2948,1711 +3052,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                       <div class="col">
                         <span
                           data-toggle="modal"
-                          data-target="#add_lv_formulation"
-                          style="margin-left: -20px"
-                        >
-                          <i class="fas fa-plus border-box"></i>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 col-md-6 col-sm-12 project-panel-col">
-            <div
-              class="panel panel-default project-panel"
-              style="border-left: 2px solid #c9c9c9"
-            >
-              <div class="panel-heading" role="tab" id="heading1">
-                <h4 class="panel-title">
-                  <a
-                    role="button"
-                    class="collapsed"
-                    data-toggle="collapse"
-                    data-parent="#accordion"
-                    href="#collapse3"
-                    aria-expanded="true"
-                    aria-controls="collapse3"
-                  >
-                    <div class="row">
-                      <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-down"></i></span>
-                      </div>
-                      <div class="col">
-                        <h4>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Lorem ipsum dolor sit amet
-                          consectetur adipiscing elit.
-                        </h4>
-                      </div>
-                      <div class="col-md-auto">
-                        <p>Human Resource</p>
-                      </div>
-                      <div class="col-md-auto">
-                        <p>4 Dec 2020 - 7 Dec 2020</p>
-                      </div>
-                      <div class="col-lg-1">
-                        <ul class="header-dropdown">
-                          <li class="dropdown">
-                            <a
-                              href="#"
-                              onclick="return false;"
-                              style="margin-top: -6px"
-                              class="dropdown-toggle"
-                              data-toggle="dropdown"
-                              role="button"
-                              aria-haspopup="true"
-                              aria-expanded="true"
-                            >
-                              <i class="fas fa-ellipsis-v"></i>
-                            </a>
-                            <ul
-                              class="dropdown-menu pull-right"
-                              id="project-options"
-                              x-placement="bottom-start"
-                              style="
-                                position: absolute;
-                                will-change: transform;
-                                top: 0px;
-                                left: 0px;
-                                transform: translate3d(0px, 24px, 0px);
-                              "
-                            >
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#view_formulation"
-                                  onclick="return false;"
-                                  >View</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#edit_formulation"
-                                  onclick="return false;"
-                                  >Edit</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  onclick="return false;"
-                                  data-toggle="modal"
-                                  data-target="#delete_formulation"
-                                  >Delete</a
-                                >
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </a>
-                </h4>
-              </div>
-              <div
-                id="collapse3"
-                class="panel-collapse collapse"
-                role="tabpanel"
-                aria-labelledby="heading1"
-              >
-                <div class="panel-body">
-                  <div class="panel-title">
-                    <div class="row" style="margin-left: -8px">
-                      <div class="col-auto pr-0 branch-border">
-                        <span> </span>
-                      </div>
-                      <div class="col">
-                        <h4>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Lorem ipsum dolor sit amet
-                          consectetur adipiscing elit.
-                        </h4>
-                      </div>
-                      <div class="col-md-auto">
-                        <p>4 Dec 2020 - 7 Dec 2020</p>
-                      </div>
-                      <div class="col-lg-1">
-                        <ul class="header-dropdown">
-                          <li class="dropdown">
-                            <a
-                              href="#"
-                              onclick="return false;"
-                              style="margin-top: -6px"
-                              class="dropdown-toggle"
-                              data-toggle="dropdown"
-                              role="button"
-                              aria-haspopup="true"
-                              aria-expanded="true"
-                            >
-                              <i class="fas fa-ellipsis-v"></i>
-                            </a>
-                            <ul
-                              class="dropdown-menu pull-right"
-                              id="project-options"
-                              x-placement="bottom-start"
-                              style="
-                                position: absolute;
-                                will-change: transform;
-                                top: 0px;
-                                left: 0px;
-                                transform: translate3d(0px, 24px, 0px);
-                              "
-                            >
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#view_lv_formulation"
-                                  onclick="return false;"
-                                  >View</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#edit_lv_formulation"
-                                  onclick="return false;"
-                                  >Edit</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  onclick="return false;"
-                                  data-toggle="modal"
-                                  data-target="#delete_formulation"
-                                  >Delete</a
-                                >
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                id="collapse3"
-                class="panel-collapse collapse"
-                role="tabpanel"
-                aria-labelledby="heading1"
-              >
-                <div class="panel-body">
-                  <div class="panel-title">
-                    <div class="row" style="margin-left: -8px">
-                      <div class="col-auto pr-0 branch-border">
-                        <span> </span>
-                      </div>
-                      <div class="col">
-                        <span
-                          data-toggle="modal"
-                          data-target="#add_lv_formulation"
-                          style="margin-left: -20px"
-                        >
-                          <i class="fas fa-plus border-box"></i>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 col-md-6 col-sm-12 project-panel-col">
-            <div
-              class="panel panel-default project-panel"
-              style="border-left: 2px solid #c9c9c9"
-            >
-              <div class="panel-heading" role="tab" id="heading1">
-                <h4 class="panel-title">
-                  <a
-                    role="button"
-                    class="collapsed"
-                    data-toggle="collapse"
-                    data-parent="#accordion"
-                    href="#collapse4"
-                    aria-expanded="true"
-                    aria-controls="collapse4"
-                  >
-                    <div class="row">
-                      <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-down"></i></span>
-                      </div>
-                      <div class="col">
-                        <h4>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Lorem ipsum dolor sit amet
-                          consectetur adipiscing elit.
-                        </h4>
-                      </div>
-                      <div class="col-md-auto">
-                        <p>Human Resource</p>
-                      </div>
-                      <div class="col-md-auto">
-                        <p>4 Dec 2020 - 7 Dec 2020</p>
-                      </div>
-                      <div class="col-lg-1">
-                        <ul class="header-dropdown">
-                          <li class="dropdown">
-                            <a
-                              href="#"
-                              onclick="return false;"
-                              style="margin-top: -6px"
-                              class="dropdown-toggle"
-                              data-toggle="dropdown"
-                              role="button"
-                              aria-haspopup="true"
-                              aria-expanded="true"
-                            >
-                              <i class="fas fa-ellipsis-v"></i>
-                            </a>
-                            <ul
-                              class="dropdown-menu pull-right"
-                              id="project-options"
-                              x-placement="bottom-start"
-                              style="
-                                position: absolute;
-                                will-change: transform;
-                                top: 0px;
-                                left: 0px;
-                                transform: translate3d(0px, 24px, 0px);
-                              "
-                            >
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#view_formulation"
-                                  onclick="return false;"
-                                  >View</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#edit_formulation"
-                                  onclick="return false;"
-                                  >Edit</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  onclick="return false;"
-                                  data-toggle="modal"
-                                  data-target="#delete_formulation"
-                                  >Delete</a
-                                >
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </a>
-                </h4>
-              </div>
-              <div
-                id="collapse4"
-                class="panel-collapse collapse"
-                role="tabpanel"
-                aria-labelledby="heading1"
-              >
-                <div class="panel-body">
-                  <div class="panel-title">
-                    <div class="row" style="margin-left: -8px">
-                      <div class="col-auto pr-0 branch-border">
-                        <span> </span>
-                      </div>
-                      <div class="col">
-                        <h4>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Lorem ipsum dolor sit amet
-                          consectetur adipiscing elit.
-                        </h4>
-                      </div>
-                      <div class="col-md-auto">
-                        <p>4 Dec 2020 - 7 Dec 2020</p>
-                      </div>
-                      <div class="col-lg-1">
-                        <ul class="header-dropdown">
-                          <li class="dropdown">
-                            <a
-                              href="#"
-                              onclick="return false;"
-                              style="margin-top: -6px"
-                              class="dropdown-toggle"
-                              data-toggle="dropdown"
-                              role="button"
-                              aria-haspopup="true"
-                              aria-expanded="true"
-                            >
-                              <i class="fas fa-ellipsis-v"></i>
-                            </a>
-                            <ul
-                              class="dropdown-menu pull-right"
-                              id="project-options"
-                              x-placement="bottom-start"
-                              style="
-                                position: absolute;
-                                will-change: transform;
-                                top: 0px;
-                                left: 0px;
-                                transform: translate3d(0px, 24px, 0px);
-                              "
-                            >
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#view_lv_formulation"
-                                  onclick="return false;"
-                                  >View</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#edit_lv_formulation"
-                                  onclick="return false;"
-                                  >Edit</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  onclick="return false;"
-                                  data-toggle="modal"
-                                  data-target="#delete_formulation"
-                                  >Delete</a
-                                >
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                id="collapse4"
-                class="panel-collapse collapse"
-                role="tabpanel"
-                aria-labelledby="heading1"
-              >
-                <div class="panel-body">
-                  <div class="panel-title">
-                    <div class="row" style="margin-left: -8px">
-                      <div class="col-auto pr-0 branch-border">
-                        <span> </span>
-                      </div>
-                      <div class="col">
-                        <span
-                          data-toggle="modal"
-                          data-target="#add_lv_formulation"
-                          style="margin-left: -20px"
-                        >
-                          <i class="fas fa-plus border-box"></i>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 col-md-6 col-sm-12 project-panel-col">
-            <div
-              class="panel panel-default project-panel"
-              style="border-left: 2px solid #c9c9c9"
-            >
-              <div class="panel-heading" role="tab" id="heading1">
-                <h4 class="panel-title">
-                  <a
-                    role="button"
-                    class="collapsed"
-                    data-toggle="collapse"
-                    data-parent="#accordion"
-                    href="#collapse5"
-                    aria-expanded="true"
-                    aria-controls="collapse5"
-                  >
-                    <div class="row">
-                      <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-down"></i></span>
-                      </div>
-                      <div class="col">
-                        <h4>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Lorem ipsum dolor sit amet
-                          consectetur adipiscing elit.
-                        </h4>
-                      </div>
-                      <div class="col-md-auto">
-                        <p>Human Resource</p>
-                      </div>
-                      <div class="col-md-auto">
-                        <p>4 Dec 2020 - 7 Dec 2020</p>
-                      </div>
-                      <div class="col-lg-1">
-                        <ul class="header-dropdown">
-                          <li class="dropdown">
-                            <a
-                              href="#"
-                              onclick="return false;"
-                              style="margin-top: -6px"
-                              class="dropdown-toggle"
-                              data-toggle="dropdown"
-                              role="button"
-                              aria-haspopup="true"
-                              aria-expanded="true"
-                            >
-                              <i class="fas fa-ellipsis-v"></i>
-                            </a>
-                            <ul
-                              class="dropdown-menu pull-right"
-                              id="project-options"
-                              x-placement="bottom-start"
-                              style="
-                                position: absolute;
-                                will-change: transform;
-                                top: 0px;
-                                left: 0px;
-                                transform: translate3d(0px, 24px, 0px);
-                              "
-                            >
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#view_formulation"
-                                  onclick="return false;"
-                                  >View</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#edit_formulation"
-                                  onclick="return false;"
-                                  >Edit</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  onclick="return false;"
-                                  data-toggle="modal"
-                                  data-target="#delete_formulation"
-                                  >Delete</a
-                                >
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </a>
-                </h4>
-              </div>
-              <div
-                id="collapse5"
-                class="panel-collapse collapse"
-                role="tabpanel"
-                aria-labelledby="heading1"
-              >
-                <div class="panel-body">
-                  <div class="panel-title">
-                    <div class="row" style="margin-left: -8px">
-                      <div class="col-auto pr-0 branch-border">
-                        <span> </span>
-                      </div>
-                      <div class="col">
-                        <h4>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Lorem ipsum dolor sit amet
-                          consectetur adipiscing elit.
-                        </h4>
-                      </div>
-                      <div class="col-md-auto">
-                        <p>4 Dec 2020 - 7 Dec 2020</p>
-                      </div>
-                      <div class="col-lg-1">
-                        <ul class="header-dropdown">
-                          <li class="dropdown">
-                            <a
-                              href="#"
-                              onclick="return false;"
-                              style="margin-top: -6px"
-                              class="dropdown-toggle"
-                              data-toggle="dropdown"
-                              role="button"
-                              aria-haspopup="true"
-                              aria-expanded="true"
-                            >
-                              <i class="fas fa-ellipsis-v"></i>
-                            </a>
-                            <ul
-                              class="dropdown-menu pull-right"
-                              id="project-options"
-                              x-placement="bottom-start"
-                              style="
-                                position: absolute;
-                                will-change: transform;
-                                top: 0px;
-                                left: 0px;
-                                transform: translate3d(0px, 24px, 0px);
-                              "
-                            >
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#view_lv_formulation"
-                                  onclick="return false;"
-                                  >View</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#edit_lv_formulation"
-                                  onclick="return false;"
-                                  >Edit</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  onclick="return false;"
-                                  data-toggle="modal"
-                                  data-target="#delete_formulation"
-                                  >Delete</a
-                                >
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                id="collapse5"
-                class="panel-collapse collapse"
-                role="tabpanel"
-                aria-labelledby="heading1"
-              >
-                <div class="panel-body">
-                  <div class="panel-title">
-                    <div class="row" style="margin-left: -8px">
-                      <div class="col-auto pr-0 branch-border">
-                        <span> </span>
-                      </div>
-                      <div class="col">
-                        <span
-                          data-toggle="modal"
-                          data-target="#add_lv_formulation"
-                          style="margin-left: -20px"
-                        >
-                          <i class="fas fa-plus border-box"></i>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 col-md-6 col-sm-12 project-panel-col">
-            <div
-              class="panel panel-default project-panel"
-              style="border-left: 2px solid #c9c9c9"
-            >
-              <div class="panel-heading" role="tab" id="heading1">
-                <h4 class="panel-title">
-                  <a
-                    role="button"
-                    class="collapsed"
-                    data-toggle="collapse"
-                    data-parent="#accordion"
-                    href="#collapse6"
-                    aria-expanded="true"
-                    aria-controls="collapse6"
-                  >
-                    <div class="row">
-                      <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-down"></i></span>
-                      </div>
-                      <div class="col">
-                        <h4>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Lorem ipsum dolor sit amet
-                          consectetur adipiscing elit.
-                        </h4>
-                      </div>
-                      <div class="col-md-auto">
-                        <p>Human Resource</p>
-                      </div>
-                      <div class="col-md-auto">
-                        <p>4 Dec 2020 - 7 Dec 2020</p>
-                      </div>
-                      <div class="col-lg-1">
-                        <ul class="header-dropdown">
-                          <li class="dropdown">
-                            <a
-                              href="#"
-                              onclick="return false;"
-                              style="margin-top: -6px"
-                              class="dropdown-toggle"
-                              data-toggle="dropdown"
-                              role="button"
-                              aria-haspopup="true"
-                              aria-expanded="true"
-                            >
-                              <i class="fas fa-ellipsis-v"></i>
-                            </a>
-                            <ul
-                              class="dropdown-menu pull-right"
-                              id="project-options"
-                              x-placement="bottom-start"
-                              style="
-                                position: absolute;
-                                will-change: transform;
-                                top: 0px;
-                                left: 0px;
-                                transform: translate3d(0px, 24px, 0px);
-                              "
-                            >
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#view_formulation"
-                                  onclick="return false;"
-                                  >View</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#edit_formulation"
-                                  onclick="return false;"
-                                  >Edit</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  onclick="return false;"
-                                  data-toggle="modal"
-                                  data-target="#delete_formulation"
-                                  >Delete</a
-                                >
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </a>
-                </h4>
-              </div>
-              <div
-                id="collapse6"
-                class="panel-collapse collapse"
-                role="tabpanel"
-                aria-labelledby="heading1"
-              >
-                <div class="panel-body">
-                  <div class="panel-title">
-                    <div class="row" style="margin-left: -8px">
-                      <div class="col-auto pr-0 branch-border">
-                        <span> </span>
-                      </div>
-                      <div class="col">
-                        <h4>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Lorem ipsum dolor sit amet
-                          consectetur adipiscing elit.
-                        </h4>
-                      </div>
-                      <div class="col-md-auto">
-                        <p>4 Dec 2020 - 7 Dec 2020</p>
-                      </div>
-                      <div class="col-lg-1">
-                        <ul class="header-dropdown">
-                          <li class="dropdown">
-                            <a
-                              href="#"
-                              onclick="return false;"
-                              style="margin-top: -6px"
-                              class="dropdown-toggle"
-                              data-toggle="dropdown"
-                              role="button"
-                              aria-haspopup="true"
-                              aria-expanded="true"
-                            >
-                              <i class="fas fa-ellipsis-v"></i>
-                            </a>
-                            <ul
-                              class="dropdown-menu pull-right"
-                              id="project-options"
-                              x-placement="bottom-start"
-                              style="
-                                position: absolute;
-                                will-change: transform;
-                                top: 0px;
-                                left: 0px;
-                                transform: translate3d(0px, 24px, 0px);
-                              "
-                            >
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#view_lv_formulation"
-                                  onclick="return false;"
-                                  >View</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#edit_lv_formulation"
-                                  onclick="return false;"
-                                  >Edit</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  onclick="return false;"
-                                  data-toggle="modal"
-                                  data-target="#delete_formulation"
-                                  >Delete</a
-                                >
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                id="collapse6"
-                class="panel-collapse collapse"
-                role="tabpanel"
-                aria-labelledby="heading1"
-              >
-                <div class="panel-body">
-                  <div class="panel-title">
-                    <div class="row" style="margin-left: -8px">
-                      <div class="col-auto pr-0 branch-border">
-                        <span> </span>
-                      </div>
-                      <div class="col">
-                        <span
-                          data-toggle="modal"
-                          data-target="#add_lv_formulation"
-                          style="margin-left: -20px"
-                        >
-                          <i class="fas fa-plus border-box"></i>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 col-md-6 col-sm-12 project-panel-col">
-            <div
-              class="panel panel-default project-panel"
-              style="border-left: 2px solid #c9c9c9"
-            >
-              <div class="panel-heading" role="tab" id="heading1">
-                <h4 class="panel-title">
-                  <a
-                    role="button"
-                    class="collapsed"
-                    data-toggle="collapse"
-                    data-parent="#accordion"
-                    href="#collapse7"
-                    aria-expanded="true"
-                    aria-controls="collapse7"
-                  >
-                    <div class="row">
-                      <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-down"></i></span>
-                      </div>
-                      <div class="col">
-                        <h4>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Lorem ipsum dolor sit amet
-                          consectetur adipiscing elit.
-                        </h4>
-                      </div>
-                      <div class="col-md-auto">
-                        <p>Human Resource</p>
-                      </div>
-                      <div class="col-md-auto">
-                        <p>4 Dec 2020 - 7 Dec 2020</p>
-                      </div>
-                      <div class="col-lg-1">
-                        <ul class="header-dropdown">
-                          <li class="dropdown">
-                            <a
-                              href="#"
-                              onclick="return false;"
-                              style="margin-top: -6px"
-                              class="dropdown-toggle"
-                              data-toggle="dropdown"
-                              role="button"
-                              aria-haspopup="true"
-                              aria-expanded="true"
-                            >
-                              <i class="fas fa-ellipsis-v"></i>
-                            </a>
-                            <ul
-                              class="dropdown-menu pull-right"
-                              id="project-options"
-                              x-placement="bottom-start"
-                              style="
-                                position: absolute;
-                                will-change: transform;
-                                top: 0px;
-                                left: 0px;
-                                transform: translate3d(0px, 24px, 0px);
-                              "
-                            >
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#view_formulation"
-                                  onclick="return false;"
-                                  >View</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#edit_formulation"
-                                  onclick="return false;"
-                                  >Edit</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  onclick="return false;"
-                                  data-toggle="modal"
-                                  data-target="#delete_formulation"
-                                  >Delete</a
-                                >
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </a>
-                </h4>
-              </div>
-              <div
-                id="collapse7"
-                class="panel-collapse collapse"
-                role="tabpanel"
-                aria-labelledby="heading1"
-              >
-                <div class="panel-body">
-                  <div class="panel-title">
-                    <div class="row" style="margin-left: -8px">
-                      <div class="col-auto pr-0 branch-border">
-                        <span> </span>
-                      </div>
-                      <div class="col">
-                        <h4>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Lorem ipsum dolor sit amet
-                          consectetur adipiscing elit.
-                        </h4>
-                      </div>
-                      <div class="col-md-auto">
-                        <p>4 Dec 2020 - 7 Dec 2020</p>
-                      </div>
-                      <div class="col-lg-1">
-                        <ul class="header-dropdown">
-                          <li class="dropdown">
-                            <a
-                              href="#"
-                              onclick="return false;"
-                              style="margin-top: -6px"
-                              class="dropdown-toggle"
-                              data-toggle="dropdown"
-                              role="button"
-                              aria-haspopup="true"
-                              aria-expanded="true"
-                            >
-                              <i class="fas fa-ellipsis-v"></i>
-                            </a>
-                            <ul
-                              class="dropdown-menu pull-right"
-                              id="project-options"
-                              x-placement="bottom-start"
-                              style="
-                                position: absolute;
-                                will-change: transform;
-                                top: 0px;
-                                left: 0px;
-                                transform: translate3d(0px, 24px, 0px);
-                              "
-                            >
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#view_lv_formulation"
-                                  onclick="return false;"
-                                  >View</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#edit_lv_formulation"
-                                  onclick="return false;"
-                                  >Edit</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  onclick="return false;"
-                                  data-toggle="modal"
-                                  data-target="#delete_formulation"
-                                  >Delete</a
-                                >
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                id="collapse7"
-                class="panel-collapse collapse"
-                role="tabpanel"
-                aria-labelledby="heading1"
-              >
-                <div class="panel-body">
-                  <div class="panel-title">
-                    <div class="row" style="margin-left: -8px">
-                      <div class="col-auto pr-0 branch-border">
-                        <span> </span>
-                      </div>
-                      <div class="col">
-                        <span
-                          data-toggle="modal"
-                          data-target="#add_lv_formulation"
-                          style="margin-left: -20px"
-                        >
-                          <i class="fas fa-plus border-box"></i>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 col-md-6 col-sm-12 project-panel-col">
-            <div
-              class="panel panel-default project-panel"
-              style="border-left: 2px solid #c9c9c9"
-            >
-              <div class="panel-heading" role="tab" id="heading1">
-                <h4 class="panel-title">
-                  <a
-                    role="button"
-                    class="collapsed"
-                    data-toggle="collapse"
-                    data-parent="#accordion"
-                    href="#collapse8"
-                    aria-expanded="true"
-                    aria-controls="collapse8"
-                  >
-                    <div class="row">
-                      <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-down"></i></span>
-                      </div>
-                      <div class="col">
-                        <h4>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Lorem ipsum dolor sit amet
-                          consectetur adipiscing elit.
-                        </h4>
-                      </div>
-                      <div class="col-md-auto">
-                        <p>Human Resource</p>
-                      </div>
-                      <div class="col-md-auto">
-                        <p>4 Dec 2020 - 7 Dec 2020</p>
-                      </div>
-                      <div class="col-lg-1">
-                        <ul class="header-dropdown">
-                          <li class="dropdown">
-                            <a
-                              href="#"
-                              onclick="return false;"
-                              style="margin-top: -6px"
-                              class="dropdown-toggle"
-                              data-toggle="dropdown"
-                              role="button"
-                              aria-haspopup="true"
-                              aria-expanded="true"
-                            >
-                              <i class="fas fa-ellipsis-v"></i>
-                            </a>
-                            <ul
-                              class="dropdown-menu pull-right"
-                              id="project-options"
-                              x-placement="bottom-start"
-                              style="
-                                position: absolute;
-                                will-change: transform;
-                                top: 0px;
-                                left: 0px;
-                                transform: translate3d(0px, 24px, 0px);
-                              "
-                            >
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#view_formulation"
-                                  onclick="return false;"
-                                  >View</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#edit_formulation"
-                                  onclick="return false;"
-                                  >Edit</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  onclick="return false;"
-                                  data-toggle="modal"
-                                  data-target="#delete_formulation"
-                                  >Delete</a
-                                >
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </a>
-                </h4>
-              </div>
-              <div
-                id="collapse8"
-                class="panel-collapse collapse"
-                role="tabpanel"
-                aria-labelledby="heading1"
-              >
-                <div class="panel-body">
-                  <div class="panel-title">
-                    <div class="row" style="margin-left: -8px">
-                      <div class="col-auto pr-0 branch-border">
-                        <span> </span>
-                      </div>
-                      <div class="col">
-                        <h4>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Lorem ipsum dolor sit amet
-                          consectetur adipiscing elit.
-                        </h4>
-                      </div>
-                      <div class="col-md-auto">
-                        <p>4 Dec 2020 - 7 Dec 2020</p>
-                      </div>
-                      <div class="col-lg-1">
-                        <ul class="header-dropdown">
-                          <li class="dropdown">
-                            <a
-                              href="#"
-                              onclick="return false;"
-                              style="margin-top: -6px"
-                              class="dropdown-toggle"
-                              data-toggle="dropdown"
-                              role="button"
-                              aria-haspopup="true"
-                              aria-expanded="true"
-                            >
-                              <i class="fas fa-ellipsis-v"></i>
-                            </a>
-                            <ul
-                              class="dropdown-menu pull-right"
-                              id="project-options"
-                              x-placement="bottom-start"
-                              style="
-                                position: absolute;
-                                will-change: transform;
-                                top: 0px;
-                                left: 0px;
-                                transform: translate3d(0px, 24px, 0px);
-                              "
-                            >
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#view_lv_formulation"
-                                  onclick="return false;"
-                                  >View</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#edit_lv_formulation"
-                                  onclick="return false;"
-                                  >Edit</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  onclick="return false;"
-                                  data-toggle="modal"
-                                  data-target="#delete_formulation"
-                                  >Delete</a
-                                >
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                id="collapse8"
-                class="panel-collapse collapse"
-                role="tabpanel"
-                aria-labelledby="heading1"
-              >
-                <div class="panel-body">
-                  <div class="panel-title">
-                    <div class="row" style="margin-left: -8px">
-                      <div class="col-auto pr-0 branch-border">
-                        <span> </span>
-                      </div>
-                      <div class="col">
-                        <span
-                          data-toggle="modal"
-                          data-target="#add_lv_formulation"
-                          style="margin-left: -20px"
-                        >
-                          <i class="fas fa-plus border-box"></i>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 col-md-6 col-sm-12 project-panel-col">
-            <div
-              class="panel panel-default project-panel"
-              style="border-left: 2px solid #c9c9c9"
-            >
-              <div class="panel-heading" role="tab" id="heading1">
-                <h4 class="panel-title">
-                  <a
-                    role="button"
-                    class="collapsed"
-                    data-toggle="collapse"
-                    data-parent="#accordion"
-                    href="#collapse9"
-                    aria-expanded="true"
-                    aria-controls="collapse9"
-                  >
-                    <div class="row">
-                      <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-down"></i></span>
-                      </div>
-                      <div class="col">
-                        <h4>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Lorem ipsum dolor sit amet
-                          consectetur adipiscing elit.
-                        </h4>
-                      </div>
-                      <div class="col-md-auto">
-                        <p>Human Resource</p>
-                      </div>
-                      <div class="col-md-auto">
-                        <p>4 Dec 2020 - 7 Dec 2020</p>
-                      </div>
-                      <div class="col-lg-1">
-                        <ul class="header-dropdown">
-                          <li class="dropdown">
-                            <a
-                              href="#"
-                              onclick="return false;"
-                              style="margin-top: -6px"
-                              class="dropdown-toggle"
-                              data-toggle="dropdown"
-                              role="button"
-                              aria-haspopup="true"
-                              aria-expanded="true"
-                            >
-                              <i class="fas fa-ellipsis-v"></i>
-                            </a>
-                            <ul
-                              class="dropdown-menu pull-right"
-                              id="project-options"
-                              x-placement="bottom-start"
-                              style="
-                                position: absolute;
-                                will-change: transform;
-                                top: 0px;
-                                left: 0px;
-                                transform: translate3d(0px, 24px, 0px);
-                              "
-                            >
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#view_formulation"
-                                  onclick="return false;"
-                                  >View</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#edit_formulation"
-                                  onclick="return false;"
-                                  >Edit</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  onclick="return false;"
-                                  data-toggle="modal"
-                                  data-target="#delete_formulation"
-                                  >Delete</a
-                                >
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </a>
-                </h4>
-              </div>
-              <div
-                id="collapse9"
-                class="panel-collapse collapse"
-                role="tabpanel"
-                aria-labelledby="heading1"
-              >
-                <div class="panel-body">
-                  <div class="panel-title">
-                    <div class="row" style="margin-left: -8px">
-                      <div class="col-auto pr-0 branch-border">
-                        <span> </span>
-                      </div>
-                      <div class="col">
-                        <h4>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Lorem ipsum dolor sit amet
-                          consectetur adipiscing elit.
-                        </h4>
-                      </div>
-                      <div class="col-md-auto">
-                        <p>4 Dec 2020 - 7 Dec 2020</p>
-                      </div>
-                      <div class="col-lg-1">
-                        <ul class="header-dropdown">
-                          <li class="dropdown">
-                            <a
-                              href="#"
-                              onclick="return false;"
-                              style="margin-top: -6px"
-                              class="dropdown-toggle"
-                              data-toggle="dropdown"
-                              role="button"
-                              aria-haspopup="true"
-                              aria-expanded="true"
-                            >
-                              <i class="fas fa-ellipsis-v"></i>
-                            </a>
-                            <ul
-                              class="dropdown-menu pull-right"
-                              id="project-options"
-                              x-placement="bottom-start"
-                              style="
-                                position: absolute;
-                                will-change: transform;
-                                top: 0px;
-                                left: 0px;
-                                transform: translate3d(0px, 24px, 0px);
-                              "
-                            >
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#view_lv_formulation"
-                                  onclick="return false;"
-                                  >View</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#edit_lv_formulation"
-                                  onclick="return false;"
-                                  >Edit</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  onclick="return false;"
-                                  data-toggle="modal"
-                                  data-target="#delete_formulation"
-                                  >Delete</a
-                                >
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                id="collapse9"
-                class="panel-collapse collapse"
-                role="tabpanel"
-                aria-labelledby="heading1"
-              >
-                <div class="panel-body">
-                  <div class="panel-title">
-                    <div class="row" style="margin-left: -8px">
-                      <div class="col-auto pr-0 branch-border">
-                        <span> </span>
-                      </div>
-                      <div class="col">
-                        <span
-                          data-toggle="modal"
-                          data-target="#add_lv_formulation"
-                          style="margin-left: -20px"
-                        >
-                          <i class="fas fa-plus border-box"></i>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 col-md-6 col-sm-12 project-panel-col">
-            <div
-              class="panel panel-default project-panel"
-              style="border-left: 2px solid #c9c9c9"
-            >
-              <div class="panel-heading" role="tab" id="heading1">
-                <h4 class="panel-title">
-                  <a
-                    role="button"
-                    class="collapsed"
-                    data-toggle="collapse"
-                    data-parent="#accordion"
-                    href="#collapse10"
-                    aria-expanded="true"
-                    aria-controls="collapse10"
-                  >
-                    <div class="row">
-                      <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-down"></i></span>
-                      </div>
-                      <div class="col">
-                        <h4>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Lorem ipsum dolor sit amet
-                          consectetur adipiscing elit.
-                        </h4>
-                      </div>
-                      <div class="col-md-auto">
-                        <p>Human Resource</p>
-                      </div>
-                      <div class="col-md-auto">
-                        <p>4 Dec 2020 - 7 Dec 2020</p>
-                      </div>
-                      <div class="col-lg-1">
-                        <ul class="header-dropdown">
-                          <li class="dropdown">
-                            <a
-                              href="#"
-                              onclick="return false;"
-                              style="margin-top: -6px"
-                              class="dropdown-toggle"
-                              data-toggle="dropdown"
-                              role="button"
-                              aria-haspopup="true"
-                              aria-expanded="true"
-                            >
-                              <i class="fas fa-ellipsis-v"></i>
-                            </a>
-                            <ul
-                              class="dropdown-menu pull-right"
-                              id="project-options"
-                              x-placement="bottom-start"
-                              style="
-                                position: absolute;
-                                will-change: transform;
-                                top: 0px;
-                                left: 0px;
-                                transform: translate3d(0px, 24px, 0px);
-                              "
-                            >
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#view_formulation"
-                                  onclick="return false;"
-                                  >View</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#edit_formulation"
-                                  onclick="return false;"
-                                  >Edit</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  onclick="return false;"
-                                  data-toggle="modal"
-                                  data-target="#delete_formulation"
-                                  >Delete</a
-                                >
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </a>
-                </h4>
-              </div>
-              <div
-                id="collapse10"
-                class="panel-collapse collapse"
-                role="tabpanel"
-                aria-labelledby="heading1"
-              >
-                <div class="panel-body">
-                  <div class="panel-title">
-                    <div class="row" style="margin-left: -8px">
-                      <div class="col-auto pr-0 branch-border">
-                        <span> </span>
-                      </div>
-                      <div class="col">
-                        <h4>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Lorem ipsum dolor sit amet
-                          consectetur adipiscing elit.
-                        </h4>
-                      </div>
-                      <div class="col-md-auto">
-                        <p>4 Dec 2020 - 7 Dec 2020</p>
-                      </div>
-                      <div class="col-lg-1">
-                        <ul class="header-dropdown">
-                          <li class="dropdown">
-                            <a
-                              href="#"
-                              onclick="return false;"
-                              style="margin-top: -6px"
-                              class="dropdown-toggle"
-                              data-toggle="dropdown"
-                              role="button"
-                              aria-haspopup="true"
-                              aria-expanded="true"
-                            >
-                              <i class="fas fa-ellipsis-v"></i>
-                            </a>
-                            <ul
-                              class="dropdown-menu pull-right"
-                              id="project-options"
-                              x-placement="bottom-start"
-                              style="
-                                position: absolute;
-                                will-change: transform;
-                                top: 0px;
-                                left: 0px;
-                                transform: translate3d(0px, 24px, 0px);
-                              "
-                            >
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#view_lv_formulation"
-                                  onclick="return false;"
-                                  >View</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#edit_lv_formulation"
-                                  onclick="return false;"
-                                  >Edit</a
-                                >
-                              </li>
-
-                              <li>
-                                <a
-                                  href="#"
-                                  onclick="return false;"
-                                  data-toggle="modal"
-                                  data-target="#delete_formulation"
-                                  >Delete</a
-                                >
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                id="collapse10"
-                class="panel-collapse collapse"
-                role="tabpanel"
-                aria-labelledby="heading1"
-              >
-                <div class="panel-body">
-                  <div class="panel-title">
-                    <div class="row" style="margin-left: -8px">
-                      <div class="col-auto pr-0 branch-border">
-                        <span> </span>
-                      </div>
-                      <div class="col">
-                        <span
-                          data-toggle="modal"
-                          data-target="#add_lv_formulation"
+                          data-target="#add_risk_l2"
                           style="margin-left: -20px"
                         >
                           <i class="fas fa-plus border-box"></i>

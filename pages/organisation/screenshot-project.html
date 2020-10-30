@@ -139,7 +139,7 @@
         position: absolute;
         top: 0;
         left: -4px;
-        bottom: 44%;
+        bottom: 56%;
         width: 0.75em;
         border: 2px solid #c6c6c6;
         border-top: 0 none transparent;
@@ -212,6 +212,41 @@
 
       .branch-border span {
         margin-left: -10px;
+      }
+
+      .project-panel .panel-title h4 {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 22px;
+        margin-top: 8px;
+        color: #1e252d;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+
+      .project-panel .panel-title p {
+        font-size: 11px;
+        text-align: center;
+        line-height: 8px;
+        font-weight: 500;
+        color: #1e252d;
+        margin-top: 16px;
+      }
+
+      .project-panel {
+        width: 100%;
+        background: #ffffff;
+        border: 2px solid #c9c9c9;
+        box-sizing: border-box;
+        box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.08);
+        border-radius: 6px !important;
+        padding: 12px 2px 12px 10px !important;
+      }
+
+      .project-panel .panel-title span .fa-chevron-down {
+        margin-top: 10px;
       }
     </style>
   </head>
@@ -1899,21 +1934,21 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                   >
                     <div class="row">
                       <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-down"></i></span>
+                        <span
+                          ><i
+                            class="fas fa-chevron-down"
+                            style="margin-top: 13px"
+                          ></i
+                        ></span>
                       </div>
                       <div class="col">
-                        <h4>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Lorem ipsum dolor sit amet
-                          consectetur adipiscing elit.
-                        </h4>
+                        <h4>Improve sales productivity</h4>
                       </div>
                       <div class="col-md-auto">
-                        <p>Human Resource</p>
+                        <p>Sales</p>
                       </div>
                       <div class="col-md-auto">
-                        <p>4 Dec 2020 - 7 Dec 2020</p>
+                        <p>01 Jan 2021 - 31 Dec 2021</p>
                       </div>
                       <div class="col-lg-1">
                         <ul class="header-dropdown">
@@ -1921,7 +1956,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <a
                               href="#"
                               onclick="return false;"
-                              style="margin-top: -6px"
+                              style="margin-top: -7px"
                               class="dropdown-toggle"
                               data-toggle="dropdown"
                               role="button"
@@ -2009,16 +2044,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 <span><i class="fas fa-chevron-down"></i></span>
                               </div>
                               <div class="col">
-                                <h4>
-                                  Lorem ipsum dolor sit amet, consectetur
-                                  adipiscing elit, sed do eiusmod tempor
-                                  incididunt ut labore et dolore magna aliqua.
-                                  Lorem ipsum dolor sit amet consectetur
-                                  adipiscing elit.
-                                </h4>
+                                <h4>Priotise Outreach</h4>
                               </div>
                               <div class="col-md-auto">
-                                <p>4 Dec 2020 - 7 Dec 2020</p>
+                                <p>01 Jan 2021 - 31 Mar 2021</p>
                               </div>
                               <div class="col-lg-1">
                                 <ul class="header-dropdown">
@@ -2026,7 +2055,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                     <a
                                       href="#"
                                       onclick="return false;"
-                                      style="margin-top: -6px"
+                                      style="margin-top: -7px"
                                       class="dropdown-toggle"
                                       data-toggle="dropdown"
                                       role="button"
@@ -2117,15 +2146,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                       </div>
                                       <div class="col">
                                         <h4>
-                                          Lorem ipsum dolor sit amet,
-                                          consectetur adipiscing elit, sed do
-                                          eiusmod tempor incididunt ut labore et
-                                          dolore magna aliqua. Lorem ipsum dolor
-                                          sit amet consectetur adipiscing elit.
+                                          Focus on streamlining lead
+                                          qualification
                                         </h4>
                                       </div>
                                       <div class="col-md-auto">
-                                        <p>4 Dec 2020 - 7 Dec 2020</p>
+                                        <p>01 Jan 2021 - 31 Mar 2021</p>
                                       </div>
                                       <div class="col-lg-1">
                                         <ul class="header-dropdown">
@@ -2133,7 +2159,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                             <a
                                               href="#"
                                               onclick="return false;"
-                                              style="margin-top: -6px"
+                                              style="margin-top: -7px"
                                               class="dropdown-toggle"
                                               data-toggle="dropdown"
                                               role="button"
@@ -2226,25 +2252,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                               <div
                                                 class="col-auto pr-0 branch-border"
                                               >
-                                                <span
-                                                  ><i
-                                                    class="fas fa-chevron-down"
-                                                  ></i
-                                                ></span>
+                                                <span></span>
                                               </div>
                                               <div class="col">
                                                 <h4>
-                                                  Lorem ipsum dolor sit amet,
-                                                  consectetur adipiscing elit,
-                                                  sed do eiusmod tempor
-                                                  incididunt ut labore et dolore
-                                                  magna aliqua. Lorem ipsum
-                                                  dolor sit amet consectetur
-                                                  adipiscing elit.
+                                                  Finalise software integration
                                                 </h4>
                                               </div>
                                               <div class="col-md-auto">
-                                                <p>4 Dec 2020 - 7 Dec 2020</p>
+                                                <p>31 Mar 2021</p>
                                               </div>
                                               <div class="col-lg-1">
                                                 <ul class="header-dropdown">
@@ -2252,7 +2268,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                     <a
                                                       href="#"
                                                       onclick="return false;"
-                                                      style="margin-top: -6px"
+                                                      style="margin-top: -7px"
                                                       class="dropdown-toggle"
                                                       data-toggle="dropdown"
                                                       role="button"
@@ -2314,7 +2330,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                           </a>
                                         </div>
                                       </div>
-                                      <div
+                                      <!-- <div
                                         id="collapse1_1_1_1"
                                         class="panel-collapse collapse"
                                         role="tabpanel"
@@ -2351,7 +2367,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                     <a
                                                       href="#"
                                                       onclick="return false;"
-                                                      style="margin-top: -6px"
+                                                      style="margin-top: -7px"
                                                       class="dropdown-toggle"
                                                       data-toggle="dropdown"
                                                       role="button"
@@ -2412,8 +2428,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                             </div>
                                           </div>
                                         </div>
-                                      </div>
-                                      <div
+                                      </div> -->
+                                      <!-- <div
                                         id="collapse1_1_1_1"
                                         class="panel-collapse collapse"
                                         role="tabpanel"
@@ -2444,7 +2460,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                             </div>
                                           </div>
                                         </div>
-                                      </div>
+                                      </div> -->
                                     </div>
                                   </div>
                                   <div
@@ -2555,19 +2571,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                           >
                             <div class="row">
                               <div class="col-auto pr-0 branch-border">
-                                <span><i class="fas fa-chevron-down"></i></span>
+                                <span></span>
                               </div>
                               <div class="col">
-                                <h4>
-                                  Lorem ipsum dolor sit amet, consectetur
-                                  adipiscing elit, sed do eiusmod tempor
-                                  incididunt ut labore et dolore magna aliqua.
-                                  Lorem ipsum dolor sit amet consectetur
-                                  adipiscing elit.
-                                </h4>
+                                <h4>Streamline Pipeline</h4>
                               </div>
                               <div class="col-md-auto">
-                                <p>4 Dec 2020 - 7 Dec 2020</p>
+                                <p>01 Jan 2021 - 31 Mar 2021</p>
                               </div>
                               <div class="col-lg-1">
                                 <ul class="header-dropdown">
@@ -2575,7 +2585,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                     <a
                                       href="#"
                                       onclick="return false;"
-                                      style="margin-top: -6px"
+                                      style="margin-top: -7px"
                                       class="dropdown-toggle"
                                       data-toggle="dropdown"
                                       role="button"
@@ -2660,7 +2670,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                     <a
                                       href="#"
                                       onclick="return false;"
-                                      style="margin-top: -6px"
+                                      style="margin-top: -7px"
                                       class="dropdown-toggle"
                                       data-toggle="dropdown"
                                       role="button"
@@ -2753,6 +2763,219 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
               style="border-left: 2px solid #c9c9c9"
             >
               <div class="panel-heading" role="tab" id="heading1">
+                <h4 class="panel-title">
+                  <a
+                    role="button"
+                    class="collapsed"
+                    data-toggle="collapse"
+                    data-parent="#accordion"
+                    href="#collapse6"
+                    aria-expanded="true"
+                    aria-controls="collapse6"
+                  >
+                    <div class="row">
+                      <div class="col-auto pr-0 branch-border">
+                        <span
+                          ><i
+                            class="fas fa-chevron-down"
+                            style="margin-top: 13px"
+                          ></i
+                        ></span>
+                      </div>
+                      <div class="col">
+                        <h4>Organize at least 2 owned events</h4>
+                      </div>
+                      <div class="col-md-auto">
+                        <p>Corporate</p>
+                      </div>
+                      <div class="col-md-auto">
+                        <p>01 Jan 2021 - 31 Dec 2021</p>
+                      </div>
+                      <div class="col-lg-1">
+                        <ul class="header-dropdown">
+                          <li class="dropdown">
+                            <a
+                              href="#"
+                              onclick="return false;"
+                              style="margin-top: -7px"
+                              class="dropdown-toggle"
+                              data-toggle="dropdown"
+                              role="button"
+                              aria-haspopup="true"
+                              aria-expanded="true"
+                            >
+                              <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                            <ul
+                              class="dropdown-menu pull-right"
+                              id="project-options"
+                              x-placement="bottom-start"
+                              style="
+                                position: absolute;
+                                will-change: transform;
+                                top: 0px;
+                                left: 0px;
+                                transform: translate3d(0px, 24px, 0px);
+                              "
+                            >
+                              <li>
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#view_formulation"
+                                  onclick="return false;"
+                                  >View</a
+                                >
+                              </li>
+
+                              <li>
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#edit_formulation"
+                                  onclick="return false;"
+                                  >Edit</a
+                                >
+                              </li>
+
+                              <li>
+                                <a
+                                  href="#"
+                                  onclick="return false;"
+                                  data-toggle="modal"
+                                  data-target="#delete_formulation"
+                                  >Delete</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </a>
+                </h4>
+              </div>
+              <div
+                id="collapse6"
+                class="panel-collapse collapse"
+                role="tabpanel"
+                aria-labelledby="heading1"
+              >
+                <div class="panel-body">
+                  <div class="panel-title">
+                    <div class="row" style="margin-left: -8px">
+                      <div class="col-auto pr-0 branch-border">
+                        <span> </span>
+                      </div>
+                      <div class="col">
+                        <h4>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua. Lorem ipsum dolor sit amet
+                          consectetur adipiscing elit.
+                        </h4>
+                      </div>
+                      <div class="col-md-auto">
+                        <p>4 Dec 2020 - 7 Dec 2020</p>
+                      </div>
+                      <div class="col-lg-1">
+                        <ul class="header-dropdown">
+                          <li class="dropdown">
+                            <a
+                              href="#"
+                              onclick="return false;"
+                              style="margin-top: -7px"
+                              class="dropdown-toggle"
+                              data-toggle="dropdown"
+                              role="button"
+                              aria-haspopup="true"
+                              aria-expanded="true"
+                            >
+                              <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                            <ul
+                              class="dropdown-menu pull-right"
+                              id="project-options"
+                              x-placement="bottom-start"
+                              style="
+                                position: absolute;
+                                will-change: transform;
+                                top: 0px;
+                                left: 0px;
+                                transform: translate3d(0px, 24px, 0px);
+                              "
+                            >
+                              <li>
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#view_lv_formulation"
+                                  onclick="return false;"
+                                  >View</a
+                                >
+                              </li>
+
+                              <li>
+                                <a
+                                  href="#"
+                                  data-toggle="modal"
+                                  data-target="#edit_lv_formulation"
+                                  onclick="return false;"
+                                  >Edit</a
+                                >
+                              </li>
+
+                              <li>
+                                <a
+                                  href="#"
+                                  onclick="return false;"
+                                  data-toggle="modal"
+                                  data-target="#delete_formulation"
+                                  >Delete</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="collapse6"
+                class="panel-collapse collapse"
+                role="tabpanel"
+                aria-labelledby="heading1"
+              >
+                <div class="panel-body">
+                  <div class="panel-title">
+                    <div class="row" style="margin-left: -8px">
+                      <div class="col-auto pr-0 branch-border">
+                        <span> </span>
+                      </div>
+                      <div class="col">
+                        <span
+                          data-toggle="modal"
+                          data-target="#add_lv_formulation"
+                          style="margin-left: -20px"
+                        >
+                          <i class="fas fa-plus border-box"></i>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-12 project-panel-col">
+            <div
+              class="panel panel-default project-panel"
+              style="border-left: 2px solid #c9c9c9"
+            >
+              <div class="panel-heading" role="tab" id="heading1">
                 <div class="panel-title">
                   <a
                     role="button"
@@ -2765,21 +2988,24 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                   >
                     <div class="row">
                       <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-down"></i></span>
+                        <span
+                          ><i
+                            class="fas fa-chevron-down"
+                            style="margin-top: 13px"
+                          ></i
+                        ></span>
                       </div>
                       <div class="col">
                         <h4>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Lorem ipsum dolor sit amet
-                          consectetur adipiscing elit.
+                          Secure strategic brand ambassadors for relevant
+                          products
                         </h4>
                       </div>
                       <div class="col-md-auto">
-                        <p>Human Resource</p>
+                        <p>Marketing</p>
                       </div>
                       <div class="col-md-auto">
-                        <p>4 Dec 2020 - 7 Dec 2020</p>
+                        <p>01 Jan 2021 - 31 Dec 2021</p>
                       </div>
                       <div class="col-lg-1">
                         <ul class="header-dropdown">
@@ -2787,7 +3013,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <a
                               href="#"
                               onclick="return false;"
-                              style="margin-top: -6px"
+                              style="margin-top: -7px"
                               class="dropdown-toggle"
                               data-toggle="dropdown"
                               role="button"
@@ -2874,7 +3100,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <a
                               href="#"
                               onclick="return false;"
-                              style="margin-top: -6px"
+                              style="margin-top: -7px"
                               class="dropdown-toggle"
                               data-toggle="dropdown"
                               role="button"
@@ -2979,21 +3205,24 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                   >
                     <div class="row">
                       <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-down"></i></span>
+                        <span
+                          ><i
+                            class="fas fa-chevron-down"
+                            style="margin-top: 13px"
+                          ></i
+                        ></span>
                       </div>
                       <div class="col">
                         <h4>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Lorem ipsum dolor sit amet
-                          consectetur adipiscing elit.
+                          Effective cost and budget control through regular
+                          review
                         </h4>
                       </div>
                       <div class="col-md-auto">
-                        <p>Human Resource</p>
+                        <p>Finance</p>
                       </div>
                       <div class="col-md-auto">
-                        <p>4 Dec 2020 - 7 Dec 2020</p>
+                        <p>01 Jan 2021 - 31 Dec 2021</p>
                       </div>
                       <div class="col-lg-1">
                         <ul class="header-dropdown">
@@ -3001,7 +3230,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <a
                               href="#"
                               onclick="return false;"
-                              style="margin-top: -6px"
+                              style="margin-top: -7px"
                               class="dropdown-toggle"
                               data-toggle="dropdown"
                               role="button"
@@ -3088,7 +3317,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <a
                               href="#"
                               onclick="return false;"
-                              style="margin-top: -6px"
+                              style="margin-top: -7px"
                               class="dropdown-toggle"
                               data-toggle="dropdown"
                               role="button"
@@ -3192,21 +3421,23 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                   >
                     <div class="row">
                       <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-down"></i></span>
+                        <span
+                          ><i
+                            class="fas fa-chevron-down"
+                            style="margin-top: 13px"
+                          ></i
+                        ></span>
                       </div>
                       <div class="col">
                         <h4>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Lorem ipsum dolor sit amet
-                          consectetur adipiscing elit.
+                          Set up tracking system to monitor turnaround time
                         </h4>
                       </div>
                       <div class="col-md-auto">
-                        <p>Human Resource</p>
+                        <p>IT</p>
                       </div>
                       <div class="col-md-auto">
-                        <p>4 Dec 2020 - 7 Dec 2020</p>
+                        <p>01 Jan 2021 - 31 Dec 2021</p>
                       </div>
                       <div class="col-lg-1">
                         <ul class="header-dropdown">
@@ -3214,7 +3445,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <a
                               href="#"
                               onclick="return false;"
-                              style="margin-top: -6px"
+                              style="margin-top: -7px"
                               class="dropdown-toggle"
                               data-toggle="dropdown"
                               role="button"
@@ -3301,7 +3532,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <a
                               href="#"
                               onclick="return false;"
-                              style="margin-top: -6px"
+                              style="margin-top: -7px"
                               class="dropdown-toggle"
                               data-toggle="dropdown"
                               role="button"
@@ -3405,21 +3636,21 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                   >
                     <div class="row">
                       <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-down"></i></span>
+                        <span
+                          ><i
+                            class="fas fa-chevron-down"
+                            style="margin-top: 13px"
+                          ></i
+                        ></span>
                       </div>
                       <div class="col">
-                        <h4>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Lorem ipsum dolor sit amet
-                          consectetur adipiscing elit.
-                        </h4>
+                        <h4>Set-up a scorecard compliance committee for all</h4>
                       </div>
                       <div class="col-md-auto">
-                        <p>Human Resource</p>
+                        <p>Corporate</p>
                       </div>
                       <div class="col-md-auto">
-                        <p>4 Dec 2020 - 7 Dec 2020</p>
+                        <p>01 Jan 2021 - 31 Dec 2021</p>
                       </div>
                       <div class="col-lg-1">
                         <ul class="header-dropdown">
@@ -3427,7 +3658,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <a
                               href="#"
                               onclick="return false;"
-                              style="margin-top: -6px"
+                              style="margin-top: -7px"
                               class="dropdown-toggle"
                               data-toggle="dropdown"
                               role="button"
@@ -3514,7 +3745,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <a
                               href="#"
                               onclick="return false;"
-                              style="margin-top: -6px"
+                              style="margin-top: -7px"
                               class="dropdown-toggle"
                               data-toggle="dropdown"
                               role="button"
@@ -3600,7 +3831,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             </div>
           </div>
 
-          <div class="col-lg-6 col-md-6 col-sm-12 project-panel-col">
+          <!-- <div class="col-lg-6 col-md-6 col-sm-12 project-panel-col">
             <div
               class="panel panel-default project-panel"
               style="border-left: 2px solid #c9c9c9"
@@ -3618,7 +3849,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                   >
                     <div class="row">
                       <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-down"></i></span>
+                        <span><i class="fas fa-chevron-down" style="margin-top: 13px;"></i></span>
                       </div>
                       <div class="col">
                         <h4>
@@ -3640,7 +3871,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <a
                               href="#"
                               onclick="return false;"
-                              style="margin-top: -6px"
+                              style="margin-top: -7px"
                               class="dropdown-toggle"
                               data-toggle="dropdown"
                               role="button"
@@ -3727,7 +3958,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <a
                               href="#"
                               onclick="return false;"
-                              style="margin-top: -6px"
+                              style="margin-top: -7px"
                               class="dropdown-toggle"
                               data-toggle="dropdown"
                               role="button"
@@ -3831,7 +4062,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                   >
                     <div class="row">
                       <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-down"></i></span>
+                        <span><i class="fas fa-chevron-down" style="margin-top: 13px;"></i></span>
                       </div>
                       <div class="col">
                         <h4>
@@ -3853,7 +4084,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <a
                               href="#"
                               onclick="return false;"
-                              style="margin-top: -6px"
+                              style="margin-top: -7px"
                               class="dropdown-toggle"
                               data-toggle="dropdown"
                               role="button"
@@ -3940,7 +4171,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <a
                               href="#"
                               onclick="return false;"
-                              style="margin-top: -6px"
+                              style="margin-top: -7px"
                               class="dropdown-toggle"
                               data-toggle="dropdown"
                               role="button"
@@ -4044,7 +4275,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                   >
                     <div class="row">
                       <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-down"></i></span>
+                        <span><i class="fas fa-chevron-down" style="margin-top: 13px;"></i></span>
                       </div>
                       <div class="col">
                         <h4>
@@ -4066,7 +4297,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <a
                               href="#"
                               onclick="return false;"
-                              style="margin-top: -6px"
+                              style="margin-top: -7px"
                               class="dropdown-toggle"
                               data-toggle="dropdown"
                               role="button"
@@ -4153,7 +4384,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <a
                               href="#"
                               onclick="return false;"
-                              style="margin-top: -6px"
+                              style="margin-top: -7px"
                               class="dropdown-toggle"
                               data-toggle="dropdown"
                               role="button"
@@ -4257,7 +4488,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                   >
                     <div class="row">
                       <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-down"></i></span>
+                        <span><i class="fas fa-chevron-down" style="margin-top: 13px;"></i></span>
                       </div>
                       <div class="col">
                         <h4>
@@ -4279,7 +4510,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <a
                               href="#"
                               onclick="return false;"
-                              style="margin-top: -6px"
+                              style="margin-top: -7px"
                               class="dropdown-toggle"
                               data-toggle="dropdown"
                               role="button"
@@ -4366,7 +4597,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <a
                               href="#"
                               onclick="return false;"
-                              style="margin-top: -6px"
+                              style="margin-top: -7px"
                               class="dropdown-toggle"
                               data-toggle="dropdown"
                               role="button"
@@ -4470,7 +4701,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                   >
                     <div class="row">
                       <div class="col-auto pr-0 branch-border">
-                        <span><i class="fas fa-chevron-down"></i></span>
+                        <span><i class="fas fa-chevron-down" style="margin-top: 13px;"></i></span>
                       </div>
                       <div class="col">
                         <h4>
@@ -4492,7 +4723,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <a
                               href="#"
                               onclick="return false;"
-                              style="margin-top: -6px"
+                              style="margin-top: -7px"
                               class="dropdown-toggle"
                               data-toggle="dropdown"
                               role="button"
@@ -4579,7 +4810,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <a
                               href="#"
                               onclick="return false;"
-                              style="margin-top: -6px"
+                              style="margin-top: -7px"
                               class="dropdown-toggle"
                               data-toggle="dropdown"
                               role="button"
@@ -4663,7 +4894,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
