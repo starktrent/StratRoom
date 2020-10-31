@@ -515,29 +515,47 @@
   border-top: 1px solid #ababab;
 }
 
-.orgiz_add {
+#edit_options div:nth-child(1) {
+  position: absolute;
+  top: -9px;
+  right: 5px;
+}
+
+#edit_options div:nth-child(2) {
+  position: absolute;
+  top: -9px;
+  right: 22px;
+}
+
+#edit_options div:nth-child(3) {
   position: absolute;
   top: -9px;
   right: 39px;
-  /* background: #fff;
-    border-radius: 50%; */
+}
+
+/* .orgiz_add {
+  position: absolute;
+  top: -9px;
+  right: 39px;
+  background: #fff;
+    border-radius: 50%;
 }
 
 .orgiz_edit {
   position: absolute;
   top: -9px;
   right: 22px;
-  /* background: #fff;
-    border-radius: 50%; */
+  background: #fff;
+    border-radius: 50%;
 }
 
 .orgiz_delete {
   position: absolute;
   top: -9px;
   right: 5px;
-  /* background: #fff;
-    border-radius: 50%; */
-}
+  background: #fff;
+    border-radius: 50%;
+} */
 
 .orgiz_btn_appraisal {
   border: none;
