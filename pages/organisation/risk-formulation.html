@@ -539,6 +539,17 @@
               </div>
 
               <div class="col-6 form-group">
+                <label for="Name">Type</label>
+                <select class="form-control browser-default">
+                  <option value="Risk">Risk</option>
+                  <option value="Cause">Cause</option>
+                  <option value="Consequence">Consequence</option>
+                  <option value="Plan">Plan</option>
+                  <option value="Action">Action</option>
+                </select>
+              </div>
+
+              <div class="col-6 form-group">
                 <label for="Name">Likelihood</label>
                 <select class="form-control browser-default">
                   <option value="Low">Low</option>
@@ -594,7 +605,7 @@
                 />
               </div>
 
-              <div class="col-6 form-group">
+              <!-- <div class="col-6 form-group">
                 <label for="Name">Date Completed</label>
                 <input
                   type="text"
@@ -616,7 +627,7 @@
                   id="kpi_start_end_date"
                   value=""
                 />
-              </div>
+              </div> -->
 
               <div class="col-12">
                 <div class="form-line right">
@@ -667,6 +678,17 @@
                 >
 Failure to meet compliance obligations</textarea
                 >
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Type</label>
+                <select class="form-control browser-default">
+                  <option value="Risk">Risk</option>
+                  <option value="Cause">Cause</option>
+                  <option value="Consequence">Consequence</option>
+                  <option value="Plan">Plan</option>
+                  <option value="Action">Action</option>
+                </select>
               </div>
 
               <div class="col-6 form-group">
@@ -725,7 +747,7 @@ Failure to meet compliance obligations</textarea
                 />
               </div>
 
-              <div class="col-6 form-group">
+              <!-- <div class="col-6 form-group">
                 <label for="Name">Date Completed</label>
                 <input
                   type="text"
@@ -747,7 +769,7 @@ Failure to meet compliance obligations</textarea
                   id="kpi_start_end_date"
                   value="31/10/2020"
                 />
-              </div>
+              </div> -->
 
               <div class="col-12">
                 <div class="form-line right">
@@ -791,6 +813,11 @@ Failure to meet compliance obligations</textarea
               <div class="col-12 form-group">
                 <label for="Name">Name</label>
                 <h4>Failure to meet compliance obligations</h4>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Type</label>
+                <h4>Risk</h4>
               </div>
 
               <!-- <div class="col-6 form-group">
@@ -875,12 +902,25 @@ Failure to meet compliance obligations</textarea
               </div>
 
               <div class="col-6 form-group">
+                <label for="Name">Type</label>
+                <select class="form-control browser-default">
+                  <option value="Cause">Cause</option>
+                  <option value="Consequence">Consequence</option>
+                  <option value="Plan">Plan</option>
+                  <option value="Action">Action</option>
+                </select>
+              </div>
+
+              <div class="col-6 form-group">
                 <label for="Name">Rating</label>
-                <input
-                  type="text"
-                  class="form-control browser-default persp_subweight"
-                  value=""
-                />
+                <select class="form-control browser-default">
+                  <option value="Choose">Choose</option>
+                  <option value="Very Low">Very Low</option>
+                  <option value="Low">Low</option>
+                  <option value="Tolerable">Tolerable</option>
+                  <option value="High">High</option>
+                  <option value="Very High">Very High</option>
+                </select>
               </div>
 
               <div class="col-12">
@@ -932,6 +972,16 @@ Failure to meet compliance obligations</textarea
                 >
 Failure to meet compliance obligations</textarea
                 >
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Type</label>
+                <select class="form-control browser-default">
+                  <option value="Cause">Cause</option>
+                  <option value="Consequence">Consequence</option>
+                  <option value="Plan">Plan</option>
+                  <option value="Action">Action</option>
+                </select>
               </div>
 
               <div class="col-6 form-group">
@@ -988,6 +1038,11 @@ Failure to meet compliance obligations</textarea
               </div>
 
               <div class="col-6 form-group">
+                <label for="Name">Type</label>
+                <h4>Cause</h4>
+              </div>
+
+              <div class="col-6 form-group">
                 <label for="Name">Rating</label>
                 <h4>2.4</h4>
               </div>
@@ -1023,59 +1078,23 @@ Failure to meet compliance obligations</textarea
                   name="name"
                   cols="30"
                   rows="6"
+                  disabled="true"
                   class="form-control browser-default persp_name"
                 ></textarea>
               </div>
 
               <div class="col-6 form-group">
-                <label for="Name">Action</label>
+                <label for="Name">Type</label>
                 <select class="form-control browser-default">
-                  <option value="Option 1">Option 1</option>
-                  <option value="Option 2">Option 2</option>
-                  <option value="Option 3">Option 3</option>
+                  <option value="Cause">Cause</option>
+                  <option value="Consequence">Consequence</option>
+                  <option value="Plan">Plan</option>
+                  <option value="Action">Action</option>
                 </select>
               </div>
 
               <div class="col-6 form-group">
-                <label for="Name">Cause</label>
-                <select class="form-control browser-default">
-                  <option value="Option 1">Option 1</option>
-                  <option value="Option 2">Option 2</option>
-                </select>
-              </div>
-
-              <div class="col-6 form-group">
-                <label for="Name">Owner</label>
-                <div class="owner" style="padding-right: 12px">
-                  <ul
-                    class="list-unstyled order-list"
-                    data-toggle="modal"
-                    data-target="#"
-                    style="cursor: pointer"
-                  >
-                    <li class="avatar avatar-sm">
-                      <img
-                        class="rounded-circle"
-                        src="../../assets/images/user/user7.jpg"
-                        alt="user"
-                      />
-                    </li>
-                    <li class="avatar avatar-sm">
-                      <img
-                        class="rounded-circle"
-                        src="../../assets/images/user/user8.jpg"
-                        alt="user"
-                      />
-                    </li>
-                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
-                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="col-6 form-group">
-                <label for="Name">Resolve By</label>
+                <label for="Name">Rating</label>
                 <input
                   type="text"
                   class="form-control browser-default persp_subweight"
@@ -1130,8 +1149,126 @@ Failure to meet compliance obligations</textarea
                   rows="6"
                   class="form-control browser-default persp_name"
                 >
-Failure to meet compliance obligations</textarea
+  Failure to meet compliance obligations</textarea
                 >
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Type</label>
+                <select class="form-control browser-default">
+                  <option value="Cause">Cause</option>
+                  <option value="Consequence">Consequence</option>
+                  <option value="Plan">Plan</option>
+                  <option value="Action">Action</option>
+                </select>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Rating</label>
+                <input
+                  type="text"
+                  class="form-control browser-default persp_subweight"
+                  value=""
+                />
+              </div>
+
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Edit Risk L3 -->
+
+    <!-- View Risk L3 -->
+    <div
+      class="modal fade"
+      id="view_risk_l3"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>View</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-12 form-group">
+                <label for="Name">Name</label>
+                <h4>Failure to meet compliance obligations</h4>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Type</label>
+                <h4>Consequence</h4>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Rating</label>
+                <h4>2.4</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- View Risk L3 -->
+
+    <!-- Add Risk L4 -->
+    <div
+      class="modal fade"
+      id="add_risk_l4"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Add</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-12 form-group">
+                <label for="Name">Name</label>
+                <textarea
+                  name="name"
+                  cols="30"
+                  rows="6"
+                  class="form-control browser-default persp_name"
+                ></textarea>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Type</label>
+                <select class="form-control browser-default">
+                  <option value="Cause">Cause</option>
+                  <option value="Consequence">Consequence</option>
+                  <option value="Plan">Plan</option>
+                  <option value="Action">Action</option>
+                </select>
               </div>
 
               <div class="col-6 form-group">
@@ -1185,8 +1322,11 @@ Failure to meet compliance obligations</textarea
                 <label for="Name">Resolve By</label>
                 <input
                   type="text"
-                  class="form-control browser-default persp_subweight"
-                  value="Star Hilton"
+                  class="form-control browser-default date_pickers_single"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                  value=""
                 />
               </div>
 
@@ -1208,12 +1348,132 @@ Failure to meet compliance obligations</textarea
         </div>
       </div>
     </div>
-    <!-- Edit Risk L3 -->
+    <!-- Add Risk L4 -->
 
-    <!-- View Risk L3 -->
+    <!-- Edit Risk L4 -->
     <div
       class="modal fade"
-      id="view_risk_l3"
+      id="edit_risk_l4"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Edit</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-12 form-group">
+                <label for="Name">Name</label>
+                <textarea
+                  name="name"
+                  cols="30"
+                  rows="6"
+                  class="form-control browser-default persp_name"
+                >
+Failure to meet compliance obligations</textarea
+                >
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Type</label>
+                <select class="form-control browser-default">
+                  <option value="Cause">Cause</option>
+                  <option value="Consequence">Consequence</option>
+                  <option value="Plan">Plan</option>
+                  <option value="Action">Action</option>
+                </select>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Action</label>
+                <select class="form-control browser-default">
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                  <option value="Option 3">Option 3</option>
+                </select>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Cause</label>
+                <select class="form-control browser-default">
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Owner</label>
+                <div class="owner" style="padding-right: 12px">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#"
+                    style="cursor: pointer"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Resolve By</label>
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers_single"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                  value="31/10/2020"
+                />
+              </div>
+
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Edit Risk L4 -->
+
+    <!-- View Risk L4 -->
+    <div
+      class="modal fade"
+      id="view_risk_l4"
       tabindex="-1"
       role="dialog"
       aria-labelledby="myLargeModalLabel_1"
@@ -1234,10 +1494,10 @@ Failure to meet compliance obligations</textarea
                 <h4>Failure to meet compliance obligations</h4>
               </div>
 
-              <!-- <div class="col-6 form-group">
-                  <label for="Name">Department</label>
-                  <h4>Department 1</h4>
-                </div> -->
+              <div class="col-6 form-group">
+                <label for="Name">Type</label>
+                <h4>Plan</h4>
+              </div>
 
               <div class="col-6 form-group">
                 <label for="Name">Action</label>
@@ -1281,14 +1541,376 @@ Failure to meet compliance obligations</textarea
 
               <div class="col-6 form-group">
                 <label for="Name">Resolve By</label>
-                <h4>Star Hilton</h4>
+                <h4>31/02/2020</h4>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- View Risk L3 -->
+    <!-- View Risk L4 -->
+
+    <!-- Add Risk L5 -->
+    <div
+      class="modal fade"
+      id="add_risk_l5"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Add</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-12 form-group">
+                <label for="Name">Name</label>
+                <textarea
+                  name="name"
+                  cols="30"
+                  rows="6"
+                  class="form-control browser-default persp_name"
+                ></textarea>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Type</label>
+                <select class="form-control browser-default">
+                  <option value="Cause">Cause</option>
+                  <option value="Consequence">Consequence</option>
+                  <option value="Plan">Plan</option>
+                  <option value="Action">Action</option>
+                </select>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Action</label>
+                <select class="form-control browser-default">
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                  <option value="Option 3">Option 3</option>
+                </select>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Cause</label>
+                <select class="form-control browser-default">
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Owner</label>
+                <div class="owner" style="padding-right: 12px">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#"
+                    style="cursor: pointer"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Resolve By</label>
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers_single"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                  value=""
+                />
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Status</label>
+                <select class="form-control browser-default">
+                  <option value="Pending">Pending</option>
+                  <option value="Completed">Completed</option>
+                </select>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Progress (%)</label>
+                <input
+                  type="text"
+                  class="form-control browser-default persp_subweight"
+                  value=""
+                />
+              </div>
+
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Add Risk L5 -->
+
+    <!-- Edit Risk L5 -->
+    <div
+      class="modal fade"
+      id="edit_risk_l5"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Edit</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-12 form-group">
+                <label for="Name">Name</label>
+                <textarea
+                  name="name"
+                  cols="30"
+                  rows="6"
+                  class="form-control browser-default persp_name"
+                >
+  Failure to meet compliance obligations</textarea
+                >
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Type</label>
+                <select class="form-control browser-default">
+                  <option value="Cause">Cause</option>
+                  <option value="Consequence">Consequence</option>
+                  <option value="Plan">Plan</option>
+                  <option value="Action">Action</option>
+                </select>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Action</label>
+                <select class="form-control browser-default">
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                  <option value="Option 3">Option 3</option>
+                </select>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Cause</label>
+                <select class="form-control browser-default">
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                </select>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Owner</label>
+                <div class="owner" style="padding-right: 12px">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#"
+                    style="cursor: pointer"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Resolve By</label>
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers_single"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                  value="31/10/2020"
+                />
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Status</label>
+                <select class="form-control browser-default">
+                  <option value="Pending">Pending</option>
+                  <option value="Completed">Completed</option>
+                </select>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Progress (%)</label>
+                <input
+                  type="text"
+                  class="form-control browser-default persp_subweight"
+                  value="50"
+                />
+              </div>
+
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Edit Risk L5 -->
+
+    <!-- View Risk L5 -->
+    <div
+      class="modal fade"
+      id="view_risk_l5"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>View</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-12 form-group">
+                <label for="Name">Name</label>
+                <h4>Failure to meet compliance obligations</h4>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Type</label>
+                <h4>Action</h4>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Action</label>
+                <h4>Option 1</h4>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Cause</label>
+                <h4>Option 1</h4>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Owner</label>
+                <div class="owner" style="padding-right: 12px">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#"
+                    style="cursor: pointer"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Resolve By</label>
+                <h4>31/02/2020</h4>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Status</label>
+                <h4>Pending</h4>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Progress (%)</label>
+                <h4>50</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- View Risk L5 -->
 
     <!-- Delete Formulation -->
     <div
@@ -2293,7 +2915,7 @@ Failure to meet compliance obligations</textarea
                                                 <a
                                                   href="#"
                                                   data-toggle="modal"
-                                                  data-target="#view_risk_l2"
+                                                  data-target="#view_risk_l3"
                                                   onclick="return false;"
                                                   >View</a
                                                 >
@@ -2303,7 +2925,7 @@ Failure to meet compliance obligations</textarea
                                                 <a
                                                   href="#"
                                                   data-toggle="modal"
-                                                  data-target="#edit_risk_l2"
+                                                  data-target="#edit_risk_l3"
                                                   onclick="return false;"
                                                   >Edit</a
                                                 >
@@ -2409,7 +3031,7 @@ Failure to meet compliance obligations</textarea
                                                         <a
                                                           href="#"
                                                           data-toggle="modal"
-                                                          data-target="#view_risk_l3"
+                                                          data-target="#view_risk_l4"
                                                           onclick="return false;"
                                                           >View</a
                                                         >
@@ -2419,7 +3041,7 @@ Failure to meet compliance obligations</textarea
                                                         <a
                                                           href="#"
                                                           data-toggle="modal"
-                                                          data-target="#edit_risk_l3"
+                                                          data-target="#edit_risk_l4"
                                                           onclick="return false;"
                                                           >Edit</a
                                                         >
@@ -2461,7 +3083,7 @@ Failure to meet compliance obligations</textarea
                                                 <h4>Project X to be delayed</h4>
                                               </div>
                                               <div class="col-md-auto">
-                                                <p>Jerome Rice</p>
+                                                <p>12/12/2020</p>
                                               </div>
                                               <div class="col-lg-1">
                                                 <ul class="header-dropdown">
@@ -2500,7 +3122,7 @@ Failure to meet compliance obligations</textarea
                                                         <a
                                                           href="#"
                                                           data-toggle="modal"
-                                                          data-target="#view_risk_l3"
+                                                          data-target="#view_risk_l5"
                                                           onclick="return false;"
                                                           >View</a
                                                         >
@@ -2510,7 +3132,7 @@ Failure to meet compliance obligations</textarea
                                                         <a
                                                           href="#"
                                                           data-toggle="modal"
-                                                          data-target="#edit_risk_l3"
+                                                          data-target="#edit_risk_l5"
                                                           onclick="return false;"
                                                           >Edit</a
                                                         >
@@ -2551,7 +3173,7 @@ Failure to meet compliance obligations</textarea
                                               <div class="col">
                                                 <span
                                                   data-toggle="modal"
-                                                  data-target="#add_risk_l3"
+                                                  data-target="#add_risk_l5"
                                                   style="margin-left: -20px"
                                                 >
                                                   <i
@@ -2590,7 +3212,7 @@ Failure to meet compliance obligations</textarea
                                             <div class="col">
                                               <span
                                                 data-toggle="modal"
-                                                data-target="#add_risk_l3"
+                                                data-target="#add_risk_l4"
                                                 style="margin-left: -20px"
                                               >
                                                 <i
@@ -2628,7 +3250,7 @@ Failure to meet compliance obligations</textarea
                                     <div class="col">
                                       <span
                                         data-toggle="modal"
-                                        data-target="#add_risk_l2"
+                                        data-target="#add_risk_l3"
                                         style="margin-left: -20px"
                                       >
                                         <i class="fas fa-plus border-box"></i>
@@ -2794,7 +3416,7 @@ Failure to meet compliance obligations</textarea
                                         <a
                                           href="#"
                                           data-toggle="modal"
-                                          data-target="#view_risk_l2"
+                                          data-target="#view_risk_l3"
                                           onclick="return false;"
                                           >View</a
                                         >
@@ -2804,7 +3426,7 @@ Failure to meet compliance obligations</textarea
                                         <a
                                           href="#"
                                           data-toggle="modal"
-                                          data-target="#edit_risk_l2"
+                                          data-target="#edit_risk_l3"
                                           onclick="return false;"
                                           >Edit</a
                                         >
