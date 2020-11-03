@@ -1006,6 +1006,17 @@
                       />
                     </center>
                   </div>
+                  <div class="col-3 form-group chart-type">
+                    <center data-toggle="tooltip" title="Gantt Chart">
+                      <img
+                        ondragstart="dragStart(event)"
+                        draggable="true"
+                        id="Gantt"
+                        src="../organisation/images/widgets/Gantt.png"
+                        alt="Gantt Chart"
+                      />
+                    </center>
+                  </div>
                 </div>
 
                 <div
@@ -1265,6 +1276,21 @@
                       draggable="true"
                       id="dataDragDiv"
                       src="../organisation/images/widgets/Data.png"
+                      alt="Data"
+                    />
+                  </div>
+
+                  <label for="data" style="padding-top: 6%"
+                    >Risk Register</label
+                  >
+                  <div
+                    class="col-12 form-group chart-type employe_content_border sub_initiative_details"
+                  >
+                    <img
+                      ondragstart="dragStart(event)"
+                      draggable="true"
+                      id="riskRegDiv"
+                      src="../organisation/images/widgets/Risk.png"
                       alt="Data"
                     />
                   </div>
@@ -2462,6 +2488,25 @@
       </div>
     </div>
     <!-- END Heatmap Large -->
+
+    <!-- Gantt Chart Large -->
+    <div
+      class="modal fade"
+      id="gantt-large"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div style="height: 400px" id="Ganttlarge"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Gantt Chart Large -->
 
     <!-- KPI Calculator -->
     <div
@@ -3968,6 +4013,95 @@
           });
         }
 
+        if (data == "Gantt") {
+          $("#dashboard-body")
+            .append(`<div class="col-md-6 select-toggle chart sub_initiatives">
+            <div class="card" style="padding: 8px 12px;">
+              <div class="header row" style="margin: 0;">
+                <div class="col-3">
+                  <input
+                    class="top_datepicker"
+                    id="datePickerGT"
+                    style="width: 100%;
+                      margin-top: -4px;
+                      text-align: left;
+                      font-size: 11px !important;
+                      font-weight: 600;
+                      border: none !important;"
+                  />
+                  </div>
+                  <div class="col-6">
+                    <h5 class="prob">
+                      <strong
+                      editable="true"
+                      contenteditable="true"
+                      onkeypress="return (this.innerText.length <= 36)"
+                        >% Customer conversion rate (measured)</strong
+                      >
+                    </h5>
+                  </div>
+                <div class="col-3">
+                  <ul class="header-dropdown m-r--2">
+                    <li class="dropdown m-t--10">
+                      <a
+                        href="#"
+                        onclick="return false;"
+                        class="dropdown-toggle"
+                        data-toggle="dropdown"
+                        role="button"
+                        aria-haspopup="true"
+                        aria-expanded="true"
+                      >
+                        <i class="fas fa-ellipsis-h"></i>
+                      </a>
+                      <ul
+                        class="dropdown-menu pull-right"
+                        x-placement="bottom-start"
+                        style="
+                          position: absolute;
+                          will-change: transform;
+                          top: 0px;
+                          left: 0px;
+                          transform: translate3d(0px, 24px, 0px);
+                        "
+                      >
+                        <li>
+                          <a
+                            href="#"
+                            data-toggle="modal"
+                            data-target="#chart_setting"
+                            onclick="return false;"
+                            >Settings</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" 
+                            data-toggle="modal"
+                            data-target="#gantt-large">Enlarge</a>
+                        </li>
+                        
+                        <li>
+                          <a href="#" onclick="return false;">Delete</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div>
+                <div id="Ganttchart"></div>
+                <div id="tag"></div>
+              </div>
+            </div>
+          </div>`);
+
+          initDateRangePicker("#datePickerGT");
+          ganttRender();
+          $(document).ready(function () {
+            $(".risk-multi-select").select2();
+          });
+        }
+
         if (data == "drilldownDragDiv") {
           $("#dashboard-body").append(`
           <div class="col-md-6 select-toggle myinitiative sub_initiatives">
@@ -4396,6 +4530,375 @@
             $("#dataTable").paging({ limit: 7 });
           });
           initDateRangePicker("#datePicker15");
+          dataRender();
+        }
+
+        if (data == "riskRegDiv") {
+          $("#dashboard-body").append(`
+          <div class="col-md-6 select-toggle myinitiative sub_initiatives">
+            <div class="card" style="padding: 8px 12px; height: 398px;">
+              <div class="header row" style="margin: 0;">
+                <div class="col-3">
+                  <input
+                    class="top_datepicker"
+                    id="datePicker16"
+                    style="width: 100%;
+                      margin-top: -4px;
+                      text-align: left;
+                      font-size: 11px !important;
+                      font-weight: 600;
+                      border: none !important;"
+                  />
+                  </div>
+                  <div class="col-6">
+                    <h5 class="prob">
+                      <strong
+                      editable="true"
+                      contenteditable="true"
+                      onkeypress="return (this.innerText.length <= 36)"
+                        >Risk Register</strong
+                      >
+                    </h5>
+                  </div>
+                <div class="col-3">
+                  <ul class="header-dropdown m-r--2">
+                    <li class="dropdown m-t--10">
+                      <a
+                        href="#"
+                        onclick="return false;"
+                        class="dropdown-toggle"
+                        data-toggle="dropdown"
+                        role="button"
+                        aria-haspopup="true"
+                        aria-expanded="true"
+                      >
+                        <i class="fas fa-ellipsis-h"></i>
+                      </a>
+                      <ul
+                        class="dropdown-menu pull-right"
+                        x-placement="bottom-start"
+                        style="
+                          position: absolute;
+                          will-change: transform;
+                          top: 0px;
+                          left: 0px;
+                          transform: translate3d(0px, 24px, 0px);
+                        "
+                      >
+                        <li>
+                          <a
+                            href="#"
+                            data-toggle="modal"
+                            data-target="#datatable_setting"
+                            onclick="return false;"
+                            >Settings</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" 
+                            data-toggle="modal"
+                            data-target="#datatable_view">View</a>
+                        </li>
+                        <li>
+                          <a href="#" onclick="return false;">Download PDF</a>
+                        </li>
+                        <li>
+                          <a href="#" onclick="return false;">Delete</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div
+                class="d-flex flex-column employee_div_body_box activities-box"
+              >
+                <div
+                  class="table-responsive"
+                  style="height: 326px;"
+                >
+                <table
+                    class="table dashboard-task-infos align-center dashboard-table"
+                    id="riskRegister"
+                    style="margin-bottom: 0px !important;"
+                  >
+                    <thead>
+                      <tr>
+                        <th style="width: 40px;">Status</th>
+                        <th style="width: 40px;">ID</th>
+                        <th style="width: 80px;">Name</th>
+                        <th style="width: 60px;">Category</th>
+                        <th style="width: 60px;">Impact</th>
+                        <th style="width: 50px;">Likelihood</th>
+                        <th style="width: 40px;">Score</th>
+                        <th style="width: 120px;">Raised on</th>
+                        <th style="width: 60px;">Next Assessment</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Risk 1</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Risk 1</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Risk 1</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Risk 1</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Risk 1</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Risk 1</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Risk 1</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Risk 1</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Risk 1</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Risk 1</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Risk 1</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Risk 1</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Risk 1</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Risk 1</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>`);
+          $(document).ready(function () {
+            $("#riskRegister").paging({ limit: 6 });
+          });
+          initDateRangePicker("#datePicker16");
           dataRender();
         }
 
@@ -5218,6 +5721,159 @@
         ).render();
         var heatmapChart = new ApexCharts(
           document.querySelector("#Heatmaplarge"),
+          options
+        ).render();
+      }
+
+      function ganttRender() {
+        var options = {
+          series: [
+            {
+              name: "Bob",
+              data: [
+                {
+                  x: "Design",
+                  y: [
+                    new Date("2019-03-05").getTime(),
+                    new Date("2019-03-08").getTime(),
+                  ],
+                },
+                {
+                  x: "Code",
+                  y: [
+                    new Date("2019-03-02").getTime(),
+                    new Date("2019-03-05").getTime(),
+                  ],
+                },
+                {
+                  x: "Code",
+                  y: [
+                    new Date("2019-03-05").getTime(),
+                    new Date("2019-03-07").getTime(),
+                  ],
+                },
+                {
+                  x: "Test",
+                  y: [
+                    new Date("2019-03-03").getTime(),
+                    new Date("2019-03-09").getTime(),
+                  ],
+                },
+                {
+                  x: "Test",
+                  y: [
+                    new Date("2019-03-08").getTime(),
+                    new Date("2019-03-11").getTime(),
+                  ],
+                },
+                {
+                  x: "Validation",
+                  y: [
+                    new Date("2019-03-11").getTime(),
+                    new Date("2019-03-16").getTime(),
+                  ],
+                },
+                {
+                  x: "Design",
+                  y: [
+                    new Date("2019-03-01").getTime(),
+                    new Date("2019-03-03").getTime(),
+                  ],
+                },
+              ],
+            },
+            {
+              name: "Joe",
+              data: [
+                {
+                  x: "Design",
+                  y: [
+                    new Date("2019-03-02").getTime(),
+                    new Date("2019-03-05").getTime(),
+                  ],
+                },
+                {
+                  x: "Test",
+                  y: [
+                    new Date("2019-03-06").getTime(),
+                    new Date("2019-03-16").getTime(),
+                  ],
+                },
+                {
+                  x: "Code",
+                  y: [
+                    new Date("2019-03-03").getTime(),
+                    new Date("2019-03-07").getTime(),
+                  ],
+                },
+                {
+                  x: "Deployment",
+                  y: [
+                    new Date("2019-03-20").getTime(),
+                    new Date("2019-03-22").getTime(),
+                  ],
+                },
+                {
+                  x: "Design",
+                  y: [
+                    new Date("2019-03-10").getTime(),
+                    new Date("2019-03-16").getTime(),
+                  ],
+                },
+              ],
+            },
+            {
+              name: "Dan",
+              data: [
+                {
+                  x: "Code",
+                  y: [
+                    new Date("2019-03-10").getTime(),
+                    new Date("2019-03-17").getTime(),
+                  ],
+                },
+                {
+                  x: "Validation",
+                  y: [
+                    new Date("2019-03-05").getTime(),
+                    new Date("2019-03-09").getTime(),
+                  ],
+                },
+              ],
+            },
+          ],
+          chart: {
+            height: 323,
+            type: "rangeBar",
+          },
+          plotOptions: {
+            bar: {
+              horizontal: true,
+              barHeight: "80%",
+            },
+          },
+          xaxis: {
+            type: "datetime",
+          },
+          stroke: {
+            width: 1,
+          },
+          fill: {
+            type: "solid",
+            opacity: 0.6,
+          },
+          legend: {
+            position: "top",
+            horizontalAlign: "left",
+          },
+        };
+
+        var chart = new ApexCharts(
+          document.querySelector("#Ganttchart"),
+          options
+        ).render();
+        var ganttChart = new ApexCharts(
+          document.querySelector("#Ganttlarge"),
           options
         ).render();
       }
