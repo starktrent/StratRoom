@@ -4621,7 +4621,7 @@
                 <table
                     class="table dashboard-task-infos align-center dashboard-table"
                     id="riskRegister"
-                    style="margin-bottom: 0px !important;"
+                    style="margin-bottom: 0px !important; width: 700px;"
                   >
                     <thead>
                       <tr>
@@ -4895,9 +4895,6 @@
               </div>
             </div>
           </div>`);
-          $(document).ready(function () {
-            $("#riskRegister").paging({ limit: 6 });
-          });
           initDateRangePicker("#datePicker16");
           dataRender();
         }
