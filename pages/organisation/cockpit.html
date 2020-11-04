@@ -472,6 +472,13 @@
         padding-bottom: 5px;
         padding-right: 5px;
       }
+
+      #riskRegister thead tr th {
+        z-index: 1;
+        position: sticky;
+        top: 0;
+        text-align: center;
+      }
     </style>
   </head>
 
@@ -2134,6 +2141,174 @@
     </div>
     <!-- END Data Table Setting -->
 
+    <!-- Risk Register Setting -->
+    <div
+      class="modal fade"
+      id="riskreg_setting"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Risk Register Settings</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label for="">Status</label>
+              </div>
+              <div
+                class="form-group col-4 custom-radio"
+                style="padding-left: 32px"
+              >
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="statusChecked1"
+                  name="status_change"
+                  checked
+                />
+                <label class="custom-control-label" for="statusChecked1">
+                  <i class="fas fa-flag status-flag" style="color: #20eaab"></i>
+                </label>
+              </div>
+
+              <div
+                class="form-group col-4 custom-radio"
+                style="padding-left: 32px"
+              >
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="statusChecked2"
+                  name="status_change"
+                />
+                <label class="custom-control-label" for="statusChecked2">
+                  <i class="fas fa-flag status-flag" style="color: #fffb10"></i>
+                </label>
+              </div>
+
+              <div
+                class="form-group col-4 custom-radio"
+                style="padding-left: 32px"
+              >
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="statusChecked3"
+                  name="status_change"
+                />
+                <label class="custom-control-label" for="statusChecked3">
+                  <i class="fas fa-flag status-flag" style="color: #ea2020"></i>
+                </label>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="id">ID</label>
+                <input
+                  type="text"
+                  class="form-control browser-default"
+                  value="12"
+                />
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="id">Name</label>
+                <input
+                  type="text"
+                  class="form-control browser-default"
+                  value="Risk 1"
+                />
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Category</label>
+                <input
+                  type="text"
+                  class="form-control browser-default persp_subweight"
+                  value="Regulatory"
+                />
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Impact</label>
+                <select class="form-control browser-default">
+                  <option value="Tolerable">Tolerable</option>
+                  <option value="Signiﬁcant">Signiﬁcant</option>
+                </select>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Likelihood</label>
+                <select class="form-control browser-default">
+                  <option value="Low">Low</option>
+                  <option value="Medium">Medium</option>
+                  <option value="High">High</option>
+                </select>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Risk Score</label>
+                <input
+                  type="text"
+                  class="form-control browser-default persp_subweight"
+                  value="1"
+                />
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Raised on</label>
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers_single"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                  value="31/10/2020"
+                />
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Next Assessment</label>
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers_single"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                  value="31/10/2020"
+                />
+              </div>
+
+              <div class="col-12">
+                <hr style="border: 1px solid #505050" />
+              </div>
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Risk Register Setting -->
+
     <!-- Data Table View -->
     <div
       class="modal fade"
@@ -2279,6 +2454,259 @@
       </div>
     </div>
     <!-- END Data Table View  -->
+
+    <!-- Risk Reg Table View -->
+    <div
+      class="modal fade"
+      id="riskreg_view"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Table View</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <table
+              class="table dashboard-task-infos align-center dashboard-table"
+              id="riskRegView"
+              style="margin-bottom: 0px !important"
+            >
+              <thead>
+                <tr>
+                  <th style="width: 40px">Status</th>
+                  <th style="width: 40px">ID</th>
+                  <th style="width: 80px">Name</th>
+                  <th style="width: 60px">Category</th>
+                  <th style="width: 60px">Impact</th>
+                  <th style="width: 50px">Likelihood</th>
+                  <th style="width: 40px">Score</th>
+                  <th style="width: 120px">Raised on</th>
+                  <th style="width: 60px">Next Assessment</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Risk 1</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Risk 1</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Risk 1</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Risk 1</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Risk 1</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Risk 1</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Risk 1</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Risk 1</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Risk 1</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Risk 1</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Risk 1</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Risk 1</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Risk 1</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Risk 1</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Risk 1</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Risk 1</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Risk Reg Table View  -->
 
     <!-- Column Large -->
     <div
@@ -2833,6 +3261,7 @@
       $(document).ready(function () {
         $("#drilldownTableView").paging({ limit: 6 });
         $("#dataTableView").paging({ limit: 7 });
+        $("#riskRegView").paging({ limit: 7 });
       });
 
       function dragStart(event) {
@@ -4172,6 +4601,9 @@
                           <a href="#" onclick="return false;">Download PDF</a>
                         </li>
                         <li>
+                          <a href="#" onclick="return false;">Download CSV</a>
+                        </li>
+                        <li>
                           <a href="#" onclick="return false;">Delete</a>
                         </li>
                       </ul>
@@ -4385,6 +4817,9 @@
                           <a href="#" onclick="return false;">Download PDF</a>
                         </li>
                         <li>
+                          <a href="#" onclick="return false;">Download CSV</a>
+                        </li>
+                        <li>
                           <a href="#" onclick="return false;">Delete</a>
                         </li>
                       </ul>
@@ -4589,7 +5024,7 @@
                           <a
                             href="#"
                             data-toggle="modal"
-                            data-target="#datatable_setting"
+                            data-target="#riskreg_setting"
                             onclick="return false;"
                             >Settings</a
                           >
@@ -4597,10 +5032,13 @@
                         <li>
                           <a href="#" 
                             data-toggle="modal"
-                            data-target="#datatable_view">View</a>
+                            data-target="#riskreg_view">View</a>
                         </li>
                         <li>
                           <a href="#" onclick="return false;">Download PDF</a>
+                        </li>
+                        <li>
+                          <a href="#" onclick="return false;">Download CSV</a>
                         </li>
                         <li>
                           <a href="#" onclick="return false;">Delete</a>
