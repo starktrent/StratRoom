@@ -213,6 +213,15 @@
       .branch-border span {
         margin-left: -10px;
       }
+
+      .dropdown-menu.pull-right.show {
+        position: absolute !important;
+        left: auto !important;
+        right: 78px !important;
+        top: 74px !important;
+        transform: none !important;
+        width: 260px;
+      }
     </style>
   </head>
 
@@ -1795,14 +1804,129 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             <i style="font-size: 14px" class="fas fa-download"></i>
           </button>
 
+          <div class="dropdown">
+            <button
+              class="btn btn-custom-secondary pull-right"
+              class="dropdown-toggle"
+              data-toggle="dropdown"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="true"
+              style="margin-left: 4px"
+              id="approve_btn"
+            >
+              <i style="font-size: 14px" class="fas fa-check-circle"></i>
+            </button>
+            <ul class="dropdown-menu pull-right" x-placement="bottom-start">
+              <li style="padding: 16px 16px 0px 16px">
+                <div class="form-group">
+                  <label for="Name">Approved By</label>
+                  <div class="owner" style="padding-right: 12px">
+                    <ul
+                      class="list-unstyled order-list"
+                      data-toggle="modal"
+                      data-target="#user_edit_popup"
+                      style="cursor: pointer"
+                    >
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle"
+                          src="../../assets/images/user/user7.jpg"
+                          alt="user"
+                        />
+                      </li>
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle"
+                          src="../../assets/images/user/user8.jpg"
+                          alt="user"
+                        />
+                      </li>
+                      <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                        <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li style="padding: 16px 16px 16px 16px">
+                <div class="form-group">
+                  <label for="Name">Approved Date</label>
+                  <input
+                    type="text"
+                    class="form-control browser-default"
+                    value="05/11/2020"
+                    readonly
+                  />
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="dropdown">
+            <button
+              class="btn btn-custom-secondary pull-right"
+              class="dropdown-toggle"
+              data-toggle="dropdown"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="true"
+              style="margin-left: 4px; display: none"
+              id="reset_btn"
+            >
+              <i style="font-size: 14px" class="fas fa-undo"></i>
+            </button>
+            <ul class="dropdown-menu pull-right" x-placement="bottom-start">
+              <li style="padding: 16px 16px 0px 16px">
+                <div class="form-group">
+                  <label for="Name">Reset By</label>
+                  <div class="owner" style="padding-right: 12px">
+                    <ul
+                      class="list-unstyled order-list"
+                      data-toggle="modal"
+                      data-target="#user_edit_popup"
+                      style="cursor: pointer"
+                    >
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle"
+                          src="../../assets/images/user/user7.jpg"
+                          alt="user"
+                        />
+                      </li>
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle"
+                          src="../../assets/images/user/user8.jpg"
+                          alt="user"
+                        />
+                      </li>
+                      <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                        <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li style="padding: 16px 16px 16px 16px">
+                <div class="form-group">
+                  <label for="Name">Reset Date</label>
+                  <input
+                    type="text"
+                    class="form-control browser-default"
+                    value="05/11/2020"
+                    readonly
+                  />
+                </div>
+              </li>
+            </ul>
+          </div>
+
           <button
             class="btn btn-custom-secondary pull-right"
             style="margin-left: 4px"
           >
-            <i
-              style="font-size: 14px; font-weight: 600"
-              class="far fa-check-circle"
-            ></i>
+            <i style="font-size: 14px" class="fas fa-upload"></i>
           </button>
         </div>
       </div>
@@ -4705,6 +4829,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
           $("#displayText").text("Department 5");
           $(this).addClass("selected-group");
         }
+      });
+
+      $("#approve_btn").click(function () {
+        $("#approve_btn").hide();
+        $("#reset_btn").show();
+      });
+
+      $("#reset_btn").click(function () {
+        $("#reset_btn").hide();
+        $("#approve_btn").show();
       });
 
       // $(".groupby-dropdown").on("click", function (e) {
