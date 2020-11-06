@@ -2530,15 +2530,17 @@ Failure to meet compliance obligations</textarea
             >
               <i style="font-size: 14px" class="fas fa-check-circle"></i>
             </button>
-            <ul class="dropdown-menu pull-right" x-placement="bottom-start">
+            <ul
+              class="dropdown-menu pull-right approve_reset"
+              x-placement="bottom-start"
+            >
               <li style="padding: 16px 16px 0px 16px">
                 <div class="form-group">
                   <label for="Name">Approved By</label>
                   <div class="owner" style="padding-right: 12px">
                     <ul
                       class="list-unstyled order-list"
-                      data-toggle="modal"
-                      data-target="#user_edit_popup"
+                      id="approve_by"
                       style="cursor: pointer"
                     >
                       <li class="avatar avatar-sm">
@@ -2589,15 +2591,17 @@ Failure to meet compliance obligations</textarea
             >
               <i style="font-size: 14px" class="fas fa-undo"></i>
             </button>
-            <ul class="dropdown-menu pull-right" x-placement="bottom-start">
+            <ul
+              class="dropdown-menu pull-right approve_reset"
+              x-placement="bottom-start"
+            >
               <li style="padding: 16px 16px 0px 16px">
                 <div class="form-group">
                   <label for="Name">Reset By</label>
                   <div class="owner" style="padding-right: 12px">
                     <ul
                       class="list-unstyled order-list"
-                      data-toggle="modal"
-                      data-target="#user_edit_popup"
+                      id="reset_by"
                       style="cursor: pointer"
                     >
                       <li class="avatar avatar-sm">
@@ -3812,9 +3816,21 @@ Failure to meet compliance obligations</textarea
         $("#approve_btn").show();
       });
 
-      // $(".groupby-dropdown").on("click", function (e) {
-      //   e.stopPropagation();
-      // });
+      $(".approve_reset").on("click", function (e) {
+        e.stopPropagation();
+      });
+
+      $("#user_edit_popup").on("click", function (e) {
+        e.stopPropagation();
+      });
+
+      $("#approve_by").click(function () {
+        $("#user_edit_popup").modal("show");
+      });
+
+      $("#reset_by").click(function () {
+        $("#user_edit_popup").modal("show");
+      });
     </script>
   </body>
 </html>
