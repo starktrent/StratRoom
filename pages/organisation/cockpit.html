@@ -435,9 +435,9 @@
         height: 322px;
       }
 
-      .apexcharts-menu-item.exportSVG {
+      /* .apexcharts-menu-item.exportSVG {
         display: none;
-      }
+      } */
 
       .remove-btn {
         background-color: #fff;
@@ -1301,6 +1301,21 @@
                       alt="Data"
                     />
                   </div>
+
+                  <label for="data" style="padding-top: 6%"
+                    >Initiative Register</label
+                  >
+                  <div
+                    class="col-12 form-group chart-type employe_content_border sub_initiative_details"
+                  >
+                    <img
+                      ondragstart="dragStart(event)"
+                      draggable="true"
+                      id="intRegDiv"
+                      src="../organisation/images/widgets/Risk.png"
+                      alt="Data"
+                    />
+                  </div>
                 </div>
 
                 <div class="row widget Map" style="padding: 8px; display: none">
@@ -2160,130 +2175,149 @@
           </div>
           <div class="modal-body">
             <div class="row">
-              <div class="form-group col-md-12">
-                <label for="">Status</label>
-              </div>
-              <div
-                class="form-group col-4 custom-radio"
-                style="padding-left: 32px"
-              >
-                <input
-                  type="radio"
-                  class="custom-control-input"
-                  id="statusChecked1"
-                  name="status_change"
-                  checked
-                />
-                <label class="custom-control-label" for="statusChecked1">
-                  <i class="fas fa-flag status-flag" style="color: #20eaab"></i>
-                </label>
-              </div>
-
-              <div
-                class="form-group col-4 custom-radio"
-                style="padding-left: 32px"
-              >
-                <input
-                  type="radio"
-                  class="custom-control-input"
-                  id="statusChecked2"
-                  name="status_change"
-                />
-                <label class="custom-control-label" for="statusChecked2">
-                  <i class="fas fa-flag status-flag" style="color: #fffb10"></i>
-                </label>
-              </div>
-
-              <div
-                class="form-group col-4 custom-radio"
-                style="padding-left: 32px"
-              >
-                <input
-                  type="radio"
-                  class="custom-control-input"
-                  id="statusChecked3"
-                  name="status_change"
-                />
-                <label class="custom-control-label" for="statusChecked3">
-                  <i class="fas fa-flag status-flag" style="color: #ea2020"></i>
-                </label>
-              </div>
-
-              <div class="form-group col-md-6">
-                <label for="id">ID</label>
-                <input
-                  type="text"
-                  class="form-control browser-default"
-                  value="12"
-                />
-              </div>
-
-              <div class="form-group col-md-6">
-                <label for="id">Name</label>
-                <input
-                  type="text"
-                  class="form-control browser-default"
-                  value="Risk 1"
-                />
-              </div>
-
-              <div class="col-6 form-group">
-                <label for="Name">Category</label>
-                <input
-                  type="text"
-                  class="form-control browser-default persp_subweight"
-                  value="Regulatory"
-                />
-              </div>
-
-              <div class="col-6 form-group">
-                <label for="Name">Impact</label>
+              <div class="col-4 form-group">
+                <label for="Name">Status</label>
                 <select class="form-control browser-default">
+                  <option value="Very good">Very good</option>
+                  <option value="Good">Good</option>
                   <option value="Tolerable">Tolerable</option>
-                  <option value="Signiﬁcant">Signiﬁcant</option>
-                </select>
-              </div>
-
-              <div class="col-6 form-group">
-                <label for="Name">Likelihood</label>
-                <select class="form-control browser-default">
-                  <option value="Low">Low</option>
-                  <option value="Medium">Medium</option>
                   <option value="High">High</option>
+                  <option value="Very high">Very high</option>
                 </select>
               </div>
 
-              <div class="col-6 form-group">
-                <label for="Name">Risk Score</label>
-                <input
-                  type="text"
-                  class="form-control browser-default persp_subweight"
-                  value="1"
-                />
+              <div class="col-8 form-group">
+                <label for="Name">Risk Name</label>
+                <select class="form-control browser-default">
+                  <option value="Risk 1">Risk 1</option>
+                  <option value="Risk 2">Risk 2</option>
+                  <option value="Risk 3">Risk 3</option>
+                </select>
               </div>
 
-              <div class="col-6 form-group">
-                <label for="Name">Raised on</label>
-                <input
-                  type="text"
-                  class="form-control browser-default date_pickers_single"
-                  data-language="en"
-                  name="kpi_start_end_date"
-                  id="kpi_start_end_date"
-                  value="31/10/2020"
-                />
-              </div>
-
-              <div class="col-6 form-group">
-                <label for="Name">Next Assessment</label>
-                <input
-                  type="text"
-                  class="form-control browser-default date_pickers_single"
-                  data-language="en"
-                  name="kpi_start_end_date"
-                  id="kpi_start_end_date"
-                  value="31/10/2020"
-                />
+              <div class="form-group col-md-12 mt-2">
+                <label for="kpi_fields">Field Selection</label>
+                <ul class="d-flex flex-row flex-wrap ml-2">
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          Name
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          Category
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          Impact
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          Likelihood
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          Score
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          Raised on
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          Next Assessment
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
               </div>
 
               <div class="col-12">
@@ -2308,6 +2342,193 @@
       </div>
     </div>
     <!-- END Risk Register Setting -->
+
+    <!-- Initiative Register Setting -->
+    <div
+      class="modal fade"
+      id="intreg_setting"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Initiative Register Settings</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-4 form-group">
+                <label for="Name">Status</label>
+                <select class="form-control browser-default">
+                  <option value="Very good">Very good</option>
+                  <option value="Good">Good</option>
+                  <option value="Tolerable">Tolerable</option>
+                  <option value="High">High</option>
+                  <option value="Very high">Very high</option>
+                </select>
+              </div>
+
+              <div class="col-8 form-group">
+                <label for="Name">Initiative Name</label>
+                <select class="form-control browser-default">
+                  <option value="Initiative 1">Initiative 1</option>
+                  <option value="Initiative 2">Initiative 2</option>
+                  <option value="Initiative 3">Initiative 3</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-12 mt-2">
+                <label for="kpi_fields">Field Selection</label>
+                <ul class="d-flex flex-row flex-wrap ml-2">
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          Name
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          Category
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          Impact
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          Likelihood
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          Score
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          Raised on
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          Next Assessment
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col-12">
+                <hr style="border: 1px solid #505050" />
+              </div>
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Initiative Register Setting -->
 
     <!-- Data Table View -->
     <div
@@ -2707,6 +2928,259 @@
       </div>
     </div>
     <!-- END Risk Reg Table View  -->
+
+    <!-- Initiative Reg Table View -->
+    <div
+      class="modal fade"
+      id="intreg_view"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Table View</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <table
+              class="table dashboard-task-infos align-center dashboard-table"
+              id="intRegView"
+              style="margin-bottom: 0px !important"
+            >
+              <thead>
+                <tr>
+                  <th style="width: 40px">Status</th>
+                  <th style="width: 40px">ID</th>
+                  <th style="width: 80px">Name</th>
+                  <th style="width: 60px">Category</th>
+                  <th style="width: 60px">Impact</th>
+                  <th style="width: 50px">Likelihood</th>
+                  <th style="width: 40px">Score</th>
+                  <th style="width: 120px">Raised on</th>
+                  <th style="width: 60px">Next Assessment</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Initiative</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Initiative</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Initiative</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Initiative</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Initiative</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Initiative</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Initiative</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Initiative</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Initiative</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Initiative</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Initiative</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Initiative</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Initiative</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Initiative</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Initiative</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-flag" style="color: #28f76d"></i>
+                  </td>
+                  <td>12</td>
+                  <td>Initiative</td>
+                  <td>Regulatory</td>
+                  <td style="color: #28f76d">Tolerable</td>
+                  <td style="color: #f72f28">High</td>
+                  <td>3</td>
+                  <td>23-05-2020</td>
+                  <td>23-06-2020</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Initiative Reg Table View  -->
 
     <!-- Column Large -->
     <div
@@ -3262,6 +3736,7 @@
         $("#drilldownTableView").paging({ limit: 6 });
         $("#dataTableView").paging({ limit: 7 });
         $("#riskRegView").paging({ limit: 7 });
+        $("#intRegView").paging({ limit: 7 });
       });
 
       function dragStart(event) {
@@ -5334,6 +5809,375 @@
             </div>
           </div>`);
           initDateRangePicker("#datePicker16");
+          dataRender();
+        }
+
+        if (data == "intRegDiv") {
+          $("#dashboard-body").append(`
+          <div class="col-md-6 select-toggle myinitiative sub_initiatives">
+            <div class="card" style="padding: 8px 12px; height: 398px;">
+              <div class="header row" style="margin: 0;">
+                <div class="col-3">
+                  <input
+                    class="top_datepicker"
+                    id="datePicker16"
+                    style="width: 100%;
+                      margin-top: -4px;
+                      text-align: left;
+                      font-size: 11px !important;
+                      font-weight: 600;
+                      border: none !important;"
+                  />
+                  </div>
+                  <div class="col-6">
+                    <h5 class="prob">
+                      <strong
+                      editable="true"
+                      contenteditable="true"
+                      onkeypress="return (this.innerText.length <= 36)"
+                        >Initiative Register</strong
+                      >
+                    </h5>
+                  </div>
+                <div class="col-3">
+                  <ul class="header-dropdown m-r--2">
+                    <li class="dropdown m-t--10">
+                      <a
+                        href="#"
+                        onclick="return false;"
+                        class="dropdown-toggle"
+                        data-toggle="dropdown"
+                        role="button"
+                        aria-haspopup="true"
+                        aria-expanded="true"
+                      >
+                        <i class="fas fa-ellipsis-h"></i>
+                      </a>
+                      <ul
+                        class="dropdown-menu pull-right"
+                        x-placement="bottom-start"
+                        style="
+                          position: absolute;
+                          will-change: transform;
+                          top: 0px;
+                          left: 0px;
+                          transform: translate3d(0px, 24px, 0px);
+                        "
+                      >
+                        <li>
+                          <a
+                            href="#"
+                            data-toggle="modal"
+                            data-target="#intreg_setting"
+                            onclick="return false;"
+                            >Settings</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" 
+                            data-toggle="modal"
+                            data-target="#intreg_view">View</a>
+                        </li>
+                        <li>
+                          <a href="#" onclick="return false;">Download PDF</a>
+                        </li>
+                        <li>
+                          <a href="#" onclick="return false;">Download CSV</a>
+                        </li>
+                        <li>
+                          <a href="#" onclick="return false;">Delete</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div
+                class="d-flex flex-column employee_div_body_box activities-box"
+              >
+                <div
+                  class="table-responsive"
+                  style="height: 326px;"
+                >
+                <table
+                    class="table dashboard-task-infos align-center dashboard-table"
+                    id="riskRegister"
+                    style="margin-bottom: 0px !important; width: 700px;"
+                  >
+                    <thead>
+                      <tr>
+                        <th style="width: 40px;">Status</th>
+                        <th style="width: 40px;">ID</th>
+                        <th style="width: 80px;">Name</th>
+                        <th style="width: 60px;">Category</th>
+                        <th style="width: 60px;">Impact</th>
+                        <th style="width: 50px;">Likelihood</th>
+                        <th style="width: 40px;">Score</th>
+                        <th style="width: 120px;">Raised on</th>
+                        <th style="width: 60px;">Next Assessment</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Initiative</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Initiative</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Initiative</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Initiative</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Initiative</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Initiative</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Initiative</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Initiative</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Initiative</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Initiative</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Initiative</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Initiative</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Initiative</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Initiative</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>`);
+          initDateRangePicker("#datePicker17");
           dataRender();
         }
 
