@@ -92,6 +92,42 @@
           overflow-x: hidden;
         }
       }
+
+      .dashboard-table thead tr th {
+        border: 1px solid #1e252d !important;
+        padding: 6px 4px 6px 4px;
+        font-size: 12px !important;
+        color: #ffffff;
+        background: #383838;
+        font-weight: 600;
+      }
+
+      .sub_initiatives .dashboard-table tbody tr td {
+        border: 1px solid #1e252d !important;
+        padding: 8px 4px 8px 4px !important;
+        font-size: 12px !important;
+        color: #4a4a4a;
+      }
+
+      .paging-nav {
+        text-align: right;
+        padding-top: 2px;
+      }
+
+      .paging-nav a {
+        margin: 6px 2px;
+        text-decoration: none;
+        display: inline-block;
+        padding: 4px 10px;
+        background: #71767a;
+        color: #fff !important;
+        border-radius: 3px;
+      }
+
+      .paging-nav .selected-page {
+        background: #1e252d;
+        font-weight: bold;
+      }
     </style>
   </head>
 
@@ -126,7 +162,7 @@
           ></a>
           <a href="#" onClick="return false;" class="bars"></a>
           <a href="#" onClick="return false;" class="bar_nav sidemenu-collapse"
-            ><i class="nav-hdr-btn ti-menu" style="color: #000;"></i
+            ><i class="nav-hdr-btn ti-menu" style="color: #000"></i
           ></a>
           <a class="navbar-brand nav_float" href="#">
             <img
@@ -138,7 +174,7 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="fullscreen" style="padding: 4px; left: -14px;">
+            <li class="fullscreen" style="padding: 4px; left: -14px">
               <ul class="list-unstyled order-list">
                 <li class="avatar avatar-sm">
                   <img
@@ -177,13 +213,13 @@
               <form class="form-header" action="" method="POST">
                 <input
                   class="au-input au-input--xl"
-                  style="min-width: 20%;"
+                  style="min-width: 20%"
                   type="text"
                   name="search"
                   placeholder="Search"
                 />
                 <button class="au-btn--submit" type="submit">
-                  <i class="fa fa-search" style="color: gray;"></i>
+                  <i class="fa fa-search" style="color: gray"></i>
                 </button>
               </form>
             </li>
@@ -201,7 +237,7 @@
                 data-toggle="dropdown"
                 role="button"
               >
-                <i class="nav-hdr-btn ti-bell" style="color: gray;"></i>
+                <i class="nav-hdr-btn ti-bell" style="color: gray"></i>
                 <span class="notify"></span>
                 <span class="heartbeat"></span>
               </a>
@@ -214,7 +250,7 @@
                 data-toggle="dropdown"
                 role="button"
               >
-                <i class="nav-hdr-btn ti-settings" style="color: gray;"></i>
+                <i class="nav-hdr-btn ti-settings" style="color: gray"></i>
                 <span class="notify"></span>
                 <span class="heartbeat"></span>
               </a>
@@ -397,11 +433,11 @@
           >
             <div
               class="slimScrollDiv"
-              style="position: relative; overflow: hidden; width: auto;"
+              style="position: relative; overflow: hidden; width: auto"
             >
               <div
                 class="demo-skin"
-                style="overflow: hidden; width: auto; height: auto;"
+                style="overflow: hidden; width: auto; height: auto"
               >
                 <div class="rightSetting">
                   <p class="left">Profile</p>
@@ -418,7 +454,7 @@
                     <li
                       _ngcontent-hhc-c5=""
                       class="center avatar avatar-sm"
-                      style="width: 85px;"
+                      style="width: 85px"
                     >
                       <img
                         _ngcontent-hhc-c5=""
@@ -440,7 +476,7 @@
                   </ul>
                   <ul
                     class="setting-list profile-replace list-unstyled m-t-20"
-                    style="display: none;"
+                    style="display: none"
                   >
                     <li class="center">
                       <form id="profileForm">
@@ -451,7 +487,7 @@
                               id="profileImage"
                               _ngcontent-hhc-c5=""
                               class="center avatar avatar-sm"
-                              style="width: 85px; z-index: -1;"
+                              style="width: 85px; z-index: -1"
                             >
                               <img
                                 _ngcontent-hhc-c5=""
@@ -600,12 +636,12 @@
                                           </div>
                                           <div
                                             class="col-md-1"
-                                            style="float: right;"
+                                            style="float: right"
                                           >
                                             <a href="#" class="reportingEdit"
                                               ><i
                                                 class="fas fa-pencil-alt"
-                                                style="font-size: 14px;"
+                                                style="font-size: 14px"
                                               ></i
                                             ></a>
                                           </div>
@@ -626,12 +662,12 @@
                                           </div>
                                           <div
                                             class="col-md-1"
-                                            style="float: right;"
+                                            style="float: right"
                                           >
                                             <a href="#" class="reportingEdit"
                                               ><i
                                                 class="fas fa-pencil-alt"
-                                                style="font-size: 14px;"
+                                                style="font-size: 14px"
                                               ></i
                                             ></a>
                                           </div>
@@ -639,7 +675,7 @@
                                       </ul>
                                       <ul
                                         class="setting-list reporting-replace-add list-unstyled m-t-20"
-                                        style="display: none;"
+                                        style="display: none"
                                       >
                                         <li class="row">
                                           <form id="reportingAddForm">
@@ -783,12 +819,12 @@
                                           </div>
                                           <div
                                             class="col-md-1"
-                                            style="float: right;"
+                                            style="float: right"
                                           >
                                             <a href="#" class="directEdit"
                                               ><i
                                                 class="fas fa-pencil-alt"
-                                                style="font-size: 14px;"
+                                                style="font-size: 14px"
                                               ></i
                                             ></a>
                                           </div>
@@ -809,12 +845,12 @@
                                           </div>
                                           <div
                                             class="col-md-1"
-                                            style="float: right;"
+                                            style="float: right"
                                           >
                                             <a href="#" class="directEdit"
                                               ><i
                                                 class="fas fa-pencil-alt"
-                                                style="font-size: 14px;"
+                                                style="font-size: 14px"
                                               ></i
                                             ></a>
                                           </div>
@@ -822,7 +858,7 @@
                                       </ul>
                                       <ul
                                         class="setting-list direct-replace-add list-unstyled m-t-20"
-                                        style="display: none;"
+                                        style="display: none"
                                       >
                                         <li class="row">
                                           <form id="directAddForm">
@@ -983,10 +1019,10 @@
           <div class="card">
             <div
               class="header d-flex flex-row initiate_sidebar"
-              style="margin-top: 5%;"
+              style="margin-top: 5%"
             >
               <h5 class="prob d-flex flex-fill">
-                <strong style="color: #333;">KPI</strong>
+                <strong style="color: #333">KPI</strong>
               </h5>
               <div class="dropdown">
                 <a
@@ -1003,7 +1039,7 @@
                 <div
                   class="dropdown-menu"
                   aria-labelledby="dropdownMenuLink"
-                  style="margin-left: -100px;"
+                  style="margin-left: -100px"
                 >
                   <a class="dropdown-item" href="#">Action</a>
                   <a class="dropdown-item" href="#">Another action</a>
@@ -1124,14 +1160,14 @@
       >
         <div
           class="modal-dialog modal-dialog-centered modal-lg"
-          style="max-width: 100% !important;"
+          style="max-width: 100% !important"
         >
           <div class="modal-content">
             <div
               class="modal-header chart_kpi_title"
-              style="background-color: #1e252d;"
+              style="background-color: #1e252d"
             >
-              <h4 style="color: #fff; margin-top: 3px; margin-left: 5px;">
+              <h4 style="color: #fff; margin-top: 3px; margin-left: 5px">
                 Heading
               </h4>
               <button
@@ -1139,7 +1175,7 @@
                 class="close"
                 data-dismiss="modal"
                 aria-label="Close"
-                style="color: #fff;"
+                style="color: #fff"
               >
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -1148,7 +1184,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12">
                   <div class="card">
-                    <div class="header" style="background-color: #1e252d;">
+                    <div class="header" style="background-color: #1e252d">
                       <div class="row">
                         <div class="col-md-10"></div>
                         <div class="col-md-2">
@@ -1171,28 +1207,28 @@
                     <div class="tableBody">
                       <div
                         class="table-responsive Month box"
-                        style="display: none;"
+                        style="display: none"
                       >
                         <table
                           class="table dashboard-task-infos align-center dashboard-table"
                           id="table1"
-                          style="margin-bottom: 0px !important;"
+                          style="margin-bottom: 0px !important"
                         >
                           <tr>
                             <th rowspan="2">
                               <i class="fas fa-arrow-up"></i>
                               <i class="fas fa-arrow-down"></i>
                             </th>
-                            <th rowspan="2" style="padding: 0 10px;">
+                            <th rowspan="2" style="padding: 0 10px">
                               <select
                                 id="objective_owner"
                                 name=""
                                 class="form-control"
-                                style="margin-right: 300px;"
+                                style="margin-right: 300px"
                               >
                                 <option value="">KPI Description</option>
-                                <option value="Option - 1"
-                                  >Lorem ipsum dolor sit amet, consectetur
+                                <option value="Option - 1">
+                                  Lorem ipsum dolor sit amet, consectetur
                                   adipiscing elit, sed do eiusmod tempor
                                   incididunt ut labore et dolore magna aliqua.
                                 </option>
@@ -1201,73 +1237,73 @@
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               January
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               February
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               March
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               April
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               May
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               June
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               July
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               August
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               September
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               October
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               November
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               December
                             </th>
@@ -1478,19 +1514,19 @@
                       </div>
                       <div
                         class="table-responsive QuarterYear box"
-                        style="display: none;"
+                        style="display: none"
                       >
                         <table
                           class="table dashboard-task-infos align-center dashboard-table"
                           id="table1"
-                          style="margin-bottom: 0px !important;"
+                          style="margin-bottom: 0px !important"
                         >
                           <tr>
                             <th rowspan="2">
                               <i class="fas fa-arrow-up"></i>
                               <i class="fas fa-arrow-down"></i>
                             </th>
-                            <th rowspan="2" style="padding: 0 10px;">
+                            <th rowspan="2" style="padding: 0 10px">
                               <select
                                 id="objective_owner"
                                 name=""
@@ -1503,25 +1539,25 @@
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               Q1
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               Q2
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               Q3
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               Q4
                             </th>
@@ -1592,19 +1628,19 @@
                       </div>
                       <div
                         class="table-responsive HalfYear box"
-                        style="display: none;"
+                        style="display: none"
                       >
                         <table
                           class="table dashboard-task-infos align-center dashboard-table"
                           id="table1"
-                          style="margin-bottom: 0px !important;"
+                          style="margin-bottom: 0px !important"
                         >
                           <tr>
                             <th rowspan="2">
                               <i class="fas fa-arrow-up"></i>
                               <i class="fas fa-arrow-down"></i>
                             </th>
-                            <th rowspan="2" style="padding: 0 10px;">
+                            <th rowspan="2" style="padding: 0 10px">
                               <select
                                 id="objective_owner"
                                 name=""
@@ -1617,13 +1653,13 @@
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               HY1
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               HY2
                             </th>
@@ -1670,19 +1706,19 @@
                       </div>
                       <div
                         class="table-responsive Annual box"
-                        style="display: none;"
+                        style="display: none"
                       >
                         <table
                           class="table dashboard-task-infos align-center dashboard-table"
                           id="table1"
-                          style="margin-bottom: 0px !important;"
+                          style="margin-bottom: 0px !important"
                         >
                           <tr>
                             <th rowspan="2">
                               <i class="fas fa-arrow-up"></i>
                               <i class="fas fa-arrow-down"></i>
                             </th>
-                            <th rowspan="2" style="padding: 0 10px;">
+                            <th rowspan="2" style="padding: 0 10px">
                               <select
                                 id="objective_owner"
                                 name=""
@@ -1695,7 +1731,7 @@
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               Annual
                             </th>
@@ -1768,7 +1804,7 @@
                     src="../../assets/images/user/usrbig7.jpg"
                     alt=""
                   />
-                  <input id="upload1" type="file" style="display: none;" />
+                  <input id="upload1" type="file" style="display: none" />
                 </div>
                 <div class="form-row">
                   <div class="form-group">
@@ -2181,18 +2217,18 @@
                   </div>
                   <div
                     class="body table-responsive sub-ini-box"
-                    style="overflow: hidden; width: auto; height: 340px;"
+                    style="overflow: hidden; width: auto; height: 340px"
                   >
                     <table class="table table-striped">
-                      <thead style="text-align: center;">
+                      <thead style="text-align: center">
                         <tr>
-                          <th style="font-weight: 700;">Period</th>
-                          <th style="font-weight: 700;">Actual</th>
-                          <th style="font-weight: 700;">Target</th>
-                          <th style="font-weight: 700;">Gap</th>
+                          <th style="font-weight: 700">Period</th>
+                          <th style="font-weight: 700">Actual</th>
+                          <th style="font-weight: 700">Target</th>
+                          <th style="font-weight: 700">Gap</th>
                         </tr>
                       </thead>
-                      <tbody style="text-align: center;">
+                      <tbody style="text-align: center">
                         <tr>
                           <th>2019</th>
                           <td>$ 50,000</td>
@@ -2258,7 +2294,7 @@
           <div class="modal-content">
             <div
               class="modal-header"
-              style="background-color: #1e252d; color: #fff;"
+              style="background-color: #1e252d; color: #fff"
             >
               <h6 class="modal-title" id="myLargeModalLabel">
                 Add My Initiative Description
@@ -2494,6 +2530,282 @@
         </div>
       </div>
       <!-- END Bubble Large -->
+
+      <!-- Data Table Fields -->
+      <div
+        class="modal fade"
+        id="dataTableFields"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myLargeModalLabel_1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4>Data Table Fields</h4>
+              <button
+                type="button"
+                class="close pull-right"
+                data-dismiss="modal"
+              >
+                &times;
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="form-group col-md-12 mt-2">
+                  <label for="kpi_fields">Data Fields</label>
+                  <ul class="d-flex flex-row flex-wrap ml-2">
+                    <li>
+                      <div class="form-check">
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                            />
+                            Actual
+                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-check">
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                            />
+                            Target
+                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-check">
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                            />
+                            Annual Target
+                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-check">
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                            />
+                            Gap
+                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-check">
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                            />
+                            YTD
+                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-12">
+                  <hr style="border: 1px solid #505050" />
+                </div>
+                <div class="col-12">
+                  <div class="form-line right">
+                    <button
+                      type="button"
+                      class="btn-default1 btn"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      Cancel
+                    </button>
+                    <button class="initative_save_btn" value="Save">
+                      Save
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END Data Table Fields -->
+
+      <!-- Data Drill Fields -->
+      <div
+        class="modal fade"
+        id="dataDrillFields"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myLargeModalLabel_1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4>Data Drill Fields</h4>
+              <button
+                type="button"
+                class="close pull-right"
+                data-dismiss="modal"
+              >
+                &times;
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="form-group col-md-12 mt-2">
+                  <label for="kpi_fields">Data Fields</label>
+                  <ul class="d-flex flex-row flex-wrap ml-2">
+                    <li>
+                      <div class="form-check">
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                            />
+                            Actual
+                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-check">
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                            />
+                            Target
+                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-check">
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                            />
+                            Annual Target
+                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-check">
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                            />
+                            Gap
+                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-check">
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                            />
+                            YTD
+                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-12">
+                  <hr style="border: 1px solid #505050" />
+                </div>
+                <div class="col-12">
+                  <div class="form-line right">
+                    <button
+                      type="button"
+                      class="btn-default1 btn"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      Cancel
+                    </button>
+                    <button class="initative_save_btn" value="Save">
+                      Save
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END Data Drill Fields -->
 
       <!--#START Sub Activitie View -->
       <div
@@ -3381,7 +3693,7 @@
               </button>
             </div>
             <div class="col-lg-12 col-md-12 sub_initiatives">
-              <div class="card" style="box-shadow: none;">
+              <div class="card" style="box-shadow: none">
                 <div class="comment-history" id="comment-conversation_1">
                   <ul id="comment-conversation">
                     <li>
@@ -3416,7 +3728,7 @@
                           </ul>
                           <ul>
                             <li>
-                              <div class="comment_send" style="display: none;">
+                              <div class="comment_send" style="display: none">
                                 <div
                                   class="form-group d-flex flex-row align-items-center"
                                 >
@@ -3469,7 +3781,7 @@
                           </ul>
                           <ul>
                             <li>
-                              <div class="comment_send" style="display: none;">
+                              <div class="comment_send" style="display: none">
                                 <div
                                   class="form-group d-flex flex-row align-items-center"
                                 >
@@ -3522,7 +3834,7 @@
                           </ul>
                           <ul>
                             <li>
-                              <div class="comment_send" style="display: none;">
+                              <div class="comment_send" style="display: none">
                                 <div
                                   class="form-group d-flex flex-row align-items-center"
                                 >
@@ -3575,7 +3887,7 @@
                           </ul>
                           <ul>
                             <li>
-                              <div class="comment_send" style="display: none;">
+                              <div class="comment_send" style="display: none">
                                 <div
                                   class="form-group d-flex flex-row align-items-center"
                                 >
@@ -3904,7 +4216,7 @@
         <div class="initiative_details kpi_page_details">
           <div class="container-fluid text-dark bg-white p-0">
             <div class="d-flex_name employee_top_section">
-              <div class="collapse_arrow_right" style="display: none;">
+              <div class="collapse_arrow_right" style="display: none">
                 <i class="arrow_collapse_size fas fa-caret-right"></i>
               </div>
               <div class="collapse_arrow_left">
@@ -3940,7 +4252,7 @@
                             class="dropdown-toggle"
                             data-toggle="dropdown"
                           >
-                            <i class="far fa-eye" style="padding: 6px;"></i>
+                            <i class="far fa-eye" style="padding: 6px"></i>
                           </a>
                           <ul
                             class="dropdown-menu dropdown-hide multi-column pull-right"
@@ -4082,7 +4394,7 @@
                       <p>
                         <i
                           class="green fas fa-circle"
-                          style="font-size: 10px !important;"
+                          style="font-size: 10px !important"
                         ></i>
                       </p>
                     </div>
@@ -4095,7 +4407,7 @@
                       <p>
                         <i
                           class="red fas fa-circle"
-                          style="font-size: 10px !important;"
+                          style="font-size: 10px !important"
                         ></i>
                       </p>
                     </div>
@@ -4110,7 +4422,7 @@
                           <div>
                             <i
                               class="yellow fas fa-circle"
-                              style="font-size: 10px !important;"
+                              style="font-size: 10px !important"
                             ></i>
                             50 %
                           </div>
@@ -4119,7 +4431,7 @@
                           <div>
                             <i
                               class="red fas fa-circle"
-                              style="font-size: 10px !important;"
+                              style="font-size: 10px !important"
                             ></i>
                             > 75 %
                           </div>
@@ -4128,7 +4440,7 @@
                           <div>
                             <i
                               class="green fas fa-circle"
-                              style="font-size: 10px !important;"
+                              style="font-size: 10px !important"
                             ></i>
                             50 %
                           </div>
@@ -4141,7 +4453,7 @@
               <div class="kpi_amount_details">
                 <div class="kpi_amount_actual colfp">
                   <div>Actual</div>
-                  <div class="kpi_amount_actual_value" style="color: #fff;">
+                  <div class="kpi_amount_actual_value" style="color: #fff">
                     $ 50,000
                   </div>
                 </div>
@@ -4151,7 +4463,7 @@
                 </div>
                 <div class="kpi_amount_budget colfp">
                   <div>Budget</div>
-                  <div class="kpi_amount_budget_value" style="color: #fff;">
+                  <div class="kpi_amount_budget_value" style="color: #fff">
                     $ 50,000
                   </div>
                 </div>
@@ -4228,15 +4540,15 @@
               </div>
               <div class="body table-responsive sub-ini-box">
                 <table class="table table-striped">
-                  <thead style="text-align: center;">
+                  <thead style="text-align: center">
                     <tr>
-                      <th style="font-weight: 700;">Period</th>
-                      <th style="font-weight: 700;">Actual</th>
-                      <th style="font-weight: 700;">Target</th>
-                      <th style="font-weight: 700;">Gap</th>
+                      <th style="font-weight: 700">Period</th>
+                      <th style="font-weight: 700">Actual</th>
+                      <th style="font-weight: 700">Target</th>
+                      <th style="font-weight: 700">Gap</th>
                     </tr>
                   </thead>
-                  <tbody style="text-align: center;">
+                  <tbody style="text-align: center">
                     <tr>
                       <th>2019</th>
                       <td>$ 50,000</td>
@@ -4297,7 +4609,7 @@
                     >Chart</strong
                   >
                 </h5>
-                <ul class="header-dropdown" style="margin-right: 8%;">
+                <ul class="header-dropdown" style="margin-right: 8%">
                   <li class="dropdown m-t--10">
                     <a
                       href="#"
@@ -4976,28 +5288,28 @@
                     <div class="tableBody">
                       <div
                         class="table-responsive Month box"
-                        style="display: none;"
+                        style="display: none"
                       >
                         <table
                           class="table dashboard-task-infos align-center dashboard-table"
                           id="table1"
-                          style="margin-bottom: 0px !important;"
+                          style="margin-bottom: 0px !important"
                         >
                           <tr>
                             <th rowspan="2">
                               <i class="fas fa-arrow-up"></i>
                               <i class="fas fa-arrow-down"></i>
                             </th>
-                            <th rowspan="2" style="padding: 0 10px;">
+                            <th rowspan="2" style="padding: 0 10px">
                               <select
                                 id="objective_owner"
                                 name=""
                                 class="form-control"
-                                style="margin-right: 300px;"
+                                style="margin-right: 300px"
                               >
                                 <option value="">KPI Description</option>
-                                <option value="Option - 1"
-                                  >Lorem ipsum dolor sit amet, consectetur
+                                <option value="Option - 1">
+                                  Lorem ipsum dolor sit amet, consectetur
                                   adipiscing elit, sed do eiusmod tempor
                                   incididunt ut labore et dolore magna aliqua.
                                 </option>
@@ -5006,73 +5318,73 @@
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               January
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               February
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               March
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               April
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               May
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               June
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               July
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               August
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               September
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               October
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               November
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               December
                             </th>
@@ -5283,19 +5595,19 @@
                       </div>
                       <div
                         class="table-responsive QuarterYear box"
-                        style="display: none;"
+                        style="display: none"
                       >
                         <table
                           class="table dashboard-task-infos align-center dashboard-table"
                           id="table1"
-                          style="margin-bottom: 0px !important;"
+                          style="margin-bottom: 0px !important"
                         >
                           <tr>
                             <th rowspan="2">
                               <i class="fas fa-arrow-up"></i>
                               <i class="fas fa-arrow-down"></i>
                             </th>
-                            <th rowspan="2" style="padding: 0 10px;">
+                            <th rowspan="2" style="padding: 0 10px">
                               <select
                                 id="objective_owner"
                                 name=""
@@ -5308,25 +5620,25 @@
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               Q 1
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               Q 2
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               Q 3
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               Q 4
                             </th>
@@ -5397,19 +5709,19 @@
                       </div>
                       <div
                         class="table-responsive HalfYear box"
-                        style="display: none;"
+                        style="display: none"
                       >
                         <table
                           class="table dashboard-task-infos align-center dashboard-table"
                           id="table1"
-                          style="margin-bottom: 0px !important;"
+                          style="margin-bottom: 0px !important"
                         >
                           <tr>
                             <th rowspan="2">
                               <i class="fas fa-arrow-up"></i>
                               <i class="fas fa-arrow-down"></i>
                             </th>
-                            <th rowspan="2" style="padding: 0 10px;">
+                            <th rowspan="2" style="padding: 0 10px">
                               <select
                                 id="objective_owner"
                                 name=""
@@ -5422,13 +5734,13 @@
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               HY - 1
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               HY - 2
                             </th>
@@ -5475,19 +5787,19 @@
                       </div>
                       <div
                         class="table-responsive Annual box"
-                        style="display: none;"
+                        style="display: none"
                       >
                         <table
                           class="table dashboard-task-infos align-center dashboard-table"
                           id="table1"
-                          style="margin-bottom: 0px !important;"
+                          style="margin-bottom: 0px !important"
                         >
                           <tr>
                             <th rowspan="2">
                               <i class="fas fa-arrow-up"></i>
                               <i class="fas fa-arrow-down"></i>
                             </th>
-                            <th rowspan="2" style="padding: 0 10px;">
+                            <th rowspan="2" style="padding: 0 10px">
                               <select
                                 id="objective_owner"
                                 name=""
@@ -5500,7 +5812,7 @@
                             </th>
                             <th
                               colspan="3"
-                              style="font-weight: bold; color: #1e252d;"
+                              style="font-weight: bold; color: #1e252d"
                             >
                               Annual
                             </th>
@@ -5622,7 +5934,7 @@
                         </ul>
                         <ul>
                           <li>
-                            <div class="comment_send" style="display: none;">
+                            <div class="comment_send" style="display: none">
                               <div
                                 class="form-group d-flex flex-row align-items-center"
                               >
@@ -5715,7 +6027,7 @@
                         </ul>
                         <ul>
                           <li>
-                            <div class="comment_send" style="display: none;">
+                            <div class="comment_send" style="display: none">
                               <div
                                 class="form-group d-flex flex-row align-items-center"
                               >
@@ -5808,7 +6120,7 @@
                         </ul>
                         <ul>
                           <li>
-                            <div class="comment_send" style="display: none;">
+                            <div class="comment_send" style="display: none">
                               <div
                                 class="form-group d-flex flex-row align-items-center"
                               >
@@ -5901,7 +6213,7 @@
                         </ul>
                         <ul>
                           <li>
-                            <div class="comment_send" style="display: none;">
+                            <div class="comment_send" style="display: none">
                               <div
                                 class="form-group d-flex flex-row align-items-center"
                               >
@@ -5978,6 +6290,410 @@
                   <div class="send_btn" id="send-btn">
                     <i class="fas fa-arrow-right"></i>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Table Section -->
+          <div class="col-lg-6 col-md-6 sub_initiatives select-toggle">
+            <div class="card">
+              <div class="header d-flex flex-row">
+                <h5 class="prob d-flex flex-fill">
+                  <strong
+                    class="editableTxt1"
+                    onkeypress="return (this.innerText.length <= 25)"
+                    editable="true"
+                    >Data Table</strong
+                  >
+                </h5>
+                <ul class="header-dropdown m-r--2 d-flex">
+                  <li class="dropdown m-t--10">
+                    <a
+                      href="#"
+                      onclick="return false;"
+                      class="dropdown-toggle"
+                      data-toggle="dropdown"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="true"
+                    >
+                      <i class="material-icons">more_vert</i>
+                    </a>
+                    <ul
+                      class="dropdown-menu pull-right"
+                      x-placement="bottom-start"
+                      style="
+                        position: absolute;
+                        will-change: transform;
+                        top: 0px;
+                        left: 0px;
+                        transform: translate3d(0px, 24px, 0px);
+                      "
+                    >
+                      <li>
+                        <a
+                          href="#"
+                          data-toggle="modal"
+                          data-target="#dataTableFields"
+                          onclick="return false;"
+                          >Fields</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          data-toggle="modal"
+                          data-target="#"
+                          onclick="return false;"
+                          >Edit</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          data-toggle="modal"
+                          data-target="#"
+                          onclick="return false;"
+                          >Delete</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="d-flex flex-column employee_div_body_box activities-box"
+              >
+                <div class="table-responsive" style="height: 326px">
+                  <table
+                    class="table dashboard-task-infos align-center dashboard-table"
+                    id="dataTable"
+                    style="margin-bottom: 0px !important"
+                  >
+                    <thead>
+                      <tr>
+                        <th style="width: 80px">Period</th>
+                        <th style="width: 98px">Actual</th>
+                        <th style="width: 98px">Target</th>
+                        <th style="width: 98px">Annual Target</th>
+                        <th style="width: 98px">Gap</th>
+                        <th style="width: 98px">YTT</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Q1 2019</td>
+                        <td>28%</td>
+                        <td>24%</td>
+                        <td>42%</td>
+                        <td>38.091%</td>
+                        <td>38%</td>
+                      </tr>
+                      <tr>
+                        <td>Q2 2019</td>
+                        <td>28%</td>
+                        <td>24%</td>
+                        <td>24%</td>
+                        <td>38.091%</td>
+                        <td>38%</td>
+                      </tr>
+                      <tr>
+                        <td>Q3 2019</td>
+                        <td>28%</td>
+                        <td>24%</td>
+                        <td>24%</td>
+                        <td>38.091%</td>
+                        <td>38%</td>
+                      </tr>
+                      <tr>
+                        <td>Q4 2019</td>
+                        <td>28%</td>
+                        <td>24%</td>
+                        <td>42%</td>
+                        <td>38.091%</td>
+                        <td>38%</td>
+                      </tr>
+                      <tr>
+                        <td>Q1 2019</td>
+                        <td>28%</td>
+                        <td>24%</td>
+                        <td>42%</td>
+                        <td>38.091%</td>
+                        <td>38%</td>
+                      </tr>
+                      <tr>
+                        <td>Q2 2019</td>
+                        <td>28%</td>
+                        <td>24%</td>
+                        <td>42%</td>
+                        <td>38.091%</td>
+                        <td>38%</td>
+                      </tr>
+                      <tr>
+                        <td>Q3 2019</td>
+                        <td>28%</td>
+                        <td>24%</td>
+                        <td>42%</td>
+                        <td>38.091%</td>
+                        <td>38%</td>
+                      </tr>
+                      <tr>
+                        <td>Q4 2019</td>
+                        <td>28%</td>
+                        <td>24%</td>
+                        <td>42%</td>
+                        <td>38.091%</td>
+                        <td>38%</td>
+                      </tr>
+                      <tr>
+                        <td>Q2 2019</td>
+                        <td>28%</td>
+                        <td>24%</td>
+                        <td>42%</td>
+                        <td>38.091%</td>
+                        <td>38%</td>
+                      </tr>
+                      <tr>
+                        <td>Q3 2019</td>
+                        <td>28%</td>
+                        <td>24%</td>
+                        <td>42%</td>
+                        <td>38.091%</td>
+                        <td>38%</td>
+                      </tr>
+                      <tr>
+                        <td>Q4 2019</td>
+                        <td>28%</td>
+                        <td>24%</td>
+                        <td>42%</td>
+                        <td>38.091%</td>
+                        <td>38%</td>
+                      </tr>
+                      <tr>
+                        <td>Q1 2019</td>
+                        <td>28%</td>
+                        <td>24%</td>
+                        <td>42%</td>
+                        <td>38.091%</td>
+                        <td>38%</td>
+                      </tr>
+                      <tr>
+                        <td>Q2 2019</td>
+                        <td>28%</td>
+                        <td>24%</td>
+                        <td>42%</td>
+                        <td>38.091%</td>
+                        <td>38%</td>
+                      </tr>
+                      <tr>
+                        <td>Q3 2019</td>
+                        <td>28%</td>
+                        <td>24%</td>
+                        <td>42%</td>
+                        <td>38.091%</td>
+                        <td>38%</td>
+                      </tr>
+                      <tr>
+                        <td>Q4 2019</td>
+                        <td>28%</td>
+                        <td>24%</td>
+                        <td>42%</td>
+                        <td>38.091%</td>
+                        <td>38%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Drill Section -->
+          <div class="col-lg-6 col-md-6 sub_initiatives select-toggle">
+            <div class="card">
+              <div class="header d-flex flex-row">
+                <h5 class="prob d-flex flex-fill">
+                  <strong
+                    class="editableTxt1"
+                    onkeypress="return (this.innerText.length <= 25)"
+                    editable="true"
+                    >Data Drill</strong
+                  >
+                </h5>
+                <ul class="header-dropdown m-r--2 d-flex">
+                  <li class="dropdown m-t--10">
+                    <a
+                      href="#"
+                      onclick="return false;"
+                      class="dropdown-toggle"
+                      data-toggle="dropdown"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="true"
+                    >
+                      <i class="material-icons">more_vert</i>
+                    </a>
+                    <ul
+                      class="dropdown-menu pull-right"
+                      x-placement="bottom-start"
+                      style="
+                        position: absolute;
+                        will-change: transform;
+                        top: 0px;
+                        left: 0px;
+                        transform: translate3d(0px, 24px, 0px);
+                      "
+                    >
+                      <li>
+                        <a
+                          href="#"
+                          data-toggle="modal"
+                          data-target="#dataDrillFields"
+                          onclick="return false;"
+                          >Fields</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          data-toggle="modal"
+                          data-target="#"
+                          onclick="return false;"
+                          >Edit</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          data-toggle="modal"
+                          data-target="#"
+                          onclick="return false;"
+                          >Delete</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="d-flex flex-column employee_div_body_box activities-box"
+              >
+                <div class="table-responsive" style="height: 326px">
+                  <table
+                    class="table dashboard-task-infos align-center dashboard-table"
+                    id="drilldownTable"
+                    style="margin-bottom: 0px !important"
+                  >
+                    <thead>
+                      <tr>
+                        <th rowspan="2" style="width: 40px">
+                          <i class="fas fa-arrow-up"></i>
+                          <i class="fas fa-arrow-down"></i>
+                        </th>
+                        <th rowspan="2" style="width: 198px">Name/Period</th>
+                        <th colspan="3">Q1 2020</th>
+                      </tr>
+                      <tr>
+                        <th style="width: 98px">Actual</th>
+                        <th style="width: 98px">Target</th>
+                        <th style="width: 98px">Gap</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><i class="fas fa-arrow-up"></i></td>
+                        <td>Sales and Marketing</td>
+                        <td>28.53425%</td>
+                        <td>24.53425%</td>
+                        <td>38.53425%</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fas fa-arrow-down"></i></td>
+                        <td>Human Resource and admin</td>
+                        <td>28.53425%</td>
+                        <td>24.53425%</td>
+                        <td>38.53425%</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fas fa-arrow-up"></i></td>
+                        <td>Product Design</td>
+                        <td>28.53425%</td>
+                        <td>24.53425%</td>
+                        <td>38.53425%</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fas fa-arrow-up"></i></td>
+                        <td>Development Process</td>
+                        <td>28.53425%</td>
+                        <td>24.53425%</td>
+                        <td>38.53425%</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fas fa-arrow-up"></i></td>
+                        <td>Marketing</td>
+                        <td>28.53425%</td>
+                        <td>24.53425%</td>
+                        <td>38.53425%</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fas fa-arrow-down"></i></td>
+                        <td>Admin</td>
+                        <td>28.53425%</td>
+                        <td>24.53425%</td>
+                        <td>38.53425%</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fas fa-arrow-down"></i></td>
+                        <td>Admin</td>
+                        <td>28.53425%</td>
+                        <td>24.53425%</td>
+                        <td>38.53425%</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fas fa-arrow-down"></i></td>
+                        <td>Admin</td>
+                        <td>28.53425%</td>
+                        <td>24.53425%</td>
+                        <td>38.53425%</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fas fa-arrow-up"></i></td>
+                        <td>Sales and Marketing</td>
+                        <td>28.53425%</td>
+                        <td>24.53425%</td>
+                        <td>38.53425%</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fas fa-arrow-down"></i></td>
+                        <td>Human Resource and admin</td>
+                        <td>28.53425%</td>
+                        <td>24.53425%</td>
+                        <td>38.53425%</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fas fa-arrow-up"></i></td>
+                        <td>Product Design</td>
+                        <td>28.53425%</td>
+                        <td>24.53425%</td>
+                        <td>38.53425%</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fas fa-arrow-up"></i></td>
+                        <td>Development Process</td>
+                        <td>28.53425%</td>
+                        <td>24.53425%</td>
+                        <td>38.53425%</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fas fa-arrow-up"></i></td>
+                        <td>Marketing</td>
+                        <td>28.53425%</td>
+                        <td>24.53425%</td>
+                        <td>38.53425%</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
@@ -6130,7 +6846,7 @@
                   <div class="row">
                     <div
                       class="form-group col-md-10"
-                      style="padding-right: 4px;"
+                      style="padding-right: 4px"
                     >
                       <input
                         type="file"
@@ -6144,7 +6860,7 @@
                       />
                       <span>Supported file type (jpeg,pdf,pptx,xlsx,docx)</span>
                     </div>
-                    <div class="col-2" style="padding-left: 4px;">
+                    <div class="col-2" style="padding-left: 4px">
                       <div class="form-line left">
                         <button class="initative_save_btn" value="Upload">
                           Upload
@@ -6180,9 +6896,15 @@
     <script src="../../assets/jquery-resize.js"></script>
     <script src="../../assets/lodash.min.js"></script>
     <script src="../../assets/loader.js"></script>
+    <script src="../../assets/js/paging.js"></script>
     <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script>
+      $(document).ready(function () {
+        $("#dataTable").paging({ limit: 7 });
+        $("#drilldownTable").paging({ limit: 6 });
+      });
+
       var options = {
         series: [
           {
