@@ -258,6 +258,7 @@ function load()
 function updateBackground(event) {
    backgroundColor = event.target.value;
    var items = diagram.selection.items || [];
+   console.log('updateBackground', items);
    for (const item of items) {
 	item.setBrush({ type: 'SolidBrush', color: backgroundColor }); 
    }
@@ -294,7 +295,7 @@ function onSequence()
 	headShape = "Triangle";
 	baseShape = null;
 	headBrush = "#7F7F7F";
-	document.getElementById("sequence").src = "sequenceOn.png";
+	document.getElementById("sequence").src = "images/strategy-map/sequenceOn.png";
 	// document.getElementById("message").src = "messageOff.png";
 	// document.getElementById("association").src = "associationOff.png";
 }
@@ -307,7 +308,7 @@ function onMessage()
 	baseShape = "Circle";
 	headBrush = "white";
 	// document.getElementById("message").src = "messageOn.png";
-	document.getElementById("sequence").src = "sequenceOff.png";
+	document.getElementById("sequence").src = "images/strategy-map/sequenceOff.png";
 	// document.getElementById("association").src = "associationOff.png";
 		
 }
@@ -319,7 +320,7 @@ function onAssociation()
 	headShape = null;
 	baseShape = null;
 	// document.getElementById("association").src = "associationOn.png";
-	document.getElementById("sequence").src = "sequenceOff.png";
+	document.getElementById("sequence").src = "images/strategy-map/sequenceOff.png";
 	// document.getElementById("message").src = "messageOff.png";
 		
 }
@@ -341,14 +342,16 @@ function onNodeCreated(sender, args)
 
 function onLinkCreated(sender, args)
 {
+	console.log('onLinkCreated', sender, args);
+
 	var link = args.getLink();
 	link.setStrokeDashStyle (linkDashStyle);
 	link.setHeadShape(headShape);
 	link.setBaseShape(baseShape);
 	link.setHeadShapeSize(3.0);
 	link.setBaseShapeSize(3.0);
-	link.setHeadBrush({ type: 'SolidBrush', color: headBrush });
-	link.setBaseBrush({ type: 'SolidBrush', color: '#FFFFFF' });
+	link.setHeadBrush({ type: 'SolidBrush', color: '#D50707' });
+	link.setBaseBrush({ type: 'SolidBrush', color: '#D50707' });
 	link.setTextAlignment(MindFusion.Diagramming.Alignment.Near);
 }
 
