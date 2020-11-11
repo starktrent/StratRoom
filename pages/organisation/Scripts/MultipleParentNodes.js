@@ -67,18 +67,19 @@ window.onload = function(e){
 	var nodeListEl = document.getElementById('nodeList');
 	// create an NodeListView component that wraps the "nodeList" canvas
 	nodeList = AbstractionLayer.createControl(NodeListView, null, null, null, nodeListEl);	
-	nodeList.setIconSize(new Size(30,30));
+	nodeList.setIconSize(new Size(20,20));
 	nodeList.setDefaultNodeSize(new Size(10,10));
 	nodeList.addEventListener(Events.nodeSelected, onShapeSelected);
 	
 	 var node = new ShapeNode();	
 	 node.setTransparent(true);
 	 node.setText("Text");
-	 node.setFont(new Font("Verdana", 12));
-	 nodeList.addNode(node, "Text");  	 
+	 node.setFont(new Font("Poppins", 12));
+	 node.setTextColor('#808080');  
+	 nodeList.addNode(node, "");  	 
 	 
 	 node = new ContainerNode();
-	 node.setCaptionBackBrush({ type: 'SolidBrush', color: '#88b663' });
+	 node.setCaptionBackBrush({ type: 'SolidBrush', color: '#808080' });
 	 node.setBrush({ type: 'SolidBrush', color: '#ffffff' });
 	 nodeList.addNode(node, "Container");	
 	 
@@ -93,8 +94,16 @@ window.onload = function(e){
 		{
 		   var node = new MindFusion.Diagramming.ShapeNode(diagram);
 		   node.setShape(shapeId);
-		   node.setBrush({ type: 'SolidBrush', color: '#88b663' });
-		   nodeList.addNode(node, shapeId.toString());
+		   node.setBrush({ type: 'SolidBrush', color: '#808080' });
+
+		   var label = shapeId;
+		   if (['Arrow3'].indexOf(label) !== -1) {
+			label = 'Arrow';
+		   } else {
+			label = shapeId.toString();
+		   }
+
+		   nodeList.addNode(node, label);
 		}
 	}		
 	
