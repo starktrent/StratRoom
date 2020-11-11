@@ -1,3 +1,7 @@
+:root {
+  --danger: red;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 8px !important;
@@ -211,7 +215,7 @@ input::placeholder {
   border: 1px solid #e74c3c;
 }
 
-@charset "UTF-8";
+/* @charset "UTF-8"; */
 @import url(../fonts/themify-icons/themify-icons.css);
 @import url(../fonts/simple-line-icons/css/simple-line-icons.css);
 .font_icon {
@@ -1511,4 +1515,76 @@ label {
   top: 1px;
   font-weight: 600;
   color: #1e252d;
+}
+
+
+.test {
+  border:1px solid var(--danger);
+}
+
+.drag-box {
+  border:1px dashed #ddd;
+  padding: 5px;
+  border-radius:5px;
+  margin-top: 15px;
+}
+
+.drag-box ul {
+  padding-left: 0;
+}
+
+.drag-box li {
+  display: block;
+}
+
+.drag-text {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.drag-box i {
+  font-size:22px;
+  margin-right:10px;
+  color:#808080;
+  
+}
+
+.drag-title {
+  font-weight:bold;
+  font-size:16px;
+  color:#0292e6;
+}
+
+.drag-box li{
+  border-bottom:1px solid #ddd;
+  padding:5px 0;
+  
+}
+
+.drag-box span {
+  font-size:14px;
+  position:relative;
+  top:-3px;
+}
+
+.drag-block {
+  display: block;
+  width: 100%;
+}
+
+.drag-box [type="color"] {
+  width:80px;
+  /* margin-left: auto;
+  margin-right: auto; */
 }
