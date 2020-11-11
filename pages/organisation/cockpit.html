@@ -472,13 +472,6 @@
         padding-bottom: 5px;
         padding-right: 5px;
       }
-
-      #riskRegister thead tr th {
-        z-index: 1;
-        position: sticky;
-        top: 0;
-        text-align: center;
-      }
     </style>
   </head>
 
@@ -2178,9 +2171,13 @@
           </div>
           <div class="modal-body">
             <div class="row">
-              <div class="col-4 form-group">
+              <div class="col-12 form-group">
                 <label for="Name">Status</label>
-                <select class="form-control browser-default">
+                <select
+                  class="risk-status-multi-select"
+                  name="states[]"
+                  multiple="multiple"
+                >
                   <option value="Very good">Very good</option>
                   <option value="Good">Good</option>
                   <option value="Tolerable">Tolerable</option>
@@ -2228,7 +2225,7 @@
               </div>
 
               <div class="form-group col-md-12 mt-2">
-                <label for="kpi_fields">Field Selection</label>
+                <label for="kpi_fields">Select Fields</label>
                 <ul class="d-flex flex-row flex-wrap ml-2">
                   <li>
                     <div class="form-check">
@@ -2394,9 +2391,13 @@
           </div>
           <div class="modal-body">
             <div class="row">
-              <div class="col-4 form-group">
+              <div class="col-12 form-group">
                 <label for="Name">Status</label>
-                <select class="form-control browser-default">
+                <select
+                  class="int-status-multi-select"
+                  name="states[]"
+                  multiple="multiple"
+                >
                   <option value="Very good">Very good</option>
                   <option value="Good">Good</option>
                   <option value="Tolerable">Tolerable</option>
@@ -2428,7 +2429,7 @@
               </div>
 
               <div class="form-group col-md-12 mt-2">
-                <label for="kpi_fields">Field Selection</label>
+                <label for="kpi_fields">Select Fields</label>
                 <ul class="d-flex flex-row flex-wrap ml-2">
                   <li>
                     <div class="form-check">
@@ -2559,23 +2560,6 @@
                             value=""
                           />
                           Balance
-                          <span class="form-check-sign">
-                            <span class="check"></span>
-                          </span>
-                        </label>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="form-check">
-                      <div class="form-check">
-                        <label class="form-check-label">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            value=""
-                          />
-                          Progress
                           <span class="form-check-sign">
                             <span class="check"></span>
                           </span>
@@ -3864,6 +3848,8 @@
       $(document).ready(function () {
         $(".risk-reg-multi-select").select2();
         $(".int-reg-multi-select").select2();
+        $(".risk-status-multi-select").select2();
+        $(".int-status-multi-select").select2();
       });
 
       function dragStart(event) {
@@ -5573,7 +5559,7 @@
         if (data == "riskRegDiv") {
           $("#dashboard-body").append(`
           <div class="col-md-12 select-toggle myinitiative sub_initiatives">
-            <div class="card" style="padding: 8px 12px; height: 398px;">
+            <div class="card" style="padding: 8px 12px; height: auto;">
               <div class="header row" style="margin: 0;">
                 <div class="col-3">
                   <input
@@ -5656,7 +5642,7 @@
               >
                 <div
                   class="table-responsive"
-                  style="height: 326px;"
+                  style="height: auto;"
                 >
                 <table
                     class="table dashboard-task-infos align-center dashboard-table"
@@ -5665,15 +5651,15 @@
                   >
                     <thead>
                       <tr>
-                        <th>Status</th>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Category</th>
-                        <th>Impact</th>
-                        <th>Likelihood</th>
-                        <th>Score</th>
-                        <th>Raised on</th>
-                        <th>Next Assessment</th>
+                        <th width="60px">Status</th>
+                        <th width="60px">ID</th>
+                        <th width="360px">Name</th>
+                        <th width="120px">Category</th>
+                        <th width="120px">Impact</th>
+                        <th width="120px">Likelihood</th>
+                        <th width="80px">Score</th>
+                        <th width="120px">Raised on</th>
+                        <th width="120px">Next Assessment</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -5703,7 +5689,7 @@
                           ></i>
                         </td>
                         <td>12</td>
-                        <td>Failure to meet compliance obligations</td>
+                        <td>Failure to meet compliance obligations Failure to meet compliance obligations</td>
                         <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
@@ -5964,7 +5950,7 @@
         if (data == "intRegDiv") {
           $("#dashboard-body").append(`
           <div class="col-md-12 select-toggle myinitiative sub_initiatives">
-            <div class="card" style="padding: 8px 12px; height: 398px;">
+            <div class="card" style="padding: 8px 12px; height: auto;">
               <div class="header row" style="margin: 0;">
                 <div class="col-3">
                   <input
@@ -6047,7 +6033,7 @@
               >
                 <div
                   class="table-responsive"
-                  style="height: 326px;"
+                  style="height: auto;"
                 >
                 <table
                     class="table dashboard-task-infos align-center dashboard-table"
@@ -6056,287 +6042,227 @@
                   >
                     <thead>
                       <tr>
-                        <th style="width: 40px;">Status</th>
-                        <th style="width: 40px;">ID</th>
-                        <th style="width: 80px;">Name</th>
-                        <th style="width: 60px;">Category</th>
-                        <th style="width: 60px;">Impact</th>
-                        <th style="width: 50px;">Likelihood</th>
-                        <th style="width: 40px;">Score</th>
-                        <th style="width: 120px;">Raised on</th>
-                        <th style="width: 60px;">Next Assessment</th>
+                        <th width="380px">Name</th>
+                        <th width="120px">Impact</th>
+                        <th width="160px">Planned Start/ End Date</th>
+                        <th width="160px">Actual Start/ End Date</th>
+                        <th width="100px">Progress</th>
+                        <th width="80px">Total</th>
+                        <th width="80px">Utilised</th>
+                        <th width="80px">Balance</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td>
-                          <i
-                            class="fas fa-flag"
-                            style="color: #28f76d;"
-                          ></i>
+                          Lorem ipsum dolor sit amet, sed do eiusmod tempor 
+                          ut labore et dolore magna aliqua.
                         </td>
-                        <td>12</td>
-                        <td>Initiative</td>
-                        <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
                         </td>
-                        <td style="color: #f72f28;">High</td>
-                        <td>3</td>
-                        <td>23-05-2020</td>
-                        <td>23-06-2020</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>Ongoing</td>
+                        <td>$ 66345</td>
+                        <td>$ 33234</td>
+                        <td>$ 36714</td>
                       </tr>
                       <tr>
                         <td>
-                          <i
-                            class="fas fa-flag"
-                            style="color: #28f76d;"
-                          ></i>
+                          Initiative Register
                         </td>
-                        <td>12</td>
-                        <td>Initiative</td>
-                        <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
                         </td>
-                        <td style="color: #f72f28;">High</td>
-                        <td>3</td>
-                        <td>23-05-2020</td>
-                        <td>23-06-2020</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>Ongoing</td>
+                        <td>$ 66345</td>
+                        <td>$ 33234</td>
+                        <td>$ 36714</td>
                       </tr>
                       <tr>
                         <td>
-                          <i
-                            class="fas fa-flag"
-                            style="color: #28f76d;"
-                          ></i>
+                          Initiative Register
                         </td>
-                        <td>12</td>
-                        <td>Initiative</td>
-                        <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
                         </td>
-                        <td style="color: #f72f28;">High</td>
-                        <td>3</td>
-                        <td>23-05-2020</td>
-                        <td>23-06-2020</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>Ongoing</td>
+                        <td>$ 66345</td>
+                        <td>$ 33234</td>
+                        <td>$ 36714</td>
                       </tr>
                       <tr>
                         <td>
-                          <i
-                            class="fas fa-flag"
-                            style="color: #28f76d;"
-                          ></i>
+                          Initiative Register
                         </td>
-                        <td>12</td>
-                        <td>Initiative</td>
-                        <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
                         </td>
-                        <td style="color: #f72f28;">High</td>
-                        <td>3</td>
-                        <td>23-05-2020</td>
-                        <td>23-06-2020</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>Ongoing</td>
+                        <td>$ 66345</td>
+                        <td>$ 33234</td>
+                        <td>$ 36714</td>
                       </tr>
                       <tr>
                         <td>
-                          <i
-                            class="fas fa-flag"
-                            style="color: #28f76d;"
-                          ></i>
+                          Initiative Register
                         </td>
-                        <td>12</td>
-                        <td>Initiative</td>
-                        <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
                         </td>
-                        <td style="color: #f72f28;">High</td>
-                        <td>3</td>
-                        <td>23-05-2020</td>
-                        <td>23-06-2020</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>Ongoing</td>
+                        <td>$ 66345</td>
+                        <td>$ 33234</td>
+                        <td>$ 36714</td>
                       </tr>
                       <tr>
                         <td>
-                          <i
-                            class="fas fa-flag"
-                            style="color: #28f76d;"
-                          ></i>
+                          Initiative Register
                         </td>
-                        <td>12</td>
-                        <td>Initiative</td>
-                        <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
                         </td>
-                        <td style="color: #f72f28;">High</td>
-                        <td>3</td>
-                        <td>23-05-2020</td>
-                        <td>23-06-2020</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>Ongoing</td>
+                        <td>$ 66345</td>
+                        <td>$ 33234</td>
+                        <td>$ 36714</td>
                       </tr>
                       <tr>
                         <td>
-                          <i
-                            class="fas fa-flag"
-                            style="color: #28f76d;"
-                          ></i>
+                          Initiative Register
                         </td>
-                        <td>12</td>
-                        <td>Initiative</td>
-                        <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
                         </td>
-                        <td style="color: #f72f28;">High</td>
-                        <td>3</td>
-                        <td>23-05-2020</td>
-                        <td>23-06-2020</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>Ongoing</td>
+                        <td>$ 66345</td>
+                        <td>$ 33234</td>
+                        <td>$ 36714</td>
                       </tr>
                       <tr>
                         <td>
-                          <i
-                            class="fas fa-flag"
-                            style="color: #28f76d;"
-                          ></i>
+                          Initiative Register
                         </td>
-                        <td>12</td>
-                        <td>Initiative</td>
-                        <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
                         </td>
-                        <td style="color: #f72f28;">High</td>
-                        <td>3</td>
-                        <td>23-05-2020</td>
-                        <td>23-06-2020</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>Ongoing</td>
+                        <td>$ 66345</td>
+                        <td>$ 33234</td>
+                        <td>$ 36714</td>
                       </tr>
                       <tr>
                         <td>
-                          <i
-                            class="fas fa-flag"
-                            style="color: #28f76d;"
-                          ></i>
+                          Initiative Register
                         </td>
-                        <td>12</td>
-                        <td>Initiative</td>
-                        <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
                         </td>
-                        <td style="color: #f72f28;">High</td>
-                        <td>3</td>
-                        <td>23-05-2020</td>
-                        <td>23-06-2020</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>Ongoing</td>
+                        <td>$ 66345</td>
+                        <td>$ 33234</td>
+                        <td>$ 36714</td>
                       </tr>
                       <tr>
                         <td>
-                          <i
-                            class="fas fa-flag"
-                            style="color: #28f76d;"
-                          ></i>
+                          Initiative Register
                         </td>
-                        <td>12</td>
-                        <td>Initiative</td>
-                        <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
                         </td>
-                        <td style="color: #f72f28;">High</td>
-                        <td>3</td>
-                        <td>23-05-2020</td>
-                        <td>23-06-2020</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>Ongoing</td>
+                        <td>$ 66345</td>
+                        <td>$ 33234</td>
+                        <td>$ 36714</td>
                       </tr>
                       <tr>
                         <td>
-                          <i
-                            class="fas fa-flag"
-                            style="color: #28f76d;"
-                          ></i>
+                          Initiative Register
                         </td>
-                        <td>12</td>
-                        <td>Initiative</td>
-                        <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
                         </td>
-                        <td style="color: #f72f28;">High</td>
-                        <td>3</td>
-                        <td>23-05-2020</td>
-                        <td>23-06-2020</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>Ongoing</td>
+                        <td>$ 66345</td>
+                        <td>$ 33234</td>
+                        <td>$ 36714</td>
                       </tr>
                       <tr>
                         <td>
-                          <i
-                            class="fas fa-flag"
-                            style="color: #28f76d;"
-                          ></i>
+                          Initiative Register
                         </td>
-                        <td>12</td>
-                        <td>Initiative</td>
-                        <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
                         </td>
-                        <td style="color: #f72f28;">High</td>
-                        <td>3</td>
-                        <td>23-05-2020</td>
-                        <td>23-06-2020</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>Ongoing</td>
+                        <td>$ 66345</td>
+                        <td>$ 33234</td>
+                        <td>$ 36714</td>
                       </tr>
                       <tr>
                         <td>
-                          <i
-                            class="fas fa-flag"
-                            style="color: #28f76d;"
-                          ></i>
+                          Initiative Register
                         </td>
-                        <td>12</td>
-                        <td>Initiative</td>
-                        <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
                         </td>
-                        <td style="color: #f72f28;">High</td>
-                        <td>3</td>
-                        <td>23-05-2020</td>
-                        <td>23-06-2020</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>Ongoing</td>
+                        <td>$ 66345</td>
+                        <td>$ 33234</td>
+                        <td>$ 36714</td>
                       </tr>
                       <tr>
                         <td>
-                          <i
-                            class="fas fa-flag"
-                            style="color: #28f76d;"
-                          ></i>
+                          Initiative Register
                         </td>
-                        <td>12</td>
-                        <td>Initiative</td>
-                        <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
                         </td>
-                        <td style="color: #f72f28;">High</td>
-                        <td>3</td>
-                        <td>23-05-2020</td>
-                        <td>23-06-2020</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>Ongoing</td>
+                        <td>$ 66345</td>
+                        <td>$ 33234</td>
+                        <td>$ 36714</td>
                       </tr>
                       <tr>
                         <td>
-                          <i
-                            class="fas fa-flag"
-                            style="color: #28f76d;"
-                          ></i>
+                          Initiative Register
                         </td>
-                        <td>12</td>
-                        <td>Initiative</td>
-                        <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
                         </td>
-                        <td style="color: #f72f28;">High</td>
-                        <td>3</td>
-                        <td>23-05-2020</td>
-                        <td>23-06-2020</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>23-05-2020/23-05-2021</td>
+                        <td>Ongoing</td>
+                        <td>$ 66345</td>
+                        <td>$ 33234</td>
+                        <td>$ 36714</td>
                       </tr>
                     </tbody>
                   </table>
