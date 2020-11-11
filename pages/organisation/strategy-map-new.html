@@ -491,6 +491,24 @@
                 <div class="drag-title">Draw Tool</div>
                 <canvas id="nodeList" width="190">
                 </canvas>
+
+                <ul>
+                  <li>
+                    <button title="New links will be drawn as sequence" onclick="onSequence()" class="btn btn-outline-secondary btn-block">
+                      <img id="sequence" src="images/strategy-map/sequenceOn.png" width="60" height="20">
+                    </button>
+                  </li>
+                  <li>
+                    <button  title="New links will be drawn as messages" onclick="onMessage()" class="btn btn-outline-secondary btn-block">
+                      <img id="message" src="images/strategy-map/messageOff.png" width="60" height="20">
+                    </button>
+                  </li>
+                  <li>
+                    <button title="New links will be drawn as associations" onclick="onAssociation()" class="btn btn-outline-secondary btn-block">
+                      <img id="association" src="images/strategy-map/associationOff.png" width="60" height="20">
+                    </button>
+                  </li>
+                </ul>
               </div>
                 <!-- <div class="drag-box" >
                   <div class="drag-title">Draw Tool</div>
