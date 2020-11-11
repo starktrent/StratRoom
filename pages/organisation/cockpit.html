@@ -1700,8 +1700,161 @@
                   <option value="Annually">Annually</option>
                 </select>
               </div>
+
               <div class="col-12 form-group">
-                <label for="Risk">Risk Fields</label>
+                <label for="Name">Departments</label>
+                <select
+                  class="heatmap-dept-multi-select"
+                  name="states[]"
+                  multiple="multiple"
+                >
+                  <option value="971">Human Resource</option>
+                  <option value="972">Designer</option>
+                  <option value="973">Developer</option>
+                  <option value="973">Tester</option>
+                  <option value="973">Manager</option>
+                  <option value="973">Marketing</option>
+                </select>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Status</label>
+                <select
+                  class="heatmap-status-multi-select"
+                  name="states[]"
+                  multiple="multiple"
+                >
+                  <option value="Very good">Very good</option>
+                  <option value="Good">Good</option>
+                  <option value="Tolerable">Tolerable</option>
+                  <option value="High">High</option>
+                  <option value="Very high">Very high</option>
+                </select>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Risk">Risk</label>
+                <select
+                  class="risk-multi-select"
+                  name="states[]"
+                  multiple="multiple"
+                >
+                  <option value="971">
+                    Failure to meet compliance obligations
+                  </option>
+                  <option value="972">
+                    Failure to meet compliance obligations
+                  </option>
+                  <option value="973">Failure to meet</option>
+                  <option value="971">
+                    Failure to meet compliance obligations
+                  </option>
+                  <option value="972">
+                    Failure to meet compliance obligations
+                  </option>
+                  <option value="973">Failure to meet</option>
+                  <option value="971">
+                    Failure to meet compliance obligations
+                  </option>
+                  <option value="972">
+                    Failure to meet compliance obligations
+                  </option>
+                  <option value="973">Failure to meet</option>
+                  <option value="971">
+                    Failure to meet compliance obligations
+                  </option>
+                  <option value="972">
+                    Failure to meet compliance obligations
+                  </option>
+                  <option value="973">Failure to meet</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Chart Setting -->
+
+    <!-- Gantt Setting -->
+    <div
+      class="modal fade"
+      id="gantt_setting"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Chart Settings</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row" style="padding-bottom: 6px">
+              <div class="form-group col-md-12">
+                <label for="">Measurement Frequency</label>
+                <select
+                  class="form-control browser-default"
+                  name="chartfrequency"
+                  id="chartfrequency"
+                >
+                  <option value="Monthly">Monthly</option>
+                  <option value="Quarterly">Quarterly</option>
+                  <option value="Half Yearly">Half Yearly</option>
+                  <option value="Annually">Annually</option>
+                </select>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Departments</label>
+                <select
+                  class="gantt-dept-multi-select"
+                  name="states[]"
+                  multiple="multiple"
+                >
+                  <option value="971">Human Resource</option>
+                  <option value="972">Designer</option>
+                  <option value="973">Developer</option>
+                  <option value="973">Tester</option>
+                  <option value="973">Manager</option>
+                  <option value="973">Marketing</option>
+                </select>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Name">Status</label>
+                <select
+                  class="gantt-status-multi-select"
+                  name="states[]"
+                  multiple="multiple"
+                >
+                  <option value="Very good">Very good</option>
+                  <option value="Good">Good</option>
+                  <option value="Tolerable">Tolerable</option>
+                  <option value="High">High</option>
+                  <option value="Very high">Very high</option>
+                </select>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Risk">Risk</label>
                 <select
                   class="risk-multi-select"
                   name="states[]"
@@ -1895,7 +2048,7 @@
     >
       <div
         class="modal-dialog modal-dialog-centered modal-lg"
-        style="max-width: 100%"
+        style="max-width: 80%"
       >
         <div class="modal-content">
           <div class="modal-header">
@@ -2172,6 +2325,22 @@
           <div class="modal-body">
             <div class="row">
               <div class="col-12 form-group">
+                <label for="Name">Departments</label>
+                <select
+                  class="risk-dept-multi-select"
+                  name="states[]"
+                  multiple="multiple"
+                >
+                  <option value="971">Human Resource</option>
+                  <option value="972">Designer</option>
+                  <option value="973">Developer</option>
+                  <option value="973">Tester</option>
+                  <option value="973">Manager</option>
+                  <option value="973">Marketing</option>
+                </select>
+              </div>
+
+              <div class="col-12 form-group">
                 <label for="Name">Status</label>
                 <select
                   class="risk-status-multi-select"
@@ -2392,6 +2561,22 @@
           <div class="modal-body">
             <div class="row">
               <div class="col-12 form-group">
+                <div class="col-12 form-group">
+                  <label for="Name">Departments</label>
+                  <select
+                    class="int-dept-multi-select"
+                    name="states[]"
+                    multiple="multiple"
+                  >
+                    <option value="971">Human Resource</option>
+                    <option value="972">Designer</option>
+                    <option value="973">Developer</option>
+                    <option value="973">Tester</option>
+                    <option value="973">Manager</option>
+                    <option value="973">Marketing</option>
+                  </select>
+                </div>
+
                 <label for="Name">Status</label>
                 <select
                   class="int-status-multi-select"
@@ -2604,7 +2789,7 @@
     >
       <div
         class="modal-dialog modal-dialog-centered modal-lg"
-        style="max-width: 100%"
+        style="max-width: 80%"
       >
         <div class="modal-content">
           <div class="modal-header">
@@ -2753,7 +2938,7 @@
     >
       <div
         class="modal-dialog modal-dialog-centered modal-lg"
-        style="max-width: 100% !important"
+        style="max-width: 80% !important"
       >
         <div class="modal-content">
           <div class="modal-header">
@@ -3009,7 +3194,7 @@
     >
       <div
         class="modal-dialog modal-dialog-centered modal-lg"
-        style="max-width: 100%"
+        style="max-width: 80%"
       >
         <div class="modal-content">
           <div class="modal-header">
@@ -3265,7 +3450,7 @@
     >
       <div
         class="modal-dialog modal-dialog-centered modal-lg"
-        style="max-width: 100%"
+        style="max-width: 80%"
       >
         <div class="modal-content">
           <div class="modal-body">
@@ -3350,7 +3535,6 @@
     >
       <div
         class="modal-dialog modal-dialog-centered modal-lg"
-        style="max-width: 80%"
         style="max-width: 80%"
       >
         <div class="modal-content">
@@ -3850,6 +4034,12 @@
         $(".int-reg-multi-select").select2();
         $(".risk-status-multi-select").select2();
         $(".int-status-multi-select").select2();
+        $(".risk-dept-multi-select").select2();
+        $(".int-dept-multi-select").select2();
+        $(".heatmap-dept-multi-select").select2();
+        $(".gantt-dept-multi-select").select2();
+        $(".heatmap-status-multi-select").select2();
+        $(".gantt-status-multi-select").select2();
       });
 
       function dragStart(event) {
@@ -5086,7 +5276,7 @@
                           <a
                             href="#"
                             data-toggle="modal"
-                            data-target="#chart_setting"
+                            data-target="#gantt_setting"
                             onclick="return false;"
                             >Settings</a
                           >
