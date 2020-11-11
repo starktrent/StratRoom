@@ -67,18 +67,19 @@ window.onload = function(e){
 	var nodeListEl = document.getElementById('nodeList');
 	// create an NodeListView component that wraps the "nodeList" canvas
 	nodeList = AbstractionLayer.createControl(NodeListView, null, null, null, nodeListEl);	
-	nodeList.setIconSize(new Size(30,30));
+	nodeList.setIconSize(new Size(20,20));
 	nodeList.setDefaultNodeSize(new Size(10,10));
 	nodeList.addEventListener(Events.nodeSelected, onShapeSelected);
 	
 	 var node = new ShapeNode();	
 	 node.setTransparent(true);
 	 node.setText("Text");
-	 node.setFont(new Font("Verdana", 12));
-	 nodeList.addNode(node, "Text");  	 
+	 node.setFont(new Font("Poppins", 12));
+	 node.setTextColor('#808080');  
+	 nodeList.addNode(node, "");  	 
 	 
 	 node = new ContainerNode();
-	 node.setCaptionBackBrush({ type: 'SolidBrush', color: '#88b663' });
+	 node.setCaptionBackBrush({ type: 'SolidBrush', color: '#808080' });
 	 node.setBrush({ type: 'SolidBrush', color: '#ffffff' });
 	 nodeList.addNode(node, "Container");	
 	 
@@ -93,8 +94,16 @@ window.onload = function(e){
 		{
 		   var node = new MindFusion.Diagramming.ShapeNode(diagram);
 		   node.setShape(shapeId);
-		   node.setBrush({ type: 'SolidBrush', color: '#88b663' });
-		   nodeList.addNode(node, shapeId.toString());
+		   node.setBrush({ type: 'SolidBrush', color: '#808080' });
+
+		   var label = shapeId;
+		   if (['Arrow3'].indexOf(label) !== -1) {
+			label = 'Arrow';
+		   } else {
+			label = shapeId.toString();
+		   }
+
+		   nodeList.addNode(node, label);
 		}
 	}		
 	
@@ -258,6 +267,7 @@ function load()
 function updateBackground(event) {
    backgroundColor = event.target.value;
    var items = diagram.selection.items || [];
+   console.log('updateBackground', items);
    for (const item of items) {
 	item.setBrush({ type: 'SolidBrush', color: backgroundColor }); 
    }
@@ -294,7 +304,7 @@ function onSequence()
 	headShape = "Triangle";
 	baseShape = null;
 	headBrush = "#7F7F7F";
-	document.getElementById("sequence").src = "sequenceOn.png";
+	document.getElementById("sequence").src = "images/strategy-map/sequenceOn.png";
 	// document.getElementById("message").src = "messageOff.png";
 	// document.getElementById("association").src = "associationOff.png";
 }
@@ -307,7 +317,7 @@ function onMessage()
 	baseShape = "Circle";
 	headBrush = "white";
 	// document.getElementById("message").src = "messageOn.png";
-	document.getElementById("sequence").src = "sequenceOff.png";
+	document.getElementById("sequence").src = "images/strategy-map/sequenceOff.png";
 	// document.getElementById("association").src = "associationOff.png";
 		
 }
@@ -319,7 +329,7 @@ function onAssociation()
 	headShape = null;
 	baseShape = null;
 	// document.getElementById("association").src = "associationOn.png";
-	document.getElementById("sequence").src = "sequenceOff.png";
+	document.getElementById("sequence").src = "images/strategy-map/sequenceOff.png";
 	// document.getElementById("message").src = "messageOff.png";
 		
 }
@@ -341,14 +351,16 @@ function onNodeCreated(sender, args)
 
 function onLinkCreated(sender, args)
 {
+	console.log('onLinkCreated', sender, args);
+
 	var link = args.getLink();
 	link.setStrokeDashStyle (linkDashStyle);
 	link.setHeadShape(headShape);
 	link.setBaseShape(baseShape);
 	link.setHeadShapeSize(3.0);
 	link.setBaseShapeSize(3.0);
-	link.setHeadBrush({ type: 'SolidBrush', color: headBrush });
-	link.setBaseBrush({ type: 'SolidBrush', color: '#FFFFFF' });
+	link.setHeadBrush({ type: 'SolidBrush', color: '#D50707' });
+	link.setBaseBrush({ type: 'SolidBrush', color: '#D50707' });
 	link.setTextAlignment(MindFusion.Diagramming.Alignment.Near);
 }
 

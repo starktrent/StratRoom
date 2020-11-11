@@ -470,7 +470,7 @@
           margin-top: 8px;
         "
       >
-        <div class="row" style="padding: 24px;">
+        <!-- <div class="row" style="padding: 24px;" style="display: none;">
           <div class="col-4 col-md-3 col-lg-2 stMapLogo">
             <img src="../../assets/strategy-map/assets/img/Logo.png" alt="" />
           </div>
@@ -482,28 +482,118 @@
               </h4>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- Blue Flex Cards -->
         <div class="row" style="padding: 4px 32px;position: relative;">
-            <div class="col-2">
-                <canvas id="nodeList" width="200">
+            <div class="col-2" style="padding: 0;">
+              <div class="drag-box" >
+                <div class="drag-title">Draw Tool</div>
+                <canvas id="nodeList" width="190">
                 </canvas>
+
+                <ul>
+                  <li>
+                    <button title="New links will be drawn as sequence" onclick="onSequence()" class="btn btn-outline-secondary btn-block">
+                      <img id="sequence" src="images/strategy-map/sequenceOn.png" width="60" height="20">
+                    </button>
+                  </li>
+                  <li>
+                    <button  title="New links will be drawn as messages" onclick="onMessage()" class="btn btn-outline-secondary btn-block">
+                      <img id="message" src="images/strategy-map/messageOff.png" width="60" height="20">
+                    </button>
+                  </li>
+                  <li>
+                    <button title="New links will be drawn as associations" onclick="onAssociation()" class="btn btn-outline-secondary btn-block">
+                      <img id="association" src="images/strategy-map/associationOff.png" width="60" height="20">
+                    </button>
+                  </li>
+                </ul>
+              </div>
+                <!-- <div class="drag-box" >
+                  <div class="drag-title">Draw Tool</div>
+                  <ul>
+                    <li>
+                      <input type="text" class="drag-text" placeholder="Text">
+                    </li>
+                    <li>
+                      <i class="fa fa-window-maximize" aria-hidden="true"></i>
+                      <span>Container</span> 
+                    </li>
+                    <li>
+                      <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                      <span>Arrow 3</span> 
+                    </li>
+                    <li>
+                      <i class="fa fa-circle" aria-hidden="true"></i>
+                      <span>Circle</span> 
+                    </li>
+                    <li>
+                      <i class="fa fa-certificate" aria-hidden="true"></i>
+                      <span>External Process</span> 
+                    </li>
+                    <li>
+                      <button title="New links will be drawn as sequence" onclick="onSequence()" class="btn btn-outline-secondary btn-block">
+                        <img id="sequence" src="images/strategy-map/sequenceOn.png" width="60" height="20">
+                      </button>
+                    </li>
+                    <li>
+                      <button  title="New links will be drawn as messages" onclick="onMessage()" class="btn btn-outline-secondary btn-block">
+                        <img id="message" src="images/strategy-map/messageOff.png" width="60" height="20">
+                      </button>
+                    </li>
+                    <li>
+                      <button title="New links will be drawn as associations" onclick="onAssociation()" class="btn btn-outline-secondary btn-block">
+                        <img id="association" src="images/strategy-map/associationOff.png" width="60" height="20">
+                      </button>
+                    </li>
+                  </ul>
+                </div> -->
+
+                <div class="drag-box">
+                  <div class="drag-title">Color Picker</div>
+                  <ul>
+                    <li class="text-left">
+                      <label for="" class="drag-block">Choose node background</label>
+                      <input type="color" title="Choose node background" value="#88b663" id="colorBkgr">  
+                    </li>
+                    <li class="text-left">
+                      <label for="" class="drag-block">Choose font color</label>
+                      <input type="color" title="Choose font color" value="#ffffff" id="colorFont">
+                    </li>
+                    <li class="text-left">
+                      <label for="" class="drag-block">Choose border color</label>
+                      <input type="color" title="Choose border color" value="#000000" id="colorBorder">
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="drag-box">
+                  <div class="drag-title">Actions</div>
+                  <ul>
+                    <li>
+                      <button type="button" title="Clear all items" onclick="clearItems()" class="btn btn-outline-danger btn-block">Clear Items</button>  
+                    </li>
+
+                    <li>
+                      <button type="button" title="Arrange" onclick="arrange()" class="btn btn-outline-primary btn-block">Arrange</button>		   
+                    </li>
+                    <li>
+                      <button type="button" title="Save to local storage" onclick="save()" class="btn btn-outline-success btn-block">Save</button>
+                    </li>
+                    <li>
+                      <button type="button" title="Load from local storage" onclick="load()" class="btn btn-outline-warning btn-block">Load</button>
+                    </li>                    
+                  </ul>
+                </div>
             </div>
             <div class="col-10">
                 <div class="row" style="overflow: auto;">
                     <div style="height: 40px; width: 100%; margin: 3px 0px 0px 10px; padding: 0px;">
-                          <button title="New links will be drawn as sequence" onclick="onSequence()" style="padding: 0px; height: 26px; width: 60px;"><img id="sequence" src="images/strategy-map/sequenceOn.png" width="60" height="20"></button>
-                          <button  title="New links will be drawn as messages" onclick="onMessage()" style="padding: 0px; height: 26px; width: 60px;"><img id="message" src="images/strategy-map/messageOff.png" width="60" height="20"></button>
-                          <button title="New links will be drawn as associations" onclick="onAssociation()" style="padding: 0px; height: 26px; width: 60px;"><img id="association" src="images/strategy-map/associationOff.png" width="60" height="20"></button>
-                          <input type="color" title="Choose node background" value="#88b663" id="colorBkgr">
-                          <input type="color" title="Choose font color" value="#ffffff" id="colorFont">
-                          <input type="color" title="Choose border color" value="#000000" id="colorBorder">		
+                          
+                          		
            
-                          <button type="button" title="Clear all items" onclick="clearItems()" style="padding: 3px 20px; vertical-align: top; border: 1px solid #cecece;">Clear Items</button>
-                          <button type="button" title="Arrange" onclick="arrange()" style="padding: 3px 20px; vertical-align: top; border: 1px solid #cecece;">Arrange</button>		   
-                          <button type="button" title="Save to local storage" onclick="save()" style="padding: 3px 20px; vertical-align: top; border: 1px solid #cecece;">Save</button>				   
-                          <button type="button" title="Load from local storage" onclick="load()" style="padding: 3px 20px; vertical-align: top; border: 1px solid #cecece;">Load</button>				   
+                          
                    </div>
                    <div style="overflow: visible; height:100%; margin: 1px; padding: 0px;">
                        <canvas id="diagram" width="2100" height="2500">
