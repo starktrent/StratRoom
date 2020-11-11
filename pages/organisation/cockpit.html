@@ -1900,7 +1900,10 @@
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="max-width: 100%"
+      >
         <div class="modal-content">
           <div class="modal-header">
             <h4>Table View</h4>
@@ -2186,12 +2189,41 @@
                 </select>
               </div>
 
-              <div class="col-8 form-group">
+              <div class="col-12 form-group">
                 <label for="Name">Risk Name</label>
-                <select class="form-control browser-default">
-                  <option value="Risk 1">Risk 1</option>
-                  <option value="Risk 2">Risk 2</option>
-                  <option value="Risk 3">Risk 3</option>
+                <select
+                  class="risk-reg-multi-select"
+                  name="states[]"
+                  multiple="multiple"
+                >
+                  <option value="971">
+                    Failure to meet compliance obligations
+                  </option>
+                  <option value="972">
+                    Failure to meet compliance obligations
+                  </option>
+                  <option value="973">Failure to meet</option>
+                  <option value="971">
+                    Failure to meet compliance obligations
+                  </option>
+                  <option value="972">
+                    Failure to meet compliance obligations
+                  </option>
+                  <option value="973">Failure to meet</option>
+                  <option value="971">
+                    Failure to meet compliance obligations
+                  </option>
+                  <option value="972">
+                    Failure to meet compliance obligations
+                  </option>
+                  <option value="973">Failure to meet</option>
+                  <option value="971">
+                    Failure to meet compliance obligations
+                  </option>
+                  <option value="972">
+                    Failure to meet compliance obligations
+                  </option>
+                  <option value="973">Failure to meet</option>
                 </select>
               </div>
 
@@ -2373,12 +2405,25 @@
                 </select>
               </div>
 
-              <div class="col-8 form-group">
+              <div class="col-12 form-group">
                 <label for="Name">Initiative Name</label>
-                <select class="form-control browser-default">
-                  <option value="Initiative 1">Initiative 1</option>
-                  <option value="Initiative 2">Initiative 2</option>
-                  <option value="Initiative 3">Initiative 3</option>
+                <select
+                  class="int-reg-multi-select"
+                  name="states[]"
+                  multiple="multiple"
+                >
+                  <option value="971">Initiatives</option>
+                  <option value="972">Initiatives</option>
+                  <option value="973">Failure to meet</option>
+                  <option value="971">Initiatives</option>
+                  <option value="972">Initiatives</option>
+                  <option value="973">Failure to meet</option>
+                  <option value="971">Initiatives</option>
+                  <option value="972">Initiatives</option>
+                  <option value="973">Failure to meet</option>
+                  <option value="971">Initiatives</option>
+                  <option value="972">Initiatives</option>
+                  <option value="973">Failure to meet</option>
                 </select>
               </div>
 
@@ -2395,23 +2440,6 @@
                             value=""
                           />
                           Name
-                          <span class="form-check-sign">
-                            <span class="check"></span>
-                          </span>
-                        </label>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="form-check">
-                      <div class="form-check">
-                        <label class="form-check-label">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            value=""
-                          />
-                          Category
                           <span class="form-check-sign">
                             <span class="check"></span>
                           </span>
@@ -2445,7 +2473,7 @@
                             type="checkbox"
                             value=""
                           />
-                          Likelihood
+                          Planned Start/ End Date
                           <span class="form-check-sign">
                             <span class="check"></span>
                           </span>
@@ -2462,7 +2490,7 @@
                             type="checkbox"
                             value=""
                           />
-                          Score
+                          Actual Start/ End Date
                           <span class="form-check-sign">
                             <span class="check"></span>
                           </span>
@@ -2479,7 +2507,7 @@
                             type="checkbox"
                             value=""
                           />
-                          Raised on
+                          Progress
                           <span class="form-check-sign">
                             <span class="check"></span>
                           </span>
@@ -2496,7 +2524,58 @@
                             type="checkbox"
                             value=""
                           />
-                          Next Assessment
+                          Total
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          Utilised
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          Balance
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          Progress
                           <span class="form-check-sign">
                             <span class="check"></span>
                           </span>
@@ -2539,7 +2618,10 @@
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="max-width: 100%"
+      >
         <div class="modal-content">
           <div class="modal-header">
             <h4>Table View</h4>
@@ -2685,7 +2767,10 @@
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="max-width: 100% !important"
+      >
         <div class="modal-content">
           <div class="modal-header">
             <h4>Table View</h4>
@@ -2718,7 +2803,7 @@
                     <i class="fas fa-flag" style="color: #28f76d"></i>
                   </td>
                   <td>12</td>
-                  <td>Risk 1</td>
+                  <td>Failure to meet compliance obligations</td>
                   <td>Regulatory</td>
                   <td style="color: #28f76d">Tolerable</td>
                   <td style="color: #f72f28">High</td>
@@ -2731,7 +2816,7 @@
                     <i class="fas fa-flag" style="color: #28f76d"></i>
                   </td>
                   <td>12</td>
-                  <td>Risk 1</td>
+                  <td>Failure to meet compliance obligations</td>
                   <td>Regulatory</td>
                   <td style="color: #28f76d">Tolerable</td>
                   <td style="color: #f72f28">High</td>
@@ -2744,7 +2829,7 @@
                     <i class="fas fa-flag" style="color: #28f76d"></i>
                   </td>
                   <td>12</td>
-                  <td>Risk 1</td>
+                  <td>Failure to meet compliance obligations</td>
                   <td>Regulatory</td>
                   <td style="color: #28f76d">Tolerable</td>
                   <td style="color: #f72f28">High</td>
@@ -2757,7 +2842,7 @@
                     <i class="fas fa-flag" style="color: #28f76d"></i>
                   </td>
                   <td>12</td>
-                  <td>Risk 1</td>
+                  <td>Failure to meet compliance obligations</td>
                   <td>Regulatory</td>
                   <td style="color: #28f76d">Tolerable</td>
                   <td style="color: #f72f28">High</td>
@@ -2770,7 +2855,7 @@
                     <i class="fas fa-flag" style="color: #28f76d"></i>
                   </td>
                   <td>12</td>
-                  <td>Risk 1</td>
+                  <td>Failure to meet compliance obligations</td>
                   <td>Regulatory</td>
                   <td style="color: #28f76d">Tolerable</td>
                   <td style="color: #f72f28">High</td>
@@ -2783,7 +2868,7 @@
                     <i class="fas fa-flag" style="color: #28f76d"></i>
                   </td>
                   <td>12</td>
-                  <td>Risk 1</td>
+                  <td>Failure to meet compliance obligations</td>
                   <td>Regulatory</td>
                   <td style="color: #28f76d">Tolerable</td>
                   <td style="color: #f72f28">High</td>
@@ -2796,7 +2881,7 @@
                     <i class="fas fa-flag" style="color: #28f76d"></i>
                   </td>
                   <td>12</td>
-                  <td>Risk 1</td>
+                  <td>Failure to meet compliance obligations</td>
                   <td>Regulatory</td>
                   <td style="color: #28f76d">Tolerable</td>
                   <td style="color: #f72f28">High</td>
@@ -2809,7 +2894,7 @@
                     <i class="fas fa-flag" style="color: #28f76d"></i>
                   </td>
                   <td>12</td>
-                  <td>Risk 1</td>
+                  <td>Failure to meet compliance obligations</td>
                   <td>Regulatory</td>
                   <td style="color: #28f76d">Tolerable</td>
                   <td style="color: #f72f28">High</td>
@@ -2822,7 +2907,7 @@
                     <i class="fas fa-flag" style="color: #28f76d"></i>
                   </td>
                   <td>12</td>
-                  <td>Risk 1</td>
+                  <td>Failure to meet compliance obligations</td>
                   <td>Regulatory</td>
                   <td style="color: #28f76d">Tolerable</td>
                   <td style="color: #f72f28">High</td>
@@ -2835,7 +2920,7 @@
                     <i class="fas fa-flag" style="color: #28f76d"></i>
                   </td>
                   <td>12</td>
-                  <td>Risk 1</td>
+                  <td>Failure to meet compliance obligations</td>
                   <td>Regulatory</td>
                   <td style="color: #28f76d">Tolerable</td>
                   <td style="color: #f72f28">High</td>
@@ -2848,7 +2933,7 @@
                     <i class="fas fa-flag" style="color: #28f76d"></i>
                   </td>
                   <td>12</td>
-                  <td>Risk 1</td>
+                  <td>Failure to meet compliance obligations</td>
                   <td>Regulatory</td>
                   <td style="color: #28f76d">Tolerable</td>
                   <td style="color: #f72f28">High</td>
@@ -2861,7 +2946,7 @@
                     <i class="fas fa-flag" style="color: #28f76d"></i>
                   </td>
                   <td>12</td>
-                  <td>Risk 1</td>
+                  <td>Failure to meet compliance obligations</td>
                   <td>Regulatory</td>
                   <td style="color: #28f76d">Tolerable</td>
                   <td style="color: #f72f28">High</td>
@@ -2874,7 +2959,7 @@
                     <i class="fas fa-flag" style="color: #28f76d"></i>
                   </td>
                   <td>12</td>
-                  <td>Risk 1</td>
+                  <td>Failure to meet compliance obligations</td>
                   <td>Regulatory</td>
                   <td style="color: #28f76d">Tolerable</td>
                   <td style="color: #f72f28">High</td>
@@ -2887,7 +2972,7 @@
                     <i class="fas fa-flag" style="color: #28f76d"></i>
                   </td>
                   <td>12</td>
-                  <td>Risk 1</td>
+                  <td>Failure to meet compliance obligations</td>
                   <td>Regulatory</td>
                   <td style="color: #28f76d">Tolerable</td>
                   <td style="color: #f72f28">High</td>
@@ -2900,7 +2985,7 @@
                     <i class="fas fa-flag" style="color: #28f76d"></i>
                   </td>
                   <td>12</td>
-                  <td>Risk 1</td>
+                  <td>Failure to meet compliance obligations</td>
                   <td>Regulatory</td>
                   <td style="color: #28f76d">Tolerable</td>
                   <td style="color: #f72f28">High</td>
@@ -2913,7 +2998,7 @@
                     <i class="fas fa-flag" style="color: #28f76d"></i>
                   </td>
                   <td>12</td>
-                  <td>Risk 1</td>
+                  <td>Failure to meet compliance obligations</td>
                   <td>Regulatory</td>
                   <td style="color: #28f76d">Tolerable</td>
                   <td style="color: #f72f28">High</td>
@@ -2938,7 +3023,10 @@
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="max-width: 100%"
+      >
         <div class="modal-content">
           <div class="modal-header">
             <h4>Table View</h4>
@@ -3191,7 +3279,10 @@
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="max-width: 100%"
+      >
         <div class="modal-content">
           <div class="modal-body">
             <div id="Columnlarge"></div>
@@ -3229,7 +3320,10 @@
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="max-width: 80%"
+      >
         <div class="modal-content">
           <div class="modal-body">
             <div id="Multiaxislarge"></div>
@@ -3248,7 +3342,10 @@
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="max-width: 80%"
+      >
         <div class="modal-content">
           <div class="modal-body">
             <div id="Bubblelarge"></div>
@@ -3267,7 +3364,11 @@
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="max-width: 80%"
+        style="max-width: 80%"
+      >
         <div class="modal-content">
           <div class="modal-body">
             <div id="Linelarge"></div>
@@ -3286,7 +3387,10 @@
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="max-width: 80%"
+      >
         <div class="modal-content">
           <div class="modal-body">
             <div id="Pielarge"></div>
@@ -3305,7 +3409,10 @@
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="max-width: 80%"
+      >
         <div class="modal-content">
           <div class="modal-body">
             <div id="Waterfalllarge"></div>
@@ -3324,7 +3431,10 @@
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="max-width: 80%"
+      >
         <div class="modal-content">
           <div class="modal-body">
             <div id="Stackedlarge"></div>
@@ -3343,7 +3453,10 @@
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="max-width: 80%"
+      >
         <div class="modal-content">
           <div class="modal-body">
             <div id="RadialMultilarge"></div>
@@ -3362,7 +3475,10 @@
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="max-width: 80%"
+      >
         <div class="modal-content">
           <div class="modal-body">
             <div id="Heatmaplarge"></div>
@@ -3381,7 +3497,10 @@
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="max-width: 80%"
+      >
         <div class="modal-content">
           <div class="modal-body">
             <div style="height: 400px" id="Maplarge"></div>
@@ -3400,7 +3519,10 @@
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="max-width: 80%"
+      >
         <div class="modal-content">
           <div class="modal-body">
             <div style="height: 400px" id="Ganttlarge"></div>
@@ -3737,6 +3859,11 @@
         $("#dataTableView").paging({ limit: 7 });
         $("#riskRegView").paging({ limit: 7 });
         $("#intRegView").paging({ limit: 7 });
+      });
+
+      $(document).ready(function () {
+        $(".risk-reg-multi-select").select2();
+        $(".int-reg-multi-select").select2();
       });
 
       function dragStart(event) {
@@ -4830,7 +4957,7 @@
 
         if (data == "HeatMap") {
           $("#dashboard-body")
-            .append(`<div class="col-md-6 select-toggle chart sub_initiatives">
+            .append(`<div class="col-md-12 select-toggle chart sub_initiatives">
             <div class="card" style="padding: 8px 12px;">
               <div class="header row" style="margin: 0;">
                 <div class="col-3">
@@ -4919,7 +5046,7 @@
 
         if (data == "Gantt") {
           $("#dashboard-body")
-            .append(`<div class="col-md-6 select-toggle chart sub_initiatives">
+            .append(`<div class="col-md-12 select-toggle chart sub_initiatives">
             <div class="card" style="padding: 8px 12px;">
               <div class="header row" style="margin: 0;">
                 <div class="col-3">
@@ -5445,7 +5572,7 @@
 
         if (data == "riskRegDiv") {
           $("#dashboard-body").append(`
-          <div class="col-md-6 select-toggle myinitiative sub_initiatives">
+          <div class="col-md-12 select-toggle myinitiative sub_initiatives">
             <div class="card" style="padding: 8px 12px; height: 398px;">
               <div class="header row" style="margin: 0;">
                 <div class="col-3">
@@ -5534,19 +5661,19 @@
                 <table
                     class="table dashboard-task-infos align-center dashboard-table"
                     id="riskRegister"
-                    style="margin-bottom: 0px !important; width: 700px;"
+                    style="margin-bottom: 0px !important;"
                   >
                     <thead>
                       <tr>
-                        <th style="width: 40px;">Status</th>
-                        <th style="width: 40px;">ID</th>
-                        <th style="width: 80px;">Name</th>
-                        <th style="width: 60px;">Category</th>
-                        <th style="width: 60px;">Impact</th>
-                        <th style="width: 50px;">Likelihood</th>
-                        <th style="width: 40px;">Score</th>
-                        <th style="width: 120px;">Raised on</th>
-                        <th style="width: 60px;">Next Assessment</th>
+                        <th>Status</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Impact</th>
+                        <th>Likelihood</th>
+                        <th>Score</th>
+                        <th>Raised on</th>
+                        <th>Next Assessment</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -5558,7 +5685,7 @@
                           ></i>
                         </td>
                         <td>12</td>
-                        <td>Risk 1</td>
+                        <td>Failure to meet compliance obligations</td>
                         <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
@@ -5576,7 +5703,7 @@
                           ></i>
                         </td>
                         <td>12</td>
-                        <td>Risk 1</td>
+                        <td>Failure to meet compliance obligations</td>
                         <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
@@ -5594,7 +5721,7 @@
                           ></i>
                         </td>
                         <td>12</td>
-                        <td>Risk 1</td>
+                        <td>Failure to meet compliance obligations</td>
                         <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
@@ -5612,7 +5739,7 @@
                           ></i>
                         </td>
                         <td>12</td>
-                        <td>Risk 1</td>
+                        <td>Failure to meet compliance obligations</td>
                         <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
@@ -5630,7 +5757,7 @@
                           ></i>
                         </td>
                         <td>12</td>
-                        <td>Risk 1</td>
+                        <td>Failure to meet compliance obligations</td>
                         <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
@@ -5648,7 +5775,7 @@
                           ></i>
                         </td>
                         <td>12</td>
-                        <td>Risk 1</td>
+                        <td>Failure to meet compliance obligations</td>
                         <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
@@ -5666,7 +5793,7 @@
                           ></i>
                         </td>
                         <td>12</td>
-                        <td>Risk 1</td>
+                        <td>Failure to meet compliance obligations</td>
                         <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
@@ -5684,7 +5811,7 @@
                           ></i>
                         </td>
                         <td>12</td>
-                        <td>Risk 1</td>
+                        <td>Failure to meet compliance obligations</td>
                         <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
@@ -5702,7 +5829,7 @@
                           ></i>
                         </td>
                         <td>12</td>
-                        <td>Risk 1</td>
+                        <td>Failure to meet compliance obligations</td>
                         <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
@@ -5720,7 +5847,7 @@
                           ></i>
                         </td>
                         <td>12</td>
-                        <td>Risk 1</td>
+                        <td>Failure to meet compliance obligations</td>
                         <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
@@ -5738,7 +5865,7 @@
                           ></i>
                         </td>
                         <td>12</td>
-                        <td>Risk 1</td>
+                        <td>Failure to meet compliance obligations</td>
                         <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
@@ -5756,7 +5883,7 @@
                           ></i>
                         </td>
                         <td>12</td>
-                        <td>Risk 1</td>
+                        <td>Failure to meet compliance obligations</td>
                         <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
@@ -5774,7 +5901,7 @@
                           ></i>
                         </td>
                         <td>12</td>
-                        <td>Risk 1</td>
+                        <td>Failure to meet compliance obligations</td>
                         <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
@@ -5792,7 +5919,25 @@
                           ></i>
                         </td>
                         <td>12</td>
-                        <td>Risk 1</td>
+                        <td>Failure to meet compliance obligations</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Failure to meet compliance obligations</td>
                         <td>Regulatory</td>
                         <td style="color: #28f76d;">
                           Tolerable
@@ -5808,19 +5953,23 @@
               </div>
             </div>
           </div>`);
+          $(document).ready(function () {
+            $("#riskRegister").paging({ limit: 7 });
+          });
+
           initDateRangePicker("#datePicker16");
           dataRender();
         }
 
         if (data == "intRegDiv") {
           $("#dashboard-body").append(`
-          <div class="col-md-6 select-toggle myinitiative sub_initiatives">
+          <div class="col-md-12 select-toggle myinitiative sub_initiatives">
             <div class="card" style="padding: 8px 12px; height: 398px;">
               <div class="header row" style="margin: 0;">
                 <div class="col-3">
                   <input
                     class="top_datepicker"
-                    id="datePicker16"
+                    id="datePicker17"
                     style="width: 100%;
                       margin-top: -4px;
                       text-align: left;
@@ -5902,8 +6051,8 @@
                 >
                 <table
                     class="table dashboard-task-infos align-center dashboard-table"
-                    id="riskRegister"
-                    style="margin-bottom: 0px !important; width: 700px;"
+                    id="intRegister"
+                    style="margin-bottom: 0px !important;"
                   >
                     <thead>
                       <tr>
@@ -6171,14 +6320,39 @@
                         <td>23-05-2020</td>
                         <td>23-06-2020</td>
                       </tr>
+                      <tr>
+                        <td>
+                          <i
+                            class="fas fa-flag"
+                            style="color: #28f76d;"
+                          ></i>
+                        </td>
+                        <td>12</td>
+                        <td>Initiative</td>
+                        <td>Regulatory</td>
+                        <td style="color: #28f76d;">
+                          Tolerable
+                        </td>
+                        <td style="color: #f72f28;">High</td>
+                        <td>3</td>
+                        <td>23-05-2020</td>
+                        <td>23-06-2020</td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
               </div>
             </div>
           </div>`);
+          $(document).ready(function () {
+            $("#intRegister").paging({ limit: 7 });
+          });
           initDateRangePicker("#datePicker17");
           dataRender();
+
+          $(document).ready(function () {
+            $(".int-reg-multi-select").select2();
+          });
         }
 
         if (data == "mapDragDiv") {
@@ -6935,6 +7109,7 @@
           ],
           chart: {
             height: 323,
+            width: "100%",
             type: "heatmap",
           },
           plotOptions: {

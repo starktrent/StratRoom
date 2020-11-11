@@ -1343,7 +1343,10 @@
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="max-width: 80%"
+      >
         <div class="modal-content">
           <div class="modal-body">
             <div id="Columnlarge"></div>
@@ -1362,7 +1365,10 @@
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="max-width: 80%"
+      >
         <div class="modal-content">
           <div class="modal-body">
             <div id="Arealarge"></div>
@@ -1381,7 +1387,10 @@
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="max-width: 80%"
+      >
         <div class="modal-content">
           <div class="modal-body">
             <div id="Multiaxislarge"></div>
@@ -1400,7 +1409,10 @@
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="max-width: 80%"
+      >
         <div class="modal-content">
           <div class="modal-body">
             <div id="Bubblelarge"></div>
@@ -1419,7 +1431,10 @@
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="max-width: 80%"
+      >
         <div class="modal-content">
           <div class="modal-body">
             <div id="Linelarge"></div>
@@ -1438,7 +1453,10 @@
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="max-width: 80%"
+      >
         <div class="modal-content">
           <div class="modal-body">
             <div id="Pielarge"></div>
@@ -1457,7 +1475,10 @@
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="max-width: 80%"
+      >
         <div class="modal-content">
           <div class="modal-body">
             <div id="Stackedlarge"></div>
@@ -1476,7 +1497,10 @@
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="max-width: 80%"
+      >
         <div class="modal-content">
           <div class="modal-body">
             <div id="NegativeClarge"></div>
@@ -1652,7 +1676,10 @@
                               >Enlarge</a
                             >
                           </li>
-
+                          <li>
+                            <a href="#" id="csv_option1" onclick="return false;" 
+                            style="display: none;">Download CSV</a>
+                          </li>
                           <li>
                             <a href="#" onclick="return false;">Delete</a>
                           </li>
@@ -1803,12 +1830,14 @@
               $("#tableTab2").show();
               $("#tableTabID2").hide();
               $("#bubblechartTabID").show();
+              $("#csv_option1").show();
             });
             $("#bubblechartTabID").click(function () {
               $("#tableTab2").hide();
               $("#bubblechartTab").show();
               $("#tableTabID2").show();
               $("#bubblechartTabID").hide();
+              $("#csv_option1").hide();
             });
           });
         }
@@ -1901,7 +1930,10 @@
                               >Enlarge</a
                             >
                           </li>
-
+                          <li>
+                            <a href="#" id="csv_option2" onclick="return false;" 
+                            style="display: none;">Download CSV</a>
+                          </li>
                           <li>
                             <a href="#" onclick="return false;">Delete</a>
                           </li>
@@ -2052,12 +2084,14 @@
               $("#tableTab3").show();
               $("#tableTabID3").hide();
               $("#columnchartTabID").show();
+              $("#csv_option2").show();
             });
             $("#columnchartTabID").click(function () {
               $("#tableTab3").hide();
               $("#columnchartTab").show();
               $("#tableTabID3").show();
               $("#columnchartTabID").hide();
+              $("#csv_option2").hide();
             });
           });
         }
@@ -2150,7 +2184,10 @@
                               >Enlarge</a
                             >
                           </li>
-
+                          <li>
+                            <a href="#" id="csv_option3" onclick="return false;" 
+                            style="display: none;">Download CSV</a>
+                          </li>
                           <li>
                             <a href="#" onclick="return false;">Delete</a>
                           </li>
@@ -2301,12 +2338,14 @@
               $("#tableTab4").show();
               $("#tableTabID4").hide();
               $("#linechartTabID").show();
+              $("#csv_option3").show();
             });
             $("#linechartTabID").click(function () {
               $("#tableTab4").hide();
               $("#linechartTab").show();
               $("#tableTabID4").show();
               $("#linechartTabID").hide();
+              $("#csv_option3").hide();
             });
           });
         }
@@ -2399,7 +2438,10 @@
                               >Enlarge</a
                             >
                           </li>
-
+                          <li>
+                            <a href="#" id="csv_option4" onclick="return false;" 
+                            style="display: none;">Download CSV</a>
+                          </li>
                           <li>
                             <a href="#" onclick="return false;">Delete</a>
                           </li>
@@ -2550,12 +2592,14 @@
               $("#tableTab1").show();
               $("#tableTabID1").hide();
               $("#areachartTabID").show();
+              $("#csv_option4").show();
             });
             $("#areachartTabID").click(function () {
               $("#tableTab1").hide();
               $("#areachartTab").show();
               $("#tableTabID1").show();
               $("#areachartTabID").hide();
+              $("#csv_option4").hide();
             });
           });
         }
@@ -2648,7 +2692,10 @@
                               >Enlarge</a
                             >
                           </li>
-
+                          <li>
+                            <a href="#" id="csv_option5" onclick="return false;" 
+                            style="display: none;">Download CSV</a>
+                          </li>
                           <li>
                             <a href="#" onclick="return false;">Delete</a>
                           </li>
@@ -2799,12 +2846,14 @@
               $("#tableTab5").show();
               $("#tableTabID5").hide();
               $("#piechartTabID").show();
+              $("#csv_option5").show();
             });
             $("#piechartTabID").click(function () {
               $("#tableTab5").hide();
               $("#piechartTab").show();
               $("#tableTabID5").show();
               $("#piechartTabID").hide();
+              $("#csv_option5").hide();
             });
           });
         }
@@ -2897,7 +2946,10 @@
                               >Enlarge</a
                             >
                           </li>
-
+                          <li>
+                            <a href="#" id="csv_option6" onclick="return false;" 
+                            style="display: none;">Download CSV</a>
+                          </li>
                           <li>
                             <a href="#" onclick="return false;">Delete</a>
                           </li>
@@ -3048,12 +3100,14 @@
               $("#tableTab6").show();
               $("#tableTabID6").hide();
               $("#multiaxischartTabID").show();
+              $("#csv_option6").show();
             });
             $("#multiaxischartTabID").click(function () {
               $("#tableTab6").hide();
               $("#multiaxischartTab").show();
               $("#tableTabID6").show();
               $("#multiaxischartTabID").hide();
+              $("#csv_option6").hide();
             });
           });
         }
@@ -3146,7 +3200,10 @@
                               >Enlarge</a
                             >
                           </li>
-
+                          <li>
+                            <a href="#" id="csv_option7" onclick="return false;" 
+                            style="display: none;">Download CSV</a>
+                          </li>
                           <li>
                             <a href="#" onclick="return false;">Delete</a>
                           </li>
@@ -3297,12 +3354,14 @@
               $("#tableTab7").show();
               $("#tableTabID7").hide();
               $("#stackedchartTabID").show();
+              $("#csv_option7").show();
             });
             $("#stackedchartTabID").click(function () {
               $("#tableTab7").hide();
               $("#stackedchartTab").show();
               $("#tableTabID7").show();
               $("#stackedchartTabID").hide();
+              $("#csv_option7").hide();
             });
           });
         }
@@ -3395,7 +3454,10 @@
                               >Enlarge</a
                             >
                           </li>
-
+                          <li>
+                            <a href="#" id="csv_option8" onclick="return false;" 
+                            style="display: none;">Download CSV</a>
+                          </li>
                           <li>
                             <a href="#" onclick="return false;">Delete</a>
                           </li>
@@ -3546,12 +3608,14 @@
               $("#tableTab8").show();
               $("#tableTabID8").hide();
               $("#negativecolumnTabID").show();
+              $("#csv_option8").show();
             });
             $("#negativecolumnTabID").click(function () {
               $("#tableTab8").hide();
               $("#negativecolumnchartTab").show();
               $("#tableTabID8").show();
               $("#negativecolumnTabID").hide();
+              $("#csv_option8").hide();
             });
           });
         }

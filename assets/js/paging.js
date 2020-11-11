@@ -32,7 +32,7 @@
         this._on(
           $("<a>", {
             href: "#",
-            text: "<<",
+            text: "<",
             "data-direction": -1,
           }).prependTo(nav),
           { click: "pageStepHandler" }
@@ -41,7 +41,7 @@
         this._on(
           $("<a>", {
             href: "#",
-            text: ">>",
+            text: ">",
             "data-direction": +1,
           }).appendTo(nav),
           { click: "pageStepHandler" }

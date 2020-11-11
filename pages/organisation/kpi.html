@@ -1024,7 +1024,31 @@
               <h5 class="prob d-flex flex-fill">
                 <strong style="color: #333">KPI</strong>
               </h5>
-              <div class="dropdown">
+              <a
+                href="#"
+                style="margin-right: 6px"
+                data-toggle="modal"
+                data-target="#risk_description_popup"
+              >
+                <img
+                  src="../organisation/images/icon/Plus.png"
+                  alt="Add Risk"
+                  style="width: 24px"
+                />
+              </a>
+              <a
+                href="#"
+                style="margin-right: 6px"
+                data-toggle="modal"
+                data-target="#"
+              >
+                <img
+                  src="../organisation/images/icon/Import.png"
+                  alt="Import"
+                  style="width: 24px"
+                />
+              </a>
+              <div class="dropdown" style="margin-right: -18px">
                 <a
                   href="#"
                   role="button"
@@ -1033,7 +1057,11 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  <i class="fas fa-filter"></i>
+                  <img
+                    src="../organisation/images/icon/Filter.png"
+                    alt="filter"
+                    style="width: 24px"
+                  />
                 </a>
 
                 <div
@@ -2555,7 +2583,7 @@
             <div class="modal-body">
               <div class="row">
                 <div class="form-group col-md-12 mt-2">
-                  <label for="kpi_fields">Data Fields</label>
+                  <label for="kpi_fields">Select</label>
                   <ul class="d-flex flex-row flex-wrap ml-2">
                     <li>
                       <div class="form-check">
@@ -2693,7 +2721,7 @@
             <div class="modal-body">
               <div class="row">
                 <div class="form-group col-md-12 mt-2">
-                  <label for="kpi_fields">Data Fields</label>
+                  <label for="kpi_fields">Select</label>
                   <ul class="d-flex flex-row flex-wrap ml-2">
                     <li>
                       <div class="form-check">
@@ -6358,6 +6386,15 @@
                           >Delete</a
                         >
                       </li>
+                      <li>
+                        <a
+                          href="#"
+                          data-toggle="modal"
+                          data-target="#"
+                          onclick="return false;"
+                          >Export to CSV</a
+                        >
+                      </li>
                     </ul>
                   </li>
                 </ul>
@@ -6570,6 +6607,15 @@
                           data-target="#"
                           onclick="return false;"
                           >Delete</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          data-toggle="modal"
+                          data-target="#"
+                          onclick="return false;"
+                          >Export to CSV</a
                         >
                       </li>
                     </ul>
