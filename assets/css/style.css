@@ -13612,7 +13612,7 @@ fieldset[disabled] .form-control {
   display: inline-block;
   height: calc(100vh - 60px);
   position: fixed;
-  top: 62px;
+  top: 60px;
   left: 0;
   border: 1px solid #e9ecef;
   z-index: 1030 !important;
