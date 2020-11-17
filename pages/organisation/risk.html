@@ -4734,7 +4734,9 @@
                             will-change: transform;
                             top: 0px;
                             left: 0px;
-                            width: 180px;
+                            width: 230px;
+                            padding-top: 12px;
+                            padding-bottom: 4px;
                             transform: translate3d(0px, 24px, 0px);
                           "
                         >
@@ -4743,80 +4745,97 @@
                               <ul class="multi-column-dropdown">
                                 <li>
                                   <a href="#">
-                                    <label>
-                                      <input
-                                        type="checkbox"
-                                        name="causenconsequence"
-                                        value="causenconsequence"
-                                        checked
-                                      />
-                                      Cause and Consequence</label
-                                    >
+                                    <div class="form-check">
+                                      <label class="form-check-label">
+                                        <input
+                                          class="form-check-input"
+                                          type="checkbox"
+                                          name="causenconsequence"
+                                          value="causenconsequence"
+                                          checked
+                                        />
+                                        Cause and Consequence
+                                        <span class="form-check-sign">
+                                          <span class="check"></span>
+                                        </span>
+                                      </label>
+                                    </div>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="#">
-                                    <label>
-                                      <input
-                                        type="checkbox"
-                                        name="chart"
-                                        value="chart"
-                                        checked
-                                      />
-                                      Chart</label
-                                    >
+                                    <div class="form-check">
+                                      <label class="form-check-label">
+                                        <input
+                                          class="form-check-input"
+                                          type="checkbox"
+                                          name="chart"
+                                          value="chart"
+                                          checked
+                                        />
+                                        Heat Map
+                                        <span class="form-check-sign">
+                                          <span class="check"></span>
+                                        </span>
+                                      </label>
+                                    </div>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="#">
-                                    <label>
-                                      <input
-                                        type="checkbox"
-                                        name="plan"
-                                        value="plan"
-                                        checked
-                                      />
-                                      Plan</label
-                                    >
+                                    <div class="form-check">
+                                      <label class="form-check-label">
+                                        <input
+                                          class="form-check-input"
+                                          type="checkbox"
+                                          name="risktreatment"
+                                          value="risktreatment"
+                                          checked
+                                        />
+                                        Risk Treatment
+                                        <span class="form-check-sign">
+                                          <span class="check"></span>
+                                        </span>
+                                      </label>
+                                    </div>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="#">
-                                    <label>
-                                      <input
-                                        type="checkbox"
-                                        name="activities"
-                                        value="activities"
-                                        checked
-                                      />
-                                      Activities</label
-                                    >
+                                    <div class="form-check">
+                                      <label class="form-check-label">
+                                        <input
+                                          class="form-check-input"
+                                          type="checkbox"
+                                          name="monitoring"
+                                          value="monitoring"
+                                          checked
+                                        />
+                                        Review & Monitoring
+                                        <span class="form-check-sign">
+                                          <span class="check"></span>
+                                        </span>
+                                      </label>
+                                    </div>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="#">
-                                    <label>
-                                      <input
-                                        type="checkbox"
-                                        name="monitoring"
-                                        value="monitoring"
-                                        checked
-                                      />
-                                      Monitoring</label
-                                    >
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#">
-                                    <label>
-                                      <input
-                                        type="checkbox"
-                                        name="comments"
-                                        value="comments"
-                                        checked
-                                      />
-                                      Comments</label
-                                    >
+                                    <div class="form-check">
+                                      <label class="form-check-label">
+                                        <input
+                                          class="form-check-input"
+                                          type="checkbox"
+                                          name="comments"
+                                          value="comments"
+                                          checked
+                                        />
+                                        Comments
+                                        <span class="form-check-sign">
+                                          <span class="check"></span>
+                                        </span>
+                                      </label>
+                                    </div>
                                   </a>
                                 </li>
                               </ul>
@@ -6162,7 +6181,7 @@
                   class="editableTxt1"
                   onkeypress="return (this.innerText.length <= 25)"
                   editable="true"
-                  >Chart</strong
+                  >Heat Map</strong
                 >
               </h5>
               <ul class="header-dropdown m-r--2">
@@ -6206,7 +6225,9 @@
         </div>
 
         <!-------Risk Treatment------->
-        <div class="col-lg-4 col-md-6 sub_initiatives select-toggle plan">
+        <div
+          class="col-lg-4 col-md-6 sub_initiatives select-toggle risktreatment"
+        >
           <div class="card">
             <div class="header d-flex flex-row">
               <h5 class="prob d-flex flex-fill">
