@@ -1066,6 +1066,8 @@
                   src="../organisation/images/icon/Plus.png"
                   alt="Add Risk"
                   style="width: 24px"
+                  data-toggle="tooltip"
+                  title="Add"
                 />
               </a>
               <a
@@ -1078,6 +1080,8 @@
                   src="../organisation/images/icon/Import.png"
                   alt="Import"
                   style="width: 24px"
+                  data-toggle="tooltip"
+                  title="Import"
                 />
               </a>
               <!-- <a
@@ -1103,6 +1107,8 @@
                     src="../organisation/images/icon/Filter.png"
                     alt="filter"
                     style="width: 24px"
+                    data-toggle="tooltip"
+                    title="Filter"
                   />
                 </a>
 
@@ -4707,18 +4713,29 @@
                     <h6>Failure to meet compliance obligations</h6>
                   </div>
                   <div class="employe_head_info_icon">
-                    <i
-                      class="fas fa-pencil-alt title_edit_icon"
+                    <span
                       data-toggle="modal"
                       data-target="#risk_description_edit_popup"
-                    ></i>
-                    <i
-                      class="fas fa-paperclip title_edit_icon"
-                      data-toggle="modal"
-                      data-target=".file_upload_popup"
-                    ></i>
+                    >
+                      <i
+                        class="fas fa-pencil-alt title_edit_icon"
+                        data-toggle="tooltip"
+                        title="Edit"
+                      ></i>
+                    </span>
+                    <span data-toggle="modal" data-target=".file_upload_popup">
+                      <i
+                        class="fas fa-paperclip title_edit_icon"
+                        data-toggle="tooltip"
+                        title="File Upload"
+                      ></i>
+                    </span>
                     <ul class="header-dropdown">
-                      <li class="dropdown title_edit_icon">
+                      <li
+                        class="dropdown title_edit_icon"
+                        data-toggle="tooltip"
+                        title="View"
+                      >
                         <a
                           href="#"
                           class="dropdown-toggle"
@@ -4845,7 +4862,11 @@
                       </li>
                     </ul>
                     <ul class="header-dropdown">
-                      <li class="dropdown title_edit_icon">
+                      <li
+                        class="dropdown title_edit_icon"
+                        data-toggle="tooltip"
+                        title="More"
+                      >
                         <a
                           href="#"
                           onclick="return false;"
@@ -7575,35 +7596,24 @@
     <!-- Custom Js -->
     <script src="../../assets/js/admin.js"></script>
     <script src="../../assets/js/file-preview.js"></script>
-    <script src="../../assets/js/bundles/amcharts4/core.js"></script>
-    <script src="../../assets/js/bundles/amcharts4/charts.js"></script>
-    <script src="../../assets/js/bundles/amcharts4/animated.js"></script>
+
     <!-- Knob Js -->
     <script src="../../assets/jquery-ui.min.js"></script>
     <script src="../../assets/moment.js"></script>
-    <script src="../../assets/js/pages/core.js"></script>
     <script src="../../assets/js/pages/charts.js"></script>
     <script src="../../assets/js/pages/spiritedaway.js"></script>
     <script src="../../assets/js/pages/animated.js"></script>
     <script src="../../assets/jquery.editable.min.js"></script>
-    <script
-      src="../../assets/js/bootstrap-popover-x.js"
-      type="text/javascript"
-    ></script>
-
-    <!-- <script src="../../assets/bootstrap-datepicker.min.js"></script> -->
-    <script src="../../assets/amcharts.js"></script>
-    <script src="../../assets/serial.js"></script>
-    <script src="../../assets/light.js"></script>
-    <script src="../../assets/d3.v4.js"></script>
-    <script src="../../assets/d3-scale-chromatic.v1.min.js"></script>
-    <script src="../../assets/jquery-resize.js"></script>
+    <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/pickr.es5.min.js"></script>
     <script src="../../assets/datepickerair.js"></script>
     <script src="../../assets/datepicker.en.js"></script>
     <script src="../../assets/js/widgets.js"></script>
+    <script src="../../assets/jquery-resize.js"></script>
+    <script src="../../assets/lodash.min.js"></script>
+    <script src="../../assets/loader.js"></script>
+    <script src="../../assets/js/paging.js"></script>
     <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
-    <script src="../../assets/knockout-3.5.0.js"></script>
-    <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
     <script src="../../assets/select2.min.js"></script>
     <script src="../../assets/js/risk.js"></script>
     <script src="../../assets/js/file-upload/file-upload.js"></script>

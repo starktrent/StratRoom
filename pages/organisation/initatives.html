@@ -1003,6 +1003,8 @@
                   src="../organisation/images/icon/Plus.png"
                   alt="Add Risk"
                   style="width: 24px"
+                  data-toggle="tooltip"
+                  title="Add"
                 />
               </a>
               <a
@@ -1015,6 +1017,8 @@
                   src="../organisation/images/icon/Import.png"
                   alt="Import"
                   style="width: 24px"
+                  data-toggle="tooltip"
+                  title="Import"
                 />
               </a>
               <div class="dropdown" style="margin-right: -18px">
@@ -1030,6 +1034,8 @@
                     src="../organisation/images/icon/Filter.png"
                     alt="filter"
                     style="width: 24px"
+                    data-toggle="tooltip"
+                    title="Filter"
                   />
                 </a>
 
@@ -4899,18 +4905,32 @@
                                         <p class="flex-fill">Chennai,TN,India </p>
                                         <p class="flex-fill">Karthik@stratrom.com</p> -->
                     <div class="employe_head_info_icon">
-                      <i
-                        class="fas fa-pencil-alt title_edit_icon"
+                      <span
                         data-toggle="modal"
                         data-target="#edit_initatives_description_popup"
-                      ></i>
-                      <i
-                        class="fas fa-paperclip title_edit_icon"
+                      >
+                        <i
+                          class="fas fa-pencil-alt title_edit_icon"
+                          data-toggle="tooltip"
+                          title="Edit"
+                        ></i>
+                      </span>
+                      <span
                         data-toggle="modal"
                         data-target=".file_upload_popup"
-                      ></i>
+                      >
+                        <i
+                          class="fas fa-paperclip title_edit_icon"
+                          data-toggle="tooltip"
+                          title="File Upload"
+                        ></i>
+                      </span>
                       <ul class="header-dropdown">
-                        <li class="dropdown title_edit_icon">
+                        <li
+                          class="dropdown title_edit_icon"
+                          data-toggle="tooltip"
+                          title="View"
+                        >
                           <a
                             href="#"
                             class="dropdown-toggle"
@@ -5037,7 +5057,11 @@
                         </li>
                       </ul>
                       <ul class="header-dropdown">
-                        <li class="dropdown title_edit_icon">
+                        <li
+                          class="dropdown title_edit_icon"
+                          data-toggle="tooltip"
+                          title="More"
+                        >
                           <a
                             href="#"
                             onclick="return false;"
