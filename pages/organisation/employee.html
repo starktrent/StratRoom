@@ -3983,96 +3983,123 @@
             </div>
 
             <div class="modal-body" style="overflow-y: auto">
-              <form id="kpiForm">
-                <div class="row">
-                  <div class="form-group col-md-2">
-                    <label for="sub_initative_desc">ID</label>
+              <form>
+                <div class="form-row">
+                  <div
+                    class="form-group mt-n2 col-md-2"
+                    id="Initiative_id_wrapper"
+                    style="display: block"
+                  >
+                    <label for="Initiative_id" class="active">ID</label>
                     <input
                       type="text"
-                      class="modal-custom-input"
-                      name="name"
-                      style="width: 98% !important"
+                      class="form-control browser-default"
+                      name="Initiative_show_id"
+                      id="Initiative_show_id"
+                      placeholder=""
+                      disabled=""
                     />
                   </div>
-                  <div class="form-group col-md-10">
-                    <label for="sub_initative_desc">Name</label>
+                  <div class="form-group mt-n2 col-md-10">
+                    <label for="Initiative_name" class="active">Name</label>
                     <input
                       type="text"
-                      class="modal-custom-input"
-                      name="name"
-                      style="width: 98% !important"
+                      class="form-control browser-default"
+                      name="Initiative_name"
+                      id="Initiative_name"
+                      placeholder=""
+                      autocomplete="off"
                     />
                   </div>
                 </div>
-
-                <div class="row m-t-10">
+                <hr />
+                <div class="form-row">
                   <div class="form-group col-md-12">
-                    <label for="sub_initative_desc">Description</label>
+                    <label for="Initiative_description" class="active"
+                      >Description</label
+                    >
                     <textarea
-                      class="modal-custom-textarea"
+                      class="form-control browser-default"
+                      name="Initiative_description"
+                      id="Initiative_description"
                       placeholder=""
+                      cols=""
                       rows="6"
+                      autocomplete="off"
                     ></textarea>
                   </div>
                 </div>
-
-                <div class="row m-t-10">
-                  <div class="form-group col-md-12">
-                    <label for="impact">Impact</label>
+                <hr />
+                <div class="form-row">
+                  <div class="form-group browser-default col-md-6">
+                    <label for="Initiative_owner">Owner</label>
                     <select
-                      id="impact"
-                      name="impact"
-                      class="modal-custom-select"
+                      id="Initiative_owner"
+                      name="Initiative_owner"
+                      class="form-control"
                     >
-                      <option>Choose</option>
-                      <option>Option - 1</option>
-                      <option>Option - 2</option>
-                      <option>Option - 3</option>
+                      <option value="">Select Owner</option>
+                      <option value="971">Raman V</option>
+                      <option value="977">William T</option>
+                      <option value="959">David Miller</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group browser-default col-md-6">
+                    <span id="impact_hidden" data-impact_hidden=""></span>
+                    <label for="impact">Impact</label>
+                    <select id="impact" name="impact" class="form-control">
+                      <option value="603293">% Sales from new products</option>
+                      <option value="603298">% Customer Retention</option>
+                      <option value="603299">% Employee Turnover Rate</option>
+                      <option value="603301">% Labor Utilization</option>
                     </select>
                   </div>
                 </div>
-
-                <div class="row m-t-10">
+                <hr />
+                <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label for="kpi_start_end_date"
+                    <label for="Initiative_start_end_date"
                       >Planned Start Date/End Date</label
                     >
                     <input
                       type="text"
-                      class="modal-custom-input date_pickers datepicker-here"
+                      class="form-control browser-default datepicker-here"
+                      name="Initiative_start_end_date"
                       data-range="true"
                       data-multiple-dates-separator=" - "
                       data-language="en"
-                      id="air-date-sub-init"
-                      style="width: 96% !important"
+                      id="Initiative_start_end_date"
+                      autocomplete="off"
                     />
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="kpi_start_end_date"
+                    <label for="actual_start_end_date"
                       >Actual Start Date/End Date</label
                     >
                     <input
                       type="text"
-                      class="modal-custom-input date_pickers datepicker-here"
+                      class="form-control browser-default datepicker-here"
                       data-range="true"
+                      name="Actual_start_end_date"
+                      id="Actual_start_end_date"
                       data-multiple-dates-separator=" - "
                       data-language="en"
-                      id="air-date-sub-init"
-                      style="width: 96% !important"
+                      autocomplete="off"
                     />
                   </div>
                 </div>
-
-                <div class="row m-t-10">
+                <hr />
+                <div class="form-row">
                   <div class="form-group col-md-12">
-                    <label for="">Status</label>
+                    <label for="">Manual Status</label>
                   </div>
                   <div class="form-group col-md-4">
                     <div class="radio icheck-success">
                       <input
                         type="radio"
                         id="primary1"
-                        checked
+                        value="success"
                         name="primary"
                       />
                       <label for="primary1"></label>
@@ -4080,27 +4107,37 @@
                   </div>
                   <div class="form-group col-md-4">
                     <div class="radio icheck-warning">
-                      <input type="radio" id="primary2" name="primary" />
+                      <input
+                        type="radio"
+                        id="primary2"
+                        value="warning"
+                        name="primary"
+                      />
                       <label for="primary2"></label>
                     </div>
                   </div>
                   <div class="form-group col-md-4">
                     <div class="radio icheck-danger">
-                      <input type="radio" id="primary3" name="primary" />
+                      <input
+                        type="radio"
+                        id="primary3"
+                        value="danger"
+                        name="primary"
+                      />
                       <label for="primary3"></label>
                     </div>
                   </div>
                 </div>
-
+                <hr />
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label for="kpi_start_end_date">Status</label>
+                    <label for="Initiative_start_end_date">Status</label>
                     <select
-                      id="inputState"
-                      class="modal-custom-select"
-                      style="width: 96% !important"
+                      id="statusType"
+                      name="statusType"
+                      class="form-control browser-default"
                     >
-                      <option>Choose</option>
+                      <option value="">Choose</option>
                       <option value="manual">Manual</option>
                       <option value="weighted">Weighted</option>
                       <option value="first">First</option>
@@ -4110,150 +4147,129 @@
                     </select>
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="kpi_name">Progress (%)</label>
+                    <label for="Initiative_progress" class=""
+                      >Progress (%)</label
+                    >
                     <input
                       type="number"
                       min="0"
-                      class="modal-custom-input"
-                      name="kpi_name"
-                      id="kpi_name"
-                      style="width: 96% !important"
+                      max="100"
+                      class="form-control browser-default"
+                      name="Initiative_progress"
+                      id="Initiative_progress"
+                      placeholder=""
+                      value="0"
                     />
                   </div>
                 </div>
-
-                <div class="row m-t-10">
-                  <div class="form-group col-md-12">
-                    <label for="kpi_fields">Data Fields</label>
-                    <ul class="d-flex flex-row flex-wrap mt-2">
-                      <li>
+                <hr />
+                <div class="form-row mt-2">
+                  <label for="kpi_fields" class="ml-2 mr-3">Data Fields</label>
+                  <ul class="d-flex flex-row flex-wrap ml-2">
+                    <li>
+                      <div class="form-check">
                         <div class="form-check">
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input
-                                class="form-check-input"
-                                type="checkbox"
-                                value=""
-                              />
-                              Actual
-                              <span class="form-check-sign">
-                                <span class="check"></span>
-                              </span>
-                            </label>
-                          </div>
+                          <label class="form-check-label" id="actuallabel"
+                            ><input
+                              id="actualId"
+                              class="form-check-input"
+                              type="checkbox"
+                              value="" />Actual<span class="form-check-sign"
+                              ><span class="check"></span></span
+                          ></label>
                         </div>
-                      </li>
-                      <li>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-check">
                         <div class="form-check">
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input
-                                class="form-check-input"
-                                type="checkbox"
-                                value=""
-                              />
-                              Target
-                              <span class="form-check-sign">
-                                <span class="check"></span>
-                              </span>
-                            </label>
-                          </div>
+                          <label class="form-check-label" id="targetlabel"
+                            ><input
+                              id="targetId"
+                              class="form-check-input"
+                              type="checkbox"
+                              value="" />Target<span class="form-check-sign"
+                              ><span class="check"></span></span
+                          ></label>
                         </div>
-                      </li>
-                      <li>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-check">
                         <div class="form-check">
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input
-                                class="form-check-input"
-                                type="checkbox"
-                                value=""
-                              />
-                              Budget
-                              <span class="form-check-sign">
-                                <span class="check"></span>
-                              </span>
-                            </label>
-                          </div>
+                          <label class="form-check-label" id="budgetlabel"
+                            ><input
+                              id="budgetID"
+                              class="form-check-input"
+                              type="checkbox"
+                              value="" />Budget<span class="form-check-sign"
+                              ><span class="check"></span></span
+                          ></label>
                         </div>
-                      </li>
-                      <li>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-check">
                         <div class="form-check">
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input
-                                class="form-check-input"
-                                type="checkbox"
-                                value=""
-                              />
-                              Forecast
-                              <span class="form-check-sign">
-                                <span class="check"></span>
-                              </span>
-                            </label>
-                          </div>
+                          <label class="form-check-label" id="forecastlabel"
+                            ><input
+                              id="forcastId"
+                              class="form-check-input"
+                              type="checkbox"
+                              value="" />Forecast<span class="form-check-sign"
+                              ><span class="check"></span></span
+                          ></label>
                         </div>
-                      </li>
-                    </ul>
-                  </div>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
-                <div class="row">
-                  <div class="form-group col-md-12">
-                    <label for="kpi_fields">Amount</label>
-                    <ul class="d-flex flex-row flex-wrap mt-2">
-                      <li>
+                <div class="form-row mt-2">
+                  <label for="kpi_fields" class="ml-2 mr-3">Amount</label>
+                  <ul class="d-flex flex-row flex-wrap ml-2">
+                    <li>
+                      <div class="form-check">
                         <div class="form-check">
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input
-                                class="form-check-input"
-                                type="checkbox"
-                                value=""
-                              />
-                              Budget
-                              <span class="form-check-sign">
-                                <span class="check"></span>
-                              </span>
-                            </label>
-                          </div>
+                          <label class="form-check-label" id="totallabel"
+                            ><input
+                              id="Totalid"
+                              class="form-check-input"
+                              type="checkbox"
+                              value="" />Total<span class="form-check-sign"
+                              ><span class="check"></span></span
+                          ></label>
                         </div>
-                      </li>
-                      <li>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-check">
                         <div class="form-check">
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input
-                                class="form-check-input"
-                                type="checkbox"
-                                value=""
-                              />
-                              Utillized
-                              <span class="form-check-sign">
-                                <span class="check"></span>
-                              </span>
-                            </label>
-                          </div>
+                          <label class="form-check-label" id="utilizedlabel"
+                            ><input
+                              id="Utilizedid"
+                              class="form-check-input"
+                              type="checkbox"
+                              value="" />Utillized<span class="form-check-sign"
+                              ><span class="check"></span></span
+                          ></label>
                         </div>
-                      </li>
-                      <li>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-check">
                         <div class="form-check">
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input
-                                class="form-check-input"
-                                type="checkbox"
-                                value=""
-                              />
-                              Balance
-                              <span class="form-check-sign">
-                                <span class="check"></span>
-                              </span>
-                            </label>
-                          </div>
+                          <label class="form-check-label" id="balancelabel"
+                            ><input
+                              id="Balanceid"
+                              class="form-check-input"
+                              type="checkbox"
+                              value="" />Balance<span class="form-check-sign"
+                              ><span class="check"></span></span
+                          ></label>
                         </div>
-                      </li>
-                    </ul>
-                  </div>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </form>
             </div>
@@ -6510,6 +6526,7 @@
                         <li
                           class="dropdown title_edit_icon"
                           data-toggle="tooltip"
+                          data-placement="bottom"
                           title="View"
                         >
                           <a
@@ -6927,6 +6944,7 @@
                         <li
                           class="dropdown title_edit_icon"
                           data-toggle="tooltip"
+                          data-placement="bottom"
                           title="More"
                         >
                           <a

@@ -21,7 +21,6 @@
     <!-- <link rel="stylesheet" href="../../assets/daterangepicker.css"> -->
     <link rel="stylesheet" href="../../assets/datepickerair.css" />
     <link href="../../assets/jquery-ui.min.css" rel="stylesheet" />
-    <link href="../../assets/css/employee.css" rel="stylesheet" />
     <link
       href="../../assets/daterangepicker/daterangepicker.min.css"
       rel="stylesheet"
@@ -86,7 +85,7 @@
         cursor: pointer;
       }
 
-      .card-icons i:nth-child(2) {
+      .card-icons span:nth-child(2) {
         margin-left: 8px;
       }
 
@@ -347,7 +346,7 @@
           ></a>
           <a href="#" onClick="return false;" class="bars"></a>
           <a href="#" onClick="return false;" class="bar_nav sidemenu-collapse"
-            ><i class="nav-hdr-btn ti-menu" style="color: #000;"></i
+            ><i class="nav-hdr-btn ti-menu" style="color: #000"></i
           ></a>
           <a class="navbar-brand nav_float" href="#">
             <img
@@ -359,7 +358,7 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="fullscreen" style="padding: 4px; left: -14px;">
+            <li class="fullscreen" style="padding: 4px; left: -14px">
               <ul class="list-unstyled order-list">
                 <li class="avatar avatar-sm">
                   <img
@@ -398,13 +397,13 @@
               <form class="form-header" action="" method="POST">
                 <input
                   class="au-input au-input--xl"
-                  style="min-width: 20%;"
+                  style="min-width: 20%"
                   type="text"
                   name="search"
                   placeholder="Search"
                 />
                 <button class="au-btn--submit" type="submit">
-                  <i class="fa fa-search" style="color: gray;"></i>
+                  <i class="fa fa-search" style="color: gray"></i>
                 </button>
               </form>
             </li>
@@ -422,7 +421,7 @@
                 data-toggle="dropdown"
                 role="button"
               >
-                <i class="nav-hdr-btn ti-bell" style="color: gray;"></i>
+                <i class="nav-hdr-btn ti-bell" style="color: gray"></i>
                 <span class="notify"></span>
                 <span class="heartbeat"></span>
               </a>
@@ -435,7 +434,7 @@
                 data-target="#settings"
                 role="button"
               >
-                <i class="nav-hdr-btn ti-settings" style="color: gray;"></i>
+                <i class="nav-hdr-btn ti-settings" style="color: gray"></i>
                 <span class="notify"></span>
                 <span class="heartbeat"></span>
               </a>
@@ -610,14 +609,14 @@
       </aside>
 
       <aside id="initiative_sidebar" class="initiative_sidebar">
-        <div class="sub_initiatives" id="sub_initiatives" style="height: 100%;">
-          <div class="card" style="height: 100%;">
+        <div class="sub_initiatives" id="sub_initiatives" style="height: 100%">
+          <div class="card" style="height: 100%">
             <div
               class="header d-flex flex-row initiate_sidebar"
-              style="margin-top: 5%;"
+              style="margin-top: 5%"
             >
-              <h5 class="prob flex-fill" style="text-align: center;">
-                <strong style="color: #333; font-size: 16px;"
+              <h5 class="prob flex-fill" style="text-align: center">
+                <strong style="color: #333; font-size: 16px"
                   >PESTEL ANALYSIS</strong
                 >
               </h5>
@@ -746,7 +745,7 @@
 
     <!-- Create Political Modal -->
     <div id="political_desc_add_popup" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" style="margin-top: 6%;">
+      <div class="modal-dialog modal-lg" style="margin-top: 6%">
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
@@ -768,7 +767,7 @@
                 <select
                   id="type"
                   class="modal-custom-select"
-                  style="height: 38px !important;"
+                  style="height: 38px !important"
                 >
                   <option value="#">Choose Type</option>
                   <option value="#">Internal</option>
@@ -782,7 +781,7 @@
                 <input
                   type="text"
                   class="modal-custom-input date_pickers_single"
-                  style="height: 58% !important;"
+                  style="height: 58% !important"
                   data-language="en"
                   name="kpi_start_end_date"
                   id="kpi_start_end_date"
@@ -796,7 +795,7 @@
                 <select
                   id="type"
                   class="modal-custom-select"
-                  style="height: 38px !important;"
+                  style="height: 38px !important"
                 >
                   <option value="#">Choose Impact</option>
                   <option value="#">Option 1</option>
@@ -821,10 +820,7 @@
                   checked
                 />
                 <label class="custom-control-label" for="defaultChecked1">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #20eaab;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #20eaab"></i>
                 </label>
               </div>
 
@@ -836,10 +832,7 @@
                   name="defaultExample2"
                 />
                 <label class="custom-control-label" for="defaultChecked2">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #fffb10;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #fffb10"></i>
                 </label>
               </div>
 
@@ -851,10 +844,7 @@
                   name="defaultExample2"
                 />
                 <label class="custom-control-label" for="defaultChecked3">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #ea2020;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #ea2020"></i>
                 </label>
               </div>
             </div>
@@ -873,9 +863,7 @@
                   >
                     Cancel
                   </button>
-                  <button class="initative_save_btn" value="Save">
-                    Save
-                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
                 </div>
               </div>
             </div>
@@ -886,7 +874,7 @@
 
     <!-- Edit Political Modal -->
     <div id="political_desc_edit_popup" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" style="margin-top: 6%;">
+      <div class="modal-dialog modal-lg" style="margin-top: 6%">
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
@@ -903,7 +891,7 @@
                   type="text"
                   class="modal-custom-input"
                   id="cause-name"
-                  style="height: 38px !important; width: 98% !important;"
+                  style="height: 38px !important; width: 98% !important"
                 />
               </div>
             </div>
@@ -919,7 +907,7 @@
                 <select
                   id="type"
                   class="modal-custom-select"
-                  style="height: 38px !important;"
+                  style="height: 38px !important"
                 >
                   <option value="#">Choose Type</option>
                   <option value="#">Internal</option>
@@ -933,7 +921,7 @@
                 <input
                   type="text"
                   class="modal-custom-input date_pickers_single"
-                  style="height: 58% !important; width: 95% !important;"
+                  style="height: 58% !important; width: 95% !important"
                   data-language="en"
                   name="kpi_start_end_date"
                   id="kpi_start_end_date"
@@ -947,7 +935,7 @@
                 <select
                   id="type"
                   class="modal-custom-select"
-                  style="height: 38px !important;"
+                  style="height: 38px !important"
                 >
                   <option value="#">Choose Impact</option>
                   <option value="#">Option 1</option>
@@ -972,10 +960,7 @@
                   checked
                 />
                 <label class="custom-control-label" for="defaultChecked4">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #20eaab;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #20eaab"></i>
                 </label>
               </div>
 
@@ -987,10 +972,7 @@
                   name="defaultExample2"
                 />
                 <label class="custom-control-label" for="defaultChecked5">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #fffb10;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #fffb10"></i>
                 </label>
               </div>
 
@@ -1002,10 +984,7 @@
                   name="defaultExample2"
                 />
                 <label class="custom-control-label" for="defaultChecked6">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #ea2020;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #ea2020"></i>
                 </label>
               </div>
             </div>
@@ -1024,9 +1003,7 @@
                   >
                     Cancel
                   </button>
-                  <button class="initative_save_btn" value="Save">
-                    Save
-                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
                 </div>
               </div>
             </div>
@@ -1037,7 +1014,7 @@
 
     <!-- Create Economic Modal -->
     <div id="economic_desc_add_popup" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" style="margin-top: 6%;">
+      <div class="modal-dialog modal-lg" style="margin-top: 6%">
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
@@ -1059,7 +1036,7 @@
                 <select
                   id="type"
                   class="modal-custom-select"
-                  style="height: 38px !important;"
+                  style="height: 38px !important"
                 >
                   <option value="#">Choose Type</option>
                   <option value="#">Internal</option>
@@ -1073,7 +1050,7 @@
                 <input
                   type="text"
                   class="modal-custom-input date_pickers_single"
-                  style="height: 58% !important;"
+                  style="height: 58% !important"
                   data-language="en"
                   name="kpi_start_end_date"
                   id="kpi_start_end_date"
@@ -1087,7 +1064,7 @@
                 <select
                   id="type"
                   class="modal-custom-select"
-                  style="height: 38px !important;"
+                  style="height: 38px !important"
                 >
                   <option value="#">Choose Impact</option>
                   <option value="#">Option 1</option>
@@ -1112,10 +1089,7 @@
                   checked
                 />
                 <label class="custom-control-label" for="defaultChecked1">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #20eaab;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #20eaab"></i>
                 </label>
               </div>
 
@@ -1127,10 +1101,7 @@
                   name="defaultExample2"
                 />
                 <label class="custom-control-label" for="defaultChecked2">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #fffb10;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #fffb10"></i>
                 </label>
               </div>
 
@@ -1142,10 +1113,7 @@
                   name="defaultExample2"
                 />
                 <label class="custom-control-label" for="defaultChecked3">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #ea2020;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #ea2020"></i>
                 </label>
               </div>
             </div>
@@ -1164,9 +1132,7 @@
                   >
                     Cancel
                   </button>
-                  <button class="initative_save_btn" value="Save">
-                    Save
-                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
                 </div>
               </div>
             </div>
@@ -1177,7 +1143,7 @@
 
     <!-- Edit Economic Modal -->
     <div id="economic_desc_edit_popup" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" style="margin-top: 6%;">
+      <div class="modal-dialog modal-lg" style="margin-top: 6%">
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
@@ -1194,7 +1160,7 @@
                   type="text"
                   class="modal-custom-input"
                   id="cause-name"
-                  style="height: 38px !important; width: 98% !important;"
+                  style="height: 38px !important; width: 98% !important"
                 />
               </div>
             </div>
@@ -1210,7 +1176,7 @@
                 <select
                   id="type"
                   class="modal-custom-select"
-                  style="height: 38px !important;"
+                  style="height: 38px !important"
                 >
                   <option value="#">Choose Type</option>
                   <option value="#">Internal</option>
@@ -1224,7 +1190,7 @@
                 <input
                   type="text"
                   class="modal-custom-input date_pickers_single"
-                  style="height: 58% !important; width: 95% !important;"
+                  style="height: 58% !important; width: 95% !important"
                   data-language="en"
                   name="kpi_start_end_date"
                   id="kpi_start_end_date"
@@ -1238,7 +1204,7 @@
                 <select
                   id="type"
                   class="modal-custom-select"
-                  style="height: 38px !important;"
+                  style="height: 38px !important"
                 >
                   <option value="#">Choose Impact</option>
                   <option value="#">Option 1</option>
@@ -1263,10 +1229,7 @@
                   checked
                 />
                 <label class="custom-control-label" for="defaultChecked4">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #20eaab;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #20eaab"></i>
                 </label>
               </div>
 
@@ -1278,10 +1241,7 @@
                   name="defaultExample2"
                 />
                 <label class="custom-control-label" for="defaultChecked5">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #fffb10;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #fffb10"></i>
                 </label>
               </div>
 
@@ -1293,10 +1253,7 @@
                   name="defaultExample2"
                 />
                 <label class="custom-control-label" for="defaultChecked6">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #ea2020;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #ea2020"></i>
                 </label>
               </div>
             </div>
@@ -1315,9 +1272,7 @@
                   >
                     Cancel
                   </button>
-                  <button class="initative_save_btn" value="Save">
-                    Save
-                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
                 </div>
               </div>
             </div>
@@ -1328,7 +1283,7 @@
 
     <!-- Create Social Modal -->
     <div id="social_desc_add_popup" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" style="margin-top: 6%;">
+      <div class="modal-dialog modal-lg" style="margin-top: 6%">
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
@@ -1350,7 +1305,7 @@
                 <select
                   id="type"
                   class="modal-custom-select"
-                  style="height: 38px !important;"
+                  style="height: 38px !important"
                 >
                   <option value="#">Choose Type</option>
                   <option value="#">Internal</option>
@@ -1364,7 +1319,7 @@
                 <input
                   type="text"
                   class="modal-custom-input date_pickers_single"
-                  style="height: 58% !important;"
+                  style="height: 58% !important"
                   data-language="en"
                   name="kpi_start_end_date"
                   id="kpi_start_end_date"
@@ -1378,7 +1333,7 @@
                 <select
                   id="type"
                   class="modal-custom-select"
-                  style="height: 38px !important;"
+                  style="height: 38px !important"
                 >
                   <option value="#">Choose Impact</option>
                   <option value="#">Option 1</option>
@@ -1403,10 +1358,7 @@
                   checked
                 />
                 <label class="custom-control-label" for="defaultChecked1">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #20eaab;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #20eaab"></i>
                 </label>
               </div>
 
@@ -1418,10 +1370,7 @@
                   name="defaultExample2"
                 />
                 <label class="custom-control-label" for="defaultChecked2">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #fffb10;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #fffb10"></i>
                 </label>
               </div>
 
@@ -1433,10 +1382,7 @@
                   name="defaultExample2"
                 />
                 <label class="custom-control-label" for="defaultChecked3">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #ea2020;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #ea2020"></i>
                 </label>
               </div>
             </div>
@@ -1455,9 +1401,7 @@
                   >
                     Cancel
                   </button>
-                  <button class="initative_save_btn" value="Save">
-                    Save
-                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
                 </div>
               </div>
             </div>
@@ -1468,7 +1412,7 @@
 
     <!-- Edit Social Modal -->
     <div id="social_desc_edit_popup" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" style="margin-top: 6%;">
+      <div class="modal-dialog modal-lg" style="margin-top: 6%">
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
@@ -1485,7 +1429,7 @@
                   type="text"
                   class="modal-custom-input"
                   id="cause-name"
-                  style="height: 38px !important; width: 98% !important;"
+                  style="height: 38px !important; width: 98% !important"
                 />
               </div>
             </div>
@@ -1501,7 +1445,7 @@
                 <select
                   id="type"
                   class="modal-custom-select"
-                  style="height: 38px !important;"
+                  style="height: 38px !important"
                 >
                   <option value="#">Choose Type</option>
                   <option value="#">Internal</option>
@@ -1515,7 +1459,7 @@
                 <input
                   type="text"
                   class="modal-custom-input date_pickers_single"
-                  style="height: 58% !important; width: 95% !important;"
+                  style="height: 58% !important; width: 95% !important"
                   data-language="en"
                   name="kpi_start_end_date"
                   id="kpi_start_end_date"
@@ -1529,7 +1473,7 @@
                 <select
                   id="type"
                   class="modal-custom-select"
-                  style="height: 38px !important;"
+                  style="height: 38px !important"
                 >
                   <option value="#">Choose Impact</option>
                   <option value="#">Option 1</option>
@@ -1554,10 +1498,7 @@
                   checked
                 />
                 <label class="custom-control-label" for="defaultChecked4">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #20eaab;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #20eaab"></i>
                 </label>
               </div>
 
@@ -1569,10 +1510,7 @@
                   name="defaultExample2"
                 />
                 <label class="custom-control-label" for="defaultChecked5">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #fffb10;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #fffb10"></i>
                 </label>
               </div>
 
@@ -1584,10 +1522,7 @@
                   name="defaultExample2"
                 />
                 <label class="custom-control-label" for="defaultChecked6">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #ea2020;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #ea2020"></i>
                 </label>
               </div>
             </div>
@@ -1606,9 +1541,7 @@
                   >
                     Cancel
                   </button>
-                  <button class="initative_save_btn" value="Save">
-                    Save
-                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
                 </div>
               </div>
             </div>
@@ -1619,7 +1552,7 @@
 
     <!-- Create Technological Modal -->
     <div id="tech_desc_add_popup" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" style="margin-top: 6%;">
+      <div class="modal-dialog modal-lg" style="margin-top: 6%">
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
@@ -1641,7 +1574,7 @@
                 <select
                   id="type"
                   class="modal-custom-select"
-                  style="height: 38px !important;"
+                  style="height: 38px !important"
                 >
                   <option value="#">Choose Type</option>
                   <option value="#">Internal</option>
@@ -1655,7 +1588,7 @@
                 <input
                   type="text"
                   class="modal-custom-input date_pickers_single"
-                  style="height: 58% !important;"
+                  style="height: 58% !important"
                   data-language="en"
                   name="kpi_start_end_date"
                   id="kpi_start_end_date"
@@ -1669,7 +1602,7 @@
                 <select
                   id="type"
                   class="modal-custom-select"
-                  style="height: 38px !important;"
+                  style="height: 38px !important"
                 >
                   <option value="#">Choose Impact</option>
                   <option value="#">Option 1</option>
@@ -1694,10 +1627,7 @@
                   checked
                 />
                 <label class="custom-control-label" for="defaultChecked1">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #20eaab;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #20eaab"></i>
                 </label>
               </div>
 
@@ -1709,10 +1639,7 @@
                   name="defaultExample2"
                 />
                 <label class="custom-control-label" for="defaultChecked2">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #fffb10;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #fffb10"></i>
                 </label>
               </div>
 
@@ -1724,10 +1651,7 @@
                   name="defaultExample2"
                 />
                 <label class="custom-control-label" for="defaultChecked3">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #ea2020;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #ea2020"></i>
                 </label>
               </div>
             </div>
@@ -1746,9 +1670,7 @@
                   >
                     Cancel
                   </button>
-                  <button class="initative_save_btn" value="Save">
-                    Save
-                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
                 </div>
               </div>
             </div>
@@ -1759,7 +1681,7 @@
 
     <!-- Edit Technological Modal -->
     <div id="tech_desc_edit_popup" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" style="margin-top: 6%;">
+      <div class="modal-dialog modal-lg" style="margin-top: 6%">
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
@@ -1776,7 +1698,7 @@
                   type="text"
                   class="modal-custom-input"
                   id="cause-name"
-                  style="height: 38px !important; width: 98% !important;"
+                  style="height: 38px !important; width: 98% !important"
                 />
               </div>
             </div>
@@ -1792,7 +1714,7 @@
                 <select
                   id="type"
                   class="modal-custom-select"
-                  style="height: 38px !important;"
+                  style="height: 38px !important"
                 >
                   <option value="#">Choose Type</option>
                   <option value="#">Internal</option>
@@ -1806,7 +1728,7 @@
                 <input
                   type="text"
                   class="modal-custom-input date_pickers_single"
-                  style="height: 58% !important; width: 95% !important;"
+                  style="height: 58% !important; width: 95% !important"
                   data-language="en"
                   name="kpi_start_end_date"
                   id="kpi_start_end_date"
@@ -1820,7 +1742,7 @@
                 <select
                   id="type"
                   class="modal-custom-select"
-                  style="height: 38px !important;"
+                  style="height: 38px !important"
                 >
                   <option value="#">Choose Impact</option>
                   <option value="#">Option 1</option>
@@ -1845,10 +1767,7 @@
                   checked
                 />
                 <label class="custom-control-label" for="defaultChecked4">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #20eaab;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #20eaab"></i>
                 </label>
               </div>
 
@@ -1860,10 +1779,7 @@
                   name="defaultExample2"
                 />
                 <label class="custom-control-label" for="defaultChecked5">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #fffb10;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #fffb10"></i>
                 </label>
               </div>
 
@@ -1875,10 +1791,7 @@
                   name="defaultExample2"
                 />
                 <label class="custom-control-label" for="defaultChecked6">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #ea2020;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #ea2020"></i>
                 </label>
               </div>
             </div>
@@ -1897,9 +1810,7 @@
                   >
                     Cancel
                   </button>
-                  <button class="initative_save_btn" value="Save">
-                    Save
-                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
                 </div>
               </div>
             </div>
@@ -1910,7 +1821,7 @@
 
     <!-- Create Environmental Modal -->
     <div id="env_desc_add_popup" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" style="margin-top: 6%;">
+      <div class="modal-dialog modal-lg" style="margin-top: 6%">
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
@@ -1932,7 +1843,7 @@
                 <select
                   id="type"
                   class="modal-custom-select"
-                  style="height: 38px !important;"
+                  style="height: 38px !important"
                 >
                   <option value="#">Choose Type</option>
                   <option value="#">Internal</option>
@@ -1946,7 +1857,7 @@
                 <input
                   type="text"
                   class="modal-custom-input date_pickers_single"
-                  style="height: 58% !important;"
+                  style="height: 58% !important"
                   data-language="en"
                   name="kpi_start_end_date"
                   id="kpi_start_end_date"
@@ -1960,7 +1871,7 @@
                 <select
                   id="type"
                   class="modal-custom-select"
-                  style="height: 38px !important;"
+                  style="height: 38px !important"
                 >
                   <option value="#">Choose Impact</option>
                   <option value="#">Option 1</option>
@@ -1985,10 +1896,7 @@
                   checked
                 />
                 <label class="custom-control-label" for="defaultChecked1">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #20eaab;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #20eaab"></i>
                 </label>
               </div>
 
@@ -2000,10 +1908,7 @@
                   name="defaultExample2"
                 />
                 <label class="custom-control-label" for="defaultChecked2">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #fffb10;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #fffb10"></i>
                 </label>
               </div>
 
@@ -2015,10 +1920,7 @@
                   name="defaultExample2"
                 />
                 <label class="custom-control-label" for="defaultChecked3">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #ea2020;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #ea2020"></i>
                 </label>
               </div>
             </div>
@@ -2037,9 +1939,7 @@
                   >
                     Cancel
                   </button>
-                  <button class="initative_save_btn" value="Save">
-                    Save
-                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
                 </div>
               </div>
             </div>
@@ -2050,7 +1950,7 @@
 
     <!-- Edit Environmental Modal -->
     <div id="env_desc_edit_popup" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" style="margin-top: 6%;">
+      <div class="modal-dialog modal-lg" style="margin-top: 6%">
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
@@ -2067,7 +1967,7 @@
                   type="text"
                   class="modal-custom-input"
                   id="cause-name"
-                  style="height: 38px !important; width: 98% !important;"
+                  style="height: 38px !important; width: 98% !important"
                 />
               </div>
             </div>
@@ -2083,7 +1983,7 @@
                 <select
                   id="type"
                   class="modal-custom-select"
-                  style="height: 38px !important;"
+                  style="height: 38px !important"
                 >
                   <option value="#">Choose Type</option>
                   <option value="#">Internal</option>
@@ -2097,7 +1997,7 @@
                 <input
                   type="text"
                   class="modal-custom-input date_pickers_single"
-                  style="height: 58% !important; width: 95% !important;"
+                  style="height: 58% !important; width: 95% !important"
                   data-language="en"
                   name="kpi_start_end_date"
                   id="kpi_start_end_date"
@@ -2111,7 +2011,7 @@
                 <select
                   id="type"
                   class="modal-custom-select"
-                  style="height: 38px !important;"
+                  style="height: 38px !important"
                 >
                   <option value="#">Choose Impact</option>
                   <option value="#">Option 1</option>
@@ -2136,10 +2036,7 @@
                   checked
                 />
                 <label class="custom-control-label" for="defaultChecked4">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #20eaab;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #20eaab"></i>
                 </label>
               </div>
 
@@ -2151,10 +2048,7 @@
                   name="defaultExample2"
                 />
                 <label class="custom-control-label" for="defaultChecked5">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #fffb10;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #fffb10"></i>
                 </label>
               </div>
 
@@ -2166,10 +2060,7 @@
                   name="defaultExample2"
                 />
                 <label class="custom-control-label" for="defaultChecked6">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #ea2020;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #ea2020"></i>
                 </label>
               </div>
             </div>
@@ -2188,9 +2079,7 @@
                   >
                     Cancel
                   </button>
-                  <button class="initative_save_btn" value="Save">
-                    Save
-                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
                 </div>
               </div>
             </div>
@@ -2201,7 +2090,7 @@
 
     <!-- Create Legal Modal -->
     <div id="legal_desc_add_popup" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" style="margin-top: 6%;">
+      <div class="modal-dialog modal-lg" style="margin-top: 6%">
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
@@ -2223,7 +2112,7 @@
                 <select
                   id="type"
                   class="modal-custom-select"
-                  style="height: 38px !important;"
+                  style="height: 38px !important"
                 >
                   <option value="#">Choose Type</option>
                   <option value="#">Internal</option>
@@ -2237,7 +2126,7 @@
                 <input
                   type="text"
                   class="modal-custom-input date_pickers_single"
-                  style="height: 58% !important;"
+                  style="height: 58% !important"
                   data-language="en"
                   name="kpi_start_end_date"
                   id="kpi_start_end_date"
@@ -2251,7 +2140,7 @@
                 <select
                   id="type"
                   class="modal-custom-select"
-                  style="height: 38px !important;"
+                  style="height: 38px !important"
                 >
                   <option value="#">Choose Impact</option>
                   <option value="#">Option 1</option>
@@ -2276,10 +2165,7 @@
                   checked
                 />
                 <label class="custom-control-label" for="defaultChecked1">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #20eaab;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #20eaab"></i>
                 </label>
               </div>
 
@@ -2291,10 +2177,7 @@
                   name="defaultExample2"
                 />
                 <label class="custom-control-label" for="defaultChecked2">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #fffb10;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #fffb10"></i>
                 </label>
               </div>
 
@@ -2306,10 +2189,7 @@
                   name="defaultExample2"
                 />
                 <label class="custom-control-label" for="defaultChecked3">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #ea2020;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #ea2020"></i>
                 </label>
               </div>
             </div>
@@ -2328,9 +2208,7 @@
                   >
                     Cancel
                   </button>
-                  <button class="initative_save_btn" value="Save">
-                    Save
-                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
                 </div>
               </div>
             </div>
@@ -2341,7 +2219,7 @@
 
     <!-- Edit Legal Modal -->
     <div id="legal_desc_edit_popup" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" style="margin-top: 6%;">
+      <div class="modal-dialog modal-lg" style="margin-top: 6%">
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
@@ -2358,7 +2236,7 @@
                   type="text"
                   class="modal-custom-input"
                   id="cause-name"
-                  style="height: 38px !important; width: 98% !important;"
+                  style="height: 38px !important; width: 98% !important"
                 />
               </div>
             </div>
@@ -2374,7 +2252,7 @@
                 <select
                   id="type"
                   class="modal-custom-select"
-                  style="height: 38px !important;"
+                  style="height: 38px !important"
                 >
                   <option value="#">Choose Type</option>
                   <option value="#">Internal</option>
@@ -2388,7 +2266,7 @@
                 <input
                   type="text"
                   class="modal-custom-input date_pickers_single"
-                  style="height: 58% !important; width: 95% !important;"
+                  style="height: 58% !important; width: 95% !important"
                   data-language="en"
                   name="kpi_start_end_date"
                   id="kpi_start_end_date"
@@ -2402,7 +2280,7 @@
                 <select
                   id="type"
                   class="modal-custom-select"
-                  style="height: 38px !important;"
+                  style="height: 38px !important"
                 >
                   <option value="#">Choose Impact</option>
                   <option value="#">Option 1</option>
@@ -2427,10 +2305,7 @@
                   checked
                 />
                 <label class="custom-control-label" for="defaultChecked4">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #20eaab;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #20eaab"></i>
                 </label>
               </div>
 
@@ -2442,10 +2317,7 @@
                   name="defaultExample2"
                 />
                 <label class="custom-control-label" for="defaultChecked5">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #fffb10;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #fffb10"></i>
                 </label>
               </div>
 
@@ -2457,10 +2329,7 @@
                   name="defaultExample2"
                 />
                 <label class="custom-control-label" for="defaultChecked6">
-                  <i
-                    class="fas fa-flag status-flag"
-                    style="color: #ea2020;"
-                  ></i>
+                  <i class="fas fa-flag status-flag" style="color: #ea2020"></i>
                 </label>
               </div>
             </div>
@@ -2479,9 +2348,7 @@
                   >
                     Cancel
                   </button>
-                  <button class="initative_save_btn" value="Save">
-                    Save
-                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
                 </div>
               </div>
             </div>
@@ -2502,17 +2369,22 @@
             </button>
           </div>
           <div class="modal-body">
-            <div class="row" style="padding: 16px;">
+            <div class="row" style="padding: 16px">
               <div
                 class="col-md-12"
-                style="margin-top: -12px; padding-bottom: 8px;"
+                style="margin-top: -12px; padding-bottom: 8px"
               >
                 <button
                   class="btn btn-custom-secondary"
                   data-toggle="modal"
                   data-target="#file_upload_popup"
                 >
-                  <i class="fa fa-plus"></i>
+                  <i
+                    class="fa fa-plus"
+                    data-toggle="tooltip"
+                    data-placement="bottom"
+                    title="Add"
+                  ></i>
                 </button>
               </div>
               <div class="col-md-12">
@@ -2521,7 +2393,7 @@
                     <table
                       class="table"
                       id="fileuploadTable"
-                      style="margin-bottom: 0px !important;"
+                      style="margin-bottom: 0px !important"
                     >
                       <thead>
                         <tr>
@@ -2535,243 +2407,351 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <td>
-                            1
-                          </td>
+                          <td>1</td>
                           <td>End Report</td>
                           <td>Oct 15, 2020</td>
                           <td>22 MB</td>
                           <td>PDF</td>
                           <td>
-                            <i
-                              class="fas fa-pen"
+                            <span
                               data-toggle="modal"
                               data-target=".file_upload_edit_popup"
-                            ></i>
-                            <i
-                              class="fas fa-trash"
-                              style="margin-left: 16px;"
-                            ></i>
+                            >
+                              <i
+                                class="fas fa-pen"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Edit"
+                              ></i>
+                            </span>
+                            <span>
+                              <i
+                                class="fas fa-trash"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Delete"
+                                style="margin-left: 16px"
+                              ></i>
+                            </span>
                           </td>
                         </tr>
                         <tr>
-                          <td>
-                            2
-                          </td>
+                          <td>2</td>
                           <td>End Report</td>
                           <td>Oct 15, 2020</td>
                           <td>22 MB</td>
                           <td>PDF</td>
                           <td>
-                            <i
-                              class="fas fa-pen"
+                            <span
                               data-toggle="modal"
                               data-target=".file_upload_edit_popup"
-                            ></i>
-                            <i
-                              class="fas fa-trash"
-                              style="margin-left: 16px;"
-                            ></i>
+                            >
+                              <i
+                                class="fas fa-pen"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Edit"
+                              ></i>
+                            </span>
+                            <span>
+                              <i
+                                class="fas fa-trash"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Delete"
+                                style="margin-left: 16px"
+                              ></i>
+                            </span>
                           </td>
                         </tr>
                         <tr>
-                          <td>
-                            3
-                          </td>
+                          <td>3</td>
                           <td>End Report</td>
                           <td>Oct 15, 2020</td>
                           <td>22 MB</td>
                           <td>PDF</td>
                           <td>
-                            <i
-                              class="fas fa-pen"
+                            <span
                               data-toggle="modal"
                               data-target=".file_upload_edit_popup"
-                            ></i>
-                            <i
-                              class="fas fa-trash"
-                              style="margin-left: 16px;"
-                            ></i>
+                            >
+                              <i
+                                class="fas fa-pen"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Edit"
+                              ></i>
+                            </span>
+                            <span>
+                              <i
+                                class="fas fa-trash"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Delete"
+                                style="margin-left: 16px"
+                              ></i>
+                            </span>
                           </td>
                         </tr>
                         <tr>
-                          <td>
-                            4
-                          </td>
+                          <td>4</td>
                           <td>End Report</td>
                           <td>Oct 15, 2020</td>
                           <td>22 MB</td>
                           <td>PDF</td>
                           <td>
-                            <i
-                              class="fas fa-pen"
+                            <span
                               data-toggle="modal"
                               data-target=".file_upload_edit_popup"
-                            ></i>
-                            <i
-                              class="fas fa-trash"
-                              style="margin-left: 16px;"
-                            ></i>
+                            >
+                              <i
+                                class="fas fa-pen"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Edit"
+                              ></i>
+                            </span>
+                            <span>
+                              <i
+                                class="fas fa-trash"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Delete"
+                                style="margin-left: 16px"
+                              ></i>
+                            </span>
                           </td>
                         </tr>
                         <tr>
-                          <td>
-                            5
-                          </td>
+                          <td>5</td>
                           <td>End Report</td>
                           <td>Oct 15, 2020</td>
                           <td>22 MB</td>
                           <td>PDF</td>
                           <td>
-                            <i
-                              class="fas fa-pen"
+                            <span
                               data-toggle="modal"
                               data-target=".file_upload_edit_popup"
-                            ></i>
-                            <i
-                              class="fas fa-trash"
-                              style="margin-left: 16px;"
-                            ></i>
+                            >
+                              <i
+                                class="fas fa-pen"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Edit"
+                              ></i>
+                            </span>
+                            <span>
+                              <i
+                                class="fas fa-trash"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Delete"
+                                style="margin-left: 16px"
+                              ></i>
+                            </span>
                           </td>
                         </tr>
                         <tr>
-                          <td>
-                            6
-                          </td>
+                          <td>6</td>
                           <td>End Report</td>
                           <td>Oct 15, 2020</td>
                           <td>22 MB</td>
                           <td>PDF</td>
                           <td>
-                            <i
-                              class="fas fa-pen"
+                            <span
                               data-toggle="modal"
                               data-target=".file_upload_edit_popup"
-                            ></i>
-                            <i
-                              class="fas fa-trash"
-                              style="margin-left: 16px;"
-                            ></i>
+                            >
+                              <i
+                                class="fas fa-pen"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Edit"
+                              ></i>
+                            </span>
+                            <span>
+                              <i
+                                class="fas fa-trash"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Delete"
+                                style="margin-left: 16px"
+                              ></i>
+                            </span>
                           </td>
                         </tr>
                         <tr>
-                          <td>
-                            7
-                          </td>
+                          <td>7</td>
                           <td>End Report</td>
                           <td>Oct 15, 2020</td>
                           <td>22 MB</td>
                           <td>PDF</td>
                           <td>
-                            <i
-                              class="fas fa-pen"
+                            <span
                               data-toggle="modal"
                               data-target=".file_upload_edit_popup"
-                            ></i>
-                            <i
-                              class="fas fa-trash"
-                              style="margin-left: 16px;"
-                            ></i>
+                            >
+                              <i
+                                class="fas fa-pen"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Edit"
+                              ></i>
+                            </span>
+                            <span>
+                              <i
+                                class="fas fa-trash"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Delete"
+                                style="margin-left: 16px"
+                              ></i>
+                            </span>
                           </td>
                         </tr>
                         <tr>
-                          <td>
-                            8
-                          </td>
+                          <td>8</td>
                           <td>End Report</td>
                           <td>Oct 15, 2020</td>
                           <td>22 MB</td>
                           <td>PDF</td>
                           <td>
-                            <i
-                              class="fas fa-pen"
+                            <span
                               data-toggle="modal"
                               data-target=".file_upload_edit_popup"
-                            ></i>
-                            <i
-                              class="fas fa-trash"
-                              style="margin-left: 16px;"
-                            ></i>
+                            >
+                              <i
+                                class="fas fa-pen"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Edit"
+                              ></i>
+                            </span>
+                            <span>
+                              <i
+                                class="fas fa-trash"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Delete"
+                                style="margin-left: 16px"
+                              ></i>
+                            </span>
                           </td>
                         </tr>
                         <tr>
-                          <td>
-                            9
-                          </td>
+                          <td>9</td>
                           <td>End Report</td>
                           <td>Oct 15, 2020</td>
                           <td>22 MB</td>
                           <td>PDF</td>
                           <td>
-                            <i
-                              class="fas fa-pen"
+                            <span
                               data-toggle="modal"
                               data-target=".file_upload_edit_popup"
-                            ></i>
-                            <i
-                              class="fas fa-trash"
-                              style="margin-left: 16px;"
-                            ></i>
+                            >
+                              <i
+                                class="fas fa-pen"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Edit"
+                              ></i>
+                            </span>
+                            <span>
+                              <i
+                                class="fas fa-trash"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Delete"
+                                style="margin-left: 16px"
+                              ></i>
+                            </span>
                           </td>
                         </tr>
                         <tr>
-                          <td>
-                            10
-                          </td>
+                          <td>10</td>
                           <td>End Report</td>
                           <td>Oct 15, 2020</td>
                           <td>22 MB</td>
                           <td>PDF</td>
                           <td>
-                            <i
-                              class="fas fa-pen"
+                            <span
                               data-toggle="modal"
                               data-target=".file_upload_edit_popup"
-                            ></i>
-                            <i
-                              class="fas fa-trash"
-                              style="margin-left: 16px;"
-                            ></i>
+                            >
+                              <i
+                                class="fas fa-pen"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Edit"
+                              ></i>
+                            </span>
+                            <span>
+                              <i
+                                class="fas fa-trash"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Delete"
+                                style="margin-left: 16px"
+                              ></i>
+                            </span>
                           </td>
                         </tr>
                         <tr>
-                          <td>
-                            11
-                          </td>
+                          <td>11</td>
                           <td>End Report</td>
                           <td>Oct 15, 2020</td>
                           <td>22 MB</td>
                           <td>PDF</td>
                           <td>
-                            <i
-                              class="fas fa-pen"
+                            <span
                               data-toggle="modal"
                               data-target=".file_upload_edit_popup"
-                            ></i>
-                            <i
-                              class="fas fa-trash"
-                              style="margin-left: 16px;"
-                            ></i>
+                            >
+                              <i
+                                class="fas fa-pen"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Edit"
+                              ></i>
+                            </span>
+                            <span>
+                              <i
+                                class="fas fa-trash"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Delete"
+                                style="margin-left: 16px"
+                              ></i>
+                            </span>
                           </td>
                         </tr>
                         <tr>
-                          <td>
-                            12
-                          </td>
+                          <td>12</td>
                           <td>End Report</td>
                           <td>Oct 15, 2020</td>
                           <td>22 MB</td>
                           <td>PDF</td>
                           <td>
-                            <i
-                              class="fas fa-pen"
+                            <span
                               data-toggle="modal"
                               data-target=".file_upload_edit_popup"
-                            ></i>
-                            <i
-                              class="fas fa-trash"
-                              style="margin-left: 16px;"
-                            ></i>
+                            >
+                              <i
+                                class="fas fa-pen"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Edit"
+                              ></i>
+                            </span>
+                            <span>
+                              <i
+                                class="fas fa-trash"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Delete"
+                                style="margin-left: 16px"
+                              ></i>
+                            </span>
                           </td>
                         </tr>
                       </tbody>
@@ -2804,7 +2784,7 @@
           </div>
           <div class="modal-body">
             <div class="row">
-              <div class="form-group col-md-10" style="padding-right: 4px;">
+              <div class="form-group col-md-10" style="padding-right: 4px">
                 <input
                   type="file"
                   class="modal-custom-input"
@@ -2817,7 +2797,7 @@
                 />
                 <span>Supported file type (jpeg,pdf,pptx,xlsx,docx)</span>
               </div>
-              <div class="col-2" style="padding-left: 4px;">
+              <div class="col-2" style="padding-left: 4px">
                 <div class="form-line left">
                   <button class="initative_save_btn" value="Upload">
                     Upload
@@ -2832,7 +2812,7 @@
 
     <!-- Recommendation Modal -->
     <div id="notes" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" style="margin-top: 8%;">
+      <div class="modal-dialog modal-lg" style="margin-top: 8%">
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
@@ -2841,9 +2821,14 @@
               <button
                 onclick="notes('note_table')"
                 class="form-control rounded-circle"
-                style="margin-top: -4px; border: none;"
+                style="margin-top: -4px; border: none"
               >
-                <i class="fa fa-plus"></i>
+                <i
+                  class="fa fa-plus"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Add"
+                ></i>
               </button>
             </div>
           </div>
@@ -2851,10 +2836,9 @@
             <table id="note_table" class="table table-bordered">
               <thead class="bg-light">
                 <tr>
-                  <th>
-                    Recommendation
-                  </th>
-                  <th style="width: 50px;">Responsible</th>
+                  <th>Recommendation</th>
+                  <th style="width: 50px">Responsible</th>
+                  <th style="width: 50px">Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -2868,7 +2852,7 @@
                         class="list-unstyled order-list"
                         data-toggle="modal"
                         data-target="#user_edit_popup"
-                        style="cursor: pointer;"
+                        style="cursor: pointer"
                       >
                         <li class="avatar avatar-sm">
                           <img
@@ -2902,6 +2886,14 @@
                         </div>
                       </ul>
                     </div>
+                  </td>
+                  <td>
+                    <i
+                      class="fas fa-trash"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title="Delete"
+                    ></i>
                   </td>
                 </tr>
                 <tr>
@@ -2914,7 +2906,7 @@
                         class="list-unstyled order-list"
                         data-toggle="modal"
                         data-target="#user_edit_popup"
-                        style="cursor: pointer;"
+                        style="cursor: pointer"
                       >
                         <li class="avatar avatar-sm">
                           <img
@@ -2948,6 +2940,14 @@
                         </div>
                       </ul>
                     </div>
+                  </td>
+                  <td>
+                    <i
+                      class="fas fa-trash"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title="Delete"
+                    ></i>
                   </td>
                 </tr>
               </tbody>
@@ -2967,9 +2967,7 @@
                   >
                     Cancel
                   </button>
-                  <button class="initative_save_btn" value="Save">
-                    Save
-                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
                 </div>
               </div>
             </div>
@@ -2982,7 +2980,7 @@
     <div id="action" class="modal fade" role="dialog">
       <div
         class="modal-dialog modal-lg"
-        style="margin-top: 6%; max-width: 60% !important;"
+        style="margin-top: 6%; max-width: 60% !important"
       >
         <!-- Modal content-->
         <div class="modal-content">
@@ -2992,9 +2990,14 @@
               <button
                 onclick="action('action_table')"
                 class="form-control rounded-circle"
-                style="margin-top: -4px; border: none;"
+                style="margin-top: -4px; border: none"
               >
-                <i class="fa fa-plus"></i>
+                <i
+                  class="fa fa-plus"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Add"
+                ></i>
               </button>
             </div>
           </div>
@@ -3003,9 +3006,10 @@
               <thead class="bg-light">
                 <tr>
                   <th>Actions</th>
-                  <th style="width: 150px;">By Date</th>
-                  <th style="width: 50px;">Responsible</th>
-                  <th style="width: 50px;">Status</th>
+                  <th style="width: 150px">By Date</th>
+                  <th style="width: 50px">Responsible</th>
+                  <th style="width: 50px">Status</th>
+                  <th style="width: 50px">Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -3021,10 +3025,7 @@
                         <input
                           type="text"
                           class="modal-custom-input date_pickers_single"
-                          style="
-                            height: 34px !important;
-                            width: 90% !important;
-                          "
+                          style="height: 34px !important; width: 90% !important"
                           data-language="en"
                           name="kpi_start_end_date"
                           id="kpi_start_end_date"
@@ -3038,7 +3039,7 @@
                         class="list-unstyled order-list"
                         data-toggle="modal"
                         data-target="#user_edit_popup"
-                        style="cursor: pointer;"
+                        style="cursor: pointer"
                       >
                         <li class="avatar avatar-sm">
                           <img
@@ -3070,6 +3071,14 @@
                   <td>
                     <input type="checkbox" />
                   </td>
+                  <td>
+                    <i
+                      class="fas fa-trash"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title="Delete"
+                    ></i>
+                  </td>
                 </tr>
                 <tr>
                   <td>
@@ -3083,10 +3092,7 @@
                         <input
                           type="text"
                           class="modal-custom-input date_pickers_single"
-                          style="
-                            height: 34px !important;
-                            width: 90% !important;
-                          "
+                          style="height: 34px !important; width: 90% !important"
                           data-language="en"
                           name="kpi_start_end_date"
                           id="kpi_start_end_date"
@@ -3100,7 +3106,7 @@
                         class="list-unstyled order-list"
                         data-toggle="modal"
                         data-target="#user_edit_popup"
-                        style="cursor: pointer;"
+                        style="cursor: pointer"
                       >
                         <li class="avatar avatar-sm">
                           <img
@@ -3130,6 +3136,14 @@
                     </div>
                   </td>
                   <td><input type="checkbox" /></td>
+                  <td>
+                    <i
+                      class="fas fa-trash"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title="Delete"
+                    ></i>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -3148,9 +3162,7 @@
                   >
                     Cancel
                   </button>
-                  <button class="initative_save_btn" value="Save">
-                    Save
-                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
                 </div>
               </div>
             </div>
@@ -3190,7 +3202,7 @@
                 <div
                   class="d-flex flex-column employee_div_body_box sub-ini-box"
                   id="sub-ini-box_view"
-                  style="overflow: hidden; width: auto; height: 340px;"
+                  style="overflow: hidden; width: auto; height: 340px"
                 >
                   <span id="sub-ini-box_view_users"
                     ><div
@@ -3211,11 +3223,11 @@
                           </div>
                           <div
                             class="d-flex flex-column init_flex_profile"
-                            style="margin-top: 3%; text-align: center;"
+                            style="margin-top: 3%; text-align: center"
                           >
                             <h5>David Miller</h5>
                           </div>
-                          <div class="img_details" style="width: 20%;">
+                          <div class="img_details" style="width: 20%">
                             <img
                               alt="David Miller"
                               src="images/user/usrbig8.jpg"
@@ -3243,11 +3255,11 @@
                           </div>
                           <div
                             class="d-flex flex-column init_flex_profile"
-                            style="margin-top: 3%; text-align: center;"
+                            style="margin-top: 3%; text-align: center"
                           >
                             <h5>Seema Chatterjee</h5>
                           </div>
-                          <div class="img_details" style="width: 20%;">
+                          <div class="img_details" style="width: 20%">
                             <img
                               alt="Seema Chatterjee"
                               src="images/user/usrbig10.jpg"
@@ -3275,11 +3287,11 @@
                           </div>
                           <div
                             class="d-flex flex-column init_flex_profile"
-                            style="margin-top: 3%; text-align: center;"
+                            style="margin-top: 3%; text-align: center"
                           >
                             <h5>Rafael Nadal</h5>
                           </div>
-                          <div class="img_details" style="width: 20%;">
+                          <div class="img_details" style="width: 20%">
                             <img
                               alt="Rafael Nadal"
                               src="images/user/usrbig9.jpg"
@@ -3307,11 +3319,11 @@
                           </div>
                           <div
                             class="d-flex flex-column init_flex_profile"
-                            style="margin-top: 3%; text-align: center;"
+                            style="margin-top: 3%; text-align: center"
                           >
                             <h5>Prakash Raj</h5>
                           </div>
-                          <div class="img_details" style="width: 20%;">
+                          <div class="img_details" style="width: 20%">
                             <img
                               alt="Prakash Raj"
                               src="images/user/usrbig6.jpg"
@@ -3340,11 +3352,11 @@
                           </div>
                           <div
                             class="d-flex flex-column init_flex_profile"
-                            style="margin-top: 3%; text-align: center;"
+                            style="margin-top: 3%; text-align: center"
                           >
                             <h5>Karthik Ramani</h5>
                           </div>
-                          <div class="img_details" style="width: 20%;">
+                          <div class="img_details" style="width: 20%">
                             <img
                               alt="Karthik Ramani"
                               src="images/user/usrbig7.jpg"
@@ -3399,7 +3411,7 @@
         <div class="col-lg-6 col-md-6 text-center text-sm-left pt-2 mb-0 ml-4">
           <h5
             class="page-title"
-            style="font-weight: 600; text-transform: uppercase;"
+            style="font-weight: 600; text-transform: uppercase"
           >
             PESTEL
           </h5>
@@ -3411,7 +3423,7 @@
       <div class="container-fluid">
         <!-- COl -->
 
-        <div class="collapse_arrow_right" style="display: none;">
+        <div class="collapse_arrow_right" style="display: none">
           <i class="arrow_collapse_size fas fa-caret-right"></i>
         </div>
         <div class="collapse_arrow_left">
@@ -3434,7 +3446,7 @@
                 >
                   <span>
                     <i
-                      style="font-size: 24px; padding-bottom: 8px;"
+                      style="font-size: 24px; padding-bottom: 8px"
                       class="fas fa-plus"
                     ></i>
                   </span>
@@ -3475,12 +3487,25 @@
                 </div>
                 <div class="col-md-3 col-3">
                   <span class="card-icons pull-right">
-                    <i
-                      class="fas fa-pen"
+                    <span
                       data-toggle="modal"
                       data-target="#political_desc_edit_popup"
-                    ></i>
-                    <i class="fas fa-trash"></i>
+                    >
+                      <i
+                        class="fas fa-pen"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Edit"
+                      ></i>
+                    </span>
+                    <span>
+                      <i
+                        class="fas fa-trash"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Delete"
+                      ></i>
+                    </span>
                   </span>
                 </div>
                 <div class="col-12">
@@ -3494,14 +3519,14 @@
                     <span>Lorem ipsum dolor sit amet elit</span>
                   </p>
                 </div>
-                <div class="col-4" style="text-align: center;">
-                  <h6 style="font-size: 12px;">Responsible</h6>
+                <div class="col-4" style="text-align: center">
+                  <h6 style="font-size: 12px">Responsible</h6>
                   <div class="d-flex flex-column">
                     <ul
                       class="list-unstyled order-list d-flex"
                       data-toggle="modal"
                       data-target="#user_edit_popup"
-                      style="cursor: pointer;"
+                      style="cursor: pointer"
                     >
                       <li class="avatar avatar-sm">
                         <img
@@ -3534,12 +3559,12 @@
                     </ul>
                   </div>
                 </div>
-                <div class="col-4 next-due" style="text-align: center;">
-                  <h6 style="font-size: 12px;">Next Due</h6>
+                <div class="col-4 next-due" style="text-align: center">
+                  <h6 style="font-size: 12px">Next Due</h6>
                   <p>Oct 12, 2020</p>
                 </div>
-                <div class="col-4 status" style="text-align: center;">
-                  <h6 style="font-size: 12px;">Status</h6>
+                <div class="col-4 status" style="text-align: center">
+                  <h6 style="font-size: 12px">Status</h6>
                   <span>
                     <i class="fas fa-flag"></i>
                   </span>
@@ -3602,7 +3627,7 @@
           </div>
         </div>
 
-        <div class="row" id="economical_section" style="display: none;">
+        <div class="row" id="economical_section" style="display: none">
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <div class="card cardBox">
               <div class="row">
@@ -3619,7 +3644,7 @@
                 >
                   <span>
                     <i
-                      style="font-size: 24px; padding-bottom: 8px;"
+                      style="font-size: 24px; padding-bottom: 8px"
                       class="fas fa-plus"
                     ></i>
                   </span>
@@ -3660,12 +3685,25 @@
                 </div>
                 <div class="col-md-3 col-3">
                   <span class="card-icons pull-right">
-                    <i
-                      class="fas fa-pen"
+                    <span
                       data-toggle="modal"
                       data-target="#economic_desc_edit_popup"
-                    ></i>
-                    <i class="fas fa-trash"></i>
+                    >
+                      <i
+                        class="fas fa-pen"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Edit"
+                      ></i>
+                    </span>
+                    <span>
+                      <i
+                        class="fas fa-trash"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Delete"
+                      ></i>
+                    </span>
                   </span>
                 </div>
                 <div class="col-12">
@@ -3679,14 +3717,14 @@
                     <span>Lorem ipsum dolor sit amet elit</span>
                   </p>
                 </div>
-                <div class="col-4" style="text-align: center;">
-                  <h6 style="font-size: 12px;">Responsible</h6>
+                <div class="col-4" style="text-align: center">
+                  <h6 style="font-size: 12px">Responsible</h6>
                   <div class="d-flex flex-column">
                     <ul
                       class="list-unstyled order-list d-flex"
                       data-toggle="modal"
                       data-target="#user_edit_popup"
-                      style="cursor: pointer;"
+                      style="cursor: pointer"
                     >
                       <li class="avatar avatar-sm">
                         <img
@@ -3719,12 +3757,12 @@
                     </ul>
                   </div>
                 </div>
-                <div class="col-4 next-due" style="text-align: center;">
-                  <h6 style="font-size: 12px;">Next Due</h6>
+                <div class="col-4 next-due" style="text-align: center">
+                  <h6 style="font-size: 12px">Next Due</h6>
                   <p>Oct 12, 2020</p>
                 </div>
-                <div class="col-4 status" style="text-align: center;">
-                  <h6 style="font-size: 12px;">Status</h6>
+                <div class="col-4 status" style="text-align: center">
+                  <h6 style="font-size: 12px">Status</h6>
                   <span>
                     <i class="fas fa-flag"></i>
                   </span>
@@ -3787,7 +3825,7 @@
           </div>
         </div>
 
-        <div class="row" id="social_section" style="display: none;">
+        <div class="row" id="social_section" style="display: none">
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <div class="card cardBox">
               <div class="row">
@@ -3804,7 +3842,7 @@
                 >
                   <span>
                     <i
-                      style="font-size: 24px; padding-bottom: 8px;"
+                      style="font-size: 24px; padding-bottom: 8px"
                       class="fas fa-plus"
                     ></i>
                   </span>
@@ -3845,12 +3883,25 @@
                 </div>
                 <div class="col-md-3 col-3">
                   <span class="card-icons pull-right">
-                    <i
-                      class="fas fa-pen"
+                    <span
                       data-toggle="modal"
                       data-target="#social_desc_edit_popup"
-                    ></i>
-                    <i class="fas fa-trash"></i>
+                    >
+                      <i
+                        class="fas fa-pen"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Edit"
+                      ></i>
+                    </span>
+                    <span>
+                      <i
+                        class="fas fa-trash"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Delete"
+                      ></i>
+                    </span>
                   </span>
                 </div>
                 <div class="col-12">
@@ -3864,14 +3915,14 @@
                     <span>Lorem ipsum dolor sit amet elit</span>
                   </p>
                 </div>
-                <div class="col-4" style="text-align: center;">
-                  <h6 style="font-size: 12px;">Responsible</h6>
+                <div class="col-4" style="text-align: center">
+                  <h6 style="font-size: 12px">Responsible</h6>
                   <div class="d-flex flex-column">
                     <ul
                       class="list-unstyled order-list d-flex"
                       data-toggle="modal"
                       data-target="#user_edit_popup"
-                      style="cursor: pointer;"
+                      style="cursor: pointer"
                     >
                       <li class="avatar avatar-sm">
                         <img
@@ -3904,12 +3955,12 @@
                     </ul>
                   </div>
                 </div>
-                <div class="col-4 next-due" style="text-align: center;">
-                  <h6 style="font-size: 12px;">Next Due</h6>
+                <div class="col-4 next-due" style="text-align: center">
+                  <h6 style="font-size: 12px">Next Due</h6>
                   <p>Oct 12, 2020</p>
                 </div>
-                <div class="col-4 status" style="text-align: center;">
-                  <h6 style="font-size: 12px;">Status</h6>
+                <div class="col-4 status" style="text-align: center">
+                  <h6 style="font-size: 12px">Status</h6>
                   <span>
                     <i class="fas fa-flag"></i>
                   </span>
@@ -3972,7 +4023,7 @@
           </div>
         </div>
 
-        <div class="row" id="tech_section" style="display: none;">
+        <div class="row" id="tech_section" style="display: none">
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <div class="card cardBox">
               <div class="row">
@@ -3989,7 +4040,7 @@
                 >
                   <span>
                     <i
-                      style="font-size: 24px; padding-bottom: 8px;"
+                      style="font-size: 24px; padding-bottom: 8px"
                       class="fas fa-plus"
                     ></i>
                   </span>
@@ -4030,12 +4081,25 @@
                 </div>
                 <div class="col-md-3 col-3">
                   <span class="card-icons pull-right">
-                    <i
-                      class="fas fa-pen"
+                    <span
                       data-toggle="modal"
                       data-target="#tech_desc_edit_popup"
-                    ></i>
-                    <i class="fas fa-trash"></i>
+                    >
+                      <i
+                        class="fas fa-pen"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Edit"
+                      ></i>
+                    </span>
+                    <span>
+                      <i
+                        class="fas fa-trash"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Delete"
+                      ></i>
+                    </span>
                   </span>
                 </div>
                 <div class="col-12">
@@ -4049,14 +4113,14 @@
                     <span>Lorem ipsum dolor sit amet elit</span>
                   </p>
                 </div>
-                <div class="col-4" style="text-align: center;">
-                  <h6 style="font-size: 12px;">Responsible</h6>
+                <div class="col-4" style="text-align: center">
+                  <h6 style="font-size: 12px">Responsible</h6>
                   <div class="d-flex flex-column">
                     <ul
                       class="list-unstyled order-list d-flex"
                       data-toggle="modal"
                       data-target="#user_edit_popup"
-                      style="cursor: pointer;"
+                      style="cursor: pointer"
                     >
                       <li class="avatar avatar-sm">
                         <img
@@ -4089,12 +4153,12 @@
                     </ul>
                   </div>
                 </div>
-                <div class="col-4 next-due" style="text-align: center;">
-                  <h6 style="font-size: 12px;">Next Due</h6>
+                <div class="col-4 next-due" style="text-align: center">
+                  <h6 style="font-size: 12px">Next Due</h6>
                   <p>Oct 12, 2020</p>
                 </div>
-                <div class="col-4 status" style="text-align: center;">
-                  <h6 style="font-size: 12px;">Status</h6>
+                <div class="col-4 status" style="text-align: center">
+                  <h6 style="font-size: 12px">Status</h6>
                   <span>
                     <i class="fas fa-flag"></i>
                   </span>
@@ -4157,7 +4221,7 @@
           </div>
         </div>
 
-        <div class="row" id="env_section" style="display: none;">
+        <div class="row" id="env_section" style="display: none">
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <div class="card cardBox">
               <div class="row">
@@ -4174,7 +4238,7 @@
                 >
                   <span>
                     <i
-                      style="font-size: 24px; padding-bottom: 8px;"
+                      style="font-size: 24px; padding-bottom: 8px"
                       class="fas fa-plus"
                     ></i>
                   </span>
@@ -4215,12 +4279,25 @@
                 </div>
                 <div class="col-md-3 col-3">
                   <span class="card-icons pull-right">
-                    <i
-                      class="fas fa-pen"
+                    <span
                       data-toggle="modal"
                       data-target="#env_desc_edit_popup"
-                    ></i>
-                    <i class="fas fa-trash"></i>
+                    >
+                      <i
+                        class="fas fa-pen"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Edit"
+                      ></i>
+                    </span>
+                    <span>
+                      <i
+                        class="fas fa-trash"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Delete"
+                      ></i>
+                    </span>
                   </span>
                 </div>
                 <div class="col-12">
@@ -4234,14 +4311,14 @@
                     <span>Lorem ipsum dolor sit amet elit</span>
                   </p>
                 </div>
-                <div class="col-4" style="text-align: center;">
-                  <h6 style="font-size: 12px;">Responsible</h6>
+                <div class="col-4" style="text-align: center">
+                  <h6 style="font-size: 12px">Responsible</h6>
                   <div class="d-flex flex-column">
                     <ul
                       class="list-unstyled order-list d-flex"
                       data-toggle="modal"
                       data-target="#user_edit_popup"
-                      style="cursor: pointer;"
+                      style="cursor: pointer"
                     >
                       <li class="avatar avatar-sm">
                         <img
@@ -4274,12 +4351,12 @@
                     </ul>
                   </div>
                 </div>
-                <div class="col-4 next-due" style="text-align: center;">
-                  <h6 style="font-size: 12px;">Next Due</h6>
+                <div class="col-4 next-due" style="text-align: center">
+                  <h6 style="font-size: 12px">Next Due</h6>
                   <p>Oct 12, 2020</p>
                 </div>
-                <div class="col-4 status" style="text-align: center;">
-                  <h6 style="font-size: 12px;">Status</h6>
+                <div class="col-4 status" style="text-align: center">
+                  <h6 style="font-size: 12px">Status</h6>
                   <span>
                     <i class="fas fa-flag"></i>
                   </span>
@@ -4342,7 +4419,7 @@
           </div>
         </div>
 
-        <div class="row" id="legal_section" style="display: none;">
+        <div class="row" id="legal_section" style="display: none">
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <div class="card cardBox">
               <div class="row">
@@ -4359,7 +4436,7 @@
                 >
                   <span>
                     <i
-                      style="font-size: 24px; padding-bottom: 8px;"
+                      style="font-size: 24px; padding-bottom: 8px"
                       class="fas fa-plus"
                     ></i>
                   </span>
@@ -4400,12 +4477,25 @@
                 </div>
                 <div class="col-md-3 col-3">
                   <span class="card-icons pull-right">
-                    <i
-                      class="fas fa-pen"
+                    <span
                       data-toggle="modal"
                       data-target="#legal_desc_edit_popup"
-                    ></i>
-                    <i class="fas fa-trash"></i>
+                    >
+                      <i
+                        class="fas fa-pen"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Edit"
+                      ></i>
+                    </span>
+                    <span>
+                      <i
+                        class="fas fa-trash"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Delete"
+                      ></i>
+                    </span>
                   </span>
                 </div>
                 <div class="col-12">
@@ -4419,14 +4509,14 @@
                     <span>Lorem ipsum dolor sit amet elit</span>
                   </p>
                 </div>
-                <div class="col-4" style="text-align: center;">
-                  <h6 style="font-size: 12px;">Responsible</h6>
+                <div class="col-4" style="text-align: center">
+                  <h6 style="font-size: 12px">Responsible</h6>
                   <div class="d-flex flex-column">
                     <ul
                       class="list-unstyled order-list d-flex"
                       data-toggle="modal"
                       data-target="#user_edit_popup"
-                      style="cursor: pointer;"
+                      style="cursor: pointer"
                     >
                       <li class="avatar avatar-sm">
                         <img
@@ -4459,12 +4549,12 @@
                     </ul>
                   </div>
                 </div>
-                <div class="col-4 next-due" style="text-align: center;">
-                  <h6 style="font-size: 12px;">Next Due</h6>
+                <div class="col-4 next-due" style="text-align: center">
+                  <h6 style="font-size: 12px">Next Due</h6>
                   <p>Oct 12, 2020</p>
                 </div>
-                <div class="col-4 status" style="text-align: center;">
-                  <h6 style="font-size: 12px;">Status</h6>
+                <div class="col-4 status" style="text-align: center">
+                  <h6 style="font-size: 12px">Status</h6>
                   <span>
                     <i class="fas fa-flag"></i>
                   </span>
@@ -4533,11 +4623,7 @@
     <script src="../../assets/js/app.min.js"></script>
     <!-- Custom Js -->
     <script src="../../assets/js/admin.js"></script>
-    <script src="../../assets/js/bundles/amcharts4/core.js"></script>
-    <script src="../../assets/js/bundles/amcharts4/charts.js"></script>
-    <script src="../../assets/js/bundles/amcharts4/animated.js"></script>
     <!-- Knob Js -->
-    <script src="../../assets/js/paging.js"></script>
     <script src="../../assets/jquery-ui.min.js"></script>
     <script src="../../assets/moment.js"></script>
     <script src="../../assets/js/pages/core.js"></script>
@@ -4554,9 +4640,10 @@
     <script src="../../assets/knockout-3.5.0.js"></script>
     <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
     <script src="../../assets/js/colors.js"></script>
-    <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
+    <!-- <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script> -->
     <script src="assets/daterangepicker/daterangepicker.min.js"></script>
+    <script src="../../assets/js/paging.js"></script>
     <script>
       $(document).ready(function () {
         $("#fileuploadTable").paging({ limit: 5 });
@@ -4620,6 +4707,10 @@
         var cell2 = row.insertCell(1);
         cell2.innerHTML =
           '<div class="fullscreen"> <ul class="list-unstyled order-list" data-toggle="modal" data-target="#user_edit_popup" style="cursor: pointer;"> <li class="avatar avatar-sm"> <img class="rounded-circle" src="../../assets/images/user/user7.jpg" alt="user"> </li><li class="avatar avatar-sm"> <img class="rounded-circle" src="../../assets/images/user/user8.jpg" alt="user"> </li><div class="image-upload"> <label for="file-input"> <li _ngcontent-hhc-c5="" class="avatar avatar-sm" > <a href="#" class="favgs" data-toggle="modal" data-target="#addpeople" > <span _ngcontent-hhc-c5="" class="badge" >+<span id="count"> </span></span ></a> </li></label> </div></ul> </div>';
+
+        var cell3 = row.insertCell(2);
+        cell3.innerHTML =
+          '<i class="fas fa-trash" data-toggle="tooltip" data-placement="top" title="Delete" ></i>';
       }
 
       function notes_del(tableID) {
@@ -4673,6 +4764,10 @@
 
         var cell4 = row.insertCell(3);
         cell4.innerHTML = '<input type="checkbox"  >';
+
+        var cell5 = row.insertCell(4);
+        cell5.innerHTML =
+          '<i class="fas fa-trash" data-toggle="tooltip" data-placement="top" title="Delete" ></i>';
       }
 
       function action_del(tableID) {

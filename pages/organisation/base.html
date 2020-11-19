@@ -164,9 +164,15 @@
                 data-toggle="dropdown"
                 role="button"
               >
-                <i class="nav-hdr-btn ti-bell" style="color: gray"></i>
-                <span class="notify"></span>
-                <span class="heartbeat"></span>
+                <i
+                  class="far fa-bell"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Notifications"
+                  style="color: gray"
+                ></i>
+                <!-- <span class="notify"></span>
+                <span class="heartbeat"></span> -->
               </a>
             </li>
             <div id="notifications">
@@ -218,23 +224,30 @@
               </div>
               <div class="seeAll"><a href="#">See All</a></div>
             </div>
-            <li class="dropdown">
-              <a href="#" role="button"
-                ><i class="fas fa-sign-out-alt" style="color: gray"></i>
-                <!-- <span class="notify"></span>
-                <span class="heartbeat"></span> -->
+            <li>
+              <a href="#" role="button">
+                <i
+                  class="fas fa-sign-out-alt"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Logout"
+                  style="color: gray"
+                ></i>
               </a>
             </li>
-            <!-- #END# Notifications-->
             <li class="">
               <a
                 href="#"
                 onclick="return false;"
-                class="dropdown-toggle js-right-sidebar"
+                class="js-right-sidebar"
                 data-close="true"
               >
-                <!-- <img src="../../assets/images/user.jpg" alt="user"> -->
-                <i class="fas fa-user-circle"></i>
+                <i
+                  class="fas fa-user-circle"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Profile"
+                ></i>
               </a>
             </li>
           </ul>
@@ -986,9 +999,6 @@
     <script src="../../assets/js/app.min.js"></script>
     <!-- Custom Js -->
     <script src="../../assets/js/admin.js"></script>
-    <script src="../../assets/js/bundles/amcharts4/core.js"></script>
-    <script src="../../assets/js/bundles/amcharts4/charts.js"></script>
-    <script src="../../assets/js/bundles/amcharts4/animated.js"></script>
     <!-- Knob Js -->
     <script src="../../assets/jquery-ui.min.js"></script>
     <script src="../../assets/moment.js"></script>
