@@ -99,6 +99,8 @@ window.onload = function(e){
 		   var label = shapeId;
 		   if (['Arrow3'].indexOf(label) !== -1) {
 			label = 'Arrow';
+		   } else if (['ExternalProcess'].indexOf(label) !== -1) {
+			label = 'Diamond';
 		   } else {
 			label = shapeId.toString();
 		   }

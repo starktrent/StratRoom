@@ -554,15 +554,15 @@
                   <div class="drag-title">Color Picker</div>
                   <ul>
                     <li class="text-left">
-                      <label for="" class="drag-block">Choose node background</label>
+                      <label for="" class="drag-block">Fill Color</label>
                       <input type="color" title="Choose node background" value="#88b663" id="colorBkgr">  
                     </li>
                     <li class="text-left">
-                      <label for="" class="drag-block">Choose font color</label>
+                      <label for="" class="drag-block">Font Color</label>
                       <input type="color" title="Choose font color" value="#ffffff" id="colorFont">
                     </li>
                     <li class="text-left">
-                      <label for="" class="drag-block">Choose border color</label>
+                      <label for="" class="drag-block">Border Color</label>
                       <input type="color" title="Choose border color" value="#000000" id="colorBorder">
                     </li>
                   </ul>
@@ -572,7 +572,11 @@
                   <div class="drag-title">Actions</div>
                   <ul>
                     <li>
-                      <button type="button" title="Clear all items" onclick="clearItems()" class="btn btn-outline-danger btn-block">Clear Items</button>  
+                      <button type="button" title="Clear all items" onclick="clearItems()" class="btn btn-outline-danger btn-block">Clear All</button>  
+                    </li>
+
+                    <li>
+                      <button type="button" title="Clear all items" onclick="clearItems()" class="btn btn-outline-danger btn-block">Clear</button>  
                     </li>
 
                     <li>
@@ -581,9 +585,9 @@
                     <li>
                       <button type="button" title="Save to local storage" onclick="save()" class="btn btn-outline-success btn-block">Save</button>
                     </li>
-                    <li>
+                    <!-- <li>
                       <button type="button" title="Load from local storage" onclick="load()" class="btn btn-outline-warning btn-block">Load</button>
-                    </li>                    
+                    </li>                     -->
                   </ul>
                 </div>
             </div>
