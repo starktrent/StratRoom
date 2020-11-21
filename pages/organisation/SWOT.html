@@ -2236,9 +2236,9 @@
             <h4>Recommendation</h4>
             <div class="float-right">
               <button
-                onclick="notes('note_table')"
                 class="form-control rounded-circle"
                 style="margin-top: -4px; border: none"
+                id="add_notes"
               >
                 <i
                   class="fa fa-plus"
@@ -2250,7 +2250,7 @@
             </div>
           </div>
           <div class="modal-body">
-            <table id="note_table" class="table table-bordered">
+            <table class="table table-bordered">
               <thead class="bg-light">
                 <tr>
                   <th>Recommendation</th>
@@ -2258,7 +2258,7 @@
                   <th style="width: 50px">Actions</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="note_table">
                 <tr>
                   <td>
                     <textarea class="form-control" rows="5"> </textarea>
@@ -2405,9 +2405,9 @@
             <h4>Actions</h4>
             <div class="float-right">
               <button
-                onclick="action('action_table')"
                 class="form-control rounded-circle"
                 style="margin-top: -4px; border: none"
+                id="add_action"
               >
                 <i
                   class="fa fa-plus"
@@ -2419,7 +2419,7 @@
             </div>
           </div>
           <div class="modal-body">
-            <table id="action_table" class="table table-bordered">
+            <table class="table table-bordered">
               <thead class="bg-light">
                 <tr>
                   <th>Actions</th>
@@ -2429,7 +2429,7 @@
                   <th style="width: 50px">Actions</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="action_table">
                 <tr>
                   <td>
                     <textarea class="form-control" cols="5" rows="5">
@@ -4373,120 +4373,142 @@
         );
       });
 
-      $(document).ready(function () {
-        $("#multiSelect1, #multiSelect2").formSelect();
-        $("select.select_all")
-          .siblings("ul")
-          .prepend("<li id=sm_select_all><span>Select All</span></li>");
-        $("li#sm_select_all").on("click", function () {
-          var jq_elem = $(this),
-            jq_elem_span = jq_elem.find("span"),
-            select_all = jq_elem_span.text() == "Select All",
-            set_text = select_all ? "Select None" : "Select All";
-          jq_elem_span.text(set_text);
-          jq_elem
-            .siblings("li")
-            .filter(function () {
-              return $(this).find("input").prop("checked") != select_all;
-            })
-            .click();
-        });
+      $("#add_notes").click(function () {
+        $("#note_table").append(`
+        <tr class="notes_clone">
+          <td>
+            <textarea class="form-control" rows="5"> </textarea>
+          </td>
+          <td>
+            <div class="fullscreen">
+              <ul
+                class="list-unstyled order-list"
+                data-toggle="modal"
+                data-target="#user_edit_popup"
+                style="cursor: pointer"
+              >
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user7.jpg"
+                    alt="user"
+                  />
+                </li>
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user8.jpg"
+                    alt="user"
+                  />
+                </li>
+                <div class="image-upload">
+                  <label for="file-input">
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <a
+                        href="#"
+                        class="favgs"
+                        data-toggle="modal"
+                        data-target="#addpeople"
+                      >
+                        <span _ngcontent-hhc-c5="" class="badge"
+                          >+</span
+                        >
+                      </a>
+                    </li>
+                  </label>
+                </div>
+              </ul>
+            </div>
+          </td>
+          <td>
+            <i
+              class="fas fa-trash remove-notes"
+              data-toggle="tooltip"
+              data-placement="top"
+              title="Delete"
+            ></i>
+          </td>
+        </tr>`);
       });
 
-      function notes(tableID) {
-        var table = document.getElementById(tableID);
+      $("#note_table").on("click", ".remove-notes", function (e) {
+        $(this).parents(".notes_clone").remove();
+      });
 
-        var rowCount = table.rows.length;
-        var row = table.insertRow(rowCount);
-
-        var cell1 = row.insertCell(0);
-        cell1.innerHTML =
-          '<textarea class="form-control" cols="5" rows="5" > </textarea>';
-
-        var cell2 = row.insertCell(1);
-        cell2.innerHTML =
-          '<div class="fullscreen"> <ul class="list-unstyled order-list" data-toggle="modal" data-target="#user_edit_popup" style="cursor: pointer;"> <li class="avatar avatar-sm"> <img class="rounded-circle" src="../../assets/images/user/user7.jpg" alt="user"> </li><li class="avatar avatar-sm"> <img class="rounded-circle" src="../../assets/images/user/user8.jpg" alt="user"> </li><div class="image-upload"> <label for="file-input"> <li _ngcontent-hhc-c5="" class="avatar avatar-sm" > <a href="#" class="favgs" data-toggle="modal" data-target="#addpeople" > <span _ngcontent-hhc-c5="" class="badge" >+<span id="count"> </span></span ></a> </li></label> </div></ul> </div>';
-
-        var cell3 = row.insertCell(2);
-        cell3.innerHTML =
-          '<i class="fas fa-trash" data-toggle="tooltip" data-placement="top" title="Delete" ></i>';
-      }
-
-      function notes_del(tableID) {
-        try {
-          var table = document.getElementById(tableID);
-          var rowCount = table.rows.length;
-
-          for (var i = 0; i < rowCount; i++) {
-            var row = table.rows[i];
-            var chkbox = row.cells[0].childNodes[0];
-            if (null != chkbox && true == chkbox.checked) {
-              table.deleteRow(i);
-              rowCount--;
-              i--;
-            }
-          }
-        } catch (e) {
-          alert(e);
-        }
-      }
-
-      function action(tableID) {
-        var table = document.getElementById(tableID);
-
-        var rowCount = table.rows.length;
-        var row = table.insertRow(rowCount);
-
-        var cell1 = row.insertCell(0);
-        var factor = rowCount;
-        cell1.innerHTML =
-          '<textarea class="form-control" cols="5" rows="5" > </textarea>';
-
-        var cell2 = row.insertCell(1);
-        cell2.innerHTML = `<div class="row">
-            <div class="form-group col-md-12">
-              <i class="far fa-calendar input-calender-icon1"></i>
-              <input
-                type="text"
-                class="modal-custom-input date_pickers_single"
-                style="height: 34px !important; width: 90% !important"
-                data-language="en"
-                name="kpi_start_end_date"
-                id="kpi_start_end_date"
-              />
+      $("#add_action").click(function () {
+        $("#action_table").append(`
+        <tr class="action_clone" style="border: 0;">
+          <td>
+            <textarea class="form-control" cols="5" rows="5">
+            </textarea>
+          </td>
+          <td>
+            <div class="row">
+              <div class="form-group col-md-12">
+                <i class="far fa-calendar input-calender-icon1"></i>
+                <input
+                  type="text"
+                  class="modal-custom-input date_pickers_single"
+                  style="height: 34px !important; width: 90% !important"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                />
+              </div>
             </div>
-          </div>`;
+          </td>
+          <td>
+            <div class="fullscreen">
+              <ul
+                class="list-unstyled order-list"
+                data-toggle="modal"
+                data-target="#user_edit_popup"
+                style="cursor: pointer"
+              >
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user7.jpg"
+                    alt="user"
+                  />
+                </li>
 
-        var cell3 = row.insertCell(2);
-        cell3.innerHTML =
-          '<div class="fullscreen"> <ul class="list-unstyled order-list" data-toggle="modal" data-target="#user_edit_popup" style="cursor: pointer;"> <li class="avatar avatar-sm"> <img class="rounded-circle" src="../../assets/images/user/user7.jpg" alt="user"/> </li><div class="image-upload"> <label for="file-input"> <li _ngcontent-hhc-c5="" class="avatar avatar-sm"> <a href="#" class="favgs" data-toggle="modal" data-target="#addpeople" > <span _ngcontent-hhc-c5="" class="badge" >+</span > </a> </li></label> </div></ul> </div>';
+                <div class="image-upload">
+                  <label for="file-input">
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <a
+                        href="#"
+                        class="favgs"
+                        data-toggle="modal"
+                        data-target="#addpeople"
+                      >
+                        <span _ngcontent-hhc-c5="" class="badge"
+                          >+</span
+                        >
+                      </a>
+                    </li>
+                  </label>
+                </div>
+              </ul>
+            </div>
+          </td>
+          <td>
+            <input type="checkbox" />
+          </td>
+          <td>
+            <i
+              class="fas fa-trash remove-action"
+              data-toggle="tooltip"
+              data-placement="top"
+              title="Delete"
+            ></i>
+          </td>
+        </tr>`);
+      });
 
-        var cell4 = row.insertCell(3);
-        cell4.innerHTML = '<input type="checkbox"  >';
-
-        var cell5 = row.insertCell(4);
-        cell5.innerHTML =
-          '<i class="fas fa-trash" data-toggle="tooltip" data-placement="top" title="Delete" ></i>';
-      }
-
-      function action_del(tableID) {
-        try {
-          var table = document.getElementById(tableID);
-          var rowCount = table.rows.length;
-
-          for (var i = 0; i < rowCount; i++) {
-            var row = table.rows[i];
-            var chkbox = row.cells[0].childNodes[0];
-            if (null != chkbox && true == chkbox.checked) {
-              table.deleteRow(i);
-              rowCount--;
-              i--;
-            }
-          }
-        } catch (e) {
-          alert(e);
-        }
-      }
+      $("#action_table").on("click", ".remove-action", function (e) {
+        $(this).parents(".action_clone").remove();
+      });
 
       $(".daterangepicker-field").daterangepicker({
         forceUpdate: true,
