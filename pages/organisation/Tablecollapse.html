@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<a lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>StratRoom</title>
+    <!-- Favicon-->
+    <!-- <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon"> -->
+    <!-- Plugins Core Css -->
+    <link href="../../assets/css/app.min.css" rel="stylesheet" />
+    <!-- Custom Css -->
+    <link href="../../assets/css/style.css" rel="stylesheet" />
+    <link href="../../assets/css/custom.css" rel="stylesheet" />
+    <link href="../../assets/css/initatives.css" rel="stylesheet" />
+    <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" />
+    <!-- You can choose a theme from css/styles instead of get all themes -->
+    <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
+    <!-- <link href="../../assets/css/table-view.css" rel="stylesheet" /> -->
+    <!-- <link rel="stylesheet" href="../../assets/daterangepicker.css"> -->
+    <link rel="stylesheet" href="../../assets/datepickerair.css" />
+    <link href="../../assets/jquery-ui.min.css" rel="stylesheet" />
+    <link href="../../assets/css/tablenew.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://colorlib.com/polygon/octopus/assets/vendor/jquery-datatables-bs3/assets/css/datatables.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../../assets/daterangepicker/daterangepicker.min.css"
+      rel="stylesheet"
+    />
+    <link href="../../assets/css/employee.css" rel="stylesheet" />
+    <!-- <link href="../../assets/bootstrap-datepicker.min.css" rel="stylesheet" /> -->
+
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      .orientation-right {
+        top: 60px !important;
+        right: 0 !important;
+        left: auto !important;
+        position: fixed;
+      }
+
+      .theme-black .swot-nav > li > a {
+        max-width: 160px;
+        overflow: hidden;
+        margin-bottom: -10px;
+      }
+    </style>
+  </head>
+
+  <body class="light">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+      <div class="loader">
+        <div class="m-t-30">
+          <img width="100" src="../../assets/images/logo_1.gif" alt="admin" />
+        </div>
+        <p>Please wait...</p>
+      </div>
+    </div>
+    <!-- <div>
+            <img src="../../assets/images/SP_Bg.png" alt="">
+        </div> -->
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a
+            href="#"
+            onClick="return false;"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#navbar-collapse"
+            aria-expanded="false"
+          ></a>
+          <a href="#" onClick="return false;" class="bars"></a>
+          <a href="#" onClick="return false;" class="bar_nav sidemenu-collapse"
+            ><i class="nav-hdr-btn ti-menu" style="color: #000"></i
+          ></a>
+          <a class="navbar-brand nav_float" href="#">
+            <img
+              src="../../assets/images/Startroom_Final logo-01_1.png"
+              alt=""
+            />
+            <!-- <span class="logo-name">Img</span> -->
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="fullscreen" style="padding: 4px; left: -14px">
+              <ul class="list-unstyled order-list">
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user7.jpg"
+                    alt="user"
+                  />
+                </li>
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user8.jpg"
+                    alt="user"
+                  />
+                </li>
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user9.jpg"
+                    alt="user"
+                  />
+                </li>
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user9.jpg"
+                    alt="user"
+                  />
+                </li>
+                <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                  <span _ngcontent-hhc-c5="" class="badge">+3</span>
+                </li>
+              </ul>
+            </li>
+            <li class="fullscreen">
+              <form class="form-header" action="" method="POST">
+                <input
+                  class="au-input au-input--xl"
+                  style="min-width: 20%"
+                  type="text"
+                  name="search"
+                  placeholder="Search"
+                />
+                <button class="au-btn--submit" type="submit">
+                  <i class="fa fa-search" style="color: gray"></i>
+                </button>
+              </form>
+            </li>
+            <li class="fullscreen">
+              <!-- <i class="nav-hdr-btn ti-calendar" style="color: gray"></i> -->
+              <input class="daterangepicker-field top_datepicker" />
+            </li>
+            <!-- #END# Full Screen Button -->
+            <!-- #START# Notifications-->
+            <li class="dropdown">
+              <a
+                href="#"
+                onClick="return false;"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+              >
+                <i class="nav-hdr-btn ti-bell" style="color: gray"></i>
+                <span class="notify"></span>
+                <span class="heartbeat"></span>
+              </a>
+            </li>
+            <li class="dropdown">
+              <a
+                href="#"
+                onClick="return false;"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+              >
+                <i class="nav-hdr-btn ti-settings" style="color: gray"></i>
+                <span class="notify"></span>
+                <span class="heartbeat"></span>
+              </a>
+            </li>
+            <!-- #END# Notifications-->
+            <li class="">
+              <a
+                href="#"
+                onclick="return false;"
+                class="dropdown-toggle js-right-sidebar"
+                data-close="true"
+              >
+                <!-- <img src="../../assets/images/user.jpg" alt="user"> -->
+                <i class="fas fa-user-circle"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- #Top Bar -->
+
+    <div>
+      <!-- Left Sidebar -->
+      <aside id="leftsidebar" class="sidebar">
+        <!-- Menu -->
+        <div class="menu">
+          <ul class="list">
+            <li class="active">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon fa fa-home font_icon"></i>
+                <span>Organisation Structure</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" onClick="return false;" class="menu-toggle">
+                <i class="menu-icon fa fa-dashboard font_icon"></i>
+                <span>Dashboards</span>
+              </a>
+              <ul class="ml-menu">
+                <li>
+                  <a href="#">BSC Dashboard</a>
+                </li>
+                <li>
+                  <a href="#">Strategy Map</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon fa fa-bar-chart font_icon"></i>
+                <span>Charts</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon fa fa-key font_icon"></i>
+                <span>Users & Access</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon fa fa-sitemap font_icon"></i>
+                <span>Workflows</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon fa fa-bell font_icon"></i>
+                <span>Notifications & Alerts</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon fa fa-database font_icon"></i>
+                <span>Data Management</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" onClick="return false;" class="menu-toggle">
+                <i class="menu-icon fa fa-laptop font_icon"></i>
+                <span>Template Management</span>
+              </a>
+              <ul class="ml-menu">
+                <li>
+                  <a
+                    href="#"
+                    id="sub-menu"
+                    onClick="return false;"
+                    class="menu-toggle"
+                  >
+                    Scorecard Layouts
+                  </a>
+                  <ul class="ml-menu">
+                    <li><a href="#">Standard BSC View</a></li>
+                    <li><a href="#">Dashboard View</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    id="sub-menu"
+                    onClick="return false;"
+                    class="menu-toggle"
+                  >
+                    Initiative
+                  </a>
+                  <ul class="ml-menu">
+                    <li><a href="#">Sub Initiatives</a></li>
+                    <li><a href="#">Tasks</a></li>
+                    <li><a href="#">Activities</a></li>
+                    <li><a href="#">Milestones</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Reports Table</a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    id="sub-menu"
+                    onClick="return false;"
+                    class="menu-toggle"
+                  >
+                    Comments
+                  </a>
+                  <ul class="ml-menu">
+                    <li><a href="#">Comments & Observations</a></li>
+                    <li><a href="#">Proof of Evidence</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Employee Layout</a>
+                </li>
+                <li>
+                  <a href="#">Appraisal</a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target=".data_collection_form"
+                    >Data Collection Form</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon fa fa-columns font_icon"></i>
+                <span>Widget Management</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="menu-icon fa fa-pie-chart font_icon"></i>
+                <span>Reports</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- #Menu -->
+      </aside>
+    </div>
+    <!-- #END# Left Sidebar -->
+
+    <!--#Start User Edit Popup -->
+    <div
+      class="modal fade"
+      id="user_edit_popup"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-modal="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Edit Users</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="">
+            <div class="col-lg-12 col-md-12 sub_initiatives">
+              <div
+                class="slimScrollDiv"
+                style="
+                  position: relative;
+                  overflow: hidden;
+                  width: auto;
+                  height: 340px;
+                "
+              >
+                <div
+                  class="d-flex flex-column employee_div_body_box sub-ini-box"
+                  id="sub-ini-box_view"
+                  style="overflow: hidden; width: auto; height: 340px"
+                >
+                  <span id="sub-ini-box_view_users"
+                    ><div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                type="checkbox"
+                                value="959" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center"
+                          >
+                            <h5>David Miller</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%">
+                            <img
+                              alt="David Miller"
+                              src="images/user/usrbig8.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                type="checkbox"
+                                value="960" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center"
+                          >
+                            <h5>Seema Chatterjee</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%">
+                            <img
+                              alt="Seema Chatterjee"
+                              src="images/user/usrbig10.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                type="checkbox"
+                                value="961" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center"
+                          >
+                            <h5>Rafael Nadal</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%">
+                            <img
+                              alt="Rafael Nadal"
+                              src="images/user/usrbig9.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                type="checkbox"
+                                value="962" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center"
+                          >
+                            <h5>Prakash Raj</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%">
+                            <img
+                              alt="Prakash Raj"
+                              src="images/user/usrbig6.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                checked=""
+                                type="checkbox"
+                                value="958" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center"
+                          >
+                            <h5>Karthik Ramani</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%">
+                            <img
+                              alt="Karthik Ramani"
+                              src="images/user/usrbig7.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div></div
+                  ></span>
+                </div>
+                <div
+                  class="slimScrollBar"
+                  style="
+                    background: rgb(156, 156, 156);
+                    width: 3px;
+                    position: absolute;
+                    top: 0px;
+                    opacity: 0.4;
+                    display: none;
+                    border-radius: 7px;
+                    z-index: 99;
+                    right: 1px;
+                    height: 340px;
+                  "
+                ></div>
+                <div
+                  class="slimScrollRail"
+                  style="
+                    width: 3px;
+                    height: 100%;
+                    position: absolute;
+                    top: 0px;
+                    display: none;
+                    border-radius: 7px;
+                    background: rgb(51, 51, 51);
+                    opacity: 0.2;
+                    z-index: 90;
+                    right: 1px;
+                  "
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--#End User Edit Popup -->
+
+    <!-- Content Start -->
+    <section class="content">
+      <!-- Page Header -->
+      <div class="page-header row no-gutters py-2 m-t--70">
+        <div class="col-lg-6 col-md-6 text-center text-sm-left pt-2 mb-0 ml-4">
+          <h5
+            class="page-title"
+            style="font-weight: 600; text-transform: uppercase"
+          >
+            Table
+          </h5>
+        </div>
+      </div>
+      <!-- End Page Header -->
+
+      <!-- Page Body -->
+      <div class="container-fluid">
+        <!-- COl -->
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="card" style="padding: 16px">
+              <div class="row">
+                <div class="col-md-12">
+                  <!-- Table -->
+                  <section class="panel">
+                    <!-- <header class="panel-heading">
+                      <h2 class="panel-title">Rows with Details</h2>
+                    </header> -->
+                    <div class="panel-body">
+                      <table
+                        class="table table-bordered table-striped mb-none"
+                        id="datatable-details"
+                      >
+                        <thead>
+                          <tr>
+                            <th>Rendering engine</th>
+                            <th>Browser</th>
+                            <th>Platform(s)</th>
+                            <th>Engine version</th>
+                            <th>CSS grade</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="gradeX">
+                            <td>Trident</td>
+                            <td>Internet Explorer 4.0</td>
+                            <td>Win 95+</td>
+                            <td class="center">4</td>
+                            <td class="center">X</td>
+                          </tr>
+                          <tr class="gradeC">
+                            <td>Trident</td>
+                            <td>Internet Explorer 5.0</td>
+                            <td>Win 95+</td>
+                            <td class="center">5</td>
+                            <td class="center">C</td>
+                          </tr>
+                          <tr class="gradeA">
+                            <td>Trident</td>
+                            <td>Internet Explorer 5.5</td>
+                            <td>Win 95+</td>
+                            <td class="center">5.5</td>
+                            <td class="center">A</td>
+                          </tr>
+                          <tr class="gradeA">
+                            <td>Trident</td>
+                            <td>Internet Explorer 6</td>
+                            <td>Win 98+</td>
+                            <td class="center">6</td>
+                            <td class="center">A</td>
+                          </tr>
+                          <tr class="gradeA">
+                            <td>Trident</td>
+                            <td>Internet Explorer 7</td>
+                            <td>Win XP SP2+</td>
+                            <td class="center">7</td>
+                            <td class="center">A</td>
+                          </tr>
+                          <tr class="gradeA">
+                            <td>Trident</td>
+                            <td>AOL browser (AOL desktop)</td>
+                            <td>Win XP</td>
+                            <td class="center">6</td>
+                            <td class="center">A</td>
+                          </tr>
+                          <tr class="gradeA">
+                            <td>Gecko</td>
+                            <td>Firefox 1.0</td>
+                            <td>Win 98+ / OSX.2+</td>
+                            <td class="center">1.7</td>
+                            <td class="center">A</td>
+                          </tr>
+                          <tr class="gradeA">
+                            <td>Gecko</td>
+                            <td>Firefox 1.5</td>
+                            <td>Win 98+ / OSX.2+</td>
+                            <td class="center">1.8</td>
+                            <td class="center">A</td>
+                          </tr>
+                          <tr class="gradeA">
+                            <td>Gecko</td>
+                            <td>Firefox 2.0</td>
+                            <td>Win 98+ / OSX.2+</td>
+                            <td class="center">1.8</td>
+                            <td class="center">A</td>
+                          </tr>
+                          <tr class="gradeA">
+                            <td>Trident</td>
+                            <td>Internet Explorer 5.5</td>
+                            <td>Win 95+</td>
+                            <td class="center">5.5</td>
+                            <td class="center">A</td>
+                          </tr>
+                          <tr class="gradeA">
+                            <td>Trident</td>
+                            <td>Internet Explorer 6</td>
+                            <td>Win 98+</td>
+                            <td class="center">6</td>
+                            <td class="center">A</td>
+                          </tr>
+                          <tr class="gradeA">
+                            <td>Trident</td>
+                            <td>Internet Explorer 7</td>
+                            <td>Win XP SP2+</td>
+                            <td class="center">7</td>
+                            <td class="center">A</td>
+                          </tr>
+                          <tr class="gradeA">
+                            <td>Trident</td>
+                            <td>AOL browser (AOL desktop)</td>
+                            <td>Win XP</td>
+                            <td class="center">6</td>
+                            <td class="center">A</td>
+                          </tr>
+                          <tr class="gradeA">
+                            <td>Gecko</td>
+                            <td>Firefox 1.0</td>
+                            <td>Win 98+ / OSX.2+</td>
+                            <td class="center">1.7</td>
+                            <td class="center">A</td>
+                          </tr>
+                          <tr class="gradeA">
+                            <td>Gecko</td>
+                            <td>Firefox 1.5</td>
+                            <td>Win 98+ / OSX.2+</td>
+                            <td class="center">1.8</td>
+                            <td class="center">A</td>
+                          </tr>
+                          <tr class="gradeA">
+                            <td>Gecko</td>
+                            <td>Firefox 2.0</td>
+                            <td>Win 98+ / OSX.2+</td>
+                            <td class="center">1.8</td>
+                            <td class="center">A</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Page Body -->
+    </section>
+    <!-- Content Start -->
+
+    <!-- Plugins Js -->
+    <script src="../../assets/js/app.min.js"></script>
+    <!-- Custom Js -->
+    <script src="../../assets/js/admin.js"></script>
+    <!-- Knob Js -->
+    <script src="../../assets/jquery-ui.min.js"></script>
+    <script src="../../assets/select2.min.js"></script>
+    <script src="https://colorlib.com/polygon/octopus/assets/vendor/jquery-datatables/media/js/jquery.dataTables.js"></script>
+    <script src="https://colorlib.com/polygon/octopus/assets/vendor/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
+    <script src="https://colorlib.com/polygon/octopus/assets/vendor/jquery-datatables-bs3/assets/js/datatables.js"></script>
+
+    <script src="https://colorlib.com/polygon/octopus/assets/javascripts/tables/examples.datatables.row.with.details.js"></script>
+    <script src="https://colorlib.com/polygon/octopus/assets/javascripts/tables/examples.datatables.tabletools.js"></script>
+
+    <script>
+      $(".daterangepicker-field").daterangepicker({
+        forceUpdate: true,
+        callback: function (startDate, endDate, period) {
+          var title = startDate.format("L") + " – " + endDate.format("L");
+          $(this).val(title);
+        },
+      });
+    </script>
+  </body>
+</a>
