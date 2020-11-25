@@ -8,6 +8,10 @@
     <!-- Favicon-->
     <!-- <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon"> -->
     <!-- Plugins Core Css -->
+    <!-- <link
+      href="https://colorlib.com/polygon/kiaalap/css/bootstrap.min.css"
+      rel="stylesheet"
+    /> -->
     <link href="../../assets/css/app.min.css" rel="stylesheet" />
     <!-- Custom Css -->
     <link href="../../assets/css/style.css" rel="stylesheet" />
@@ -16,31 +20,24 @@
     <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" />
     <!-- You can choose a theme from css/styles instead of get all themes -->
     <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
-    <!-- <link href="../../assets/css/table-view.css" rel="stylesheet" /> -->
-    <!-- <link rel="stylesheet" href="../../assets/daterangepicker.css"> -->
     <link rel="stylesheet" href="../../assets/datepickerair.css" />
     <link href="../../assets/jquery-ui.min.css" rel="stylesheet" />
-    <link href="../../assets/css/tablenew.css" rel="stylesheet" />
+
     <link
       rel="stylesheet"
-      href="https://colorlib.com/polygon/octopus/assets/vendor/jquery-datatables-bs3/assets/css/datatables.css"
+      href="../../assets/data-table/css/data-table/bootstrap-table.css"
     />
+    <link rel="stylesheet" href="../../assets/data-table/css/responsive.css" />
+
     <link
       href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css"
       rel="stylesheet"
     />
+
     <link
-      href="../../assets/daterangepicker/daterangepicker.min.css"
+      href="assets/daterangepicker/daterangepicker.min.css"
       rel="stylesheet"
     />
-    <link href="../../assets/css/employee.css" rel="stylesheet" />
-    <!-- <link href="../../assets/bootstrap-datepicker.min.css" rel="stylesheet" /> -->
-
-    <script
-      src="https://code.jquery.com/jquery-1.12.4.min.js"
-      integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
-      crossorigin="anonymous"
-    ></script>
 
     <link
       href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
@@ -50,6 +47,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+
     <style>
       .orientation-right {
         top: 60px !important;
@@ -62,6 +60,179 @@
         max-width: 160px;
         overflow: hidden;
         margin-bottom: -10px;
+      }
+
+      .btn-secondary {
+        color: #fff;
+        background-color: #6c757d;
+        border-color: #6c757d;
+        padding: 0px 12px;
+        font-size: 12px;
+        background-color: #02162a;
+        margin-right: 3px;
+        margin-bottom: 9px;
+        border-radius: 8px !important;
+        margin-top: 8px;
+      }
+
+      .btn-secondary:hover {
+        color: #fff !important;
+        background-color: #6c757d !important;
+        border-color: #6c757d !important;
+        padding: 0px 12px !important;
+        font-size: 12px !important;
+        background-color: #02162a !important;
+        margin-right: 3px !important;
+        margin-bottom: 9px !important;
+        border-radius: 8px !important;
+        margin-top: 8px !important;
+      }
+
+      #result_panel > .panelbody > .list-group > .list-group-item {
+        padding: 5px 10px !important;
+      }
+
+      #formula_builder,
+      #summary_calculation {
+        font-size: 11px !important;
+      }
+
+      #kpi_formula_popup > .modal-content > .modal-body {
+        padding: 0 25px !important;
+      }
+
+      #kpi_formula_popup > .modal-content > .modal-body.card > .tab-content {
+        padding: 0;
+      }
+
+      #formula_builder {
+        padding-bottom: 0px;
+      }
+
+      .panel:hover {
+        cursor: pointer;
+      }
+
+      #formula-builder .col-md-4 {
+        margin-bottom: 0px;
+      }
+
+      .modal #kpi_formula_popup {
+        background-color: rgba(238, 238, 238, 0) !important;
+      }
+
+      .modal-backdrop {
+        opacity: 0.5 !important;
+      }
+
+      #kpi_formula_popup .modal-content .nav li a.nav-link {
+        font-size: 12px !important;
+      }
+
+      .btn:not(.btn-link):not(.btn-circle) span {
+        position: relative;
+        top: 0px;
+        margin-left: 4px;
+        display: none;
+      }
+
+      .btn-custom-secondary {
+        background-color: #fff;
+        color: #2e2e2e;
+        border: 1px solid #e5e5e5;
+        font-size: 14px;
+        border-radius: 4px !important;
+        margin-left: 4px !important;
+        box-shadow: none !important;
+      }
+
+      .custom-input {
+        border: 1px solid #e5e5e5 !important;
+        border-radius: 4px !important;
+        width: 210px !important;
+        height: 34px !important;
+        padding: 0 8px !important;
+        font-size: 14px !important;
+      }
+
+      .custom-input::placeholder {
+        color: #afafaf !important;
+      }
+
+      .custom-input:focus {
+        box-shadow: none !important;
+        padding: 0 8px !important;
+        border: 1px solid #e5e5e5 !important;
+      }
+
+      .search {
+        background-color: #fff;
+      }
+
+      .pagination ul li a {
+        position: relative;
+        float: left;
+        padding: 6px 12px;
+        margin: 0;
+        line-height: 1.42857143;
+        color: #1e252d !important;
+        text-decoration: none;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 0%;
+        height: 34px;
+        width: 34px;
+      }
+
+      .pagination ul li a:hover {
+        background-color: #f1f1f1;
+        border-radius: 0%;
+      }
+
+      .pagination > li:first-child > a {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
+
+      .pagination > li:last-child > a {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+      }
+
+      .pagination > li:first-child > a,
+      .pagination > li:last-child > a {
+        height: 34px;
+        width: 34px;
+      }
+
+      .pagination li.active a {
+        background-color: #1e252d;
+        color: #fff !important;
+        border-radius: 0%;
+        border: none;
+        box-shadow: none;
+      }
+
+      .pagination li.active a:hover {
+        background-color: #1e252d;
+      }
+
+      .export-dropdown.show {
+        position: absolute;
+        will-change: transform;
+        top: 0px;
+        left: 0px;
+        transform: translate3d(-45px, 36px, 0px) !important;
+      }
+
+      .columns-select.show {
+        position: absolute;
+        will-change: transform;
+        top: 0px;
+        left: 0px;
+        padding: 12px 12px 8px 8px;
+        transform: translate3d(-45px, 36px, 0px) !important;
+        width: 170px !important;
       }
     </style>
   </head>
@@ -361,6 +532,309 @@
     </div>
     <!-- #END# Left Sidebar -->
 
+    <!-- Table Settings Modal -->
+    <div id="table_config" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="margin-top: 4%">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Table Configuration</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <label for="rows">No. of Rows</label>
+                <input
+                  type="number"
+                  class="form-control browser-default"
+                  id="tableRow"
+                  value=""
+                />
+              </div>
+              <div class="col-md-6 form-group">
+                <label for="columns">No. of Columns</label>
+                <input
+                  type="number"
+                  class="form-control browser-default"
+                  id="tableColumn"
+                  value=""
+                />
+              </div>
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    class="initative_save_btn"
+                    value="Create"
+                    id="columnCreate"
+                  >
+                    Create
+                  </button>
+                </div>
+              </div>
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+            </div>
+            <div
+              class="row"
+              id="columnSection"
+              style="max-height: 380px; overflow-y: auto"
+            ></div>
+
+            <div class="row mt-3">
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- #Start KPI Calculator View PopUp -->
+    <div
+      class="modal fade kpi_formula_popup"
+      id="kpi_formula_popup"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel"
+      aria-hidden="true"
+      modal-backdrop="false"
+      data-backdrop="false"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>KPI Calculator</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body" style="padding: 0 25px">
+            <div class="col-md-8" style="padding: 0">
+              Field Name: &nbsp;
+              <input
+                type="text"
+                class="browser-default"
+                name="objective_id"
+                id="objective_id"
+                placeholder=""
+              />
+            </div>
+            <div class="card">
+              <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item m-l-10">
+                  <a
+                    class="nav-link active"
+                    data-toggle="tab"
+                    href="#formula_builder"
+                    >Formula Builder</a
+                  >
+                </li>
+                <li class="nav-item m-l-10">
+                  <a
+                    class="nav-link"
+                    data-toggle="tab"
+                    href="#summary_calculation"
+                    >Summary Calculation</a
+                  >
+                </li>
+              </ul>
+              <div class="tab-content" style="padding: 0">
+                <div class="tab-pane body active" id="formula_builder">
+                  <div class="row col-md-12">
+                    <textarea
+                      class="browser-default"
+                      name="formula"
+                      id="formula"
+                      placeholder=""
+                      cols=""
+                      rows="1"
+                    ></textarea>
+                    <!-- <textarea name="formula" id="formula"></textarea> -->
+                  </div>
+                  <div class="row col-md-12">
+                    <button type="button" class="opr btn btn-secondary">
+                      +
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      -
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      *
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      /
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      %
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      (
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      )
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      :
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      AND
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      OR
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      NOT
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      IN
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      ==
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      !=
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      >
+                    </button>
+                    <button
+                      type="button"
+                      class="opr btn btn-secondary"
+                    ></button>
+                    <button type="button" class="opr btn btn-secondary">
+                      >=
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      =
+                    </button>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="panel panel-primary" id="result_panel">
+                        <div class="panel-heading">
+                          <h6 class="panel-title">Fields and measures:</h6>
+                        </div>
+                        <div class="panel-body" data-spy="scroll">
+                          <ul class="list-group">
+                            <li class="list-group-item">State</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="panel panel-primary" id="result_panel1">
+                        <div class="panel-heading">
+                          <h6 class="panel-title">Functions:</h6>
+                        </div>
+                        <div class="panel-body">
+                          <ul class="list-group">
+                            <li class="list-group-item">Elapsed Year</li>
+                            <li class="list-group-item">Ends With</li>
+                            <li class="list-group-item">If</li>
+                            <li class="list-group-item">Is Null</li>
+                            <li class="list-group-item">Max</li>
+                            <li class="list-group-item">Min</li>
+                            <li class="list-group-item">Median</li>
+                            <li class="list-group-item">Mid</li>
+                            <li class="list-group-item">Test</li>
+                            <li class="list-group-item">Test</li>
+                            <li class="list-group-item">Test</li>
+                            <li class="list-group-item">Test</li>
+                            <li class="list-group-item">Test</li>
+                            <li class="list-group-item">Test</li>
+                            <li class="list-group-item">Test</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="panel panel-primary" id="result_panel1">
+                        <div class="panel-heading">
+                          <h6 class="panel-title">Function Description:</h6>
+                        </div>
+                        <div class="panel-body">
+                          <h6>IF</h6>
+                          <p>
+                            Returns second argument if first argument is true;
+                            Returns optional third argument if first argument is
+                            false; IF('element', 'trueCalc', 'falseCalc')
+                          </p>
+                        </div>
+                        <input type="checkbox" name="check" /> Show argumnets in
+                        formula
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4" style="margin-bottom: 0px">
+                      <button
+                        name="validate"
+                        id="validate"
+                        class="btn btn-secondary"
+                      >
+                        Validate
+                      </button>
+                      <button name="add" id="add" class="btn btn-secondary">
+                        Add
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane body" id="summary_calculation">
+                  <div class="col-md-12">
+                    <div class="panel panel-primary" id="final_panel">
+                      <div class="panel-heading">
+                        <h6 class="panel-title">Formula</h6>
+                      </div>
+                      <div class="panel-body">
+                        <ul class="list-group formula-panel">
+                          <li class="list-group-item">Elapsed Year</li>
+                          <li class="list-group-item">Ends With</li>
+                          <li class="list-group-item">If</li>
+                          <li class="list-group-item">Is Null</li>
+                          <li class="list-group-item">Max</li>
+                          <li class="list-group-item">Min</li>
+                          <li class="list-group-item">Median</li>
+                          <li class="list-group-item">Mid</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- #End KPI Calculator View PopUp -->
+
     <!--#Start User Edit Popup -->
     <div
       class="modal fade"
@@ -616,144 +1090,438 @@
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="card" style="padding: 16px">
-              <div class="row">
-                <div class="col-md-12">
-                  <!-- Table -->
-                  <section class="panel">
-                    <!-- <header class="panel-heading">
-                      <h2 class="panel-title">Rows with Details</h2>
-                    </header> -->
-                    <div class="panel-body">
-                      <table
-                        class="table table-bordered table-striped mb-none"
-                        id="datatable-details"
-                      >
-                        <thead>
-                          <tr>
-                            <th>Rendering engine</th>
-                            <th>Browser</th>
-                            <th>Platform(s)</th>
-                            <th>Engine version</th>
-                            <th>CSS grade</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr class="gradeX">
-                            <td>Trident</td>
-                            <td>Internet Explorer 4.0</td>
-                            <td>Win 95+</td>
-                            <td class="center">4</td>
-                            <td class="center">X</td>
-                          </tr>
-                          <tr class="gradeC">
-                            <td>Trident</td>
-                            <td>Internet Explorer 5.0</td>
-                            <td>Win 95+</td>
-                            <td class="center">5</td>
-                            <td class="center">C</td>
-                          </tr>
-                          <tr class="gradeA">
-                            <td>Trident</td>
-                            <td>Internet Explorer 5.5</td>
-                            <td>Win 95+</td>
-                            <td class="center">5.5</td>
-                            <td class="center">A</td>
-                          </tr>
-                          <tr class="gradeA">
-                            <td>Trident</td>
-                            <td>Internet Explorer 6</td>
-                            <td>Win 98+</td>
-                            <td class="center">6</td>
-                            <td class="center">A</td>
-                          </tr>
-                          <tr class="gradeA">
-                            <td>Trident</td>
-                            <td>Internet Explorer 7</td>
-                            <td>Win XP SP2+</td>
-                            <td class="center">7</td>
-                            <td class="center">A</td>
-                          </tr>
-                          <tr class="gradeA">
-                            <td>Trident</td>
-                            <td>AOL browser (AOL desktop)</td>
-                            <td>Win XP</td>
-                            <td class="center">6</td>
-                            <td class="center">A</td>
-                          </tr>
-                          <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Firefox 1.0</td>
-                            <td>Win 98+ / OSX.2+</td>
-                            <td class="center">1.7</td>
-                            <td class="center">A</td>
-                          </tr>
-                          <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Firefox 1.5</td>
-                            <td>Win 98+ / OSX.2+</td>
-                            <td class="center">1.8</td>
-                            <td class="center">A</td>
-                          </tr>
-                          <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Firefox 2.0</td>
-                            <td>Win 98+ / OSX.2+</td>
-                            <td class="center">1.8</td>
-                            <td class="center">A</td>
-                          </tr>
-                          <tr class="gradeA">
-                            <td>Trident</td>
-                            <td>Internet Explorer 5.5</td>
-                            <td>Win 95+</td>
-                            <td class="center">5.5</td>
-                            <td class="center">A</td>
-                          </tr>
-                          <tr class="gradeA">
-                            <td>Trident</td>
-                            <td>Internet Explorer 6</td>
-                            <td>Win 98+</td>
-                            <td class="center">6</td>
-                            <td class="center">A</td>
-                          </tr>
-                          <tr class="gradeA">
-                            <td>Trident</td>
-                            <td>Internet Explorer 7</td>
-                            <td>Win XP SP2+</td>
-                            <td class="center">7</td>
-                            <td class="center">A</td>
-                          </tr>
-                          <tr class="gradeA">
-                            <td>Trident</td>
-                            <td>AOL browser (AOL desktop)</td>
-                            <td>Win XP</td>
-                            <td class="center">6</td>
-                            <td class="center">A</td>
-                          </tr>
-                          <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Firefox 1.0</td>
-                            <td>Win 98+ / OSX.2+</td>
-                            <td class="center">1.7</td>
-                            <td class="center">A</td>
-                          </tr>
-                          <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Firefox 1.5</td>
-                            <td>Win 98+ / OSX.2+</td>
-                            <td class="center">1.8</td>
-                            <td class="center">A</td>
-                          </tr>
-                          <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Firefox 2.0</td>
-                            <td>Win 98+ / OSX.2+</td>
-                            <td class="center">1.8</td>
-                            <td class="center">A</td>
-                          </tr>
-                        </tbody>
-                      </table>
+              <div class="data-table-area mg-b-15">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <div class="sparkline13-list">
+                        <div class="sparkline13-hd">
+                          <div class="main-sparkline13-hd">
+                            <h1>
+                              Projects
+                              <span class="table-project-n">Data</span> Table
+                            </h1>
+                          </div>
+                        </div>
+                        <div class="sparkline13-graph">
+                          <div
+                            class="datatable-dashv1-list custom-datatable-overright"
+                          >
+                            <div id="toolbar">
+                              <button
+                                class="btn btn-custom-secondary"
+                                data-toggle="modal"
+                                data-target="#table_config"
+                              >
+                                <i class="fas fa-cog"></i>
+                              </button>
+                            </div>
+                            <table
+                              id="table"
+                              data-toggle="table"
+                              data-pagination="true"
+                              data-search="true"
+                              data-show-columns="true"
+                              data-show-pagination-switch="true"
+                              data-show-refresh="true"
+                              data-key-events="true"
+                              data-show-toggle="false"
+                              data-resizable="true"
+                              data-cookie="true"
+                              data-cookie-id-table="saveId"
+                              data-show-export="true"
+                              data-click-to-select="false"
+                              data-toolbar="#toolbar"
+                            >
+                              <thead>
+                                <tr>
+                                  <th
+                                    data-field="state"
+                                    data-checkbox="true"
+                                  ></th>
+                                  <th data-field="id">ID</th>
+                                  <th data-field="name" data-editable="true">
+                                    Task
+                                  </th>
+                                  <th data-field="email" data-editable="true">
+                                    Email
+                                  </th>
+                                  <th data-field="phone" data-editable="true">
+                                    Phone
+                                  </th>
+                                  <th data-field="complete">Completed</th>
+                                  <th data-field="task" data-editable="true">
+                                    Task
+                                  </th>
+                                  <th data-field="date" data-editable="true">
+                                    Date
+                                  </th>
+                                  <th data-field="price" data-editable="true">
+                                    Price
+                                  </th>
+                                  <th data-field="action">Action</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr onclick="showHideRow('hidden_row1');">
+                                  <td></td>
+                                  <td>1</td>
+                                  <td>Web Development</td>
+                                  <td>admin@uttara.com</td>
+                                  <td>+8801962067309</td>
+                                  <td class="datatable-ct">
+                                    <span class="pie">1/6</span>
+                                  </td>
+                                  <td>10%</td>
+                                  <td>Jul 14, 2017</td>
+                                  <td>$5455</td>
+                                  <td class="datatable-ct">
+                                    <i class="fa fa-check"></i>
+                                  </td>
+                                </tr>
+                                <tr id="hidden_row1" class="hidden_row">
+                                  <td></td>
+                                  <td>1</td>
+                                  <td>Child</td>
+                                  <td>admin@uttara.com</td>
+                                  <td>+8801962067309</td>
+                                  <td class="datatable-ct">
+                                    <span class="pie">1/6</span>
+                                  </td>
+                                  <td>10%</td>
+                                  <td>Jul 14, 2017</td>
+                                  <td>$5455</td>
+                                  <td class="datatable-ct">
+                                    <i class="fa fa-check"></i>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td>2</td>
+                                  <td>Graphic Design</td>
+                                  <td>fox@itpark.com</td>
+                                  <td>+8801762067304</td>
+                                  <td class="datatable-ct">
+                                    <span class="pie">230/360</span>
+                                  </td>
+                                  <td>70%</td>
+                                  <td>fab 2, 2017</td>
+                                  <td>$8756</td>
+                                  <td class="datatable-ct">
+                                    <i class="fa fa-check"></i>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td>3</td>
+                                  <td>Software Development</td>
+                                  <td>gumre@hash.com</td>
+                                  <td>+8801862067308</td>
+                                  <td class="datatable-ct">
+                                    <span class="pie">0.42/1.461</span>
+                                  </td>
+                                  <td>5%</td>
+                                  <td>Seb 5, 2017</td>
+                                  <td>$9875</td>
+                                  <td class="datatable-ct">
+                                    <i class="fa fa-check"></i>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td>4</td>
+                                  <td>Woocommerce</td>
+                                  <td>kyum@frok.com</td>
+                                  <td>+8801962066547</td>
+                                  <td class="datatable-ct">
+                                    <span class="pie">2,7</span>
+                                  </td>
+                                  <td>15%</td>
+                                  <td>Oct 10, 2017</td>
+                                  <td>$3254</td>
+                                  <td class="datatable-ct">
+                                    <i class="fa fa-check"></i>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td>5</td>
+                                  <td>Joomla</td>
+                                  <td>jams@game.com</td>
+                                  <td>+8801962098745</td>
+                                  <td class="datatable-ct">
+                                    <span class="pie">200,133</span>
+                                  </td>
+                                  <td>80%</td>
+                                  <td>Nov 20, 2017</td>
+                                  <td>$58745</td>
+                                  <td class="datatable-ct">
+                                    <i class="fa fa-check"></i>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td>6</td>
+                                  <td>Wordpress</td>
+                                  <td>flat@yem.com</td>
+                                  <td>+8801962254781</td>
+                                  <td class="datatable-ct">
+                                    <span class="pie">0.42,1.051</span>
+                                  </td>
+                                  <td>30%</td>
+                                  <td>Aug 25, 2017</td>
+                                  <td>$789879</td>
+                                  <td class="datatable-ct">
+                                    <i class="fa fa-check"></i>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td>7</td>
+                                  <td>Ecommerce</td>
+                                  <td>hasan@wpm.com</td>
+                                  <td>+8801962254863</td>
+                                  <td class="datatable-ct">
+                                    <span class="pie">2,7</span>
+                                  </td>
+                                  <td>15%</td>
+                                  <td>July 17, 2017</td>
+                                  <td>$21424</td>
+                                  <td class="datatable-ct">
+                                    <i class="fa fa-check"></i>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td>8</td>
+                                  <td>Android Apps</td>
+                                  <td>ATM@devep.com</td>
+                                  <td>+8801962875469</td>
+                                  <td class="datatable-ct">
+                                    <span class="pie">2,7</span>
+                                  </td>
+                                  <td>15%</td>
+                                  <td>June 11, 2017</td>
+                                  <td>$78978</td>
+                                  <td class="datatable-ct">
+                                    <i class="fa fa-check"></i>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td>9</td>
+                                  <td>Prestashop</td>
+                                  <td>presta@Prest.com</td>
+                                  <td>+8801962067524</td>
+                                  <td class="datatable-ct">
+                                    <span class="pie">2,7</span>
+                                  </td>
+                                  <td>15%</td>
+                                  <td>May 9, 2017</td>
+                                  <td>$45645</td>
+                                  <td class="datatable-ct">
+                                    <i class="fa fa-check"></i>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td>10</td>
+                                  <td>Game Development</td>
+                                  <td>Dev@game.com</td>
+                                  <td>+8801962067457</td>
+                                  <td class="datatable-ct">
+                                    <span class="pie">2,7</span>
+                                  </td>
+                                  <td>15%</td>
+                                  <td>April 5, 2017</td>
+                                  <td>$4564545</td>
+                                  <td class="datatable-ct">
+                                    <i class="fa fa-check"></i>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td>11</td>
+                                  <td>Angular Js</td>
+                                  <td>gular@angular.com</td>
+                                  <td>+8801962067124</td>
+                                  <td class="datatable-ct">
+                                    <span class="pie">2,7</span>
+                                  </td>
+                                  <td>15%</td>
+                                  <td>Dec 1, 2017</td>
+                                  <td>$645455</td>
+                                  <td class="datatable-ct">
+                                    <i class="fa fa-check"></i>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td>12</td>
+                                  <td>Opencart</td>
+                                  <td>open@cart.com</td>
+                                  <td>+8801962067587</td>
+                                  <td class="datatable-ct">
+                                    <span class="pie">2,7</span>
+                                  </td>
+                                  <td>15%</td>
+                                  <td>Jan 6, 2017</td>
+                                  <td>$78978</td>
+                                  <td class="datatable-ct">
+                                    <i class="fa fa-check"></i>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td>13</td>
+                                  <td>Education</td>
+                                  <td>john@example.com</td>
+                                  <td>+8801962067471</td>
+                                  <td class="datatable-ct">
+                                    <span class="pie">2,7</span>
+                                  </td>
+                                  <td>15%</td>
+                                  <td>Feb 6, 2016</td>
+                                  <td>$456456</td>
+                                  <td class="datatable-ct">
+                                    <i class="fa fa-check"></i>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td>14</td>
+                                  <td>Construction</td>
+                                  <td>mary@example.com</td>
+                                  <td>+8801962012457</td>
+                                  <td class="datatable-ct">
+                                    <span class="pie">2,7</span>
+                                  </td>
+                                  <td>15%</td>
+                                  <td>Jan 6, 2016</td>
+                                  <td>$87978</td>
+                                  <td class="datatable-ct">
+                                    <i class="fa fa-check"></i>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td>15</td>
+                                  <td>Real Estate</td>
+                                  <td>july@example.com</td>
+                                  <td>+8801962067309</td>
+                                  <td class="datatable-ct">
+                                    <span class="pie">2,7</span>
+                                  </td>
+                                  <td>15%</td>
+                                  <td>Dec 1, 2016</td>
+                                  <td>$454554</td>
+                                  <td class="datatable-ct">
+                                    <i class="fa fa-check"></i>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td>16</td>
+                                  <td>Personal Regume</td>
+                                  <td>john@example.com</td>
+                                  <td>+8801962067306</td>
+                                  <td class="datatable-ct">
+                                    <span class="pie">2,7</span>
+                                  </td>
+                                  <td>15%</td>
+                                  <td>May 9, 2016</td>
+                                  <td>$564555</td>
+                                  <td class="datatable-ct">
+                                    <i class="fa fa-check"></i>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td>17</td>
+                                  <td>Admin Template</td>
+                                  <td>mary@example.com</td>
+                                  <td>+8801962067305</td>
+                                  <td class="datatable-ct">
+                                    <span class="pie">2,7</span>
+                                  </td>
+                                  <td>15%</td>
+                                  <td>June 11, 2016</td>
+                                  <td>$454565</td>
+                                  <td class="datatable-ct">
+                                    <i class="fa fa-check"></i>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td>18</td>
+                                  <td>FrontEnd</td>
+                                  <td>july@example.com</td>
+                                  <td>+8801962067304</td>
+                                  <td class="datatable-ct">
+                                    <span class="pie">2,7</span>
+                                  </td>
+                                  <td>15%</td>
+                                  <td>May 9, 2015</td>
+                                  <td>$456546</td>
+                                  <td class="datatable-ct">
+                                    <i class="fa fa-check"></i>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td>19</td>
+                                  <td>Backend</td>
+                                  <td>john@range.com</td>
+                                  <td>+8801962067303</td>
+                                  <td class="datatable-ct">
+                                    <span class="pie">2,7</span>
+                                  </td>
+                                  <td>15%</td>
+                                  <td>Feb 9, 2014</td>
+                                  <td>$564554</td>
+                                  <td class="datatable-ct">
+                                    <i class="fa fa-check"></i>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td>20</td>
+                                  <td>Java Advance</td>
+                                  <td>lamon@ghs.com</td>
+                                  <td>+8801962067302</td>
+                                  <td class="datatable-ct">
+                                    <span class="pie">2,7</span>
+                                  </td>
+                                  <td>15%</td>
+                                  <td>July 6, 2014</td>
+                                  <td>$789889</td>
+                                  <td class="datatable-ct">
+                                    <i class="fa fa-check"></i>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td>21</td>
+                                  <td>Jquery Advance</td>
+                                  <td>hasad@uth.com</td>
+                                  <td>+8801962067301</td>
+                                  <td class="datatable-ct">
+                                    <span class="pie">2,7</span>
+                                  </td>
+                                  <td>15%</td>
+                                  <td>Jun 6, 2013</td>
+                                  <td>$4565656</td>
+                                  <td class="datatable-ct">
+                                    <i class="fa fa-check"></i>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </section>
+                  </div>
                 </div>
               </div>
             </div>
@@ -770,13 +1538,22 @@
     <script src="../../assets/js/admin.js"></script>
     <!-- Knob Js -->
     <script src="../../assets/jquery-ui.min.js"></script>
-    <script src="../../assets/select2.min.js"></script>
-    <script src="https://colorlib.com/polygon/octopus/assets/vendor/jquery-datatables/media/js/jquery.dataTables.js"></script>
-    <script src="https://colorlib.com/polygon/octopus/assets/vendor/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
-    <script src="https://colorlib.com/polygon/octopus/assets/vendor/jquery-datatables-bs3/assets/js/datatables.js"></script>
 
-    <script src="https://colorlib.com/polygon/octopus/assets/javascripts/tables/examples.datatables.row.with.details.js"></script>
-    <script src="https://colorlib.com/polygon/octopus/assets/javascripts/tables/examples.datatables.tabletools.js"></script>
+    <script src="../../assets/data-table/js//bootstrap-table.js"></script>
+    <script src="../../assets/data-table/js/tableExport.js"></script>
+    <script src="../../assets/data-table/js/bootstrap-table-resizable.js"></script>
+    <script src="../../assets/data-table/js/bootstrap-table-export.js"></script>
+
+    <script src="../../assets/select2.min.js"></script>
+    <script src="../../assets/moment.js"></script>
+
+    <script src="../../assets/jquery-resize.js"></script>
+    <script src="../../assets/datepickerair.js"></script>
+    <script src="../../assets/datepicker.en.js"></script>
+    <script src="../../assets/js/widgets.js"></script>
+    <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
+    <script src="../../assets/knockout-3.5.0.js"></script>
 
     <script>
       $(".daterangepicker-field").daterangepicker({
@@ -786,6 +1563,67 @@
           $(this).val(title);
         },
       });
+    </script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#columnCreate").click(function () {
+          var col = $("#tableColumn").val();
+          for (var i = 0; i < col; i++) {
+            var columns = $(`
+            <div class="form-group col-md-12 columnCount">
+                <h6>Column ${
+                  document.querySelectorAll(".columnCount").length + 1
+                }</h6>
+              </div>
+              <div class="col-md-12 form-group">
+                <label for="name">Display Name</label>
+                <input
+                  type="text"
+                  class="form-control browser-default"
+                  value=""
+                />
+              </div>
+              <div class="col-md-6 form-group">
+                <label for="name">Period Type</label>
+                <select class="form-control browser-default">
+                  <option value="Monthly">Monthly</option>
+                  <option value="Yearly">Yearly</option>
+                </select>
+              </div>
+              <div class="col-md-6 form-group">
+                <label for="name">Period</label>
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                  value=""
+                />
+              </div>
+              <div class="col-md-12 form-group">
+                <label for="name">Data</label>
+                <input
+                  type="text"
+                  class="form-control browser-default"
+                  id="kpi_formula"
+                  readonly
+                  data-toggle="modal"
+                  data-target="#kpi_formula_popup"
+                  role="button"
+                />
+              </div>
+              <div class="form-group col-md-12">
+                <hr />
+              </div>`);
+            $("#columnSection").append(columns);
+          }
+        });
+      });
+      function showHideRow(row) {
+        $("#" + row).toggle();
+      }
     </script>
   </body>
 </a>
