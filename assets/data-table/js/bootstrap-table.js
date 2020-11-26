@@ -814,7 +814,7 @@
                     "tabindex='0'",
                     '>');
 
-                html.push(sprintf('<div class="th-inner %s">', that.options.sortable && column.sortable ?
+                html.push(sprintf('<div class="th-inner %s" contenteditable="true">', that.options.sortable && column.sortable ?
                     'sortable both' : ''));
 
                 text = that.options.escape ? escapeHTML(column.title) : column.title;
@@ -1369,7 +1369,7 @@
                     '<span class="page-size">',
                     $allSelected ? this.options.formatAllRows() : this.options.pageSize,
                     '</span>',
-                    ' <span class="fas fa-caret-down"></span>',
+                    // ' <span class="fas fa-caret-down"></span>',
                     '</button>',
                     '<ul class="dropdown-menu" role="menu">'
                 ];
