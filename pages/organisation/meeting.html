@@ -2043,6 +2043,10 @@
         );
       });
 
+      $("body").tooltip({
+        selector: ".remove-notes, .remove-action",
+      });
+
       $("#add_notes").click(function () {
         $("#note_table").append(`
         <tr class="notes_clone">
@@ -2096,6 +2100,7 @@
               data-toggle="tooltip"
               data-placement="top"
               title="Delete"
+              style="cursor: pointer;"
             ></i>
           </td>
         </tr>`);
@@ -2171,6 +2176,7 @@
               data-toggle="tooltip"
               data-placement="top"
               title="Delete"
+              style="cursor: pointer;"
             ></i>
           </td>
         </tr>`);
