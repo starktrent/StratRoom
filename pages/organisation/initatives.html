@@ -1004,7 +1004,7 @@
                   alt="Add Risk"
                   style="width: 24px"
                   data-toggle="tooltip"
-                      data-placement="bottom"
+                  data-placement="bottom"
                   title="Add"
                 />
               </a>
@@ -1019,7 +1019,7 @@
                   alt="Import"
                   style="width: 24px"
                   data-toggle="tooltip"
-                      data-placement="bottom"
+                  data-placement="bottom"
                   title="Import"
                 />
               </a>
@@ -1037,7 +1037,7 @@
                     alt="filter"
                     style="width: 24px"
                     data-toggle="tooltip"
-                      data-placement="bottom"
+                    data-placement="bottom"
                     title="Filter"
                   />
                 </a>
@@ -4027,6 +4027,42 @@
                 </div>
                 <hr />
                 <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="Initiative_start_end_date">Status</label>
+                    <select
+                      id="statusTypeAdd"
+                      name="statusTypeAdd"
+                      class="form-control browser-default mt-1"
+                    >
+                      <option value="">Choose</option>
+                      <option value="manual">Manual</option>
+                      <option value="weighted">Weighted</option>
+                      <option value="first">First</option>
+                      <option value="second">Second</option>
+                      <option value="third">Third</option>
+                      <option value="fourth">Fourth</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="Initiative_progress">Progress (%)</label>
+                    <input
+                      type="number"
+                      min="0"
+                      max="100"
+                      class="form-control browser-default"
+                      name="Initiative_progress"
+                      id="Initiative_progress"
+                      placeholder=""
+                      value="0"
+                    />
+                  </div>
+                </div>
+                <hr />
+                <div
+                  class="form-row"
+                  id="manual_status_add"
+                  style="display: none"
+                >
                   <div class="form-group col-md-12">
                     <label for="">Manual Status</label>
                   </div>
@@ -4063,38 +4099,6 @@
                       />
                       <label for="primary3"></label>
                     </div>
-                  </div>
-                </div>
-                <hr />
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="Initiative_start_end_date">Status</label>
-                    <select
-                      id="statusType"
-                      name="statusType"
-                      class="form-control browser-default mt-1"
-                    >
-                      <option value="">Choose</option>
-                      <option value="manual">Manual</option>
-                      <option value="weighted">Weighted</option>
-                      <option value="first">First</option>
-                      <option value="second">Second</option>
-                      <option value="third">Third</option>
-                      <option value="fourth">Fourth</option>
-                    </select>
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="Initiative_progress">Progress (%)</label>
-                    <input
-                      type="number"
-                      min="0"
-                      max="100"
-                      class="form-control browser-default"
-                      name="Initiative_progress"
-                      id="Initiative_progress"
-                      placeholder=""
-                      value="0"
-                    />
                   </div>
                 </div>
                 <hr />
@@ -4405,6 +4409,42 @@
                 </div>
                 <hr />
                 <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="Initiative_start_end_date">Status</label>
+                    <select
+                      id="statusTypeEdit"
+                      name="statusTypeEdit"
+                      class="form-control browser-default mt-1"
+                    >
+                      <option value="">Choose</option>
+                      <option value="manual">Manual</option>
+                      <option value="weighted">Weighted</option>
+                      <option value="first">First</option>
+                      <option value="second">Second</option>
+                      <option value="third">Third</option>
+                      <option value="fourth">Fourth</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="Initiative_progress">Progress (%)</label>
+                    <input
+                      type="number"
+                      min="0"
+                      max="100"
+                      class="form-control browser-default"
+                      name="Initiative_progress"
+                      id="Initiative_progress"
+                      placeholder=""
+                      value="0"
+                    />
+                  </div>
+                </div>
+                <hr />
+                <div
+                  class="form-row"
+                  id="manual_status_edit"
+                  style="display: none"
+                >
                   <div class="form-group col-md-12">
                     <label for="">Manual Status</label>
                   </div>
@@ -4441,38 +4481,6 @@
                       />
                       <label for="primary3"></label>
                     </div>
-                  </div>
-                </div>
-                <hr />
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="Initiative_start_end_date">Status</label>
-                    <select
-                      id="statusType"
-                      name="statusType"
-                      class="form-control browser-default mt-1"
-                    >
-                      <option value="">Choose</option>
-                      <option value="manual">Manual</option>
-                      <option value="weighted">Weighted</option>
-                      <option value="first">First</option>
-                      <option value="second">Second</option>
-                      <option value="third">Third</option>
-                      <option value="fourth">Fourth</option>
-                    </select>
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="Initiative_progress">Progress (%)</label>
-                    <input
-                      type="number"
-                      min="0"
-                      max="100"
-                      class="form-control browser-default"
-                      name="Initiative_progress"
-                      id="Initiative_progress"
-                      placeholder=""
-                      value="0"
-                    />
                   </div>
                 </div>
                 <hr />
@@ -4915,7 +4923,7 @@
                         <i
                           class="fas fa-pencil-alt title_edit_icon"
                           data-toggle="tooltip"
-                      data-placement="bottom"
+                          data-placement="bottom"
                           title="Edit"
                         ></i>
                       </span>
@@ -4926,7 +4934,7 @@
                         <i
                           class="fas fa-paperclip title_edit_icon"
                           data-toggle="tooltip"
-                      data-placement="bottom"
+                          data-placement="bottom"
                           title="File Upload"
                         ></i>
                       </span>
@@ -4934,7 +4942,7 @@
                         <li
                           class="dropdown title_edit_icon"
                           data-toggle="tooltip"
-                      data-placement="bottom"
+                          data-placement="bottom"
                           title="View"
                         >
                           <a
@@ -5069,7 +5077,7 @@
                         <li
                           class="dropdown title_edit_icon"
                           data-toggle="tooltip"
-                      data-placement="bottom"
+                          data-placement="bottom"
                           title="More"
                         >
                           <a
@@ -7851,6 +7859,28 @@
         //       .click();
         //   });
         // });
+
+        $(document).ready(function () {
+          $("#statusTypeAdd").change(function () {
+            var value = $("#statusTypeAdd").val();
+            if (value == "manual") {
+              $("#manual_status_add").show();
+            } else {
+              $("#manual_status_add").hide();
+            }
+          });
+        });
+
+        $(document).ready(function () {
+          $("#statusTypeEdit").change(function () {
+            var value = $("#statusTypeEdit").val();
+            if (value == "manual") {
+              $("#manual_status_edit").show();
+            } else {
+              $("#manual_status_edit").hide();
+            }
+          });
+        });
 
         $(document).ready(function () {
           $('input[type="checkbox"]').click(function () {
