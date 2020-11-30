@@ -148,7 +148,7 @@
 
       .custom-input {
         border: 1px solid #e5e5e5 !important;
-        border-radius: 4px !important;
+        border-radius: 24px !important;
         width: 210px !important;
         height: 34px !important;
         padding: 0 8px !important;
@@ -255,6 +255,10 @@
         color: #4a4a4a;
       }
 
+      .collapse-table tbody tr td a {
+        color: #4a4a4a !important;
+      }
+
       .page-size {
         display: inline !important;
       }
@@ -269,11 +273,21 @@
 
       table {
         width: 100%;
-        display: inherit;
+        display: -webkit-box;
+        overflow-y: hidden;
       }
 
-      .collapse-table thead tr th:first-child {
-        visibility: visible;
+      .collapse-table thead tr:first-child th:first-child .th-inner {
+        width: 200px;
+      }
+
+      .collapse-table thead tr:first-child th .th-inner {
+        width: 200px;
+      }
+
+      .collapse-table tbody tr:last-child td {
+        font-weight: 600;
+        color: #1e252d;
       }
     </style>
   </head>
@@ -1138,10 +1152,10 @@
                       <div class="sparkline13-list">
                         <div class="sparkline13-hd">
                           <div class="main-sparkline13-hd">
-                            <h1>
+                            <!-- <h1>
                               Projects
                               <span class="table-project-n">Data</span> Table
-                            </h1>
+                            </h1> -->
                           </div>
                         </div>
                         <div class="sparkline13-graph">
@@ -1149,15 +1163,15 @@
                             class="datatable-dashv1-list custom-datatable-overright"
                           >
                             <div id="toolbar">
-                              <button
-                                class="btn btn-custom-secondary"
-                                data-toggle="modal"
-                                data-target="#table_config"
-                              >
-                                <i class="fas fa-cog"></i>
-                              </button>
+                              <h4>Data Table</h4>
                             </div>
-
+                            <button
+                              class="btn btn-custom-secondary pull-right"
+                              data-toggle="modal"
+                              data-target="#table_config"
+                            >
+                              <i class="fas fa-cog"></i>
+                            </button>
                             <button
                               class="btn btn-custom-secondary pull-right"
                               data-toggle="modal"
@@ -1184,7 +1198,7 @@
                               data-toolbar="#toolbar"
                             >
                               <thead>
-                                <tr>
+                                <tr class="period-row">
                                   <th data-field="name/period" rowspan="2">
                                     Name/Period
                                   </th>
@@ -1207,7 +1221,7 @@
                                   <th data-field="month" colspan="3">Jun 21</th>
                                 </tr>
 
-                                <tr>
+                                <tr class="data-type-row">
                                   <th>A</th>
                                   <th>T</th>
                                   <th>B</th>
@@ -1257,7 +1271,15 @@
                               </thead>
                               <tbody>
                                 <tr>
-                                  <td>Revenue (INR Mn)</td>
+                                  <td>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#kpi_formula_popup"
+                                      role="button"
+                                      >Revenue (INR Mn)</a
+                                    >
+                                  </td>
                                   <td>4578</td>
                                   <td>4578</td>
                                   <td>4578</td>
@@ -1306,7 +1328,15 @@
                                 </tr>
 
                                 <tr>
-                                  <td>Revenue (INR Mn)</td>
+                                  <td>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#kpi_formula_popup"
+                                      role="button"
+                                      >Revenue (INR Mn)</a
+                                    >
+                                  </td>
                                   <td>4578</td>
                                   <td>4578</td>
                                   <td>4578</td>
@@ -1355,7 +1385,15 @@
                                 </tr>
 
                                 <tr>
-                                  <td>Revenue (INR Mn)</td>
+                                  <td>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#kpi_formula_popup"
+                                      role="button"
+                                      >Revenue (INR Mn)</a
+                                    >
+                                  </td>
                                   <td>4578</td>
                                   <td>4578</td>
                                   <td>4578</td>
@@ -1404,7 +1442,15 @@
                                 </tr>
 
                                 <tr>
-                                  <td>Revenue (INR Mn)</td>
+                                  <td>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#kpi_formula_popup"
+                                      role="button"
+                                      >Revenue (INR Mn)</a
+                                    >
+                                  </td>
                                   <td>4578</td>
                                   <td>4578</td>
                                   <td>4578</td>
@@ -1453,7 +1499,15 @@
                                 </tr>
 
                                 <tr>
-                                  <td>Revenue (INR Mn)</td>
+                                  <td>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#kpi_formula_popup"
+                                      role="button"
+                                      >Revenue (INR Mn)</a
+                                    >
+                                  </td>
                                   <td>4578</td>
                                   <td>4578</td>
                                   <td>4578</td>
@@ -1502,7 +1556,15 @@
                                 </tr>
 
                                 <tr>
-                                  <td>Revenue (INR Mn)</td>
+                                  <td>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#kpi_formula_popup"
+                                      role="button"
+                                      >Revenue (INR Mn)</a
+                                    >
+                                  </td>
                                   <td>4578</td>
                                   <td>4578</td>
                                   <td>4578</td>
@@ -1551,7 +1613,15 @@
                                 </tr>
 
                                 <tr>
-                                  <td>Revenue (INR Mn)</td>
+                                  <td>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#kpi_formula_popup"
+                                      role="button"
+                                      >Revenue (INR Mn)</a
+                                    >
+                                  </td>
                                   <td>4578</td>
                                   <td>4578</td>
                                   <td>4578</td>
@@ -1600,7 +1670,15 @@
                                 </tr>
 
                                 <tr>
-                                  <td>Revenue (INR Mn)</td>
+                                  <td>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#kpi_formula_popup"
+                                      role="button"
+                                      >Revenue (INR Mn)</a
+                                    >
+                                  </td>
                                   <td>4578</td>
                                   <td>4578</td>
                                   <td>4578</td>
@@ -1649,7 +1727,15 @@
                                 </tr>
 
                                 <tr>
-                                  <td>Revenue (INR Mn)</td>
+                                  <td>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#kpi_formula_popup"
+                                      role="button"
+                                      >Revenue (INR Mn)</a
+                                    >
+                                  </td>
                                   <td>4578</td>
                                   <td>4578</td>
                                   <td>4578</td>
@@ -1698,7 +1784,64 @@
                                 </tr>
 
                                 <tr>
-                                  <td>Revenue (INR Mn)</td>
+                                  <td>Total</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                </tr>
+
+                                <tr>
+                                  <td>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#kpi_formula_popup"
+                                      role="button"
+                                      >Revenue (INR Mn)</a
+                                    >
+                                  </td>
                                   <td>4578</td>
                                   <td>4578</td>
                                   <td>4578</td>
@@ -1747,7 +1890,15 @@
                                 </tr>
 
                                 <tr>
-                                  <td>Revenue (INR Mn)</td>
+                                  <td>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#kpi_formula_popup"
+                                      role="button"
+                                      >Revenue (INR Mn)</a
+                                    >
+                                  </td>
                                   <td>4578</td>
                                   <td>4578</td>
                                   <td>4578</td>
@@ -1796,7 +1947,15 @@
                                 </tr>
 
                                 <tr>
-                                  <td>Revenue (INR Mn)</td>
+                                  <td>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#kpi_formula_popup"
+                                      role="button"
+                                      >Revenue (INR Mn)</a
+                                    >
+                                  </td>
                                   <td>4578</td>
                                   <td>4578</td>
                                   <td>4578</td>
@@ -1845,52 +2004,52 @@
                                 </tr>
 
                                 <tr>
-                                  <td>Revenue (INR Mn)</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
+                                  <td>Total</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
+                                  <td>4,57,821</td>
                                 </tr>
                               </tbody>
                             </table>
