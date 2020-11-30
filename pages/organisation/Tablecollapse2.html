@@ -233,6 +233,9 @@
         padding: 12px 12px 8px 8px;
         transform: translate3d(-45px, 36px, 0px) !important;
         width: 170px !important;
+        height: auto;
+        max-height: 240px;
+        overflow-y: auto;
       }
 
       .collapse-table thead tr th {
@@ -266,7 +269,7 @@
 
       table {
         width: 100%;
-        display: inherit;
+        /* display: inherit; */
       }
 
       .collapse-table thead tr th:first-child {
@@ -1182,79 +1185,29 @@
                             >
                               <thead>
                                 <tr>
-                                  <th data-field="name/period" rowspan="2">
-                                    Name/Period
-                                  </th>
-                                  <th data-field="month" colspan="3">Apr 20</th>
-                                  <th data-field="month" colspan="3">May 20</th>
-                                  <th data-field="month" colspan="3">Jun 20</th>
-                                  <th data-field="month" colspan="3">Jul 20</th>
-                                  <th data-field="month" colspan="3">Aug 20</th>
-                                  <th data-field="month" colspan="3">
-                                    Sept 20
-                                  </th>
-                                  <th data-field="month" colspan="3">Oct 20</th>
-                                  <th data-field="month" colspan="3">Nov 20</th>
-                                  <th data-field="month" colspan="3">Dec 20</th>
-                                  <th data-field="month" colspan="3">Jan 21</th>
-                                  <th data-field="month" colspan="3">Feb 21</th>
-                                  <th data-field="month" colspan="3">Mar 21</th>
-                                  <th data-field="month" colspan="3">Apr 21</th>
-                                  <th data-field="month" colspan="3">May 21</th>
-                                  <th data-field="month" colspan="3">Jun 21</th>
-                                </tr>
-
-                                <tr>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
+                                  <th data-field="name/period">Name/Period</th>
+                                  <th data-field="datatype">Data Type</th>
+                                  <th data-field="month0">Apr 20</th>
+                                  <th data-field="month1">May 20</th>
+                                  <th data-field="month2">Jun 20</th>
+                                  <th data-field="month3">Jul 20</th>
+                                  <th data-field="month4">Aug 20</th>
+                                  <th data-field="month5">Sept 20</th>
+                                  <th data-field="month6">Oct 20</th>
+                                  <th data-field="month7">Nov 20</th>
+                                  <th data-field="month8">Dec 20</th>
+                                  <th data-field="month9">Jan 21</th>
+                                  <th data-field="month10">Feb 21</th>
+                                  <th data-field="month11">Mar 21</th>
+                                  <th data-field="month12">Apr 21</th>
+                                  <th data-field="month13">May 21</th>
+                                  <th data-field="month14">Jun 21</th>
                                 </tr>
                               </thead>
                               <tbody>
                                 <tr>
-                                  <td>Revenue (INR Mn)</td>
+                                  <td rowspan="2">Revenue (INR Mn)</td>
+                                  <td>A</td>
                                   <td>4578</td>
                                   <td>4578</td>
                                   <td>4578</td>
@@ -1270,6 +1223,9 @@
                                   <td>4578</td>
                                   <td>4578</td>
                                   <td>4578</td>
+                                </tr>
+                                <tr>
+                                  <td>B</td>
                                   <td>4578</td>
                                   <td>4578</td>
                                   <td>4578</td>
@@ -1285,6 +1241,485 @@
                                   <td>4578</td>
                                   <td>4578</td>
                                   <td>4578</td>
+                                </tr>
+
+                                <tr>
+                                  <td rowspan="2">Revenue (INR Mn)</td>
+                                  <td>A</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                </tr>
+                                <tr>
+                                  <td>B</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                </tr>
+
+                                <tr>
+                                  <td rowspan="2">Revenue (INR Mn)</td>
+                                  <td>A</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                </tr>
+                                <tr>
+                                  <td>B</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                </tr>
+
+                                <tr>
+                                  <td rowspan="2">Revenue (INR Mn)</td>
+                                  <td>A</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                </tr>
+                                <tr>
+                                  <td>B</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                </tr>
+
+                                <tr>
+                                  <td rowspan="2">Revenue (INR Mn)</td>
+                                  <td>A</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                </tr>
+                                <tr>
+                                  <td>B</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                </tr>
+
+                                <tr>
+                                  <td rowspan="2">Revenue (INR Mn)</td>
+                                  <td>A</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                </tr>
+                                <tr>
+                                  <td>B</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                </tr>
+
+                                <tr>
+                                  <td rowspan="2">Revenue (INR Mn)</td>
+                                  <td>A</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                </tr>
+                                <tr>
+                                  <td>B</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                </tr>
+
+                                <tr>
+                                  <td rowspan="2">Revenue (INR Mn)</td>
+                                  <td>A</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                </tr>
+                                <tr>
+                                  <td>B</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                </tr>
+
+                                <tr>
+                                  <td rowspan="2">Revenue (INR Mn)</td>
+                                  <td>A</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                </tr>
+                                <tr>
+                                  <td>B</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                </tr>
+
+                                <tr>
+                                  <td rowspan="2">Revenue (INR Mn)</td>
+                                  <td>A</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                </tr>
+                                <tr>
+                                  <td>B</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                </tr>
+
+                                <tr>
+                                  <td rowspan="2">Revenue (INR Mn)</td>
+                                  <td>A</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                </tr>
+                                <tr>
+                                  <td>B</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                </tr>
+
+                                <tr>
+                                  <td rowspan="2">Revenue (INR Mn)</td>
+                                  <td>A</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                </tr>
+                                <tr>
+                                  <td>B</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                </tr>
+
+                                <tr>
+                                  <td rowspan="2">Revenue (INR Mn)</td>
+                                  <td>A</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                </tr>
+                                <tr>
+                                  <td>B</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                </tr>
+
+                                <tr>
+                                  <td rowspan="2">Revenue (INR Mn)</td>
+                                  <td>A</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                  <td>4578</td>
+                                </tr>
+                                <tr>
+                                  <td>B</td>
                                   <td>4578</td>
                                   <td>4578</td>
                                   <td>4578</td>
