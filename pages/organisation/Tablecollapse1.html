@@ -275,14 +275,20 @@
         width: 100%;
         display: -webkit-box;
         overflow-y: hidden;
+        border-right: 1px solid #1e252d;
       }
 
       .collapse-table thead tr:first-child th:first-child .th-inner {
-        width: 200px;
+        width: auto;
       }
 
       .collapse-table thead tr:first-child th .th-inner {
         width: 200px;
+      }
+
+      .collapse-table tbody tr td:first-child {
+        width: fit-content;
+        white-space: nowrap;
       }
 
       .collapse-table tbody tr:last-child td {
@@ -1163,7 +1169,7 @@
                             class="datatable-dashv1-list custom-datatable-overright"
                           >
                             <div id="toolbar">
-                              <h4>Data Table</h4>
+                              <h4 contenteditable="true">Data Table</h4>
                             </div>
                             <button
                               class="btn btn-custom-secondary pull-right"
@@ -1199,74 +1205,102 @@
                             >
                               <thead>
                                 <tr class="period-row">
-                                  <th data-field="name/period" rowspan="2">
-                                    Name/Period
+                                  <th data-field="Category" rowspan="2">
+                                    Category
                                   </th>
-                                  <th data-field="month" colspan="3">Apr 20</th>
-                                  <th data-field="month" colspan="3">May 20</th>
-                                  <th data-field="month" colspan="3">Jun 20</th>
-                                  <th data-field="month" colspan="3">Jul 20</th>
-                                  <th data-field="month" colspan="3">Aug 20</th>
-                                  <th data-field="month" colspan="3">
+                                  <th data-field="month0" colspan="3">
+                                    Apr 20
+                                  </th>
+                                  <th data-field="month1" colspan="3">
+                                    May 20
+                                  </th>
+                                  <th data-field="month2" colspan="3">
+                                    Jun 20
+                                  </th>
+                                  <th data-field="month3" colspan="3">
+                                    Jul 20
+                                  </th>
+                                  <th data-field="month4" colspan="3">
+                                    Aug 20
+                                  </th>
+                                  <th data-field="month5" colspan="3">
                                     Sept 20
                                   </th>
-                                  <th data-field="month" colspan="3">Oct 20</th>
-                                  <th data-field="month" colspan="3">Nov 20</th>
-                                  <th data-field="month" colspan="3">Dec 20</th>
-                                  <th data-field="month" colspan="3">Jan 21</th>
-                                  <th data-field="month" colspan="3">Feb 21</th>
-                                  <th data-field="month" colspan="3">Mar 21</th>
-                                  <th data-field="month" colspan="3">Apr 21</th>
-                                  <th data-field="month" colspan="3">May 21</th>
-                                  <th data-field="month" colspan="3">Jun 21</th>
+                                  <th data-field="month6" colspan="3">
+                                    Oct 20
+                                  </th>
+                                  <th data-field="month7" colspan="3">
+                                    Nov 20
+                                  </th>
+                                  <th data-field="month8" colspan="3">
+                                    Dec 20
+                                  </th>
+                                  <th data-field="month9" colspan="3">
+                                    Jan 21
+                                  </th>
+                                  <th data-field="month10" colspan="3">
+                                    Feb 21
+                                  </th>
+                                  <th data-field="month11" colspan="3">
+                                    Mar 21
+                                  </th>
+                                  <th data-field="month12" colspan="3">
+                                    Apr 21
+                                  </th>
+                                  <th data-field="month13" colspan="3">
+                                    May 21
+                                  </th>
+                                  <th data-field="month14" colspan="3">
+                                    Jun 21
+                                  </th>
                                 </tr>
 
                                 <tr class="data-type-row">
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
-                                  <th>A</th>
-                                  <th>T</th>
-                                  <th>B</th>
+                                  <th title="Actual">A</th>
+                                  <th title="Target">T</th>
+                                  <th title="Budget">B</th>
+                                  <th title="Actual">A</th>
+                                  <th title="Target">T</th>
+                                  <th title="Budget">B</th>
+                                  <th title="Actual">A</th>
+                                  <th title="Target">T</th>
+                                  <th title="Budget">B</th>
+                                  <th title="Actual">A</th>
+                                  <th title="Target">T</th>
+                                  <th title="Budget">B</th>
+                                  <th title="Actual">A</th>
+                                  <th title="Target">T</th>
+                                  <th title="Budget">B</th>
+                                  <th title="Actual">A</th>
+                                  <th title="Target">T</th>
+                                  <th title="Budget">B</th>
+                                  <th title="Actual">A</th>
+                                  <th title="Target">T</th>
+                                  <th title="Budget">B</th>
+                                  <th title="Actual">A</th>
+                                  <th title="Target">T</th>
+                                  <th title="Budget">B</th>
+                                  <th title="Actual">A</th>
+                                  <th title="Target">T</th>
+                                  <th title="Budget">B</th>
+                                  <th title="Actual">A</th>
+                                  <th title="Target">T</th>
+                                  <th title="Budget">B</th>
+                                  <th title="Actual">A</th>
+                                  <th title="Target">T</th>
+                                  <th title="Budget">B</th>
+                                  <th title="Actual">A</th>
+                                  <th title="Target">T</th>
+                                  <th title="Budget">B</th>
+                                  <th title="Actual">A</th>
+                                  <th title="Target">T</th>
+                                  <th title="Budget">B</th>
+                                  <th title="Actual">A</th>
+                                  <th title="Target">T</th>
+                                  <th title="Budget">B</th>
+                                  <th title="Actual">A</th>
+                                  <th title="Target">T</th>
+                                  <th title="Budget">B</th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -1277,7 +1311,8 @@
                                       data-toggle="modal"
                                       data-target="#kpi_formula_popup"
                                       role="button"
-                                      >Revenue (INR Mn)</a
+                                      >Lorem ipsum dolor sit amet, consectetur
+                                      adipiscing elit.</a
                                     >
                                   </td>
                                   <td>4578</td>
