@@ -1500,6 +1500,7 @@
             if (this.options.smartDisplay) {
                 if (this.totalPages <= 1) {
                     this.$pagination.find('div.pagination').hide();
+                    $(".collapse-table").css("overflow-y", "auto");
                 }
                 if (pageList.length < 2 || this.options.totalRows <= pageList[0]) {
                     this.$pagination.find('span.page-list').hide();
@@ -2780,8 +2781,10 @@
         var button = this.$toolbar.find('button[name="paginationSwitch"] i');
         if (this.options.pagination) {
             button.attr("class", this.options.iconsPrefix + " " + this.options.icons.paginationSwitchDown);
+            $(".collapse-table").css("overflow-y", "hidden");
         } else {
             button.attr("class", this.options.iconsPrefix + " " + this.options.icons.paginationSwitchUp);
+            $(".collapse-table").css("overflow-y", "auto");
         }
         this.updatePagination();
     };

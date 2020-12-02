@@ -17,6 +17,7 @@
     <link href="../../assets/css/style.css" rel="stylesheet" />
     <link href="../../assets/css/custom.css" rel="stylesheet" />
     <link href="../../assets/css/initatives.css" rel="stylesheet" />
+    <link href="../../assets/css/icheck-bootstrap.min.css" rel="stylesheet" />
     <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" />
     <!-- You can choose a theme from css/styles instead of get all themes -->
     <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
@@ -270,6 +271,7 @@
         overflow-y: hidden;
         border-right: 1px solid #1e252d;
         border-left: 1px solid #1e252d;
+        max-height: 520px;
       }
 
       .collapse-table thead tr:first-child th:first-child .th-inner {
@@ -281,10 +283,11 @@
         left: 0;
         z-index: 2;
         background: #383838;
+        text-align: left;
       }
 
       .collapse-table thead tr:first-child th .th-inner {
-        width: 200px;
+        /* width: fit-content; */
       }
 
       .collapse-table tbody tr td:first-child {
@@ -294,11 +297,17 @@
         left: 0;
         z-index: 2;
         background: #ffffff;
+        text-align: left;
+        box-shadow: 1px 0px 0px #1e252d;
       }
 
       .collapse-table tbody tr:last-child td {
         font-weight: 600;
         color: #1e252d;
+      }
+
+      #toolbar h4 {
+        margin-top: 8px;
       }
     </style>
   </head>
@@ -694,7 +703,7 @@
                 </ul>
               </div>
               <div class="col-md-12 form-group">
-                <label for="kpi_fields" class="">Data Rows</label>
+                <label for="kpi_fields" class="">Data Types</label>
                 <ul class="d-flex flex-row flex-wrap ml-2">
                   <li>
                     <div class="form-check">
@@ -774,7 +783,8 @@
                             id="achievementId"
                             class="form-check-input"
                             type="checkbox"
-                            value="" />Achievement<span class="form-check-sign"
+                            value="" />Achievement (%)<span
+                            class="form-check-sign"
                             ><span class="check"></span></span
                         ></label>
                       </div>
@@ -1341,12 +1351,7 @@
                             class="datatable-dashv1-list custom-datatable-overright"
                           >
                             <div id="toolbar">
-                              <h4
-                                contenteditable="true"
-                                style="margin-top: 8px"
-                              >
-                                Data Table
-                              </h4>
+                              <h4 contenteditable="true">Data Table</h4>
                             </div>
                             <button
                               class="btn btn-custom-secondary pull-right"
@@ -1385,7 +1390,7 @@
                                   <th data-field="Category" rowspan="2">
                                     Category
                                   </th>
-                                  <th data-field="month0" colspan="3">
+                                  <th data-field="month0" colspan="7">
                                     Apr 20
                                   </th>
                                   <th data-field="month1" colspan="3">
@@ -1436,6 +1441,10 @@
                                   <th title="Actual">A</th>
                                   <th title="Target">T</th>
                                   <th title="Budget">B</th>
+                                  <th title="Budget">F</th>
+                                  <th title="Budget">G</th>
+                                  <th title="Budget">A (%)</th>
+                                  <th title="Actual">Y</th>
                                   <th title="Actual">A</th>
                                   <th title="Target">T</th>
                                   <th title="Budget">B</th>
@@ -1488,55 +1497,58 @@
                                       data-toggle="modal"
                                       data-target="#kpi_formula_popup"
                                       role="button"
-                                      >Lorem ipsum dolor sit amet, consectetur
-                                      adipiscing elit.</a
+                                      >Costs - Direct Revenue</a
                                     >
                                   </td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
+                                  <td>1847308953.0</td>
+                                  <td>18318,37,041</td>
+                                  <td>17295,03,472</td>
+                                  <td>16158,20,154</td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>1847308953.0</td>
+                                  <td>18318,37,041</td>
+                                  <td>17295,03,472</td>
+                                  <td>16158,20,154</td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>1847308953.0</td>
+                                  <td>18318,37,041</td>
+                                  <td>17295,03,472</td>
+                                  <td>16158,20,154</td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>1847308953.0</td>
+                                  <td>18318,37,041</td>
+                                  <td>17295,03,472</td>
+                                  <td>16158,20,154</td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>1847308953.0</td>
+                                  <td>18318,37,041</td>
+                                  <td>17295,03,472</td>
+                                  <td>16158,20,154</td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>1847308953.0</td>
+                                  <td>18318,37,041</td>
+                                  <td>17295,03,472</td>
+                                  <td>16158,20,154</td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>1847308953.0</td>
+                                  <td>18318,37,041</td>
+                                  <td>17295,03,472</td>
+                                  <td>16158,20,154</td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>1847308953.0</td>
+                                  <td>18318,37,041</td>
+                                  <td>17295,03,472</td>
+                                  <td>16158,20,154</td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>18318,37,041</td>
                                 </tr>
 
                                 <tr>
@@ -1546,54 +1558,58 @@
                                       data-toggle="modal"
                                       data-target="#kpi_formula_popup"
                                       role="button"
-                                      >Revenue (INR Mn)</a
+                                      >Costs - Direct Expenses - Onsite</a
                                     >
                                   </td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
+                                  <td>49507317.0</td>
+                                  <td>27246182.3</td>
+                                  <td>35464536.2</td>
+                                  <td>34941353.6</td>
+                                  <td>31559939.1</td>
+                                  <td>60679575.9</td>
+                                  <td>35464536.2</td>
+                                  <td>49507317.0</td>
+                                  <td>27246182.3</td>
+                                  <td>35464536.2</td>
+                                  <td>34941353.6</td>
+                                  <td>31559939.1</td>
+                                  <td>60679575.9</td>
+                                  <td>49507317.0</td>
+                                  <td>27246182.3</td>
+                                  <td>35464536.2</td>
+                                  <td>34941353.6</td>
+                                  <td>31559939.1</td>
+                                  <td>60679575.9</td>
+                                  <td>49507317.0</td>
+                                  <td>27246182.3</td>
+                                  <td>35464536.2</td>
+                                  <td>34941353.6</td>
+                                  <td>31559939.1</td>
+                                  <td>60679575.9</td>
+                                  <td>49507317.0</td>
+                                  <td>27246182.3</td>
+                                  <td>35464536.2</td>
+                                  <td>34941353.6</td>
+                                  <td>31559939.1</td>
+                                  <td>60679575.9</td>
+                                  <td>49507317.0</td>
+                                  <td>27246182.3</td>
+                                  <td>35464536.2</td>
+                                  <td>34941353.6</td>
+                                  <td>31559939.1</td>
+                                  <td>60679575.9</td>
+                                  <td>49507317.0</td>
+                                  <td>27246182.3</td>
+                                  <td>35464536.2</td>
+                                  <td>34941353.6</td>
+                                  <td>31559939.1</td>
+                                  <td>60679575.9</td>
+                                  <td>49507317.0</td>
+                                  <td>27246182.3</td>
+                                  <td>35464536.2</td>
+                                  <td>34941353.6</td>
+                                  <td>31559939.1</td>
+                                  <td>60679575.9</td>
                                 </tr>
 
                                 <tr>
@@ -1603,54 +1619,58 @@
                                       data-toggle="modal"
                                       data-target="#kpi_formula_popup"
                                       role="button"
-                                      >Revenue (INR Mn)</a
+                                      >Onsite Salaries & Allowances</a
                                     >
                                   </td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>13976,09,953</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
                                 </tr>
 
                                 <tr>
@@ -1660,54 +1680,58 @@
                                       data-toggle="modal"
                                       data-target="#kpi_formula_popup"
                                       role="button"
-                                      >Revenue (INR Mn)</a
+                                      >Foreign Travel Expenses</a
                                     >
                                   </td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>136,22,573</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
                                 </tr>
 
                                 <tr>
@@ -1717,54 +1741,58 @@
                                       data-toggle="modal"
                                       data-target="#kpi_formula_popup"
                                       role="button"
-                                      >Revenue (INR Mn)</a
+                                      >Foreign Travel Recoveries</a
                                     >
                                   </td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>13976,09,953</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
                                 </tr>
 
                                 <tr>
@@ -1774,54 +1802,58 @@
                                       data-toggle="modal"
                                       data-target="#kpi_formula_popup"
                                       role="button"
-                                      >Revenue (INR Mn)</a
+                                      >Net Foreign Travel Expenses</a
                                     >
                                   </td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>-8,43,878</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
                                 </tr>
 
                                 <tr>
@@ -1831,54 +1863,58 @@
                                       data-toggle="modal"
                                       data-target="#kpi_formula_popup"
                                       role="button"
-                                      >Revenue (INR Mn)</a
+                                      >Visa & Medical Insurance</a
                                     >
                                   </td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
+                                  <td>980,93,955</td>
+                                  <td>961,75,042</td>
+                                  <td>1767,52,895</td>
+                                  <td>968,19,102</td>
+                                  <td>877,55,201</td>
+                                  <td>1013,97,525</td>
+                                  <td>1767,52,895</td>
+                                  <td>980,93,955</td>
+                                  <td>961,75,042</td>
+                                  <td>1767,52,895</td>
+                                  <td>968,19,102</td>
+                                  <td>877,55,201</td>
+                                  <td>1013,97,525</td>
+                                  <td>980,93,955</td>
+                                  <td>961,75,042</td>
+                                  <td>1767,52,895</td>
+                                  <td>968,19,102</td>
+                                  <td>877,55,201</td>
+                                  <td>1013,97,525</td>
+                                  <td>980,93,955</td>
+                                  <td>961,75,042</td>
+                                  <td>1767,52,895</td>
+                                  <td>968,19,102</td>
+                                  <td>877,55,201</td>
+                                  <td>1013,97,525</td>
+                                  <td>980,93,955</td>
+                                  <td>961,75,042</td>
+                                  <td>1767,52,895</td>
+                                  <td>968,19,102</td>
+                                  <td>877,55,201</td>
+                                  <td>1013,97,525</td>
+                                  <td>980,93,955</td>
+                                  <td>961,75,042</td>
+                                  <td>1767,52,895</td>
+                                  <td>968,19,102</td>
+                                  <td>877,55,201</td>
+                                  <td>1013,97,525</td>
+                                  <td>980,93,955</td>
+                                  <td>961,75,042</td>
+                                  <td>1767,52,895</td>
+                                  <td>968,19,102</td>
+                                  <td>877,55,201</td>
+                                  <td>1013,97,525</td>
+                                  <td>980,93,955</td>
+                                  <td>961,75,042</td>
+                                  <td>1767,52,895</td>
+                                  <td>968,19,102</td>
+                                  <td>877,55,201</td>
+                                  <td>1013,97,525</td>
                                 </tr>
 
                                 <tr>
@@ -1888,54 +1924,58 @@
                                       data-toggle="modal"
                                       data-target="#kpi_formula_popup"
                                       role="button"
-                                      >Revenue (INR Mn)</a
+                                      >Visa cost</a
                                     >
                                   </td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
+                                  <td>327,28,135</td>
+                                  <td>163,72,377</td>
+                                  <td>975,76,686</td>
+                                  <td>577,55,889</td>
+                                  <td>264,05,351</td>
+                                  <td>448,57,227</td>
+                                  <td>577,55,889</td>
+                                  <td>327,28,135</td>
+                                  <td>163,72,377</td>
+                                  <td>975,76,686</td>
+                                  <td>577,55,889</td>
+                                  <td>264,05,351</td>
+                                  <td>448,57,227</td>
+                                  <td>327,28,135</td>
+                                  <td>163,72,377</td>
+                                  <td>975,76,686</td>
+                                  <td>577,55,889</td>
+                                  <td>264,05,351</td>
+                                  <td>448,57,227</td>
+                                  <td>327,28,135</td>
+                                  <td>163,72,377</td>
+                                  <td>975,76,686</td>
+                                  <td>577,55,889</td>
+                                  <td>264,05,351</td>
+                                  <td>448,57,227</td>
+                                  <td>327,28,135</td>
+                                  <td>163,72,377</td>
+                                  <td>975,76,686</td>
+                                  <td>577,55,889</td>
+                                  <td>264,05,351</td>
+                                  <td>448,57,227</td>
+                                  <td>327,28,135</td>
+                                  <td>163,72,377</td>
+                                  <td>975,76,686</td>
+                                  <td>577,55,889</td>
+                                  <td>264,05,351</td>
+                                  <td>448,57,227</td>
+                                  <td>327,28,135</td>
+                                  <td>163,72,377</td>
+                                  <td>975,76,686</td>
+                                  <td>577,55,889</td>
+                                  <td>264,05,351</td>
+                                  <td>448,57,227</td>
+                                  <td>327,28,135</td>
+                                  <td>163,72,377</td>
+                                  <td>975,76,686</td>
+                                  <td>577,55,889</td>
+                                  <td>264,05,351</td>
+                                  <td>448,57,227</td>
                                 </tr>
 
                                 <tr>
@@ -1945,103 +1985,111 @@
                                       data-toggle="modal"
                                       data-target="#kpi_formula_popup"
                                       role="button"
-                                      >Revenue (INR Mn)</a
+                                      >Medical Insurance</a
                                     >
                                   </td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
+                                  <td>653,65,820</td>
+                                  <td>798,02,664</td>
+                                  <td>791,76,209</td>
+                                  <td>390,63,213</td>
+                                  <td>613,49,850</td>
+                                  <td>565,40,298</td>
+                                  <td>791,76,209</td>
+                                  <td>653,65,820</td>
+                                  <td>798,02,664</td>
+                                  <td>791,76,209</td>
+                                  <td>390,63,213</td>
+                                  <td>613,49,850</td>
+                                  <td>565,40,298</td>
+                                  <td>653,65,820</td>
+                                  <td>798,02,664</td>
+                                  <td>791,76,209</td>
+                                  <td>390,63,213</td>
+                                  <td>613,49,850</td>
+                                  <td>565,40,298</td>
+                                  <td>653,65,820</td>
+                                  <td>798,02,664</td>
+                                  <td>791,76,209</td>
+                                  <td>390,63,213</td>
+                                  <td>613,49,850</td>
+                                  <td>565,40,298</td>
+                                  <td>653,65,820</td>
+                                  <td>798,02,664</td>
+                                  <td>791,76,209</td>
+                                  <td>390,63,213</td>
+                                  <td>613,49,850</td>
+                                  <td>565,40,298</td>
+                                  <td>653,65,820</td>
+                                  <td>798,02,664</td>
+                                  <td>791,76,209</td>
+                                  <td>390,63,213</td>
+                                  <td>613,49,850</td>
+                                  <td>565,40,298</td>
+                                  <td>653,65,820</td>
+                                  <td>798,02,664</td>
+                                  <td>791,76,209</td>
+                                  <td>390,63,213</td>
+                                  <td>613,49,850</td>
+                                  <td>565,40,298</td>
+                                  <td>653,65,820</td>
+                                  <td>798,02,664</td>
+                                  <td>791,76,209</td>
+                                  <td>390,63,213</td>
+                                  <td>613,49,850</td>
+                                  <td>565,40,298</td>
                                 </tr>
 
                                 <tr>
                                   <td>Total</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
                                 </tr>
 
                                 <tr>
@@ -2051,54 +2099,58 @@
                                       data-toggle="modal"
                                       data-target="#kpi_formula_popup"
                                       role="button"
-                                      >Revenue (INR Mn)</a
+                                      >C&B - Onsite Total</a
                                     >
                                   </td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>-8,43,878</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
                                 </tr>
 
                                 <tr>
@@ -2108,54 +2160,58 @@
                                       data-toggle="modal"
                                       data-target="#kpi_formula_popup"
                                       role="button"
-                                      >Revenue (INR Mn)</a
+                                      >INR Per Hour - Onsite Employees</a
                                     >
                                   </td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>-8,43,878</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
                                 </tr>
 
                                 <tr>
@@ -2165,103 +2221,716 @@
                                       data-toggle="modal"
                                       data-target="#kpi_formula_popup"
                                       role="button"
-                                      >Revenue (INR Mn)</a
+                                      >Inland Travel & Conveyance</a
                                     >
                                   </td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
-                                  <td>4578</td>
+                                  <td>653,65,820</td>
+                                  <td>798,02,664</td>
+                                  <td>791,76,209</td>
+                                  <td>390,63,213</td>
+                                  <td>613,49,850</td>
+                                  <td>565,40,298</td>
+                                  <td>791,76,209</td>
+                                  <td>653,65,820</td>
+                                  <td>798,02,664</td>
+                                  <td>791,76,209</td>
+                                  <td>390,63,213</td>
+                                  <td>613,49,850</td>
+                                  <td>565,40,298</td>
+                                  <td>653,65,820</td>
+                                  <td>798,02,664</td>
+                                  <td>791,76,209</td>
+                                  <td>390,63,213</td>
+                                  <td>613,49,850</td>
+                                  <td>565,40,298</td>
+                                  <td>653,65,820</td>
+                                  <td>798,02,664</td>
+                                  <td>791,76,209</td>
+                                  <td>390,63,213</td>
+                                  <td>613,49,850</td>
+                                  <td>565,40,298</td>
+                                  <td>653,65,820</td>
+                                  <td>798,02,664</td>
+                                  <td>791,76,209</td>
+                                  <td>390,63,213</td>
+                                  <td>613,49,850</td>
+                                  <td>565,40,298</td>
+                                  <td>653,65,820</td>
+                                  <td>798,02,664</td>
+                                  <td>791,76,209</td>
+                                  <td>390,63,213</td>
+                                  <td>613,49,850</td>
+                                  <td>565,40,298</td>
+                                  <td>653,65,820</td>
+                                  <td>798,02,664</td>
+                                  <td>791,76,209</td>
+                                  <td>390,63,213</td>
+                                  <td>613,49,850</td>
+                                  <td>565,40,298</td>
+                                  <td>653,65,820</td>
+                                  <td>798,02,664</td>
+                                  <td>791,76,209</td>
+                                  <td>390,63,213</td>
+                                  <td>613,49,850</td>
+                                  <td>565,40,298</td>
+                                </tr>
+
+                                <tr>
+                                  <td>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#kpi_formula_popup"
+                                      role="button"
+                                      >Foreign Travel & Conveyance - Non
+                                      Billable</a
+                                    >
+                                  </td>
+                                  <td>327,28,135</td>
+                                  <td>163,72,377</td>
+                                  <td>975,76,686</td>
+                                  <td>577,55,889</td>
+                                  <td>264,05,351</td>
+                                  <td>448,57,227</td>
+                                  <td>577,55,889</td>
+                                  <td>327,28,135</td>
+                                  <td>163,72,377</td>
+                                  <td>975,76,686</td>
+                                  <td>577,55,889</td>
+                                  <td>264,05,351</td>
+                                  <td>448,57,227</td>
+                                  <td>327,28,135</td>
+                                  <td>163,72,377</td>
+                                  <td>975,76,686</td>
+                                  <td>577,55,889</td>
+                                  <td>264,05,351</td>
+                                  <td>448,57,227</td>
+                                  <td>327,28,135</td>
+                                  <td>163,72,377</td>
+                                  <td>975,76,686</td>
+                                  <td>577,55,889</td>
+                                  <td>264,05,351</td>
+                                  <td>448,57,227</td>
+                                  <td>327,28,135</td>
+                                  <td>163,72,377</td>
+                                  <td>975,76,686</td>
+                                  <td>577,55,889</td>
+                                  <td>264,05,351</td>
+                                  <td>448,57,227</td>
+                                  <td>327,28,135</td>
+                                  <td>163,72,377</td>
+                                  <td>975,76,686</td>
+                                  <td>577,55,889</td>
+                                  <td>264,05,351</td>
+                                  <td>448,57,227</td>
+                                  <td>327,28,135</td>
+                                  <td>163,72,377</td>
+                                  <td>975,76,686</td>
+                                  <td>577,55,889</td>
+                                  <td>264,05,351</td>
+                                  <td>448,57,227</td>
+                                  <td>327,28,135</td>
+                                  <td>163,72,377</td>
+                                  <td>975,76,686</td>
+                                  <td>577,55,889</td>
+                                  <td>264,05,351</td>
+                                  <td>448,57,227</td>
+                                </tr>
+
+                                <tr>
+                                  <td>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#kpi_formula_popup"
+                                      role="button"
+                                      >Total Costs - Direct Expenses - Onsite
+                                      (B1)</a
+                                    >
+                                  </td>
+                                  <td>980,93,955</td>
+                                  <td>961,75,042</td>
+                                  <td>1767,52,895</td>
+                                  <td>968,19,102</td>
+                                  <td>877,55,201</td>
+                                  <td>1013,97,525</td>
+                                  <td>1767,52,895</td>
+                                  <td>980,93,955</td>
+                                  <td>961,75,042</td>
+                                  <td>1767,52,895</td>
+                                  <td>968,19,102</td>
+                                  <td>877,55,201</td>
+                                  <td>1013,97,525</td>
+                                  <td>980,93,955</td>
+                                  <td>961,75,042</td>
+                                  <td>1767,52,895</td>
+                                  <td>968,19,102</td>
+                                  <td>877,55,201</td>
+                                  <td>1013,97,525</td>
+                                  <td>980,93,955</td>
+                                  <td>961,75,042</td>
+                                  <td>1767,52,895</td>
+                                  <td>968,19,102</td>
+                                  <td>877,55,201</td>
+                                  <td>1013,97,525</td>
+                                  <td>980,93,955</td>
+                                  <td>961,75,042</td>
+                                  <td>1767,52,895</td>
+                                  <td>968,19,102</td>
+                                  <td>877,55,201</td>
+                                  <td>1013,97,525</td>
+                                  <td>980,93,955</td>
+                                  <td>961,75,042</td>
+                                  <td>1767,52,895</td>
+                                  <td>968,19,102</td>
+                                  <td>877,55,201</td>
+                                  <td>1013,97,525</td>
+                                  <td>980,93,955</td>
+                                  <td>961,75,042</td>
+                                  <td>1767,52,895</td>
+                                  <td>968,19,102</td>
+                                  <td>877,55,201</td>
+                                  <td>1013,97,525</td>
+                                  <td>980,93,955</td>
+                                  <td>961,75,042</td>
+                                  <td>1767,52,895</td>
+                                  <td>968,19,102</td>
+                                  <td>877,55,201</td>
+                                  <td>1013,97,525</td>
+                                </tr>
+
+                                <tr>
+                                  <td>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#kpi_formula_popup"
+                                      role="button"
+                                      >% to Onsite Rev</a
+                                    >
+                                  </td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>-8,43,878</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                </tr>
+
+                                <tr>
+                                  <td>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#kpi_formula_popup"
+                                      role="button"
+                                      >INR Per Hour - Onsite Manpower</a
+                                    >
+                                  </td>
+                                  <td>980,93,955</td>
+                                  <td>961,75,042</td>
+                                  <td>1767,52,895</td>
+                                  <td>968,19,102</td>
+                                  <td>877,55,201</td>
+                                  <td>1013,97,525</td>
+                                  <td>1767,52,895</td>
+                                  <td>980,93,955</td>
+                                  <td>961,75,042</td>
+                                  <td>1767,52,895</td>
+                                  <td>968,19,102</td>
+                                  <td>877,55,201</td>
+                                  <td>1013,97,525</td>
+                                  <td>980,93,955</td>
+                                  <td>961,75,042</td>
+                                  <td>1767,52,895</td>
+                                  <td>968,19,102</td>
+                                  <td>877,55,201</td>
+                                  <td>1013,97,525</td>
+                                  <td>980,93,955</td>
+                                  <td>961,75,042</td>
+                                  <td>1767,52,895</td>
+                                  <td>968,19,102</td>
+                                  <td>877,55,201</td>
+                                  <td>1013,97,525</td>
+                                  <td>980,93,955</td>
+                                  <td>961,75,042</td>
+                                  <td>1767,52,895</td>
+                                  <td>968,19,102</td>
+                                  <td>877,55,201</td>
+                                  <td>1013,97,525</td>
+                                  <td>980,93,955</td>
+                                  <td>961,75,042</td>
+                                  <td>1767,52,895</td>
+                                  <td>968,19,102</td>
+                                  <td>877,55,201</td>
+                                  <td>1013,97,525</td>
+                                  <td>980,93,955</td>
+                                  <td>961,75,042</td>
+                                  <td>1767,52,895</td>
+                                  <td>968,19,102</td>
+                                  <td>877,55,201</td>
+                                  <td>1013,97,525</td>
+                                  <td>980,93,955</td>
+                                  <td>961,75,042</td>
+                                  <td>1767,52,895</td>
+                                  <td>968,19,102</td>
+                                  <td>877,55,201</td>
+                                  <td>1013,97,525</td>
+                                </tr>
+
+                                <tr>
+                                  <td>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#kpi_formula_popup"
+                                      role="button"
+                                      >INR Per Hour - Onsite C&B (Standard
+                                      hours)</a
+                                    >
+                                  </td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>-8,43,878</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                </tr>
+
+                                <tr>
+                                  <td>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#kpi_formula_popup"
+                                      role="button"
+                                      >Costs - Direct Expenses - Offshore</a
+                                    >
+                                  </td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>13976,09,953</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
                                 </tr>
 
                                 <tr>
                                   <td>Total</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
-                                  <td>4,57,821</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>136,22,573</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                  <td>7,30,502</td>
+                                  <td>-63,11,040</td>
+                                  <td>-8,43,878</td>
+                                  <td>136,22,573</td>
+                                  <td>8,15,099</td>
+                                  <td>293,60,032</td>
+                                </tr>
+
+                                <tr>
+                                  <td>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#kpi_formula_popup"
+                                      role="button"
+                                      >INR per Hour - Offshore Employees</a
+                                    >
+                                  </td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>13976,09,953</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                  <td>15899,36,220</td>
+                                  <td>15957,56,677</td>
+                                  <td>13976,09,953</td>
+                                  <td>13638,60,742</td>
+                                  <td>12885,42,986</td>
+                                  <td>12513,78,312</td>
+                                </tr>
+
+                                <tr>
+                                  <td>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#kpi_formula_popup"
+                                      role="button"
+                                      >Professional Fee - Retainers / TPC</a
+                                    >
+                                  </td>
+                                  <td>49507317.0</td>
+                                  <td>27246182.3</td>
+                                  <td>35464536.2</td>
+                                  <td>34941353.6</td>
+                                  <td>31559939.1</td>
+                                  <td>60679575.9</td>
+                                  <td>35464536.2</td>
+                                  <td>49507317.0</td>
+                                  <td>27246182.3</td>
+                                  <td>35464536.2</td>
+                                  <td>34941353.6</td>
+                                  <td>31559939.1</td>
+                                  <td>60679575.9</td>
+                                  <td>49507317.0</td>
+                                  <td>27246182.3</td>
+                                  <td>35464536.2</td>
+                                  <td>34941353.6</td>
+                                  <td>31559939.1</td>
+                                  <td>60679575.9</td>
+                                  <td>49507317.0</td>
+                                  <td>27246182.3</td>
+                                  <td>35464536.2</td>
+                                  <td>34941353.6</td>
+                                  <td>31559939.1</td>
+                                  <td>60679575.9</td>
+                                  <td>49507317.0</td>
+                                  <td>27246182.3</td>
+                                  <td>35464536.2</td>
+                                  <td>34941353.6</td>
+                                  <td>31559939.1</td>
+                                  <td>60679575.9</td>
+                                  <td>49507317.0</td>
+                                  <td>27246182.3</td>
+                                  <td>35464536.2</td>
+                                  <td>34941353.6</td>
+                                  <td>31559939.1</td>
+                                  <td>60679575.9</td>
+                                  <td>49507317.0</td>
+                                  <td>27246182.3</td>
+                                  <td>35464536.2</td>
+                                  <td>34941353.6</td>
+                                  <td>31559939.1</td>
+                                  <td>60679575.9</td>
+                                  <td>49507317.0</td>
+                                  <td>27246182.3</td>
+                                  <td>35464536.2</td>
+                                  <td>34941353.6</td>
+                                  <td>31559939.1</td>
+                                  <td>60679575.9</td>
+                                </tr>
+
+                                <tr>
+                                  <td>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#kpi_formula_popup"
+                                      role="button"
+                                      >INR Per Hour - Offshore TPC/Retainers</a
+                                    >
+                                  </td>
+                                  <td>1847308953.0</td>
+                                  <td>18318,37,041</td>
+                                  <td>17295,03,472</td>
+                                  <td>16158,20,154</td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>1847308953.0</td>
+                                  <td>18318,37,041</td>
+                                  <td>17295,03,472</td>
+                                  <td>16158,20,154</td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>1847308953.0</td>
+                                  <td>18318,37,041</td>
+                                  <td>17295,03,472</td>
+                                  <td>16158,20,154</td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>1847308953.0</td>
+                                  <td>18318,37,041</td>
+                                  <td>17295,03,472</td>
+                                  <td>16158,20,154</td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>1847308953.0</td>
+                                  <td>18318,37,041</td>
+                                  <td>17295,03,472</td>
+                                  <td>16158,20,154</td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>1847308953.0</td>
+                                  <td>18318,37,041</td>
+                                  <td>17295,03,472</td>
+                                  <td>16158,20,154</td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>1847308953.0</td>
+                                  <td>18318,37,041</td>
+                                  <td>17295,03,472</td>
+                                  <td>16158,20,154</td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>1847308953.0</td>
+                                  <td>18318,37,041</td>
+                                  <td>17295,03,472</td>
+                                  <td>16158,20,154</td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>18318,37,041</td>
+                                </tr>
+
+                                <tr>
+                                  <td>Total</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
+                                  <td>791,76,209</td>
                                 </tr>
                               </tbody>
                             </table>
@@ -2296,27 +2965,16 @@
     <script src="../../assets/moment.js"></script>
 
     <script src="../../assets/jquery-ui.min.js"></script>
-    <script src="../../assets/moment.js"></script>
-    <script src="../../assets/js/paging.js"></script>
-    <script src="../../assets/js/pages/spiritedaway.js"></script>
     <script src="../../assets/jquery.editable.min.js"></script>
     <script src="../../assets/js/bootstrap.bundle.min.js"></script>
     <script src="../../assets/pickr.es5.min.js"></script>
     <script src="../../assets/datepickerair.js"></script>
-    <!-- <script src="../../assets/select2.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <script src="../../assets/datepicker.en.js"></script>
     <script src="../../assets/js/widgets.js"></script>
-    <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
     <script src="../../assets/knockout-3.5.0.js"></script>
     <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
-    <script src="../../assets/js/colors.js"></script>
     <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
     <script src="assets/daterangepicker/daterangepicker.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="https://d3js.org/d3.v5.js"></script>
-
     <script>
       $(".daterangepicker-field").daterangepicker({
         forceUpdate: true,
@@ -2328,7 +2986,7 @@
 
       $(".daterangepicker-field-period").daterangepicker({
         forceUpdate: true,
-        periods: ["month", "quarter", "year"],
+        periods: ["year"],
         period: "month",
         ranges: {
           "Last 30 days": [moment().subtract(29, "days"), moment()],
@@ -2402,6 +3060,12 @@
 
       // function showHideRow(row) {
       //   $("#" + row).toggle();
+      // }
+
+      // if ($(".table-overflow")[0]) {
+      //   $(".collapse-table").css("overflow-y", "auto");
+      // } else {
+      //   $(".collapse-table").css("overflow-y", "hidden");
       // }
     </script>
   </body>
