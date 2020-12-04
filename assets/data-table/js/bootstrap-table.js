@@ -803,7 +803,7 @@
                     visibleColumns[column.field] = column;
                 }
 
-                html.push('<th' + sprintf(' title="%s"', column.titleTooltip),
+                html.push('<th' + sprintf(' data-toggle="tooltip"'), sprintf(' title="%s"', column.titleTooltip),
                     column.checkbox || column.radio ?
                         sprintf(' class="bs-checkbox %s"', column['class'] || '') :
                         class_,
@@ -1501,6 +1501,9 @@
                 if (this.totalPages <= 1) {
                     this.$pagination.find('div.pagination').hide();
                     $(".collapse-table").css("overflow-y", "auto");
+                }
+                else {
+                    $(".collapse-table").css("overflow-y", "hidden");
                 }
                 if (pageList.length < 2 || this.options.totalRows <= pageList[0]) {
                     this.$pagination.find('span.page-list').hide();

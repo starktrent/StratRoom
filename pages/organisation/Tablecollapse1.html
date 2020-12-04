@@ -240,6 +240,7 @@
         background: #383838;
         text-align: center;
         font-weight: 600 !important;
+        position: sticky;
       }
 
       .collapse-table tbody tr td {
@@ -278,10 +279,18 @@
         width: auto;
       }
 
+      .collapse-table thead tr:first-child th {
+        top: 0;
+      }
+
+      .collapse-table thead tr:nth-child(2) th {
+        top: 30px;
+      }
+
       .collapse-table thead tr:first-child th:first-child {
-        position: sticky;
         left: 0;
-        z-index: 2;
+        top: 0;
+        z-index: 8;
         background: #383838;
         text-align: left;
       }
@@ -1387,7 +1396,11 @@
                             >
                               <thead>
                                 <tr class="period-row">
-                                  <th data-field="Category" rowspan="2">
+                                  <th
+                                    data-field="Category"
+                                    rowspan="2"
+                                    colspan="1"
+                                  >
                                     Category
                                   </th>
                                   <th data-field="month0" colspan="7">
@@ -1438,55 +1451,57 @@
                                 </tr>
 
                                 <tr class="data-type-row">
-                                  <th title="Actual">A</th>
-                                  <th title="Target">T</th>
-                                  <th title="Budget">B</th>
-                                  <th title="Budget">F</th>
-                                  <th title="Budget">G</th>
-                                  <th title="Budget">A (%)</th>
-                                  <th title="Actual">Y</th>
-                                  <th title="Actual">A</th>
-                                  <th title="Target">T</th>
-                                  <th title="Budget">B</th>
-                                  <th title="Actual">A</th>
-                                  <th title="Target">T</th>
-                                  <th title="Budget">B</th>
-                                  <th title="Actual">A</th>
-                                  <th title="Target">T</th>
-                                  <th title="Budget">B</th>
-                                  <th title="Actual">A</th>
-                                  <th title="Target">T</th>
-                                  <th title="Budget">B</th>
-                                  <th title="Actual">A</th>
-                                  <th title="Target">T</th>
-                                  <th title="Budget">B</th>
-                                  <th title="Actual">A</th>
-                                  <th title="Target">T</th>
-                                  <th title="Budget">B</th>
-                                  <th title="Actual">A</th>
-                                  <th title="Target">T</th>
-                                  <th title="Budget">B</th>
-                                  <th title="Actual">A</th>
-                                  <th title="Target">T</th>
-                                  <th title="Budget">B</th>
-                                  <th title="Actual">A</th>
-                                  <th title="Target">T</th>
-                                  <th title="Budget">B</th>
-                                  <th title="Actual">A</th>
-                                  <th title="Target">T</th>
-                                  <th title="Budget">B</th>
-                                  <th title="Actual">A</th>
-                                  <th title="Target">T</th>
-                                  <th title="Budget">B</th>
-                                  <th title="Actual">A</th>
-                                  <th title="Target">T</th>
-                                  <th title="Budget">B</th>
-                                  <th title="Actual">A</th>
-                                  <th title="Target">T</th>
-                                  <th title="Budget">B</th>
-                                  <th title="Actual">A</th>
-                                  <th title="Target">T</th>
-                                  <th title="Budget">B</th>
+                                  <th colspan="1" title="Actual">A</th>
+                                  <th colspan="1" title="Target">T</th>
+                                  <th colspan="1" title="Budget">B</th>
+                                  <th colspan="1" title="Forecast">F</th>
+                                  <th colspan="1" title="Gap">G</th>
+                                  <th colspan="1" title="Achievement (%)">
+                                    A (%)
+                                  </th>
+                                  <th colspan="1" title="YTD">Y</th>
+                                  <th colspan="1" title="Actual">A</th>
+                                  <th colspan="1" title="Target">T</th>
+                                  <th colspan="1" title="Budget">B</th>
+                                  <th colspan="1" title="Actual">A</th>
+                                  <th colspan="1" title="Target">T</th>
+                                  <th colspan="1" title="Budget">B</th>
+                                  <th colspan="1" title="Actual">A</th>
+                                  <th colspan="1" title="Target">T</th>
+                                  <th colspan="1" title="Budget">B</th>
+                                  <th colspan="1" title="Actual">A</th>
+                                  <th colspan="1" title="Target">T</th>
+                                  <th colspan="1" title="Budget">B</th>
+                                  <th colspan="1" title="Actual">A</th>
+                                  <th colspan="1" title="Target">T</th>
+                                  <th colspan="1" title="Budget">B</th>
+                                  <th colspan="1" title="Actual">A</th>
+                                  <th colspan="1" title="Target">T</th>
+                                  <th colspan="1" title="Budget">B</th>
+                                  <th colspan="1" title="Actual">A</th>
+                                  <th colspan="1" title="Target">T</th>
+                                  <th colspan="1" title="Budget">B</th>
+                                  <th colspan="1" title="Actual">A</th>
+                                  <th colspan="1" title="Target">T</th>
+                                  <th colspan="1" title="Budget">B</th>
+                                  <th colspan="1" title="Actual">A</th>
+                                  <th colspan="1" title="Target">T</th>
+                                  <th colspan="1" title="Budget">B</th>
+                                  <th colspan="1" title="Actual">A</th>
+                                  <th colspan="1" title="Target">T</th>
+                                  <th colspan="1" title="Budget">B</th>
+                                  <th colspan="1" title="Actual">A</th>
+                                  <th colspan="1" title="Target">T</th>
+                                  <th colspan="1" title="Budget">B</th>
+                                  <th colspan="1" title="Actual">A</th>
+                                  <th colspan="1" title="Target">T</th>
+                                  <th colspan="1" title="Budget">B</th>
+                                  <th colspan="1" title="Actual">A</th>
+                                  <th colspan="1" title="Target">T</th>
+                                  <th colspan="1" title="Budget">B</th>
+                                  <th colspan="1" title="Actual">A</th>
+                                  <th colspan="1" title="Target">T</th>
+                                  <th colspan="1" title="Budget">B</th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -3002,6 +3017,13 @@
     </script>
 
     <script type="text/javascript">
+      $(document).ready(function () {
+        $("body").tooltip({
+          selector: "[data-toggle=tooltip]",
+          placement: "top",
+        });
+      });
+
       $(document).ready(function () {
         $("#columnCreate").click(function () {
           var col = $("#tableColumn").val();
