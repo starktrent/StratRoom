@@ -1117,9 +1117,10 @@
                 var checked = column.visible ? ' checked="checked"' : '';
 
                 if (column.switchable) {
-                    html.push(sprintf('<li role="menuitem">' +
-                        '<label><input type="checkbox" data-field="%s" value="%s"%s> %s</label>' +
-                        '</li>', column.field, i, checked, column.title));
+                    html.push(sprintf('<li role="menuitem"> <div class="form-check">' +
+                        '<label class="form-check-label"> <input class="form-check-input" type="checkbox" data-field="%s" value="%s"%s> %s' +
+                        '<span class="form-check-sign"> <span class="check"></span> </span> </label>' +
+                        '</div> </li>', column.field, i, checked, column.title));
                     switchableCount++;
                 }
             });
