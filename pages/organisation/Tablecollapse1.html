@@ -24,6 +24,11 @@
     <link rel="stylesheet" href="../../assets/datepickerair.css" />
     <link href="../../assets/jquery-ui.min.css" rel="stylesheet" />
 
+    <link rel="stylesheet" href="../../assets/nano.min.css" />
+    <link rel="stylesheet" href="../../assets/monolith.min.css" />
+    <link rel="stylesheet" href="../../assets/classic.min.css" />
+    <link href="../../assets/js/file-upload/file-upload.css" rel="stylesheet" />
+
     <link
       rel="stylesheet"
       href="../../assets/data-table/css/data-table/bootstrap-table.css"
@@ -266,7 +271,7 @@
         display: inline;
       }
 
-      table {
+      .collapse-table {
         width: 100%;
         display: -webkit-box;
         overflow-y: hidden;
@@ -319,6 +324,10 @@
 
       #toolbar h4 {
         margin-top: 8px;
+      }
+
+      .theme-black .nav > li > a {
+        max-width: 100%;
       }
     </style>
   </head>
@@ -618,6 +627,188 @@
     </div>
     <!-- #END# Left Sidebar -->
 
+    <!-- File Validate Form -->
+    <div
+      class="modal fade"
+      id="file-validate-form"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>File Upload</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-12">
+                <ul class="form-progressbar">
+                  <li>Upload</li>
+                  <li>Validation</li>
+                  <li>Import</li>
+                </ul>
+              </div>
+              <div class="col-md-12">
+                <hr />
+              </div>
+            </div>
+            <!-- <form> -->
+            <div class="row" id="file-upload">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="control-label">Upload File</label>
+                  <div class="preview-zone hidden">
+                    <div class="box box-solid">
+                      <div class="box-body"></div>
+                    </div>
+                  </div>
+                  <div class="dropzone-wrapper">
+                    <div class="dropzone-desc">
+                      <i class="fas fa-file-upload" style="font-size: 20px"></i>
+                      <p>Choose a file or drag it here.</p>
+                    </div>
+                    <input
+                      type="file"
+                      name="img_logo"
+                      class="dropzone"
+                      accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <hr />
+              </div>
+              <div class="col-md-12">
+                <div class="form-line right">
+                  <button
+                    class="initative_save_btn"
+                    id="next-btn-1"
+                    style="font-weight: 600"
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="row" id="file-validate" style="display: none">
+              <div class="col-md-12 img-center">
+                <!-- <img
+                          src="../organisation/images/Verified.png"
+                          alt="Verified"
+                        /> -->
+                <img
+                  src="../organisation/images/Not-Verified.png"
+                  alt="Not-Verified"
+                />
+                <div class="error-div">
+                  <table class="error-table">
+                    <thead>
+                      <tr>
+                        <th style="width: 150px">Row</th>
+                        <th>Error</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="width: 150px">1</td>
+                        <td>Contain Special Character</td>
+                      </tr>
+                      <tr>
+                        <td style="width: 150px">3</td>
+                        <td>Contain Special Character</td>
+                      </tr>
+                      <tr>
+                        <td style="width: 150px">5</td>
+                        <td>Contain Special Character</td>
+                      </tr>
+                      <tr>
+                        <td style="width: 150px">8</td>
+                        <td>Contain Special Character</td>
+                      </tr>
+                      <tr>
+                        <td style="width: 150px">10</td>
+                        <td>Contain Special Character</td>
+                      </tr>
+                      <tr>
+                        <td style="width: 150px">19</td>
+                        <td>Contain Special Character</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <hr />
+              </div>
+              <div class="col-md-12">
+                <div class="form-line">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    id="prev-btn1"
+                    style="font-weight: 600"
+                  >
+                    Previous
+                  </button>
+                  <button
+                    class="initative_save_btn pull-right"
+                    id="next-btn-2"
+                    style="font-weight: 600"
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="row" id="file-save" style="display: none">
+              <div class="col-md-12">
+                <div class="col-md-12 img-center">
+                  <img
+                    src="../organisation/images/Success.png"
+                    alt="Verified"
+                  />
+                </div>
+              </div>
+              <div class="col-md-12">
+                <hr />
+              </div>
+              <div class="col-md-12">
+                <div class="form-line">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    id="prev-btn2"
+                    style="font-weight: 600"
+                  >
+                    Previous
+                  </button>
+                  <button
+                    class="initative_save_btn pull-right"
+                    id="done-btn"
+                    style="font-weight: 600"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Done
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- </form> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END File Validate Form -->
+
     <!-- Table Settings Modal -->
     <div id="table_config" class="modal fade" role="dialog">
       <div class="modal-dialog modal-lg" style="margin-top: 4%">
@@ -878,19 +1069,31 @@
             </button>
           </div>
           <div class="modal-body" style="padding: 0 25px">
-            <div class="col-md-8" style="padding: 0">
-              Field Name: &nbsp;
-              <input
-                type="text"
-                class="browser-default"
-                name="objective_id"
-                id="objective_id"
-                placeholder=""
-              />
+            <div class="row">
+              <div class="col-8 form-group">
+                <label for="Name">Display Name</label>
+                <input
+                  type="text"
+                  class="form-control browser-default"
+                  name="objective_id"
+                  id="objective_id"
+                />
+              </div>
+              <div class="col-4 form-group color_picks_1">
+                <label for="Name">Font Color</label>
+                <div class="input-group" style="margin-bottom: 0">
+                  <div class="input-group-append">
+                    <span
+                      class="input-group-text pickr"
+                      style="width: 90px; border-radius: 0px; height: 30px"
+                    ></span>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="card">
               <ul class="nav nav-tabs" role="tablist">
-                <li class="nav-item m-l-10">
+                <li class="nav-item">
                   <a
                     class="nav-link active"
                     data-toggle="tab"
@@ -898,14 +1101,14 @@
                     >Formula Builder</a
                   >
                 </li>
-                <li class="nav-item m-l-10">
+                <!-- <li class="nav-item m-l-10">
                   <a
                     class="nav-link"
                     data-toggle="tab"
                     href="#summary_calculation"
                     >Summary Calculation</a
                   >
-                </li>
+                </li> -->
               </ul>
               <div class="tab-content" style="padding: 0">
                 <div class="tab-pane body active" id="formula_builder">
@@ -1374,7 +1577,7 @@
                             <button
                               class="btn btn-custom-secondary pull-right"
                               data-toggle="modal"
-                              data-target="#"
+                              data-target="#file-validate-form"
                             >
                               <i class="fas fa-download"></i>
                             </button>
@@ -2991,6 +3194,7 @@
     <script src="../../assets/knockout-3.5.0.js"></script>
     <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
     <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
+    <script src="../../assets/js/file-upload/file-upload.js"></script>
     <script src="assets/daterangepicker/daterangepicker.min.js"></script>
     <script>
       $(".daterangepicker-field").daterangepicker({
