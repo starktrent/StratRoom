@@ -62,7 +62,7 @@
                             ' dropdown-toggle" aria-label="export type" ' +
                             'title="' + this.options.formatExport() + '" ' +
                             'data-toggle="dropdown" type="button" class="btn ">',
-                            sprintf('<i class="%s %s"></i> ', this.options.iconsPrefix, this.options.icons.export),
+                            sprintf('<i class="%s %s" data-toggle="tooltip" data-placement="top" title="Export"></i> ', this.options.iconsPrefix, this.options.icons.export),
                             '<span class="caret"></span>',
                         '</button>',
                         '<ul class="dropdown-menu export-dropdown" role="menu">',

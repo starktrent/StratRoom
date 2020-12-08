@@ -153,7 +153,7 @@
 
       .custom-input {
         border: 1px solid #e5e5e5 !important;
-        border-radius: 4px !important;
+        border-radius: 24px !important;
         width: 210px !important;
         height: 34px !important;
         padding: 0 8px !important;
@@ -172,6 +172,7 @@
 
       .search {
         background-color: #fff;
+        border: none;
       }
 
       .pagination ul li a {
@@ -290,6 +291,15 @@
         position: sticky;
         width: fit-content;
         min-width: 120px;
+        z-index: 7;
+      }
+
+      .collapse-table tbody tr:nth-child(3) td:first-child {
+        text-align: center !important;
+      }
+
+      .collapse-table tbody tr:nth-child(5) td:first-child {
+        text-align: center !important;
       }
 
       .collapse-table thead tr th:first-child {
@@ -301,17 +311,16 @@
         min-width: 120px;
       }
 
-      .collapse-table thead tr th:nth-child(2) {
+      /* .collapse-table thead tr th:nth-child(2) {
         left: 199px;
         z-index: 8;
         background: #383838;
         text-align: left;
         min-width: 80px;
-      }
+      } */
 
       .collapse-table tbody tr:nth-child(odd) td:first-child {
         width: fit-content;
-        max-width: 200px;
         white-space: nowrap;
         position: sticky;
         left: 0;
@@ -321,7 +330,7 @@
         box-shadow: 1px 0px 0px #1e252d;
       }
 
-      .collapse-table tbody tr:nth-child(odd) td:nth-child(2) {
+      /* .collapse-table tbody tr:nth-child(odd) td:nth-child(2) {
         width: fit-content;
         max-width: 200px;
         white-space: nowrap;
@@ -331,9 +340,9 @@
         background: #ffffff;
         text-align: left;
         box-shadow: 1px 0px 0px #1e252d;
-      }
+      } */
 
-      .collapse-table tbody tr:nth-child(even) td:first-child {
+      /* .collapse-table tbody tr:nth-child(even) td:first-child {
         width: fit-content;
         max-width: 200px;
         white-space: nowrap;
@@ -343,7 +352,7 @@
         background: #ffffff;
         text-align: left;
         box-shadow: 1px 0px 0px #1e252d;
-      }
+      } */
 
       /* .collapse-table tbody tr td:nth-child(2) {
         width: fit-content;
@@ -1097,14 +1106,14 @@
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h4>KPI Calculator</h4>
+            <h4>KPI Settings</h4>
             <button type="button" class="close pull-right" data-dismiss="modal">
               &times;
             </button>
           </div>
           <div class="modal-body" style="padding: 0 25px">
             <div class="row">
-              <div class="col-8 form-group">
+              <div class="col-7 form-group">
                 <label for="Name">Display Name</label>
                 <input
                   type="text"
@@ -1113,7 +1122,7 @@
                   id="objective_id"
                 />
               </div>
-              <div class="col-4 form-group color_picks_1">
+              <div class="col-2 form-group color_picks_1">
                 <label for="Name">Font Color</label>
                 <div class="input-group" style="margin-bottom: 0">
                   <div class="input-group-append">
@@ -1123,6 +1132,27 @@
                     ></span>
                   </div>
                 </div>
+              </div>
+              <div class="col-3 form-group">
+                <label for="Name">Font Format</label> <br />
+                <button
+                  class="btn btn-custom-secondary"
+                  style="width: 32px; height: 32px; font-weight: bold"
+                >
+                  B
+                </button>
+                <button
+                  class="btn btn-custom-secondary"
+                  style="width: 32px; height: 32px; font-style: italic"
+                >
+                  I
+                </button>
+                <button
+                  class="btn btn-custom-secondary"
+                  style="width: 32px; height: 32px; text-decoration: underline"
+                >
+                  U
+                </button>
               </div>
             </div>
             <div class="card">
@@ -1606,14 +1636,24 @@
                               data-toggle="modal"
                               data-target="#table_config"
                             >
-                              <i class="fas fa-cog"></i>
+                              <i
+                                class="fas fa-cog"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Settings"
+                              ></i>
                             </button>
                             <button
                               class="btn btn-custom-secondary pull-right"
                               data-toggle="modal"
                               data-target="#file-validate-form"
                             >
-                              <i class="fas fa-download"></i>
+                              <i
+                                class="fas fa-download"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Import"
+                              ></i>
                             </button>
                             <table
                               class="collapse-table"
@@ -1656,7 +1696,7 @@
                               </thead>
                               <tbody>
                                 <tr>
-                                  <td rowspan="2">
+                                  <td rowspan="6">
                                     <a
                                       href="#"
                                       data-toggle="modal"
@@ -1665,7 +1705,14 @@
                                       >Costs - Direct Revenue</a
                                     >
                                   </td>
-                                  <td>A</td>
+                                  <td>
+                                    <span
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Actual"
+                                      >A</span
+                                    >
+                                  </td>
                                   <td>1847308953.0</td>
                                   <td>18318,37,041</td>
                                   <td>17295,03,472</td>
@@ -1683,7 +1730,114 @@
                                   <td>17295,03,472</td>
                                 </tr>
                                 <tr>
-                                  <td>B</td>
+                                  <td>
+                                    <span
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Target"
+                                      >T</span
+                                    >
+                                  </td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>1847308953.0</td>
+                                  <td>18318,37,041</td>
+                                  <td>17295,03,472</td>
+                                  <td>16158,20,154</td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>1847308953.0</td>
+                                  <td>18318,37,041</td>
+                                  <td>17295,03,472</td>
+                                  <td>16158,20,154</td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>1847308953.0</td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <span
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Budget"
+                                      >B</span
+                                    >
+                                  </td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>1847308953.0</td>
+                                  <td>18318,37,041</td>
+                                  <td>17295,03,472</td>
+                                  <td>16158,20,154</td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>1847308953.0</td>
+                                  <td>18318,37,041</td>
+                                  <td>17295,03,472</td>
+                                  <td>16158,20,154</td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>1847308953.0</td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <span
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Forecast"
+                                      >F</span
+                                    >
+                                  </td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>1847308953.0</td>
+                                  <td>18318,37,041</td>
+                                  <td>17295,03,472</td>
+                                  <td>16158,20,154</td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>1847308953.0</td>
+                                  <td>18318,37,041</td>
+                                  <td>17295,03,472</td>
+                                  <td>16158,20,154</td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>1847308953.0</td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <span
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Gap"
+                                      >G</span
+                                    >
+                                  </td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>1847308953.0</td>
+                                  <td>18318,37,041</td>
+                                  <td>17295,03,472</td>
+                                  <td>16158,20,154</td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>1847308953.0</td>
+                                  <td>18318,37,041</td>
+                                  <td>17295,03,472</td>
+                                  <td>16158,20,154</td>
+                                  <td>15671,18,006</td>
+                                  <td>15383,35,759</td>
+                                  <td>1847308953.0</td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <span
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Achievement (%)"
+                                      >A (%)</span
+                                    >
+                                  </td>
                                   <td>15671,18,006</td>
                                   <td>15383,35,759</td>
                                   <td>1847308953.0</td>
@@ -1711,7 +1865,14 @@
                                       >Costs - Direct Expenses - Onsite</a
                                     >
                                   </td>
-                                  <td>A</td>
+                                  <td>
+                                    <span
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Actual"
+                                      >A</span
+                                    >
+                                  </td>
                                   <td>1847308953.0</td>
                                   <td>18318,37,041</td>
                                   <td>17295,03,472</td>
@@ -1729,7 +1890,14 @@
                                   <td>17295,03,472</td>
                                 </tr>
                                 <tr>
-                                  <td>B</td>
+                                  <td>
+                                    <span
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Budget"
+                                      >B</span
+                                    >
+                                  </td>
                                   <td>15671,18,006</td>
                                   <td>15383,35,759</td>
                                   <td>1847308953.0</td>
@@ -1757,7 +1925,14 @@
                                       >Onsite Salaries & Allowances</a
                                     >
                                   </td>
-                                  <td>A</td>
+                                  <td>
+                                    <span
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Actual"
+                                      >A</span
+                                    >
+                                  </td>
                                   <td>1847308953.0</td>
                                   <td>18318,37,041</td>
                                   <td>17295,03,472</td>
@@ -1775,7 +1950,14 @@
                                   <td>17295,03,472</td>
                                 </tr>
                                 <tr>
-                                  <td>B</td>
+                                  <td>
+                                    <span
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Budget"
+                                      >B</span
+                                    >
+                                  </td>
                                   <td>15671,18,006</td>
                                   <td>15383,35,759</td>
                                   <td>1847308953.0</td>
@@ -1803,7 +1985,14 @@
                                       >Foreign Travel Expenses</a
                                     >
                                   </td>
-                                  <td>A</td>
+                                  <td>
+                                    <span
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Actual"
+                                      >A</span
+                                    >
+                                  </td>
                                   <td>1847308953.0</td>
                                   <td>18318,37,041</td>
                                   <td>17295,03,472</td>
@@ -1821,7 +2010,14 @@
                                   <td>17295,03,472</td>
                                 </tr>
                                 <tr>
-                                  <td>B</td>
+                                  <td>
+                                    <span
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Budget"
+                                      >B</span
+                                    >
+                                  </td>
                                   <td>15671,18,006</td>
                                   <td>15383,35,759</td>
                                   <td>1847308953.0</td>
@@ -1849,7 +2045,14 @@
                                       >Foreign Travel Recoveries</a
                                     >
                                   </td>
-                                  <td>A</td>
+                                  <td>
+                                    <span
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Actual"
+                                      >A</span
+                                    >
+                                  </td>
                                   <td>1847308953.0</td>
                                   <td>18318,37,041</td>
                                   <td>17295,03,472</td>
@@ -1867,7 +2070,14 @@
                                   <td>17295,03,472</td>
                                 </tr>
                                 <tr>
-                                  <td>B</td>
+                                  <td>
+                                    <span
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Budget"
+                                      >B</span
+                                    >
+                                  </td>
                                   <td>15671,18,006</td>
                                   <td>15383,35,759</td>
                                   <td>1847308953.0</td>
@@ -1895,7 +2105,14 @@
                                       >Net Foreign Travel Expenses</a
                                     >
                                   </td>
-                                  <td>A</td>
+                                  <td>
+                                    <span
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Actual"
+                                      >A</span
+                                    >
+                                  </td>
                                   <td>1847308953.0</td>
                                   <td>18318,37,041</td>
                                   <td>17295,03,472</td>
@@ -1913,7 +2130,14 @@
                                   <td>17295,03,472</td>
                                 </tr>
                                 <tr>
-                                  <td>B</td>
+                                  <td>
+                                    <span
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Budget"
+                                      >B</span
+                                    >
+                                  </td>
                                   <td>15671,18,006</td>
                                   <td>15383,35,759</td>
                                   <td>1847308953.0</td>
@@ -1941,7 +2165,14 @@
                                       >Visa & Medical Insurance</a
                                     >
                                   </td>
-                                  <td>A</td>
+                                  <td>
+                                    <span
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Actual"
+                                      >A</span
+                                    >
+                                  </td>
                                   <td>1847308953.0</td>
                                   <td>18318,37,041</td>
                                   <td>17295,03,472</td>
@@ -1959,7 +2190,14 @@
                                   <td>17295,03,472</td>
                                 </tr>
                                 <tr>
-                                  <td>B</td>
+                                  <td>
+                                    <span
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Budget"
+                                      >B</span
+                                    >
+                                  </td>
                                   <td>15671,18,006</td>
                                   <td>15383,35,759</td>
                                   <td>1847308953.0</td>
@@ -1987,7 +2225,14 @@
                                       >Visa cost</a
                                     >
                                   </td>
-                                  <td>A</td>
+                                  <td>
+                                    <span
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Actual"
+                                      >A</span
+                                    >
+                                  </td>
                                   <td>1847308953.0</td>
                                   <td>18318,37,041</td>
                                   <td>17295,03,472</td>
@@ -2005,7 +2250,14 @@
                                   <td>17295,03,472</td>
                                 </tr>
                                 <tr>
-                                  <td>B</td>
+                                  <td>
+                                    <span
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Budget"
+                                      >B</span
+                                    >
+                                  </td>
                                   <td>15671,18,006</td>
                                   <td>15383,35,759</td>
                                   <td>1847308953.0</td>
@@ -2033,7 +2285,14 @@
                                       >Medical Insurance</a
                                     >
                                   </td>
-                                  <td>A</td>
+                                  <td>
+                                    <span
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Actual"
+                                      >A</span
+                                    >
+                                  </td>
                                   <td>1847308953.0</td>
                                   <td>18318,37,041</td>
                                   <td>17295,03,472</td>
@@ -2051,7 +2310,14 @@
                                   <td>17295,03,472</td>
                                 </tr>
                                 <tr>
-                                  <td>B</td>
+                                  <td>
+                                    <span
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Budget"
+                                      >B</span
+                                    >
+                                  </td>
                                   <td>15671,18,006</td>
                                   <td>15383,35,759</td>
                                   <td>1847308953.0</td>
@@ -2079,7 +2345,14 @@
                                       >C&B - Onsite Total</a
                                     >
                                   </td>
-                                  <td>A</td>
+                                  <td>
+                                    <span
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Actual"
+                                      >A</span
+                                    >
+                                  </td>
                                   <td>1847308953.0</td>
                                   <td>18318,37,041</td>
                                   <td>17295,03,472</td>
@@ -2097,7 +2370,14 @@
                                   <td>17295,03,472</td>
                                 </tr>
                                 <tr>
-                                  <td>B</td>
+                                  <td>
+                                    <span
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Budget"
+                                      >B</span
+                                    >
+                                  </td>
                                   <td>15671,18,006</td>
                                   <td>15383,35,759</td>
                                   <td>1847308953.0</td>
@@ -2138,7 +2418,7 @@
     <!-- Knob Js -->
     <script src="../../assets/jquery-ui.min.js"></script>
 
-    <script src="../../assets/data-table/js//bootstrap-table.js"></script>
+    <script src="../../assets/data-table/js//bootstrap-table2.js"></script>
     <script src="../../assets/data-table/js/tableExport.js"></script>
     <script src="../../assets/data-table/js/bootstrap-table-resizable.js"></script>
     <script src="../../assets/data-table/js/bootstrap-table-export.js"></script>
@@ -2248,10 +2528,6 @@
           }
         });
       });
-
-      function showHideRow(row) {
-        $("#" + row).toggle();
-      }
     </script>
   </body>
 </a>
