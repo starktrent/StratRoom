@@ -1080,7 +1080,7 @@
                     sprintf(' btn-%s', this.options.iconSize) +
                     '" type="button" name="refresh" aria-label="refresh" title="%s">',
                     this.options.formatRefresh()),
-                sprintf('<i class="%s %s"data-toggle="tooltip" data-placement="top" title="Refresh"></i>', this.options.iconsPrefix, this.options.icons.refresh),
+                sprintf('<i class="%s %s" data-toggle="tooltip" data-placement="top" title="Refresh"></i>', this.options.iconsPrefix, this.options.icons.refresh),
                 '</button>');
         }
 

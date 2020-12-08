@@ -1069,7 +1069,7 @@
                     sprintf(' btn-%s', this.options.iconSize) +
                     '" type="button" name="paginationSwitch" aria-label="pagination Switch" title="%s">',
                     this.options.formatPaginationSwitch()),
-                sprintf('<i class="%s %s"></i>', this.options.iconsPrefix, this.options.icons.paginationSwitchDown),
+                sprintf('<i class="%s %s" data-toggle="tooltip" data-placement="top" title="Show/Hide Pagination"></i>', this.options.iconsPrefix, this.options.icons.paginationSwitchDown),
                 '</button>');
         }
 
@@ -1079,7 +1079,7 @@
                     sprintf(' btn-%s', this.options.iconSize) +
                     '" type="button" name="refresh" aria-label="refresh" title="%s">',
                     this.options.formatRefresh()),
-                sprintf('<i class="%s %s"></i>', this.options.iconsPrefix, this.options.icons.refresh),
+                sprintf('<i class="%s %s" data-toggle="tooltip" data-placement="top" title="Refresh"></i>', this.options.iconsPrefix, this.options.icons.refresh),
                 '</button>');
         }
 
@@ -1100,7 +1100,7 @@
                 sprintf(' btn-%s', this.options.buttonsClass) +
                 sprintf(' btn-%s', this.options.iconSize) +
                 ' dropdown-toggle" data-toggle="dropdown">',
-                sprintf('<i class="%s %s"></i>', this.options.iconsPrefix, this.options.icons.columns),
+                sprintf('<i class="%s %s" data-toggle="tooltip" data-placement="top" title="Columns"></i>', this.options.iconsPrefix, this.options.icons.columns),
                 ' <span class="fas fa-caret-down"></span>',
                 '</button>',
                 '<ul class="dropdown-menu columns-select" role="menu">');
