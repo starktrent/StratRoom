@@ -21,6 +21,15 @@
       href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css"
       rel="stylesheet"
     />
+
+    <link href="../../assets/js/file-upload/file-upload.css" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="../../assets/data-table/css/data-table/bootstrap-table.css"
+    />
+    <link rel="stylesheet" href="../../assets/data-table/css/responsive.css" />
+
     <!-- You can choose a theme from css/styles instead of get all themes -->
     <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
     <!-- <link href="../../assets/css/table-view.css" rel="stylesheet" /> -->
@@ -471,6 +480,282 @@
         cursor: text;
         padding-bottom: 5px;
         padding-right: 5px;
+      }
+
+      .btn-custom-secondary {
+        background-color: #fff;
+        color: #2e2e2e;
+        border: 1px solid #e5e5e5;
+        font-size: 14px;
+        border-radius: 4px !important;
+        margin-left: 4px !important;
+        box-shadow: none !important;
+      }
+
+      .custom-input {
+        border: 1px solid #e5e5e5 !important;
+        border-radius: 24px !important;
+        width: 210px !important;
+        height: 34px !important;
+        padding: 0 8px !important;
+        font-size: 14px !important;
+      }
+
+      .custom-input::placeholder {
+        color: #afafaf !important;
+      }
+
+      .custom-input:focus {
+        box-shadow: none !important;
+        padding: 0 8px !important;
+        border: 1px solid #e5e5e5 !important;
+      }
+
+      .search {
+        background-color: #fff;
+      }
+
+      .pagination ul li a {
+        position: relative;
+        float: left;
+        padding: 6px 12px;
+        margin: 0;
+        line-height: 1.42857143;
+        color: #1e252d !important;
+        text-decoration: none;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 0%;
+        height: 34px;
+        width: 34px;
+      }
+
+      .pagination ul li a:hover {
+        background-color: #f1f1f1;
+        border-radius: 0%;
+      }
+
+      .pagination > li:first-child > a {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
+
+      .pagination > li:last-child > a {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+      }
+
+      .pagination > li:first-child > a,
+      .pagination > li:last-child > a {
+        height: 34px;
+        width: 34px;
+      }
+
+      .pagination li.active a {
+        background-color: #1e252d;
+        color: #fff !important;
+        border-radius: 0%;
+        border: none;
+        box-shadow: none;
+      }
+
+      .pagination li.active a:hover {
+        background-color: #1e252d;
+      }
+
+      .export-dropdown.show {
+        position: absolute;
+        will-change: transform;
+        top: 0px;
+        left: 0px;
+        transform: translate3d(-45px, 36px, 0px) !important;
+      }
+
+      .columns-select.show {
+        position: absolute;
+        will-change: transform;
+        top: 0px;
+        left: 0px;
+        padding: 12px 12px 8px 8px;
+        transform: translate3d(-45px, 36px, 0px) !important;
+        width: 170px !important;
+        height: auto;
+        max-height: 240px;
+        overflow-y: auto;
+      }
+
+      .colCollapseTable thead tr th {
+        border: 1px solid #1e252d !important;
+        padding: 6px 4px 6px 4px;
+        font-size: 12px !important;
+        color: #ffffff;
+        background: #383838;
+        text-align: center;
+        font-weight: 600 !important;
+        position: sticky;
+      }
+
+      .colCollapseTable tbody tr td {
+        border: 1px solid #1e252d !important;
+        padding: 8px 4px 8px 4px !important;
+        font-size: 12px !important;
+        color: #4a4a4a;
+      }
+
+      .colCollapseTable tbody tr td a {
+        color: #4a4a4a !important;
+      }
+
+      .page-size {
+        display: inline !important;
+      }
+
+      .fixed-table-pagination .pagination {
+        margin: 0;
+      }
+
+      .fixed-table-footer {
+        display: inline;
+      }
+
+      .colCollapseTable {
+        width: 100%;
+        display: -webkit-box;
+        overflow-y: hidden;
+        border-right: 1px solid #1e252d;
+        border-left: 1px solid #1e252d;
+        max-height: 520px;
+      }
+
+      .colCollapseTable thead tr:first-child th:first-child .th-inner {
+        width: auto;
+      }
+
+      .colCollapseTable thead tr:first-child th {
+        top: 0;
+      }
+
+      .colCollapseTable thead tr:nth-child(2) th {
+        top: 30px;
+      }
+
+      .colCollapseTable thead tr:first-child th:first-child {
+        left: 0;
+        top: 0;
+        z-index: 8;
+        background: #383838;
+        text-align: left;
+        min-width: 120px;
+      }
+
+      .colCollapseTable thead tr:nth-child(2) th .th-inner {
+        /* width: fit-content; */
+        min-width: 60px;
+      }
+
+      .colCollapseTable tbody tr td:first-child {
+        width: fit-content;
+        white-space: nowrap;
+        position: sticky;
+        left: 0;
+        z-index: 2;
+        background: #ffffff;
+        text-align: left;
+        box-shadow: 1px 0px 0px #1e252d;
+      }
+
+      .colCollapseTable tbody tr:last-child td {
+        font-weight: 600;
+        color: #1e252d;
+      }
+
+      #colToolbar h4,
+      #rowToolbar h4 {
+        margin-top: 8px;
+      }
+
+      .theme-black .nav > li > a {
+        max-width: 100%;
+      }
+
+      .rowCollapseTable thead tr th {
+        border: 1px solid #1e252d !important;
+        padding: 6px 4px 6px 4px;
+        font-size: 12px !important;
+        color: #ffffff;
+        background: #383838;
+        text-align: center;
+        font-weight: 600 !important;
+      }
+
+      .rowCollapseTable tbody tr td {
+        border: 1px solid #1e252d !important;
+        padding: 8px 4px 8px 4px !important;
+        font-size: 12px !important;
+        color: #4a4a4a;
+      }
+
+      .page-size {
+        display: inline !important;
+      }
+
+      .fixed-table-pagination .pagination {
+        margin: 0;
+      }
+
+      .fixed-table-footer {
+        display: inline;
+      }
+
+      .rowCollapseTable {
+        width: 100%;
+        display: -webkit-box;
+        overflow-y: hidden;
+        border-right: 1px solid #1e252d;
+        border-left: 1px solid #1e252d;
+        max-height: 520px;
+      }
+
+      .rowCollapseTable thead tr th:first-child .th-inner {
+        width: auto;
+      }
+
+      .rowCollapseTable thead tr th {
+        top: 0;
+        position: sticky;
+        width: fit-content;
+        min-width: 120px;
+        z-index: 7;
+      }
+
+      .rowCollapseTable tbody tr:nth-child(3) td:first-child {
+        text-align: center !important;
+        z-index: 1 !important;
+      }
+
+      .rowCollapseTable tbody tr:nth-child(5) td:first-child {
+        text-align: center !important;
+        z-index: 1 !important;
+      }
+
+      .rowCollapseTable thead tr th:first-child {
+        left: 0;
+        top: 0;
+        z-index: 8;
+        background: #383838;
+        text-align: left;
+        min-width: 120px;
+      }
+
+      .rowCollapseTable tbody tr:nth-child(odd) td:first-child {
+        width: fit-content;
+        white-space: nowrap;
+        position: sticky;
+        left: 0;
+        z-index: 2;
+        background: #ffffff;
+        text-align: left;
+        box-shadow: 1px 0px 0px #1e252d;
       }
     </style>
   </head>
@@ -1291,7 +1576,7 @@
                       draggable="true"
                       id="riskRegDiv"
                       src="../organisation/images/widgets/Risk.png"
-                      alt="Data"
+                      alt="Risk"
                     />
                   </div>
 
@@ -1306,7 +1591,33 @@
                       draggable="true"
                       id="intRegDiv"
                       src="../organisation/images/widgets/Risk.png"
-                      alt="Data"
+                      alt="Initiative"
+                    />
+                  </div>
+
+                  <label for="data" style="padding-top: 6%">Column Type</label>
+                  <div
+                    class="col-12 form-group chart-type employe_content_border sub_initiative_details"
+                  >
+                    <img
+                      ondragstart="dragStart(event)"
+                      draggable="true"
+                      id="colTypeDiv"
+                      src="../organisation/images/widgets/Risk.png"
+                      alt="Column"
+                    />
+                  </div>
+
+                  <label for="data" style="padding-top: 6%">Row Type</label>
+                  <div
+                    class="col-12 form-group chart-type employe_content_border sub_initiative_details"
+                  >
+                    <img
+                      ondragstart="dragStart(event)"
+                      draggable="true"
+                      id="rowTypeDiv"
+                      src="../organisation/images/widgets/Risk.png"
+                      alt="Column"
                     />
                   </div>
                 </div>
@@ -3705,6 +4016,428 @@
     </div>
     <!-- END Gantt Chart Large -->
 
+    <!-- File Validate Form -->
+    <div
+      class="modal fade"
+      id="file-validate-form"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>File Upload</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-12">
+                <ul class="form-progressbar">
+                  <li>Upload</li>
+                  <li>Validation</li>
+                  <li>Import</li>
+                </ul>
+              </div>
+              <div class="col-md-12">
+                <hr />
+              </div>
+            </div>
+            <!-- <form> -->
+            <div class="row" id="file-upload">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="control-label">Upload File</label>
+                  <div class="preview-zone hidden">
+                    <div class="box box-solid">
+                      <div class="box-body"></div>
+                    </div>
+                  </div>
+                  <div class="dropzone-wrapper">
+                    <div class="dropzone-desc">
+                      <i class="fas fa-file-upload" style="font-size: 20px"></i>
+                      <p>Choose a file or drag it here.</p>
+                    </div>
+                    <input
+                      type="file"
+                      name="img_logo"
+                      class="dropzone"
+                      accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <hr />
+              </div>
+              <div class="col-md-12">
+                <div class="form-line right">
+                  <button
+                    class="initative_save_btn"
+                    id="next-btn-1"
+                    style="font-weight: 600"
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="row" id="file-validate" style="display: none">
+              <div class="col-md-12 img-center">
+                <!-- <img
+                            src="../organisation/images/Verified.png"
+                            alt="Verified"
+                          /> -->
+                <img
+                  src="../organisation/images/Not-Verified.png"
+                  alt="Not-Verified"
+                />
+                <div class="error-div">
+                  <table class="error-table">
+                    <thead>
+                      <tr>
+                        <th style="width: 150px">Row</th>
+                        <th>Error</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="width: 150px">1</td>
+                        <td>Contain Special Character</td>
+                      </tr>
+                      <tr>
+                        <td style="width: 150px">3</td>
+                        <td>Contain Special Character</td>
+                      </tr>
+                      <tr>
+                        <td style="width: 150px">5</td>
+                        <td>Contain Special Character</td>
+                      </tr>
+                      <tr>
+                        <td style="width: 150px">8</td>
+                        <td>Contain Special Character</td>
+                      </tr>
+                      <tr>
+                        <td style="width: 150px">10</td>
+                        <td>Contain Special Character</td>
+                      </tr>
+                      <tr>
+                        <td style="width: 150px">19</td>
+                        <td>Contain Special Character</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <hr />
+              </div>
+              <div class="col-md-12">
+                <div class="form-line">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    id="prev-btn1"
+                    style="font-weight: 600"
+                  >
+                    Previous
+                  </button>
+                  <button
+                    class="initative_save_btn pull-right"
+                    id="next-btn-2"
+                    style="font-weight: 600"
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="row" id="file-save" style="display: none">
+              <div class="col-md-12">
+                <div class="col-md-12 img-center">
+                  <img
+                    src="../organisation/images/Success.png"
+                    alt="Verified"
+                  />
+                </div>
+              </div>
+              <div class="col-md-12">
+                <hr />
+              </div>
+              <div class="col-md-12">
+                <div class="form-line">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    id="prev-btn2"
+                    style="font-weight: 600"
+                  >
+                    Previous
+                  </button>
+                  <button
+                    class="initative_save_btn pull-right"
+                    id="done-btn"
+                    style="font-weight: 600"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Done
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- </form> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END File Validate Form -->
+
+    <!-- Table Settings Modal -->
+    <div id="table_config" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="margin-top: 4%">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Table Configuration</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <label for="rows">No. of Rows</label>
+                <input
+                  type="number"
+                  class="form-control browser-default"
+                  id="tableRow"
+                  value=""
+                />
+              </div>
+              <div class="col-md-6 form-group">
+                <label for="columns">No. of Columns</label>
+                <input
+                  type="number"
+                  class="form-control browser-default"
+                  id="tableColumn"
+                  value=""
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <label for="">Period</label>
+                <input
+                  type="text"
+                  class="form-control browser-default daterangepicker-field-period"
+                />
+              </div>
+              <div class="col-md-12 form-group mt-2">
+                <label for="kpi_fields" class="">Data Columns</label>
+                <ul class="d-flex flex-row flex-wrap ml-2">
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label" id="actuallabel"
+                          ><input
+                            class="form-check-input"
+                            type="checkbox"
+                            value="" />Month<span class="form-check-sign"
+                            ><span class="check"></span></span
+                        ></label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label" id="targetlabel"
+                          ><input
+                            class="form-check-input"
+                            type="checkbox"
+                            value="" />Quarter<span class="form-check-sign"
+                            ><span class="check"></span></span
+                        ></label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label" id="budgetlabel"
+                          ><input
+                            class="form-check-input"
+                            type="checkbox"
+                            value="" />Half Year<span class="form-check-sign"
+                            ><span class="check"></span></span
+                        ></label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label" id="forecastlabel"
+                          ><input
+                            class="form-check-input"
+                            type="checkbox"
+                            value="" />Year<span class="form-check-sign"
+                            ><span class="check"></span></span
+                        ></label>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-12 form-group">
+                <label for="kpi_fields" class="">Data Types</label>
+                <ul class="d-flex flex-row flex-wrap ml-2">
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label" id="actuallabel"
+                          ><input
+                            id="actualId"
+                            class="form-check-input"
+                            type="checkbox"
+                            value="" />Actual<span class="form-check-sign"
+                            ><span class="check"></span></span
+                        ></label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label" id="targetlabel"
+                          ><input
+                            id="targetId"
+                            class="form-check-input"
+                            type="checkbox"
+                            value="" />Target<span class="form-check-sign"
+                            ><span class="check"></span></span
+                        ></label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label" id="budgetlabel"
+                          ><input
+                            id="budgetID"
+                            class="form-check-input"
+                            type="checkbox"
+                            value="" />Budget<span class="form-check-sign"
+                            ><span class="check"></span></span
+                        ></label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label" id="forecastlabel"
+                          ><input
+                            id="forcastId"
+                            class="form-check-input"
+                            type="checkbox"
+                            value="" />Forecast<span class="form-check-sign"
+                            ><span class="check"></span></span
+                        ></label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label" id="gaplabel"
+                          ><input
+                            id="gapId"
+                            class="form-check-input"
+                            type="checkbox"
+                            value="" />Gap<span class="form-check-sign"
+                            ><span class="check"></span></span
+                        ></label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label" id="achievementlabel"
+                          ><input
+                            id="achievementId"
+                            class="form-check-input"
+                            type="checkbox"
+                            value="" />Achievement (%)<span
+                            class="form-check-sign"
+                            ><span class="check"></span></span
+                        ></label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <div class="form-check">
+                        <label class="form-check-label" id="ytdlabel"
+                          ><input
+                            id="ytdId"
+                            class="form-check-input"
+                            type="checkbox"
+                            value="" />YTD<span class="form-check-sign"
+                            ><span class="check"></span></span
+                        ></label>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <!-- <div class="col-12">
+                    <div class="form-line right">
+                      <button
+                        class="initative_save_btn"
+                        value="Create"
+                        id="columnCreate"
+                      >
+                        Create
+                      </button>
+                    </div>
+                  </div> -->
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+            </div>
+            <div
+              class="row"
+              id="columnSection"
+              style="max-height: 380px; overflow-y: auto"
+            ></div>
+
+            <div class="row mt-3">
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- KPI Calculator -->
     <div
       class="modal fade"
@@ -4018,6 +4751,13 @@
     <script src="../../assets/datepicker.en.js"></script>
     <script src="../../assets/js/widgets.js"></script>
     <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
+
+    <script src="../../assets/data-table/js//bootstrap-table.js"></script>
+    <script src="../../assets/data-table/js//bootstrap-table2.js"></script>
+    <script src="../../assets/data-table/js/tableExport.js"></script>
+    <script src="../../assets/data-table/js/bootstrap-table-resizable.js"></script>
+    <script src="../../assets/data-table/js/bootstrap-table-export.js"></script>
+
     <script src="../../assets/knockout-3.5.0.js"></script>
     <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
     <script src="../../assets/js/colors.js"></script>
@@ -6564,6 +7304,2462 @@
 
           $(document).ready(function () {
             $(".int-reg-multi-select").select2();
+          });
+        }
+
+        if (data == "colTypeDiv") {
+          $("#dashboard-body").append(`
+          <div class="col-md-12 select-toggle">
+            <div class="card" style="padding: 8px 12px; height: auto;">
+              <div
+                class="d-flex flex-column activities-box"
+              >
+                <div
+                  class="table-responsive"
+                  style="height: auto;"
+                >
+                <div class="data-table-area mg-b-15">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top: 16px; padding-bottom: 16px;">
+                        <div class="sparkline13-list">
+                          <div class="sparkline13-hd">
+                            <div class="main-sparkline13-hd">
+                              <!-- <h1>
+                                Projects
+                                <span class="table-project-n">Data</span> Table
+                              </h1> -->
+                            </div>
+                          </div>
+                          <div class="sparkline13-graph">
+                            <div
+                              class="datatable-dashv1-list custom-datatable-overright"
+                            >
+                              <div id="colToolbar">
+                                <h4 contenteditable="true">Data Table</h4>
+                              </div>
+                              <button
+                                class="btn btn-custom-secondary pull-right"
+                                data-toggle="modal"
+                                data-target="#table_config"
+                              >
+                                <i
+                                  class="fas fa-cog"
+                                  data-toggle="tooltip"
+                                  data-placement="bottom"
+                                  title="Settings"
+                                ></i>
+                              </button>
+                              <button
+                                class="btn btn-custom-secondary pull-right"
+                                data-toggle="modal"
+                                data-target="#file-validate-form"
+                              >
+                                <i
+                                  class="fas fa-download"
+                                  data-toggle="tooltip"
+                                  data-placement="bottom"
+                                  title="Import"
+                                ></i>
+                              </button>
+                              <table
+                                class="colCollapseTable"
+                                id="columnTable"
+                                data-toggle="columnTable"
+                                data-pagination="true"
+                                data-search="true"
+                                data-show-columns="true"
+                                data-show-pagination-switch="true"
+                                data-show-refresh="true"
+                                data-key-events="true"
+                                data-show-toggle="false"
+                                data-resizable="true"
+                                data-cookie="true"
+                                data-cookie-id-table="saveId"
+                                data-show-export="true"
+                                data-click-to-select="false"
+                                data-toolbar="#colToolbar"
+                              >
+                                <thead>
+                                  <tr class="period-row">
+                                    <th
+                                      data-field="Category"
+                                      rowspan="2"
+                                      colspan="1"
+                                    >
+                                      Category
+                                    </th>
+                                    <th data-field="month0" colspan="7">
+                                      Apr 20
+                                    </th>
+                                    <th data-field="month1" colspan="3">
+                                      May 20
+                                    </th>
+                                    <th data-field="month2" colspan="3">
+                                      Jun 20
+                                    </th>
+                                    <th data-field="month3" colspan="3">
+                                      Jul 20
+                                    </th>
+                                    <th data-field="month4" colspan="3">
+                                      Aug 20
+                                    </th>
+                                    <th data-field="month5" colspan="3">
+                                      Sept 20
+                                    </th>
+                                    <th data-field="month6" colspan="3">
+                                      Oct 20
+                                    </th>
+                                    <th data-field="month7" colspan="3">
+                                      Nov 20
+                                    </th>
+                                    <th data-field="month8" colspan="3">
+                                      Dec 20
+                                    </th>
+                                    <th data-field="month9" colspan="3">
+                                      Jan 21
+                                    </th>
+                                    <th data-field="month10" colspan="3">
+                                      Feb 21
+                                    </th>
+                                    <th data-field="month11" colspan="3">
+                                      Mar 21
+                                    </th>
+                                    <th data-field="month12" colspan="3">
+                                      Apr 21
+                                    </th>
+                                    <th data-field="month13" colspan="3">
+                                      May 21
+                                    </th>
+                                    <th data-field="month14" colspan="3">
+                                      Jun 21
+                                    </th>
+                                  </tr>
+
+                                  <tr class="data-type-row">
+                                    <th colspan="1" title="Actual">A</th>
+                                    <th colspan="1" title="Target">T</th>
+                                    <th colspan="1" title="Budget">B</th>
+                                    <th colspan="1" title="Forecast">F</th>
+                                    <th colspan="1" title="Gap">G</th>
+                                    <th colspan="1" title="Achievement (%)">
+                                      A (%)
+                                    </th>
+                                    <th colspan="1" title="YTD">Y</th>
+                                    <th colspan="1" title="Actual">A</th>
+                                    <th colspan="1" title="Target">T</th>
+                                    <th colspan="1" title="Budget">B</th>
+                                    <th colspan="1" title="Actual">A</th>
+                                    <th colspan="1" title="Target">T</th>
+                                    <th colspan="1" title="Budget">B</th>
+                                    <th colspan="1" title="Actual">A</th>
+                                    <th colspan="1" title="Target">T</th>
+                                    <th colspan="1" title="Budget">B</th>
+                                    <th colspan="1" title="Actual">A</th>
+                                    <th colspan="1" title="Target">T</th>
+                                    <th colspan="1" title="Budget">B</th>
+                                    <th colspan="1" title="Actual">A</th>
+                                    <th colspan="1" title="Target">T</th>
+                                    <th colspan="1" title="Budget">B</th>
+                                    <th colspan="1" title="Actual">A</th>
+                                    <th colspan="1" title="Target">T</th>
+                                    <th colspan="1" title="Budget">B</th>
+                                    <th colspan="1" title="Actual">A</th>
+                                    <th colspan="1" title="Target">T</th>
+                                    <th colspan="1" title="Budget">B</th>
+                                    <th colspan="1" title="Actual">A</th>
+                                    <th colspan="1" title="Target">T</th>
+                                    <th colspan="1" title="Budget">B</th>
+                                    <th colspan="1" title="Actual">A</th>
+                                    <th colspan="1" title="Target">T</th>
+                                    <th colspan="1" title="Budget">B</th>
+                                    <th colspan="1" title="Actual">A</th>
+                                    <th colspan="1" title="Target">T</th>
+                                    <th colspan="1" title="Budget">B</th>
+                                    <th colspan="1" title="Actual">A</th>
+                                    <th colspan="1" title="Target">T</th>
+                                    <th colspan="1" title="Budget">B</th>
+                                    <th colspan="1" title="Actual">A</th>
+                                    <th colspan="1" title="Target">T</th>
+                                    <th colspan="1" title="Budget">B</th>
+                                    <th colspan="1" title="Actual">A</th>
+                                    <th colspan="1" title="Target">T</th>
+                                    <th colspan="1" title="Budget">B</th>
+                                    <th colspan="1" title="Actual">A</th>
+                                    <th colspan="1" title="Target">T</th>
+                                    <th colspan="1" title="Budget">B</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >Costs - Direct Revenue</a
+                                      >
+                                    </td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>18318,37,041</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >Costs - Direct Expenses - Onsite</a
+                                      >
+                                    </td>
+                                    <td>49507317.0</td>
+                                    <td>27246182.3</td>
+                                    <td>35464536.2</td>
+                                    <td>34941353.6</td>
+                                    <td>31559939.1</td>
+                                    <td>60679575.9</td>
+                                    <td>35464536.2</td>
+                                    <td>49507317.0</td>
+                                    <td>27246182.3</td>
+                                    <td>35464536.2</td>
+                                    <td>34941353.6</td>
+                                    <td>31559939.1</td>
+                                    <td>60679575.9</td>
+                                    <td>49507317.0</td>
+                                    <td>27246182.3</td>
+                                    <td>35464536.2</td>
+                                    <td>34941353.6</td>
+                                    <td>31559939.1</td>
+                                    <td>60679575.9</td>
+                                    <td>49507317.0</td>
+                                    <td>27246182.3</td>
+                                    <td>35464536.2</td>
+                                    <td>34941353.6</td>
+                                    <td>31559939.1</td>
+                                    <td>60679575.9</td>
+                                    <td>49507317.0</td>
+                                    <td>27246182.3</td>
+                                    <td>35464536.2</td>
+                                    <td>34941353.6</td>
+                                    <td>31559939.1</td>
+                                    <td>60679575.9</td>
+                                    <td>49507317.0</td>
+                                    <td>27246182.3</td>
+                                    <td>35464536.2</td>
+                                    <td>34941353.6</td>
+                                    <td>31559939.1</td>
+                                    <td>60679575.9</td>
+                                    <td>49507317.0</td>
+                                    <td>27246182.3</td>
+                                    <td>35464536.2</td>
+                                    <td>34941353.6</td>
+                                    <td>31559939.1</td>
+                                    <td>60679575.9</td>
+                                    <td>49507317.0</td>
+                                    <td>27246182.3</td>
+                                    <td>35464536.2</td>
+                                    <td>34941353.6</td>
+                                    <td>31559939.1</td>
+                                    <td>60679575.9</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >Onsite Salaries & Allowances</a
+                                      >
+                                    </td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>13976,09,953</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >Foreign Travel Expenses</a
+                                      >
+                                    </td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>136,22,573</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >Foreign Travel Recoveries</a
+                                      >
+                                    </td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>13976,09,953</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >Net Foreign Travel Expenses</a
+                                      >
+                                    </td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>-8,43,878</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >Visa & Medical Insurance</a
+                                      >
+                                    </td>
+                                    <td>980,93,955</td>
+                                    <td>961,75,042</td>
+                                    <td>1767,52,895</td>
+                                    <td>968,19,102</td>
+                                    <td>877,55,201</td>
+                                    <td>1013,97,525</td>
+                                    <td>1767,52,895</td>
+                                    <td>980,93,955</td>
+                                    <td>961,75,042</td>
+                                    <td>1767,52,895</td>
+                                    <td>968,19,102</td>
+                                    <td>877,55,201</td>
+                                    <td>1013,97,525</td>
+                                    <td>980,93,955</td>
+                                    <td>961,75,042</td>
+                                    <td>1767,52,895</td>
+                                    <td>968,19,102</td>
+                                    <td>877,55,201</td>
+                                    <td>1013,97,525</td>
+                                    <td>980,93,955</td>
+                                    <td>961,75,042</td>
+                                    <td>1767,52,895</td>
+                                    <td>968,19,102</td>
+                                    <td>877,55,201</td>
+                                    <td>1013,97,525</td>
+                                    <td>980,93,955</td>
+                                    <td>961,75,042</td>
+                                    <td>1767,52,895</td>
+                                    <td>968,19,102</td>
+                                    <td>877,55,201</td>
+                                    <td>1013,97,525</td>
+                                    <td>980,93,955</td>
+                                    <td>961,75,042</td>
+                                    <td>1767,52,895</td>
+                                    <td>968,19,102</td>
+                                    <td>877,55,201</td>
+                                    <td>1013,97,525</td>
+                                    <td>980,93,955</td>
+                                    <td>961,75,042</td>
+                                    <td>1767,52,895</td>
+                                    <td>968,19,102</td>
+                                    <td>877,55,201</td>
+                                    <td>1013,97,525</td>
+                                    <td>980,93,955</td>
+                                    <td>961,75,042</td>
+                                    <td>1767,52,895</td>
+                                    <td>968,19,102</td>
+                                    <td>877,55,201</td>
+                                    <td>1013,97,525</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >Visa cost</a
+                                      >
+                                    </td>
+                                    <td>327,28,135</td>
+                                    <td>163,72,377</td>
+                                    <td>975,76,686</td>
+                                    <td>577,55,889</td>
+                                    <td>264,05,351</td>
+                                    <td>448,57,227</td>
+                                    <td>577,55,889</td>
+                                    <td>327,28,135</td>
+                                    <td>163,72,377</td>
+                                    <td>975,76,686</td>
+                                    <td>577,55,889</td>
+                                    <td>264,05,351</td>
+                                    <td>448,57,227</td>
+                                    <td>327,28,135</td>
+                                    <td>163,72,377</td>
+                                    <td>975,76,686</td>
+                                    <td>577,55,889</td>
+                                    <td>264,05,351</td>
+                                    <td>448,57,227</td>
+                                    <td>327,28,135</td>
+                                    <td>163,72,377</td>
+                                    <td>975,76,686</td>
+                                    <td>577,55,889</td>
+                                    <td>264,05,351</td>
+                                    <td>448,57,227</td>
+                                    <td>327,28,135</td>
+                                    <td>163,72,377</td>
+                                    <td>975,76,686</td>
+                                    <td>577,55,889</td>
+                                    <td>264,05,351</td>
+                                    <td>448,57,227</td>
+                                    <td>327,28,135</td>
+                                    <td>163,72,377</td>
+                                    <td>975,76,686</td>
+                                    <td>577,55,889</td>
+                                    <td>264,05,351</td>
+                                    <td>448,57,227</td>
+                                    <td>327,28,135</td>
+                                    <td>163,72,377</td>
+                                    <td>975,76,686</td>
+                                    <td>577,55,889</td>
+                                    <td>264,05,351</td>
+                                    <td>448,57,227</td>
+                                    <td>327,28,135</td>
+                                    <td>163,72,377</td>
+                                    <td>975,76,686</td>
+                                    <td>577,55,889</td>
+                                    <td>264,05,351</td>
+                                    <td>448,57,227</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >Medical Insurance</a
+                                      >
+                                    </td>
+                                    <td>653,65,820</td>
+                                    <td>798,02,664</td>
+                                    <td>791,76,209</td>
+                                    <td>390,63,213</td>
+                                    <td>613,49,850</td>
+                                    <td>565,40,298</td>
+                                    <td>791,76,209</td>
+                                    <td>653,65,820</td>
+                                    <td>798,02,664</td>
+                                    <td>791,76,209</td>
+                                    <td>390,63,213</td>
+                                    <td>613,49,850</td>
+                                    <td>565,40,298</td>
+                                    <td>653,65,820</td>
+                                    <td>798,02,664</td>
+                                    <td>791,76,209</td>
+                                    <td>390,63,213</td>
+                                    <td>613,49,850</td>
+                                    <td>565,40,298</td>
+                                    <td>653,65,820</td>
+                                    <td>798,02,664</td>
+                                    <td>791,76,209</td>
+                                    <td>390,63,213</td>
+                                    <td>613,49,850</td>
+                                    <td>565,40,298</td>
+                                    <td>653,65,820</td>
+                                    <td>798,02,664</td>
+                                    <td>791,76,209</td>
+                                    <td>390,63,213</td>
+                                    <td>613,49,850</td>
+                                    <td>565,40,298</td>
+                                    <td>653,65,820</td>
+                                    <td>798,02,664</td>
+                                    <td>791,76,209</td>
+                                    <td>390,63,213</td>
+                                    <td>613,49,850</td>
+                                    <td>565,40,298</td>
+                                    <td>653,65,820</td>
+                                    <td>798,02,664</td>
+                                    <td>791,76,209</td>
+                                    <td>390,63,213</td>
+                                    <td>613,49,850</td>
+                                    <td>565,40,298</td>
+                                    <td>653,65,820</td>
+                                    <td>798,02,664</td>
+                                    <td>791,76,209</td>
+                                    <td>390,63,213</td>
+                                    <td>613,49,850</td>
+                                    <td>565,40,298</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td>Total</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >C&B - Onsite Total</a
+                                      >
+                                    </td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>-8,43,878</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >INR Per Hour - Onsite Employees</a
+                                      >
+                                    </td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>-8,43,878</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >Inland Travel & Conveyance</a
+                                      >
+                                    </td>
+                                    <td>653,65,820</td>
+                                    <td>798,02,664</td>
+                                    <td>791,76,209</td>
+                                    <td>390,63,213</td>
+                                    <td>613,49,850</td>
+                                    <td>565,40,298</td>
+                                    <td>791,76,209</td>
+                                    <td>653,65,820</td>
+                                    <td>798,02,664</td>
+                                    <td>791,76,209</td>
+                                    <td>390,63,213</td>
+                                    <td>613,49,850</td>
+                                    <td>565,40,298</td>
+                                    <td>653,65,820</td>
+                                    <td>798,02,664</td>
+                                    <td>791,76,209</td>
+                                    <td>390,63,213</td>
+                                    <td>613,49,850</td>
+                                    <td>565,40,298</td>
+                                    <td>653,65,820</td>
+                                    <td>798,02,664</td>
+                                    <td>791,76,209</td>
+                                    <td>390,63,213</td>
+                                    <td>613,49,850</td>
+                                    <td>565,40,298</td>
+                                    <td>653,65,820</td>
+                                    <td>798,02,664</td>
+                                    <td>791,76,209</td>
+                                    <td>390,63,213</td>
+                                    <td>613,49,850</td>
+                                    <td>565,40,298</td>
+                                    <td>653,65,820</td>
+                                    <td>798,02,664</td>
+                                    <td>791,76,209</td>
+                                    <td>390,63,213</td>
+                                    <td>613,49,850</td>
+                                    <td>565,40,298</td>
+                                    <td>653,65,820</td>
+                                    <td>798,02,664</td>
+                                    <td>791,76,209</td>
+                                    <td>390,63,213</td>
+                                    <td>613,49,850</td>
+                                    <td>565,40,298</td>
+                                    <td>653,65,820</td>
+                                    <td>798,02,664</td>
+                                    <td>791,76,209</td>
+                                    <td>390,63,213</td>
+                                    <td>613,49,850</td>
+                                    <td>565,40,298</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >Foreign Travel & Conveyance - Non
+                                        Billable</a
+                                      >
+                                    </td>
+                                    <td>327,28,135</td>
+                                    <td>163,72,377</td>
+                                    <td>975,76,686</td>
+                                    <td>577,55,889</td>
+                                    <td>264,05,351</td>
+                                    <td>448,57,227</td>
+                                    <td>577,55,889</td>
+                                    <td>327,28,135</td>
+                                    <td>163,72,377</td>
+                                    <td>975,76,686</td>
+                                    <td>577,55,889</td>
+                                    <td>264,05,351</td>
+                                    <td>448,57,227</td>
+                                    <td>327,28,135</td>
+                                    <td>163,72,377</td>
+                                    <td>975,76,686</td>
+                                    <td>577,55,889</td>
+                                    <td>264,05,351</td>
+                                    <td>448,57,227</td>
+                                    <td>327,28,135</td>
+                                    <td>163,72,377</td>
+                                    <td>975,76,686</td>
+                                    <td>577,55,889</td>
+                                    <td>264,05,351</td>
+                                    <td>448,57,227</td>
+                                    <td>327,28,135</td>
+                                    <td>163,72,377</td>
+                                    <td>975,76,686</td>
+                                    <td>577,55,889</td>
+                                    <td>264,05,351</td>
+                                    <td>448,57,227</td>
+                                    <td>327,28,135</td>
+                                    <td>163,72,377</td>
+                                    <td>975,76,686</td>
+                                    <td>577,55,889</td>
+                                    <td>264,05,351</td>
+                                    <td>448,57,227</td>
+                                    <td>327,28,135</td>
+                                    <td>163,72,377</td>
+                                    <td>975,76,686</td>
+                                    <td>577,55,889</td>
+                                    <td>264,05,351</td>
+                                    <td>448,57,227</td>
+                                    <td>327,28,135</td>
+                                    <td>163,72,377</td>
+                                    <td>975,76,686</td>
+                                    <td>577,55,889</td>
+                                    <td>264,05,351</td>
+                                    <td>448,57,227</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >Total Costs - Direct Expenses - Onsite
+                                        (B1)</a
+                                      >
+                                    </td>
+                                    <td>980,93,955</td>
+                                    <td>961,75,042</td>
+                                    <td>1767,52,895</td>
+                                    <td>968,19,102</td>
+                                    <td>877,55,201</td>
+                                    <td>1013,97,525</td>
+                                    <td>1767,52,895</td>
+                                    <td>980,93,955</td>
+                                    <td>961,75,042</td>
+                                    <td>1767,52,895</td>
+                                    <td>968,19,102</td>
+                                    <td>877,55,201</td>
+                                    <td>1013,97,525</td>
+                                    <td>980,93,955</td>
+                                    <td>961,75,042</td>
+                                    <td>1767,52,895</td>
+                                    <td>968,19,102</td>
+                                    <td>877,55,201</td>
+                                    <td>1013,97,525</td>
+                                    <td>980,93,955</td>
+                                    <td>961,75,042</td>
+                                    <td>1767,52,895</td>
+                                    <td>968,19,102</td>
+                                    <td>877,55,201</td>
+                                    <td>1013,97,525</td>
+                                    <td>980,93,955</td>
+                                    <td>961,75,042</td>
+                                    <td>1767,52,895</td>
+                                    <td>968,19,102</td>
+                                    <td>877,55,201</td>
+                                    <td>1013,97,525</td>
+                                    <td>980,93,955</td>
+                                    <td>961,75,042</td>
+                                    <td>1767,52,895</td>
+                                    <td>968,19,102</td>
+                                    <td>877,55,201</td>
+                                    <td>1013,97,525</td>
+                                    <td>980,93,955</td>
+                                    <td>961,75,042</td>
+                                    <td>1767,52,895</td>
+                                    <td>968,19,102</td>
+                                    <td>877,55,201</td>
+                                    <td>1013,97,525</td>
+                                    <td>980,93,955</td>
+                                    <td>961,75,042</td>
+                                    <td>1767,52,895</td>
+                                    <td>968,19,102</td>
+                                    <td>877,55,201</td>
+                                    <td>1013,97,525</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >% to Onsite Rev</a
+                                      >
+                                    </td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>-8,43,878</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >INR Per Hour - Onsite Manpower</a
+                                      >
+                                    </td>
+                                    <td>980,93,955</td>
+                                    <td>961,75,042</td>
+                                    <td>1767,52,895</td>
+                                    <td>968,19,102</td>
+                                    <td>877,55,201</td>
+                                    <td>1013,97,525</td>
+                                    <td>1767,52,895</td>
+                                    <td>980,93,955</td>
+                                    <td>961,75,042</td>
+                                    <td>1767,52,895</td>
+                                    <td>968,19,102</td>
+                                    <td>877,55,201</td>
+                                    <td>1013,97,525</td>
+                                    <td>980,93,955</td>
+                                    <td>961,75,042</td>
+                                    <td>1767,52,895</td>
+                                    <td>968,19,102</td>
+                                    <td>877,55,201</td>
+                                    <td>1013,97,525</td>
+                                    <td>980,93,955</td>
+                                    <td>961,75,042</td>
+                                    <td>1767,52,895</td>
+                                    <td>968,19,102</td>
+                                    <td>877,55,201</td>
+                                    <td>1013,97,525</td>
+                                    <td>980,93,955</td>
+                                    <td>961,75,042</td>
+                                    <td>1767,52,895</td>
+                                    <td>968,19,102</td>
+                                    <td>877,55,201</td>
+                                    <td>1013,97,525</td>
+                                    <td>980,93,955</td>
+                                    <td>961,75,042</td>
+                                    <td>1767,52,895</td>
+                                    <td>968,19,102</td>
+                                    <td>877,55,201</td>
+                                    <td>1013,97,525</td>
+                                    <td>980,93,955</td>
+                                    <td>961,75,042</td>
+                                    <td>1767,52,895</td>
+                                    <td>968,19,102</td>
+                                    <td>877,55,201</td>
+                                    <td>1013,97,525</td>
+                                    <td>980,93,955</td>
+                                    <td>961,75,042</td>
+                                    <td>1767,52,895</td>
+                                    <td>968,19,102</td>
+                                    <td>877,55,201</td>
+                                    <td>1013,97,525</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >INR Per Hour - Onsite C&B (Standard
+                                        hours)</a
+                                      >
+                                    </td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>-8,43,878</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >Costs - Direct Expenses - Offshore</a
+                                      >
+                                    </td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>13976,09,953</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td>Total</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>136,22,573</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                    <td>7,30,502</td>
+                                    <td>-63,11,040</td>
+                                    <td>-8,43,878</td>
+                                    <td>136,22,573</td>
+                                    <td>8,15,099</td>
+                                    <td>293,60,032</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >INR per Hour - Offshore Employees</a
+                                      >
+                                    </td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>13976,09,953</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                    <td>15899,36,220</td>
+                                    <td>15957,56,677</td>
+                                    <td>13976,09,953</td>
+                                    <td>13638,60,742</td>
+                                    <td>12885,42,986</td>
+                                    <td>12513,78,312</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >Professional Fee - Retainers / TPC</a
+                                      >
+                                    </td>
+                                    <td>49507317.0</td>
+                                    <td>27246182.3</td>
+                                    <td>35464536.2</td>
+                                    <td>34941353.6</td>
+                                    <td>31559939.1</td>
+                                    <td>60679575.9</td>
+                                    <td>35464536.2</td>
+                                    <td>49507317.0</td>
+                                    <td>27246182.3</td>
+                                    <td>35464536.2</td>
+                                    <td>34941353.6</td>
+                                    <td>31559939.1</td>
+                                    <td>60679575.9</td>
+                                    <td>49507317.0</td>
+                                    <td>27246182.3</td>
+                                    <td>35464536.2</td>
+                                    <td>34941353.6</td>
+                                    <td>31559939.1</td>
+                                    <td>60679575.9</td>
+                                    <td>49507317.0</td>
+                                    <td>27246182.3</td>
+                                    <td>35464536.2</td>
+                                    <td>34941353.6</td>
+                                    <td>31559939.1</td>
+                                    <td>60679575.9</td>
+                                    <td>49507317.0</td>
+                                    <td>27246182.3</td>
+                                    <td>35464536.2</td>
+                                    <td>34941353.6</td>
+                                    <td>31559939.1</td>
+                                    <td>60679575.9</td>
+                                    <td>49507317.0</td>
+                                    <td>27246182.3</td>
+                                    <td>35464536.2</td>
+                                    <td>34941353.6</td>
+                                    <td>31559939.1</td>
+                                    <td>60679575.9</td>
+                                    <td>49507317.0</td>
+                                    <td>27246182.3</td>
+                                    <td>35464536.2</td>
+                                    <td>34941353.6</td>
+                                    <td>31559939.1</td>
+                                    <td>60679575.9</td>
+                                    <td>49507317.0</td>
+                                    <td>27246182.3</td>
+                                    <td>35464536.2</td>
+                                    <td>34941353.6</td>
+                                    <td>31559939.1</td>
+                                    <td>60679575.9</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td>
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >INR Per Hour - Offshore TPC/Retainers</a
+                                      >
+                                    </td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>18318,37,041</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td>Total</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                    <td>791,76,209</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>`);
+          $(function () {
+            $('[data-toggle="columnTable"]').bootstrapTable();
+          });
+        }
+
+        if (data == "rowTypeDiv") {
+          $("#dashboard-body").append(`
+          <div class="col-md-12 select-toggle">
+            <div class="card" style="padding: 8px 12px; height: auto;">
+              <div
+                class="d-flex flex-column activities-box"
+              >
+                <div
+                  class="table-responsive"
+                  style="height: auto;"
+                >
+                <div class="data-table-area mg-b-15">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top: 16px; padding-bottom: 16px;">
+                        <div class="sparkline13-list">
+                          <div class="sparkline13-hd">
+                            <div class="main-sparkline13-hd">
+                              <!-- <h1>
+                                Projects
+                                <span class="table-project-n">Data</span> Table
+                              </h1> -->
+                            </div>
+                          </div>
+                          <div class="sparkline13-graph">
+                            <div
+                              class="datatable-dashv1-list custom-datatable-overright"
+                            >
+                              <div id="rowToolbar">
+                                <h4 contenteditable="true">Data Table</h4>
+                              </div>
+                              <button
+                                class="btn btn-custom-secondary pull-right"
+                                data-toggle="modal"
+                                data-target="#table_config"
+                              >
+                                <i
+                                  class="fas fa-cog"
+                                  data-toggle="tooltip"
+                                  data-placement="bottom"
+                                  title="Settings"
+                                ></i>
+                              </button>
+                              <button
+                                class="btn btn-custom-secondary pull-right"
+                                data-toggle="modal"
+                                data-target="#file-validate-form"
+                              >
+                                <i
+                                  class="fas fa-download"
+                                  data-toggle="tooltip"
+                                  data-placement="bottom"
+                                  title="Import"
+                                ></i>
+                              </button>
+                              <table
+                              class="rowCollapseTable"
+                              id="rowTable"
+                              data-toggle="rowTable"
+                              data-pagination="true"
+                              data-search="true"
+                              data-show-columns="true"
+                              data-show-pagination-switch="true"
+                              data-show-refresh="true"
+                              data-key-events="true"
+                              data-show-toggle="false"
+                              data-resizable="true"
+                              data-cookie="true"
+                              data-cookie-id-table="saveId"
+                              data-show-export="true"
+                              data-click-to-select="false"
+                              data-toolbar="#rowToolbar"
+                              >
+                                <thead>
+                                  <tr>
+                                    <th data-field="category">Category</th>
+                                    <th data-field="datatype">Data Type</th>
+                                    <th data-field="month0">Apr 20</th>
+                                    <th data-field="month1">May 20</th>
+                                    <th data-field="month2">Jun 20</th>
+                                    <th data-field="month3">Jul 20</th>
+                                    <th data-field="month4">Aug 20</th>
+                                    <th data-field="month5">Sept 20</th>
+                                    <th data-field="month6">Oct 20</th>
+                                    <th data-field="month7">Nov 20</th>
+                                    <th data-field="month8">Dec 20</th>
+                                    <th data-field="month9">Jan 21</th>
+                                    <th data-field="month10">Feb 21</th>
+                                    <th data-field="month11">Mar 21</th>
+                                    <th data-field="month12">Apr 21</th>
+                                    <th data-field="month13">May 21</th>
+                                    <th data-field="month14">Jun 21</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td rowspan="6">
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >Costs - Direct Revenue</a
+                                      >
+                                    </td>
+                                    <td>
+                                      <span
+                                        data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Actual"
+                                        >A</span
+                                      >
+                                    </td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <span
+                                        data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Target"
+                                        >T</span
+                                      >
+                                    </td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <span
+                                        data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Budget"
+                                        >B</span
+                                      >
+                                    </td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <span
+                                        data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Forecast"
+                                        >F</span
+                                      >
+                                    </td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <span
+                                        data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Gap"
+                                        >G</span
+                                      >
+                                    </td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <span
+                                        data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Achievement (%)"
+                                        >A (%)</span
+                                      >
+                                    </td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td rowspan="2">
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >Costs - Direct Expenses - Onsite</a
+                                      >
+                                    </td>
+                                    <td>
+                                      <span
+                                        data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Actual"
+                                        >A</span
+                                      >
+                                    </td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <span
+                                        data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Budget"
+                                        >B</span
+                                      >
+                                    </td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td rowspan="2">
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >Onsite Salaries & Allowances</a
+                                      >
+                                    </td>
+                                    <td>
+                                      <span
+                                        data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Actual"
+                                        >A</span
+                                      >
+                                    </td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <span
+                                        data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Budget"
+                                        >B</span
+                                      >
+                                    </td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td rowspan="2">
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >Foreign Travel Expenses</a
+                                      >
+                                    </td>
+                                    <td>
+                                      <span
+                                        data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Actual"
+                                        >A</span
+                                      >
+                                    </td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <span
+                                        data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Budget"
+                                        >B</span
+                                      >
+                                    </td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td rowspan="2">
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >Foreign Travel Recoveries</a
+                                      >
+                                    </td>
+                                    <td>
+                                      <span
+                                        data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Actual"
+                                        >A</span
+                                      >
+                                    </td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <span
+                                        data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Budget"
+                                        >B</span
+                                      >
+                                    </td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td rowspan="2">
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >Net Foreign Travel Expenses</a
+                                      >
+                                    </td>
+                                    <td>
+                                      <span
+                                        data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Actual"
+                                        >A</span
+                                      >
+                                    </td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <span
+                                        data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Budget"
+                                        >B</span
+                                      >
+                                    </td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td rowspan="2">
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >Visa & Medical Insurance</a
+                                      >
+                                    </td>
+                                    <td>
+                                      <span
+                                        data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Actual"
+                                        >A</span
+                                      >
+                                    </td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <span
+                                        data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Budget"
+                                        >B</span
+                                      >
+                                    </td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td rowspan="2">
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >Visa cost</a
+                                      >
+                                    </td>
+                                    <td>
+                                      <span
+                                        data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Actual"
+                                        >A</span
+                                      >
+                                    </td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <span
+                                        data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Budget"
+                                        >B</span
+                                      >
+                                    </td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td rowspan="2">
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >Medical Insurance</a
+                                      >
+                                    </td>
+                                    <td>
+                                      <span
+                                        data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Actual"
+                                        >A</span
+                                      >
+                                    </td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <span
+                                        data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Budget"
+                                        >B</span
+                                      >
+                                    </td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td rowspan="2">
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#kpi_formula_popup"
+                                        role="button"
+                                        >C&B - Onsite Total</a
+                                      >
+                                    </td>
+                                    <td>
+                                      <span
+                                        data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Actual"
+                                        >A</span
+                                      >
+                                    </td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <span
+                                        data-toggle="tooltip"
+                                        data-placement="bottom"
+                                        title="Budget"
+                                        >B</span
+                                      >
+                                    </td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                    <td>18318,37,041</td>
+                                    <td>17295,03,472</td>
+                                    <td>16158,20,154</td>
+                                    <td>15671,18,006</td>
+                                    <td>15383,35,759</td>
+                                    <td>1847308953.0</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>`);
+          $(function () {
+            $('[data-toggle="rowTable"]').bootstrapTable();
           });
         }
 

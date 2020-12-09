@@ -1102,7 +1102,6 @@
                 sprintf(' btn-%s', this.options.iconSize) +
                 ' dropdown-toggle" data-toggle="dropdown">',
                 sprintf('<i class="%s %s" data-toggle="tooltip" data-placement="top" title="Columns"></i>', this.options.iconsPrefix, this.options.icons.columns),
-                ' <span class="fas fa-caret-down"></span>',
                 '</button>',
                 '<ul class="dropdown-menu columns-select" role="menu">');
 
@@ -3098,6 +3097,6 @@
     // =======================
 
     $(function () {
-        $('[data-toggle="table"]').bootstrapTable();
+        $('[data-toggle="rowTable"]').bootstrapTable();
     });
 })(jQuery);
