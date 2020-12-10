@@ -4233,7 +4233,7 @@
                 <label for="">Period</label>
                 <input
                   type="text"
-                  class="form-control browser-default daterangepicker-field-period"
+                  class="form-control browser-default table-collapse-datepicker"
                 />
               </div>
               <div class="col-md-12 form-group mt-2">
@@ -4767,6 +4767,13 @@
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="https://d3js.org/d3.v5.js"></script>
     <script>
+      $(document).ready(function () {
+        $("body").tooltip({
+          selector: "[data-toggle=tooltip]",
+          placement: "top",
+        });
+      });
+
       $(document).ready(function () {
         $("#drilldownTableView").paging({ limit: 6 });
         $("#dataTableView").paging({ limit: 7 });
@@ -10882,6 +10889,22 @@
       $(".daterangepicker-field-period").daterangepicker({
         forceUpdate: true,
         periods: ["month", "quarter", "year"],
+        period: "month",
+        ranges: {
+          "Last 30 days": [moment().subtract(29, "days"), moment()],
+          "Last 90 days": [moment().subtract(89, "days"), moment()],
+          "Last Year": [moment().subtract(1, "year").add(1, "day"), moment()],
+          // 'All Time': 'all-time' // [minDate, maxDate]
+        },
+        callback: function (startDate, endDate, period) {
+          var title = startDate.format("L") + " – " + endDate.format("L");
+          $(this).val(title);
+        },
+      });
+
+      $(".table-collapse-datepicker").daterangepicker({
+        forceUpdate: true,
+        periods: ["year"],
         period: "month",
         ranges: {
           "Last 30 days": [moment().subtract(29, "days"), moment()],

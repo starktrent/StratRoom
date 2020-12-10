@@ -237,7 +237,7 @@
         overflow-y: auto;
       }
 
-      .collapse-table thead tr th {
+      .colCollapseTable thead tr th {
         border: 1px solid #1e252d !important;
         padding: 6px 4px 6px 4px;
         font-size: 12px !important;
@@ -248,14 +248,14 @@
         position: sticky;
       }
 
-      .collapse-table tbody tr td {
+      .colCollapseTable tbody tr td {
         border: 1px solid #1e252d !important;
         padding: 8px 4px 8px 4px !important;
         font-size: 12px !important;
         color: #4a4a4a;
       }
 
-      .collapse-table tbody tr td a {
+      .colCollapseTable tbody tr td a {
         color: #4a4a4a !important;
       }
 
@@ -271,7 +271,7 @@
         display: inline;
       }
 
-      .collapse-table {
+      .colCollapseTable {
         width: 100%;
         display: -webkit-box;
         overflow-y: hidden;
@@ -280,19 +280,19 @@
         max-height: 520px;
       }
 
-      .collapse-table thead tr:first-child th:first-child .th-inner {
+      .colCollapseTable thead tr:first-child th:first-child .th-inner {
         width: auto;
       }
 
-      .collapse-table thead tr:first-child th {
+      .colCollapseTable thead tr:first-child th {
         top: 0;
       }
 
-      .collapse-table thead tr:nth-child(2) th {
+      .colCollapseTable thead tr:nth-child(2) th {
         top: 30px;
       }
 
-      .collapse-table thead tr:first-child th:first-child {
+      .colCollapseTable thead tr:first-child th:first-child {
         left: 0;
         top: 0;
         z-index: 8;
@@ -301,12 +301,12 @@
         min-width: 120px;
       }
 
-      .collapse-table thead tr:nth-child(2) th .th-inner {
+      .colCollapseTable thead tr:nth-child(2) th .th-inner {
         /* width: fit-content; */
         min-width: 60px;
       }
 
-      .collapse-table tbody tr td:first-child {
+      .colCollapseTable tbody tr td:first-child {
         width: fit-content;
         white-space: nowrap;
         position: sticky;
@@ -317,12 +317,12 @@
         box-shadow: 1px 0px 0px #1e252d;
       }
 
-      .collapse-table tbody tr:last-child td {
+      .colCollapseTable tbody tr:last-child td {
         font-weight: 600;
         color: #1e252d;
       }
 
-      #toolbar h4 {
+      #colToolbar h4 {
         margin-top: 8px;
       }
 
@@ -1564,7 +1564,7 @@
                           <div
                             class="datatable-dashv1-list custom-datatable-overright"
                           >
-                            <div id="toolbar">
+                            <div id="colToolbar">
                               <h4 contenteditable="true">Data Table</h4>
                             </div>
                             <button
@@ -1592,7 +1592,7 @@
                               ></i>
                             </button>
                             <table
-                              class="collapse-table"
+                              class="colCollapseTable"
                               id="columnTable"
                               data-toggle="columnTable"
                               data-pagination="true"
@@ -1607,7 +1607,7 @@
                               data-cookie-id-table="saveId"
                               data-show-export="true"
                               data-click-to-select="false"
-                              data-toolbar="#toolbar"
+                              data-toolbar="#colToolbar"
                             >
                               <thead>
                                 <tr class="period-row">
@@ -3301,9 +3301,9 @@
       // }
 
       // if ($(".table-overflow")[0]) {
-      //   $(".collapse-table").css("overflow-y", "auto");
+      //   $(".colCollapseTable").css("overflow-y", "auto");
       // } else {
-      //   $(".collapse-table").css("overflow-y", "hidden");
+      //   $(".colCollapseTable").css("overflow-y", "hidden");
       // }
     </script>
   </body>
