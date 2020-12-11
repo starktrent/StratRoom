@@ -1595,7 +1595,9 @@
                     />
                   </div>
 
-                  <label for="data" style="padding-top: 6%">Column Type</label>
+                  <label for="data" style="padding-top: 6%"
+                    >Custom Table Column</label
+                  >
                   <div
                     class="col-12 form-group chart-type employe_content_border sub_initiative_details"
                   >
@@ -1608,7 +1610,9 @@
                     />
                   </div>
 
-                  <label for="data" style="padding-top: 6%">Row Type</label>
+                  <label for="data" style="padding-top: 6%"
+                    >Custom Table Row</label
+                  >
                   <div
                     class="col-12 form-group chart-type employe_content_border sub_initiative_details"
                   >
@@ -4718,6 +4722,39 @@
         <div class="row row-padding m-0" id="text-body"></div>
 
         <div class="row row-padding m-0" id="dashboard-body"></div>
+
+        <!-- <div class="row">
+          <div class="col-md-12">
+            <button
+              class="btn btn-custom-secondary"
+              onclick="addBtn('#content');"
+              style="margin-right: 2px"
+            >
+              <i class="fas fa-plus"></i>
+            </button>
+            <div
+              id="custom-tab"
+              class="btn-group custom-tab-control"
+              role="group"
+              aria-label="Custom Tab"
+            >
+              <button
+                type="button"
+                class="btn btn-custom-secondary active"
+                data-value="Dashboard"
+              >
+                Dashboard
+              </button>
+              <button
+                type="button"
+                class="btn btn-custom-secondary"
+                data-value="Summary"
+              >
+                Summary
+              </button>
+            </div>
+          </div>
+        </div> -->
       </div>
     </section>
 
@@ -10907,8 +10944,6 @@
         periods: ["year"],
         period: "month",
         ranges: {
-          "Last 30 days": [moment().subtract(29, "days"), moment()],
-          "Last 90 days": [moment().subtract(89, "days"), moment()],
           "Last Year": [moment().subtract(1, "year").add(1, "day"), moment()],
           // 'All Time': 'all-time' // [minDate, maxDate]
         },
