@@ -1564,6 +1564,7 @@ label {
   font-weight:bold;
   font-size:16px;
   color:#0292e6;
+  text-align: center;
 }
 
 .drag-box li{
@@ -1585,6 +1586,12 @@ label {
 
 .drag-box [type="color"] {
   width:80px;
+  width: 60px;
+  height: 40px;
   /* margin-left: auto;
   margin-right: auto; */
+}
+
+.drag-box .btn-block {
+  width: 50%;
 }
