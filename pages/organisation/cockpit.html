@@ -4790,6 +4790,12 @@
             class="btn btn-custom-secondary pull-right"
             style="margin-left: 4px"
           >
+            <i class="fas fa-trash" style="font-size: 14px"></i>
+          </button>
+          <button
+            class="btn btn-custom-secondary pull-right"
+            style="margin-left: 4px"
+          >
             <i class="fas fa-expand" style="font-size: 14px"></i>
           </button>
 
@@ -4800,7 +4806,7 @@
             data-target="#share-popup"
             style="margin-left: 4px"
           >
-            <i class="fas fa-share"></i>
+            <i class="fas fa-share-alt"></i>
           </button>
         </div>
       </div>
@@ -4841,7 +4847,7 @@
             box-shadow: 1px -2px 9px 0px rgb(0 0 0 / 9%);
           "
         >
-          <div class="col-md-12">
+          <div class="col-md-12" style="width: 100%; margin-left: -16px">
             <button
               class="btn btn-custom-secondary"
               onclick="addBtn('#content');"
@@ -4869,7 +4875,7 @@
             var counter = 0;
             function addBtn(link) {
               counter++;
-              if (counter < 9)
+              if (counter < 5)
                 $("#custom-tab").append(
                   `<button
                   type="button"
@@ -4877,7 +4883,7 @@
                   data-value="NewTab"
                   style="border: none; padding: 12px 24px"
                 >
-                  Overall Performance Report
+                  Tab Name
                 </button>`
                 );
             }
