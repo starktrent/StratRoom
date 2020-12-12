@@ -1605,3 +1605,13 @@ label {
   overflow-y: scroll;
   padding-left: 10px;
 }
+
+#initiative_sidebar .sub_initiatives .card {
+  width: calc(100% - -10px);
+}
+
+.collapse_arrow_right + .collapse_arrow_left[style="display: block;"],
+.collapse_arrow_right + .collapse_arrow_left {
+  position:relative;
+  right:10px;
+}
