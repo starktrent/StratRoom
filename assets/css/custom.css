@@ -1595,3 +1595,13 @@ label {
 .drag-box .btn-block {
   width: 50%;
 }
+
+.tools-section {
+  padding: 0;
+  width: 267px;
+}
+.tools-section .sub_initiatives {
+  height: 100vh;
+  overflow-y: scroll;
+  padding-left: 10px;
+}
