@@ -222,6 +222,39 @@
         transform: none !important;
         width: 260px;
       }
+
+      .select2-container {
+        width: 100% !important;
+      }
+
+      .select2-container--default.select2-container--focus
+        .select2-selection--multiple {
+        border: solid #ced4da 1px;
+        outline: 0;
+      }
+
+      .select2-container .select2-search--inline .select2-search__field {
+        box-sizing: border-box;
+        border: none;
+        font-size: 100%;
+        margin-top: -4px;
+        margin-left: 5px;
+        padding: 0;
+        margin-bottom: -10px;
+      }
+
+      .select2-container--default .select2-selection--multiple {
+        background-color: white;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        cursor: text;
+        padding-bottom: 5px;
+        padding-right: 5px;
+      }
+
+      .shareButtonActive {
+        color: #008bff;
+      }
     </style>
   </head>
 
@@ -2232,6 +2265,72 @@ Failure to meet compliance obligations</textarea
     </div>
     <!--#End User Edit Popup -->
 
+    <!-- Share Modal -->
+    <div id="share-popup" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="margin-top: 10%">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Share</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-12 form-group">
+                <label for="Department">Department</label>
+                <select
+                  class="dept-multi-select"
+                  name="states[]"
+                  multiple="multiple"
+                >
+                  <option value="971">Human Resource</option>
+                  <option value="972">Designer</option>
+                  <option value="973">Developer</option>
+                  <option value="973">Tester</option>
+                  <option value="973">Manager</option>
+                  <option value="973">Marketing</option>
+                </select>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Department">User</label>
+                <select
+                  class="user-multi-select"
+                  name="states[]"
+                  multiple="multiple"
+                >
+                  <option value="972">Yasir Patton</option>
+                  <option value="973">Zander Bonner</option>
+                  <option value="973">Sila Redmond</option>
+                  <option value="973">Jayden Ortega</option>
+                  <option value="973">Milan Potts</option>
+                  <option value="973">Ernest Best</option>
+                </select>
+              </div>
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- File Validate Form -->
     <div
       class="modal fade"
@@ -2673,6 +2772,22 @@ Failure to meet compliance obligations</textarea
               data-toggle="tooltip"
               data-placement="bottom"
               title="Export"
+            ></i>
+          </button>
+
+          <button
+            class="btn btn-custom-secondary pull-right"
+            style="margin-left: 4px"
+            id="share_btn"
+            data-toggle="modal"
+            data-target="#share-popup"
+          >
+            <i
+              class="fas fa-share-alt"
+              style="font-size: 14px"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="Share"
             ></i>
           </button>
         </div>
@@ -3753,7 +3868,7 @@ Failure to meet compliance obligations</textarea
     <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
     <script src="../../assets/knockout-3.5.0.js"></script>
     <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
-    <script src="../../assets/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <script src="../../assets/js/file-upload/file-upload.js"></script>
     <script src="../../assets/js/risk.js"></script>
 
@@ -3764,6 +3879,15 @@ Failure to meet compliance obligations</textarea
           var title = startDate.format("L") + " – " + endDate.format("L");
           $(this).val(title);
         },
+      });
+
+      $(document).ready(function () {
+        $(".dept-multi-select").select2();
+        $(".user-multi-select").select2();
+      });
+
+      $("#share_btn").click(function () {
+        $("#share_btn i").toggleClass("shareButtonActive");
       });
 
       $("#selectall").click(function () {

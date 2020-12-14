@@ -19,6 +19,10 @@
     <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
     <!-- <link href="../../assets/css/table-view.css" rel="stylesheet" /> -->
     <!-- <link rel="stylesheet" href="../../assets/daterangepicker.css"> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../../assets/datepickerair.css" />
     <link href="../../assets/jquery-ui.min.css" rel="stylesheet" />
     <link
@@ -311,6 +315,39 @@
         padding: 8px 4px 8px 4px !important;
         font-size: 12px !important;
         color: #535353;
+      }
+
+      .select2-container {
+        width: 100% !important;
+      }
+
+      .select2-container--default.select2-container--focus
+        .select2-selection--multiple {
+        border: solid #ced4da 1px;
+        outline: 0;
+      }
+
+      .select2-container .select2-search--inline .select2-search__field {
+        box-sizing: border-box;
+        border: none;
+        font-size: 100%;
+        margin-top: -4px;
+        margin-left: 5px;
+        padding: 0;
+        margin-bottom: -10px;
+      }
+
+      .select2-container--default .select2-selection--multiple {
+        background-color: white;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        cursor: text;
+        padding-bottom: 5px;
+        padding-right: 5px;
+      }
+
+      .shareButtonActive {
+        color: #008bff;
       }
     </style>
   </head>
@@ -3286,6 +3323,72 @@
     </div>
     <!--#End User Edit Popup -->
 
+    <!-- Share Modal -->
+    <div id="share-popup" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="margin-top: 10%">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Share</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-12 form-group">
+                <label for="Department">Department</label>
+                <select
+                  class="dept-multi-select"
+                  name="states[]"
+                  multiple="multiple"
+                >
+                  <option value="971">Human Resource</option>
+                  <option value="972">Designer</option>
+                  <option value="973">Developer</option>
+                  <option value="973">Tester</option>
+                  <option value="973">Manager</option>
+                  <option value="973">Marketing</option>
+                </select>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Department">User</label>
+                <select
+                  class="user-multi-select"
+                  name="states[]"
+                  multiple="multiple"
+                >
+                  <option value="972">Yasir Patton</option>
+                  <option value="973">Zander Bonner</option>
+                  <option value="973">Sila Redmond</option>
+                  <option value="973">Jayden Ortega</option>
+                  <option value="973">Milan Potts</option>
+                  <option value="973">Ernest Best</option>
+                </select>
+              </div>
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <section class="content" id="section">
       <!-- Page Header -->
       <div class="page-header row no-gutters py-2 m-t-70">
@@ -3310,6 +3413,27 @@
         <div class="collapse_arrow_left">
           <i class="arrow_collapse_size fas fa-caret-left"></i>
         </div>
+
+        <div class="row">
+          <div class="col-md-12 mt-2">
+            <button
+              class="btn btn-custom-secondary pull-right"
+              style="margin-left: 4px"
+              id="share_btn"
+              data-toggle="modal"
+              data-target="#share-popup"
+            >
+              <i
+                class="fas fa-share-alt"
+                style="font-size: 14px"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="Share"
+              ></i>
+            </button>
+          </div>
+        </div>
+
         <div class="row" id="political_section">
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <div class="card cardBox">
@@ -4521,6 +4645,7 @@
     <script src="../../assets/knockout-3.5.0.js"></script>
     <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
     <script src="../../assets/js/colors.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <!-- <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script> -->
     <script src="assets/daterangepicker/daterangepicker.min.js"></script>
@@ -4696,6 +4821,15 @@
 
       $("#action_table").on("click", ".remove-action", function (e) {
         $(this).parents(".action_clone").remove();
+      });
+
+      $(document).ready(function () {
+        $(".dept-multi-select").select2();
+        $(".user-multi-select").select2();
+      });
+
+      $("#share_btn").click(function () {
+        $("#share_btn i").toggleClass("shareButtonActive");
       });
 
       $(document).ready(function () {

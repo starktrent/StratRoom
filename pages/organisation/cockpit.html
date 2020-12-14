@@ -767,7 +767,7 @@
         border-radius: 28px !important;
       }
 
-      .buttonActive {
+      .shareButtonActive {
         color: #008bff;
       }
     </style>
@@ -4769,56 +4769,56 @@
     </div>
     <!-- END KPI Calculator -->
 
-        <!-- Delete Popup -->
-        <div
-        class="modal fade"
-        id="delete_popup"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="myLargeModalLabel_1"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered modal-md">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4>Delete</h4>
-              <button type="button" class="close pull-right" data-dismiss="modal">
-                &times;
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="row">
-                <div
-                  class="col-12"
-                  style="text-align: center; padding-bottom: 12px"
-                >
-                  <h5>Do you really want to delete?</h5>
-                </div>
-                <div class="col-12">
-                  <div class="form-line right">
-                    <button
-                      type="button"
-                      class="btn-default1 btn"
-                      data-dismiss="modal"
-                      aria-label="Close"
-                    >
-                      Cancel
-                    </button>
-                    <button
-                      class="initative_save_btn"
-                      value="Save"
-                      style="background-color: #f2675f"
-                    >
-                      Delete
-                    </button>
-                  </div>
+    <!-- Delete Popup -->
+    <div
+      class="modal fade"
+      id="delete_popup"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Delete</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div
+                class="col-12"
+                style="text-align: center; padding-bottom: 12px"
+              >
+                <h5>Do you really want to delete?</h5>
+              </div>
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    class="initative_save_btn"
+                    value="Save"
+                    style="background-color: #f2675f"
+                  >
+                    Delete
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- Delete Popup -->
+    </div>
+    <!-- Delete Popup -->
 
     <section class="content" id="section">
       <!-- Page Header -->
@@ -4920,14 +4920,20 @@
                 type="button"
                 class="btn btn-custom-secondary active"
                 data-value="Overall"
-                style="border: none; padding: 12px 16px; border-radius: 28px !important;"
+                style="
+                  border: none;
+                  padding: 12px 16px;
+                  border-radius: 28px !important;
+                "
               >Overall Performance Report</button>
             </div>
           </div>
           <script>
             var x = 0;
-            $("#tabAddBtn").click(function(e) { //on add input button click
-              if (x < 5) { //max input box allowed
+            $("#tabAddBtn").click(function (e) {
+              //on add input button click
+              if (x < 5) {
+                //max input box allowed
                 x++; //text box increment
                 $("#custom-tab").append(
                   `<button
@@ -4937,8 +4943,7 @@
                     style="border: none; padding: 12px 24px; border-radius: 28px !important;"
                   >Tab Name</button>`
                 ); //add input box
-                if (x == 4)
-                {
+                if (x == 4) {
                   $(this).hide();
                 }
               }
@@ -11272,7 +11277,7 @@
       });
 
       $("#share_btn").click(function () {
-        $("#share_btn i").toggleClass("buttonActive");
+        $("#share_btn i").toggleClass("shareButtonActive");
       });
     </script>
   </body>
