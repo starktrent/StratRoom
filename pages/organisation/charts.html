@@ -20,6 +20,10 @@
     />
     <link href="../../assets/css/icheck-bootstrap.min.css" rel="stylesheet" />
     <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
     <!-- You can choose a theme from css/styles instead of get all themes -->
     <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
     <!-- <link href="../../assets/css/table-view.css" rel="stylesheet" /> -->
@@ -429,6 +433,57 @@
       .remove-btn2 {
         background-color: #fff;
         float: right;
+      }
+
+      .select2-container {
+        width: 100% !important;
+      }
+
+      .select2-container--default.select2-container--focus
+        .select2-selection--multiple {
+        border: solid #ced4da 1px;
+        outline: 0;
+      }
+
+      .select2-container .select2-search--inline .select2-search__field {
+        box-sizing: border-box;
+        border: none;
+        font-size: 100%;
+        margin-top: -4px;
+        margin-left: 5px;
+        padding: 0;
+        margin-bottom: -10px;
+      }
+
+      .select2-container--default .select2-selection--multiple {
+        background-color: white;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        cursor: text;
+        padding-bottom: 5px;
+        padding-right: 5px;
+      }
+
+      .btn-custom-secondary {
+        background-color: #fff;
+        color: #2e2e2e;
+        border: 1px solid #e5e5e5;
+        font-size: 14px;
+        border-radius: 4px !important;
+        margin-left: 4px !important;
+        box-shadow: none !important;
+      }
+
+      .btn-group > .btn.active {
+        z-index: 1;
+        background-color: #1f262d;
+        color: #fff;
+        padding: 12px 16px !important;
+        border-radius: 28px !important;
+      }
+
+      .shareButtonActive {
+        color: #008bff;
       }
     </style>
   </head>
@@ -1510,6 +1565,123 @@
     </div>
     <!-- END Negative Large -->
 
+    <!-- Share Modal -->
+    <div id="share-popup" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" style="margin-top: 10%">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Share</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-12 form-group">
+                <label for="Department">Departments</label>
+                <select
+                  class="dept-multi-select"
+                  name="states[]"
+                  multiple="multiple"
+                >
+                  <option value="971">Human Resource</option>
+                  <option value="972">Designer</option>
+                  <option value="973">Developer</option>
+                  <option value="973">Tester</option>
+                  <option value="973">Manager</option>
+                  <option value="973">Marketing</option>
+                </select>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Department">Users</label>
+                <select
+                  class="user-multi-select"
+                  name="states[]"
+                  multiple="multiple"
+                >
+                  <option value="972">Yasir Patton</option>
+                  <option value="973">Zander Bonner</option>
+                  <option value="973">Sila Redmond</option>
+                  <option value="973">Jayden Ortega</option>
+                  <option value="973">Milan Potts</option>
+                  <option value="973">Ernest Best</option>
+                </select>
+              </div>
+              <div class="form-group col-md-12">
+                <hr />
+              </div>
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delete Popup -->
+    <div
+      class="modal fade"
+      id="delete_popup"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Delete</h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div
+                class="col-12"
+                style="text-align: center; padding-bottom: 12px"
+              >
+                <h5>Do you really want to delete?</h5>
+              </div>
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    class="initative_save_btn"
+                    value="Save"
+                    style="background-color: #f2675f"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Delete Popup -->
+
     <section class="content" id="section">
       <!-- Page Header -->
       <div class="page-header row no-gutters py-2 m-t-70">
@@ -1524,22 +1696,142 @@
       </div>
       <!-- End Page Header -->
 
-      <!-- Page Body -->
-      <div
-        class="container-fluid"
-        style="height: 600px"
-        ondrop="drop(event)"
-        ondragover="allowDrop(event)"
-      >
-        <!-- COl -->
+      <div class="row">
+        <div class="col-md-10"></div>
+        <div class="col-md-2 mt-2">
+          <button
+            class="btn btn-custom-secondary pull-right"
+            style="margin-left: 4px"
+            data-toggle="modal"
+            data-target="#delete_popup"
+          >
+            <i
+              class="fas fa-trash"
+              style="font-size: 14px"
+              data-toggle="tooltip"
+              data-placement="top"
+              title="Delete"
+            ></i>
+          </button>
+          <button
+            class="btn btn-custom-secondary pull-right"
+            style="margin-left: 4px"
+          >
+            <i
+              class="fas fa-expand"
+              style="font-size: 14px"
+              data-toggle="tooltip"
+              data-placement="top"
+              title="Expand"
+            ></i>
+          </button>
+
+          <button
+            class="btn btn-custom-secondary pull-right"
+            id="share_btn"
+            data-toggle="modal"
+            data-target="#share-popup"
+            style="margin-left: 4px"
+          >
+            <i
+              class="fas fa-share-alt"
+              data-toggle="tooltip"
+              data-placement="top"
+              title="Share"
+            ></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="container-fluid">
         <div class="collapse_arrow_right" style="display: none">
           <i class="arrow_collapse_size fas fa-caret-right"></i>
         </div>
         <div class="collapse_arrow_left">
           <i class="arrow_collapse_size fas fa-caret-left"></i>
         </div>
+      </div>
+
+      <!-- Page Body -->
+      <div
+        class="container-fluid customTabContent Overall"
+        style="height: 600px"
+        ondrop="drop(event)"
+        ondragover="allowDrop(event)"
+      >
         <div class="row row-padding m-0" id="drill-chart-body"></div>
         <div class="row row-padding m-0" id="chart-body"></div>
+      </div>
+
+      <div class="container-fluid customTabContent NewTab"></div>
+
+      <div class="container-fluid">
+        <div
+          class="row"
+          style="
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+            background: #fff;
+            margin-left: -39px;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            box-shadow: 1px -2px 9px 0px rgb(0 0 0 / 9%);
+          "
+        >
+          <div class="col-md-12" style="width: 100%; margin-left: -8px">
+            <button
+              class="btn btn-custom-secondary"
+              id="tabAddBtn"
+              style="margin-right: 2px"
+            >
+              <i
+                class="fas fa-plus"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="Add"
+              ></i>
+            </button>
+            <div
+              id="custom-tab"
+              class="btn-group custom-tab-control"
+              role="group"
+              aria-label="Custom Tab"
+            >
+              <button
+                type="button"
+                class="btn btn-custom-secondary active"
+                data-value="Overall"
+                style="
+                  border: none;
+                  padding: 12px 16px;
+                  border-radius: 28px !important;
+                "
+              >Overall Performance Report</button>
+            </div>
+          </div>
+          <script>
+            var x = 0;
+            $("#tabAddBtn").click(function (e) {
+              //on add input button click
+              if (x < 5) {
+                //max input box allowed
+                x++; //text box increment
+                $("#custom-tab").append(
+                  `<button
+                    type="button"
+                    class="btn btn-custom-secondary"
+                    data-value="NewTab"
+                    style="border: none; padding: 12px 24px; border-radius: 28px !important;"
+                  >Tab Name</button>`
+                ); //add input box
+                if (x == 4) {
+                  $(this).hide();
+                }
+              }
+            });
+          </script>
+        </div>
       </div>
     </section>
 
@@ -1567,6 +1859,7 @@
     <script src="../../assets/datepickerair.js"></script>
     <script src="../../assets/datepicker.en.js"></script>
     <script src="../../assets/js/widgets.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
     <script src="../../assets/knockout-3.5.0.js"></script>
     <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
@@ -1576,6 +1869,18 @@
     <script src="assets/daterangepicker/daterangepicker.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script>
+      $(document).ready(function () {
+        $(".dept-multi-select").select2();
+        $(".user-multi-select").select2();
+      });
+
+      $(document).ready(function () {
+        $("body").tooltip({
+          selector: "[data-toggle=tooltip]",
+          placement: "top",
+        });
+      });
+
       function dragStart(event) {
         event.dataTransfer.setData("dragData", event.target.id);
       }
@@ -5929,6 +6234,25 @@
 
       $("#dd-chart-setting-div").on("click", ".remove-btn2", function (e) {
         $(this).parents(".dd-chart-setting-clone").remove();
+      });
+
+      $("#custom-tab").on("click", "button", function (e) {
+        var CustomTabValue = this.dataset.value;
+        if (CustomTabValue) {
+          $(".customTabContent")
+            .not("." + CustomTabValue)
+            .hide();
+          $("." + CustomTabValue).show();
+        } else {
+          $(".customTabContent").hide();
+        }
+        $(this).parent().find("button").removeClass("active");
+        $(this).addClass("active");
+        $(".active").attr("contenteditable", "true");
+      });
+
+      $("#share_btn").click(function () {
+        $("#share_btn i").toggleClass("shareButtonActive");
       });
     </script>
   </body>
