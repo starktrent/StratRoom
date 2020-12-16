@@ -7157,7 +7157,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12">
               <div class="card" style="padding: 16px">
                 <div class="row" style="margin-bottom: 6px !important">
-                  <div class="col-md-12">
+                  <div class="col-md-10">
                     <div
                       id="custom-tab"
                       class="btn-group custom-tab-control"
@@ -7175,9 +7175,14 @@
                         type="button"
                         class="btn btn-custom-secondary"
                         data-value="Scorecard"
+                        data-toggle="dropdown"
                       >
-                        Scorecard
+                        Scorecard <span class="caret" style="top: 0"></span>
                       </button>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">Verticals Scorecard</a></li>
+                        <li><a href="#">Sales Scorecard</a></li>
+                      </ul>
                       <button
                         type="button"
                         class="btn btn-custom-secondary"
@@ -7207,6 +7212,31 @@
                         Documents
                       </button>
                     </div>
+                  </div>
+                  <div
+                    class="form-group col-md-2 customTabContent Scorecard"
+                    style="display: none; margin-bottom: 0"
+                  >
+                    <!-- <select class="form-control browser-default">
+                      <option value="Verticals Scorecard">
+                        Verticals Scorecard
+                      </option>
+                      <option value="Sales Scorecard">Sales Scorecard</option>
+                    </select> -->
+                    <!-- <div class="dropdown">
+                      <button
+                        class="btn btn-custom-secondary dropdown-toggle pull-right"
+                        type="button"
+                        data-toggle="dropdown"
+                      >
+                        Dropdown Example
+                        <span class="caret" style="top: 0"></span>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">Verticals Scorecard</a></li>
+                        <li><a href="#">Sales Scorecard</a></li>
+                      </ul>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -9466,20 +9496,6 @@
                       <div class="tableview">
                         <div class="row">
                           <div
-                            class="form-group col-md-3"
-                            style="margin-bottom: -2px; padding-left: 4px"
-                          >
-                            <select class="form-control browser-default">
-                              <option value="Verticals Scorecard">
-                                Verticals Scorecard
-                              </option>
-                              <option value="Sales Scorecard">
-                                Sales Scorecard
-                              </option>
-                            </select>
-                          </div>
-                          <div class="form-group col-md-9"></div>
-                          <div
                             class="col-lg-6 col-md-6 select-toggle financial"
                           >
                             <div class="card">
@@ -9552,6 +9568,7 @@
                                         <th>Target</th>
                                         <th>Trend</th>
                                         <th>Risk</th>
+                                        <th>P</th>
                                         <th></th>
                                       </tr>
                                     </thead>
@@ -9574,6 +9591,7 @@
                                         </td>
                                         <td></td>
                                         <td></td>
+                                        <td>80%</td>
                                         <td>
                                           <ul class="header-dropdown m-r--5">
                                             <li class="dropdown">
@@ -9643,6 +9661,7 @@
                                             style="font-size: 10px !important"
                                           ></i>
                                         </th>
+                                        <th></th>
                                         <th>
                                           <ul
                                             class="header-dropdown"
@@ -9723,6 +9742,7 @@
                                           <i class="fas fa-arrow-right"></i>
                                         </td>
                                         <td></td>
+                                        <td>90%</td>
                                         <td>
                                           <ul class="header-dropdown m-r--5">
                                             <li class="dropdown">
@@ -9792,6 +9812,7 @@
                                             style="font-size: 10px !important"
                                           ></i>
                                         </th>
+                                        <th></th>
                                         <th>
                                           <ul
                                             class="header-dropdown"
@@ -9871,6 +9892,7 @@
                                           <i class="fas fa-arrow-down"></i>
                                         </td>
                                         <td></td>
+                                        <td>90%</td>
                                         <td>
                                           <ul class="header-dropdown m-r--5">
                                             <li class="dropdown">
@@ -9942,6 +9964,7 @@
                                             style="font-size: 10px !important"
                                           ></i>
                                         </th>
+                                        <th></th>
                                         <th>
                                           <ul
                                             class="header-dropdown"
@@ -10026,6 +10049,7 @@
                                             style="font-size: 10px !important"
                                           ></i>
                                         </th>
+                                        <th></th>
                                         <th>
                                           <ul
                                             class="header-dropdown"
@@ -10159,6 +10183,7 @@
                                         <th>Target</th>
                                         <th>Trend</th>
                                         <th>Risk</th>
+                                        <th>P</th>
                                         <th></th>
                                       </tr>
                                     </thead>
@@ -10184,6 +10209,7 @@
                                           <i class="fas fa-arrow-down red"></i>
                                         </td>
                                         <td></td>
+                                        <td>80%</td>
                                         <td>
                                           <ul class="header-dropdown m-r--5">
                                             <li class="dropdown">
@@ -10255,6 +10281,7 @@
                                             style="font-size: 10px !important"
                                           ></i>
                                         </th>
+                                        <th></th>
                                         <th>
                                           <ul
                                             class="header-dropdown"
@@ -10334,6 +10361,7 @@
                                           <i class="fas fa-arrow-up green"></i>
                                         </td>
                                         <td></td>
+                                        <td>80%</td>
                                         <td>
                                           <ul class="header-dropdown m-r--5">
                                             <li class="dropdown">
@@ -10403,6 +10431,7 @@
                                             style="font-size: 10px !important"
                                           ></i>
                                         </th>
+                                        <th></th>
                                         <th>
                                           <ul
                                             class="header-dropdown"
@@ -10483,6 +10512,7 @@
                                           <i class="fas fa-arrow-right"></i>
                                         </td>
                                         <td></td>
+                                        <td>80%</td>
                                         <td>
                                           <ul class="header-dropdown m-r--5">
                                             <li class="dropdown">
@@ -10554,6 +10584,7 @@
                                             style="font-size: 10px !important"
                                           ></i>
                                         </th>
+                                        <th></th>
                                         <th>
                                           <ul
                                             class="header-dropdown"
@@ -10636,6 +10667,7 @@
                                             style="font-size: 10px !important"
                                           ></i>
                                         </th>
+                                        <th></th>
                                         <th>
                                           <ul
                                             class="header-dropdown"
@@ -10774,6 +10806,7 @@
                                         <th>Target</th>
                                         <th>Trend</th>
                                         <th>Risk</th>
+                                        <th>P</th>
                                         <th></th>
                                       </tr>
                                     </thead>
@@ -10797,6 +10830,7 @@
                                         </td>
                                         <td></td>
                                         <td></td>
+                                        <td>80%</td>
                                         <td>
                                           <ul class="header-dropdown m-r--5">
                                             <li class="dropdown">
@@ -10866,6 +10900,7 @@
                                             style="font-size: 10px !important"
                                           ></i>
                                         </th>
+                                        <th></th>
                                         <th>
                                           <ul
                                             class="header-dropdown"
@@ -10946,6 +10981,7 @@
                                           <i class="fas fa-arrow-right"></i>
                                         </td>
                                         <td></td>
+                                        <td>90%</td>
                                         <td>
                                           <ul class="header-dropdown m-r--5">
                                             <li class="dropdown">
@@ -11016,6 +11052,7 @@
                                             style="font-size: 10px !important"
                                           ></i>
                                         </th>
+                                        <th></th>
                                         <th>
                                           <ul
                                             class="header-dropdown"
@@ -11096,6 +11133,7 @@
                                           <i class="fas fa-arrow-down"></i>
                                         </td>
                                         <td></td>
+                                        <td>80%</td>
                                         <td>
                                           <ul class="header-dropdown m-r--5">
                                             <li class="dropdown">
@@ -11167,6 +11205,7 @@
                                             style="font-size: 10px !important"
                                           ></i>
                                         </th>
+                                        <th></th>
                                         <th>
                                           <ul
                                             class="header-dropdown"
@@ -11245,6 +11284,7 @@
                                         <th>
                                           <i class="fas fa-arrow-down"></i>
                                         </th>
+                                        <th></th>
                                         <th></th>
                                         <th>
                                           <ul
@@ -11384,6 +11424,7 @@
                                         <th>Target</th>
                                         <th>Trend</th>
                                         <th>Risk</th>
+                                        <th>P</th>
                                         <th></th>
                                       </tr>
                                     </thead>
@@ -11409,6 +11450,7 @@
                                           <i class="fas fa-arrow-down"></i>
                                         </td>
                                         <td></td>
+                                        <td>80%</td>
                                         <td>
                                           <ul class="header-dropdown m-r--5">
                                             <li class="dropdown">
@@ -11480,6 +11522,7 @@
                                             style="font-size: 10px !important"
                                           ></i>
                                         </th>
+                                        <th></th>
                                         <th>
                                           <ul
                                             class="header-dropdown"
@@ -11559,6 +11602,7 @@
                                           <i class="fas fa-arrow-right"></i>
                                         </td>
                                         <td></td>
+                                        <td>90%</td>
                                         <td>
                                           <ul class="header-dropdown m-r--5">
                                             <li class="dropdown">
@@ -11628,6 +11672,7 @@
                                             style="font-size: 10px !important"
                                           ></i>
                                         </th>
+                                        <th></th>
                                         <th>
                                           <ul
                                             class="header-dropdown"
@@ -11708,6 +11753,7 @@
                                           <i class="fas fa-arrow-down"></i>
                                         </td>
                                         <td></td>
+                                        <td>90%</td>
                                         <td>
                                           <ul class="header-dropdown m-r--5">
                                             <li class="dropdown">
@@ -11779,6 +11825,7 @@
                                             style="font-size: 10px !important"
                                           ></i>
                                         </th>
+                                        <th></th>
                                         <th>
                                           <ul
                                             class="header-dropdown"
@@ -11858,6 +11905,7 @@
                                         <th>
                                           <i class="fas fa-arrow-down"></i>
                                         </th>
+                                        <th></th>
                                         <th></th>
                                         <th>
                                           <ul
