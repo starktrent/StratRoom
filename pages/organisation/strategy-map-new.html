@@ -1098,7 +1098,7 @@
                 </ul>
               </div>
 
-              <div class="drag-box">
+              <!-- <div class="drag-box">
                 <div class="drag-title">Actions</div>
                 <ul>
                   <li>
@@ -1114,12 +1114,9 @@
                   </li>
                   <li>
                     <button type="button" title="Save to local storage" onclick="save()" class="btn btn-outline-success btn-block">Save</button>
-                  </li>
-                  <!-- <li>
-                    <button type="button" title="Load from local storage" onclick="load()" class="btn btn-outline-warning btn-block">Load</button>
-                  </li>                     -->
+                  </li>                 -->
                 </ul>
-              </div>
+              </div> -->
           </div>
         </div>
       </aside>
@@ -1151,17 +1148,34 @@
                 </div>
               </div>
 
+              
+              
             </div>
+          </div>
+        </div>
+
+        <div class="row pt-4">
+          <div class="col-lg-2 col-md-3 text-center text-sm-left pt-2 mb-0 ml-4">
+            <button type="button" title="Clear all items" onclick="clearItems()" class="btn btn-outline-danger btn-block">Clear All</button>  
+          </div>
+
+          <!-- <div class="col-lg-3 col-md-3 text-center text-sm-left pt-2 mb-0 ml-4">
+            <button type="button" title="Clear all items" onclick="clearItems()" class="btn btn-outline-danger btn-block">Clear</button>  
+          </div> -->
+
+          <div class="col-lg-2 col-md-3 text-center text-sm-left pt-2 mb-0 ml-4">
+            <button type="button" title="Arrange" onclick="arrange()" class="btn btn-outline-primary btn-block">Arrange</button>		   
+          </div>
+
+          <div class="col-lg-2 col-md-3 text-center text-sm-left pt-2 mb-0 ml-4">
+            <button type="button" title="Save to local storage" onclick="save()" class="btn btn-outline-success btn-block">Save</button>
           </div>
         </div>
 
         <!-------Sub Initiatives------->
         <div class="row row-padding m-0" style="overflow: auto;">
-          <div style="height: 40px; width: 100%; margin: 3px 0px 0px 10px; padding: 0px;">
-                  
-                      
-   
-                  
+          <div style="height: 10px; width: 100%; margin: 3px 0px 0px 10px; padding: 0px;">
+              
            </div>
            <div style="overflow: visible; height:100%; margin: 1px; padding: 0px;">
                <canvas id="diagram" width="2100" height="2500">
