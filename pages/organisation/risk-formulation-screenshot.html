@@ -2621,14 +2621,20 @@ Failure to meet compliance obligations</textarea
           </div>
         </div>
         <div class="col-md-6"></div>
-        <div class="col-md-2 mt-2">
+        <div class="col-md-2 mt-2" style="padding-right: 0">
           <button
             class="btn btn-custom-secondary pull-right"
             style="margin-left: 4px"
             data-toggle="modal"
             data-target="#add_risk_l1"
           >
-            <i style="font-size: 14px" class="fas fa-plus"></i>
+            <i
+              style="font-size: 14px"
+              class="fas fa-plus"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="Add"
+            ></i>
           </button>
 
           <button
@@ -2637,16 +2643,175 @@ Failure to meet compliance obligations</textarea
             data-toggle="modal"
             data-target="#file-validate-form"
           >
-            <i style="font-size: 14px" class="fas fa-download"></i>
+            <i
+              style="font-size: 14px"
+              class="fas fa-download"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="Import"
+            ></i>
           </button>
+
+          <div class="dropdown">
+            <button
+              class="btn btn-custom-secondary pull-right"
+              class="dropdown-toggle"
+              data-toggle="dropdown"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="true"
+              style="margin-left: 4px"
+              id="approve_btn"
+            >
+              <i
+                style="font-size: 14px"
+                class="fas fa-check-circle"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="Approve"
+              ></i>
+            </button>
+            <ul
+              class="dropdown-menu pull-right approve_reset"
+              x-placement="bottom-start"
+            >
+              <li style="padding: 16px 16px 0px 16px">
+                <div class="form-group">
+                  <label for="Name">Approved By</label>
+                  <div class="owner" style="padding-right: 12px">
+                    <ul
+                      class="list-unstyled order-list"
+                      id="approve_by"
+                      style="cursor: pointer"
+                    >
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle"
+                          src="../../assets/images/user/user7.jpg"
+                          alt="user"
+                        />
+                      </li>
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle"
+                          src="../../assets/images/user/user8.jpg"
+                          alt="user"
+                        />
+                      </li>
+                      <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                        <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li style="padding: 16px 16px 16px 16px">
+                <div class="form-group">
+                  <label for="Name">Approved Date</label>
+                  <input
+                    type="text"
+                    class="form-control browser-default"
+                    value="05/11/2020"
+                    readonly
+                  />
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="dropdown">
+            <button
+              class="btn btn-custom-secondary pull-right"
+              class="dropdown-toggle"
+              data-toggle="dropdown"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="true"
+              style="margin-left: 4px; display: none"
+              id="reset_btn"
+            >
+              <i
+                style="font-size: 14px"
+                class="fas fa-undo"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="Reset"
+              ></i>
+            </button>
+            <ul
+              class="dropdown-menu pull-right approve_reset"
+              x-placement="bottom-start"
+            >
+              <li style="padding: 16px 16px 0px 16px">
+                <div class="form-group">
+                  <label for="Name">Reset By</label>
+                  <div class="owner" style="padding-right: 12px">
+                    <ul
+                      class="list-unstyled order-list"
+                      id="reset_by"
+                      style="cursor: pointer"
+                    >
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle"
+                          src="../../assets/images/user/user7.jpg"
+                          alt="user"
+                        />
+                      </li>
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="rounded-circle"
+                          src="../../assets/images/user/user8.jpg"
+                          alt="user"
+                        />
+                      </li>
+                      <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                        <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li style="padding: 16px 16px 16px 16px">
+                <div class="form-group">
+                  <label for="Name">Reset Date</label>
+                  <input
+                    type="text"
+                    class="form-control browser-default"
+                    value="05/11/2020"
+                    readonly
+                  />
+                </div>
+              </li>
+            </ul>
+          </div>
 
           <button
             class="btn btn-custom-secondary pull-right"
             style="margin-left: 4px"
           >
             <i
-              style="font-size: 14px; font-weight: 600"
-              class="far fa-check-circle"
+              style="font-size: 14px"
+              class="fas fa-upload"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="Export"
+            ></i>
+          </button>
+
+          <button
+            class="btn btn-custom-secondary pull-right"
+            style="margin-left: 4px"
+            id="share_btn"
+            data-toggle="modal"
+            data-target="#share-popup"
+          >
+            <i
+              class="fas fa-share-alt"
+              style="font-size: 14px"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="Share"
             ></i>
           </button>
         </div>

@@ -127,6 +127,18 @@
         font-weight: 600 !important;
         color: #1e252d;
       }
+
+      .scorecard-dropdown {
+        position: absolute;
+        will-change: transform;
+        top: 0px;
+        left: 0px;
+        transform: translate3d(145px, 62px, 0px) !important;
+      }
+
+      /* .scorecard-dropdown li a.active {
+        background: #eeeeee;
+      } */
     </style>
     <script>
       function preview_images() {
@@ -7179,9 +7191,17 @@
                       >
                         Scorecard <span class="caret" style="top: 0"></span>
                       </button>
-                      <ul class="dropdown-menu">
-                        <li><a href="#">Verticals Scorecard</a></li>
-                        <li><a href="#">Sales Scorecard</a></li>
+                      <ul class="dropdown-menu scorecard-dropdown">
+                        <li>
+                          <a href="#" data-value="sc_label_1"
+                            >Verticals Scorecard</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" data-value="sc_label_2"
+                            >Sales Scorecard</a
+                          >
+                        </li>
                       </ul>
                       <button
                         type="button"
@@ -7217,26 +7237,30 @@
                     class="form-group col-md-2 customTabContent Scorecard"
                     style="display: none; margin-bottom: 0"
                   >
-                    <!-- <select class="form-control browser-default">
-                      <option value="Verticals Scorecard">
-                        Verticals Scorecard
-                      </option>
-                      <option value="Sales Scorecard">Sales Scorecard</option>
-                    </select> -->
-                    <!-- <div class="dropdown">
-                      <button
-                        class="btn btn-custom-secondary dropdown-toggle pull-right"
-                        type="button"
-                        data-toggle="dropdown"
-                      >
-                        Dropdown Example
-                        <span class="caret" style="top: 0"></span>
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a href="#">Verticals Scorecard</a></li>
-                        <li><a href="#">Sales Scorecard</a></li>
-                      </ul>
-                    </div> -->
+                    <div
+                      class="dropdownContent sc_label_1"
+                      style="
+                        display: none;
+                        text-align: center;
+                        border: 1px solid #ececec;
+                        border-radius: 4px;
+                        padding-top: 7px;
+                      "
+                    >
+                      <label for="VS">Verticals Scorecard</label>
+                    </div>
+                    <div
+                      class="dropdownContent sc_label_2"
+                      style="
+                        display: none;
+                        text-align: center;
+                        border: 1px solid #ececec;
+                        border-radius: 4px;
+                        padding-top: 7px;
+                      "
+                    >
+                      <label for="SS">Sales Scorecard</label>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -10194,9 +10218,7 @@
                                           ></i>
                                         </td>
                                         <td>C1</td>
-                                        <td
-                                          style="text-align: left"
-                                        >
+                                        <td style="text-align: left">
                                           <strong
                                             >We patner to provide best
                                             products</strong
@@ -10347,9 +10369,7 @@
                                           ></i>
                                         </td>
                                         <td>C2</td>
-                                        <td
-                                          style="text-align: left"
-                                        >
+                                        <td style="text-align: left">
                                           <strong
                                             >Lead in quality and service</strong
                                           >
@@ -10497,9 +10517,7 @@
                                           ></i>
                                         </td>
                                         <td>C3</td>
-                                        <td
-                                          style="text-align: left"
-                                        >
+                                        <td style="text-align: left">
                                           <strong
                                             >We are recognised in the forefront
                                             of our industry</strong
@@ -10817,9 +10835,7 @@
                                           ></i>
                                         </td>
                                         <td>IP1</td>
-                                        <td
-                                          style="text-align: left"
-                                        >
+                                        <td style="text-align: left">
                                           <strong
                                             >Deliver increased value to our
                                             customers</strong
@@ -10966,9 +10982,7 @@
                                           ></i>
                                         </td>
                                         <td>IP2</td>
-                                        <td
-                                          style="text-align: left"
-                                        >
+                                        <td style="text-align: left">
                                           <strong
                                             >Constant focus on continuous
                                             improvement</strong
@@ -11118,9 +11132,7 @@
                                           ></i>
                                         </td>
                                         <td>IP3</td>
-                                        <td
-                                          style="text-align: left"
-                                        >
+                                        <td style="text-align: left">
                                           <strong
                                             >Keep our people and environment
                                             safe</strong
@@ -11435,9 +11447,7 @@
                                           ></i>
                                         </td>
                                         <td>G1</td>
-                                        <td
-                                          style="text-align: left"
-                                        >
+                                        <td style="text-align: left">
                                           <strong
                                             >Build values and leadership
                                             practices</strong
@@ -11587,9 +11597,7 @@
                                           ></i>
                                         </td>
                                         <td>G2</td>
-                                        <td
-                                          style="text-align: left"
-                                        >
+                                        <td style="text-align: left">
                                           <strong
                                             >Strengthen image for technology,
                                             product quality and cust...</strong
@@ -11738,9 +11746,7 @@
                                           ></i>
                                         </td>
                                         <td>G3</td>
-                                        <td
-                                          style="text-align: left"
-                                        >
+                                        <td style="text-align: left">
                                           <strong
                                             >Share our strategy to achieve our
                                             goals</strong
@@ -16815,6 +16821,24 @@
           $(".customTabContent").hide();
         }
         $(this).parent().find("button").removeClass("active");
+        $(this).addClass("active");
+      });
+
+      $(".dropdown-hide").on("click", function (e) {
+        e.stopPropagation();
+      });
+
+      $(".scorecard-dropdown").on("click", "li a", function (e) {
+        var dropdownValue = this.dataset.value;
+        if (dropdownValue) {
+          $(".dropdownContent")
+            .not("." + dropdownValue)
+            .hide();
+          $("." + dropdownValue).show();
+        } else {
+          $(".dropdownContent").hide();
+        }
+        $(this).parent().find("li a").removeClass("active");
         $(this).addClass("active");
       });
 
