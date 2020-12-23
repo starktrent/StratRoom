@@ -1517,15 +1517,14 @@ label {
   color: #1e252d;
 }
 
-
 .test {
-  border:1px solid var(--danger);
+  border: 1px solid var(--danger);
 }
 
 .drag-box {
-  border:1px dashed #ddd;
+  border: 1px dashed #ddd;
   padding: 5px;
-  border-radius:5px;
+  border-radius: 5px;
   margin-top: 15px;
 }
 
@@ -1540,8 +1539,8 @@ label {
 .drag-text {
   display: block;
   width: 100%;
-  height: calc(1.5em + .75rem + 2px);
-  padding: .375rem .75rem;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -1549,34 +1548,32 @@ label {
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
-  border-radius: .25rem;
-  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .drag-box i {
-  font-size:22px;
-  margin-right:10px;
-  color:#808080;
-  
+  font-size: 22px;
+  margin-right: 10px;
+  color: #808080;
 }
 
 .drag-title {
-  font-weight:bold;
-  font-size:16px;
-  color:#0292e6;
+  font-weight: bold;
+  font-size: 16px;
+  color: #0292e6;
   text-align: center;
 }
 
-.drag-box li{
-  border-bottom:1px solid #ddd;
-  padding:5px 0;
-  
+.drag-box li {
+  border-bottom: 1px solid #ddd;
+  padding: 5px 0;
 }
 
 .drag-box span {
-  font-size:14px;
-  position:relative;
-  top:-3px;
+  font-size: 14px;
+  position: relative;
+  top: -3px;
 }
 
 .drag-block {
@@ -1585,7 +1582,7 @@ label {
 }
 
 .drag-box [type="color"] {
-  width:80px;
+  width: 80px;
   width: 60px;
   height: 40px;
   /* margin-left: auto;
@@ -1612,6 +1609,62 @@ label {
 
 .collapse_arrow_right + .collapse_arrow_left[style="display: block;"],
 .collapse_arrow_right + .collapse_arrow_left {
-  position:relative;
-  right:10px;
+  position: relative;
+  right: 10px;
+}
+
+.nav-search {
+  /* padding-left: 22px; */
+  /* margin-right: 4px; */
+  margin-top: 6px;
+  width: 100% !important;
+}
+
+.nav-search .search {
+  box-sizing: border-box !important;
+  height: 40px !important;
+  border: 1px solid #f7f5f4 !important;
+  border-radius: 20px !important;
+  background: #f7f5f4 !important;
+  margin-top: 10px !important;
+  margin: 0 !important;
+  padding-left: 30px !important;
+}
+
+.nav-search input::placeholder {
+  color: #c2c2c2 !important;
+  /* padding-left: 28px; */
+}
+
+.nav-search .fa-search {
+  position: absolute;
+  left: 12px;
+  top: 22px;
+  font-size: 13px;
+  color: gray;
+}
+
+.nav-search .fa-times {
+  position: absolute;
+  right: 16px;
+  top: 22px;
+  font-size: 13px;
+  color: gray;
+  cursor: pointer;
+}
+
+.nav-search-btn {
+  height: 40px !important;
+  width: 40px !important;
+  border: 1px solid #f7f5f4 !important;
+  border-radius: 20px !important;
+  background: #f7f5f4 !important;
+  margin-top: 6px;
+  text-align: center;
+}
+
+.nav-search-btn .fa-search {
+  color: gray;
+  font-size: 13px;
+  cursor: pointer;
 }

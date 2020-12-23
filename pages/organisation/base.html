@@ -136,7 +136,7 @@
               </ul>
             </li>
             <li class="fullscreen">
-              <form class="form-header" action="" method="POST">
+              <!-- <form class="form-header" action="" method="POST">
                 <input
                   class="au-input au-input--xl"
                   style="min-width: 20%"
@@ -147,7 +147,15 @@
                 <button class="au-btn--submit" type="submit">
                   <i class="fa fa-search" style="color: gray"></i>
                 </button>
-              </form>
+              </form> -->
+              <span class="pull-right nav-search-btn" id="open_search">
+                <i class="fas fa-search"></i>
+              </span>
+              <span class="pull-right nav-search" style="display: none">
+                <input type="text" class="search" placeholder="Search" />
+                <i class="fas fa-search"></i>
+                <i class="fas fa-times" id="close_search"></i>
+              </span>
             </li>
             <li class="fullscreen">
               <!-- <i class="nav-hdr-btn ti-calendar" style="color: gray"></i> -->
@@ -1052,6 +1060,16 @@
         $("#notifications").click(function () {
           return false; // DO NOTHING WHEN CONTAINER IS CLICKED.
         });
+      });
+
+      $("#open_search").click(function () {
+        $(".nav-search").show();
+        $("#open_search").hide();
+      });
+
+      $("#close_search").click(function () {
+        $("#open_search").show();
+        $(".nav-search").hide();
       });
     </script>
   </body></a
