@@ -129,16 +129,12 @@
       }
 
       .scorecard-dropdown {
-        position: absolute;
-        will-change: transform;
-        top: 0px;
-        left: 0px;
-        transform: translate3d(145px, 62px, 0px) !important;
+        transform: translate3d(-100px, 52px, 0px) !important;
       }
 
-      /* .scorecard-dropdown li a.active {
+      .scorecard-dropdown li a.active {
         background: #eeeeee;
-      } */
+      }
     </style>
     <script>
       function preview_images() {
@@ -1189,6 +1185,24 @@
                           </div>
                         </div>
                       </li>
+                      <li>
+                        <div class="form-check">
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                              />
+                              Score
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </li>
+                      <li></li>
                       <li>
                         <div class="form-check">
                           <div class="form-check">
@@ -7187,22 +7201,27 @@
                         type="button"
                         class="btn btn-custom-secondary"
                         data-value="Scorecard"
-                        data-toggle="dropdown"
                       >
-                        Scorecard <span class="caret" style="top: 0"></span>
+                        Scorecard
+                        <span
+                          class="caret customTabContent Scorecard"
+                          style="top: 0; display: none"
+                          data-toggle="dropdown"
+                        >
+                          <ul class="dropdown-menu scorecard-dropdown">
+                            <li>
+                              <a href="#" data-value="sc_label_1"
+                                >Verticals Scorecard</a
+                              >
+                            </li>
+                            <li>
+                              <a href="#" data-value="sc_label_2"
+                                >Sales Scorecard</a
+                              >
+                            </li>
+                          </ul>
+                        </span>
                       </button>
-                      <ul class="dropdown-menu scorecard-dropdown">
-                        <li>
-                          <a href="#" data-value="sc_label_1"
-                            >Verticals Scorecard</a
-                          >
-                        </li>
-                        <li>
-                          <a href="#" data-value="sc_label_2"
-                            >Sales Scorecard</a
-                          >
-                        </li>
-                      </ul>
                       <button
                         type="button"
                         class="btn btn-custom-secondary"
@@ -7238,28 +7257,40 @@
                     style="display: none; margin-bottom: 0"
                   >
                     <div
-                      class="dropdownContent sc_label_1"
+                      class="dropdownContent sc_label_1 pull-right"
                       style="
-                        display: none;
                         text-align: center;
-                        border: 1px solid #ececec;
+                        border: 1px solid rgb(217 217 217);
                         border-radius: 4px;
                         padding-top: 7px;
+                        background: #f4f4f4;
+                        width: fit-content;
+                        padding-left: 8px;
+                        padding-right: 8px;
+                        display: none;
                       "
                     >
-                      <label for="VS">Verticals Scorecard</label>
+                      <label for="VS" style="color: #797979"
+                        >Verticals Scorecard</label
+                      >
                     </div>
                     <div
-                      class="dropdownContent sc_label_2"
+                      class="dropdownContent sc_label_2 pull-right"
                       style="
-                        display: none;
                         text-align: center;
-                        border: 1px solid #ececec;
+                        border: 1px solid rgb(217 217 217);
                         border-radius: 4px;
                         padding-top: 7px;
+                        background: #f4f4f4;
+                        width: fit-content;
+                        padding-left: 8px;
+                        padding-right: 8px;
+                        display: none;
                       "
                     >
-                      <label for="SS">Sales Scorecard</label>
+                      <label for="SS" style="color: #797979"
+                        >Sales Scorecard</label
+                      >
                     </div>
                   </div>
                 </div>
@@ -16830,20 +16861,16 @@
 
       $(".scorecard-dropdown").on("click", "li a", function (e) {
         var dropdownValue = this.dataset.value;
+        $(".scorecard-dropdown li a").removeClass("active");
         if (dropdownValue) {
           $(".dropdownContent")
             .not("." + dropdownValue)
             .hide();
           $("." + dropdownValue).show();
+          $(this).addClass("active");
         } else {
           $(".dropdownContent").hide();
         }
-        $(this).parent().find("li a").removeClass("active");
-        $(this).addClass("active");
-      });
-
-      $(".dropdown-hide").on("click", function (e) {
-        e.stopPropagation();
       });
     </script>
   </body>
