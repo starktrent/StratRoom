@@ -7192,30 +7192,26 @@
                     >
                       <button
                         type="button"
-                        class="btn btn-custom-secondary active"
+                        class="btn btn-custom-secondary active myspace_tabs"
                         data-value="Dashboard"
                       >
                         Dashboard
                       </button>
                       <button
                         type="button"
-                        class="btn btn-custom-secondary"
-                        data-value="Scorecard"
+                        class="btn btn-custom-secondary scorecardBtn"
+                        data-toggle="dropdown"
                       >
                         Scorecard
-                        <span
-                          class="caret customTabContent Scorecard"
-                          style="top: 0; display: none"
-                          data-toggle="dropdown"
-                        >
+                        <span class="caret" style="top: 0">
                           <ul class="dropdown-menu scorecard-dropdown">
                             <li>
-                              <a href="#" data-value="sc_label_1"
+                              <a href="#" data-value="verticalScorecard"
                                 >Verticals Scorecard</a
                               >
                             </li>
                             <li>
-                              <a href="#" data-value="sc_label_2"
+                              <a href="#" data-value="salesScorecard"
                                 >Sales Scorecard</a
                               >
                             </li>
@@ -7224,28 +7220,28 @@
                       </button>
                       <button
                         type="button"
-                        class="btn btn-custom-secondary"
+                        class="btn btn-custom-secondary myspace_tabs"
                         data-value="Activities"
                       >
                         Activities
                       </button>
                       <button
                         type="button"
-                        class="btn btn-custom-secondary"
+                        class="btn btn-custom-secondary myspace_tabs"
                         data-value="Risk"
                       >
                         Risk
                       </button>
                       <button
                         type="button"
-                        class="btn btn-custom-secondary"
+                        class="btn btn-custom-secondary myspace_tabs"
                         data-value="Appraisal"
                       >
                         Appraisal
                       </button>
                       <button
                         type="button"
-                        class="btn btn-custom-secondary"
+                        class="btn btn-custom-secondary myspace_tabs"
                         data-value="Documents"
                       >
                         Documents
@@ -9541,9 +9537,9 @@
                   </div>
                 </div>
 
-                <!-- Scorecard Section -->
+                <!-- Vertical Scorecard Section -->
                 <div
-                  class="col-md-12 customTabContent Scorecard"
+                  class="col-md-12 dropdownContent verticalScorecard"
                   style="display: none"
                 >
                   <div class="container-fluid">
@@ -10777,7 +10773,21 @@
                               </div>
                             </div>
                           </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
+                <!-- Sales Scorecard Section -->
+                <div
+                  class="col-md-12 dropdownContent salesScorecard"
+                  style="display: none"
+                >
+                  <div class="container-fluid">
+                    <div class="row-padding">
+                      <div class="tableview">
+                        <div class="row">
                           <div
                             class="col-lg-6 col-md-6 select-toggle internal-process"
                           >
@@ -16841,7 +16851,10 @@
         });
       });
 
-      $("#custom-tab").on("click", "button", function (e) {
+      $("#custom-tab").on("click", ".myspace_tabs", function (e) {
+        $(".dropdownContent").hide();
+        $(".scorecardBtn").removeClass("active");
+        $(".scorecard-dropdown li a").removeClass("active");
         var CustomTabValue = this.dataset.value;
         if (CustomTabValue) {
           $(".customTabContent")
@@ -16851,7 +16864,7 @@
         } else {
           $(".customTabContent").hide();
         }
-        $(this).parent().find("button").removeClass("active");
+        $(this).parent().find(".myspace_tabs").removeClass("active");
         $(this).addClass("active");
       });
 
@@ -16860,6 +16873,9 @@
       });
 
       $(".scorecard-dropdown").on("click", "li a", function (e) {
+        $(".customTabContent").hide();
+        $(".myspace_tabs").removeClass("active");
+        $(".scorecardBtn").addClass("active");
         var dropdownValue = this.dataset.value;
         $(".scorecard-dropdown li a").removeClass("active");
         if (dropdownValue) {
