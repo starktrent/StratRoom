@@ -33,7 +33,7 @@ h2 > img {
 
 .nestedRed {
   background-color: #dcdcdc;
-  border-left: 6px solid red;
+  border-left: 52px solid red;
 }
 
 .nestedRed > h2 > strong {
@@ -42,7 +42,7 @@ h2 > img {
 
 .nestedGreen {
   background-color: #dcdcdc;
-  border-left: 6px solid #66cdaa;
+  border-left: 52px solid #66cdaa;
 }
 
 .nestedGreen > h2 > strong {
@@ -51,7 +51,7 @@ h2 > img {
 
 .nestedYellow {
   background-color: #dcdcdc;
-  border-left: 6px solid #daa520;
+  border-left: 52px solid #daa520;
 }
 
 .nestedYellow > h2 > strong {
@@ -60,7 +60,7 @@ h2 > img {
 
 .nestedViolet {
   background-color: #dcdcdc;
-  border-left: 6px solid #800080;
+  border-left: 52px solid #800080;
 }
 
 .nestedViolet > h2 > strong {
@@ -532,13 +532,13 @@ div.edit1 {
 /* .btn:hover,
 .btn-large:hover,
 .btn-small:hover {
-  /* background-color: initial !important; */
+  background-color: initial !important;
 }
 
 .btn {
   box-shadow: none !important;
-  /* text-transform: lowercase !important; */
-}
+  text-transform: lowercase !important;
+} */
 
 .btn-black {
   color: #fff !important;
@@ -924,7 +924,7 @@ table td {
 
 .nestedRed {
   background-color: #525252;
-  border-left: 16px solid red;
+  border-left: 52px solid red;
 }
 
 .nestedRed > h2 > strong {
@@ -934,7 +934,7 @@ table td {
 
 .nestedGreen {
   background-color: #525252;
-  border-left: 16px solid #1aa243;
+  border-left: 52px solid #1aa243;
 }
 
 .nestedGreen > h2 > strong {
@@ -944,7 +944,7 @@ table td {
 
 .nestedYellow {
   background-color: #525252;
-  border-left: 16px solid #ffd500;
+  border-left: 52px solid #ffd500;
 }
 
 .nestedYellow > h2 > strong {
@@ -954,7 +954,7 @@ table td {
 
 .nestedViolet {
   background-color: #525252;
-  border-left: 16px solid #e84343;
+  border-left: 52px solid #e84343;
 }
 
 .nestedViolet > h2 > strong {
