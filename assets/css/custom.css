@@ -1889,10 +1889,12 @@ label {
 .kanban-card .kanban-card-footer span h6 {
   font-weight: 600;
   color: #1e252d;
+  font-size: 12px;
 }
 
 .kanban-card .kanban-card-footer span p {
   color: #1e252d;
+  font-size: 12px;
 }
 
 .kanban-card .kanban-card-footer .vertical-line {
