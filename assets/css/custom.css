@@ -1805,6 +1805,7 @@ label {
   margin: 0 0 8px 0 !important;
   height: auto;
   border-radius: 4px;
+  background-color: #fff;
   border: 1px solid #ffffff !important;
   box-shadow: 2px 2px 20px 1px #d8d4d463;
   cursor: pointer;

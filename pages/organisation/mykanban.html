@@ -170,6 +170,14 @@
         padding-bottom: 5px;
         padding-right: 5px;
       }
+
+      .over {
+  border: solid 4px #ACFA58;
+}
+
+.draggable {
+  border: solid 4px red;
+}
     </style>
   </head>
 
@@ -1880,9 +1888,9 @@
                         <!-- <div class="col-content-minimized">
                           <h4>2 Tasks</h4>
                         </div> -->
-                        <div class="col-content task-drop">
+                        <div class="col-content drop">
                           <!-- Task Card -->
-                          <div class="kanban-card task-draggable" id="task_1">
+                          <div class="kanban-card draggable" id="task_1">
                             <div class="row">
                               <div
                                 class="col-12 kanban-card-header status-yellow"
@@ -2018,7 +2026,7 @@
 
                           <!-- Task Card -->
                           <div
-                            class="kanban-card task-draggable"
+                            class="kanban-card draggable"
                             id="task_2"
                             style="display: none"
                           >
@@ -2157,7 +2165,7 @@
 
                           <!-- Task Card -->
                           <div
-                            class="kanban-card task-draggable"
+                            class="kanban-card draggable"
                             id="task_3"
                             style="display: none"
                           >
@@ -2302,7 +2310,7 @@
                         <h5 class="header-status-cyan" contenteditable="true">
                           Column Header
                         </h5>
-                        <div class="col-content task-drop"></div>
+                        <div class="col-content drop"></div>
                       </div>
                     </td>
 
@@ -2311,7 +2319,7 @@
                         <h5 class="header-status-green" contenteditable="true">
                           Column Header
                         </h5>
-                        <div class="col-content task-drop"></div>
+                        <div class="col-content drop"></div>
                       </div>
                     </td>
 
@@ -2320,7 +2328,7 @@
                         <h5 class="header-status-pink" contenteditable="true">
                           Column Header
                         </h5>
-                        <div class="col-content task-drop"></div>
+                        <div class="col-content drop"></div>
                       </div>
                     </td>
                   </tr>
@@ -2451,23 +2459,32 @@
         $(this).addClass("active");
       });
 
-      // $(document).ready(function () {
-      //   $(".task-draggable").draggable({
-      //     cursor: "crosshair",
-      //     revert: "invalid",
-      //   });
+      $(document).ready(function () {
+        $(".draggable").draggable({
+          cursor: "crosshair",
+          revert: "invalid",
+        });
 
-      //   $(".task-drop").droppable({
-      //     accept: ".task-draggable",
-      //     drop: function (event, ui) {
-      //       var dropped = ui.draggable;
-      //       var droppedOn = $(this);
-      //       $(dropped).detach().appendTo(droppedOn);
-      //     },
-      //   });
+        $(".drop").droppable({
+          accept: ".draggable",
+          activeClass: "over",
+          drop: function (event, ui) {
+            console.log("drop");
+            $(this).removeClass("border").removeClass("over");
+            var dropped = ui.draggable;
+            var droppedOn = $(this);
+            $(dropped).detach().css({ top: 0, left: 0 }).appendTo(droppedOn);
+          },
+        });
 
-      //   $(".task-drop").sortable();
-      // });
+        $(".drop").sortable({
+          axis: "y",
+          revert: true,
+          scroll: false,
+          placeholder: "sortable-placeholder",
+          cursor: "move",
+        });
+      });
     </script>
   </body>
 </html>
