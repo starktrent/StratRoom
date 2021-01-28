@@ -2006,3 +2006,229 @@ label {
   height: auto;
   padding-top: 0;
 }
+
+/* OKR Styles */
+
+.okr-body {
+  border: 0.5px solid #ececec;
+  background-color: #fff;
+  height: 690px;
+  border-radius: 18px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
+  padding: 40px 20px 20px 20px;
+}
+
+.okr-title .header-icon {
+  margin-right: 10px;
+}
+
+.okr-title .header-icon i {
+  font-size: 18px;
+  color: #1aa243;
+}
+
+.okr-title .header-text {
+  display: inline-block;
+}
+
+.okr-title .header-text h4 {
+  font-weight: 600;
+  color: #1e252d;
+}
+
+.okr-title .header-btn {
+  color: #fff;
+  border-radius: 40px;
+  box-shadow: none;
+  background-color: #1e252d;
+  height: 36px;
+  width: 110px;
+  font-weight: 600;
+}
+
+.okr-details {
+  height: 600px;
+}
+
+.okr-details .details-section {
+  border-right: 2px solid #e3e3e3;
+}
+
+.okr-details .details-section .details ul {
+  margin-top: 16px;
+}
+
+.okr-details .details-section .details ul li .content {
+  font-size: 15px;
+  color: #1e252d;
+  font-weight: 500;
+  display: inline-block;
+  padding-bottom: 28px;
+}
+
+.okr-details .details-section .details ul li .content img {
+  width: 28px;
+  border-radius: 50%;
+  margin-right: 6px;
+  margin-top: -2px;
+}
+
+.okr-details .details-section .details ul li .okr-name {
+  color: #838383;
+  display: inline-block;
+  font-weight: 500;
+  padding-bottom: 28px;
+  font-size: 14px;
+  width: 140px;
+}
+
+.okr-details .details-section .tasks .task-top-bar {
+  padding-bottom: 8px;
+}
+
+.okr-details .details-section .tasks .task-top-bar h4 {
+  font-weight: 600;
+  color: #1e252d;
+  font-size: 16px;
+}
+
+.okr-details .details-section .tasks .section-items {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  padding: 8px 0;
+  border-bottom: 1px solid #e9f0f9;
+  align-items: center;
+}
+
+.okr-details .details-section .tasks .section-items > * {
+  margin-right: 10px;
+}
+
+.okr-details .details-section .tasks .section-items div:last-child {
+  margin-left: 20px;
+}
+
+.okr-details .details-section .tasks .section-items .owner-icon {
+  display: flex;
+  align-items: center;
+  width: 20px;
+}
+
+.okr-details .details-section .tasks .section-items .owner-icon img {
+  border-radius: 50%;
+}
+
+.okr-details .details-section .tasks .section-items .item-detail {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.okr-details .details-section .tasks .section-items .item-detail span {
+  font-size: 13px;
+  color: #363b41;
+}
+
+.okr-details .details-section .tasks .section-items .due-date {
+  width: 20%;
+}
+
+.okr-details .details-section .tasks .section-items .due-date span {
+  color: #aab6cb;
+  font-size: 12px;
+  line-height: 20px;
+  /* cursor: pointer; */
+}
+
+.okr-details .details-section .tasks .section-items .task-statuses {
+  min-width: 100px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.okr-details .details-section .tasks .section-items .task-statuses .to-do {
+  background: #d5e2f4;
+  color: #47556b;
+}
+
+.okr-details
+  .details-section
+  .tasks
+  .section-items
+  .task-statuses
+  .in-progress {
+  background: #e8f4ff;
+  color: #0070de;
+}
+
+.okr-details .details-section .tasks .section-items .task-statuses .done {
+  background: #18c191;
+  color: #fff;
+}
+
+.okr-details
+  .details-section
+  .tasks
+  .section-items
+  .task-statuses
+  select
+  option {
+  color: #000;
+}
+
+.okr-details .chart-section .charts {
+  margin-top: 12px;
+}
+
+.okr-details .chart-section .comments {
+  height: 230px;
+  overflow-y: auto;
+  padding: 0 6px;
+}
+
+.okr-details .chart-section .comments .comments-panel {
+  border: 1px solid #e4e4e4;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.okr-details .chart-section .comments .comments-panel .panel-header {
+  padding: 8px;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.okr-details .chart-section .comments .comments-panel .panel-header span {
+  font-size: 12px;
+}
+
+.okr-details .chart-section .comments .comments-panel .panel-body {
+  padding: 12px 8px 6px;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.okr-details .chart-section .comments .comments-panel .panel-body h5 {
+  font-size: 14px;
+  color: #1e252d;
+}
+
+.okr-details .chart-section .comments .comments-panel .panel-footer {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.okr-details .chart-section .comments .comments-panel .panel-footer input {
+  border: 0;
+  outline: none;
+  margin-bottom: 4px;
+  margin-top: 4px;
+}
+
+.okr-details
+  .chart-section
+  .comments
+  .comments-panel
+  .panel-footer
+  input::placeholder {
+  color: #848484 !important;
+}
