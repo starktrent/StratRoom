@@ -123,6 +123,80 @@
         cursor: pointer;
         transition: 0.5s;
       }
+
+      /* Modal style change */
+      .modal .modal-content {
+        border-radius: 6px;
+      }
+
+      .modal .modal-header {
+        border: 0;
+        padding: 17px 16px 8px 16px;
+        margin: -10px -10px -12px -10px;
+        background-color: #fff;
+      }
+
+      .modal-header .close {
+        padding: 0;
+        margin: 0;
+        color: #9e9e9e;
+      }
+
+      .select2-container {
+        width: 100% !important;
+      }
+
+      .select2-container--default.select2-container--focus
+        .select2-selection--multiple:focus {
+        box-shadow: 0 0 3px #3191ff !important;
+        padding: 0 8px !important;
+        border: 1px solid #3191ff !important;
+      }
+
+      .select2-container--default.select2-container--focus
+        .select2-selection--multiple {
+        border: solid #ced4da 1px;
+        outline: 0;
+      }
+
+      .select2-container .select2-search--inline .select2-search__field {
+        box-sizing: border-box;
+        border: none;
+        font-size: 100%;
+        margin-top: -4px;
+        margin-left: 5px;
+        padding: 0;
+        margin-bottom: -10px;
+      }
+
+      .select2-container--default .select2-selection--multiple {
+        background-color: white;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        cursor: text;
+        padding-bottom: 5px;
+        padding-right: 5px;
+        height: 36px;
+      }
+
+      .custom-input {
+        height: 36px !important;
+      }
+
+      label {
+        font-weight: 500;
+      }
+
+      .preview-gallery {
+        display: inline-block;
+      }
+
+      .preview-gallery img {
+        height: 40px;
+        border: 1px solid #03a9f4;
+        border-radius: 4px;
+        margin-left: 6px;
+      }
     </style>
   </head>
 
@@ -436,7 +510,7 @@
                   </select>
                 </div>
 
-                <label for="Sub Objective">Sub Objective</label>
+                <label for="Sub Objective">Sub Objectives</label>
                 <div
                   class="col-12 form-group chart-type sub_initiative_details"
                   style="padding: 0; margin-bottom: 16px"
@@ -450,7 +524,7 @@
                   </select>
                 </div>
 
-                <label for="KRS">KRS</label>
+                <label for="KRS">KRs</label>
                 <div class="d-flex flex-column" id="initiate_sidebar">
                   <div
                     class="d-flex flex-column kpi_initiative_sidebar_details initiative_side_border_orange"
@@ -551,56 +625,81 @@
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h4>Create Task</h4>
+            <h4></h4>
             <button type="button" class="close pull-right" data-dismiss="modal">
               &times;
             </button>
           </div>
           <div class="modal-body">
             <div class="row">
-              <div class="col-4 form-group">
-                <label for="Name">ID</label>
+              <div class="col-12 form-group">
+                <h4 style="font-size: 18px; font-weight: 500; color: #1e252d">
+                  Create Task
+                </h4>
+                <p
+                  style="font-size: 13px; margin-top: 10px; margin-bottom: 18px"
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+              <div class="col-4 form-group mb-4">
                 <input
                   type="text"
-                  class="form-control browser-default"
+                  class="form-control browser-default custom-input"
                   value="45263546"
                 />
               </div>
 
-              <div class="col-8 form-group">
-                <label for="Name">Enter your task</label>
+              <div class="col-8 form-group mb-4">
                 <input
                   type="text"
-                  class="form-control browser-default"
+                  class="form-control browser-default custom-input"
+                  placeholder="Enter your task"
                   value=""
                 />
               </div>
 
-              <div class="col-12 form-group">
+              <div class="col-4 form-group mb-4">
                 <label for="Description">Description</label>
-                <textarea
-                  name="description"
-                  cols="30"
-                  rows="6"
-                  class="form-control browser-default"
-                ></textarea>
               </div>
 
-              <div class="col-6 form-group">
-                <label for="Name">Owner</label>
-                <select class="form-control browser-default">
-                  <option value="David Miller">David Miller</option>
-                  <option value="Seema Chatterjee">Seema Chatterjee</option>
-                  <option value="Rafael Nadal">Rafael Nadal</option>
-                  <option value="Prakash Raj">Prakash Raj</option>
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  placeholder="Enter description"
+                  value=""
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Edit User">Edit User</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="user-multi-select"
+                  name="states[]"
+                  multiple="multiple"
+                >
+                  <option value="972">Yasir Patton</option>
+                  <option value="973">Zander Bonner</option>
+                  <option value="973">Sila Redmond</option>
+                  <option value="973">Jayden Ortega</option>
+                  <option value="973">Milan Potts</option>
+                  <option value="973">Ernest Best</option>
                 </select>
               </div>
 
-              <div class="col-6 form-group">
-                <label for="Name">Due Date</label>
+              <div class="col-4 form-group mb-4">
+                <label for="Due Date">Due Date</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
                 <input
                   type="text"
-                  class="form-control browser-default date_pickers_single"
+                  class="form-control browser-default date_pickers_single custom-input"
                   data-language="en"
                   name="kpi_start_end_date"
                   id="kpi_start_end_date"
@@ -608,40 +707,81 @@
                 />
               </div>
 
-              <div class="col-6 form-group">
-                <label for="Name">Attachments</label>
+              <div class="col-4 form-group mb-4">
+                <label for="Attachments">Attachments</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <div class="preview-gallery"></div>
+                <label
+                  for="file-upload"
+                  style="
+                    height: 32px;
+                    width: 32px;
+                    padding: 6px 9px;
+                    border: 1px solid #ced4da;
+                    border-radius: 4px;
+                    cursor: pointer;
+                  "
+                >
+                  <i class="fas fa-plus"></i>
+                </label>
                 <input
                   type="file"
-                  class="form-control browser-default"
-                  style="padding-top: 2px"
-                  value=""
+                  class="form-control browser-default custom-input"
+                  name="files[]"
+                  multiple
+                  style="display: none"
+                  id="file-upload"
                 />
               </div>
 
-              <div class="col-6 form-group">
-                <label for="Name">Comments</label>
+              <div class="col-4 form-group mb-4">
+                <label for="Comments">Comments</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
                 <input
                   type="text"
-                  class="form-control browser-default"
+                  class="form-control browser-default custom-input"
+                  placeholder="Enter comments"
                   value=""
                 />
-              </div>
-
-              <div class="col-12 form-group">
-                <hr />
               </div>
 
               <div class="col-12">
-                <div class="form-line right">
+                <div class="form-line right mt-2">
                   <button
                     type="button"
                     class="btn-default1 btn"
                     data-dismiss="modal"
                     aria-label="Close"
+                    style="
+                      height: 32px;
+                      width: 100px;
+                      box-shadow: none;
+                      border: 1px solid #bcbcbc;
+                      margin-right: 6px;
+                    "
                   >
                     Cancel
                   </button>
-                  <button class="initative_save_btn" value="Save">Save</button>
+                  <button
+                    class="initative_save_btn"
+                    value="Save"
+                    style="
+                      padding: 5px 12px;
+                      width: 100px;
+                      height: 32px;
+                      font-size: 12px;
+                      font-weight: 600;
+                      background-color: #1e252d;
+                      color: #fff;
+                      border-radius: 4px;
+                    "
+                  >
+                    Save
+                  </button>
                 </div>
               </div>
             </div>
@@ -663,56 +803,81 @@
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h4>Edit Task</h4>
+            <h4></h4>
             <button type="button" class="close pull-right" data-dismiss="modal">
               &times;
             </button>
           </div>
           <div class="modal-body">
             <div class="row">
-              <div class="col-4 form-group">
-                <label for="Name">ID</label>
+              <div class="col-12 form-group">
+                <h4 style="font-size: 18px; font-weight: 500; color: #1e252d">
+                  Edit Task
+                </h4>
+                <p
+                  style="font-size: 13px; margin-top: 10px; margin-bottom: 18px"
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+              <div class="col-4 form-group mb-4">
                 <input
                   type="text"
-                  class="form-control browser-default"
+                  class="form-control browser-default custom-input"
                   value="45263546"
                 />
               </div>
 
-              <div class="col-8 form-group">
-                <label for="Name">Enter your task</label>
+              <div class="col-8 form-group mb-4">
                 <input
                   type="text"
-                  class="form-control browser-default"
-                  value="Sample Task"
+                  class="form-control browser-default custom-input"
+                  placeholder="Enter your task"
+                  value=""
                 />
               </div>
 
-              <div class="col-12 form-group">
+              <div class="col-4 form-group mb-4">
                 <label for="Description">Description</label>
-                <textarea
-                  name="description"
-                  cols="30"
-                  rows="6"
-                  class="form-control browser-default"
-                ></textarea>
               </div>
 
-              <div class="col-6 form-group">
-                <label for="Name">Owner</label>
-                <select class="form-control browser-default">
-                  <option value="David Miller">David Miller</option>
-                  <option value="Seema Chatterjee">Seema Chatterjee</option>
-                  <option value="Rafael Nadal">Rafael Nadal</option>
-                  <option value="Prakash Raj">Prakash Raj</option>
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  placeholder="Enter description"
+                  value=""
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Edit User">Edit User</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="user-multi-select-2"
+                  name="states[]"
+                  multiple="multiple"
+                >
+                  <option value="972">Yasir Patton</option>
+                  <option value="973">Zander Bonner</option>
+                  <option value="973">Sila Redmond</option>
+                  <option value="973">Jayden Ortega</option>
+                  <option value="973">Milan Potts</option>
+                  <option value="973">Ernest Best</option>
                 </select>
               </div>
 
-              <div class="col-6 form-group">
-                <label for="Name">Due Date</label>
+              <div class="col-4 form-group mb-4">
+                <label for="Due Date">Due Date</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
                 <input
                   type="text"
-                  class="form-control browser-default date_pickers_single"
+                  class="form-control browser-default date_pickers_single custom-input"
                   data-language="en"
                   name="kpi_start_end_date"
                   id="kpi_start_end_date"
@@ -720,40 +885,81 @@
                 />
               </div>
 
-              <div class="col-6 form-group">
-                <label for="Name">Attachments</label>
+              <div class="col-4 form-group mb-4">
+                <label for="Attachments">Attachments</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <div class="preview-gallery"></div>
+                <label
+                  for="file-upload"
+                  style="
+                    height: 32px;
+                    width: 32px;
+                    padding: 6px 9px;
+                    border: 1px solid #ced4da;
+                    border-radius: 4px;
+                    cursor: pointer;
+                  "
+                >
+                  <i class="fas fa-plus"></i>
+                </label>
                 <input
                   type="file"
-                  class="form-control browser-default"
-                  style="padding-top: 2px"
-                  value=""
+                  class="form-control browser-default custom-input"
+                  name="files[]"
+                  multiple
+                  style="display: none"
+                  id="file-upload"
                 />
               </div>
 
-              <div class="col-6 form-group">
-                <label for="Name">Comments</label>
+              <div class="col-4 form-group mb-4">
+                <label for="Comments">Comments</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
                 <input
                   type="text"
-                  class="form-control browser-default"
+                  class="form-control browser-default custom-input"
+                  placeholder="Enter comments"
                   value=""
                 />
-              </div>
-
-              <div class="col-12 form-group">
-                <hr />
               </div>
 
               <div class="col-12">
-                <div class="form-line right">
+                <div class="form-line right mt-2">
                   <button
                     type="button"
                     class="btn-default1 btn"
                     data-dismiss="modal"
                     aria-label="Close"
+                    style="
+                      height: 32px;
+                      width: 100px;
+                      box-shadow: none;
+                      border: 1px solid #bcbcbc;
+                      margin-right: 6px;
+                    "
                   >
                     Cancel
                   </button>
-                  <button class="initative_save_btn" value="Save">Save</button>
+                  <button
+                    class="initative_save_btn"
+                    value="Save"
+                    style="
+                      padding: 5px 12px;
+                      width: 100px;
+                      height: 32px;
+                      font-size: 12px;
+                      font-weight: 600;
+                      background-color: #1e252d;
+                      color: #fff;
+                      border-radius: 4px;
+                    "
+                  >
+                    Save
+                  </button>
                 </div>
               </div>
             </div>
@@ -1366,6 +1572,36 @@
 
       var chart = new ApexCharts(document.querySelector("#lineChart"), options);
       chart.render();
+
+      $(document).ready(function () {
+        $(".user-multi-select").select2();
+        $(".user-multi-select-2").select2();
+      });
+
+      $(function () {
+        // Multiple images preview in browser
+        var imagesPreview = function (input, placeToInsertImagePreview) {
+          if (input.files) {
+            var filesAmount = input.files.length;
+
+            for (i = 0; i < filesAmount; i++) {
+              var reader = new FileReader();
+
+              reader.onload = function (event) {
+                $($.parseHTML("<img>"))
+                  .attr("src", event.target.result)
+                  .appendTo(placeToInsertImagePreview);
+              };
+
+              reader.readAsDataURL(input.files[i]);
+            }
+          }
+        };
+
+        $("#file-upload").on("change", function () {
+          imagesPreview(this, "div.preview-gallery");
+        });
+      });
     </script>
   </body>
 </html>

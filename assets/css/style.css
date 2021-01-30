@@ -21541,7 +21541,7 @@ span.badge {
   -ms-border-radius: 0;
   border-radius: 10px;
   /* 0 */
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.31) !important;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
   border: 0;
   padding: 10px;
 }

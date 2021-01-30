@@ -905,22 +905,23 @@ ul.gj-list-md li {
 }
 
 .custom-input {
-  border: 1px solid #e5e5e5 !important;
+  border: 1px solid #ced4da !important;
   border-radius: 4px !important;
   width: 100% !important;
-  height: 100% !important;
   padding: 0 8px !important;
   font-size: 14px !important;
 }
 
 .custom-input::placeholder {
-  color: #afafaf !important;
+  color: #797979 !important;
+  font-size: 14px !important;
+  padding-left: 0 !important;
 }
 
 .custom-input:focus {
-  box-shadow: 0 0 3px #1e252d !important;
+  box-shadow: 0 0 3px #3191ff !important;
   padding: 0 8px !important;
-  border: 1px solid #1e252d !important;
+  border: 1px solid #3191ff !important;
 }
 
 .modal-custom-input {
