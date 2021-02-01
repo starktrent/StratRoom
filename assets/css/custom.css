@@ -2021,6 +2021,9 @@ label {
 
 .okr-title .header-icon {
   margin-right: 10px;
+  vertical-align: middle;
+  width: 2%;
+  display: inline-block;
 }
 
 .okr-title .header-icon i {
@@ -2030,6 +2033,8 @@ label {
 
 .okr-title .header-text {
   display: inline-block;
+  width: 96%;
+  vertical-align: middle;
 }
 
 .okr-title .header-text h4 {
@@ -2065,6 +2070,8 @@ label {
   font-weight: 500;
   display: inline-block;
   padding-bottom: 28px;
+  width: 71%;
+  vertical-align: middle;
 }
 
 .okr-details .details-section .details ul li .content img {
@@ -2080,7 +2087,8 @@ label {
   font-weight: 500;
   padding-bottom: 28px;
   font-size: 14px;
-  width: 140px;
+  width: 28%;
+  vertical-align: middle;
 }
 
 .okr-details .details-section .tasks .task-top-bar {
@@ -2213,23 +2221,21 @@ label {
   color: #1e252d;
 }
 
-.okr-details .chart-section .comments .comments-panel .panel-footer {
-  padding-left: 8px;
-  padding-right: 8px;
+.okr-details .chart-section .comments .comment-footer {
+  border: 1px solid #e4e4e4;
+  bottom: 0;
+  position: sticky;
+  background: #fff;
 }
 
-.okr-details .chart-section .comments .comments-panel .panel-footer input {
+.okr-details .chart-section .comments .comment-footer input {
   border: 0;
   outline: none;
   margin-bottom: 4px;
   margin-top: 4px;
+  padding-left: 6px;
 }
 
-.okr-details
-  .chart-section
-  .comments
-  .comments-panel
-  .panel-footer
-  input::placeholder {
+.okr-details .chart-section .comments .comment-footer input::placeholder {
   color: #848484 !important;
 }
