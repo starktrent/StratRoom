@@ -2040,6 +2040,7 @@ label {
 .okr-title .header-text h4 {
   font-weight: 600;
   color: #1e252d;
+  width: fit-content;
 }
 
 .okr-title .header-btn {
