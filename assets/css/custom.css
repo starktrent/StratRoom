@@ -2240,3 +2240,58 @@ label {
 .okr-details .chart-section .comments .comment-footer input::placeholder {
   color: #848484 !important;
 }
+
+.okr-table {
+  border: 1px solid #eee;
+}
+
+.okr-table table {
+  border: 0;
+  margin-bottom: 0;
+}
+
+.okr-table table thead tr th {
+  font-weight: 600;
+  border: 0;
+}
+
+.okr-table table tbody tr td {
+  padding: 6px 10px;
+  background: #f2f2f2;
+  font-size: 14px !important;
+  text-align: left;
+}
+
+.okr-table table tbody tr td button {
+  box-shadow: none;
+}
+
+.okr-table table tbody tr td button:hover {
+  box-shadow: none;
+}
+
+.okr-table table tbody tr td button i {
+  color: #666666;
+}
+
+.okr-table table tbody tr td img {
+  border-radius: 50%;
+  box-shadow: 0px 2px 8px rgb(0 0 0 / 10%);
+}
+
+.okr-table table tbody .child-row {
+  height: 0 !important;
+}
+
+.okr-table table tbody .child-row td {
+  padding: 0;
+}
+
+.okr-table table tbody .child-row td div table {
+  margin-bottom: 0;
+}
+
+.okr-table table tbody .child-row td div table tbody tr td {
+  background: #fff;
+  padding: 6px 10px;
+}
