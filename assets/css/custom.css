@@ -919,9 +919,13 @@ ul.gj-list-md li {
 }
 
 .custom-input:focus {
-  box-shadow: 0 0 3px #3191ff !important;
+  box-shadow: 0 0 3px #1e252d !important;
   padding: 0 8px !important;
-  border: 1px solid #3191ff !important;
+  border: 1px solid #1e252d !important;
+}
+
+.custom-input:hover {
+  border: 1px solid #1e252d !important;
 }
 
 .modal-custom-input {
@@ -2016,7 +2020,7 @@ label {
   height: 690px;
   border-radius: 18px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
-  padding: 40px 20px 20px 20px;
+  padding: 20px 20px 12px 20px;
 }
 
 .okr-title .header-icon {
@@ -2059,6 +2063,8 @@ label {
 
 .okr-details .details-section {
   border-right: 2px solid #e3e3e3;
+  height: 600px;
+  overflow-y: auto;
 }
 
 .okr-details .details-section .details ul {
@@ -2223,7 +2229,7 @@ label {
 }
 
 .okr-details .chart-section .comments .comment-footer {
-  border: 1px solid #e4e4e4;
+  border: 1px solid #8b8b8b;
   bottom: 0;
   position: sticky;
   background: #fff;
@@ -2242,7 +2248,7 @@ label {
 }
 
 .okr-table {
-  border: 1px solid #eee;
+  border: 0;
 }
 
 .okr-table table {

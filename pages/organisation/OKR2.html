@@ -139,7 +139,7 @@
 
       #lblCartCount {
         font-size: 10px;
-        background: #ff0000;
+        background: #4b61ca;
         color: #fff;
         padding: 0px 5px;
         font-weight: 600;
@@ -473,18 +473,37 @@
       </div>
       <!-- End Page Header -->
 
+      <div class="row">
+        <div class="col-md-12 mt-2">
+          <button
+            class="btn btn-custom-secondary pull-right"
+            style="margin-left: 4px"
+            data-toggle="modal"
+            data-target="#column_add"
+          >
+            <i
+              class="fas fa-plus"
+              style="font-size: 14px"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="Add Objectives"
+            ></i>
+          </button>
+        </div>
+      </div>
+
       <!-- Page Body -->
       <div class="container-fluid">
         <!-- COl -->
         <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="col-lg-12 col-md-12 col-sm-12" style="margin-top: -6px">
             <div
               class="card"
               style="
-                padding: 16px;
+                padding: 6px 16px;
                 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
                 border-radius: 14px !important;
-                height: 620px;
+                height: 590px;
                 border: 0;
               "
             >
@@ -501,14 +520,16 @@
                           <th style="width: 40px">&nbsp;</th>
                           <th style="width: 80px">Status</th>
                           <th style="width: 100px">Owner</th>
-                          <th style="width: 240px">Name</th>
-                          <th style="width: 140px">Progress</th>
-                          <th style="width: 140px"># of Key Results</th>
-                          <th style="width: 140px">Initial</th>
-                          <th style="width: 140px">Actual</th>
-                          <th style="width: 140px">Target</th>
-                          <th style="width: 140px">Confidence Level</th>
-                          <th style="width: 140px"># of Comments</th>
+                          <th style="width: 340px">Name</th>
+                          <th style="width: 120px">Progress</th>
+                          <th style="width: 120px"># of Key Results</th>
+                          <th style="width: 80px">Initial</th>
+                          <th style="width: 80px">Actual</th>
+                          <th style="width: 80px">Target</th>
+                          <th style="width: 120px">Confidence Level</th>
+                          <th style="width: 120px; text-align: center">
+                            # of Comments
+                          </th>
                         </tr>
                       </thead>
 
@@ -535,14 +556,17 @@
                               alt="owner"
                             />
                           </td>
-                          <td>Objective 1</td>
+                          <td>
+                            Improve employee productivity and career growth
+                            opportunities.
+                          </td>
                           <td>40%</td>
                           <td>1</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
-                          <td>
+                          <td style="text-align: center">
                             <i
                               class="far fa-comment-dots"
                               style="font-size: 20px"
@@ -569,14 +593,20 @@
                                         alt="owner"
                                       />
                                     </td>
-                                    <td style="width: 240px">Key Result 1</td>
-                                    <td style="width: 140px">40%</td>
-                                    <td style="width: 140px">1</td>
-                                    <td style="width: 140px">0</td>
-                                    <td style="width: 140px">4</td>
-                                    <td style="width: 140px">10</td>
-                                    <td style="width: 140px">7</td>
-                                    <td style="width: 140px">
+                                    <td style="width: 354px">
+                                      % Completion of scorecard result within 2
+                                      weeks of period (except financial related
+                                      data)
+                                    </td>
+                                    <td style="width: 120px">40%</td>
+                                    <td style="width: 120px">&nbsp;</td>
+                                    <td style="width: 80px">0</td>
+                                    <td style="width: 80px">4</td>
+                                    <td style="width: 80px">10</td>
+                                    <td style="width: 120px">7</td>
+                                    <td
+                                      style="width: 120px; text-align: center"
+                                    >
                                       <i
                                         class="far fa-comment-dots"
                                         style="font-size: 20px"
@@ -606,14 +636,16 @@
                               alt="owner"
                             />
                           </td>
-                          <td>Objective 2</td>
+                          <td>
+                            Improve performance review and evaluation process
+                          </td>
                           <td>0%</td>
                           <td>0</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
-                          <td>
+                          <td style="text-align: center">
                             <i
                               class="far fa-comment-dots"
                               style="font-size: 20px"
@@ -653,7 +685,7 @@
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
-                          <td>
+                          <td style="text-align: center">
                             <i
                               class="far fa-comment-dots"
                               style="font-size: 20px"
@@ -680,14 +712,19 @@
                                         alt="owner"
                                       />
                                     </td>
-                                    <td style="width: 240px">Key Result 1</td>
-                                    <td style="width: 140px">40%</td>
-                                    <td style="width: 140px">1</td>
-                                    <td style="width: 140px">0</td>
-                                    <td style="width: 140px">4</td>
-                                    <td style="width: 140px">10</td>
-                                    <td style="width: 140px">7</td>
-                                    <td style="width: 140px">
+                                    <td style="width: 354px">
+                                      # Time to sign off agreed departmental
+                                      KPIs for the financial year (days)
+                                    </td>
+                                    <td style="width: 120px">40%</td>
+                                    <td style="width: 120px">&nbsp;</td>
+                                    <td style="width: 80px">0</td>
+                                    <td style="width: 80px">4</td>
+                                    <td style="width: 80px">10</td>
+                                    <td style="width: 120px">7</td>
+                                    <td
+                                      style="width: 120px; text-align: center"
+                                    >
                                       <i
                                         class="far fa-comment-dots"
                                         style="font-size: 20px"
@@ -722,14 +759,16 @@
                                         alt="owner"
                                       />
                                     </td>
-                                    <td style="width: 240px">Key Result 1</td>
-                                    <td style="width: 140px">40%</td>
-                                    <td style="width: 140px">1</td>
-                                    <td style="width: 140px">0</td>
-                                    <td style="width: 140px">4</td>
-                                    <td style="width: 140px">10</td>
-                                    <td style="width: 140px">7</td>
-                                    <td style="width: 140px">
+                                    <td style="width: 354px">Key Result 2</td>
+                                    <td style="width: 120px">40%</td>
+                                    <td style="width: 120px">&nbsp;</td>
+                                    <td style="width: 80px">0</td>
+                                    <td style="width: 80px">4</td>
+                                    <td style="width: 80px">10</td>
+                                    <td style="width: 120px">7</td>
+                                    <td
+                                      style="width: 120px; text-align: center"
+                                    >
                                       <i
                                         class="far fa-comment-dots"
                                         style="font-size: 20px"
@@ -766,7 +805,7 @@
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
-                          <td>
+                          <td style="text-align: center">
                             <i
                               class="far fa-comment-dots"
                               style="font-size: 20px"
@@ -801,12 +840,12 @@
                           </td>
                           <td>Objective 5</td>
                           <td>0%</td>
-                          <td>2</td>
+                          <td>1</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
-                          <td>
+                          <td style="text-align: center">
                             <i
                               class="far fa-comment-dots"
                               style="font-size: 20px"
@@ -833,14 +872,16 @@
                                         alt="owner"
                                       />
                                     </td>
-                                    <td style="width: 240px">Key Result 1</td>
-                                    <td style="width: 140px">40%</td>
-                                    <td style="width: 140px">1</td>
-                                    <td style="width: 140px">0</td>
-                                    <td style="width: 140px">4</td>
-                                    <td style="width: 140px">10</td>
-                                    <td style="width: 140px">7</td>
-                                    <td style="width: 140px">
+                                    <td style="width: 354px">Key Result 1</td>
+                                    <td style="width: 120px">40%</td>
+                                    <td style="width: 120px">&nbsp;</td>
+                                    <td style="width: 80px">0</td>
+                                    <td style="width: 80px">4</td>
+                                    <td style="width: 80px">10</td>
+                                    <td style="width: 120px">7</td>
+                                    <td
+                                      style="width: 120px; text-align: center"
+                                    >
                                       <i
                                         class="far fa-comment-dots"
                                         style="font-size: 20px"
@@ -859,113 +900,6 @@
                           </td>
                         </tr>
                       </tbody>
-
-                      <!-- <tbody>
-                        <tr
-                          data-toggle="collapse"
-                          data-target="#demo1"
-                          class="accordion-toggle"
-                        >
-                          <td>
-                            <button class="btn btn-default btn-xs">
-                              <span class="glyphicon glyphicon-eye-open"></span>
-                            </button>
-                          </td>
-                          <td>OBS Name</td>
-                          <td>OBS Description</td>
-                          <td>hpcloud</td>
-                          <td>nova</td>
-                          <td>created</td>
-                        </tr>
-                        <tr>
-                          <td colspan="12" class="hiddenRow">
-                            <div class="accordian-body collapse" id="demo1">
-                              <table class="table table-striped">
-                                <thead>
-                                  <tr>
-                                    <td>
-                                      <a href="WorkloadURL">Workload link</a>
-                                    </td>
-                                    <td>Bandwidth: Dandwidth Details</td>
-                                    <td>OBS Endpoint: end point</td>
-                                  </tr>
-                                  <tr>
-                                    <th>Access Key</th>
-                                    <th>Secret Key</th>
-                                    <th>Status</th>
-                                    <th>Created</th>
-                                    <th>Expires</th>
-                                    <th>Actions</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr>
-                                    <td>access-key-1</td>
-                                    <td>secretKey-1</td>
-                                    <td>Status</td>
-                                    <td>some date</td>
-                                    <td>some date</td>
-                                    <td>
-                                      <a
-                                        href="#"
-                                        class="btn btn-default btn-sm"
-                                      >
-                                        <i class="glyphicon glyphicon-cog"></i
-                                      ></a>
-                                    </td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr
-                          data-toggle="collapse"
-                          data-target="#demo2"
-                          class="accordion-toggle"
-                        >
-                          <td>
-                            <button class="btn btn-default btn-xs">
-                              <span class="glyphicon glyphicon-eye-open"></span>
-                            </button>
-                          </td>
-                          <td>OBS Name</td>
-                          <td>OBS Description</td>
-                          <td>hpcloud</td>
-                          <td>nova</td>
-                          <td>created</td>
-                        </tr>
-                        <tr>
-                          <td colspan="6" class="hiddenRow">
-                            <div id="demo2" class="accordian-body collapse">
-                              Demo2
-                            </div>
-                          </td>
-                        </tr>
-                        <tr
-                          data-toggle="collapse"
-                          data-target="#demo3"
-                          class="accordion-toggle"
-                        >
-                          <td>
-                            <button class="btn btn-default btn-xs">
-                              <span class="glyphicon glyphicon-eye-open"></span>
-                            </button>
-                          </td>
-                          <td>OBS Name</td>
-                          <td>OBS Description</td>
-                          <td>hpcloud</td>
-                          <td>nova</td>
-                          <td>created</td>
-                        </tr>
-                        <tr>
-                          <td colspan="6" class="hiddenRow">
-                            <div id="demo3" class="accordian-body collapse">
-                              Demo3
-                            </div>
-                          </td>
-                        </tr>
-                      </tbody> -->
                     </table>
                   </div>
                 </div>
