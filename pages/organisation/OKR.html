@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<a lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
@@ -7,7 +7,6 @@
     <title>StratRoom</title>
     <!-- Favicon-->
     <!-- <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon"> -->
-
     <!-- Plugins Core Css -->
     <link href="../../assets/css/app.min.css" rel="stylesheet" />
     <!-- Custom Css -->
@@ -16,27 +15,12 @@
     <link href="../../assets/css/initatives.css" rel="stylesheet" />
     <link href="../../assets/css/icheck-bootstrap.min.css" rel="stylesheet" />
     <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" />
-    <!-- <link href="../../assets/select2.min.css" rel="stylesheet" /> -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css"
-      rel="stylesheet"
-    />
-
-    <link href="../../assets/js/file-upload/file-upload.css" rel="stylesheet" />
-
-    <link
-      rel="stylesheet"
-      href="../../assets/data-table/css/data-table/bootstrap-table.css"
-    />
-    <link rel="stylesheet" href="../../assets/data-table/css/responsive.css" />
-
     <!-- You can choose a theme from css/styles instead of get all themes -->
     <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
     <!-- <link href="../../assets/css/table-view.css" rel="stylesheet" /> -->
     <!-- <link rel="stylesheet" href="../../assets/daterangepicker.css"> -->
     <link rel="stylesheet" href="../../assets/datepickerair.css" />
     <link href="../../assets/jquery-ui.min.css" rel="stylesheet" />
-    <link href="../../assets/css/employee.css" rel="stylesheet" />
     <link
       href="../../assets/daterangepicker/daterangepicker.min.css"
       rel="stylesheet"
@@ -44,41 +28,18 @@
     <link href="../../assets/css/employee.css" rel="stylesheet" />
     <!-- <link href="../../assets/bootstrap-datepicker.min.css" rel="stylesheet" /> -->
 
-    <link rel="stylesheet" href="../../assets/nano.min.css" />
-    <link rel="stylesheet" href="../../assets/monolith.min.css" />
-    <link rel="stylesheet" href="../../assets/classic.min.css" />
-
-    <script src="../../assets/plotly-latest.min.js"></script>
-
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      id="main-stylesheet"
-      data-version="1.1.0"
-      href="css/shards-dashboards.1.1.0.min.css"
-    />
-
-    <link
-      href="assets/daterangepicker/daterangepicker.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script
-      src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"
-      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+      crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="../../assets/treeable/jquery.treetable.css" />
+    <link rel="stylesheet" href="../../assets/select2.min.css" />
     <link
-      href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css"
       rel="stylesheet"
-      type="text/css"
+      href="../../assets/treeable/jquery.treetable.theme.default.css"
     />
 
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-
-    <!-- Font Awsome Icons -->
     <link
       href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
       rel="stylesheet"
@@ -88,118 +49,117 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <style>
-      #section .container-fluid .collapse_arrow_left .arrow_collapse_size {
+      .orientation-right {
+        top: 60px !important;
+        right: 0 !important;
+        left: auto !important;
         position: fixed;
-        background: #fff;
-        font-size: 20px !important;
-        top: 22%;
-        z-index: 999;
-        color: #a3a3a3;
-        margin-left: -30px;
-        padding: 14px 6px 14px 2px;
-        border-top: 1px solid #e9ecef;
-        border-right: 1px solid #e9ecef;
-        border-bottom: 1px solid #e9ecef;
-        border-left: 0px solid #e9ecef;
-        border-radius: 0px 12px 12px 0px;
-        cursor: pointer;
-        transition: 0.5s;
       }
 
-      #section .container-fluid .collapse_arrow_right .arrow_collapse_size {
-        position: fixed;
-        background: #fff;
-        font-size: 20px !important;
-        top: 22%;
-        z-index: 999;
-        color: #a3a3a3;
-        margin-left: -30px;
-        padding: 14px 6px 14px 2px;
-        border-top: 1px solid #e9ecef;
-        border-right: 1px solid #e9ecef;
-        border-bottom: 1px solid #e9ecef;
-        border-left: 0px solid #e9ecef;
-        border-radius: 0px 12px 12px 0px;
-        cursor: pointer;
-        transition: 0.5s;
-      }
-
-      /* Modal style change */
-      .modal .modal-content {
-        border-radius: 6px;
-      }
-
-      .modal .modal-header {
-        border: 0;
-        padding: 17px 16px 8px 16px;
-        margin: -10px -10px -12px -10px;
-        background-color: #fff;
-      }
-
-      .modal-header .close {
-        padding: 0;
-        margin: 0;
-        color: #9e9e9e;
-      }
-
-      .select2-container {
-        width: 100% !important;
-      }
-
-      .select2-container--default.select2-container--focus
-        .select2-selection--multiple:focus {
-        box-shadow: 0 0 3px #3191ff !important;
-        padding: 0 8px !important;
-        border: 1px solid #3191ff !important;
-      }
-
-      .select2-container--default.select2-container--focus
-        .select2-selection--multiple {
-        border: solid #ced4da 1px;
-        outline: 0;
-      }
-
-      .select2-container .select2-search--inline .select2-search__field {
-        box-sizing: border-box;
-        border: none;
-        font-size: 100%;
-        margin-top: -4px;
-        margin-left: 5px;
-        padding: 0;
+      .theme-black .swot-nav > li > a {
+        max-width: 160px;
+        overflow: hidden;
         margin-bottom: -10px;
       }
 
-      .select2-container--default .select2-selection--multiple {
-        background-color: white;
-        border: 1px solid #ced4da;
-        border-radius: 4px;
-        cursor: text;
-        padding-bottom: 5px;
-        padding-right: 5px;
-        height: 36px;
+      .access-control-table thead tr th {
+        font-size: 16px;
+        font-weight: 600;
+        z-index: 1;
+        border: 1px solid #ececec !important;
+        color: #333;
+        position: sticky;
+        top: 0;
+        border: 1px solid #ececec !important;
+        box-shadow: inset 1px 1px #ececec, 0 1px #ececec;
+        background-color: #f7f7f7;
+        padding: 12px 0px;
+        text-align: center;
       }
 
-      .custom-input {
-        height: 36px !important;
+      .access-control-table tbody tr td {
+        font-size: 14px;
+        font-weight: 500 !important;
+        color: #555;
+        border: 1px solid #ececec !important;
+        box-shadow: inset 1px -1px #ececec;
+        text-align: left;
+        padding: 4px 0px 0px 16px;
       }
 
-      label {
-        font-weight: 500;
+      .access-control-table tbody tr td ul {
+        margin-top: 8px;
       }
 
-      .preview-gallery {
-        display: inline-block;
+      .access-control-table tbody tr td h4 {
+        font-size: 15px;
+        font-weight: 600;
       }
 
-      .preview-gallery img {
-        height: 40px;
-        border: 1px solid #03a9f4;
-        border-radius: 4px;
-        margin-left: 6px;
+      .access-control-table tbody tr td i {
+        font-size: 16px;
       }
 
-      .slimScrollDiv {
-        width: 230px !important;
+      .access-control-table tbody tr td ul li {
+        font-size: 13px;
+      }
+
+      .access-control-table tbody tr td ul li .far {
+        font-size: 16px;
+        color: #17b978;
+      }
+
+      .access-control-table tbody tr td ul li .fas {
+        font-size: 16px;
+        color: #ff304f;
+      }
+
+      .table-responsive {
+        width: 100%;
+        height: 560px;
+        overflow-y: auto;
+        box-shadow: inset 1px -1px #ececec;
+      }
+
+      /* width */
+      ::-webkit-scrollbar {
+        width: 8px !important;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: rgb(172, 172, 172);
+        border-radius: 10px;
+      }
+
+      #lblCartCount {
+        font-size: 10px;
+        background: #4b61ca;
+        color: #fff;
+        padding: 0px 5px;
+        font-weight: 600;
+        vertical-align: top;
+        margin-left: -10px;
+      }
+
+      span.badge {
+        padding: 0 6px;
+        margin-left: 14px;
+        text-align: center;
+        line-height: 19px;
+        height: 18px;
+        width: 18px;
+        color: #757575;
+        float: right;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        border-radius: 10px;
       }
     </style>
   </head>
@@ -214,11 +174,13 @@
         <p>Please wait...</p>
       </div>
     </div>
+    <!-- <div>
+            <img src="../../assets/images/SP_Bg.png" alt="">
+        </div> -->
     <!-- #END# Page Loader -->
     <!-- Overlay For Sidebars -->
     <div class="overlay"></div>
     <!-- #END# Overlay For Sidebars -->
-
     <!-- Top Bar -->
     <nav class="navbar">
       <div class="container-fluid">
@@ -317,8 +279,8 @@
               <a
                 href="#"
                 onClick="return false;"
-                data-toggle="modal"
-                data-target="#settings"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
                 role="button"
               >
                 <i class="nav-hdr-btn ti-settings" style="color: gray"></i>
@@ -494,874 +456,128 @@
         </div>
         <!-- #Menu -->
       </aside>
-
-      <aside id="initiative_sidebar" class="initiative_sidebar">
-        <div class="sub_initiatives" id="sub_initiatives" style="height: 100%">
-          <div class="card" style="height: 100%">
-            <div class="d-flex flex-column" id="initiate_sidebar">
-              <div class="row" style="padding: 20px 22px">
-                <label for="objectives">Objectives</label>
-                <div
-                  class="col-12 form-group chart-type sub_initiative_details"
-                  style="padding: 0; margin-bottom: 16px"
-                >
-                  <select class="form-control browser-default">
-                    <option value="Increase awareness">
-                      Increase awareness
-                    </option>
-                    <option value="Option_2">Option_2</option>
-                    <option value="Option_3">Option_3</option>
-                  </select>
-                </div>
-
-                <label for="Sub Objective">Sub Objectives</label>
-                <div
-                  class="col-12 form-group chart-type sub_initiative_details"
-                  style="padding: 0; margin-bottom: 16px"
-                >
-                  <select class="form-control browser-default">
-                    <option value="Increase awareness">
-                      Increase awareness
-                    </option>
-                    <option value="Option_2">Option_2</option>
-                    <option value="Option_3">Option_3</option>
-                  </select>
-                </div>
-
-                <label for="KRS">KRs</label>
-                <div
-                  class="d-flex flex-column"
-                  id="initiate_sidebar"
-                  style="width: 220px"
-                >
-                  <div
-                    class="d-flex flex-column kpi_initiative_sidebar_details initiative_side_border_orange"
-                    style="width: 208px; margin: 6px 0"
-                  >
-                    <div class="d-flex flex-row p-b-5">
-                      <div class="d-flex flex-column kpi_side_depart_bar">
-                        <p style="font-weight: 600">
-                          % Sales from new products
-                        </p>
-                      </div>
-                      <div
-                        class="d-flex flex-column"
-                        style="text-align: right; width: 100%"
-                      >
-                        <p>Monthly</p>
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex flex-row justify-content-between m-t--10"
-                    >
-                      <div class="d-flex flex-column">
-                        <div>
-                          <div class="employee_info" style="color: #838688">
-                            Actual
-                          </div>
-                          <span>0</span>
-                        </div>
-                      </div>
-                      <div class="d-flex flex-column">
-                        <div>
-                          <div class="employee_info" style="color: #838688">
-                            Target
-                          </div>
-                          <span>0</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div
-                    class="d-flex flex-column kpi_initiative_sidebar_details initiative_side_border_yellow"
-                    style="width: 208px; margin: 6px 0"
-                  >
-                    <div class="d-flex flex-row p-b-5">
-                      <div class="d-flex flex-column kpi_side_depart_bar">
-                        <p style="font-weight: 600">
-                          # Social media engagement
-                        </p>
-                      </div>
-                      <div
-                        class="d-flex flex-column"
-                        style="text-align: right; width: 100%"
-                      >
-                        <p>Monthly</p>
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex flex-row justify-content-between m-t--10"
-                    >
-                      <div class="d-flex flex-column">
-                        <div>
-                          <div class="employee_info" style="color: #838688">
-                            Actual
-                          </div>
-                          <span>0</span>
-                        </div>
-                      </div>
-                      <div class="d-flex flex-column">
-                        <div>
-                          <div class="employee_info" style="color: #838688">
-                            Target
-                          </div>
-                          <span>0</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </aside>
-      <!--#START Data Collection Form -->
     </div>
     <!-- #END# Left Sidebar -->
 
-    <!-- Add Task -->
-    <div
-      class="modal fade"
-      id="add_task"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="myLargeModalLabel_1"
-      aria-hidden="true"
-    >
-      <div
-        class="modal-dialog modal-dialog-centered modal-lg"
-        style="width: 600px"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4
-              style="
-                font-size: 18px;
-                font-weight: 600;
-                color: #1e252d;
-                margin-bottom: 18px;
-              "
-            >
-              Create Task
-            </h4>
-            <button type="button" class="close pull-right" data-dismiss="modal">
-              &times;
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="row">
-              <div class="col-12 form-group mb-4">
-                <input
-                  type="text"
-                  class="form-control browser-default custom-input"
-                  placeholder="Enter your task"
-                  value=""
-                />
-              </div>
-
-              <div class="col-4 form-group mb-4">
-                <label for="ID">ID</label>
-              </div>
-
-              <div class="col-8 form-group mb-4">
-                <input
-                  type="text"
-                  class="form-control browser-default custom-input"
-                  value="45263546"
-                />
-              </div>
-
-              <div class="col-4 form-group mb-4">
-                <label for="Description">Description</label>
-              </div>
-
-              <div class="col-8 form-group mb-4">
-                <textarea class="form-control browser-default custom-input" cols="30" rows="10" placeholder="Enter description"></textarea>
-              </div>
-
-              <div class="col-4 form-group mb-4">
-                <label for="Owner">Owner</label>
-              </div>
-
-              <div class="col-8 form-group mb-4">
-                <div class="owner" style="padding-right: 12px">
-                  <ul
-                    class="list-unstyled order-list"
-                    data-toggle="modal"
-                    data-target="#user_edit_popup"
-                    style="cursor: pointer"
-                  >
-                    <li class="avatar avatar-sm">
-                      <img
-                        class="rounded-circle"
-                        src="../../assets/images/user/user7.jpg"
-                        alt="user"
-                      />
-                    </li>
-                    <li class="avatar avatar-sm">
-                      <img
-                        class="rounded-circle"
-                        src="../../assets/images/user/user8.jpg"
-                        alt="user"
-                      />
-                    </li>
-                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
-                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="col-4 form-group mb-4">
-                <label for="Due Date">Due Date</label>
-              </div>
-
-              <div class="col-8 form-group mb-4">
-                <input
-                  type="text"
-                  class="form-control browser-default date_pickers_single custom-input"
-                  data-language="en"
-                  name="kpi_start_end_date"
-                  id="kpi_start_end_date"
-                  value=""
-                />
-              </div>
-
-              <div class="col-4 form-group mb-4">
-                <label for="Attachments">Attachments</label>
-              </div>
-
-              <div class="col-8 form-group mb-4">
-                <div class="preview-gallery"></div>
-                <label
-                  for="file-upload"
-                  style="
-                    height: 32px;
-                    width: 32px;
-                    padding: 6px 9px;
-                    border: 1px solid #ced4da;
-                    border-radius: 4px;
-                    cursor: pointer;
-                  "
-                >
-                  <i class="fas fa-plus"></i>
-                </label>
-                <input
-                  type="file"
-                  class="form-control browser-default custom-input"
-                  name="files[]"
-                  multiple
-                  style="display: none"
-                  id="file-upload"
-                />
-              </div>
-
-              <div class="col-4 form-group mb-4">
-                <label for="Comments">Comments</label>
-              </div>
-
-              <div class="col-8 form-group mb-4">
-                <textarea class="form-control browser-default custom-input" cols="30" rows="10" placeholder="Enter comments"></textarea>
-              </div>
-
-              <div class="col-12">
-                <div class="form-line right">
-                  <button
-                    type="button"
-                    class="btn-default1 btn"
-                    data-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    Cancel
-                  </button>
-                  <button class="initative_save_btn" value="Save">Save</button>
-                </div>
-              </div>
-            </div>
-          </div>
+    <!-- Content Start -->
+    <section class="content">
+      <!-- Page Header -->
+      <div class="page-header row no-gutters py-2 m-t--70">
+        <div class="col-lg-6 col-md-6 text-center text-sm-left pt-2 mb-0 ml-4">
+          <h5
+            class="page-title"
+            style="font-weight: 600; text-transform: uppercase"
+          >
+            OKR
+          </h5>
         </div>
       </div>
-    </div>
-    <!-- Add Task -->
-
-    <!-- Edit Task -->
-    <div
-      class="modal fade"
-      id="edit_task"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="myLargeModalLabel_1"
-      aria-hidden="true"
-    >
-      <div
-        class="modal-dialog modal-dialog-centered modal-lg"
-        style="width: 600px"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4
-              style="
-                font-size: 18px;
-                font-weight: 600;
-                color: #1e252d;
-                margin-bottom: 18px;
-              "
-            >
-              Edit Task
-            </h4>
-            <button type="button" class="close pull-right" data-dismiss="modal">
-              &times;
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="row">
-              <div class="col-12 form-group mb-4">
-                <input
-                  type="text"
-                  class="form-control browser-default custom-input"
-                  placeholder="Enter your task"
-                  value=""
-                />
-              </div>
-
-              <div class="col-4 form-group mb-4">
-                <label for="ID">ID</label>
-              </div>
-
-              <div class="col-8 form-group mb-4">
-                <input
-                  type="text"
-                  class="form-control browser-default custom-input"
-                  value="45263546"
-                />
-              </div>
-
-              <div class="col-4 form-group mb-4">
-                <label for="Description">Description</label>
-              </div>
-
-              <div class="col-8 form-group mb-4">
-                <textarea class="form-control browser-default custom-input" cols="30" rows="10" placeholder="Enter description"></textarea>
-              </div>
-
-              <div class="col-4 form-group mb-4">
-                <label for="Owner">Owner</label>
-              </div>
-
-              <div class="col-8 form-group mb-4">
-                <div class="owner" style="padding-right: 12px">
-                  <ul
-                    class="list-unstyled order-list"
-                    data-toggle="modal"
-                    data-target="#user_edit_popup"
-                    style="cursor: pointer"
-                  >
-                    <li class="avatar avatar-sm">
-                      <img
-                        class="rounded-circle"
-                        src="../../assets/images/user/user7.jpg"
-                        alt="user"
-                      />
-                    </li>
-                    <li class="avatar avatar-sm">
-                      <img
-                        class="rounded-circle"
-                        src="../../assets/images/user/user8.jpg"
-                        alt="user"
-                      />
-                    </li>
-                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
-                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="col-4 form-group mb-4">
-                <label for="Due Date">Due Date</label>
-              </div>
-
-              <div class="col-8 form-group mb-4">
-                <input
-                  type="text"
-                  class="form-control browser-default date_pickers_single custom-input"
-                  data-language="en"
-                  name="kpi_start_end_date"
-                  id="kpi_start_end_date"
-                  value=""
-                />
-              </div>
-
-              <div class="col-4 form-group mb-4">
-                <label for="Attachments">Attachments</label>
-              </div>
-
-              <div class="col-8 form-group mb-4">
-                <div class="preview-gallery"></div>
-                <label
-                  for="file-upload"
-                  style="
-                    height: 32px;
-                    width: 32px;
-                    padding: 6px 9px;
-                    border: 1px solid #ced4da;
-                    border-radius: 4px;
-                    cursor: pointer;
-                  "
-                >
-                  <i class="fas fa-plus"></i>
-                </label>
-                <input
-                  type="file"
-                  class="form-control browser-default custom-input"
-                  name="files[]"
-                  multiple
-                  style="display: none"
-                  id="file-upload"
-                />
-              </div>
-
-              <div class="col-4 form-group mb-4">
-                <label for="Comments">Comments</label>
-              </div>
-
-              <div class="col-8 form-group mb-4">
-                <textarea class="form-control browser-default custom-input" cols="30" rows="10" placeholder="Enter comments"></textarea>
-              </div>
-
-              <div class="col-12">
-                <div class="form-line right">
-                  <button
-                    type="button"
-                    class="btn-default1 btn"
-                    data-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    Cancel
-                  </button>
-                  <button class="initative_save_btn" value="Save">Save</button>
-                </div>
-              </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Edit Task -->
-
-    <!--#Start User Edit Popup -->
-    <div
-      class="modal fade"
-      id="user_edit_popup"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="myLargeModalLabel_1"
-      aria-modal="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header" style="margin: 0 0 0 8px">
-            <h4 style="color: #1e252d; margin-bottom: 12px; font-size: 16px">
-              Edit Users
-            </h4>
-            <button type="button" class="close pull-right" data-dismiss="modal">
-              &times;
-            </button>
-          </div>
-          <div class="">
-            <div class="col-lg-12 col-md-12 sub_initiatives">
-              <div
-                class="slimScrollDiv"
-                style="
-                  position: relative;
-                  overflow: hidden;
-                  width: auto;
-                  height: 340px;
-                "
-              >
-                <div
-                  class="d-flex flex-column employee_div_body_box sub-ini-box"
-                  id="sub-ini-box_view"
-                  style="overflow: hidden; width: auto; height: 340px"
-                >
-                  <span id="sub-ini-box_view_users"
-                    ><div
-                      class="d-flex flex-row employe_content_border sub_initiative_details"
-                    >
-                      <div class="d-flex flex-column flex-fill profile_content">
-                        <div class="d-flex flex-row">
-                          <div class="form-check">
-                            <label class="form-check-label"
-                              ><input
-                                id=""
-                                class="form-check-input"
-                                name="sub_initiative_owner[]"
-                                type="checkbox"
-                                value="959" /><span class="form-check-sign">
-                                <span class="check"></span></span
-                            ></label>
-                          </div>
-                          <div
-                            class="d-flex flex-column init_flex_profile"
-                            style="margin-top: 3%; text-align: center"
-                          >
-                            <h5>David Miller</h5>
-                          </div>
-                          <div class="img_details" style="width: 20%">
-                            <img
-                              alt="David Miller"
-                              src="images/user/usrbig8.jpg"
-                              class="rounded-circle imgprofile"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex flex-row employe_content_border sub_initiative_details"
-                    >
-                      <div class="d-flex flex-column flex-fill profile_content">
-                        <div class="d-flex flex-row">
-                          <div class="form-check">
-                            <label class="form-check-label"
-                              ><input
-                                id=""
-                                class="form-check-input"
-                                name="sub_initiative_owner[]"
-                                type="checkbox"
-                                value="960" /><span class="form-check-sign">
-                                <span class="check"></span></span
-                            ></label>
-                          </div>
-                          <div
-                            class="d-flex flex-column init_flex_profile"
-                            style="margin-top: 3%; text-align: center"
-                          >
-                            <h5>Seema Chatterjee</h5>
-                          </div>
-                          <div class="img_details" style="width: 20%">
-                            <img
-                              alt="Seema Chatterjee"
-                              src="images/user/usrbig10.jpg"
-                              class="rounded-circle imgprofile"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex flex-row employe_content_border sub_initiative_details"
-                    >
-                      <div class="d-flex flex-column flex-fill profile_content">
-                        <div class="d-flex flex-row">
-                          <div class="form-check">
-                            <label class="form-check-label"
-                              ><input
-                                id=""
-                                class="form-check-input"
-                                name="sub_initiative_owner[]"
-                                type="checkbox"
-                                value="961" /><span class="form-check-sign">
-                                <span class="check"></span></span
-                            ></label>
-                          </div>
-                          <div
-                            class="d-flex flex-column init_flex_profile"
-                            style="margin-top: 3%; text-align: center"
-                          >
-                            <h5>Rafael Nadal</h5>
-                          </div>
-                          <div class="img_details" style="width: 20%">
-                            <img
-                              alt="Rafael Nadal"
-                              src="images/user/usrbig9.jpg"
-                              class="rounded-circle imgprofile"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex flex-row employe_content_border sub_initiative_details"
-                    >
-                      <div class="d-flex flex-column flex-fill profile_content">
-                        <div class="d-flex flex-row">
-                          <div class="form-check">
-                            <label class="form-check-label"
-                              ><input
-                                id=""
-                                class="form-check-input"
-                                name="sub_initiative_owner[]"
-                                type="checkbox"
-                                value="962" /><span class="form-check-sign">
-                                <span class="check"></span></span
-                            ></label>
-                          </div>
-                          <div
-                            class="d-flex flex-column init_flex_profile"
-                            style="margin-top: 3%; text-align: center"
-                          >
-                            <h5>Prakash Raj</h5>
-                          </div>
-                          <div class="img_details" style="width: 20%">
-                            <img
-                              alt="Prakash Raj"
-                              src="images/user/usrbig6.jpg"
-                              class="rounded-circle imgprofile"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex flex-row employe_content_border sub_initiative_details"
-                    >
-                      <div class="d-flex flex-column flex-fill profile_content">
-                        <div class="d-flex flex-row">
-                          <div class="form-check">
-                            <label class="form-check-label"
-                              ><input
-                                id=""
-                                class="form-check-input"
-                                name="sub_initiative_owner[]"
-                                checked=""
-                                type="checkbox"
-                                value="958" /><span class="form-check-sign">
-                                <span class="check"></span></span
-                            ></label>
-                          </div>
-                          <div
-                            class="d-flex flex-column init_flex_profile"
-                            style="margin-top: 3%; text-align: center"
-                          >
-                            <h5>Karthik Ramani</h5>
-                          </div>
-                          <div class="img_details" style="width: 20%">
-                            <img
-                              alt="Karthik Ramani"
-                              src="images/user/usrbig7.jpg"
-                              class="rounded-circle imgprofile"
-                            />
-                          </div>
-                        </div>
-                      </div></div
-                  ></span>
-                </div>
-                <div
-                  class="slimScrollBar"
-                  style="
-                    background: rgb(156, 156, 156);
-                    width: 3px;
-                    position: absolute;
-                    top: 0px;
-                    opacity: 0.4;
-                    display: none;
-                    border-radius: 7px;
-                    z-index: 99;
-                    right: 1px;
-                    height: 340px;
-                  "
-                ></div>
-                <div
-                  class="slimScrollRail"
-                  style="
-                    width: 3px;
-                    height: 100%;
-                    position: absolute;
-                    top: 0px;
-                    display: none;
-                    border-radius: 7px;
-                    background: rgb(51, 51, 51);
-                    opacity: 0.2;
-                    z-index: 90;
-                    right: 1px;
-                  "
-                ></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--#End User Edit Popup -->
-
-    <section class="content" id="section">
-      <div class="container-fluid">
-        <div class="collapse_arrow_right" style="display: none">
-          <i class="arrow_collapse_size fas fa-caret-right"></i>
-        </div>
-        <div class="collapse_arrow_left">
-          <i class="arrow_collapse_size fas fa-caret-left"></i>
-        </div>
-      </div>
+      <!-- End Page Header -->
 
       <div class="row">
-        <div class="col-md-12" style="margin-top: 30px">
+        <div class="col-md-12 mt-2">
           <button
             class="btn btn-custom-secondary pull-right"
-            style="margin-left: 4px"
+            style="margin-right: 4px"
             data-toggle="modal"
             data-target="#column_add"
           >
             <i
-              class="fas fa-pen"
+              class="fas fa-plus"
               style="font-size: 14px"
               data-toggle="tooltip"
               data-placement="bottom"
-              title="Update"
+              title="Add Objectives"
             ></i>
           </button>
         </div>
       </div>
 
       <!-- Page Body -->
-      <div
-        class="container-fluid"
-        style="height: 580px; padding-left: 0; padding-right: 8px"
-      >
+      <div class="container-fluid">
         <!-- COl -->
         <div class="row">
-          <div
-            class="col-lg-12 col-md-12 col-sm-12"
-            style="padding: 6px 0 8px 0"
-          >
-            <div class="okr-body">
-              <div class="row okr-title">
-                <div class="col-10">
-                  <span class="header-icon"
-                    ><i class="fas fa-chart-line"></i
-                  ></span>
-                  <div class="header-text">
-                    <h4 contenteditable="true">
-                      Budget constraints: stay below $1M
-                    </h4>
-                  </div>
-                </div>
-                <!-- <div class="col-2">
-                  <button
-                    class="btn pull-right header-btn"
-                    data-toggle="modal"
-                    data-target="#"
-                  >
-                    Update
-                  </button>
-                </div> -->
-              </div>
+          <div class="col-lg-12 col-md-12 col-sm-12" style="margin-top: -6px">
+            <div
+              class="card"
+              style="
+                padding: 6px 16px;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
+                border-radius: 14px !important;
+                height: 590px;
+                border: 0;
+              "
+            >
+              <div class="row">
+                <div class="col-md-12">
+                  <!-- Access Control -->
+                  <div class="okr-table">
+                    <table
+                      class="table table-condensed"
+                      style="border-collapse: collapse"
+                    >
+                      <thead>
+                        <tr>
+                          <th style="width: 40px">&nbsp;</th>
+                          <th style="width: 80px">Status</th>
+                          <th style="width: 100px">Owner</th>
+                          <th style="width: 340px">Name</th>
+                          <th style="width: 120px">Progress</th>
+                          <th style="width: 120px"># of Key Results</th>
+                          <th style="width: 80px">Initial</th>
+                          <th style="width: 80px">Actual</th>
+                          <th style="width: 80px">Target</th>
+                          <th style="width: 120px">Confidence Level</th>
+                          <th style="width: 120px; text-align: center">
+                            # of Comments
+                          </th>
+                          <th style="width: 40px">&nbsp;</th>
+                        </tr>
+                      </thead>
 
-              <div class="row okr-details">
-                <div class="col-6 details-section">
-                  <div class="details">
-                    <ul>
-                      <li>
-                        <div class="okr-name">Owner</div>
-                        <div class="content" style="font-weight: 600">
-                          <img
-                            src="../../assets/images/user/user1.jpg"
-                            alt="HR"
-                          />
-                          HR
-                        </div>
-                      </li>
-                      <li>
-                        <div class="okr-name">Parent</div>
-                        <div class="content">Land and Expand New ...</div>
-                      </li>
-                      <li>
-                        <div class="okr-name">Description</div>
-                        <div class="content">-</div>
-                      </li>
-                      <li>
-                        <div class="okr-name">Initial</div>
-                        <div class="content">0</div>
-                      </li>
-                      <li>
-                        <div class="okr-name">Actual</div>
-                        <div class="content">0</div>
-                      </li>
-                      <li>
-                        <div class="okr-name">Target</div>
-                        <div class="content">Should stay below 1,000,000</div>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="tasks">
-                    <div class="row task-top-bar">
-                      <div class="col-8">
-                        <h4>
-                          <span
-                            ><i
-                              class="fas fa-tasks"
-                              style="color: #1aa243; margin-right: 8px"
-                            ></i
-                          ></span>
-                          Task
-                        </h4>
-                      </div>
-                      <div class="col-4">
-                        <span
-                          class="pull-right"
-                          data-toggle="modal"
-                          data-target="#add_task"
-                          style="
-                            font-size: 14px;
-                            font-weight: 600;
-                            color: #2f50ff;
-                            cursor: pointer;
-                          "
+                      <tbody>
+                        <tr
+                          data-toggle="collapse"
+                          data-target="#demo1"
+                          class="accordion-toggle"
                         >
-                          <i class="fas fa-plus mr-1"></i>
-                          Add Task
-                        </span>
-                      </div>
-                    </div>
-                    <div style="height: 230px; overflow-y: auto">
-                      <div class="section-items">
-                        <div class="owner-icon">
-                          <img
-                            src="../../assets/images/user/user1.jpg"
-                            alt="HR"
-                          />
-                        </div>
-                        <div class="item-detail">
-                          <span>Sample Task</span>
-                        </div>
-                        <div class="due-date">
-                          <span>12/02/2021</span>
-                        </div>
-                        <div class="task-statuses">
-                          <select
-                            onchange="this.className=this.options[this.selectedIndex].id"
-                            class="to-do"
-                            style="border-radius: 20px; padding: 0 6px"
-                          >
-                            <option
-                              id="to-do"
-                              value=""
-                              style="background-color: #fff"
-                            >
-                              To-do
-                            </option>
-                            <option
-                              id="in-progress"
-                              value=""
-                              style="background-color: #fff"
-                            >
-                              In progress
-                            </option>
-                            <option
-                              id="done"
-                              value=""
-                              style="background-color: #fff"
-                            >
-                              Done
-                            </option>
-                          </select>
-                        </div>
-                        <div class="more-option">
-                          <span>
+                          <td>
+                            <button class="btn btn-xs">
+                              <i
+                                class="far fa-minus-square"
+                                id="icon-change"
+                              ></i>
+                            </button>
+                          </td>
+                          <td style="color: #e84343">
+                            <i class="fas fa-flag"></i>
+                          </td>
+                          <td>
+                            <img
+                              src="../../assets/images/user/user8.jpg"
+                              alt="owner"
+                            />
+                          </td>
+                          <td>
+                            Improve employee productivity and career growth
+                            opportunities.
+                          </td>
+                          <td>40%</td>
+                          <td>1</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td style="text-align: center">
+                            <i
+                              class="far fa-comment-dots"
+                              style="font-size: 20px"
+                            ></i>
+                            <span class="badge badge-primary" id="lblCartCount">
+                              1
+                            </span>
+                          </td>
+                          <td>
                             <ul
                               class="header-dropdown"
                               style="margin-bottom: 0px"
@@ -1394,9 +610,9 @@
                                     <a
                                       href="#"
                                       data-toggle="modal"
-                                      data-target="#view_risk_l1"
+                                      data-target="#view_task"
                                       onclick="return false;"
-                                      >View</a
+                                      >Add</a
                                     >
                                   </li>
 
@@ -1419,56 +635,166 @@
                                       >Delete</a
                                     >
                                   </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#view_task"
+                                      onclick="return false;"
+                                      >View</a
+                                    >
+                                  </li>
                                 </ul>
                               </li>
                             </ul>
-                          </span>
-                        </div>
-                      </div>
-                      <div class="section-items">
-                        <div class="owner-icon">
-                          <img
-                            src="../../assets/images/user/user1.jpg"
-                            alt="HR"
-                          />
-                        </div>
-                        <div class="item-detail">
-                          <span>Sample Task</span>
-                        </div>
-                        <div class="due-date">
-                          <span>12/02/2021</span>
-                        </div>
-                        <div class="task-statuses">
-                          <select
-                            onchange="this.className=this.options[this.selectedIndex].id"
-                            class="to-do"
-                            style="border-radius: 20px; padding: 0 6px"
-                          >
-                            <option
-                              id="to-do"
-                              value=""
-                              style="background-color: #fff"
-                            >
-                              To-do
-                            </option>
-                            <option
-                              id="in-progress"
-                              value=""
-                              style="background-color: #fff"
-                            >
-                              In progress
-                            </option>
-                            <option
-                              id="done"
-                              value=""
-                              style="background-color: #fff"
-                            >
-                              Done
-                            </option>
-                          </select>
-                        </div>
-                        <div class="more-option">
-                          <span>
+                          </td>
+                        </tr>
+
+                        <tr class="child-row">
+                          <td colspan="12" class="hiddenRow">
+                            <div class="accordian-body show" id="demo1">
+                              <table class="table table-striped">
+                                <tbody>
+                                  <tr>
+                                    <td style="width: 54px">&nbsp;</td>
+                                    <td style="color: #e84343; width: 80px">
+                                      <i class="fas fa-flag"></i>
+                                    </td>
+                                    <td style="width: 100px">
+                                      <img
+                                        src="../../assets/images/user/user7.jpg"
+                                        alt="owner"
+                                      />
+                                    </td>
+                                    <td style="width: 354px">
+                                      % Completion of scorecard result within 2
+                                      weeks of period (except financial related
+                                      data)
+                                    </td>
+                                    <td style="width: 120px">40%</td>
+                                    <td style="width: 120px">&nbsp;</td>
+                                    <td style="width: 80px">0</td>
+                                    <td style="width: 80px">4</td>
+                                    <td style="width: 80px">10</td>
+                                    <td style="width: 120px">7</td>
+                                    <td
+                                      style="width: 120px; text-align: center"
+                                    >
+                                      <i
+                                        class="far fa-comment-dots"
+                                        style="font-size: 20px"
+                                      ></i>
+                                      <span
+                                        class="badge badge-primary"
+                                        id="lblCartCount"
+                                      >
+                                        1
+                                      </span>
+                                    </td>
+                                    <td style="width: 40px">
+                                      <ul
+                                        class="header-dropdown"
+                                        style="margin-bottom: 0px"
+                                      >
+                                        <li class="dropdown">
+                                          <a
+                                            href="#"
+                                            class="dropdown-toggle"
+                                            data-toggle="dropdown"
+                                            role="button"
+                                            aria-haspopup="true"
+                                            aria-expanded="true"
+                                            style="color: #1e252d !important"
+                                          >
+                                            <i class="fas fa-ellipsis-v"></i>
+                                          </a>
+                                          <ul
+                                            class="dropdown-menu pull-right"
+                                            id="project-options"
+                                            x-placement="bottom-start"
+                                            style="
+                                              position: absolute;
+                                              will-change: transform;
+                                              top: 0px;
+                                              left: 0px;
+                                              transform: translate3d(
+                                                0px,
+                                                24px,
+                                                0px
+                                              );
+                                            "
+                                          >
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#edit_task"
+                                                onclick="return false;"
+                                                >Edit</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                onclick="return false;"
+                                                data-toggle="modal"
+                                                data-target="#delete_formulation"
+                                                >Delete</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#view_task"
+                                                onclick="return false;"
+                                                >View</a
+                                              >
+                                            </li>
+                                          </ul>
+                                        </li>
+                                      </ul>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>&nbsp;</td>
+                          <td style="color: #1aa243">
+                            <i class="fas fa-flag"></i>
+                          </td>
+                          <td>
+                            <img
+                              src="../../assets/images/user/user6.jpg"
+                              alt="owner"
+                            />
+                          </td>
+                          <td>
+                            Improve performance review and evaluation process
+                          </td>
+                          <td>0%</td>
+                          <td>0</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td style="text-align: center">
+                            <i
+                              class="far fa-comment-dots"
+                              style="font-size: 20px"
+                            ></i>
+                            <span class="badge badge-primary" id="lblCartCount">
+                              1
+                            </span>
+                          </td>
+                          <td>
                             <ul
                               class="header-dropdown"
                               style="margin-bottom: 0px"
@@ -1501,9 +827,9 @@
                                     <a
                                       href="#"
                                       data-toggle="modal"
-                                      data-target="#view_risk_l1"
+                                      data-target="#view_task"
                                       onclick="return false;"
-                                      >View</a
+                                      >Add</a
                                     >
                                   </li>
 
@@ -1526,56 +852,61 @@
                                       >Delete</a
                                     >
                                   </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#view_task"
+                                      onclick="return false;"
+                                      >View</a
+                                    >
+                                  </li>
                                 </ul>
                               </li>
                             </ul>
-                          </span>
-                        </div>
-                      </div>
-                      <div class="section-items">
-                        <div class="owner-icon">
-                          <img
-                            src="../../assets/images/user/user1.jpg"
-                            alt="HR"
-                          />
-                        </div>
-                        <div class="item-detail">
-                          <span>Sample Task</span>
-                        </div>
-                        <div class="due-date">
-                          <span>12/02/2021</span>
-                        </div>
-                        <div class="task-statuses">
-                          <select
-                            onchange="this.className=this.options[this.selectedIndex].id"
-                            class="to-do"
-                            style="border-radius: 20px; padding: 0 6px"
-                          >
-                            <option
-                              id="to-do"
-                              value=""
-                              style="background-color: #fff"
-                            >
-                              To-do
-                            </option>
-                            <option
-                              id="in-progress"
-                              value=""
-                              style="background-color: #fff"
-                            >
-                              In progress
-                            </option>
-                            <option
-                              id="done"
-                              value=""
-                              style="background-color: #fff"
-                            >
-                              Done
-                            </option>
-                          </select>
-                        </div>
-                        <div class="more-option">
-                          <span>
+                          </td>
+                        </tr>
+
+                        <tr
+                          data-toggle="collapse"
+                          data-target="#demo2"
+                          class="accordion-toggle"
+                        >
+                          <td>
+                            <button class="btn btn-xs">
+                              <i
+                                class="far fa-minus-square"
+                                id="icon-change"
+                              ></i>
+                            </button>
+                          </td>
+                          <td style="color: #1aa243">
+                            <i class="fas fa-flag"></i>
+                          </td>
+                          <td>
+                            <img
+                              src="../../assets/images/user/user5.jpg"
+                              alt="owner"
+                            />
+                          </td>
+                          <td>Objective 3</td>
+                          <td>0%</td>
+                          <td>2</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td style="text-align: center">
+                            <i
+                              class="far fa-comment-dots"
+                              style="font-size: 20px"
+                            ></i>
+                            <span class="badge badge-primary" id="lblCartCount">
+                              1
+                            </span>
+                          </td>
+                          <td>
                             <ul
                               class="header-dropdown"
                               style="margin-bottom: 0px"
@@ -1608,9 +939,9 @@
                                     <a
                                       href="#"
                                       data-toggle="modal"
-                                      data-target="#view_risk_l1"
+                                      data-target="#view_task"
                                       onclick="return false;"
-                                      >View</a
+                                      >Add</a
                                     >
                                   </li>
 
@@ -1633,92 +964,901 @@
                                       >Delete</a
                                     >
                                   </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#view_task"
+                                      onclick="return false;"
+                                      >View</a
+                                    >
+                                  </li>
                                 </ul>
                               </li>
                             </ul>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-6 chart-section">
-                  <div class="charts">
-                    <div
-                      style="width: 100%; height: 350px"
-                      id="lineChart"
-                    ></div>
-                  </div>
-                  <div class="comments">
-                    <div class="comments-panel">
-                      <div class="panel-header">
-                        <span style="color: #929292"
-                          >January 08, 2021, 17:19</span
-                        >
-                        <span class="pull-right">
-                          <img
-                            style="
-                              width: 24px;
-                              border-radius: 50%;
-                              margin-top: -3px;
-                            "
-                            src="images/user/usrbig10.jpg"
-                            alt=""
-                        /></span>
-                      </div>
-                      <div class="panel-body">
-                        <h5>The value was automatically updated to 897,600</h5>
-                      </div>
-                    </div>
-                    <div class="comments-panel">
-                      <div class="panel-header">
-                        <span style="color: #929292"
-                          >January 08, 2021, 17:19</span
-                        >
-                        <span class="pull-right">
-                          <img
-                            style="
-                              width: 24px;
-                              border-radius: 50%;
-                              margin-top: -3px;
-                            "
-                            src="images/user/usrbig8.jpg"
-                            alt=""
-                        /></span>
-                      </div>
-                      <div class="panel-body">
-                        <h5>The value was automatically updated to 897,600</h5>
-                      </div>
-                    </div>
-                    <div class="comments-panel">
-                      <div class="panel-header">
-                        <span style="color: #929292"
-                          >January 08, 2021, 17:19</span
-                        >
-                        <span class="pull-right">
-                          <img
-                            style="
-                              width: 24px;
-                              border-radius: 50%;
-                              margin-top: -3px;
-                            "
-                            src="images/user/usrbig9.jpg"
-                            alt=""
-                        /></span>
-                      </div>
-                      <div class="panel-body">
-                        <h5>The value was automatically updated to 897,600</h5>
-                      </div>
-                    </div>
+                          </td>
+                        </tr>
 
-                    <div class="comment-footer">
-                      <input
-                        type="text"
-                        placeholder="Post a comment"
-                        onfocus="this.placeholder = ''"
-                        onblur="this.placeholder = 'Post a comment'"
-                      />
-                    </div>
+                        <tr class="child-row">
+                          <td colspan="12" class="hiddenRow">
+                            <div class="accordian-body show" id="demo2">
+                              <table class="table table-striped">
+                                <tbody>
+                                  <tr>
+                                    <td style="width: 54px">&nbsp;</td>
+                                    <td style="color: #1aa243; width: 80px">
+                                      <i class="fas fa-flag"></i>
+                                    </td>
+                                    <td style="width: 100px">
+                                      <img
+                                        src="../../assets/images/user/user1.jpg"
+                                        alt="owner"
+                                      />
+                                    </td>
+                                    <td style="width: 354px">
+                                      # Time to sign off agreed departmental
+                                      KPIs for the financial year (days)
+                                    </td>
+                                    <td style="width: 120px">40%</td>
+                                    <td style="width: 120px">&nbsp;</td>
+                                    <td style="width: 80px">0</td>
+                                    <td style="width: 80px">4</td>
+                                    <td style="width: 80px">10</td>
+                                    <td style="width: 120px">7</td>
+                                    <td
+                                      style="width: 120px; text-align: center"
+                                    >
+                                      <i
+                                        class="far fa-comment-dots"
+                                        style="font-size: 20px"
+                                      ></i>
+                                      <span
+                                        class="badge badge-primary"
+                                        id="lblCartCount"
+                                      >
+                                        1
+                                      </span>
+                                    </td>
+                                    <td style="width: 40px">
+                                      <ul
+                                        class="header-dropdown"
+                                        style="margin-bottom: 0px"
+                                      >
+                                        <li class="dropdown">
+                                          <a
+                                            href="#"
+                                            class="dropdown-toggle"
+                                            data-toggle="dropdown"
+                                            role="button"
+                                            aria-haspopup="true"
+                                            aria-expanded="true"
+                                            style="color: #1e252d !important"
+                                          >
+                                            <i class="fas fa-ellipsis-v"></i>
+                                          </a>
+                                          <ul
+                                            class="dropdown-menu pull-right"
+                                            id="project-options"
+                                            x-placement="bottom-start"
+                                            style="
+                                              position: absolute;
+                                              will-change: transform;
+                                              top: 0px;
+                                              left: 0px;
+                                              transform: translate3d(
+                                                0px,
+                                                24px,
+                                                0px
+                                              );
+                                            "
+                                          >
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#edit_task"
+                                                onclick="return false;"
+                                                >Edit</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                onclick="return false;"
+                                                data-toggle="modal"
+                                                data-target="#delete_formulation"
+                                                >Delete</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#view_task"
+                                                onclick="return false;"
+                                                >View</a
+                                              >
+                                            </li>
+                                          </ul>
+                                        </li>
+                                      </ul>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr class="child-row">
+                          <td colspan="12" class="hiddenRow">
+                            <div class="accordian-body show" id="demo2">
+                              <table class="table table-striped">
+                                <tbody>
+                                  <tr>
+                                    <td style="width: 54px">&nbsp;</td>
+                                    <td style="color: #e84343; width: 80px">
+                                      <i class="fas fa-flag"></i>
+                                    </td>
+                                    <td style="width: 100px">
+                                      <img
+                                        src="../../assets/images/user/user9.jpg"
+                                        alt="owner"
+                                      />
+                                    </td>
+                                    <td style="width: 354px">Key Result 2</td>
+                                    <td style="width: 120px">40%</td>
+                                    <td style="width: 120px">&nbsp;</td>
+                                    <td style="width: 80px">0</td>
+                                    <td style="width: 80px">4</td>
+                                    <td style="width: 80px">10</td>
+                                    <td style="width: 120px">7</td>
+                                    <td
+                                      style="width: 120px; text-align: center"
+                                    >
+                                      <i
+                                        class="far fa-comment-dots"
+                                        style="font-size: 20px"
+                                      ></i>
+                                      <span
+                                        class="badge badge-primary"
+                                        id="lblCartCount"
+                                      >
+                                        1
+                                      </span>
+                                    </td>
+                                    <td style="width: 40px">
+                                      <ul
+                                        class="header-dropdown"
+                                        style="margin-bottom: 0px"
+                                      >
+                                        <li class="dropdown">
+                                          <a
+                                            href="#"
+                                            class="dropdown-toggle"
+                                            data-toggle="dropdown"
+                                            role="button"
+                                            aria-haspopup="true"
+                                            aria-expanded="true"
+                                            style="color: #1e252d !important"
+                                          >
+                                            <i class="fas fa-ellipsis-v"></i>
+                                          </a>
+                                          <ul
+                                            class="dropdown-menu pull-right"
+                                            id="project-options"
+                                            x-placement="bottom-start"
+                                            style="
+                                              position: absolute;
+                                              will-change: transform;
+                                              top: 0px;
+                                              left: 0px;
+                                              transform: translate3d(
+                                                0px,
+                                                24px,
+                                                0px
+                                              );
+                                            "
+                                          >
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#edit_task"
+                                                onclick="return false;"
+                                                >Edit</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                onclick="return false;"
+                                                data-toggle="modal"
+                                                data-target="#delete_formulation"
+                                                >Delete</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#view_task"
+                                                onclick="return false;"
+                                                >View</a
+                                              >
+                                            </li>
+                                          </ul>
+                                        </li>
+                                      </ul>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>&nbsp;</td>
+                          <td style="color: #1aa243">
+                            <i class="fas fa-flag"></i>
+                          </td>
+                          <td>
+                            <img
+                              src="../../assets/images/user/user2.jpg"
+                              alt="owner"
+                            />
+                          </td>
+                          <td>Objective 4</td>
+                          <td>0%</td>
+                          <td>0</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td style="text-align: center">
+                            <i
+                              class="far fa-comment-dots"
+                              style="font-size: 20px"
+                            ></i>
+                            <span class="badge badge-primary" id="lblCartCount">
+                              1
+                            </span>
+                          </td>
+                          <td>
+                            <ul
+                              class="header-dropdown"
+                              style="margin-bottom: 0px"
+                            >
+                              <li class="dropdown">
+                                <a
+                                  href="#"
+                                  class="dropdown-toggle"
+                                  data-toggle="dropdown"
+                                  role="button"
+                                  aria-haspopup="true"
+                                  aria-expanded="true"
+                                  style="color: #1e252d !important"
+                                >
+                                  <i class="fas fa-ellipsis-v"></i>
+                                </a>
+                                <ul
+                                  class="dropdown-menu pull-right"
+                                  id="project-options"
+                                  x-placement="bottom-start"
+                                  style="
+                                    position: absolute;
+                                    will-change: transform;
+                                    top: 0px;
+                                    left: 0px;
+                                    transform: translate3d(0px, 24px, 0px);
+                                  "
+                                >
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#view_task"
+                                      onclick="return false;"
+                                      >Add</a
+                                    >
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#edit_task"
+                                      onclick="return false;"
+                                      >Edit</a
+                                    >
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      onclick="return false;"
+                                      data-toggle="modal"
+                                      data-target="#delete_formulation"
+                                      >Delete</a
+                                    >
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#view_task"
+                                      onclick="return false;"
+                                      >View</a
+                                    >
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </td>
+                        </tr>
+
+                        <tr
+                          data-toggle="collapse"
+                          data-target="#demo3"
+                          class="accordion-toggle"
+                        >
+                          <td>
+                            <button class="btn btn-xs">
+                              <i
+                                class="far fa-minus-square"
+                                id="icon-change"
+                              ></i>
+                            </button>
+                          </td>
+                          <td style="color: #1aa243">
+                            <i class="fas fa-flag"></i>
+                          </td>
+                          <td>
+                            <img
+                              src="../../assets/images/user/user8.jpg"
+                              alt="owner"
+                            />
+                          </td>
+                          <td>Objective 5</td>
+                          <td>0%</td>
+                          <td>1</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td style="text-align: center">
+                            <i
+                              class="far fa-comment-dots"
+                              style="font-size: 20px"
+                            ></i>
+                            <span class="badge badge-primary" id="lblCartCount">
+                              1
+                            </span>
+                          </td>
+                          <td>
+                            <ul
+                              class="header-dropdown"
+                              style="margin-bottom: 0px"
+                            >
+                              <li class="dropdown">
+                                <a
+                                  href="#"
+                                  class="dropdown-toggle"
+                                  data-toggle="dropdown"
+                                  role="button"
+                                  aria-haspopup="true"
+                                  aria-expanded="true"
+                                  style="color: #1e252d !important"
+                                >
+                                  <i class="fas fa-ellipsis-v"></i>
+                                </a>
+                                <ul
+                                  class="dropdown-menu pull-right"
+                                  id="project-options"
+                                  x-placement="bottom-start"
+                                  style="
+                                    position: absolute;
+                                    will-change: transform;
+                                    top: 0px;
+                                    left: 0px;
+                                    transform: translate3d(0px, 24px, 0px);
+                                  "
+                                >
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#view_task"
+                                      onclick="return false;"
+                                      >Add</a
+                                    >
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#edit_task"
+                                      onclick="return false;"
+                                      >Edit</a
+                                    >
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      onclick="return false;"
+                                      data-toggle="modal"
+                                      data-target="#delete_formulation"
+                                      >Delete</a
+                                    >
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#view_task"
+                                      onclick="return false;"
+                                      >View</a
+                                    >
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </td>
+                        </tr>
+
+                        <tr class="child-row">
+                          <td colspan="12" class="hiddenRow">
+                            <div class="accordian-body show" id="demo3">
+                              <table class="table table-striped">
+                                <tbody>
+                                  <tr>
+                                    <td style="width: 54px">&nbsp;</td>
+                                    <td style="color: #1aa243; width: 80px">
+                                      <i class="fas fa-flag"></i>
+                                    </td>
+                                    <td style="width: 100px">
+                                      <img
+                                        src="../../assets/images/user/user3.jpg"
+                                        alt="owner"
+                                      />
+                                    </td>
+                                    <td style="width: 354px">Key Result 1</td>
+                                    <td style="width: 120px">40%</td>
+                                    <td style="width: 120px">&nbsp;</td>
+                                    <td style="width: 80px">0</td>
+                                    <td style="width: 80px">4</td>
+                                    <td style="width: 80px">10</td>
+                                    <td style="width: 120px">7</td>
+                                    <td
+                                      style="width: 120px; text-align: center"
+                                    >
+                                      <i
+                                        class="far fa-comment-dots"
+                                        style="font-size: 20px"
+                                      ></i>
+                                      <span
+                                        class="badge badge-primary"
+                                        id="lblCartCount"
+                                      >
+                                        1
+                                      </span>
+                                    </td>
+                                    <td style="width: 40px">
+                                      <ul
+                                        class="header-dropdown"
+                                        style="margin-bottom: 0px"
+                                      >
+                                        <li class="dropdown">
+                                          <a
+                                            href="#"
+                                            class="dropdown-toggle"
+                                            data-toggle="dropdown"
+                                            role="button"
+                                            aria-haspopup="true"
+                                            aria-expanded="true"
+                                            style="color: #1e252d !important"
+                                          >
+                                            <i class="fas fa-ellipsis-v"></i>
+                                          </a>
+                                          <ul
+                                            class="dropdown-menu pull-right"
+                                            id="project-options"
+                                            x-placement="bottom-start"
+                                            style="
+                                              position: absolute;
+                                              will-change: transform;
+                                              top: 0px;
+                                              left: 0px;
+                                              transform: translate3d(
+                                                0px,
+                                                24px,
+                                                0px
+                                              );
+                                            "
+                                          >
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#edit_task"
+                                                onclick="return false;"
+                                                >Edit</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                onclick="return false;"
+                                                data-toggle="modal"
+                                                data-target="#delete_formulation"
+                                                >Delete</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#view_task"
+                                                onclick="return false;"
+                                                >View</a
+                                              >
+                                            </li>
+                                          </ul>
+                                        </li>
+                                      </ul>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr
+                          data-toggle="collapse"
+                          data-target="#demo4"
+                          class="accordion-toggle"
+                        >
+                          <td>
+                            <button class="btn btn-xs">
+                              <i
+                                class="far fa-minus-square"
+                                id="icon-change"
+                              ></i>
+                            </button>
+                          </td>
+                          <td style="color: #1aa243">
+                            <i class="fas fa-flag"></i>
+                          </td>
+                          <td>
+                            <img
+                              src="../../assets/images/user/user8.jpg"
+                              alt="owner"
+                            />
+                          </td>
+                          <td>Objective 6</td>
+                          <td>0%</td>
+                          <td>1</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td style="text-align: center">
+                            <i
+                              class="far fa-comment-dots"
+                              style="font-size: 20px"
+                            ></i>
+                            <span class="badge badge-primary" id="lblCartCount">
+                              1
+                            </span>
+                          </td>
+                          <td>
+                            <ul
+                              class="header-dropdown"
+                              style="margin-bottom: 0px"
+                            >
+                              <li class="dropdown">
+                                <a
+                                  href="#"
+                                  class="dropdown-toggle"
+                                  data-toggle="dropdown"
+                                  role="button"
+                                  aria-haspopup="true"
+                                  aria-expanded="true"
+                                  style="color: #1e252d !important"
+                                >
+                                  <i class="fas fa-ellipsis-v"></i>
+                                </a>
+                                <ul
+                                  class="dropdown-menu pull-right"
+                                  id="project-options"
+                                  x-placement="bottom-start"
+                                  style="
+                                    position: absolute;
+                                    will-change: transform;
+                                    top: 0px;
+                                    left: 0px;
+                                    transform: translate3d(0px, 24px, 0px);
+                                  "
+                                >
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#view_task"
+                                      onclick="return false;"
+                                      >Add</a
+                                    >
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#edit_task"
+                                      onclick="return false;"
+                                      >Edit</a
+                                    >
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      onclick="return false;"
+                                      data-toggle="modal"
+                                      data-target="#delete_formulation"
+                                      >Delete</a
+                                    >
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#view_task"
+                                      onclick="return false;"
+                                      >View</a
+                                    >
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </td>
+                        </tr>
+
+                        <tr class="child-row">
+                          <td colspan="12" class="hiddenRow">
+                            <div class="accordian-body show" id="demo4">
+                              <table class="table table-striped">
+                                <tbody>
+                                  <tr>
+                                    <td style="width: 54px">&nbsp;</td>
+                                    <td style="color: #1aa243; width: 80px">
+                                      <i class="fas fa-flag"></i>
+                                    </td>
+                                    <td style="width: 100px">
+                                      <img
+                                        src="../../assets/images/user/user3.jpg"
+                                        alt="owner"
+                                      />
+                                    </td>
+                                    <td style="width: 354px">Key Result 1</td>
+                                    <td style="width: 120px">40%</td>
+                                    <td style="width: 120px">&nbsp;</td>
+                                    <td style="width: 80px">0</td>
+                                    <td style="width: 80px">4</td>
+                                    <td style="width: 80px">10</td>
+                                    <td style="width: 120px">7</td>
+                                    <td
+                                      style="width: 120px; text-align: center"
+                                    >
+                                      <i
+                                        class="far fa-comment-dots"
+                                        style="font-size: 20px"
+                                      ></i>
+                                      <span
+                                        class="badge badge-primary"
+                                        id="lblCartCount"
+                                      >
+                                        1
+                                      </span>
+                                    </td>
+                                    <td style="width: 40px">
+                                      <ul
+                                        class="header-dropdown"
+                                        style="margin-bottom: 0px"
+                                      >
+                                        <li class="dropdown">
+                                          <a
+                                            href="#"
+                                            class="dropdown-toggle"
+                                            data-toggle="dropdown"
+                                            role="button"
+                                            aria-haspopup="true"
+                                            aria-expanded="true"
+                                            style="color: #1e252d !important"
+                                          >
+                                            <i class="fas fa-ellipsis-v"></i>
+                                          </a>
+                                          <ul
+                                            class="dropdown-menu pull-right"
+                                            id="project-options"
+                                            x-placement="bottom-start"
+                                            style="
+                                              position: absolute;
+                                              will-change: transform;
+                                              top: 0px;
+                                              left: 0px;
+                                              transform: translate3d(
+                                                0px,
+                                                24px,
+                                                0px
+                                              );
+                                            "
+                                          >
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#edit_task"
+                                                onclick="return false;"
+                                                >Edit</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                onclick="return false;"
+                                                data-toggle="modal"
+                                                data-target="#delete_formulation"
+                                                >Delete</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#view_task"
+                                                onclick="return false;"
+                                                >View</a
+                                              >
+                                            </li>
+                                          </ul>
+                                        </li>
+                                      </ul>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr class="child-row">
+                          <td colspan="12" class="hiddenRow">
+                            <div class="accordian-body show" id="demo4">
+                              <table class="table table-striped">
+                                <tbody>
+                                  <tr>
+                                    <td style="width: 54px">&nbsp;</td>
+                                    <td style="color: #1aa243; width: 80px">
+                                      <i class="fas fa-flag"></i>
+                                    </td>
+                                    <td style="width: 100px">
+                                      <img
+                                        src="../../assets/images/user/user3.jpg"
+                                        alt="owner"
+                                      />
+                                    </td>
+                                    <td style="width: 354px">Key Result 2</td>
+                                    <td style="width: 120px">40%</td>
+                                    <td style="width: 120px">&nbsp;</td>
+                                    <td style="width: 80px">0</td>
+                                    <td style="width: 80px">4</td>
+                                    <td style="width: 80px">10</td>
+                                    <td style="width: 120px">7</td>
+                                    <td
+                                      style="width: 120px; text-align: center"
+                                    >
+                                      <i
+                                        class="far fa-comment-dots"
+                                        style="font-size: 20px"
+                                      ></i>
+                                      <span
+                                        class="badge badge-primary"
+                                        id="lblCartCount"
+                                      >
+                                        1
+                                      </span>
+                                    </td>
+                                    <td style="width: 40px">
+                                      <ul
+                                        class="header-dropdown"
+                                        style="margin-bottom: 0px"
+                                      >
+                                        <li class="dropdown">
+                                          <a
+                                            href="#"
+                                            class="dropdown-toggle"
+                                            data-toggle="dropdown"
+                                            role="button"
+                                            aria-haspopup="true"
+                                            aria-expanded="true"
+                                            style="color: #1e252d !important"
+                                          >
+                                            <i class="fas fa-ellipsis-v"></i>
+                                          </a>
+                                          <ul
+                                            class="dropdown-menu pull-right"
+                                            id="project-options"
+                                            x-placement="bottom-start"
+                                            style="
+                                              position: absolute;
+                                              will-change: transform;
+                                              top: 0px;
+                                              left: 0px;
+                                              transform: translate3d(
+                                                0px,
+                                                24px,
+                                                0px
+                                              );
+                                            "
+                                          >
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#edit_task"
+                                                onclick="return false;"
+                                                >Edit</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                onclick="return false;"
+                                                data-toggle="modal"
+                                                data-target="#delete_formulation"
+                                                >Delete</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#view_task"
+                                                onclick="return false;"
+                                                >View</a
+                                              >
+                                            </li>
+                                          </ul>
+                                        </li>
+                                      </ul>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
@@ -1726,7 +1866,9 @@
           </div>
         </div>
       </div>
+      <!-- End Page Body -->
     </section>
+    <!-- Content Start -->
 
     <!-- Plugins Js -->
     <script src="../../assets/js/app.min.js"></script>
@@ -1734,120 +1876,30 @@
     <script src="../../assets/js/admin.js"></script>
     <!-- Knob Js -->
     <script src="../../assets/jquery-ui.min.js"></script>
-    <script src="../../assets/moment.js"></script>
-    <script src="../../assets/js/paging.js"></script>
-    <script src="../../assets/js/pages/spiritedaway.js"></script>
-    <script src="../../assets/jquery.editable.min.js"></script>
+    <script src="../../assets/select2.min.js"></script>
     <script src="../../assets/js/bootstrap.bundle.min.js"></script>
-    <script src="../../assets/pickr.es5.min.js"></script>
-    <script src="../../assets/datepickerair.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <!-- <script src="../../assets/select2.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
-    <script src="../../assets/datepicker.en.js"></script>
     <script src="../../assets/js/widgets.js"></script>
-    <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
-
     <script src="../../assets/knockout-3.5.0.js"></script>
-    <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
-    <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
-    <script src="assets/daterangepicker/daterangepicker.min.js"></script>
+
     <script>
-      var options = {
-        series: [
-          {
-            name: "High - 2013",
-            data: [24, 29, 33, 36, 32, 32, 33],
-          },
-          {
-            name: "Low - 2013",
-            data: [12, 11, 14, 18, 17, 13, 13],
-          },
-        ],
-        chart: {
-          height: 324,
-          type: "line",
-          dropShadow: {
-            enabled: true,
-            color: "#000",
-            top: 18,
-            left: 7,
-            blur: 10,
-            opacity: 0.2,
-          },
-          toolbar: {
-            show: true,
-          },
-        },
-        colors: ["#77B6EA", "#545454"],
-        dataLabels: {
-          enabled: true,
-        },
-        stroke: {
-          curve: "smooth",
-        },
-        grid: {
-          borderColor: "#e7e7e7",
-          row: {
-            colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on columns
-            opacity: 0.5,
-          },
-        },
-        markers: {
-          size: 1,
-        },
-        xaxis: {
-          categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
-          title: {
-            text: "Month",
-          },
-        },
-        yaxis: {
-          title: {
-            text: "Temperature",
-          },
-          min: 5,
-          max: 40,
-        },
-        legend: {
-          position: "bottom",
-          horizontalAlign: "center",
-        },
-      };
-
-      var chart = new ApexCharts(document.querySelector("#lineChart"), options);
-      chart.render();
-
       $(document).ready(function () {
-        $(".user-multi-select").select2();
-        $(".user-multi-select-2").select2();
+        $(".module-multi-select").select2();
+        $(".module-multi-select-edit").select2();
       });
 
-      $(function () {
-        // Multiple images preview in browser
-        var imagesPreview = function (input, placeToInsertImagePreview) {
-          if (input.files) {
-            var filesAmount = input.files.length;
-
-            for (i = 0; i < filesAmount; i++) {
-              var reader = new FileReader();
-
-              reader.onload = function (event) {
-                $($.parseHTML("<img>"))
-                  .attr("src", event.target.result)
-                  .appendTo(placeToInsertImagePreview);
-              };
-
-              reader.readAsDataURL(input.files[i]);
-            }
-          }
-        };
-
-        $("#file-upload").on("change", function () {
-          imagesPreview(this, "div.preview-gallery");
-        });
+      $(".accordion-toggle").click(function () {
+        $("#icon-change", this).toggleClass("fa-minus-square fa-plus-square");
+      });
+    </script>
+    <script>
+      $(".daterangepicker-field").daterangepicker({
+        forceUpdate: true,
+        callback: function (startDate, endDate, period) {
+          var title = startDate.format("L") + " – " + endDate.format("L");
+          $(this).val(title);
+        },
       });
     </script>
   </body>
-</html>
+</a>

@@ -914,7 +914,6 @@ ul.gj-list-md li {
 
 .custom-input::placeholder {
   color: #797979 !important;
-  font-size: 14px !important;
   padding-left: 0 !important;
 }
 
@@ -925,6 +924,30 @@ ul.gj-list-md li {
 }
 
 .custom-input:hover {
+  border: 1px solid #1e252d !important;
+}
+
+.custom-textarea {
+  border: 1px solid #ced4da !important;
+  border-radius: 4px !important;
+  width: 100% !important;
+  padding: 0 8px !important;
+  font-size: 14px !important;
+  height: auto;
+}
+
+.custom-textarea::placeholder {
+  color: #797979 !important;
+  padding-left: 0 !important;
+}
+
+.custom-textarea:focus {
+  box-shadow: 0 0 3px #1e252d !important;
+  padding: 0 8px !important;
+  border: 1px solid #1e252d !important;
+}
+
+.custom-textarea:hover {
   border: 1px solid #1e252d !important;
 }
 
@@ -982,6 +1005,12 @@ ul.gj-list-md li {
 .custom-form-control {
   width: 100%;
   height: auto;
+}
+
+.view-form div label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1e252d;
 }
 
 .btn-custom-primary {
@@ -2249,6 +2278,11 @@ label {
 
 .okr-table {
   border: 0;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  overflow: auto;
+  height: 570px;
 }
 
 .okr-table table {
@@ -2259,6 +2293,10 @@ label {
 .okr-table table thead tr th {
   font-weight: 600;
   border: 0;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .okr-table table tbody tr td {

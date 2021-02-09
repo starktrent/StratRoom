@@ -1,0 +1,2082 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>StratRoom</title>
+    <!-- Favicon-->
+    <!-- <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon"> -->
+
+    <!-- Plugins Core Css -->
+    <link href="../../assets/css/app.min.css" rel="stylesheet" />
+    <!-- Custom Css -->
+    <link href="../../assets/css/style.css" rel="stylesheet" />
+    <link href="../../assets/css/custom.css" rel="stylesheet" />
+    <link href="../../assets/css/initatives.css" rel="stylesheet" />
+    <link href="../../assets/css/icheck-bootstrap.min.css" rel="stylesheet" />
+    <link href="../../assets/css/startroom/wedgets.css" rel="stylesheet" />
+    <!-- <link href="../../assets/select2.min.css" rel="stylesheet" /> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+
+    <link href="../../assets/js/file-upload/file-upload.css" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="../../assets/data-table/css/data-table/bootstrap-table.css"
+    />
+    <link rel="stylesheet" href="../../assets/data-table/css/responsive.css" />
+
+    <!-- You can choose a theme from css/styles instead of get all themes -->
+    <link href="../../assets/css/styles/all-themes.css" rel="stylesheet" />
+    <!-- <link href="../../assets/css/table-view.css" rel="stylesheet" /> -->
+    <!-- <link rel="stylesheet" href="../../assets/daterangepicker.css"> -->
+    <link rel="stylesheet" href="../../assets/datepickerair.css" />
+    <link href="../../assets/jquery-ui.min.css" rel="stylesheet" />
+    <link href="../../assets/css/employee.css" rel="stylesheet" />
+    <link
+      href="../../assets/daterangepicker/daterangepicker.min.css"
+      rel="stylesheet"
+    />
+    <link href="../../assets/css/employee.css" rel="stylesheet" />
+    <!-- <link href="../../assets/bootstrap-datepicker.min.css" rel="stylesheet" /> -->
+
+    <link rel="stylesheet" href="../../assets/nano.min.css" />
+    <link rel="stylesheet" href="../../assets/monolith.min.css" />
+    <link rel="stylesheet" href="../../assets/classic.min.css" />
+
+    <script src="../../assets/plotly-latest.min.js"></script>
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      id="main-stylesheet"
+      data-version="1.1.0"
+      href="css/shards-dashboards.1.1.0.min.css"
+    />
+
+    <link
+      href="assets/daterangepicker/daterangepicker.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script
+      src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"
+      type="text/javascript"
+    ></script>
+    <link
+      href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <!-- Font Awsome Icons -->
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      #section .container-fluid .collapse_arrow_left .arrow_collapse_size {
+        position: fixed;
+        background: #fff;
+        font-size: 20px !important;
+        top: 22%;
+        z-index: 999;
+        color: #a3a3a3;
+        margin-left: -30px;
+        padding: 14px 6px 14px 2px;
+        border-top: 1px solid #e9ecef;
+        border-right: 1px solid #e9ecef;
+        border-bottom: 1px solid #e9ecef;
+        border-left: 0px solid #e9ecef;
+        border-radius: 0px 12px 12px 0px;
+        cursor: pointer;
+        transition: 0.5s;
+      }
+
+      #section .container-fluid .collapse_arrow_right .arrow_collapse_size {
+        position: fixed;
+        background: #fff;
+        font-size: 20px !important;
+        top: 22%;
+        z-index: 999;
+        color: #a3a3a3;
+        margin-left: -30px;
+        padding: 14px 6px 14px 2px;
+        border-top: 1px solid #e9ecef;
+        border-right: 1px solid #e9ecef;
+        border-bottom: 1px solid #e9ecef;
+        border-left: 0px solid #e9ecef;
+        border-radius: 0px 12px 12px 0px;
+        cursor: pointer;
+        transition: 0.5s;
+      }
+
+      /* Modal style change */
+      .modal .modal-content {
+        border-radius: 6px;
+      }
+
+      .modal .modal-header {
+        border: 0;
+        padding: 17px 16px 8px 16px;
+        margin: -10px -10px -12px -10px;
+        background-color: #fff;
+      }
+
+      .modal-header .close {
+        padding: 0;
+        margin: 0;
+        color: #9e9e9e;
+      }
+
+      .select2-container {
+        width: 100% !important;
+      }
+
+      .select2-container--default.select2-container--focus
+        .select2-selection--multiple:focus {
+        box-shadow: 0 0 3px #3191ff !important;
+        padding: 0 8px !important;
+        border: 1px solid #3191ff !important;
+      }
+
+      .select2-container--default.select2-container--focus
+        .select2-selection--multiple {
+        border: solid #ced4da 1px;
+        outline: 0;
+      }
+
+      .select2-container .select2-search--inline .select2-search__field {
+        box-sizing: border-box;
+        border: none;
+        font-size: 100%;
+        margin-top: -4px;
+        margin-left: 5px;
+        padding: 0;
+        margin-bottom: -10px;
+      }
+
+      .select2-container--default .select2-selection--multiple {
+        background-color: white;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        cursor: text;
+        padding-bottom: 5px;
+        padding-right: 5px;
+        height: 36px;
+      }
+
+      .custom-input {
+        height: 36px !important;
+      }
+
+      label {
+        font-weight: 500;
+      }
+
+      .preview-gallery {
+        display: inline-block;
+      }
+
+      .preview-gallery img {
+        height: 40px;
+        border: 1px solid #1e252d;
+        border-radius: 4px;
+        margin-left: 6px;
+      }
+
+      .slimScrollDiv {
+        width: 230px !important;
+      }
+    </style>
+  </head>
+
+  <body class="light">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+      <div class="loader">
+        <div class="m-t-30">
+          <img width="100" src="../../assets/images/logo_1.gif" alt="admin" />
+        </div>
+        <p>Please wait...</p>
+      </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+
+    <!-- Top Bar -->
+    <nav class="navbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a
+            href="#"
+            onClick="return false;"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#navbar-collapse"
+            aria-expanded="false"
+          ></a>
+          <a href="#" onClick="return false;" class="bars"></a>
+          <a href="#" onClick="return false;" class="bar_nav sidemenu-collapse"
+            ><i class="nav-hdr-btn ti-menu" style="color: #000"></i
+          ></a>
+          <a class="navbar-brand nav_float" href="#">
+            <img
+              src="../../assets/images/Startroom_Final logo-01_1.png"
+              alt=""
+            />
+            <!-- <span class="logo-name">Img</span> -->
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="fullscreen" style="padding: 4px; left: -14px">
+              <ul class="list-unstyled order-list">
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user7.jpg"
+                    alt="user"
+                  />
+                </li>
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user8.jpg"
+                    alt="user"
+                  />
+                </li>
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user9.jpg"
+                    alt="user"
+                  />
+                </li>
+                <li class="avatar avatar-sm">
+                  <img
+                    class="rounded-circle"
+                    src="../../assets/images/user/user9.jpg"
+                    alt="user"
+                  />
+                </li>
+                <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                  <span _ngcontent-hhc-c5="" class="badge">+3</span>
+                </li>
+              </ul>
+            </li>
+            <li class="fullscreen">
+              <!-- <form class="form-header" action="" method="POST">
+                <input
+                  class="au-input au-input--xl"
+                  style="min-width: 20%"
+                  type="text"
+                  name="search"
+                  placeholder="Search"
+                />
+                <button class="au-btn--submit" type="submit">
+                  <i class="fa fa-search" style="color: gray"></i>
+                </button>
+              </form> -->
+              <span class="pull-right nav-search-btn" id="open_search">
+                <i class="fas fa-search"></i>
+              </span>
+              <span class="pull-right nav-search" style="display: none">
+                <input type="text" class="search" placeholder="Search" />
+                <i class="fas fa-search"></i>
+                <i class="fas fa-times" id="close_search"></i>
+              </span>
+            </li>
+            <li class="fullscreen">
+              <!-- <i class="nav-hdr-btn ti-calendar" style="color: gray"></i> -->
+              <input class="daterangepicker-field top_datepicker" />
+            </li>
+            <!-- #END# Full Screen Button -->
+            <!-- #START# Notifications-->
+            <li class="dropdown">
+              <a
+                href="#"
+                onClick="return false;"
+                id="noti_Button"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+              >
+                <i
+                  class="far fa-bell"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Notifications"
+                  style="color: gray"
+                ></i>
+                <span class="notify"></span>
+                <span class="heartbeat"></span>
+              </a>
+            </li>
+            <div id="notifications">
+              <h3>Notifications</h3>
+              <div
+                class="row"
+                style="
+                  height: 480px;
+                  overflow-y: scroll;
+                  overflow-x: hidden;
+                  margin-right: 0;
+                "
+              >
+                <div class="col-md-12" style="padding-right: 0">
+                  <ul class="notifics">
+                    <li class="unread">
+                      <img src="/assets/images/user/usrbig7.jpg" alt="" />
+                      <h6>
+                        Karthick has approved a record in Employee Reimbursement
+                        Form form.
+                      </h6>
+                      <p>17 September 12:30 PM</p>
+                    </li>
+                    <li class="unread">
+                      <img src="/assets/images/user/usrbig7.jpg" alt="" />
+                      <h6>Karthick has approved your request.</h6>
+                      <p>17 September 12:30 PM</p>
+                    </li>
+                    <li>
+                      <img src="/assets/images/user/usrbig7.jpg" alt="" />
+                      <h6>
+                        Karthick has approved a record in Employee Reimbursement
+                        Form form.
+                      </h6>
+                      <p>17 September 12:30 PM</p>
+                    </li>
+                    <li>
+                      <img src="/assets/images/user/usrbig7.jpg" alt="" />
+                      <h6>Karthick has approved your request.</h6>
+                      <p>17 September 12:30 PM</p>
+                    </li>
+                    <li>
+                      <img src="/assets/images/user/usrbig7.jpg" alt="" />
+                      <h6>Karthick has approved your request.</h6>
+                      <p>17 September 12:30 PM</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="seeAll"><a href="#">See All</a></div>
+            </div>
+            <li>
+              <a href="#" role="button">
+                <i
+                  class="fas fa-sign-out-alt"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Logout"
+                  style="color: gray"
+                ></i>
+              </a>
+            </li>
+            <li class="">
+              <a
+                href="#"
+                onclick="return false;"
+                class="js-right-sidebar"
+                data-close="true"
+              >
+                <i
+                  class="fas fa-user-circle"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Profile"
+                ></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- #Top Bar -->
+
+    <div>
+      <!-- Left Sidebar -->
+      <aside id="leftsidebar" class="sidebar">
+        <!-- Menu -->
+        <div class="menu">
+          <ul class="list">
+            <li class="active">
+              <a href="organizationHome" class="">
+                <i class="fas fa-project-diagram"></i>
+                <span style="line-height: 18px; margin-top: 4px"
+                  >Organisation</span
+                >
+              </a>
+            </li>
+
+            <li>
+              <a href="#" onClick="return false;" class="menu-toggle">
+                <i class="fas fa-th-large"></i>
+                <span>Dashboards</span>
+              </a>
+              <ul class="ml-menu">
+                <li>
+                  <a
+                    class="addnewpagehover waves-effect waves-block"
+                    data-toggle="modal"
+                    data-target="#dashboard_add_popup"
+                    value="add"
+                    style="
+                      background-color: #4c4c4c;
+                      padding-left: 0;
+                      text-align: center;
+                      color: #fff !important;
+                    "
+                    ><strong>Add New Board</strong></a
+                  >
+                </li>
+                <li>
+                  <a href="#">Scorecard</a>
+                </li>
+                <li>
+                  <a href="#">Meeting</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="menu-toggle">
+                <i class="fas fa-chalkboard"></i>
+                <span>Whiteboard</span>
+              </a>
+              <ul class="ml-menu">
+                <li>
+                  <a
+                    class="addnewpagehover waves-effect waves-block"
+                    data-toggle="modal"
+                    data-target="#whiteboard_add_popup"
+                    value="add"
+                    style="
+                      background-color: #4c4c4c;
+                      padding-left: 0;
+                      text-align: center;
+                      color: #fff !important;
+                    "
+                    ><strong>Add New Board</strong></a
+                  >
+                </li>
+                <li>
+                  <a href="#">Cockpit</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="fas fa-user-lock"></i>
+                <span>Access Control</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="fas fa-briefcase"></i>
+                <span>Workflows</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="fas fa-bell"></i>
+                <span>Notifications</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="#" class="menu-toggle">
+                <i class="fas fa-database"></i>
+                <span>Data Sources</span>
+              </a>
+              <ul class="ml-menu">
+                <li>
+                  <a href="#">Manual</a>
+                </li>
+                <li>
+                  <a href="#">Excel</a>
+                </li>
+                <li>
+                  <a href="#">Others</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#" onClick="return false;" class="menu-toggle">
+                <i class="fas fa-copy"></i>
+                <span>Template</span>
+              </a>
+              <ul class="ml-menu">
+                <li>
+                  <a href="#">Standard Scorecard</a>
+                </li>
+                <li>
+                  <a href="#">Custom Scorecard</a>
+                </li>
+                <li>
+                  <a href="#">Portfolio Program & Project (P3M)</a>
+                </li>
+                <li>
+                  <a href="#">Appraisal (360 Degree Feedback)</a>
+                </li>
+                <li>
+                  <a href="#">Custom Page</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="">
+                <i class="fas fa-sliders-h"></i>
+                <span>Control Panel</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- #Menu -->
+      </aside>
+      <!-- #END# Left Sidebar -->
+
+      <aside id="initiative_sidebar" class="initiative_sidebar">
+        <div class="sub_initiatives" id="sub_initiatives" style="height: 100%">
+          <div class="card" style="height: 100%">
+            <div class="d-flex flex-column" id="initiate_sidebar">
+              <div class="row" style="padding: 20px 22px">
+                <label for="objectives">Objectives</label>
+                <div
+                  class="col-12 form-group chart-type sub_initiative_details"
+                  style="padding: 0; margin-bottom: 16px"
+                >
+                  <select class="form-control browser-default">
+                    <option value="Increase awareness">
+                      Increase awareness
+                    </option>
+                    <option value="Option_2">Option_2</option>
+                    <option value="Option_3">Option_3</option>
+                  </select>
+                </div>
+
+                <label for="Sub Objective">Sub Objectives</label>
+                <div
+                  class="col-12 form-group chart-type sub_initiative_details"
+                  style="padding: 0; margin-bottom: 16px"
+                >
+                  <select class="form-control browser-default">
+                    <option value="Increase awareness">
+                      Increase awareness
+                    </option>
+                    <option value="Option_2">Option_2</option>
+                    <option value="Option_3">Option_3</option>
+                  </select>
+                </div>
+
+                <label for="KRS">KRs</label>
+                <div
+                  class="d-flex flex-column"
+                  id="initiate_sidebar"
+                  style="width: 220px"
+                >
+                  <div
+                    class="d-flex flex-column kpi_initiative_sidebar_details initiative_side_border_orange"
+                    style="width: 208px; margin: 6px 0"
+                  >
+                    <div class="d-flex flex-row p-b-5">
+                      <div class="d-flex flex-column kpi_side_depart_bar">
+                        <p style="font-weight: 600">
+                          % Sales from new products
+                        </p>
+                      </div>
+                      <div
+                        class="d-flex flex-column"
+                        style="text-align: right; width: 100%"
+                      >
+                        <p>Monthly</p>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row justify-content-between m-t--10"
+                    >
+                      <div class="d-flex flex-column">
+                        <div>
+                          <div class="employee_info" style="color: #838688">
+                            Actual
+                          </div>
+                          <span>0</span>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-column">
+                        <div>
+                          <div class="employee_info" style="color: #838688">
+                            Target
+                          </div>
+                          <span>0</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="d-flex flex-column kpi_initiative_sidebar_details initiative_side_border_yellow"
+                    style="width: 208px; margin: 6px 0"
+                  >
+                    <div class="d-flex flex-row p-b-5">
+                      <div class="d-flex flex-column kpi_side_depart_bar">
+                        <p style="font-weight: 600">
+                          # Social media engagement
+                        </p>
+                      </div>
+                      <div
+                        class="d-flex flex-column"
+                        style="text-align: right; width: 100%"
+                      >
+                        <p>Monthly</p>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row justify-content-between m-t--10"
+                    >
+                      <div class="d-flex flex-column">
+                        <div>
+                          <div class="employee_info" style="color: #838688">
+                            Actual
+                          </div>
+                          <span>0</span>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-column">
+                        <div>
+                          <div class="employee_info" style="color: #838688">
+                            Target
+                          </div>
+                          <span>0</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <!--#START Data Collection Form -->
+    </div>
+    <!-- #END# Left Sidebar -->
+
+    <!-- Add Task -->
+    <div
+      class="modal fade"
+      id="add_task"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="width: 600px"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4
+              style="
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e252d;
+                margin-bottom: 18px;
+              "
+            >
+              Create Task
+            </h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-12 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  placeholder="Enter your task"
+                  value=""
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="ID">ID</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  value="45263546"
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Description">Description</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <textarea
+                  class="form-control browser-default custom-textarea"
+                  cols="10"
+                  rows="3"
+                  placeholder="Enter description"
+                ></textarea>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Owner">Owner</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <div class="owner" style="padding-right: 12px">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Due Date">Due Date</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers_single custom-input"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                  value=""
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Attachments">Attachments</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <div class="preview-gallery"></div>
+                <label
+                  for="file-upload"
+                  style="
+                    height: 32px;
+                    width: 32px;
+                    padding: 6px 9px;
+                    border: 1px solid #ced4da;
+                    border-radius: 4px;
+                    cursor: pointer;
+                  "
+                >
+                  <i class="fas fa-plus"></i>
+                </label>
+                <input
+                  type="file"
+                  class="form-control browser-default custom-input"
+                  name="files[]"
+                  multiple
+                  style="display: none"
+                  id="file-upload"
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Comments">Comments</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <textarea
+                  class="form-control browser-default custom-textarea"
+                  cols="10"
+                  rows="3"
+                  placeholder="Enter comments"
+                ></textarea>
+              </div>
+
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Add Task -->
+
+    <!-- Edit Task -->
+    <div
+      class="modal fade"
+      id="edit_task"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="width: 600px"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4
+              style="
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e252d;
+                margin-bottom: 18px;
+              "
+            >
+              Edit Task
+            </h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-12 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  placeholder="Enter your task"
+                  value=""
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="ID">ID</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  value="45263546"
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Description">Description</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <textarea
+                  class="form-control browser-default custom-textarea"
+                  cols="10"
+                  rows="3"
+                  placeholder="Enter description"
+                ></textarea>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Owner">Owner</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <div class="owner" style="padding-right: 12px">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Due Date">Due Date</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers_single custom-input"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                  value=""
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Attachments">Attachments</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <div class="preview-gallery"></div>
+                <label
+                  for="file-upload"
+                  style="
+                    height: 32px;
+                    width: 32px;
+                    padding: 6px 9px;
+                    border: 1px solid #ced4da;
+                    border-radius: 4px;
+                    cursor: pointer;
+                  "
+                >
+                  <i class="fas fa-plus"></i>
+                </label>
+                <input
+                  type="file"
+                  class="form-control browser-default custom-input"
+                  name="files[]"
+                  multiple
+                  style="display: none"
+                  id="file-upload"
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Comments">Comments</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <textarea
+                  class="form-control browser-default custom-textarea"
+                  cols="10"
+                  rows="3"
+                  placeholder="Enter comments"
+                ></textarea>
+              </div>
+
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Edit Task -->
+
+    <!-- View Task -->
+    <div
+      class="modal fade"
+      id="view_task"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="width: 600px"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4
+              style="
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e252d;
+                margin-bottom: 18px;
+              "
+            >
+              View Task
+            </h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row view-form">
+              <div class="col-4 form-group">
+                <label for="ID">ID</label>
+                <h4>45263546</h4>
+              </div>
+
+              <div class="col-8 form-group">
+                <label for="Name">Task</label>
+                <h4>Sample Task</h4>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Description">Description</label>
+                <h4>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Lorem ipsum dolor sit amet consectetur adipiscing elit.
+                </h4>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Name">Owner</label>
+                <div class="owner" style="padding-right: 12px">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-6 form-group">
+                <label for="Due Date">Due Date</label>
+                <h4>29/07/2020</h4>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Attachments">Attachments</label>
+                <br />
+                <div class="preview-gallery">
+                  <img
+                    src="../../assets/images/thumbnails/OKR.png"
+                    alt="Attachments"
+                  />
+                  <img
+                    src="../../assets/images/thumbnails/OKR 1.png"
+                    alt="Attachments"
+                  />
+                  <img
+                    src="../../assets/images/thumbnails/OKR 2.png"
+                    alt="Attachments"
+                  />
+                </div>
+              </div>
+
+              <div class="col-12 form-group">
+                <label for="Comments">Comments</label>
+                <h4>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Lorem ipsum dolor sit amet consectetur adipiscing elit.
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Add Task -->
+
+    <!--#Start User Edit Popup -->
+    <div
+      class="modal fade"
+      id="user_edit_popup"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-modal="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header" style="margin: 0 0 0 8px">
+            <h4 style="color: #1e252d; margin-bottom: 12px; font-size: 16px">
+              Edit Users
+            </h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="">
+            <div class="col-lg-12 col-md-12 sub_initiatives">
+              <div
+                class="slimScrollDiv"
+                style="
+                  position: relative;
+                  overflow: hidden;
+                  width: 100% !important;
+                  height: 340px;
+                "
+              >
+                <div
+                  class="d-flex flex-column employee_div_body_box sub-ini-box"
+                  id="sub-ini-box_view"
+                  style="overflow: hidden; width: auto; height: 340px"
+                >
+                  <span id="sub-ini-box_view_users"
+                    ><div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                type="checkbox"
+                                value="959" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center"
+                          >
+                            <h5>David Miller</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%">
+                            <img
+                              alt="David Miller"
+                              src="images/user/usrbig8.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                type="checkbox"
+                                value="960" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center"
+                          >
+                            <h5>Seema Chatterjee</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%">
+                            <img
+                              alt="Seema Chatterjee"
+                              src="images/user/usrbig10.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                type="checkbox"
+                                value="961" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center"
+                          >
+                            <h5>Rafael Nadal</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%">
+                            <img
+                              alt="Rafael Nadal"
+                              src="images/user/usrbig9.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                type="checkbox"
+                                value="962" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center"
+                          >
+                            <h5>Prakash Raj</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%">
+                            <img
+                              alt="Prakash Raj"
+                              src="images/user/usrbig6.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                checked=""
+                                type="checkbox"
+                                value="958" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center"
+                          >
+                            <h5>Karthik Ramani</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%">
+                            <img
+                              alt="Karthik Ramani"
+                              src="images/user/usrbig7.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div></div
+                  ></span>
+                </div>
+                <div
+                  class="slimScrollBar"
+                  style="
+                    background: rgb(156, 156, 156);
+                    width: 3px;
+                    position: absolute;
+                    top: 0px;
+                    opacity: 0.4;
+                    display: none;
+                    border-radius: 7px;
+                    z-index: 99;
+                    right: 1px;
+                    height: 340px;
+                  "
+                ></div>
+                <div
+                  class="slimScrollRail"
+                  style="
+                    width: 3px;
+                    height: 100%;
+                    position: absolute;
+                    top: 0px;
+                    display: none;
+                    border-radius: 7px;
+                    background: rgb(51, 51, 51);
+                    opacity: 0.2;
+                    z-index: 90;
+                    right: 1px;
+                  "
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--#End User Edit Popup -->
+
+    <section class="content" id="section">
+      <div class="container-fluid">
+        <div class="collapse_arrow_right" style="display: none">
+          <i class="arrow_collapse_size fas fa-caret-right"></i>
+        </div>
+        <div class="collapse_arrow_left">
+          <i class="arrow_collapse_size fas fa-caret-left"></i>
+        </div>
+      </div>
+
+      <!-- <div class="row">
+        <div class="col-md-12" style="margin-top: 30px">
+          <button
+            class="btn btn-custom-secondary pull-right"
+            style="margin-left: 4px"
+            data-toggle="modal"
+            data-target="#column_add"
+          >
+            <i
+              class="fas fa-pen"
+              style="font-size: 14px"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="Update"
+            ></i>
+          </button>
+        </div>
+      </div> -->
+
+      <!-- Page Body -->
+      <div
+        class="container-fluid"
+        style="
+          height: 580px;
+          padding-left: 0;
+          padding-right: 8px;
+          margin-top: 64px;
+        "
+      >
+        <!-- COl -->
+        <div class="row">
+          <div
+            class="col-lg-12 col-md-12 col-sm-12"
+            style="padding: 6px 0 8px 0"
+          >
+            <div class="okr-body">
+              <div class="row okr-title">
+                <div class="col-10">
+                  <span class="header-icon"
+                    ><i class="fas fa-chart-line"></i
+                  ></span>
+                  <div class="header-text">
+                    <h4 contenteditable="true">
+                      Budget constraints: stay below $1M
+                    </h4>
+                  </div>
+                </div>
+                <div class="col-2">
+                  <button
+                    class="btn btn-custom-secondary pull-right"
+                    style="margin-left: 4px"
+                    data-toggle="modal"
+                    data-target="#column_add"
+                  >
+                    <i
+                      class="fas fa-pen"
+                      style="font-size: 14px"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Update"
+                    ></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="row okr-details">
+                <div class="col-6 details-section">
+                  <div class="details">
+                    <ul>
+                      <li>
+                        <div class="okr-name">Owner</div>
+                        <div class="content" style="font-weight: 600">
+                          <img
+                            src="../../assets/images/user/user1.jpg"
+                            alt="HR"
+                          />
+                          HR
+                        </div>
+                      </li>
+                      <li>
+                        <div class="okr-name">Parent</div>
+                        <div class="content">Land and Expand New ...</div>
+                      </li>
+                      <li>
+                        <div class="okr-name">Description</div>
+                        <div class="content">-</div>
+                      </li>
+                      <li>
+                        <div class="okr-name">Initial</div>
+                        <div class="content">0</div>
+                      </li>
+                      <li>
+                        <div class="okr-name">Actual</div>
+                        <div class="content">0</div>
+                      </li>
+                      <li>
+                        <div class="okr-name">Target</div>
+                        <div class="content">Should stay below 1,000,000</div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="tasks">
+                    <div class="row task-top-bar">
+                      <div class="col-8">
+                        <h4>
+                          <span
+                            ><i
+                              class="fas fa-tasks"
+                              style="color: #1aa243; margin-right: 8px"
+                            ></i
+                          ></span>
+                          Task
+                        </h4>
+                      </div>
+                      <div class="col-4">
+                        <span
+                          class="pull-right"
+                          data-toggle="modal"
+                          data-target="#add_task"
+                          style="
+                            font-size: 14px;
+                            font-weight: 600;
+                            color: #2f50ff;
+                            cursor: pointer;
+                          "
+                        >
+                          <i class="fas fa-plus mr-1"></i>
+                          Add Task
+                        </span>
+                      </div>
+                    </div>
+                    <div style="height: 230px; overflow-y: auto">
+                      <div class="section-items">
+                        <div class="owner-icon">
+                          <img
+                            src="../../assets/images/user/user1.jpg"
+                            alt="HR"
+                          />
+                        </div>
+                        <div class="item-detail">
+                          <span>Sample Task</span>
+                        </div>
+                        <div class="due-date">
+                          <span>12/02/2021</span>
+                        </div>
+                        <div class="task-statuses">
+                          <select
+                            onchange="this.className=this.options[this.selectedIndex].id"
+                            class="to-do"
+                            style="border-radius: 20px; padding: 0 6px"
+                          >
+                            <option
+                              id="to-do"
+                              value=""
+                              style="background-color: #fff"
+                            >
+                              To-do
+                            </option>
+                            <option
+                              id="in-progress"
+                              value=""
+                              style="background-color: #fff"
+                            >
+                              In progress
+                            </option>
+                            <option
+                              id="done"
+                              value=""
+                              style="background-color: #fff"
+                            >
+                              Done
+                            </option>
+                          </select>
+                        </div>
+                        <div class="more-option">
+                          <span>
+                            <ul
+                              class="header-dropdown"
+                              style="margin-bottom: 0px"
+                            >
+                              <li class="dropdown">
+                                <a
+                                  href="#"
+                                  class="dropdown-toggle"
+                                  data-toggle="dropdown"
+                                  role="button"
+                                  aria-haspopup="true"
+                                  aria-expanded="true"
+                                  style="color: #1e252d !important"
+                                >
+                                  <i class="fas fa-ellipsis-v"></i>
+                                </a>
+                                <ul
+                                  class="dropdown-menu pull-right"
+                                  id="project-options"
+                                  x-placement="bottom-start"
+                                  style="
+                                    position: absolute;
+                                    will-change: transform;
+                                    top: 0px;
+                                    left: 0px;
+                                    transform: translate3d(0px, 24px, 0px);
+                                  "
+                                >
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#view_task"
+                                      onclick="return false;"
+                                      >View</a
+                                    >
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#edit_task"
+                                      onclick="return false;"
+                                      >Edit</a
+                                    >
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      onclick="return false;"
+                                      data-toggle="modal"
+                                      data-target="#delete_formulation"
+                                      >Delete</a
+                                    >
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="section-items">
+                        <div class="owner-icon">
+                          <img
+                            src="../../assets/images/user/user1.jpg"
+                            alt="HR"
+                          />
+                        </div>
+                        <div class="item-detail">
+                          <span>Sample Task</span>
+                        </div>
+                        <div class="due-date">
+                          <span>12/02/2021</span>
+                        </div>
+                        <div class="task-statuses">
+                          <select
+                            onchange="this.className=this.options[this.selectedIndex].id"
+                            class="to-do"
+                            style="border-radius: 20px; padding: 0 6px"
+                          >
+                            <option
+                              id="to-do"
+                              value=""
+                              style="background-color: #fff"
+                            >
+                              To-do
+                            </option>
+                            <option
+                              id="in-progress"
+                              value=""
+                              style="background-color: #fff"
+                            >
+                              In progress
+                            </option>
+                            <option
+                              id="done"
+                              value=""
+                              style="background-color: #fff"
+                            >
+                              Done
+                            </option>
+                          </select>
+                        </div>
+                        <div class="more-option">
+                          <span>
+                            <ul
+                              class="header-dropdown"
+                              style="margin-bottom: 0px"
+                            >
+                              <li class="dropdown">
+                                <a
+                                  href="#"
+                                  class="dropdown-toggle"
+                                  data-toggle="dropdown"
+                                  role="button"
+                                  aria-haspopup="true"
+                                  aria-expanded="true"
+                                  style="color: #1e252d !important"
+                                >
+                                  <i class="fas fa-ellipsis-v"></i>
+                                </a>
+                                <ul
+                                  class="dropdown-menu pull-right"
+                                  id="project-options"
+                                  x-placement="bottom-start"
+                                  style="
+                                    position: absolute;
+                                    will-change: transform;
+                                    top: 0px;
+                                    left: 0px;
+                                    transform: translate3d(0px, 24px, 0px);
+                                  "
+                                >
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#view_task"
+                                      onclick="return false;"
+                                      >View</a
+                                    >
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#edit_task"
+                                      onclick="return false;"
+                                      >Edit</a
+                                    >
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      onclick="return false;"
+                                      data-toggle="modal"
+                                      data-target="#delete_formulation"
+                                      >Delete</a
+                                    >
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="section-items">
+                        <div class="owner-icon">
+                          <img
+                            src="../../assets/images/user/user1.jpg"
+                            alt="HR"
+                          />
+                        </div>
+                        <div class="item-detail">
+                          <span>Sample Task</span>
+                        </div>
+                        <div class="due-date">
+                          <span>12/02/2021</span>
+                        </div>
+                        <div class="task-statuses">
+                          <select
+                            onchange="this.className=this.options[this.selectedIndex].id"
+                            class="to-do"
+                            style="border-radius: 20px; padding: 0 6px"
+                          >
+                            <option
+                              id="to-do"
+                              value=""
+                              style="background-color: #fff"
+                            >
+                              To-do
+                            </option>
+                            <option
+                              id="in-progress"
+                              value=""
+                              style="background-color: #fff"
+                            >
+                              In progress
+                            </option>
+                            <option
+                              id="done"
+                              value=""
+                              style="background-color: #fff"
+                            >
+                              Done
+                            </option>
+                          </select>
+                        </div>
+                        <div class="more-option">
+                          <span>
+                            <ul
+                              class="header-dropdown"
+                              style="margin-bottom: 0px"
+                            >
+                              <li class="dropdown">
+                                <a
+                                  href="#"
+                                  class="dropdown-toggle"
+                                  data-toggle="dropdown"
+                                  role="button"
+                                  aria-haspopup="true"
+                                  aria-expanded="true"
+                                  style="color: #1e252d !important"
+                                >
+                                  <i class="fas fa-ellipsis-v"></i>
+                                </a>
+                                <ul
+                                  class="dropdown-menu pull-right"
+                                  id="project-options"
+                                  x-placement="bottom-start"
+                                  style="
+                                    position: absolute;
+                                    will-change: transform;
+                                    top: 0px;
+                                    left: 0px;
+                                    transform: translate3d(0px, 24px, 0px);
+                                  "
+                                >
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#view_task"
+                                      onclick="return false;"
+                                      >View</a
+                                    >
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#edit_task"
+                                      onclick="return false;"
+                                      >Edit</a
+                                    >
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      onclick="return false;"
+                                      data-toggle="modal"
+                                      data-target="#delete_formulation"
+                                      >Delete</a
+                                    >
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 chart-section">
+                  <div class="charts">
+                    <div
+                      style="width: 100%; height: 350px"
+                      id="lineChart"
+                    ></div>
+                  </div>
+                  <div class="comments">
+                    <div class="comments-panel">
+                      <div class="panel-header">
+                        <span style="color: #929292"
+                          >January 08, 2021, 17:19</span
+                        >
+                        <span class="pull-right">
+                          <img
+                            style="
+                              width: 24px;
+                              border-radius: 50%;
+                              margin-top: -3px;
+                            "
+                            src="images/user/usrbig10.jpg"
+                            alt=""
+                        /></span>
+                      </div>
+                      <div class="panel-body">
+                        <h5>The value was automatically updated to 897,600</h5>
+                      </div>
+                    </div>
+                    <div class="comments-panel">
+                      <div class="panel-header">
+                        <span style="color: #929292"
+                          >January 08, 2021, 17:19</span
+                        >
+                        <span class="pull-right">
+                          <img
+                            style="
+                              width: 24px;
+                              border-radius: 50%;
+                              margin-top: -3px;
+                            "
+                            src="images/user/usrbig8.jpg"
+                            alt=""
+                        /></span>
+                      </div>
+                      <div class="panel-body">
+                        <h5>The value was automatically updated to 897,600</h5>
+                      </div>
+                    </div>
+                    <div class="comments-panel">
+                      <div class="panel-header">
+                        <span style="color: #929292"
+                          >January 08, 2021, 17:19</span
+                        >
+                        <span class="pull-right">
+                          <img
+                            style="
+                              width: 24px;
+                              border-radius: 50%;
+                              margin-top: -3px;
+                            "
+                            src="images/user/usrbig9.jpg"
+                            alt=""
+                        /></span>
+                      </div>
+                      <div class="panel-body">
+                        <h5>The value was automatically updated to 897,600</h5>
+                      </div>
+                    </div>
+
+                    <div class="comment-footer">
+                      <input
+                        type="text"
+                        placeholder="Post a comment"
+                        onfocus="this.placeholder = ''"
+                        onblur="this.placeholder = 'Post a comment'"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plugins Js -->
+    <script src="../../assets/js/app.min.js"></script>
+    <!-- Custom Js -->
+    <script src="../../assets/js/admin.js"></script>
+    <!-- Knob Js -->
+    <script src="../../assets/jquery-ui.min.js"></script>
+    <script src="../../assets/moment.js"></script>
+    <script src="../../assets/js/paging.js"></script>
+    <script src="../../assets/js/pages/spiritedaway.js"></script>
+    <script src="../../assets/jquery.editable.min.js"></script>
+    <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/pickr.es5.min.js"></script>
+    <script src="../../assets/datepickerair.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <!-- <script src="../../assets/select2.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script src="../../assets/datepicker.en.js"></script>
+    <script src="../../assets/js/widgets.js"></script>
+    <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
+
+    <script src="../../assets/knockout-3.5.0.js"></script>
+    <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
+    <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
+    <script src="assets/daterangepicker/daterangepicker.min.js"></script>
+    <script>
+      $(".daterangepicker-field").daterangepicker({
+        forceUpdate: true,
+        callback: function (startDate, endDate, period) {
+          var title = startDate.format("L") + " – " + endDate.format("L");
+          $(this).val(title);
+        },
+      });
+
+      var options = {
+        series: [
+          {
+            name: "High - 2013",
+            data: [24, 29, 33, 36, 32, 32, 33],
+          },
+          {
+            name: "Low - 2013",
+            data: [12, 11, 14, 18, 17, 13, 13],
+          },
+        ],
+        chart: {
+          height: 324,
+          type: "line",
+          dropShadow: {
+            enabled: true,
+            color: "#000",
+            top: 18,
+            left: 7,
+            blur: 10,
+            opacity: 0.2,
+          },
+          toolbar: {
+            show: true,
+          },
+        },
+        colors: ["#77B6EA", "#545454"],
+        dataLabels: {
+          enabled: true,
+        },
+        stroke: {
+          curve: "smooth",
+        },
+        grid: {
+          borderColor: "#e7e7e7",
+          row: {
+            colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on columns
+            opacity: 0.5,
+          },
+        },
+        markers: {
+          size: 1,
+        },
+        xaxis: {
+          categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+          title: {
+            text: "Month",
+          },
+        },
+        yaxis: {
+          title: {
+            text: "Temperature",
+          },
+          min: 5,
+          max: 40,
+        },
+        legend: {
+          position: "bottom",
+          horizontalAlign: "center",
+        },
+      };
+
+      var chart = new ApexCharts(document.querySelector("#lineChart"), options);
+      chart.render();
+
+      $(document).ready(function () {
+        $(".user-multi-select").select2();
+        $(".user-multi-select-2").select2();
+      });
+
+      $(function () {
+        // Multiple images preview in browser
+        var imagesPreview = function (input, placeToInsertImagePreview) {
+          if (input.files) {
+            var filesAmount = input.files.length;
+
+            for (i = 0; i < filesAmount; i++) {
+              var reader = new FileReader();
+
+              reader.onload = function (event) {
+                $($.parseHTML("<img>"))
+                  .attr("src", event.target.result)
+                  .appendTo(placeToInsertImagePreview);
+              };
+
+              reader.readAsDataURL(input.files[i]);
+            }
+          }
+        };
+
+        $("#file-upload").on("change", function () {
+          imagesPreview(this, "div.preview-gallery");
+        });
+      });
+
+      $("#open_search").click(function () {
+        $(".nav-search").show();
+        $("#open_search").hide();
+      });
+
+      $("#close_search").click(function () {
+        $("#open_search").show();
+        $(".nav-search").hide();
+      });
+    </script>
+  </body>
+</html>
