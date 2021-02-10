@@ -927,6 +927,29 @@ ul.gj-list-md li {
   border: 1px solid #1e252d !important;
 }
 
+.custom-input-select {
+  border: 1px solid #ced4da !important;
+  border-radius: 4px !important;
+  width: 100% !important;
+  padding: 0 4px !important;
+  font-size: 14px !important;
+}
+
+.custom-input-select::placeholder {
+  color: #797979 !important;
+  padding-left: 0 !important;
+}
+
+.custom-input-select:focus {
+  box-shadow: 0 0 3px #1e252d !important;
+  padding: 0 4px !important;
+  border: 1px solid #1e252d !important;
+}
+
+.custom-input-select:hover {
+  border: 1px solid #1e252d !important;
+}
+
 .custom-textarea {
   border: 1px solid #ced4da !important;
   border-radius: 4px !important;
@@ -2074,6 +2097,7 @@ label {
   font-weight: 600;
   color: #1e252d;
   width: fit-content;
+  font-size: 19px;
 }
 
 .okr-title .header-btn {
@@ -2101,7 +2125,7 @@ label {
 }
 
 .okr-details .details-section .details ul li .content {
-  font-size: 15px;
+  font-size: 14px;
   color: #1e252d;
   font-weight: 500;
   display: inline-block;
@@ -2195,6 +2219,7 @@ label {
 .okr-details .details-section .tasks .section-items .task-statuses .to-do {
   background: #d5e2f4;
   color: #47556b;
+  font-size: 12px;
 }
 
 .okr-details
@@ -2205,11 +2230,13 @@ label {
   .in-progress {
   background: #e8f4ff;
   color: #0070de;
+  font-size: 12px;
 }
 
 .okr-details .details-section .tasks .section-items .task-statuses .done {
   background: #18c191;
   color: #fff;
+  font-size: 12px;
 }
 
 .okr-details
@@ -2253,7 +2280,7 @@ label {
 }
 
 .okr-details .chart-section .comments .comments-panel .panel-body h5 {
-  font-size: 14px;
+  font-size: 12px;
   color: #1e252d;
 }
 
@@ -2302,7 +2329,7 @@ label {
 .okr-table table tbody tr td {
   padding: 6px 10px;
   background: #f2f2f2;
-  font-size: 14px !important;
+  font-size: 12px !important;
   text-align: left;
 }
 

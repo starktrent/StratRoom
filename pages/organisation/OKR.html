@@ -33,6 +33,10 @@
       integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="../../assets/nano.min.css" />
+    <link rel="stylesheet" href="../../assets/monolith.min.css" />
+    <link rel="stylesheet" href="../../assets/classic.min.css" />
+
     <link rel="stylesheet" href="../../assets/treeable/jquery.treetable.css" />
     <link rel="stylesheet" href="../../assets/select2.min.css" />
     <link
@@ -148,18 +152,56 @@
         margin-left: -10px;
       }
 
-      span.badge {
-        padding: 0 6px;
-        margin-left: 14px;
+      td span.badge {
         text-align: center;
         line-height: 19px;
         height: 18px;
         width: 18px;
-        color: #757575;
-        float: right;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
         border-radius: 10px;
+      }
+
+      .dropdown-menu > li > a {
+        font-size: 12px;
+        line-height: 16px;
+      }
+
+      /* Modal style change */
+      .modal .modal-content {
+        border-radius: 6px;
+      }
+
+      .modal .modal-header {
+        border: 0;
+        padding: 17px 16px 8px 16px;
+        margin: -10px -10px -12px -10px;
+        background-color: #fff;
+      }
+
+      .modal-header .close {
+        padding: 0;
+        margin: 0;
+        color: #9e9e9e;
+      }
+
+      label {
+        font-weight: 500;
+      }
+
+      .search-section .fa-times {
+        position: absolute;
+        right: 2px;
+        top: 2px;
+        font-size: 13px;
+        color: #c2c2c2;
+        cursor: pointer;
+      }
+
+      .search-section .fa-search {
+        position: absolute;
+        left: 36px;
+        top: 1px;
+        font-size: 13px;
+        color: #c2c2c2;
       }
     </style>
   </head>
@@ -459,6 +501,1393 @@
     </div>
     <!-- #END# Left Sidebar -->
 
+    <!-- Add Objective -->
+    <div
+      class="modal fade"
+      id="add_objective"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="width: 600px"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4
+              style="
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e252d;
+                margin-bottom: 18px;
+              "
+            >
+              Add Objective
+            </h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-4 form-group mb-4">
+                <label for="ID">ID</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  value="45263546"
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Objective">Type your objective</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <textarea
+                  class="form-control browser-default custom-textarea"
+                  cols="10"
+                  rows="3"
+                  placeholder="Enter objective"
+                ></textarea>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Description">Description</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <textarea
+                  class="form-control browser-default custom-textarea"
+                  cols="10"
+                  rows="3"
+                  placeholder="Enter description"
+                ></textarea>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Objective Share"
+                  >Is your objective to be shared?</label
+                >
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                  id="Share_option"
+                >
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Department">Department</label>
+              </div>
+
+              <div
+                class="col-8 form-group mb-4 share-with Yes"
+                id="dept_section"
+              >
+                <div class="input-group" style="margin-bottom: 0px">
+                  <select
+                    class="form-control browser-default custom-input-select"
+                  >
+                    <option value="Department 1">Department 1</option>
+                    <option value="Department 2">Department 2</option>
+                    <option value="Department 3">Department 3</option>
+                    <option value="Department 4">Department 4</option>
+                  </select>
+
+                  <input
+                    type="text"
+                    class="form-control browser-default custom-input ml-1"
+                    placeholder="Weightage (%)"
+                    value=""
+                  />
+
+                  <span
+                    id="add_dept"
+                    style="
+                      height: 30px;
+                      width: 30px;
+                      padding: 6px 9px;
+                      border: 1px solid #ced4da;
+                      border-radius: 4px;
+                      cursor: pointer;
+                      margin-left: 2px;
+                    "
+                  >
+                    <i class="fas fa-plus"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="col-8 form-group mb-4 share-with No"
+                style="display: none"
+              >
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="100%">100% contribution</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Owner">Owner</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <div class="owner" style="padding-right: 12px">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Alignment">Alignment</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="Objective 1">Objective 1</option>
+                  <option value="Objective 2">Objective 2</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Progress">Progress Calculation</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="Key Result 1">Key Result 1</option>
+                  <option value="Key Result 2">Key Result 2</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Comments">Comments</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <textarea
+                  class="form-control browser-default custom-textarea"
+                  cols="10"
+                  rows="3"
+                  placeholder="Enter comments"
+                ></textarea>
+              </div>
+
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Add Objective -->
+
+    <!-- Edit Objective -->
+    <div
+      class="modal fade"
+      id="edit_objective"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="width: 600px"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4
+              style="
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e252d;
+                margin-bottom: 18px;
+              "
+            >
+              Edit Objective
+            </h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-4 form-group mb-4">
+                <label for="ID">ID</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  value="45263546"
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Objective">Type your objective</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <textarea
+                  class="form-control browser-default custom-textarea"
+                  cols="10"
+                  rows="3"
+                  placeholder="Enter objective"
+                >
+Improve performance review and evaluation process</textarea
+                >
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Description">Description</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <textarea
+                  class="form-control browser-default custom-textarea"
+                  cols="10"
+                  rows="3"
+                  placeholder="Enter description"
+                >
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.</textarea
+                >
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Objective Share"
+                  >Is your objective to be shared?</label
+                >
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                  id="Share_option_edit"
+                >
+                  <option value="Yess">Yes</option>
+                  <option value="Noo">No</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Department">Department</label>
+              </div>
+
+              <div
+                class="col-8 form-group mb-4 share-with-edit Yess"
+                id="dept_section_edit"
+              >
+                <div class="input-group" style="margin-bottom: 0px">
+                  <select
+                    class="form-control browser-default custom-input-select"
+                  >
+                    <option value="Department 1">Department 1</option>
+                    <option value="Department 2">Department 2</option>
+                    <option value="Department 3">Department 3</option>
+                    <option value="Department 4">Department 4</option>
+                  </select>
+
+                  <input
+                    type="text"
+                    class="form-control browser-default custom-input ml-1"
+                    placeholder="Weightage (%)"
+                    value="10"
+                  />
+
+                  <span
+                    id="edit_dept"
+                    style="
+                      height: 30px;
+                      width: 30px;
+                      padding: 6px 9px;
+                      border: 1px solid #ced4da;
+                      border-radius: 4px;
+                      cursor: pointer;
+                      margin-left: 2px;
+                    "
+                  >
+                    <i class="fas fa-plus"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="col-8 form-group mb-4 share-with-edit Noo"
+                style="display: none"
+              >
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="100%">100% contribution</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Owner">Owner</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <div class="owner" style="padding-right: 12px">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Alignment">Alignment</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="Objective 1">Objective 1</option>
+                  <option value="Objective 2">Objective 2</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Progress">Progress Calculation</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="Key Result 1">Key Result 1</option>
+                  <option value="Key Result 2">Key Result 2</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Comments">Comments</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <textarea
+                  class="form-control browser-default custom-textarea"
+                  cols="10"
+                  rows="3"
+                  placeholder="Enter comments"
+                >
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, </textarea
+                >
+              </div>
+
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Edit Objective -->
+
+    <!-- Add Key Result -->
+    <div
+      class="modal fade"
+      id="add_key"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="width: 600px"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4
+              style="
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e252d;
+                margin-bottom: 18px;
+              "
+            >
+              Add Key Result
+            </h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-12 form-group mb-4">
+                <textarea
+                  class="form-control browser-default custom-textarea"
+                  cols="10"
+                  rows="3"
+                  placeholder="Enter the title of your key result"
+                ></textarea>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="ID">ID</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  value="45263546"
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Type">Type</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="Type 1">Type 1</option>
+                  <option value="Type 2">Type 2</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Uint">Uint</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="Unit 1">Unit 1</option>
+                  <option value="Unit 2">Unit 2</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Target Value">Target Value</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  placeholder="0"
+                  value=""
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Initial Value">Initial Value</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  placeholder="0"
+                  value=""
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Actual Value">Actual Value</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  placeholder="0"
+                  value=""
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Description">Description</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <textarea
+                  class="form-control browser-default custom-textarea"
+                  cols="10"
+                  rows="3"
+                  placeholder="Enter description"
+                ></textarea>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Owner">Owner</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <div class="owner" style="padding-right: 12px">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Deadline">Deadline</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers_single custom-input"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                  value=""
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Cascading">Cascading</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Progress">Progress Calculation</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="Key Result 1">Key Result 1</option>
+                  <option value="Key Result 2">Key Result 2</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Comments">Comments</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <textarea
+                  class="form-control browser-default custom-textarea"
+                  cols="10"
+                  rows="3"
+                  placeholder="Enter comments"
+                ></textarea>
+              </div>
+
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Add Key Result -->
+
+    <!-- Edit Key Result -->
+    <div
+      class="modal fade"
+      id="edit_key"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="width: 600px"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4
+              style="
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e252d;
+                margin-bottom: 18px;
+              "
+            >
+              Edit Key Result
+            </h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-12 form-group mb-4">
+                <textarea
+                  class="form-control browser-default custom-textarea"
+                  cols="10"
+                  rows="3"
+                  placeholder="Enter the title of your key result"
+                >
+% Completion of scorecard result within 2 weeks of period (except financial related data)</textarea
+                >
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="ID">ID</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  value="45263546"
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Type">Type</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="Type 1">Type 1</option>
+                  <option value="Type 2">Type 2</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Uint">Uint</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="Unit 1">Unit 1</option>
+                  <option value="Unit 2">Unit 2</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Target Value">Target Value</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  placeholder="20"
+                  value=""
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Initial Value">Initial Value</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  placeholder="30"
+                  value=""
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Actual Value">Actual Value</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  placeholder="40"
+                  value=""
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Description">Description</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <textarea
+                  class="form-control browser-default custom-textarea"
+                  cols="10"
+                  rows="3"
+                  placeholder="Enter description"
+                >
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.</textarea
+                >
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Owner">Owner</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <div class="owner" style="padding-right: 12px">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Deadline">Deadline</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default date_pickers_single custom-input"
+                  data-language="en"
+                  name="kpi_start_end_date"
+                  id="kpi_start_end_date"
+                  value=""
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Cascading">Cascading</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Progress">Progress Calculation</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="Key Result 1">Key Result 1</option>
+                  <option value="Key Result 2">Key Result 2</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Comments">Comments</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <textarea
+                  class="form-control browser-default custom-textarea"
+                  cols="10"
+                  rows="3"
+                  placeholder="Enter comments"
+                >
+Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea
+                >
+              </div>
+
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Edit Key Result -->
+
+    <!-- Delete Popup -->
+    <div
+      class="modal fade"
+      id="delete_popup"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4
+              style="
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e252d;
+                margin-bottom: 18px;
+              "
+            >
+              Delete
+            </h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div
+                class="col-12"
+                style="text-align: center; padding-bottom: 12px"
+              >
+                <h5>Do you really want to delete?</h5>
+              </div>
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    class="initative_save_btn"
+                    value="Save"
+                    style="background-color: #f2675f"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Delete Popup -->
+
+    <!--#Start User Edit Popup -->
+    <div
+      class="modal fade"
+      id="user_edit_popup"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-modal="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div
+            class="modal-header"
+            style="margin: 0 0 0 8px; padding: 8px 6px 8px 6px"
+          >
+            <h4 style="color: #1e252d; margin-bottom: 12px; font-size: 16px">
+              Edit Users
+            </h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div
+            class="row"
+            style="
+              padding: 0 42px;
+              margin-bottom: 10px !important;
+              margin-top: 6px;
+            "
+          >
+            <div class="col-5">
+              <div class="form-check">
+                <label class="form-check-label" style="padding-left: 12px"
+                  ><input
+                    id="selectall"
+                    class="form-check-input"
+                    name="sub_initiative_owner[]"
+                    type="checkbox"
+                    value="960"
+                  /><span class="form-check-sign">
+                    <span
+                      class="check"
+                      style="margin-left: -17px; margin-top: 0"
+                    ></span></span
+                  >All Users</label
+                >
+              </div>
+            </div>
+            <div class="col-7 pr-0">
+              <span class="pull-right" id="search2" style="margin-right: -12px">
+                <i class="fas fa-search border-box"></i>
+              </span>
+              <span
+                class="pull-right search-section"
+                style="display: none; margin-right: -12px"
+                id="search_section2"
+              >
+                <input type="text" class="search" placeholder="Search" />
+                <i class="fas fa-search"></i>
+                <i class="fas fa-times" id="close_search2"></i>
+              </span>
+            </div>
+          </div>
+          <div class="">
+            <div class="col-lg-12 col-md-12 sub_initiatives">
+              <div
+                class="slimScrollDiv"
+                style="
+                  position: relative;
+                  overflow: hidden;
+                  width: 100% !important;
+                  height: 340px;
+                "
+              >
+                <div
+                  class="d-flex flex-column employee_div_body_box sub-ini-box"
+                  id="sub-ini-box_view"
+                  style="
+                    overflow: hidden;
+                    width: auto;
+                    overflow-y: auto;
+                    height: 340px;
+                  "
+                >
+                  <span id="sub-ini-box_view_users"
+                    ><div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label user-select-check"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                type="checkbox"
+                                value="959" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center"
+                          >
+                            <h5>David Miller</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%">
+                            <img
+                              alt="David Miller"
+                              src="images/user/usrbig8.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label user-select-check"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                type="checkbox"
+                                value="960" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center"
+                          >
+                            <h5>Seema Chatterjee</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%">
+                            <img
+                              alt="Seema Chatterjee"
+                              src="images/user/usrbig10.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label user-select-check"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                type="checkbox"
+                                value="961" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center"
+                          >
+                            <h5>Rafael Nadal</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%">
+                            <img
+                              alt="Rafael Nadal"
+                              src="images/user/usrbig9.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label user-select-check"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                type="checkbox"
+                                value="962" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center"
+                          >
+                            <h5>Prakash Raj</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%">
+                            <img
+                              alt="Prakash Raj"
+                              src="images/user/usrbig6.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label user-select-check"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                type="checkbox"
+                                value="962" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center"
+                          >
+                            <h5>Prakash Raj</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%">
+                            <img
+                              alt="Prakash Raj"
+                              src="images/user/usrbig6.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label user-select-check"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                type="checkbox"
+                                value="962" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center"
+                          >
+                            <h5>Prakash Raj</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%">
+                            <img
+                              alt="Prakash Raj"
+                              src="images/user/usrbig6.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label user-select-check"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                type="checkbox"
+                                value="962" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center"
+                          >
+                            <h5>Prakash Raj</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%">
+                            <img
+                              alt="Prakash Raj"
+                              src="images/user/usrbig6.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-row employe_content_border sub_initiative_details"
+                    >
+                      <div class="d-flex flex-column flex-fill profile_content">
+                        <div class="d-flex flex-row">
+                          <div class="form-check">
+                            <label class="form-check-label user-select-check"
+                              ><input
+                                id=""
+                                class="form-check-input"
+                                name="sub_initiative_owner[]"
+                                checked=""
+                                type="checkbox"
+                                value="958" /><span class="form-check-sign">
+                                <span class="check"></span></span
+                            ></label>
+                          </div>
+                          <div
+                            class="d-flex flex-column init_flex_profile"
+                            style="margin-top: 3%; text-align: center"
+                          >
+                            <h5>Karthik Ramani</h5>
+                          </div>
+                          <div class="img_details" style="width: 20%">
+                            <img
+                              alt="Karthik Ramani"
+                              src="images/user/usrbig7.jpg"
+                              class="rounded-circle imgprofile"
+                            />
+                          </div>
+                        </div>
+                      </div></div
+                  ></span>
+                </div>
+                <div
+                  class="slimScrollBar"
+                  style="
+                    background: rgb(156, 156, 156);
+                    width: 3px;
+                    position: absolute;
+                    top: 0px;
+                    opacity: 0.4;
+                    display: none;
+                    border-radius: 7px;
+                    z-index: 99;
+                    right: 1px;
+                    height: 340px;
+                  "
+                ></div>
+                <div
+                  class="slimScrollRail"
+                  style="
+                    width: 3px;
+                    height: 100%;
+                    position: absolute;
+                    top: 0px;
+                    display: none;
+                    border-radius: 7px;
+                    background: rgb(51, 51, 51);
+                    opacity: 0.2;
+                    z-index: 90;
+                    right: 1px;
+                  "
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--#End User Edit Popup -->
+
     <!-- Content Start -->
     <section class="content">
       <!-- Page Header -->
@@ -480,7 +1909,7 @@
             class="btn btn-custom-secondary pull-right"
             style="margin-right: 4px"
             data-toggle="modal"
-            data-target="#column_add"
+            data-target="#add_objective"
           >
             <i
               class="fas fa-plus"
@@ -521,7 +1950,7 @@
                           <th style="width: 40px">&nbsp;</th>
                           <th style="width: 80px">Status</th>
                           <th style="width: 100px">Owner</th>
-                          <th style="width: 340px">Name</th>
+                          <th style="width: 346px">Name</th>
                           <th style="width: 120px">Progress</th>
                           <th style="width: 120px"># of Key Results</th>
                           <th style="width: 80px">Initial</th>
@@ -536,12 +1965,12 @@
                       </thead>
 
                       <tbody>
-                        <tr
-                          data-toggle="collapse"
-                          data-target="#demo1"
-                          class="accordion-toggle"
-                        >
-                          <td>
+                        <tr>
+                          <td
+                            data-toggle="collapse"
+                            data-target="#demo1"
+                            class="accordion-toggle"
+                          >
                             <button class="btn btn-xs">
                               <i
                                 class="far fa-minus-square"
@@ -610,7 +2039,7 @@
                                     <a
                                       href="#"
                                       data-toggle="modal"
-                                      data-target="#view_task"
+                                      data-target="#add_key"
                                       onclick="return false;"
                                       >Add</a
                                     >
@@ -620,7 +2049,7 @@
                                     <a
                                       href="#"
                                       data-toggle="modal"
-                                      data-target="#edit_task"
+                                      data-target="#edit_objective"
                                       onclick="return false;"
                                       >Edit</a
                                     >
@@ -631,7 +2060,7 @@
                                       href="#"
                                       onclick="return false;"
                                       data-toggle="modal"
-                                      data-target="#delete_formulation"
+                                      data-target="#delete_popup"
                                       >Delete</a
                                     >
                                   </li>
@@ -729,7 +2158,7 @@
                                               <a
                                                 href="#"
                                                 data-toggle="modal"
-                                                data-target="#edit_task"
+                                                data-target="#edit_key"
                                                 onclick="return false;"
                                                 >Edit</a
                                               >
@@ -740,7 +2169,7 @@
                                                 href="#"
                                                 onclick="return false;"
                                                 data-toggle="modal"
-                                                data-target="#delete_formulation"
+                                                data-target="#delete_popup"
                                                 >Delete</a
                                               >
                                             </li>
@@ -827,7 +2256,7 @@
                                     <a
                                       href="#"
                                       data-toggle="modal"
-                                      data-target="#view_task"
+                                      data-target="#add_key"
                                       onclick="return false;"
                                       >Add</a
                                     >
@@ -837,7 +2266,7 @@
                                     <a
                                       href="#"
                                       data-toggle="modal"
-                                      data-target="#edit_task"
+                                      data-target="#edit_objective"
                                       onclick="return false;"
                                       >Edit</a
                                     >
@@ -848,7 +2277,7 @@
                                       href="#"
                                       onclick="return false;"
                                       data-toggle="modal"
-                                      data-target="#delete_formulation"
+                                      data-target="#delete_popup"
                                       >Delete</a
                                     >
                                   </li>
@@ -868,12 +2297,12 @@
                           </td>
                         </tr>
 
-                        <tr
-                          data-toggle="collapse"
-                          data-target="#demo2"
-                          class="accordion-toggle"
-                        >
-                          <td>
+                        <tr>
+                          <td
+                            data-toggle="collapse"
+                            data-target="#demo2"
+                            class="accordion-toggle"
+                          >
                             <button class="btn btn-xs">
                               <i
                                 class="far fa-minus-square"
@@ -939,7 +2368,7 @@
                                     <a
                                       href="#"
                                       data-toggle="modal"
-                                      data-target="#view_task"
+                                      data-target="#add_key"
                                       onclick="return false;"
                                       >Add</a
                                     >
@@ -949,7 +2378,7 @@
                                     <a
                                       href="#"
                                       data-toggle="modal"
-                                      data-target="#edit_task"
+                                      data-target="#edit_objective"
                                       onclick="return false;"
                                       >Edit</a
                                     >
@@ -960,7 +2389,7 @@
                                       href="#"
                                       onclick="return false;"
                                       data-toggle="modal"
-                                      data-target="#delete_formulation"
+                                      data-target="#delete_popup"
                                       >Delete</a
                                     >
                                   </li>
@@ -1057,7 +2486,7 @@
                                               <a
                                                 href="#"
                                                 data-toggle="modal"
-                                                data-target="#edit_task"
+                                                data-target="#edit_key"
                                                 onclick="return false;"
                                                 >Edit</a
                                               >
@@ -1068,7 +2497,7 @@
                                                 href="#"
                                                 onclick="return false;"
                                                 data-toggle="modal"
-                                                data-target="#delete_formulation"
+                                                data-target="#delete_popup"
                                                 >Delete</a
                                               >
                                             </li>
@@ -1167,7 +2596,7 @@
                                               <a
                                                 href="#"
                                                 data-toggle="modal"
-                                                data-target="#edit_task"
+                                                data-target="#edit_key"
                                                 onclick="return false;"
                                                 >Edit</a
                                               >
@@ -1178,7 +2607,7 @@
                                                 href="#"
                                                 onclick="return false;"
                                                 data-toggle="modal"
-                                                data-target="#delete_formulation"
+                                                data-target="#delete_popup"
                                                 >Delete</a
                                               >
                                             </li>
@@ -1263,7 +2692,7 @@
                                     <a
                                       href="#"
                                       data-toggle="modal"
-                                      data-target="#view_task"
+                                      data-target="#add_key"
                                       onclick="return false;"
                                       >Add</a
                                     >
@@ -1273,7 +2702,7 @@
                                     <a
                                       href="#"
                                       data-toggle="modal"
-                                      data-target="#edit_task"
+                                      data-target="#edit_objective"
                                       onclick="return false;"
                                       >Edit</a
                                     >
@@ -1284,7 +2713,7 @@
                                       href="#"
                                       onclick="return false;"
                                       data-toggle="modal"
-                                      data-target="#delete_formulation"
+                                      data-target="#delete_popup"
                                       >Delete</a
                                     >
                                   </li>
@@ -1304,12 +2733,12 @@
                           </td>
                         </tr>
 
-                        <tr
-                          data-toggle="collapse"
-                          data-target="#demo3"
-                          class="accordion-toggle"
-                        >
-                          <td>
+                        <tr>
+                          <td
+                            data-toggle="collapse"
+                            data-target="#demo3"
+                            class="accordion-toggle"
+                          >
                             <button class="btn btn-xs">
                               <i
                                 class="far fa-minus-square"
@@ -1375,7 +2804,7 @@
                                     <a
                                       href="#"
                                       data-toggle="modal"
-                                      data-target="#view_task"
+                                      data-target="#add_key"
                                       onclick="return false;"
                                       >Add</a
                                     >
@@ -1385,7 +2814,7 @@
                                     <a
                                       href="#"
                                       data-toggle="modal"
-                                      data-target="#edit_task"
+                                      data-target="#edit_objective"
                                       onclick="return false;"
                                       >Edit</a
                                     >
@@ -1396,7 +2825,7 @@
                                       href="#"
                                       onclick="return false;"
                                       data-toggle="modal"
-                                      data-target="#delete_formulation"
+                                      data-target="#delete_popup"
                                       >Delete</a
                                     >
                                   </li>
@@ -1490,7 +2919,7 @@
                                               <a
                                                 href="#"
                                                 data-toggle="modal"
-                                                data-target="#edit_task"
+                                                data-target="#edit_key"
                                                 onclick="return false;"
                                                 >Edit</a
                                               >
@@ -1501,7 +2930,7 @@
                                                 href="#"
                                                 onclick="return false;"
                                                 data-toggle="modal"
-                                                data-target="#delete_formulation"
+                                                data-target="#delete_popup"
                                                 >Delete</a
                                               >
                                             </li>
@@ -1526,12 +2955,12 @@
                           </td>
                         </tr>
 
-                        <tr
-                          data-toggle="collapse"
-                          data-target="#demo4"
-                          class="accordion-toggle"
-                        >
-                          <td>
+                        <tr>
+                          <td
+                            data-toggle="collapse"
+                            data-target="#demo4"
+                            class="accordion-toggle"
+                          >
                             <button class="btn btn-xs">
                               <i
                                 class="far fa-minus-square"
@@ -1597,7 +3026,7 @@
                                     <a
                                       href="#"
                                       data-toggle="modal"
-                                      data-target="#view_task"
+                                      data-target="#add_key"
                                       onclick="return false;"
                                       >Add</a
                                     >
@@ -1607,7 +3036,7 @@
                                     <a
                                       href="#"
                                       data-toggle="modal"
-                                      data-target="#edit_task"
+                                      data-target="#edit_objective"
                                       onclick="return false;"
                                       >Edit</a
                                     >
@@ -1618,7 +3047,7 @@
                                       href="#"
                                       onclick="return false;"
                                       data-toggle="modal"
-                                      data-target="#delete_formulation"
+                                      data-target="#delete_popup"
                                       >Delete</a
                                     >
                                   </li>
@@ -1712,7 +3141,7 @@
                                               <a
                                                 href="#"
                                                 data-toggle="modal"
-                                                data-target="#edit_task"
+                                                data-target="#edit_key"
                                                 onclick="return false;"
                                                 >Edit</a
                                               >
@@ -1723,7 +3152,7 @@
                                                 href="#"
                                                 onclick="return false;"
                                                 data-toggle="modal"
-                                                data-target="#delete_formulation"
+                                                data-target="#delete_popup"
                                                 >Delete</a
                                               >
                                             </li>
@@ -1822,7 +3251,7 @@
                                               <a
                                                 href="#"
                                                 data-toggle="modal"
-                                                data-target="#edit_task"
+                                                data-target="#edit_key"
                                                 onclick="return false;"
                                                 >Edit</a
                                               >
@@ -1833,7 +3262,7 @@
                                                 href="#"
                                                 onclick="return false;"
                                                 data-toggle="modal"
-                                                data-target="#delete_formulation"
+                                                data-target="#delete_popup"
                                                 >Delete</a
                                               >
                                             </li>
@@ -1876,13 +3305,35 @@
     <script src="../../assets/js/admin.js"></script>
     <!-- Knob Js -->
     <script src="../../assets/jquery-ui.min.js"></script>
-    <script src="../../assets/select2.min.js"></script>
+    <script src="../../assets/moment.js"></script>
+    <script src="../../assets/js/paging.js"></script>
+    <script src="../../assets/js/pages/spiritedaway.js"></script>
+    <script src="../../assets/jquery.editable.min.js"></script>
     <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/pickr.es5.min.js"></script>
+    <script src="../../assets/datepickerair.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <!-- <script src="../../assets/select2.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script src="../../assets/datepicker.en.js"></script>
     <script src="../../assets/js/widgets.js"></script>
+    <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
+
     <script src="../../assets/knockout-3.5.0.js"></script>
+    <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
+    <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
+    <script src="assets/daterangepicker/daterangepicker.min.js"></script>
 
     <script>
+      $(".daterangepicker-field").daterangepicker({
+        forceUpdate: true,
+        callback: function (startDate, endDate, period) {
+          var title = startDate.format("L") + " – " + endDate.format("L");
+          $(this).val(title);
+        },
+      });
+
       $(document).ready(function () {
         $(".module-multi-select").select2();
         $(".module-multi-select-edit").select2();
@@ -1891,14 +3342,107 @@
       $(".accordion-toggle").click(function () {
         $("#icon-change", this).toggleClass("fa-minus-square fa-plus-square");
       });
-    </script>
-    <script>
-      $(".daterangepicker-field").daterangepicker({
-        forceUpdate: true,
-        callback: function (startDate, endDate, period) {
-          var title = startDate.format("L") + " – " + endDate.format("L");
-          $(this).val(title);
-        },
+
+      $(document).ready(function () {
+        $("#Share_option")
+          .change(function () {
+            $(this)
+              .find("option:selected")
+              .each(function () {
+                var optionValue = $(this).attr("value");
+                if (optionValue) {
+                  $(".share-with")
+                    .not("." + optionValue)
+                    .hide();
+                  $("." + optionValue).show();
+                } else {
+                  $(".share-with").hide();
+                }
+              });
+          })
+          .change();
+      });
+
+      $(document).ready(function () {
+        $("#Share_option_edit")
+          .change(function () {
+            $(this)
+              .find("option:selected")
+              .each(function () {
+                var optionValue = $(this).attr("value");
+                if (optionValue) {
+                  $(".share-with-edit")
+                    .not("." + optionValue)
+                    .hide();
+                  $("." + optionValue).show();
+                } else {
+                  $(".share-with-edit").hide();
+                }
+              });
+          })
+          .change();
+      });
+
+      $("#add_dept").click(function (e) {
+        $("#dept_section").append(
+          `<div class="input-group" style="margin-bottom: 0px; margin-top: 8px;">
+              <select
+                class="form-control browser-default custom-input-select"
+              >
+                <option value="Department 1">Department 1</option>
+                <option value="Department 2">Department 2</option>
+                <option value="Department 3">Department 3</option>
+                <option value="Department 4">Department 4</option>
+              </select>
+
+              <input
+                type="text"
+                class="form-control browser-default custom-input ml-1"
+                placeholder="Weightage (%)"
+                value=""
+              />
+            </div>`
+        );
+      });
+
+      $("#edit_dept").click(function (e) {
+        $("#dept_section_edit").append(
+          `<div class="input-group" style="margin-bottom: 0px; margin-top: 8px;">
+              <select
+                class="form-control browser-default custom-input-select"
+              >
+                <option value="Department 1">Department 1</option>
+                <option value="Department 2">Department 2</option>
+                <option value="Department 3">Department 3</option>
+                <option value="Department 4">Department 4</option>
+              </select>
+
+              <input
+                type="text"
+                class="form-control browser-default custom-input ml-1"
+                placeholder="Weightage (%)"
+                value=""
+              />
+            </div>`
+        );
+      });
+
+      $("#selectall").click(function () {
+        if ($(this).is(":checked")) {
+          $(".user-select-check input").attr("checked", true);
+        } else {
+          $(".user-select-check input").attr("checked", false);
+        }
+      });
+
+      $("#search2").click(function () {
+        $("#search_section2").show();
+        $("#search2").hide();
+      });
+
+      $("#close_search2").click(function () {
+        $("#search2").show();
+        $("#search_section2").hide();
       });
     </script>
   </body>
