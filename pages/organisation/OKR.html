@@ -38,7 +38,10 @@
     <link rel="stylesheet" href="../../assets/classic.min.css" />
 
     <link rel="stylesheet" href="../../assets/treeable/jquery.treetable.css" />
-    <link rel="stylesheet" href="../../assets/select2.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="../../assets/treeable/jquery.treetable.theme.default.css"
@@ -202,6 +205,10 @@
         top: 1px;
         font-size: 13px;
         color: #c2c2c2;
+      }
+
+      .select2-container {
+        width: 100% !important;
       }
     </style>
   </head>
@@ -512,7 +519,7 @@
     >
       <div
         class="modal-dialog modal-dialog-centered modal-lg"
-        style="width: 600px"
+        style="width: 800px"
       >
         <div class="modal-content">
           <div class="modal-header">
@@ -530,8 +537,17 @@
               &times;
             </button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body" style="height: 620px; overflow-y: auto">
             <div class="row">
+              <div class="col-12 form-group mb-4">
+                <textarea
+                  class="form-control browser-default custom-textarea"
+                  cols="10"
+                  rows="3"
+                  placeholder="Type your objective"
+                ></textarea>
+              </div>
+
               <div class="col-4 form-group mb-4">
                 <label for="ID">ID</label>
               </div>
@@ -542,19 +558,6 @@
                   class="form-control browser-default custom-input"
                   value="45263546"
                 />
-              </div>
-
-              <div class="col-4 form-group mb-4">
-                <label for="Objective">Type your objective</label>
-              </div>
-
-              <div class="col-8 form-group mb-4">
-                <textarea
-                  class="form-control browser-default custom-textarea"
-                  cols="10"
-                  rows="3"
-                  placeholder="Enter objective"
-                ></textarea>
               </div>
 
               <div class="col-4 form-group mb-4">
@@ -598,16 +601,18 @@
                   <select
                     class="form-control browser-default custom-input-select"
                   >
-                    <option value="Department 1">Department 1</option>
-                    <option value="Department 2">Department 2</option>
-                    <option value="Department 3">Department 3</option>
-                    <option value="Department 4">Department 4</option>
+                    <option value="Sales & Marketing">Sales & Marketing</option>
+                    <option value="Building Automation">
+                      Building Automation & Machinery
+                    </option>
+                    <option value="Media Management">Media Management</option>
                   </select>
 
                   <input
                     type="text"
                     class="form-control browser-default custom-input ml-1"
-                    placeholder="Weightage (%)"
+                    placeholder="Weight (%)"
+                    style="width: 50% !important"
                     value=""
                   />
 
@@ -742,7 +747,7 @@
     >
       <div
         class="modal-dialog modal-dialog-centered modal-lg"
-        style="width: 600px"
+        style="width: 800px"
       >
         <div class="modal-content">
           <div class="modal-header">
@@ -760,8 +765,19 @@
               &times;
             </button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body" style="height: 620px; overflow-y: auto">
             <div class="row">
+              <div class="col-12 form-group mb-4">
+                <textarea
+                  class="form-control browser-default custom-textarea"
+                  cols="10"
+                  rows="3"
+                  placeholder="Type your objective"
+                >
+Improve performance review and evaluation process</textarea
+                >
+              </div>
+
               <div class="col-4 form-group mb-4">
                 <label for="ID">ID</label>
               </div>
@@ -772,21 +788,6 @@
                   class="form-control browser-default custom-input"
                   value="45263546"
                 />
-              </div>
-
-              <div class="col-4 form-group mb-4">
-                <label for="Objective">Type your objective</label>
-              </div>
-
-              <div class="col-8 form-group mb-4">
-                <textarea
-                  class="form-control browser-default custom-textarea"
-                  cols="10"
-                  rows="3"
-                  placeholder="Enter objective"
-                >
-Improve performance review and evaluation process</textarea
-                >
               </div>
 
               <div class="col-4 form-group mb-4">
@@ -832,16 +833,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.</textarea
                   <select
                     class="form-control browser-default custom-input-select"
                   >
-                    <option value="Department 1">Department 1</option>
-                    <option value="Department 2">Department 2</option>
-                    <option value="Department 3">Department 3</option>
-                    <option value="Department 4">Department 4</option>
+                    <option value="Sales & Marketing">Sales & Marketing</option>
+                    <option value="Building Automation">
+                      Building Automation & Machinery
+                    </option>
+                    <option value="Media Management">Media Management</option>
                   </select>
 
                   <input
                     type="text"
                     class="form-control browser-default custom-input ml-1"
-                    placeholder="Weightage (%)"
+                    placeholder="Weight (%)"
+                    style="width: 50% !important"
                     value="10"
                   />
 
@@ -996,7 +999,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, </textarea
               &times;
             </button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body" style="height: 620px; overflow-y: auto">
             <div class="row">
               <div class="col-12 form-group mb-4">
                 <textarea
@@ -1033,7 +1036,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, </textarea
               </div>
 
               <div class="col-4 form-group mb-4">
-                <label for="Uint">Uint</label>
+                <label for="Unit">Unit</label>
               </div>
 
               <div class="col-8 form-group mb-4">
@@ -1233,7 +1236,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, </textarea
               &times;
             </button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body" style="height: 620px; overflow-y: auto">
             <div class="row">
               <div class="col-12 form-group mb-4">
                 <textarea
@@ -1272,7 +1275,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, </textarea
               </div>
 
               <div class="col-4 form-group mb-4">
-                <label for="Uint">Uint</label>
+                <label for="Unit">Unit</label>
               </div>
 
               <div class="col-8 form-group mb-4">
@@ -2064,16 +2067,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea
                                       >Delete</a
                                     >
                                   </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#view_task"
-                                      onclick="return false;"
-                                      >View</a
-                                    >
-                                  </li>
                                 </ul>
                               </li>
                             </ul>
@@ -2173,16 +2166,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea
                                                 >Delete</a
                                               >
                                             </li>
-
-                                            <li>
-                                              <a
-                                                href="#"
-                                                data-toggle="modal"
-                                                data-target="#view_task"
-                                                onclick="return false;"
-                                                >View</a
-                                              >
-                                            </li>
                                           </ul>
                                         </li>
                                       </ul>
@@ -2279,16 +2262,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea
                                       data-toggle="modal"
                                       data-target="#delete_popup"
                                       >Delete</a
-                                    >
-                                  </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#view_task"
-                                      onclick="return false;"
-                                      >View</a
                                     >
                                   </li>
                                 </ul>
@@ -2393,16 +2366,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea
                                       >Delete</a
                                     >
                                   </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#view_task"
-                                      onclick="return false;"
-                                      >View</a
-                                    >
-                                  </li>
                                 </ul>
                               </li>
                             </ul>
@@ -2499,16 +2462,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea
                                                 data-toggle="modal"
                                                 data-target="#delete_popup"
                                                 >Delete</a
-                                              >
-                                            </li>
-
-                                            <li>
-                                              <a
-                                                href="#"
-                                                data-toggle="modal"
-                                                data-target="#view_task"
-                                                onclick="return false;"
-                                                >View</a
                                               >
                                             </li>
                                           </ul>
@@ -2611,16 +2564,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea
                                                 >Delete</a
                                               >
                                             </li>
-
-                                            <li>
-                                              <a
-                                                href="#"
-                                                data-toggle="modal"
-                                                data-target="#view_task"
-                                                onclick="return false;"
-                                                >View</a
-                                              >
-                                            </li>
                                           </ul>
                                         </li>
                                       </ul>
@@ -2715,16 +2658,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea
                                       data-toggle="modal"
                                       data-target="#delete_popup"
                                       >Delete</a
-                                    >
-                                  </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#view_task"
-                                      onclick="return false;"
-                                      >View</a
                                     >
                                   </li>
                                 </ul>
@@ -2829,16 +2762,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea
                                       >Delete</a
                                     >
                                   </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#view_task"
-                                      onclick="return false;"
-                                      >View</a
-                                    >
-                                  </li>
                                 </ul>
                               </li>
                             </ul>
@@ -2932,16 +2855,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea
                                                 data-toggle="modal"
                                                 data-target="#delete_popup"
                                                 >Delete</a
-                                              >
-                                            </li>
-
-                                            <li>
-                                              <a
-                                                href="#"
-                                                data-toggle="modal"
-                                                data-target="#view_task"
-                                                onclick="return false;"
-                                                >View</a
                                               >
                                             </li>
                                           </ul>
@@ -3051,16 +2964,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea
                                       >Delete</a
                                     >
                                   </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#view_task"
-                                      onclick="return false;"
-                                      >View</a
-                                    >
-                                  </li>
                                 </ul>
                               </li>
                             </ul>
@@ -3154,16 +3057,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea
                                                 data-toggle="modal"
                                                 data-target="#delete_popup"
                                                 >Delete</a
-                                              >
-                                            </li>
-
-                                            <li>
-                                              <a
-                                                href="#"
-                                                data-toggle="modal"
-                                                data-target="#view_task"
-                                                onclick="return false;"
-                                                >View</a
                                               >
                                             </li>
                                           </ul>
@@ -3266,16 +3159,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea
                                                 >Delete</a
                                               >
                                             </li>
-
-                                            <li>
-                                              <a
-                                                href="#"
-                                                data-toggle="modal"
-                                                data-target="#view_task"
-                                                onclick="return false;"
-                                                >View</a
-                                              >
-                                            </li>
                                           </ul>
                                         </li>
                                       </ul>
@@ -3335,8 +3218,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea
       });
 
       $(document).ready(function () {
-        $(".module-multi-select").select2();
-        $(".module-multi-select-edit").select2();
+        $(".obj-dept-1").select2();
       });
 
       $(".accordion-toggle").click(function () {
@@ -3389,16 +3271,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea
               <select
                 class="form-control browser-default custom-input-select"
               >
-                <option value="Department 1">Department 1</option>
-                <option value="Department 2">Department 2</option>
-                <option value="Department 3">Department 3</option>
-                <option value="Department 4">Department 4</option>
+                <option value="Sales & Marketing">Sales & Marketing</option>
+                <option value="Building Automation">
+                  Building Automation & Machinery
+                </option>
+                <option value="Media Management">Media Management</option>
               </select>
 
               <input
                 type="text"
                 class="form-control browser-default custom-input ml-1"
-                placeholder="Weightage (%)"
+                placeholder="Weight (%)"
+                style="width: 50% !important;"
                 value=""
               />
             </div>`
@@ -3408,19 +3292,21 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea
       $("#edit_dept").click(function (e) {
         $("#dept_section_edit").append(
           `<div class="input-group" style="margin-bottom: 0px; margin-top: 8px;">
-              <select
-                class="form-control browser-default custom-input-select"
-              >
-                <option value="Department 1">Department 1</option>
-                <option value="Department 2">Department 2</option>
-                <option value="Department 3">Department 3</option>
-                <option value="Department 4">Department 4</option>
-              </select>
+            <select
+              class="form-control browser-default custom-input-select"
+            >
+              <option value="Sales & Marketing">Sales & Marketing</option>
+              <option value="Building Automation">
+                Building Automation & Machinery
+              </option>
+              <option value="Media Management">Media Management</option>
+            </select>
 
               <input
                 type="text"
                 class="form-control browser-default custom-input ml-1"
-                placeholder="Weightage (%)"
+                placeholder="Weight (%)"
+                style="width: 50% !important;"
                 value=""
               />
             </div>`

@@ -202,6 +202,11 @@
         width: 230px !important;
       }
 
+      .dropdown-menu > li > a {
+        font-size: 12px;
+        line-height: 16px;
+      }
+
       .search-section .fa-times {
         position: absolute;
         right: 2px;
@@ -1606,7 +1611,7 @@
                     </h4>
                   </div>
                 </div>
-                <div class="col-2">
+                <!-- <div class="col-2">
                   <button
                     class="btn btn-custom-secondary pull-right"
                     style="margin-left: 4px"
@@ -1621,7 +1626,7 @@
                       title="Update"
                     ></i>
                   </button>
-                </div>
+                </div> -->
               </div>
 
               <div class="row okr-details">
@@ -1655,8 +1660,12 @@
                         <div class="content">0</div>
                       </li>
                       <li>
-                        <div class="okr-name">Target</div>
-                        <div class="content">Should stay below 1,000,000</div>
+                        <div class="okr-name" style="padding-bottom: 14px">
+                          Target
+                        </div>
+                        <div class="content" style="padding-bottom: 14px">
+                          Should stay below 1,000,000
+                        </div>
                       </li>
                     </ul>
                   </div>
@@ -2020,9 +2029,9 @@
                   </div>
                 </div>
                 <div class="col-6 chart-section">
-                  <div class="charts">
+                  <div class="charts" style="border-bottom: 1px solid #e3e3e3">
                     <div
-                      style="width: 100%; height: 350px"
+                      style="width: 100%; height: 350px; margin-bottom: -10px"
                       id="lineChart"
                     ></div>
                   </div>
