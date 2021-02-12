@@ -21,6 +21,7 @@
     <!-- <link rel="stylesheet" href="../../assets/daterangepicker.css"> -->
     <link rel="stylesheet" href="../../assets/datepickerair.css" />
     <link href="../../assets/jquery-ui.min.css" rel="stylesheet" />
+    <link href="../../assets/js/file-upload/file-upload.css" rel="stylesheet" />
     <link
       href="../../assets/daterangepicker/daterangepicker.min.css"
       rel="stylesheet"
@@ -589,14 +590,11 @@
                 </select>
               </div>
 
-              <div class="col-4 form-group mb-4">
+              <div class="col-4 form-group">
                 <label for="Department">Department</label>
               </div>
 
-              <div
-                class="col-8 form-group mb-4 share-with Yes"
-                id="dept_section"
-              >
+              <div class="col-8 form-group share-with Yes" id="dept_section">
                 <div class="input-group" style="margin-bottom: 0px">
                   <select
                     class="form-control browser-default custom-input-select"
@@ -615,24 +613,25 @@
                     style="width: 50% !important"
                     value=""
                   />
-
-                  <span
-                    id="add_dept"
-                    style="
-                      height: 30px;
-                      width: 30px;
-                      padding: 6px 9px;
-                      border: 1px solid #ced4da;
-                      border-radius: 4px;
-                      cursor: pointer;
-                      margin-left: 2px;
-                    "
-                  >
-                    <i class="fas fa-plus"></i>
-                  </span>
                 </div>
               </div>
-
+              <div class="col-4 form-group mb-4 share-with Yes"></div>
+              <div class="col-8 form-group mb-4 share-with Yes">
+                <span
+                  id="add_dept"
+                  style="
+                    height: 26px;
+                    width: 26px;
+                    padding: 4px 7px;
+                    border: 1px solid #ced4da;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    margin-left: 2px;
+                  "
+                >
+                  <i class="fas fa-plus"></i>
+                </span>
+              </div>
               <div
                 class="col-8 form-group mb-4 share-with No"
                 style="display: none"
@@ -821,12 +820,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.</textarea
                 </select>
               </div>
 
-              <div class="col-4 form-group mb-4">
+              <div class="col-4 form-group">
                 <label for="Department">Department</label>
               </div>
 
               <div
-                class="col-8 form-group mb-4 share-with-edit Yess"
+                class="col-8 form-group share-with-edit Yess"
                 id="dept_section_edit"
               >
                 <div class="input-group" style="margin-bottom: 0px">
@@ -847,22 +846,24 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.</textarea
                     style="width: 50% !important"
                     value="10"
                   />
-
-                  <span
-                    id="edit_dept"
-                    style="
-                      height: 30px;
-                      width: 30px;
-                      padding: 6px 9px;
-                      border: 1px solid #ced4da;
-                      border-radius: 4px;
-                      cursor: pointer;
-                      margin-left: 2px;
-                    "
-                  >
-                    <i class="fas fa-plus"></i>
-                  </span>
                 </div>
+              </div>
+              <div class="col-4 form-group mb-4 share-with-edit Yess"></div>
+              <div class="col-8 form-group mb-4 share-with-edit Yess">
+                <span
+                  id="edit_dept"
+                  style="
+                    height: 26px;
+                    width: 26px;
+                    padding: 4px 7px;
+                    border: 1px solid #ced4da;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    margin-left: 2px;
+                  "
+                >
+                  <i class="fas fa-plus"></i>
+                </span>
               </div>
 
               <div
@@ -1510,6 +1511,218 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea
     </div>
     <!-- Delete Popup -->
 
+    <!-- File Validate Form -->
+    <div
+      class="modal fade"
+      id="file-validate-form"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4
+              style="
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e252d;
+                margin-bottom: 18px;
+              "
+            >
+              File Upload
+            </h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-12">
+                <ul class="form-progressbar">
+                  <li>Upload</li>
+                  <li>Validation</li>
+                  <li>Import</li>
+                </ul>
+              </div>
+              <div class="col-md-12">
+                <hr />
+              </div>
+            </div>
+            <!-- <form> -->
+            <div class="row" id="file-upload">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label
+                    for="risk_rating"
+                    style="font-size: 14px; font-weight: 600"
+                  >
+                    Import Category</label
+                  >
+                  <select
+                    id="category"
+                    name="category"
+                    class="form-control browser-default"
+                  >
+                    <option value="">Choose</option>
+                    <option value="Organisation Import">Org chart</option>
+                    <option value="Scorecard Import">Scorecard</option>
+                    <option value="Initiative Import">Initiatives</option>
+                  </select>
+                  <span id="categoryerror" style="color: red; display: none">
+                    Kindly select category to upload a file</span
+                  >
+                </div>
+                <div class="form-group">
+                  <label class="control-label">Upload File</label>
+                  <div class="preview-zone hidden">
+                    <div class="box box-solid">
+                      <div class="box-body"></div>
+                    </div>
+                  </div>
+                  <div class="dropzone-wrapper">
+                    <div class="dropzone-desc">
+                      <i class="fas fa-file-upload" style="font-size: 20px"></i>
+                      <p>Choose a file or drag it here.</p>
+                    </div>
+                    <input
+                      type="file"
+                      name="img_logo"
+                      class="dropzone"
+                      accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <hr />
+              </div>
+              <div class="col-md-12">
+                <div class="form-line right">
+                  <button
+                    class="initative_save_btn"
+                    id="next-btn-1"
+                    style="font-weight: 600"
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="row" id="file-validate" style="display: none">
+              <div class="col-md-12 img-center">
+                <!-- <img
+                        src="../organisation/images/Verified.png"
+                        alt="Verified"
+                      /> -->
+                <img
+                  src="../organisation/images/Not-Verified.png"
+                  alt="Not-Verified"
+                />
+                <div class="error-div">
+                  <table class="error-table">
+                    <thead>
+                      <tr>
+                        <th style="width: 150px">Row</th>
+                        <th>Error</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="width: 150px">1</td>
+                        <td>Contain Special Character</td>
+                      </tr>
+                      <tr>
+                        <td style="width: 150px">3</td>
+                        <td>Contain Special Character</td>
+                      </tr>
+                      <tr>
+                        <td style="width: 150px">5</td>
+                        <td>Contain Special Character</td>
+                      </tr>
+                      <tr>
+                        <td style="width: 150px">8</td>
+                        <td>Contain Special Character</td>
+                      </tr>
+                      <tr>
+                        <td style="width: 150px">10</td>
+                        <td>Contain Special Character</td>
+                      </tr>
+                      <tr>
+                        <td style="width: 150px">19</td>
+                        <td>Contain Special Character</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <hr />
+              </div>
+              <div class="col-md-12">
+                <div class="form-line">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    id="prev-btn1"
+                    style="font-weight: 600"
+                  >
+                    Previous
+                  </button>
+                  <button
+                    class="initative_save_btn pull-right"
+                    id="next-btn-2"
+                    style="font-weight: 600"
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="row" id="file-save" style="display: none">
+              <div class="col-md-12">
+                <div class="col-md-12 img-center">
+                  <img
+                    src="../organisation/images/Success.png"
+                    alt="Verified"
+                  />
+                </div>
+              </div>
+              <div class="col-md-12">
+                <hr />
+              </div>
+              <div class="col-md-12">
+                <div class="form-line">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    id="prev-btn2"
+                    style="font-weight: 600"
+                  >
+                    Previous
+                  </button>
+                  <button
+                    class="initative_save_btn pull-right"
+                    id="done-btn"
+                    style="font-weight: 600"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Done
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- </form> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END File Validate Form -->
+
     <!--#Start User Edit Popup -->
     <div
       class="modal fade"
@@ -1922,6 +2135,34 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea
               title="Add Objectives"
             ></i>
           </button>
+
+          <button
+            class="btn btn-custom-secondary pull-right"
+            style="margin-right: 4px"
+            data-toggle="modal"
+            data-target="#file-validate-form"
+          >
+            <i
+              style="font-size: 14px"
+              class="fas fa-download"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="Import"
+            ></i>
+          </button>
+
+          <button
+            class="btn btn-custom-secondary pull-right"
+            style="margin-right: 4px"
+          >
+            <i
+              style="font-size: 14px"
+              class="fas fa-upload"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="Export"
+            ></i>
+          </button>
         </div>
       </div>
 
@@ -1953,7 +2194,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea
                           <th style="width: 40px">&nbsp;</th>
                           <th style="width: 80px">Status</th>
                           <th style="width: 100px">Owner</th>
-                          <th style="width: 346px">Name</th>
+                          <th style="width: 346px; text-align: left">Name</th>
                           <th style="width: 120px">Progress</th>
                           <th style="width: 120px"># of Key Results</th>
                           <th style="width: 80px">Initial</th>
@@ -3201,6 +3442,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea
     <script src="../../assets/datepicker.en.js"></script>
     <script src="../../assets/js/widgets.js"></script>
     <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
+    <script src="../../assets/js/file-upload/file-upload.js"></script>
 
     <script src="../../assets/knockout-3.5.0.js"></script>
     <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
