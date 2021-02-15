@@ -2084,7 +2084,10 @@ label {
 
 .okr-title .header-icon i {
   font-size: 18px;
-  color: #1aa243;
+}
+
+.okr-title .header-icon img {
+  width: 20px;
 }
 
 .okr-title .header-text {
@@ -2184,6 +2187,16 @@ label {
 
 .okr-details div .tasks .section-items div:last-child {
   margin-left: 20px;
+}
+
+.okr-details div .tasks .section-items .type-icon {
+  display: flex;
+  align-items: center;
+  width: 20px;
+}
+
+.okr-details div .tasks .section-items .type-icon i {
+  font-size: 12px;
 }
 
 .okr-details div .tasks .section-items .owner-icon {

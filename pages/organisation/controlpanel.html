@@ -355,6 +355,61 @@
       label {
         font-size: 16px;
       }
+
+      .color-ranges {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: row;
+        padding: 8px 0;
+        border-bottom: 1px solid #e9f0f9;
+        margin-bottom: 12px;
+        align-items: center;
+      }
+
+      .color-ranges .color-box {
+        display: flex;
+        align-items: center;
+        width: 40px;
+      }
+
+      .color-ranges .color-box span {
+        width: 30px;
+        height: 30px;
+        border-radius: 4px;
+      }
+
+      .color-ranges .color-settings-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .color-ranges .color-settings-content p {
+        color: #888888;
+        margin: 0;
+        font-size: 11px;
+      }
+
+      .color-ranges .color-settings-content h4 {
+        color: #1e252d;
+        padding: 0;
+        margin: 0;
+        font-size: 16px;
+      }
+
+      .color-ranges .color-more {
+        display: flex;
+        align-items: center;
+        width: 30px;
+      }
+
+      .color-ranges .color-more span {
+        cursor: pointer;
+      }
+
+      .color-ranges .color-more span i {
+        color: #949494;
+      }
     </style>
   </head>
 
@@ -3419,6 +3474,153 @@
                             </ul>
                           </div>
                         </div>
+                      </div>
+
+                      <!-- OKR Settings -->
+                      <div class="panel-tab-content">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <h4>OKR Settings</h4>
+                          </div>
+                          <div class="col-4 form-group">
+                            <label for="">Status Color Settings</label>
+                            <select class="form-control browser-default">
+                              <option>Select Status Type</option>
+                              <option value="Color">Color</option>
+                              <option value="No Color">No Color</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-12">
+                            <label for="">Color Range</label>
+                          </div>
+                          <div
+                            class="col-6"
+                            style="height: 322px; overflow-x: auto"
+                          >
+                            <div class="color-ranges">
+                              <div class="color-box">
+                                <span style="background-color: #e84343"></span>
+                              </div>
+                              <div class="color-settings-content">
+                                <p>When Score is</p>
+                                <h4>Greater than 90</h4>
+                              </div>
+                              <div class="color-more">
+                                <span class="pull-rght">
+                                  <i
+                                    class="fas fa-pen"
+                                    data-toggle="tooltip"
+                                    data-placement="bottom"
+                                    title="Update"
+                                  ></i>
+                                </span>
+                              </div>
+                            </div>
+                            <div class="color-ranges">
+                              <div class="color-box">
+                                <span style="background-color: #ffd500"></span>
+                              </div>
+                              <div class="color-settings-content">
+                                <p>When Score is</p>
+                                <h4>Greater than 90</h4>
+                              </div>
+                              <div class="color-more">
+                                <span class="pull-rght">
+                                  <i
+                                    class="fas fa-pen"
+                                    data-toggle="tooltip"
+                                    data-placement="bottom"
+                                    title="Update"
+                                  ></i>
+                                </span>
+                              </div>
+                            </div>
+                            <div class="color-ranges">
+                              <div class="color-box">
+                                <span style="background-color: #e17a2d"></span>
+                              </div>
+                              <div class="color-settings-content">
+                                <p>When Score is</p>
+                                <h4>Greater than 90</h4>
+                              </div>
+                              <div class="color-more">
+                                <span style="padding-right: 10px">
+                                  <i
+                                    class="fas fa-pen"
+                                    data-toggle="tooltip"
+                                    data-placement="bottom"
+                                    title="Update"
+                                  ></i>
+                                </span>
+                                <span>
+                                  <i
+                                    class="fas fa-trash"
+                                    data-toggle="tooltip"
+                                    data-placement="bottom"
+                                    title="Delete"
+                                  ></i>
+                                </span>
+                              </div>
+                            </div>
+                            <div class="color-ranges">
+                              <div class="color-box">
+                                <span style="background-color: #1aa243"></span>
+                              </div>
+                              <div class="color-settings-content">
+                                <p>When Score is</p>
+                                <h4>Greater than 90</h4>
+                              </div>
+                              <div class="color-more">
+                                <span style="padding-right: 10px">
+                                  <i
+                                    class="fas fa-pen"
+                                    data-toggle="tooltip"
+                                    data-placement="bottom"
+                                    title="Update"
+                                  ></i>
+                                </span>
+                                <span>
+                                  <i
+                                    class="fas fa-trash"
+                                    data-toggle="tooltip"
+                                    data-placement="bottom"
+                                    title="Delete"
+                                  ></i>
+                                </span>
+                              </div>
+                            </div>
+                            <div class="color-ranges">
+                              <div class="color-box">
+                                <span style="background-color: #1e2dfc"></span>
+                              </div>
+                              <div class="color-settings-content">
+                                <p>When Score is</p>
+                                <h4>Greater than 90</h4>
+                              </div>
+                              <div class="color-more">
+                                <span style="padding-right: 10px">
+                                  <i
+                                    class="fas fa-pen"
+                                    data-toggle="tooltip"
+                                    data-placement="bottom"
+                                    title="Update"
+                                  ></i>
+                                </span>
+                                <span>
+                                  <i
+                                    class="fas fa-trash"
+                                    data-toggle="tooltip"
+                                    data-placement="bottom"
+                                    title="Delete"
+                                  ></i>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <hr style="margin-top: 0; margin-bottom: 16px" />
                       </div>
                     </div>
                   </div>

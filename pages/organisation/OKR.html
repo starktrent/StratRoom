@@ -538,14 +538,14 @@
               &times;
             </button>
           </div>
-          <div class="modal-body" style="height: 620px; overflow-y: auto">
+          <div class="modal-body" style="max-height: 620px; overflow-y: auto">
             <div class="row">
               <div class="col-12 form-group mb-4">
                 <textarea
                   class="form-control browser-default custom-textarea"
                   cols="10"
                   rows="3"
-                  placeholder="Type your objective"
+                  placeholder="Type your objective. Consider a title not longer than 70 characters to make it easy to remember"
                 ></textarea>
               </div>
 
@@ -575,6 +575,23 @@
               </div>
 
               <div class="col-4 form-group mb-4">
+                <label for="Department">Department</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="971">Human Resource</option>
+                  <option value="972">Designer</option>
+                  <option value="973">Developer</option>
+                  <option value="973">Tester</option>
+                  <option value="973">Manager</option>
+                  <option value="973">Marketing</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
                 <label for="Objective Share"
                   >Is your objective to be shared?</label
                 >
@@ -591,7 +608,9 @@
               </div>
 
               <div class="col-4 form-group">
-                <label for="Department">Department</label>
+                <label for="Department Contribution"
+                  >Department Contribution</label
+                >
               </div>
 
               <div class="col-8 form-group share-with Yes" id="dept_section">
@@ -690,29 +709,19 @@
               </div>
 
               <div class="col-4 form-group mb-4">
-                <label for="Progress">Progress Calculation</label>
+                <label for="Performance">Performance Calculation</label>
               </div>
 
               <div class="col-8 form-group mb-4">
                 <select
                   class="form-control browser-default custom-input-select"
                 >
-                  <option value="Key Result 1">Key Result 1</option>
-                  <option value="Key Result 2">Key Result 2</option>
+                  <option value="Key Results">Key Results</option>
+                  <option value="Child Objectives">Child Objectives</option>
+                  <option value="Key Results & Child Objective">
+                    Key Results & Child Objective
+                  </option>
                 </select>
-              </div>
-
-              <div class="col-4 form-group mb-4">
-                <label for="Comments">Comments</label>
-              </div>
-
-              <div class="col-8 form-group mb-4">
-                <textarea
-                  class="form-control browser-default custom-textarea"
-                  cols="10"
-                  rows="3"
-                  placeholder="Enter comments"
-                ></textarea>
               </div>
 
               <div class="col-12">
@@ -764,17 +773,15 @@
               &times;
             </button>
           </div>
-          <div class="modal-body" style="height: 620px; overflow-y: auto">
+          <div class="modal-body" style="max-height: 620px; overflow-y: auto">
             <div class="row">
               <div class="col-12 form-group mb-4">
                 <textarea
                   class="form-control browser-default custom-textarea"
                   cols="10"
                   rows="3"
-                  placeholder="Type your objective"
-                >
-Improve performance review and evaluation process</textarea
-                >
+                  placeholder="Type your objective. Consider a title not longer than 70 characters to make it easy to remember"
+                ></textarea>
               </div>
 
               <div class="col-4 form-group mb-4">
@@ -799,9 +806,24 @@ Improve performance review and evaluation process</textarea
                   cols="10"
                   rows="3"
                   placeholder="Enter description"
+                ></textarea>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Department">Department</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
                 >
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.</textarea
-                >
+                  <option value="971">Human Resource</option>
+                  <option value="972">Designer</option>
+                  <option value="973">Developer</option>
+                  <option value="973">Tester</option>
+                  <option value="973">Manager</option>
+                  <option value="973">Marketing</option>
+                </select>
               </div>
 
               <div class="col-4 form-group mb-4">
@@ -821,7 +843,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.</textarea
               </div>
 
               <div class="col-4 form-group">
-                <label for="Department">Department</label>
+                <label for="Department Contribution"
+                  >Department Contribution</label
+                >
               </div>
 
               <div
@@ -931,24 +955,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.</textarea
                 <select
                   class="form-control browser-default custom-input-select"
                 >
-                  <option value="Key Result 1">Key Result 1</option>
-                  <option value="Key Result 2">Key Result 2</option>
+                  <option value="Key Results">Key Results</option>
+                  <option value="Child Objectives">Child Objectives</option>
+                  <option value="Key Results & Child Objective">
+                    Key Results & Child Objective
+                  </option>
                 </select>
-              </div>
-
-              <div class="col-4 form-group mb-4">
-                <label for="Comments">Comments</label>
-              </div>
-
-              <div class="col-8 form-group mb-4">
-                <textarea
-                  class="form-control browser-default custom-textarea"
-                  cols="10"
-                  rows="3"
-                  placeholder="Enter comments"
-                >
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, </textarea
-                >
               </div>
 
               <div class="col-12">
@@ -970,6 +982,244 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, </textarea
       </div>
     </div>
     <!-- Edit Objective -->
+
+    <!-- Add Child Objective -->
+    <div
+      class="modal fade"
+      id="add_child_objective"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="width: 800px"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4
+              style="
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e252d;
+                margin-bottom: 18px;
+              "
+            >
+              Add Child Objective
+            </h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body" style="max-height: 620px; overflow-y: auto">
+            <div class="row">
+              <div class="col-12 form-group mb-4">
+                <textarea
+                  class="form-control browser-default custom-textarea"
+                  cols="10"
+                  rows="3"
+                  placeholder="Type your objective. Consider a title not longer than 70 characters to make it easy to remember"
+                ></textarea>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="ID">ID</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  value="45263546"
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Description">Description</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <textarea
+                  class="form-control browser-default custom-textarea"
+                  cols="10"
+                  rows="3"
+                  placeholder="Enter description"
+                ></textarea>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Department">Department</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="971">Human Resource</option>
+                  <option value="972">Designer</option>
+                  <option value="973">Developer</option>
+                  <option value="973">Tester</option>
+                  <option value="973">Manager</option>
+                  <option value="973">Marketing</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Objective Share"
+                  >Is your objective to be shared?</label
+                >
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                  id="Share_option_child"
+                >
+                  <option value="YesC">Yes</option>
+                  <option value="NoC">No</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group">
+                <label for="Department Contribution"
+                  >Department Contribution</label
+                >
+              </div>
+
+              <div
+                class="col-8 form-group share-with-child YesC"
+                id="dept_section_child"
+              >
+                <div class="input-group" style="margin-bottom: 0px">
+                  <select
+                    class="form-control browser-default custom-input-select"
+                  >
+                    <option value="Sales & Marketing">Sales & Marketing</option>
+                    <option value="Building Automation">
+                      Building Automation & Machinery
+                    </option>
+                    <option value="Media Management">Media Management</option>
+                  </select>
+
+                  <input
+                    type="text"
+                    class="form-control browser-default custom-input ml-1"
+                    placeholder="Weight (%)"
+                    style="width: 50% !important"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div class="col-4 form-group mb-4 share-with-child YesC"></div>
+              <div class="col-8 form-group mb-4 share-with-child YesC">
+                <span
+                  id="add_dept_child"
+                  style="
+                    height: 26px;
+                    width: 26px;
+                    padding: 4px 7px;
+                    border: 1px solid #ced4da;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    margin-left: 2px;
+                  "
+                >
+                  <i class="fas fa-plus"></i>
+                </span>
+              </div>
+              <div
+                class="col-8 form-group mb-4 share-with-child NoC"
+                style="display: none"
+              >
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="100%">100% contribution</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Owner">Owner</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <div class="owner" style="padding-right: 12px">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Alignment">Alignment</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="Objective 1">Objective 1</option>
+                  <option value="Objective 2">Objective 2</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Performance">Performance Calculation</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="Key Results">Key Results</option>
+                  <option value="Child Objectives">Child Objectives</option>
+                  <option value="Key Results & Child Objective">
+                    Key Results & Child Objective
+                  </option>
+                </select>
+              </div>
+
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Add Child Objective -->
 
     <!-- Add Key Result -->
     <div
@@ -1044,8 +1294,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, </textarea
                 <select
                   class="form-control browser-default custom-input-select"
                 >
-                  <option value="Unit 1">Unit 1</option>
-                  <option value="Unit 2">Unit 2</option>
+                  <option value="No formatting">No formatting</option>
+                  <option value="$">$</option>
+                  <option value="%">%</option>
+                  <option value="#">#</option>
                 </select>
               </div>
 
@@ -1173,19 +1425,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, </textarea
                   <option value="Key Result 1">Key Result 1</option>
                   <option value="Key Result 2">Key Result 2</option>
                 </select>
-              </div>
-
-              <div class="col-4 form-group mb-4">
-                <label for="Comments">Comments</label>
-              </div>
-
-              <div class="col-8 form-group mb-4">
-                <textarea
-                  class="form-control browser-default custom-textarea"
-                  cols="10"
-                  rows="3"
-                  placeholder="Enter comments"
-                ></textarea>
               </div>
 
               <div class="col-12">
@@ -1283,8 +1522,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, </textarea
                 <select
                   class="form-control browser-default custom-input-select"
                 >
-                  <option value="Unit 1">Unit 1</option>
-                  <option value="Unit 2">Unit 2</option>
+                  <option value="No formatting">No formatting</option>
+                  <option value="$">$</option>
+                  <option value="%">%</option>
+                  <option value="#">#</option>
                 </select>
               </div>
 
@@ -1337,9 +1578,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, </textarea
                   cols="10"
                   rows="3"
                   placeholder="Enter description"
-                >
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.</textarea
-                >
+                ></textarea>
               </div>
 
               <div class="col-4 form-group mb-4">
@@ -1414,21 +1653,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.</textarea
                   <option value="Key Result 1">Key Result 1</option>
                   <option value="Key Result 2">Key Result 2</option>
                 </select>
-              </div>
-
-              <div class="col-4 form-group mb-4">
-                <label for="Comments">Comments</label>
-              </div>
-
-              <div class="col-8 form-group mb-4">
-                <textarea
-                  class="form-control browser-default custom-textarea"
-                  cols="10"
-                  rows="3"
-                  placeholder="Enter comments"
-                >
-Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea
-                >
               </div>
 
               <div class="col-12">
@@ -2144,6 +2368,21 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea
           >
             <i
               style="font-size: 14px"
+              class="fas fa-filter"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="Filter"
+            ></i>
+          </button>
+
+          <button
+            class="btn btn-custom-secondary pull-right"
+            style="margin-right: 4px"
+            data-toggle="modal"
+            data-target="#file-validate-form"
+          >
+            <i
+              style="font-size: 14px"
               class="fas fa-download"
               data-toggle="tooltip"
               data-placement="bottom"
@@ -2195,8 +2434,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea
                           <th style="width: 80px">Status</th>
                           <th style="width: 100px">Owner</th>
                           <th style="width: 346px; text-align: left">Name</th>
-                          <th style="width: 120px">Progress</th>
-                          <th style="width: 120px"># of Key Results</th>
+                          <th style="width: 120px">Score</th>
+                          <th style="width: 120px"># Key Results</th>
                           <th style="width: 80px">Initial</th>
                           <th style="width: 80px">Actual</th>
                           <th style="width: 80px">Target</th>
@@ -2283,9 +2522,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea
                                     <a
                                       href="#"
                                       data-toggle="modal"
+                                      data-target="#add_child_objective"
+                                      onclick="return false;"
+                                      >Add Child Objective</a
+                                    >
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
                                       data-target="#add_key"
                                       onclick="return false;"
-                                      >Add</a
+                                      >Add Key Result</a
                                     >
                                   </li>
 
@@ -3507,6 +3756,26 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea
           .change();
       });
 
+      $(document).ready(function () {
+        $("#Share_option_child")
+          .change(function () {
+            $(this)
+              .find("option:selected")
+              .each(function () {
+                var optionValue = $(this).attr("value");
+                if (optionValue) {
+                  $(".share-with-child")
+                    .not("." + optionValue)
+                    .hide();
+                  $("." + optionValue).show();
+                } else {
+                  $(".share-with-child").hide();
+                }
+              });
+          })
+          .change();
+      });
+
       $("#add_dept").click(function (e) {
         $("#dept_section").append(
           `<div class="input-group" style="margin-bottom: 0px; margin-top: 8px;">
@@ -3533,6 +3802,30 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea
 
       $("#edit_dept").click(function (e) {
         $("#dept_section_edit").append(
+          `<div class="input-group" style="margin-bottom: 0px; margin-top: 8px;">
+            <select
+              class="form-control browser-default custom-input-select"
+            >
+              <option value="Sales & Marketing">Sales & Marketing</option>
+              <option value="Building Automation">
+                Building Automation & Machinery
+              </option>
+              <option value="Media Management">Media Management</option>
+            </select>
+
+              <input
+                type="text"
+                class="form-control browser-default custom-input ml-1"
+                placeholder="Weight (%)"
+                style="width: 50% !important;"
+                value=""
+              />
+            </div>`
+        );
+      });
+
+      $("#add_dept_child").click(function (e) {
+        $("#dept_section_child").append(
           `<div class="input-group" style="margin-bottom: 0px; margin-top: 8px;">
             <select
               class="form-control browser-default custom-input-select"
