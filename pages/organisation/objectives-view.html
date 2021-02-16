@@ -182,6 +182,28 @@
         font-size: 13px;
         color: #c2c2c2;
       }
+
+      .select2-container {
+        width: 100% !important;
+      }
+
+      .select2-container--default
+        .select2-search--dropdown
+        .select2-search__field {
+        border: 1px solid #aaa;
+        height: 26px;
+        font-size: 12px;
+        margin-bottom: 4px;
+        margin-top: 4px;
+      }
+
+      .select2-container--open .select2-dropdown--below {
+        margin-top: -1px;
+      }
+
+      .select2-search--dropdown {
+        padding: 4px 6px 4px 4px;
+      }
     </style>
   </head>
 
@@ -1136,7 +1158,6 @@
     <div
       class="modal fade"
       id="add_child_objective"
-      tabindex="-1"
       role="dialog"
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
@@ -1239,7 +1260,7 @@
               <div class="col-8 form-group share-with Yes" id="dept_section">
                 <div class="input-group" style="margin-bottom: 0px">
                   <select
-                    class="form-control browser-default custom-input-select"
+                    class="dept-contribution1 form-control browser-default custom-input-select"
                   >
                     <option value="Sales & Marketing">Sales & Marketing</option>
                     <option value="Building Automation">
@@ -1328,13 +1349,14 @@
                 <select
                   class="form-control browser-default custom-input-select"
                 >
+                  <option value="Select">Select</option>
                   <option value="Objective 1">Objective 1</option>
                   <option value="Objective 2">Objective 2</option>
                 </select>
               </div>
 
               <div class="col-4 form-group mb-4">
-                <label for="Performance">Performance Calculation</label>
+                <label for="Score">Score Calculation</label>
               </div>
 
               <div class="col-8 form-group mb-4">
@@ -1373,7 +1395,6 @@
     <div
       class="modal fade"
       id="edit_child_objective"
-      tabindex="-1"
       role="dialog"
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
@@ -1479,7 +1500,7 @@
               >
                 <div class="input-group" style="margin-bottom: 0px">
                   <select
-                    class="form-control browser-default custom-input-select"
+                    class="dept-contribution2 form-control browser-default custom-input-select"
                   >
                     <option value="Sales & Marketing">Sales & Marketing</option>
                     <option value="Building Automation">
@@ -1569,13 +1590,14 @@
                 <select
                   class="form-control browser-default custom-input-select"
                 >
+                  <option value="Select">Select</option>
                   <option value="Objective 1">Objective 1</option>
                   <option value="Objective 2">Objective 2</option>
                 </select>
               </div>
 
               <div class="col-4 form-group mb-4">
-                <label for="Performance">Performance Calculation</label>
+                <label for="Score">Score Calculation</label>
               </div>
 
               <div class="col-8 form-group mb-4">
@@ -1614,7 +1636,6 @@
     <div
       class="modal fade"
       id="edit_objective"
-      tabindex="-1"
       role="dialog"
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
@@ -1720,7 +1741,7 @@
               >
                 <div class="input-group" style="margin-bottom: 0px">
                   <select
-                    class="form-control browser-default custom-input-select"
+                    class="dept-contribution3 form-control browser-default custom-input-select"
                   >
                     <option value="Sales & Marketing">Sales & Marketing</option>
                     <option value="Building Automation">
@@ -1808,13 +1829,14 @@
                 <select
                   class="form-control browser-default custom-input-select"
                 >
+                  <option value="Select">Select</option>
                   <option value="Objective 1">Objective 1</option>
                   <option value="Objective 2">Objective 2</option>
                 </select>
               </div>
 
               <div class="col-4 form-group mb-4">
-                <label for="Progress">Progress Calculation</label>
+                <label for="Score">Score Calculation</label>
               </div>
 
               <div class="col-8 form-group mb-4">
@@ -2042,22 +2064,6 @@
                 </select>
               </div>
 
-              <div class="col-4 form-group mb-4">
-                <label for="Performance">Performance Calculation</label>
-              </div>
-
-              <div class="col-8 form-group mb-4">
-                <select
-                  class="form-control browser-default custom-input-select"
-                >
-                  <option value="Key Results">Key Results</option>
-                  <option value="Child Objectives">Child Objectives</option>
-                  <option value="Key Results & Child Objective">
-                    Key Results & Child Objective
-                  </option>
-                </select>
-              </div>
-
               <div class="col-12">
                 <div class="form-line right">
                   <button
@@ -2270,22 +2276,6 @@
                 >
                   <option value="Yes">Yes</option>
                   <option value="No">No</option>
-                </select>
-              </div>
-
-              <div class="col-4 form-group mb-4">
-                <label for="Performance">Performance Calculation</label>
-              </div>
-
-              <div class="col-8 form-group mb-4">
-                <select
-                  class="form-control browser-default custom-input-select"
-                >
-                  <option value="Key Results">Key Results</option>
-                  <option value="Child Objectives">Child Objectives</option>
-                  <option value="Key Results & Child Objective">
-                    Key Results & Child Objective
-                  </option>
                 </select>
               </div>
 
@@ -2738,9 +2728,9 @@
             <div class="okr-body">
               <div class="row okr-title">
                 <div class="col-10">
-                  <span class="header-icon">
-                    <img src="../organisation/images/icon/obj.png" alt="" />
-                  </span>
+                  <span class="header-icon"
+                    ><i class="fas fa-bullseye" style="color: #05c2f6"></i
+                  ></span>
                   <div class="header-text">
                     <h4 contenteditable="true">Yearly Objective</h4>
                   </div>
@@ -2814,7 +2804,7 @@
                         <div class="content">-</div>
                       </li>
                       <li>
-                        <div class="okr-name">Parent</div>
+                        <div class="okr-name">Alignment</div>
                         <div class="content">-</div>
                       </li>
                       <li>
@@ -2988,7 +2978,11 @@
                     >
                       <div class="section-items">
                         <div class="type-icon">
-                          <i class="fas fa-bullseye" style="color: #05c2f6"></i>
+                          <img
+                            src="../organisation/images/icon/obj.png"
+                            style="width: 12px"
+                            alt=""
+                          />
                         </div>
                         <div class="owner-icon">
                           <img
@@ -3080,11 +3074,7 @@
 
                       <div class="section-items">
                         <div class="type-icon">
-                          <img
-                            src="../organisation/images/icon/obj.png"
-                            style="width: 12px"
-                            alt=""
-                          />
+                          <i class="fas fa-bullseye" style="color: #05c2f6"></i>
                         </div>
                         <div class="owner-icon">
                           <img
@@ -3571,11 +3561,6 @@
         },
       });
 
-      $(document).ready(function () {
-        $(".user-multi-select").select2();
-        $(".user-multi-select-2").select2();
-      });
-
       $(function () {
         // Multiple images preview in browser
         var imagesPreview = function (input, placeToInsertImagePreview) {
@@ -3679,11 +3664,18 @@
           .change();
       });
 
+      function selectRefresh1() {
+        $(".input-group .dept-contribution1").select2({
+          placeholder: "Select an Option",
+          width: "100%",
+        });
+      }
+
       $("#add_dept").click(function (e) {
         $("#dept_section").append(
           `<div class="input-group" style="margin-bottom: 0px; margin-top: 8px;">
               <select
-                class="form-control browser-default custom-input-select"
+                class="dept-contribution1 form-control browser-default custom-input-select"
               >
                 <option value="Sales & Marketing">Sales & Marketing</option>
                 <option value="Building Automation">
@@ -3701,13 +3693,25 @@
               />
             </div>`
         );
+        selectRefresh1();
       });
+
+      $(document).ready(function () {
+        selectRefresh1();
+      });
+
+      function selectRefresh2() {
+        $(".input-group .dept-contribution2").select2({
+          placeholder: "Select an Option",
+          width: "100%",
+        });
+      }
 
       $("#edit_dept_child").click(function (e) {
         $("#dept_section_edit_child").append(
           `<div class="input-group" style="margin-bottom: 0px; margin-top: 8px;">
             <select
-              class="form-control browser-default custom-input-select"
+              class="dept-contribution2 form-control browser-default custom-input-select"
             >
               <option value="Sales & Marketing">Sales & Marketing</option>
               <option value="Building Automation">
@@ -3725,13 +3729,25 @@
               />
             </div>`
         );
+        selectRefresh2();
       });
+
+      $(document).ready(function () {
+        selectRefresh2();
+      });
+
+      function selectRefresh3() {
+        $(".input-group .dept-contribution3").select2({
+          placeholder: "Select an Option",
+          width: "100%",
+        });
+      }
 
       $("#edit_dept").click(function (e) {
         $("#dept_section_edit").append(
           `<div class="input-group" style="margin-bottom: 0px; margin-top: 8px;">
             <select
-              class="form-control browser-default custom-input-select"
+              class="dept-contribution3 form-control browser-default custom-input-select"
             >
               <option value="Sales & Marketing">Sales & Marketing</option>
               <option value="Building Automation">
@@ -3749,6 +3765,11 @@
               />
             </div>`
         );
+        selectRefresh3();
+      });
+
+      $(document).ready(function () {
+        selectRefresh3();
       });
 
       $("#search2").click(function () {
