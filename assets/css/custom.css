@@ -2069,7 +2069,7 @@ label {
 .okr-body {
   border: 0.5px solid #ececec;
   background-color: #fff;
-  height: 690px;
+  height: 680px;
   border-radius: 18px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
   padding: 20px 20px 12px 20px;
@@ -2202,7 +2202,7 @@ label {
 .okr-details div .tasks .section-items .owner-icon {
   display: flex;
   align-items: center;
-  width: 20px;
+  width: 70px;
 }
 
 .okr-details div .tasks .section-items .owner-icon img {
@@ -2249,7 +2249,7 @@ label {
   font-size: 12px;
 }
 
-.okr-details .details-section .tasks .section-items .task-statuses .done {
+.okr-details div .tasks .section-items .task-statuses .done {
   background: #18c191;
   color: #fff;
   font-size: 12px;
@@ -2368,6 +2368,7 @@ label {
 .okr-details div .comments .comments-panel .panel-body h5 {
   font-size: 12px;
   color: #1e252d;
+  width: fit-content;
 }
 
 .okr-details div .comments .comment-footer {
@@ -2377,7 +2378,7 @@ label {
   background: #fff;
 }
 
-.okr-details div .comments .comment-footer input {
+.okr-details div .comments .comment-footer div input {
   border: 0;
   outline: none;
   margin-bottom: 4px;
@@ -2385,7 +2386,7 @@ label {
   padding-left: 6px;
 }
 
-.okr-details div .comments .comment-footer input::placeholder {
+.okr-details div .comments .comment-footer div input::placeholder {
   color: #848484 !important;
 }
 
