@@ -597,7 +597,7 @@
 
               <div class="col-8 form-group mb-4">
                 <select
-                  class="form-control browser-default custom-input-select"
+                  class="dept-select1 form-control browser-default custom-input-select"
                 >
                   <option value="971">Human Resource</option>
                   <option value="972">Designer</option>
@@ -832,7 +832,7 @@
 
               <div class="col-8 form-group mb-4">
                 <select
-                  class="form-control browser-default custom-input-select"
+                  class="dept-select2 form-control browser-default custom-input-select"
                 >
                   <option value="971">Human Resource</option>
                   <option value="972">Designer</option>
@@ -1071,7 +1071,7 @@
 
               <div class="col-8 form-group mb-4">
                 <select
-                  class="form-control browser-default custom-input-select"
+                  class="dept-select3 form-control browser-default custom-input-select"
                 >
                   <option value="971">Human Resource</option>
                   <option value="972">Designer</option>
@@ -4432,6 +4432,12 @@
 
       $(".accordion-toggle").click(function () {
         $("#icon-change", this).toggleClass("fa-minus-square fa-plus-square");
+      });
+
+      $(document).ready(function () {
+        $(".dept-select1").select2();
+        $(".dept-select2").select2();
+        $(".dept-select3").select2();
       });
 
       $(document).ready(function () {

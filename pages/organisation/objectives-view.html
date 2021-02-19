@@ -1224,7 +1224,7 @@
 
               <div class="col-8 form-group mb-4">
                 <select
-                  class="form-control browser-default custom-input-select"
+                  class="dept-select1 form-control browser-default custom-input-select"
                 >
                   <option value="971">Human Resource</option>
                   <option value="972">Designer</option>
@@ -1461,7 +1461,7 @@
 
               <div class="col-8 form-group mb-4">
                 <select
-                  class="form-control browser-default custom-input-select"
+                  class="dept-select2 form-control browser-default custom-input-select"
                 >
                   <option value="971">Human Resource</option>
                   <option value="972">Designer</option>
@@ -1702,7 +1702,7 @@
 
               <div class="col-8 form-group mb-4">
                 <select
-                  class="form-control browser-default custom-input-select"
+                  class="dept-select3 form-control browser-default custom-input-select"
                 >
                   <option value="971">Human Resource</option>
                   <option value="972">Designer</option>
@@ -2816,26 +2816,23 @@
                   <div class="comments" style="height: 316px; margin-top: 14px">
                     <div class="comments-panel">
                       <div class="panel-header">
-                        <span style="color: #929292"
-                          >January 08, 2021, 17:19</span
-                        >
-                        <span class="pull-right">
+                        <span>
                           <img
                             style="
                               width: 24px;
                               border-radius: 50%;
                               margin-top: -3px;
+                              margin-right: 8px;
                             "
                             src="images/user/usrbig10.jpg"
                             alt=""
                         /></span>
+                        <span style="color: #929292"
+                          >January 08, 2021, 17:19</span
+                        >
                         <span
                           class="pull-right"
-                          style="
-                            margin-right: 16px;
-                            color: #888;
-                            cursor: pointer;
-                          "
+                          style="color: #888; cursor: pointer"
                         >
                           <i
                             class="fas fa-trash"
@@ -2853,26 +2850,23 @@
                     </div>
                     <div class="comments-panel">
                       <div class="panel-header">
-                        <span style="color: #929292"
-                          >January 08, 2021, 17:19</span
-                        >
-                        <span class="pull-right">
+                        <span>
                           <img
                             style="
                               width: 24px;
                               border-radius: 50%;
                               margin-top: -3px;
+                              margin-right: 8px;
                             "
-                            src="images/user/usrbig8.jpg"
+                            src="images/user/usrbig10.jpg"
                             alt=""
                         /></span>
+                        <span style="color: #929292"
+                          >January 08, 2021, 17:19</span
+                        >
                         <span
                           class="pull-right"
-                          style="
-                            margin-right: 16px;
-                            color: #888;
-                            cursor: pointer;
-                          "
+                          style="color: #888; cursor: pointer"
                         >
                           <i
                             class="fas fa-trash"
@@ -2890,26 +2884,23 @@
                     </div>
                     <div class="comments-panel">
                       <div class="panel-header">
-                        <span style="color: #929292"
-                          >January 08, 2021, 17:19</span
-                        >
-                        <span class="pull-right">
+                        <span>
                           <img
                             style="
                               width: 24px;
                               border-radius: 50%;
                               margin-top: -3px;
+                              margin-right: 8px;
                             "
-                            src="images/user/usrbig9.jpg"
+                            src="images/user/usrbig10.jpg"
                             alt=""
                         /></span>
+                        <span style="color: #929292"
+                          >January 08, 2021, 17:19</span
+                        >
                         <span
                           class="pull-right"
-                          style="
-                            margin-right: 16px;
-                            color: #888;
-                            cursor: pointer;
-                          "
+                          style="color: #888; cursor: pointer"
                         >
                           <i
                             class="fas fa-trash"
@@ -2927,26 +2918,23 @@
                     </div>
                     <div class="comments-panel">
                       <div class="panel-header">
-                        <span style="color: #929292"
-                          >January 08, 2021, 17:19</span
-                        >
-                        <span class="pull-right">
+                        <span>
                           <img
                             style="
                               width: 24px;
                               border-radius: 50%;
                               margin-top: -3px;
+                              margin-right: 8px;
                             "
-                            src="images/user/usrbig6.jpg"
+                            src="images/user/usrbig10.jpg"
                             alt=""
                         /></span>
+                        <span style="color: #929292"
+                          >January 08, 2021, 17:19</span
+                        >
                         <span
                           class="pull-right"
-                          style="
-                            margin-right: 16px;
-                            color: #888;
-                            cursor: pointer;
-                          "
+                          style="color: #888; cursor: pointer"
                         >
                           <i
                             class="fas fa-trash"
@@ -2976,6 +2964,8 @@
                             width: 46px;
                             background: #1e252d;
                             margin-right: -1px;
+                            border-top-right-radius: 6px;
+                            border-bottom-right-radius: 6px;
                           "
                         >
                           <i class="fas fa-arrow-right"></i>
@@ -2989,22 +2979,16 @@
                     <div class="row progress-top-bar">
                       <div class="col-6">
                         <h4>
-                          <span
-                            style="
-                              background: #fef3d4;
-                              padding-left: 8px;
-                              border-radius: 2px;
-                              padding-bottom: 2px;
-                            "
-                            ><i
+                          <span>
+                            <i
                               class="fas fa-star"
                               style="
                                 color: #ffc107;
                                 margin-right: 8px;
                                 font-size: 12px;
                               "
-                            ></i
-                          ></span>
+                            ></i>
+                          </span>
                           Score
                         </h4>
                       </div>
@@ -3829,6 +3813,12 @@
         $("#file-upload").on("change", function () {
           imagesPreview(this, "div.preview-gallery");
         });
+      });
+
+      $(document).ready(function () {
+        $(".dept-select1").select2();
+        $(".dept-select2").select2();
+        $(".dept-select3").select2();
       });
 
       $("#open_search").click(function () {

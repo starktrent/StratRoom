@@ -124,6 +124,73 @@
         transition: 0.5s;
       }
 
+      .btn-secondary {
+        color: #fff;
+        background-color: #6c757d;
+        border-color: #6c757d;
+        padding: 0px 12px;
+        font-size: 12px;
+        background-color: #02162a;
+        margin-right: 3px;
+        margin-bottom: 9px;
+        border-radius: 8px !important;
+        margin-top: 8px;
+      }
+
+      .btn-secondary:hover {
+        color: #fff !important;
+        background-color: #6c757d !important;
+        border-color: #6c757d !important;
+        padding: 0px 12px !important;
+        font-size: 12px !important;
+        background-color: #02162a !important;
+        margin-right: 3px !important;
+        margin-bottom: 9px !important;
+        border-radius: 8px !important;
+        margin-top: 8px !important;
+      }
+
+      #result_panel > .panelbody > .list-group > .list-group-item {
+        padding: 5px 10px !important;
+      }
+
+      #formula_builder,
+      #summary_calculation {
+        font-size: 11px !important;
+      }
+
+      #kpi_formula_popup > .modal-content > .modal-body {
+        padding: 0 25px !important;
+      }
+
+      #kpi_formula_popup > .modal-content > .modal-body.card > .tab-content {
+        padding: 0;
+      }
+
+      #formula_builder {
+        padding-bottom: 0px;
+      }
+
+      .panel:hover {
+        cursor: pointer;
+      }
+
+      #formula-builder .col-md-4 {
+        margin-bottom: 0px;
+      }
+
+      .modal #kpi_formula_popup {
+        background-color: rgba(238, 238, 238, 0) !important;
+      }
+
+      .modal-backdrop {
+        opacity: 0.5 !important;
+      }
+
+      #kpi_formula_popup .modal-content .nav li a.nav-link {
+        font-size: 12px !important;
+      }
+
       /* Modal style change */
       .modal .modal-content {
         border-radius: 6px;
@@ -222,6 +289,47 @@
         top: 1px;
         font-size: 13px;
         color: #c2c2c2;
+      }
+
+      .dashboard-table thead tr th {
+        border: 1px solid #1e252d !important;
+        padding: 6px 4px 6px 4px;
+        font-size: 12px !important;
+        color: #ffffff;
+        background: #383838;
+        font-weight: 600;
+      }
+
+      .table-responsive .dashboard-table tbody tr td {
+        border: 1px solid #1e252d !important;
+        padding: 8px 4px 8px 4px !important;
+        font-size: 12px !important;
+        color: #4a4a4a;
+      }
+
+      .paging-nav {
+        text-align: right;
+        padding-top: 2px;
+      }
+
+      .paging-nav a {
+        margin: 6px 2px;
+        text-decoration: none;
+        display: inline-block;
+        padding: 4px 10px;
+        background: #71767a;
+        color: #fff !important;
+        border-radius: 3px;
+      }
+
+      .paging-nav .selected-page {
+        background: #1e252d;
+        font-weight: bold;
+      }
+
+      .remove-btn {
+        background-color: #fff;
+        float: right;
       }
     </style>
   </head>
@@ -1173,6 +1281,434 @@
     </div>
     <!-- Edit Task -->
 
+    <!-- Chart Setting -->
+    <div
+      class="modal fade"
+      id="chart_setting"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4
+              style="
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e252d;
+                margin-bottom: 18px;
+              "
+            >
+              Chart Settings
+            </h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <table id="chart_table" class="table table-bordered">
+              <thead class="bg-light">
+                <tr>
+                  <th
+                    style="
+                      font-size: 14px !important;
+                      font-weight: 600;
+                      text-align: center;
+                    "
+                  >
+                    Data Fields
+                    <div class="focused pull-right">
+                      <button
+                        class="form-control rounded-circle"
+                        id="add-chart-setting"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </button>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                style="
+                  display: -webkit-inline-box;
+                  height: 410px;
+                  overflow-x: hidden;
+                "
+              >
+                <tr>
+                  <td style="text-align: left">
+                    <div class="row">
+                      <div class="form-group col-md-6">
+                        <label for="">Display Name</label>
+                        <input
+                          type="text"
+                          class="form-control browser-default"
+                          value="Period"
+                          disabled
+                        />
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="">Axis</label>
+                        <select class="form-control browser-default" disabled>
+                          <option value="X-axis">X-axis</option>
+                          <option value="Y-axis">Y-axis</option>
+                          <option value="Z-axis">Z-axis</option>
+                        </select>
+                      </div>
+
+                      <div class="col-12">
+                        <hr style="border: 1px solid #505050" />
+                      </div>
+                    </div>
+                    <div id="chart-setting-div">
+                      <div class="row">
+                        <div class="form-group col-md-10">
+                          <label for="">Display Name</label>
+                          <input
+                            type="text"
+                            class="form-control browser-default"
+                          />
+                        </div>
+                        <div class="form-group col-md-2 color_picks_1">
+                          <label
+                            for="sub_initative_progress"
+                            style="text-align: left"
+                            >Color</label
+                          >
+                          <div class="input-group" style="margin-bottom: 0">
+                            <div class="input-group-append">
+                              <span
+                                class="input-group-text pickr"
+                                style="
+                                  width: 90px;
+                                  border-radius: 0px;
+                                  height: 30px;
+                                "
+                              ></span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="form-group col-md-12">
+                          <label for="">Data Field</label>
+                          <input
+                            type="text"
+                            class="form-control browser-default"
+                            id="kpi_formula"
+                            readonly
+                            data-toggle="modal"
+                            data-target="#kpi_formula_popup"
+                            role="button"
+                          />
+                          <a
+                            href="#"
+                            id="kpi_trigger1"
+                            data-toggle="modal"
+                            data-target=".kpi_formula_popup"
+                          ></a>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label for="">Axis</label>
+                          <select class="form-control browser-default">
+                            <option value="Y-axis">Y-axis</option>
+                            <option value="Z-axis">Z-axis</option>
+                          </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="">Type</label>
+                          <select class="form-control browser-default">
+                            <option value="Actual">Actual</option>
+                            <option value="Target">Target</option>
+                            <option value="Budget">Budget</option>
+                            <option value="Forecast">Forecast</option>
+                            <option value="Gap">Gap</option>
+                          </select>
+                        </div>
+                        <div class="col-12">
+                          <hr style="border: 1px solid #505050" />
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="row" style="padding-bottom: 6px">
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Chart Setting -->
+
+    <!-- KPI Calculator -->
+    <div
+      class="modal fade"
+      id="kpi_formula_popup"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel"
+      aria-hidden="true"
+      modal-backdrop="false"
+      data-backdrop="false"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4
+              style="
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e252d;
+                margin-bottom: 18px;
+              "
+            >
+              KPI Calculator
+            </h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body" style="padding: 0 25px">
+            <div class="col-md-8" style="padding: 0">
+              Field Name: &nbsp;
+              <select class="form-control browser-default">
+                <option value="Actual">Actual</option>
+                <option value="Target">Target</option>
+                <option value="Budget">Budget</option>
+                <option value="Forecast">Forecast</option>
+                <option value="Gap">Gap</option>
+              </select>
+            </div>
+            <div class="card">
+              <ul
+                class="nav nav-tabs"
+                role="tablist"
+                style="padding-bottom: 10px"
+              >
+                <li
+                  class="nav-item m-l-10"
+                  style="top: -4px; background: transparent"
+                >
+                  <a
+                    class="nav-link active"
+                    data-toggle="tab"
+                    style="max-width: 170px"
+                    href="#formula_builder"
+                    >Formula Builder</a
+                  >
+                </li>
+                <li
+                  class="nav-item m-l-10"
+                  style="top: -4px; background: transparent"
+                >
+                  <a
+                    class="nav-link"
+                    data-toggle="tab"
+                    style="max-width: 170px"
+                    href="#summary_calculation"
+                    >Summary Calculation</a
+                  >
+                </li>
+              </ul>
+              <div class="tab-content" style="padding: 0">
+                <div class="tab-pane body active" id="formula_builder">
+                  <div class="row col-md-12">
+                    <textarea
+                      class="browser-default"
+                      name="formula"
+                      id="formula"
+                      placeholder=""
+                      cols=""
+                      rows="1"
+                    ></textarea>
+                    <!-- <textarea name="formula" id="formula"></textarea> -->
+                  </div>
+                  <div class="row col-md-12">
+                    <button type="button" class="opr btn btn-secondary">
+                      +
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      -
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      *
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      /
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      %
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      (
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      )
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      :
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      AND
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      OR
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      NOT
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      IN
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      ==
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      !=
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      >
+                    </button>
+                    <button
+                      type="button"
+                      class="opr btn btn-secondary"
+                    ></button>
+                    <button type="button" class="opr btn btn-secondary">
+                      >=
+                    </button>
+                    <button type="button" class="opr btn btn-secondary">
+                      =
+                    </button>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="panel panel-primary" id="result_panel">
+                        <div class="panel-heading">
+                          <h6 class="panel-title">Fields and measures:</h6>
+                        </div>
+                        <div class="panel-body" data-spy="scroll">
+                          <ul class="list-group">
+                            <li class="list-group-item">State</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                            <li class="list-group-item">State/Province</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="panel panel-primary" id="result_panel1">
+                        <div class="panel-heading">
+                          <h6 class="panel-title">Functions:</h6>
+                        </div>
+                        <div class="panel-body">
+                          <ul class="list-group">
+                            <li class="list-group-item">Elapsed Year</li>
+                            <li class="list-group-item">Ends With</li>
+                            <li class="list-group-item">If</li>
+                            <li class="list-group-item">Is Null</li>
+                            <li class="list-group-item">Max</li>
+                            <li class="list-group-item">Min</li>
+                            <li class="list-group-item">Median</li>
+                            <li class="list-group-item">Mid</li>
+                            <li class="list-group-item">Test</li>
+                            <li class="list-group-item">Test</li>
+                            <li class="list-group-item">Test</li>
+                            <li class="list-group-item">Test</li>
+                            <li class="list-group-item">Test</li>
+                            <li class="list-group-item">Test</li>
+                            <li class="list-group-item">Test</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="panel panel-primary" id="result_panel1">
+                        <div class="panel-heading">
+                          <h6 class="panel-title">Function Description:</h6>
+                        </div>
+                        <div class="panel-body">
+                          <h6>IF</h6>
+                          <p>
+                            Returns second argument if first argument is true;
+                            Returns optional third argument if first argument is
+                            false; IF('element', 'trueCalc', 'falseCalc')
+                          </p>
+                        </div>
+                        <input type="checkbox" name="check" /> Show argumnets in
+                        formula
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4" style="margin-bottom: 0px">
+                      <button
+                        name="validate"
+                        id="validate"
+                        class="btn btn-secondary"
+                      >
+                        Validate
+                      </button>
+                      <button name="add" id="add" class="btn btn-secondary">
+                        Add
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane body" id="summary_calculation">
+                  <div class="col-md-12">
+                    <div class="panel panel-primary" id="final_panel">
+                      <div class="panel-heading">
+                        <h6 class="panel-title">Formula</h6>
+                      </div>
+                      <div class="panel-body">
+                        <ul class="list-group formula-panel">
+                          <li class="list-group-item">Elapsed Year</li>
+                          <li class="list-group-item">Ends With</li>
+                          <li class="list-group-item">If</li>
+                          <li class="list-group-item">Is Null</li>
+                          <li class="list-group-item">Max</li>
+                          <li class="list-group-item">Min</li>
+                          <li class="list-group-item">Median</li>
+                          <li class="list-group-item">Mid</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END KPI Calculator -->
+
     <!--#Start User Edit Popup -->
     <div
       class="modal fade"
@@ -1754,7 +2290,7 @@
                         </span>
                       </div>
                     </div>
-                    <div style="height: 250px; overflow-y: auto">
+                    <div style="height: 210px; overflow-y: auto">
                       <div class="section-items">
                         <div class="owner-icon">
                           <div
@@ -2245,8 +2781,31 @@
                   </div>
                 </div>
                 <div class="col-6 chart-section">
+                  <div class="key-chart-action">
+                    <span>
+                      <i style="color: transparent" class="fas fa-question"></i>
+                    </span>
+
+                    <span class="pull-right">
+                      <i
+                        class="fas fa-cog"
+                        data-toggle="modal"
+                        data-target="#chart_setting"
+                        onclick="return false;"
+                      ></i>
+                    </span>
+                    <span class="pull-right" style="margin-right: 6px">
+                      <i class="fas fa-table" id="tableTabID"></i>
+                      <i
+                        class="fas fa-chart-line"
+                        id="linechartTabID"
+                        style="display: none"
+                      ></i>
+                    </span>
+                  </div>
                   <div
                     class="charts"
+                    id="linechartTab"
                     style="border-bottom: 1px solid #e3e3e3; margin-top: 0"
                   >
                     <div
@@ -2254,29 +2813,154 @@
                       id="lineChart"
                     ></div>
                   </div>
+                  <div
+                    class=""
+                    id="tableTab"
+                    style="
+                      display: none;
+                      border-bottom: 1px solid rgb(227, 227, 227);
+                      margin-top: 8px;
+                    "
+                  >
+                    <div class="table-responsive" style="height: 286px">
+                      <table
+                        class="table align-center dashboard-table"
+                        id="drilldownTable"
+                        style="margin-bottom: 0px !important"
+                      >
+                        <thead>
+                          <tr>
+                            <th rowspan="2" style="width: 40px">
+                              <i class="fas fa-arrow-up"></i>
+                              <i class="fas fa-arrow-down"></i>
+                            </th>
+                            <th rowspan="2" style="width: 198px">
+                              Name/Period
+                            </th>
+                            <th colspan="3">Q1 2020</th>
+                          </tr>
+                          <tr>
+                            <th style="width: 98px">Actual</th>
+                            <th style="width: 98px">Target</th>
+                            <th style="width: 98px">Gap</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><i class="fas fa-arrow-up"></i></td>
+                            <td>Sales and Marketing</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td><i class="fas fa-arrow-down"></i></td>
+                            <td>Human Resource and admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td><i class="fas fa-arrow-up"></i></td>
+                            <td>Product Design</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td><i class="fas fa-arrow-up"></i></td>
+                            <td>Development Process</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td><i class="fas fa-arrow-up"></i></td>
+                            <td>Marketing</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td><i class="fas fa-arrow-down"></i></td>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td><i class="fas fa-arrow-down"></i></td>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td><i class="fas fa-arrow-down"></i></td>
+                            <td>Admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td><i class="fas fa-arrow-up"></i></td>
+                            <td>Sales and Marketing</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td><i class="fas fa-arrow-down"></i></td>
+                            <td>Human Resource and admin</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td><i class="fas fa-arrow-up"></i></td>
+                            <td>Product Design</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td><i class="fas fa-arrow-up"></i></td>
+                            <td>Development Process</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                          <tr>
+                            <td><i class="fas fa-arrow-up"></i></td>
+                            <td>Marketing</td>
+                            <td>28.53425%</td>
+                            <td>24.53425%</td>
+                            <td>38.53425%</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
                   <div class="comments">
                     <div class="comments-panel">
                       <div class="panel-header">
-                        <span style="color: #929292"
-                          >January 08, 2021, 17:19</span
-                        >
-                        <span class="pull-right">
+                        <span>
                           <img
                             style="
                               width: 24px;
                               border-radius: 50%;
                               margin-top: -3px;
+                              margin-right: 8px;
                             "
                             src="images/user/usrbig10.jpg"
                             alt=""
                         /></span>
+                        <span style="color: #929292"
+                          >January 08, 2021, 17:19</span
+                        >
                         <span
                           class="pull-right"
-                          style="
-                            margin-right: 16px;
-                            color: #888;
-                            cursor: pointer;
-                          "
+                          style="color: #888; cursor: pointer"
                         >
                           <i
                             class="fas fa-trash"
@@ -2294,26 +2978,23 @@
                     </div>
                     <div class="comments-panel">
                       <div class="panel-header">
-                        <span style="color: #929292"
-                          >January 08, 2021, 17:19</span
-                        >
-                        <span class="pull-right">
+                        <span>
                           <img
                             style="
                               width: 24px;
                               border-radius: 50%;
                               margin-top: -3px;
+                              margin-right: 8px;
                             "
-                            src="images/user/usrbig8.jpg"
+                            src="images/user/usrbig10.jpg"
                             alt=""
                         /></span>
+                        <span style="color: #929292"
+                          >January 08, 2021, 17:19</span
+                        >
                         <span
                           class="pull-right"
-                          style="
-                            margin-right: 16px;
-                            color: #888;
-                            cursor: pointer;
-                          "
+                          style="color: #888; cursor: pointer"
                         >
                           <i
                             class="fas fa-trash"
@@ -2331,26 +3012,23 @@
                     </div>
                     <div class="comments-panel">
                       <div class="panel-header">
-                        <span style="color: #929292"
-                          >January 08, 2021, 17:19</span
-                        >
-                        <span class="pull-right">
+                        <span>
                           <img
                             style="
                               width: 24px;
                               border-radius: 50%;
                               margin-top: -3px;
+                              margin-right: 8px;
                             "
-                            src="images/user/usrbig9.jpg"
+                            src="images/user/usrbig10.jpg"
                             alt=""
                         /></span>
+                        <span style="color: #929292"
+                          >January 08, 2021, 17:19</span
+                        >
                         <span
                           class="pull-right"
-                          style="
-                            margin-right: 16px;
-                            color: #888;
-                            cursor: pointer;
-                          "
+                          style="color: #888; cursor: pointer"
                         >
                           <i
                             class="fas fa-trash"
@@ -2368,26 +3046,23 @@
                     </div>
                     <div class="comments-panel">
                       <div class="panel-header">
-                        <span style="color: #929292"
-                          >January 08, 2021, 17:19</span
-                        >
-                        <span class="pull-right">
+                        <span>
                           <img
                             style="
                               width: 24px;
                               border-radius: 50%;
                               margin-top: -3px;
+                              margin-right: 8px;
                             "
-                            src="images/user/usrbig6.jpg"
+                            src="images/user/usrbig10.jpg"
                             alt=""
                         /></span>
+                        <span style="color: #929292"
+                          >January 08, 2021, 17:19</span
+                        >
                         <span
                           class="pull-right"
-                          style="
-                            margin-right: 16px;
-                            color: #888;
-                            cursor: pointer;
-                          "
+                          style="color: #888; cursor: pointer"
                         >
                           <i
                             class="fas fa-trash"
@@ -2417,6 +3092,8 @@
                             width: 46px;
                             background: #1e252d;
                             margin-right: -1px;
+                            border-top-right-radius: 6px;
+                            border-bottom-right-radius: 6px;
                           "
                         >
                           <i class="fas fa-arrow-right"></i>
@@ -2478,7 +3155,7 @@
           },
         ],
         chart: {
-          height: 308,
+          height: 289,
           type: "line",
           dropShadow: {
             enabled: true,
@@ -2587,6 +3264,104 @@
       $("#close_search2").click(function () {
         $("#search2").show();
         $("#search_section2").hide();
+      });
+
+      $(document).ready(function () {
+        $("#drilldownTable").paging({ limit: 5 });
+      });
+
+      $("#tableTabID").click(function () {
+        $("#linechartTab").hide();
+        $("#tableTab").show();
+        $("#tableTabID").hide();
+        $("#linechartTabID").show();
+      });
+      $("#linechartTabID").click(function () {
+        $("#tableTab").hide();
+        $("#linechartTab").show();
+        $("#tableTabID").show();
+        $("#linechartTabID").hide();
+      });
+
+      $("#add-chart-setting").click(function () {
+        $("#chart-setting-div").append(`
+          <div class="row chart-setting-clone">
+            <div class="form-group col-md-12">
+              <button class="remove-btn" type="button">
+                <i class="fas fa-trash border-box"></i>
+              </button>
+            </div>
+            <div class="form-group col-md-10">
+              <label for="">Display Name</label>
+              <input
+                type="text"
+                class="form-control browser-default"
+              />
+            </div>
+            <div class="form-group col-md-2 color_picks_1">
+              <label
+                for="sub_initative_progress"
+                style="text-align: left"
+                >Color</label
+              >
+              <div class="input-group" style="margin-bottom: 0">
+                <div class="input-group-append">
+                  <span
+                    class="input-group-text pickr"
+                    style="
+                      width: 90px;
+                      border-radius: 0px;
+                      height: 30px;
+                    "
+                  ></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group col-md-12">
+              <label for="">Data Field</label>
+              <input
+                type="text"
+                class="form-control browser-default"
+                id="kpi_formula"
+                readonly
+                data-toggle="modal"
+                data-target="#kpi_formula_popup"
+                role="button"
+              />
+              <a
+                href="#"
+                id="kpi_trigger1"
+                data-toggle="modal"
+                data-target=".kpi_formula_popup"
+              ></a>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="">Axis</label>
+              <select class="form-control browser-default">
+                <option value="Y-axis">Y-axis</option>
+                <option value="Z-axis">Z-axis</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="">Type</label>
+              <select class="form-control browser-default">
+                <option value="Actual">Actual</option>
+                <option value="Target">Target</option>
+                <option value="Budget">Budget</option>
+                <option value="Forecast">Forecast</option>
+                <option value="Gap">Gap</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <hr style="border: 1px solid #505050" />
+            </div>
+          </div>`);
+      });
+
+      $("#chart-setting-div").on("click", ".remove-btn", function (e) {
+        $(this).parents(".chart-setting-clone").remove();
       });
     </script>
   </body>
