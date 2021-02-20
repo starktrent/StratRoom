@@ -101,7 +101,7 @@
           ></a>
           <a href="#" onClick="return false;" class="bars"></a>
           <a href="#" onClick="return false;" class="bar_nav sidemenu-collapse"
-            ><i class="nav-hdr-btn ti-menu" style="color: #000;"></i
+            ><i class="nav-hdr-btn ti-menu" style="color: #000"></i
           ></a>
           <a class="navbar-brand nav_float" href="#">
             <img
@@ -113,7 +113,7 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="fullscreen" style="padding: 4px; left: -14px;">
+            <li class="fullscreen" style="padding: 4px; left: -14px">
               <ul class="list-unstyled order-list">
                 <li class="avatar avatar-sm">
                   <img
@@ -149,18 +149,26 @@
               </ul>
             </li>
             <li class="fullscreen">
-              <form class="form-header" action="" method="POST">
+              <!-- <form class="form-header" action="" method="POST">
                 <input
                   class="au-input au-input--xl"
-                  style="min-width: 20%;"
+                  style="min-width: 20%"
                   type="text"
                   name="search"
                   placeholder="Search"
                 />
                 <button class="au-btn--submit" type="submit">
-                  <i class="fa fa-search" style="color: gray;"></i>
+                  <i class="fa fa-search" style="color: gray"></i>
                 </button>
-              </form>
+              </form> -->
+              <span class="pull-right nav-search-btn" id="open_search">
+                <i class="fas fa-search"></i>
+              </span>
+              <span class="pull-right nav-search" style="display: none">
+                <input type="text" class="search" placeholder="Search" />
+                <i class="fas fa-search"></i>
+                <i class="fas fa-times" id="close_search"></i>
+              </span>
             </li>
             <li class="fullscreen">
               <!-- <i class="nav-hdr-btn ti-calendar" style="color: gray"></i> -->
@@ -172,38 +180,95 @@
               <a
                 href="#"
                 onClick="return false;"
+                id="noti_Button"
                 class="dropdown-toggle"
                 data-toggle="dropdown"
                 role="button"
               >
-                <i class="nav-hdr-btn ti-bell" style="color: gray;"></i>
+                <i
+                  class="far fa-bell"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Notifications"
+                  style="color: gray"
+                ></i>
                 <span class="notify"></span>
                 <span class="heartbeat"></span>
               </a>
             </li>
-            <li class="dropdown">
-              <a
-                href="#"
-                onClick="return false;"
-                class="dropdown-toggle"
-                data-toggle="dropdown"
-                role="button"
+            <div id="notifications">
+              <h3>Notifications</h3>
+              <div
+                class="row"
+                style="
+                  height: 480px;
+                  overflow-y: scroll;
+                  overflow-x: hidden;
+                  margin-right: 0;
+                "
               >
-                <i class="nav-hdr-btn ti-settings" style="color: gray;"></i>
-                <span class="notify"></span>
-                <span class="heartbeat"></span>
+                <div class="col-md-12" style="padding-right: 0">
+                  <ul class="notifics">
+                    <li class="unread">
+                      <img src="/assets/images/user/usrbig7.jpg" alt="" />
+                      <h6>
+                        Karthick has approved a record in Employee Reimbursement
+                        Form form.
+                      </h6>
+                      <p>17 September 12:30 PM</p>
+                    </li>
+                    <li class="unread">
+                      <img src="/assets/images/user/usrbig7.jpg" alt="" />
+                      <h6>Karthick has approved your request.</h6>
+                      <p>17 September 12:30 PM</p>
+                    </li>
+                    <li>
+                      <img src="/assets/images/user/usrbig7.jpg" alt="" />
+                      <h6>
+                        Karthick has approved a record in Employee Reimbursement
+                        Form form.
+                      </h6>
+                      <p>17 September 12:30 PM</p>
+                    </li>
+                    <li>
+                      <img src="/assets/images/user/usrbig7.jpg" alt="" />
+                      <h6>Karthick has approved your request.</h6>
+                      <p>17 September 12:30 PM</p>
+                    </li>
+                    <li>
+                      <img src="/assets/images/user/usrbig7.jpg" alt="" />
+                      <h6>Karthick has approved your request.</h6>
+                      <p>17 September 12:30 PM</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="seeAll"><a href="#">See All</a></div>
+            </div>
+            <li>
+              <a href="#" role="button">
+                <i
+                  class="fas fa-sign-out-alt"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Logout"
+                  style="color: gray"
+                ></i>
               </a>
             </li>
-            <!-- #END# Notifications-->
             <li class="">
               <a
                 href="#"
                 onclick="return false;"
-                class="dropdown-toggle js-right-sidebar"
+                class="js-right-sidebar"
                 data-close="true"
               >
-                <!-- <img src="../../assets/images/user.jpg" alt="user"> -->
-                <i class="fas fa-user-circle"></i>
+                <i
+                  class="fas fa-user-circle"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Profile"
+                ></i>
               </a>
             </li>
           </ul>
@@ -219,143 +284,138 @@
         <div class="menu">
           <ul class="list">
             <li class="active">
-              <a href="#" onClick="return false;" class="">
-                <i class="menu-icon fa fa-home font_icon"></i>
-                <span>Organisation Structure</span>
+              <a href="organizationHome" class="">
+                <i class="fas fa-project-diagram"></i>
+                <span style="line-height: 18px; margin-top: 4px"
+                  >Organisation</span
+                >
               </a>
             </li>
 
             <li>
               <a href="#" onClick="return false;" class="menu-toggle">
-                <i class="menu-icon fa fa-dashboard font_icon"></i>
+                <i class="fas fa-th-large"></i>
                 <span>Dashboards</span>
               </a>
               <ul class="ml-menu">
                 <li>
-                  <a href="#">BSC Dashboard</a>
+                  <a
+                    class="addnewpagehover waves-effect waves-block"
+                    data-toggle="modal"
+                    data-target="#dashboard_add_popup"
+                    value="add"
+                    style="
+                      background-color: #4c4c4c;
+                      padding-left: 0;
+                      text-align: center;
+                      color: #fff !important;
+                    "
+                    ><strong>Add New Board</strong></a
+                  >
                 </li>
                 <li>
-                  <a href="#">Strategy Map</a>
+                  <a href="#">Scorecard</a>
+                </li>
+                <li>
+                  <a href="#">Meeting</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="menu-toggle">
+                <i class="fas fa-chalkboard"></i>
+                <span>Whiteboard</span>
+              </a>
+              <ul class="ml-menu">
+                <li>
+                  <a
+                    class="addnewpagehover waves-effect waves-block"
+                    data-toggle="modal"
+                    data-target="#whiteboard_add_popup"
+                    value="add"
+                    style="
+                      background-color: #4c4c4c;
+                      padding-left: 0;
+                      text-align: center;
+                      color: #fff !important;
+                    "
+                    ><strong>Add New Board</strong></a
+                  >
+                </li>
+                <li>
+                  <a href="#">Cockpit</a>
                 </li>
               </ul>
             </li>
 
             <li class="">
               <a href="#" onClick="return false;" class="">
-                <i class="menu-icon fa fa-bar-chart font_icon"></i>
-                <span>Charts</span>
+                <i class="fas fa-user-lock"></i>
+                <span>Access Control</span>
               </a>
             </li>
 
             <li class="">
               <a href="#" onClick="return false;" class="">
-                <i class="menu-icon fa fa-key font_icon"></i>
-                <span>Users & Access</span>
-              </a>
-            </li>
-
-            <li class="">
-              <a href="#" onClick="return false;" class="">
-                <i class="menu-icon fa fa-sitemap font_icon"></i>
+                <i class="fas fa-briefcase"></i>
                 <span>Workflows</span>
               </a>
             </li>
 
             <li class="">
               <a href="#" onClick="return false;" class="">
-                <i class="menu-icon fa fa-bell font_icon"></i>
-                <span>Notifications & Alerts</span>
+                <i class="fas fa-bell"></i>
+                <span>Notifications</span>
               </a>
             </li>
 
             <li class="">
-              <a href="#" onClick="return false;" class="">
-                <i class="menu-icon fa fa-database font_icon"></i>
-                <span>Data Management</span>
+              <a href="#" class="menu-toggle">
+                <i class="fas fa-database"></i>
+                <span>Data Sources</span>
               </a>
+              <ul class="ml-menu">
+                <li>
+                  <a href="#">Manual</a>
+                </li>
+                <li>
+                  <a href="#">Excel</a>
+                </li>
+                <li>
+                  <a href="#">Others</a>
+                </li>
+              </ul>
             </li>
 
             <li>
               <a href="#" onClick="return false;" class="menu-toggle">
-                <i class="menu-icon fa fa-laptop font_icon"></i>
-                <span>Template Management</span>
+                <i class="fas fa-copy"></i>
+                <span>Template</span>
               </a>
               <ul class="ml-menu">
                 <li>
-                  <a
-                    href="#"
-                    id="sub-menu"
-                    onClick="return false;"
-                    class="menu-toggle"
-                  >
-                    Scorecard Layouts
-                  </a>
-                  <ul class="ml-menu">
-                    <li><a href="#">Standard BSC View</a></li>
-                    <li><a href="#">Dashboard View</a></li>
-                  </ul>
+                  <a href="#">Standard Scorecard</a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    id="sub-menu"
-                    onClick="return false;"
-                    class="menu-toggle"
-                  >
-                    Initiative
-                  </a>
-                  <ul class="ml-menu">
-                    <li><a href="#">Sub Initiatives</a></li>
-                    <li><a href="#">Tasks</a></li>
-                    <li><a href="#">Activities</a></li>
-                    <li><a href="#">Milestones</a></li>
-                  </ul>
+                  <a href="#">Custom Scorecard</a>
                 </li>
                 <li>
-                  <a href="#">Reports Table</a>
+                  <a href="#">Portfolio Program & Project (P3M)</a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    id="sub-menu"
-                    onClick="return false;"
-                    class="menu-toggle"
-                  >
-                    Comments
-                  </a>
-                  <ul class="ml-menu">
-                    <li><a href="#">Comments & Observations</a></li>
-                    <li><a href="#">Proof of Evidence</a></li>
-                  </ul>
+                  <a href="#">Appraisal (360 Degree Feedback)</a>
                 </li>
                 <li>
-                  <a href="#">Employee Layout</a>
-                </li>
-                <li>
-                  <a href="#">Appraisal</a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    data-toggle="modal"
-                    data-target=".data_collection_form"
-                    >Data Collection Form</a
-                  >
+                  <a href="#">Custom Page</a>
                 </li>
               </ul>
             </li>
 
             <li class="">
               <a href="#" onClick="return false;" class="">
-                <i class="menu-icon fa fa-columns font_icon"></i>
-                <span>Widget Management</span>
-              </a>
-            </li>
-
-            <li class="">
-              <a href="#" onClick="return false;" class="">
-                <i class="menu-icon fa fa-pie-chart font_icon"></i>
-                <span>Reports</span>
+                <i class="fas fa-sliders-h"></i>
+                <span>Control Panel</span>
               </a>
             </li>
           </ul>
@@ -367,7 +427,7 @@
 
     <!-- Create Budget Modal -->
     <div id="create_task" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" style="margin-top: 3%;">
+      <div class="modal-dialog modal-lg" style="margin-top: 3%">
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
@@ -389,7 +449,7 @@
                   type="text"
                   class="modal-custom-input"
                   placeholder=""
-                  style="width: 97% !important;"
+                  style="width: 97% !important"
                 />
               </div>
             </div>
@@ -421,7 +481,7 @@
                 <input
                   type="text"
                   class="modal-custom-input"
-                  style="width: 95% !important;"
+                  style="width: 95% !important"
                 />
               </div>
             </div>
@@ -438,7 +498,7 @@
                   data-multiple-dates-separator=" - "
                   data-language="en"
                   id="air-date-sub-init"
-                  style="width: 95% !important;"
+                  style="width: 95% !important"
                 />
               </div>
 
@@ -453,7 +513,7 @@
                   data-multiple-dates-separator=" - "
                   data-language="en"
                   id="air-date-sub-init"
-                  style="width: 95% !important;"
+                  style="width: 95% !important"
                 />
               </div>
             </div>
@@ -505,7 +565,7 @@
                   name="kpi_name"
                   id="kpi_name"
                   placeholder=""
-                  style="width: 95% !important;"
+                  style="width: 95% !important"
                 />
               </div>
             </div>
@@ -583,9 +643,7 @@
                   >
                     Cancel
                   </button>
-                  <button class="initative_save_btn" value="Save">
-                    Save
-                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
                 </div>
               </div>
             </div>
@@ -625,7 +683,7 @@
                 <div
                   class="d-flex flex-column employee_div_body_box sub-ini-box"
                   id="sub-ini-box_view"
-                  style="overflow: hidden; width: auto; height: 340px;"
+                  style="overflow: hidden; width: auto; height: 340px"
                 >
                   <span id="sub-ini-box_view_users"
                     ><div
@@ -646,11 +704,11 @@
                           </div>
                           <div
                             class="d-flex flex-column init_flex_profile"
-                            style="margin-top: 3%; text-align: center;"
+                            style="margin-top: 3%; text-align: center"
                           >
                             <h5>David Miller</h5>
                           </div>
-                          <div class="img_details" style="width: 20%;">
+                          <div class="img_details" style="width: 20%">
                             <img
                               alt="David Miller"
                               src="images/user/usrbig8.jpg"
@@ -678,11 +736,11 @@
                           </div>
                           <div
                             class="d-flex flex-column init_flex_profile"
-                            style="margin-top: 3%; text-align: center;"
+                            style="margin-top: 3%; text-align: center"
                           >
                             <h5>Seema Chatterjee</h5>
                           </div>
-                          <div class="img_details" style="width: 20%;">
+                          <div class="img_details" style="width: 20%">
                             <img
                               alt="Seema Chatterjee"
                               src="images/user/usrbig10.jpg"
@@ -710,11 +768,11 @@
                           </div>
                           <div
                             class="d-flex flex-column init_flex_profile"
-                            style="margin-top: 3%; text-align: center;"
+                            style="margin-top: 3%; text-align: center"
                           >
                             <h5>Rafael Nadal</h5>
                           </div>
-                          <div class="img_details" style="width: 20%;">
+                          <div class="img_details" style="width: 20%">
                             <img
                               alt="Rafael Nadal"
                               src="images/user/usrbig9.jpg"
@@ -742,11 +800,11 @@
                           </div>
                           <div
                             class="d-flex flex-column init_flex_profile"
-                            style="margin-top: 3%; text-align: center;"
+                            style="margin-top: 3%; text-align: center"
                           >
                             <h5>Prakash Raj</h5>
                           </div>
-                          <div class="img_details" style="width: 20%;">
+                          <div class="img_details" style="width: 20%">
                             <img
                               alt="Prakash Raj"
                               src="images/user/usrbig6.jpg"
@@ -775,11 +833,11 @@
                           </div>
                           <div
                             class="d-flex flex-column init_flex_profile"
-                            style="margin-top: 3%; text-align: center;"
+                            style="margin-top: 3%; text-align: center"
                           >
                             <h5>Karthik Ramani</h5>
                           </div>
-                          <div class="img_details" style="width: 20%;">
+                          <div class="img_details" style="width: 20%">
                             <img
                               alt="Karthik Ramani"
                               src="images/user/usrbig7.jpg"
@@ -835,7 +893,7 @@
         <div class="col-lg-6 col-md-6 text-center text-sm-left pt-2 mb-0 ml-4">
           <h5
             class="page-title"
-            style="font-weight: 600; text-transform: uppercase;"
+            style="font-weight: 600; text-transform: uppercase"
           >
             Gantt Chart
           </h5>
@@ -849,7 +907,7 @@
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="card">
-              <div class="form-row" style="padding: 16px;">
+              <div class="form-row" style="padding: 16px">
                 <div class="col-md-2 form-group">
                   <button
                     onclick="menuToggle()"
@@ -868,7 +926,7 @@
                     class="btn-group"
                     role="group"
                     aria-label="Basic example"
-                    style="width: 80%;"
+                    style="width: 80%"
                   >
                     <button
                       type="button"
@@ -909,7 +967,7 @@
                   </button>
                 </div>
               </div>
-              <div class="form-row" style="padding: 16px; margin-top: -20px;">
+              <div class="form-row" style="padding: 16px; margin-top: -20px">
                 <div class="col-md-4" id="TreeTable">
                   <div class="table-responsive">
                     <table
@@ -938,7 +996,7 @@
                               src="images/user/usrbig10.jpg"
                               width="35px"
                               height="35px"
-                              style="border-radius: 50%;"
+                              style="border-radius: 50%"
                               alt="Owner"
                             />
                           </td>
@@ -955,7 +1013,7 @@
                               src="images/user/usrbig11.jpg"
                               width="35px"
                               height="35px"
-                              style="border-radius: 50%;"
+                              style="border-radius: 50%"
                               alt="Owner"
                             />
                           </td>
@@ -972,7 +1030,7 @@
                               src="images/user/usrbig4.jpg"
                               width="35px"
                               height="35px"
-                              style="border-radius: 50%;"
+                              style="border-radius: 50%"
                               alt="Owner"
                             />
                           </td>
@@ -989,7 +1047,7 @@
                               src="images/user/usrbig5.jpg"
                               width="35px"
                               height="35px"
-                              style="border-radius: 50%;"
+                              style="border-radius: 50%"
                               alt="Owner"
                             />
                           </td>
@@ -1006,7 +1064,7 @@
                               src="images/user/usrbig6.jpg"
                               width="35px"
                               height="35px"
-                              style="border-radius: 50%;"
+                              style="border-radius: 50%"
                               alt="Owner"
                             />
                           </td>
@@ -1023,7 +1081,7 @@
                               src="images/user/usrbig7.jpg"
                               width="35px"
                               height="35px"
-                              style="border-radius: 50%;"
+                              style="border-radius: 50%"
                               alt="Owner"
                             />
                           </td>
@@ -1035,9 +1093,9 @@
                 <div
                   class="col-md-8"
                   id="FrappeGantt"
-                  style="border: 2px solid #e0e0e0;"
+                  style="border: 2px solid #e0e0e0"
                 >
-                  <svg id="gantt" style="height: 360px;"></svg>
+                  <svg id="gantt" style="height: 360px"></svg>
                 </div>
               </div>
             </div>
@@ -1077,6 +1135,16 @@
       });
     </script>
     <script>
+      $("#open_search").click(function () {
+        $(".nav-search").show();
+        $("#open_search").hide();
+      });
+
+      $("#close_search").click(function () {
+        $("#open_search").show();
+        $(".nav-search").hide();
+      });
+
       function menuToggle() {
         var t = document.getElementById("TreeTable");
         var g = document.getElementById("FrappeGantt");

@@ -132,7 +132,7 @@
               </ul>
             </li>
             <li class="fullscreen">
-              <form class="form-header" action="" method="POST">
+              <!-- <form class="form-header" action="" method="POST">
                 <input
                   class="au-input au-input--xl"
                   style="min-width: 20%"
@@ -143,7 +143,15 @@
                 <button class="au-btn--submit" type="submit">
                   <i class="fa fa-search" style="color: gray"></i>
                 </button>
-              </form>
+              </form> -->
+              <span class="pull-right nav-search-btn" id="open_search">
+                <i class="fas fa-search"></i>
+              </span>
+              <span class="pull-right nav-search" style="display: none">
+                <input type="text" class="search" placeholder="Search" />
+                <i class="fas fa-search"></i>
+                <i class="fas fa-times" id="close_search"></i>
+              </span>
             </li>
             <li class="fullscreen">
               <!-- <i class="nav-hdr-btn ti-calendar" style="color: gray"></i> -->
@@ -160,7 +168,13 @@
                 data-toggle="dropdown"
                 role="button"
               >
-                <i class="nav-hdr-btn ti-bell" style="color: gray"></i>
+                <i
+                  class="far fa-bell"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Notifications"
+                  style="color: gray"
+                ></i>
                 <span class="notify"></span>
                 <span class="heartbeat"></span>
               </a>
@@ -170,7 +184,7 @@
               <div
                 class="row"
                 style="
-                  height: 300px;
+                  height: 480px;
                   overflow-y: scroll;
                   overflow-x: hidden;
                   margin-right: 0;
@@ -214,29 +228,30 @@
               </div>
               <div class="seeAll"><a href="#">See All</a></div>
             </div>
-            <li class="dropdown">
-              <a
-                href="#"
-                onClick="return false;"
-                data-toggle="modal"
-                data-target="#settings"
-                role="button"
-              >
-                <i class="nav-hdr-btn ti-settings" style="color: gray"></i>
-                <span class="notify"></span>
-                <span class="heartbeat"></span>
+            <li>
+              <a href="#" role="button">
+                <i
+                  class="fas fa-sign-out-alt"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Logout"
+                  style="color: gray"
+                ></i>
               </a>
             </li>
-            <!-- #END# Notifications-->
             <li class="">
               <a
                 href="#"
                 onclick="return false;"
-                class="dropdown-toggle js-right-sidebar"
+                class="js-right-sidebar"
                 data-close="true"
               >
-                <!-- <img src="../../assets/images/user.jpg" alt="user"> -->
-                <i class="fas fa-user-circle"></i>
+                <i
+                  class="fas fa-user-circle"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Profile"
+                ></i>
               </a>
             </li>
           </ul>
@@ -578,6 +593,16 @@
           var title = startDate.format("L") + " – " + endDate.format("L");
           $(this).val(title);
         },
+      });
+
+      $("#open_search").click(function () {
+        $(".nav-search").show();
+        $("#open_search").hide();
+      });
+
+      $("#close_search").click(function () {
+        $("#open_search").show();
+        $(".nav-search").hide();
       });
     </script>
   </body></a

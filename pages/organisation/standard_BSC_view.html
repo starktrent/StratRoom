@@ -301,7 +301,7 @@
               </ul>
             </li>
             <li class="fullscreen">
-              <form class="form-header" action="" method="POST">
+              <!-- <form class="form-header" action="" method="POST">
                 <input
                   class="au-input au-input--xl"
                   style="min-width: 20%"
@@ -312,16 +312,16 @@
                 <button class="au-btn--submit" type="submit">
                   <i class="fa fa-search" style="color: gray"></i>
                 </button>
-              </form>
+              </form> -->
+              <span class="pull-right nav-search-btn" id="open_search">
+                <i class="fas fa-search"></i>
+              </span>
+              <span class="pull-right nav-search" style="display: none">
+                <input type="text" class="search" placeholder="Search" />
+                <i class="fas fa-search"></i>
+                <i class="fas fa-times" id="close_search"></i>
+              </span>
             </li>
-            <!-- <li class="fullscreen">
-                            <- <a href="" class=""> -->
-            <!-- <i class="nav-hdr-btn ti-calendar" style="color: gray"></i> -->
-            <!-- <input id="e4" name="e4"> -->
-            <!-- <input class="daterangepicker-field top_datepicker"></input> -->
-
-            <!-- </a> -->
-            <!-- </li> -->
             <li class="fullscreen">
               <!-- <i class="nav-hdr-btn ti-calendar" style="color: gray"></i> -->
               <input class="daterangepicker-field top_datepicker" />
@@ -332,38 +332,95 @@
               <a
                 href="#"
                 onClick="return false;"
+                id="noti_Button"
                 class="dropdown-toggle"
                 data-toggle="dropdown"
                 role="button"
               >
-                <i class="nav-hdr-btn ti-bell" style="color: gray"></i>
+                <i
+                  class="far fa-bell"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Notifications"
+                  style="color: gray"
+                ></i>
                 <span class="notify"></span>
                 <span class="heartbeat"></span>
               </a>
             </li>
-            <li class="dropdown">
-              <a
-                href="#"
-                onClick="return false;"
-                class="dropdown-toggle"
-                data-toggle="dropdown"
-                role="button"
+            <div id="notifications">
+              <h3>Notifications</h3>
+              <div
+                class="row"
+                style="
+                  height: 480px;
+                  overflow-y: scroll;
+                  overflow-x: hidden;
+                  margin-right: 0;
+                "
               >
-                <i class="nav-hdr-btn ti-settings" style="color: gray"></i>
-                <span class="notify"></span>
-                <span class="heartbeat"></span>
+                <div class="col-md-12" style="padding-right: 0">
+                  <ul class="notifics">
+                    <li class="unread">
+                      <img src="/assets/images/user/usrbig7.jpg" alt="" />
+                      <h6>
+                        Karthick has approved a record in Employee Reimbursement
+                        Form form.
+                      </h6>
+                      <p>17 September 12:30 PM</p>
+                    </li>
+                    <li class="unread">
+                      <img src="/assets/images/user/usrbig7.jpg" alt="" />
+                      <h6>Karthick has approved your request.</h6>
+                      <p>17 September 12:30 PM</p>
+                    </li>
+                    <li>
+                      <img src="/assets/images/user/usrbig7.jpg" alt="" />
+                      <h6>
+                        Karthick has approved a record in Employee Reimbursement
+                        Form form.
+                      </h6>
+                      <p>17 September 12:30 PM</p>
+                    </li>
+                    <li>
+                      <img src="/assets/images/user/usrbig7.jpg" alt="" />
+                      <h6>Karthick has approved your request.</h6>
+                      <p>17 September 12:30 PM</p>
+                    </li>
+                    <li>
+                      <img src="/assets/images/user/usrbig7.jpg" alt="" />
+                      <h6>Karthick has approved your request.</h6>
+                      <p>17 September 12:30 PM</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="seeAll"><a href="#">See All</a></div>
+            </div>
+            <li>
+              <a href="#" role="button">
+                <i
+                  class="fas fa-sign-out-alt"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Logout"
+                  style="color: gray"
+                ></i>
               </a>
             </li>
-            <!-- #END# Notifications-->
             <li class="">
               <a
                 href="#"
                 onclick="return false;"
-                class="dropdown-toggle js-right-sidebar"
+                class="js-right-sidebar"
                 data-close="true"
               >
-                <!-- <img src="../../assets/images/user.jpg" alt="user"> -->
-                <i class="fas fa-user-circle"></i>
+                <i
+                  class="fas fa-user-circle"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Profile"
+                ></i>
               </a>
             </li>
           </ul>
@@ -378,138 +435,138 @@
         <div class="menu">
           <ul class="list">
             <li class="active">
-              <a href="#" onClick="return false;" class="">
-                <i class="menu-icon ti-home"></i>
-                <span>Organisation Structure</span>
+              <a href="organizationHome" class="">
+                <i class="fas fa-project-diagram"></i>
+                <span style="line-height: 18px; margin-top: 4px"
+                  >Organisation</span
+                >
               </a>
             </li>
 
             <li>
               <a href="#" onClick="return false;" class="menu-toggle">
-                <i class="menu-icon ti-image"></i>
+                <i class="fas fa-th-large"></i>
                 <span>Dashboards</span>
               </a>
               <ul class="ml-menu">
                 <li>
-                  <a href="#">BSC Dashboard</a>
+                  <a
+                    class="addnewpagehover waves-effect waves-block"
+                    data-toggle="modal"
+                    data-target="#dashboard_add_popup"
+                    value="add"
+                    style="
+                      background-color: #4c4c4c;
+                      padding-left: 0;
+                      text-align: center;
+                      color: #fff !important;
+                    "
+                    ><strong>Add New Board</strong></a
+                  >
                 </li>
                 <li>
-                  <a href="#">Strategy Map</a>
+                  <a href="#">Scorecard</a>
+                </li>
+                <li>
+                  <a href="#">Meeting</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="">
+              <a href="#" onClick="return false;" class="menu-toggle">
+                <i class="fas fa-chalkboard"></i>
+                <span>Whiteboard</span>
+              </a>
+              <ul class="ml-menu">
+                <li>
+                  <a
+                    class="addnewpagehover waves-effect waves-block"
+                    data-toggle="modal"
+                    data-target="#whiteboard_add_popup"
+                    value="add"
+                    style="
+                      background-color: #4c4c4c;
+                      padding-left: 0;
+                      text-align: center;
+                      color: #fff !important;
+                    "
+                    ><strong>Add New Board</strong></a
+                  >
+                </li>
+                <li>
+                  <a href="#">Cockpit</a>
                 </li>
               </ul>
             </li>
 
             <li class="">
               <a href="#" onClick="return false;" class="">
-                <i class="menu-icon ti-bar-chart"></i>
-                <span>Charts</span>
+                <i class="fas fa-user-lock"></i>
+                <span>Access Control</span>
               </a>
             </li>
 
             <li class="">
               <a href="#" onClick="return false;" class="">
-                <i class="menu-icon ti-key"></i>
-                <span>Users & Access</span>
-              </a>
-            </li>
-
-            <li class="">
-              <a href="#" onClick="return false;" class="">
-                <i class="menu-icon ti-vector"></i>
+                <i class="fas fa-briefcase"></i>
                 <span>Workflows</span>
               </a>
             </li>
 
             <li class="">
               <a href="#" onClick="return false;" class="">
-                <i class="menu-icon ti-bell"></i>
-                <span>Notifications & Alerts</span>
+                <i class="fas fa-bell"></i>
+                <span>Notifications</span>
               </a>
             </li>
 
             <li class="">
-              <a href="#" onClick="return false;" class="">
-                <i class="menu-icon ti-server"></i>
-                <span>Data Management</span>
+              <a href="#" class="menu-toggle">
+                <i class="fas fa-database"></i>
+                <span>Data Sources</span>
               </a>
+              <ul class="ml-menu">
+                <li>
+                  <a href="#">Manual</a>
+                </li>
+                <li>
+                  <a href="#">Excel</a>
+                </li>
+                <li>
+                  <a href="#">Others</a>
+                </li>
+              </ul>
             </li>
 
             <li>
               <a href="#" onClick="return false;" class="menu-toggle">
-                <i class="menu-icon ti-layout-media-right-alt"></i>
-                <span>Template Management</span>
+                <i class="fas fa-copy"></i>
+                <span>Template</span>
               </a>
               <ul class="ml-menu">
                 <li>
-                  <a
-                    href="#"
-                    id="sub-menu"
-                    onClick="return false;"
-                    class="menu-toggle"
-                  >
-                    Scorecard Layouts
-                  </a>
-                  <ul class="ml-menu">
-                    <li><a href="#">Standard BSC View</a></li>
-                    <li><a href="#">Dashboard View</a></li>
-                  </ul>
+                  <a href="#">Standard Scorecard</a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    id="sub-menu"
-                    onClick="return false;"
-                    class="menu-toggle"
-                  >
-                    Initiative
-                  </a>
-                  <ul class="ml-menu">
-                    <li><a href="#">Sub Initiatives</a></li>
-                    <li><a href="#">Tasks</a></li>
-                    <li><a href="#">Activities</a></li>
-                    <li><a href="#">Milestones</a></li>
-                  </ul>
+                  <a href="#">Custom Scorecard</a>
                 </li>
                 <li>
-                  <a href="#">Reports Table</a>
+                  <a href="#">Portfolio Program & Project (P3M)</a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    id="sub-menu"
-                    onClick="return false;"
-                    class="menu-toggle"
-                  >
-                    Comments
-                  </a>
-                  <ul class="ml-menu">
-                    <li><a href="#">Comments & Observations</a></li>
-                    <li><a href="#">Proof of Evidence</a></li>
-                  </ul>
+                  <a href="#">Appraisal (360 Degree Feedback)</a>
                 </li>
                 <li>
-                  <a href="#">Employee Layout</a>
-                </li>
-                <li>
-                  <a href="#">Appraisal</a>
-                </li>
-                <li>
-                  <a href="#">Data Collection Form</a>
+                  <a href="#">Custom Page</a>
                 </li>
               </ul>
             </li>
 
             <li class="">
               <a href="#" onClick="return false;" class="">
-                <i class="menu-icon ti-home"></i>
-                <span>Widget Management</span>
-              </a>
-            </li>
-
-            <li class="">
-              <a href="#" onClick="return false;" class="">
-                <i class="menu-icon ti-pie-chart"></i>
-                <span>Reports</span>
+                <i class="fas fa-sliders-h"></i>
+                <span>Control Panel</span>
               </a>
             </li>
           </ul>
@@ -6787,6 +6844,16 @@
           var title = startDate.format("L") + " – " + endDate.format("L");
           $(this).val(title);
         },
+      });
+
+      $("#open_search").click(function () {
+        $(".nav-search").show();
+        $("#open_search").hide();
+      });
+
+      $("#close_search").click(function () {
+        $("#open_search").show();
+        $(".nav-search").hide();
       });
 
       $(document).ready(function () {
