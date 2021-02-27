@@ -410,6 +410,65 @@
       .color-ranges .color-more span i {
         color: #949494;
       }
+
+      /* Modal style change */
+      .modal .modal-content {
+        border-radius: 6px;
+      }
+
+      .modal .modal-header {
+        border: 0;
+        padding: 17px 16px 8px 16px;
+        margin: -10px -10px -12px -10px;
+        background-color: #fff;
+      }
+
+      .modal-header .close {
+        padding: 0;
+        margin: 0;
+        color: #9e9e9e;
+      }
+
+      .modal-body label {
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .color-container {
+        display: flex !important;
+      }
+
+      .color-container span {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        margin-right: 18px;
+        cursor: pointer;
+      }
+
+      .color-container span:nth-child(1) {
+        background-color: #e84343;
+      }
+
+      .color-container span:nth-child(2) {
+        background-color: #ffd500;
+      }
+
+      .color-container span:nth-child(3) {
+        background-color: #e17a2d;
+      }
+
+      .color-container span:nth-child(4) {
+        background-color: #1aa243;
+      }
+
+      .color-container span:nth-child(5) {
+        background-color: #1e2dfc;
+      }
+
+      .color-container .selected-color {
+        border: 3px solid #1e252d;
+      }
     </style>
   </head>
 
@@ -767,6 +826,287 @@
       </aside>
     </div>
     <!-- #END# Left Sidebar -->
+
+    <!-- Add Color Scale -->
+    <div
+      class="modal fade"
+      id="color_add"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="width: 600px"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4
+              style="
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e252d;
+                margin-bottom: 18px;
+              "
+            >
+              Add Color Scale
+            </h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-4 form-group mb-4">
+                <label for="color">Color</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <div class="input-group" style="margin-bottom: 0">
+                  <a
+                    href="#"
+                    id="color_trigger"
+                    data-toggle="modal"
+                    data-target="#color_palette_popup"
+                  >
+                    <span
+                      class="input-group-text"
+                      id="color-holder"
+                      style="
+                        width: 90px;
+                        border-radius: 0px;
+                        height: 30px;
+                        background: #eeeeee;
+                      "
+                    ></span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="range">Range</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="#">Select range</option>
+                  <option value="Greater than">Greater than</option>
+                  <option value="Less than">Less than</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="value">Value</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  value=""
+                />
+              </div>
+
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Add Color Scale -->
+
+    <!-- Edit Color Scale -->
+    <div
+      class="modal fade"
+      id="color_edit"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="width: 600px"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4
+              style="
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e252d;
+                margin-bottom: 18px;
+              "
+            >
+              Edit Color Scale
+            </h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-4 form-group mb-4">
+                <label for="color">Color</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <div class="input-group" style="margin-bottom: 0">
+                  <a
+                    href="#"
+                    id="color_trigger"
+                    data-toggle="modal"
+                    data-target="#color_palette_popup"
+                  >
+                    <span
+                      class="input-group-text"
+                      id="color-holder"
+                      style="
+                        width: 90px;
+                        border-radius: 0px;
+                        height: 30px;
+                        background: #eeeeee;
+                      "
+                    ></span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="range">Range</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="#">Select range</option>
+                  <option value="Greater than">Greater than</option>
+                  <option value="Less than">Less than</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="value">Value</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  value=""
+                />
+              </div>
+
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Edit Color Scale -->
+
+    <!-- Color Palette -->
+    <div
+      class="modal fade"
+      id="color_palette_popup"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="flex-flow: column-reverse; margin-top: 18%"
+      >
+        <div class="modal-content" style="width: auto">
+          <div class="modal-header">
+            <h4
+              style="
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e252d;
+                margin-bottom: 18px;
+              "
+            ></h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Colors Container -->
+            <div class="row">
+              <div class="col-12" style="margin-bottom: 24px">
+                <div class="color-container">
+                  <span id="color1"></span>
+                  <span id="color2"></span>
+                  <span id="color3"></span>
+                  <span id="color4"></span>
+                  <span id="color5"></span>
+                </div>
+              </div>
+              <div class="col-4 form-group mb-4">
+                <label for="color">Enter color code</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  style="text-transform: uppercase"
+                  class="form-control browser-default custom-input"
+                  id="color-code-input"
+                  onkeypress="return blockSpecialChar(event)"
+                  maxlength="6"
+                  placeholder="efv345"
+                />
+              </div>
+            </div>
+            <div class="row" style="padding-bottom: 6px">
+              <div class="col-12">
+                <div class="form-line right" style="margin-top: 3%">
+                  <button
+                    class="initative_save_btn"
+                    id="color_save"
+                    data-dismiss="modal"
+                    value="Save"
+                  >
+                    Save
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Setting -->
 
     <!-- Content Start -->
     <section class="content">
@@ -3544,16 +3884,38 @@
                           </div>
                           <div class="col-4 form-group">
                             <label for="">Status Color Settings</label>
-                            <select class="form-control browser-default">
-                              <option>Select Status Type</option>
+                            <select
+                              class="form-control browser-default"
+                              id="color_type"
+                            >
+                              <option value="none">Select Status Type</option>
                               <option value="Color">Color</option>
                               <option value="No Color">No Color</option>
                             </select>
                           </div>
                         </div>
-                        <div class="row">
-                          <div class="col-12">
+                        <div
+                          class="row color-option Color"
+                          style="display: none"
+                        >
+                          <div class="col-6">
                             <label for="">Color Range</label>
+                          </div>
+                          <div class="col-6">
+                            <button
+                              class="btn btn-custom-secondary"
+                              data-toggle="modal"
+                              data-target="#color_add"
+                              style="height: 30px; width: 30px"
+                            >
+                              <i
+                                class="fas fa-plus"
+                                style="font-size: 12px"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="Add"
+                              ></i>
+                            </button>
                           </div>
                           <div
                             class="col-6"
@@ -3568,7 +3930,11 @@
                                 <h4>Greater than 90</h4>
                               </div>
                               <div class="color-more">
-                                <span class="pull-rght">
+                                <span
+                                  data-toggle="modal"
+                                  data-target="#color_edit"
+                                  class="pull-rght"
+                                >
                                   <i
                                     class="fas fa-pen"
                                     data-toggle="tooltip"
@@ -3587,7 +3953,11 @@
                                 <h4>Greater than 90</h4>
                               </div>
                               <div class="color-more">
-                                <span class="pull-rght">
+                                <span
+                                  data-toggle="modal"
+                                  data-target="#color_edit"
+                                  class="pull-rght"
+                                >
                                   <i
                                     class="fas fa-pen"
                                     data-toggle="tooltip"
@@ -3606,7 +3976,11 @@
                                 <h4>Greater than 90</h4>
                               </div>
                               <div class="color-more">
-                                <span style="padding-right: 10px">
+                                <span
+                                  data-toggle="modal"
+                                  data-target="#color_edit"
+                                  style="padding-right: 10px"
+                                >
                                   <i
                                     class="fas fa-pen"
                                     data-toggle="tooltip"
@@ -3633,7 +4007,11 @@
                                 <h4>Greater than 90</h4>
                               </div>
                               <div class="color-more">
-                                <span style="padding-right: 10px">
+                                <span
+                                  data-toggle="modal"
+                                  data-target="#color_edit"
+                                  style="padding-right: 10px"
+                                >
                                   <i
                                     class="fas fa-pen"
                                     data-toggle="tooltip"
@@ -3660,7 +4038,11 @@
                                 <h4>Greater than 90</h4>
                               </div>
                               <div class="color-more">
-                                <span style="padding-right: 10px">
+                                <span
+                                  data-toggle="modal"
+                                  data-target="#color_edit"
+                                  style="padding-right: 10px"
+                                >
                                   <i
                                     class="fas fa-pen"
                                     data-toggle="tooltip"
@@ -3677,6 +4059,22 @@
                                   ></i>
                                 </span>
                               </div>
+                            </div>
+                          </div>
+                          <div class="col"></div>
+                          <div class="col-6 mb-3">
+                            <div class="form-line right">
+                              <button
+                                type="button"
+                                class="btn-default1 btn"
+                                data-dismiss="modal"
+                                aria-label="Close"
+                              >
+                                Cancel
+                              </button>
+                              <button class="initative_save_btn" value="Save">
+                                Save
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -3701,13 +4099,24 @@
     <!-- Knob Js -->
     <script src="../../assets/jquery-ui.min.js"></script>
     <script src="../../assets/moment.js"></script>
+    <script src="../../assets/js/paging.js"></script>
+    <script src="../../assets/js/pages/spiritedaway.js"></script>
+    <script src="../../assets/jquery.editable.min.js"></script>
+    <script src="../../assets/js/bootstrap.bundle.min.js"></script>
     <script src="../../assets/pickr.es5.min.js"></script>
     <script src="../../assets/datepickerair.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <script src="../../assets/datepicker.en.js"></script>
     <script src="../../assets/js/widgets.js"></script>
+    <script src="../../assets/js/pages/widgets/chart-widget.js"></script>
     <script src="../../assets/js/file-upload/file-upload.js"></script>
+
     <script src="../../assets/knockout-3.5.0.js"></script>
     <script src="../../assets/daterangepicker/daterangepicker.min.js"></script>
+    <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
+    <script src="assets/daterangepicker/daterangepicker.min.js"></script>
 
     <script>
       $(document).ready(function () {
@@ -3718,6 +4127,13 @@
           var index = $(this).index();
           $("div.panel-tab>div.panel-tab-content").removeClass("active");
           $("div.panel-tab>div.panel-tab-content").eq(index).addClass("active");
+        });
+      });
+
+      $(document).ready(function () {
+        $("body").tooltip({
+          selector: "[data-toggle=tooltip]",
+          placement: "top",
         });
       });
 
@@ -3827,6 +4243,72 @@
           var title = startDate.format("L") + " – " + endDate.format("L");
           $(this).val(title);
         },
+      });
+
+      $(document).ready(function () {
+        $("#color_type")
+          .change(function () {
+            $(this)
+              .find("option:selected")
+              .each(function () {
+                var optionValue = $(this).attr("value");
+                if (optionValue) {
+                  $(".color-option")
+                    .not("." + optionValue)
+                    .hide();
+                  $("." + optionValue).show();
+                } else {
+                  $(".widget").hide();
+                }
+              });
+          })
+          .change();
+      });
+
+      function blockSpecialChar(e) {
+        var k;
+        document.all ? (k = e.keyCode) : (k = e.which);
+        return (
+          (k > 64 && k < 91) ||
+          (k > 96 && k < 123) ||
+          k == 8 ||
+          k == 32 ||
+          (k >= 48 && k <= 57)
+        );
+      }
+
+      let prevDiv;
+
+      $(".color-container span").click(function () {
+        $(prevDiv).removeClass("selected-color");
+        $(this).addClass("selected-color");
+        var colorID = this.id;
+
+        if (colorID == "color1") {
+          $("#color-holder").css("background-color", "#E84343");
+        }
+
+        if (colorID == "color2") {
+          $("#color-holder").css("background-color", "#FFD500");
+        }
+
+        if (colorID == "color3") {
+          $("#color-holder").css("background-color", "#E17A2D");
+        }
+
+        if (colorID == "color4") {
+          $("#color-holder").css("background-color", "#1AA243");
+        }
+
+        if (colorID == "color5") {
+          $("#color-holder").css("background-color", "#1e2dfc");
+        }
+        prevDiv = $(this);
+      });
+
+      $("#color-code-input").click(function () {
+        $(".color-container span").removeClass("selected-color");
+        $("#color-holder").css("background-color", "#eeeeee");
       });
     </script>
   </body>
