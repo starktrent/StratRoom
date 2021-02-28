@@ -1041,12 +1041,13 @@
       role="dialog"
       aria-labelledby="myLargeModalLabel_1"
       aria-hidden="true"
+      style="padding-right: 0"
     >
       <div
         class="modal-dialog modal-dialog-centered modal-lg"
         style="flex-flow: column-reverse; margin-top: 18%"
       >
-        <div class="modal-content" style="width: auto">
+        <div class="modal-content" style="width: 580px">
           <div class="modal-header">
             <h4
               style="
@@ -4079,6 +4080,73 @@
                           </div>
                         </div>
                         <hr style="margin-top: 0; margin-bottom: 16px" />
+                        <div class="row">
+                          <div class="col-12 form-group">
+                            <label for="">Confidence Level Settings</label>
+                          </div>
+                          <div class="col-12 form-group">
+                            <span
+                              style="
+                                font-size: 14px;
+                                color: #444444;
+                                font-weight: 600;
+                              "
+                              >Confidence Scale</span
+                            >
+                          </div>
+                          <div class="col-6">
+                            <span
+                              style="
+                                font-size: 14px;
+                                color: #444444;
+                                margin-right: 8px;
+                              "
+                              >From 0 to 1 with a 0.1 incremental value</span
+                            >
+                          </div>
+                          <div class="col-6">
+                            <label class="control-switch">
+                              <input type="checkbox" checked />
+                              <span class="control-slider round"></span>
+                            </label>
+                          </div>
+                          <div class="col-6">
+                            <span
+                              style="
+                                font-size: 14px;
+                                color: #444444;
+                                margin-right: 8px;
+                              "
+                              >From 0 to 10 with a 1 incremental value</span
+                            >
+                          </div>
+                          <div class="col-6">
+                            <label class="control-switch">
+                              <input type="checkbox" />
+                              <span class="control-slider round"></span>
+                            </label>
+                          </div>
+                          <div class="col-12 form-group mt-2">
+                            <span
+                              style="
+                                font-size: 14px;
+                                color: #444444;
+                                font-weight: 600;
+                              "
+                              >Label Type</span
+                            >
+                          </div>
+                          <div class="col-4">
+                            <select
+                              class="form-control browser-default"
+                              id="color_type"
+                            >
+                              <option value="none">Select Label Type</option>
+                              <option value="Numeric">Numeric</option>
+                              <option value="Emoji">Emoji</option>
+                            </select>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -4282,6 +4350,7 @@
       $(".color-container span").click(function () {
         $(prevDiv).removeClass("selected-color");
         $(this).addClass("selected-color");
+        $("#color-code-input").val("");
         var colorID = this.id;
 
         if (colorID == "color1") {
@@ -4308,7 +4377,18 @@
 
       $("#color-code-input").click(function () {
         $(".color-container span").removeClass("selected-color");
-        $("#color-holder").css("background-color", "#eeeeee");
+      });
+
+      $(document).ready(function () {
+        $("#color_save").click(function () {
+          var code = $("#color-code-input").val();
+
+          if ($(".color-container span").hasClass("selected-color")) {
+            console.log("YES");
+          } else {
+            $("#color-holder").css("background-color", "#" + code);
+          }
+        });
       });
     </script>
   </body>
