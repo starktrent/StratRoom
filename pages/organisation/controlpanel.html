@@ -434,11 +434,16 @@
         font-weight: 500;
       }
 
-      .color-container {
+      .btn-group > .btn.active {
+        background-color: #1f262d;
+        color: #fff;
+      }
+
+      .status-color-container {
         display: flex !important;
       }
 
-      .color-container span {
+      .status-color-container span {
         height: 30px;
         width: 30px;
         border-radius: 50%;
@@ -446,27 +451,79 @@
         cursor: pointer;
       }
 
-      .color-container span:nth-child(1) {
+      .status-color-container span:nth-child(1) {
         background-color: #e84343;
       }
 
-      .color-container span:nth-child(2) {
+      .status-color-container span:nth-child(2) {
         background-color: #ffd500;
       }
 
-      .color-container span:nth-child(3) {
+      .status-color-container span:nth-child(3) {
         background-color: #e17a2d;
       }
 
-      .color-container span:nth-child(4) {
+      .status-color-container span:nth-child(4) {
         background-color: #1aa243;
       }
 
-      .color-container span:nth-child(5) {
+      .status-color-container span:nth-child(5) {
         background-color: #1e2dfc;
       }
 
-      .color-container .selected-color {
+      .status-color-container .selected-color {
+        border: 3px solid #1e252d;
+      }
+
+      .confidence-color-container {
+        display: flex !important;
+      }
+
+      .confidence-color-container span {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        margin-right: 18px;
+        cursor: pointer;
+      }
+
+      .confidence-color-container span:nth-child(1) {
+        background-color: #364fc7;
+      }
+
+      .confidence-color-container span:nth-child(2) {
+        background-color: #c92a2a;
+      }
+
+      .confidence-color-container span:nth-child(3) {
+        background-color: #495057;
+      }
+
+      .confidence-color-container span:nth-child(4) {
+        background-color: #e67700;
+      }
+
+      .confidence-color-container span:nth-child(5) {
+        background-color: #5c940d;
+      }
+
+      .confidence-color-container span:nth-child(6) {
+        background-color: #087f5b;
+      }
+
+      .confidence-color-container span:nth-child(7) {
+        background-color: #862e9c;
+      }
+
+      .confidence-color-container span:nth-child(8) {
+        background-color: #a61e4d;
+      }
+
+      .confidence-color-container span:nth-child(9) {
+        background-color: #339af0;
+      }
+
+      .confidence-color-container .selected-color {
         border: 3px solid #1e252d;
       }
     </style>
@@ -895,6 +952,11 @@
                   <option value="#">Select range</option>
                   <option value="Greater than">Greater than</option>
                   <option value="Less than">Less than</option>
+                  <option value="Equal to greater than">
+                    Equal to greater than
+                  </option>
+                  <option value="Equal to less than">Equal to less than</option>
+                  <option value="Equal to">Equal to</option>
                 </select>
               </div>
 
@@ -998,6 +1060,11 @@
                   <option value="#">Select range</option>
                   <option value="Greater than">Greater than</option>
                   <option value="Less than">Less than</option>
+                  <option value="Equal to greater than">
+                    Equal to greater than
+                  </option>
+                  <option value="Equal to less than">Equal to less than</option>
+                  <option value="Equal to">Equal to</option>
                 </select>
               </div>
 
@@ -1033,6 +1100,114 @@
     </div>
     <!-- Edit Color Scale -->
 
+    <!-- Add Confidence Range -->
+    <div
+      class="modal fade"
+      id="confidence_add"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="width: 600px"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4
+              style="
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e252d;
+                margin-bottom: 18px;
+              "
+            >
+              Add Confidence Range
+            </h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-4 form-group mb-4">
+                <label for="color">Color</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <div class="input-group" style="margin-bottom: 0">
+                  <a
+                    href="#"
+                    id="color_trigger"
+                    data-toggle="modal"
+                    data-target="#confidence_color_palette"
+                  >
+                    <span
+                      class="input-group-text"
+                      id="confidence-color-holder"
+                      style="
+                        width: 90px;
+                        border-radius: 0px;
+                        height: 30px;
+                        background: #eeeeee;
+                      "
+                    ></span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="range">Range</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="#">Select range</option>
+                  <option value="Greater than">Greater than</option>
+                  <option value="Less than">Less than</option>
+                  <option value="Equal to greater than">
+                    Equal to greater than
+                  </option>
+                  <option value="Equal to less than">Equal to less than</option>
+                  <option value="Equal to">Equal to</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="value">Value</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  value=""
+                />
+              </div>
+
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Add Confidence Range -->
+
     <!-- Color Palette -->
     <div
       class="modal fade"
@@ -1065,7 +1240,7 @@
             <!-- Colors Container -->
             <div class="row">
               <div class="col-12" style="margin-bottom: 24px">
-                <div class="color-container">
+                <div class="status-color-container">
                   <span id="color1"></span>
                   <span id="color2"></span>
                   <span id="color3"></span>
@@ -1073,20 +1248,25 @@
                   <span id="color5"></span>
                 </div>
               </div>
-              <div class="col-4 form-group mb-4">
-                <label for="color">Enter color code</label>
-              </div>
-
-              <div class="col-8 form-group mb-4">
+              <div class="col-7 form-group mb-4 input-group">
                 <input
                   type="text"
-                  style="text-transform: uppercase"
                   class="form-control browser-default custom-input"
                   id="color-code-input"
-                  onkeypress="return blockSpecialChar(event)"
-                  maxlength="6"
-                  placeholder="efv345"
+                  maxlength="7"
+                  placeholder="Type your color code as #000000"
                 />
+                <span
+                  class="input-group-text"
+                  id="live-color-holder"
+                  style="
+                    width: 30px;
+                    border-radius: 4px;
+                    height: 30px;
+                    background: #eeeeee;
+                    margin-left: 10px;
+                  "
+                ></span>
               </div>
             </div>
             <div class="row" style="padding-bottom: 6px">
@@ -1095,6 +1275,91 @@
                   <button
                     class="initative_save_btn"
                     id="color_save"
+                    data-dismiss="modal"
+                    value="Save"
+                  >
+                    Save
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Setting -->
+
+    <!-- Confidence Color Palette -->
+    <div
+      class="modal fade"
+      id="confidence_color_palette"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+      style="padding-right: 0"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="flex-flow: column-reverse; margin-top: 18%"
+      >
+        <div class="modal-content" style="width: 580px">
+          <div class="modal-header">
+            <h4
+              style="
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e252d;
+                margin-bottom: 18px;
+              "
+            ></h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Colors Container -->
+            <div class="row">
+              <div class="col-12" style="margin-bottom: 24px">
+                <div class="confidence-color-container">
+                  <span id="color1"></span>
+                  <span id="color2"></span>
+                  <span id="color3"></span>
+                  <span id="color4"></span>
+                  <span id="color5"></span>
+                  <span id="color6"></span>
+                  <span id="color7"></span>
+                  <span id="color8"></span>
+                  <span id="color9"></span>
+                </div>
+              </div>
+              <div class="col-7 form-group mb-4 input-group">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  id="confidence-color-code-input"
+                  maxlength="7"
+                  placeholder="Type your color code as #000000"
+                />
+                <span
+                  class="input-group-text"
+                  id="live-color-holder2"
+                  style="
+                    width: 30px;
+                    border-radius: 4px;
+                    height: 30px;
+                    background: #eeeeee;
+                    margin-left: 10px;
+                  "
+                ></span>
+              </div>
+            </div>
+            <div class="row" style="padding-bottom: 6px">
+              <div class="col-12">
+                <div class="form-line right" style="margin-top: 3%">
+                  <button
+                    class="initative_save_btn"
+                    id="confidence_color_save"
                     data-dismiss="modal"
                     value="Save"
                   >
@@ -1181,12 +1446,12 @@
                           </div>
                           <div class="col-6 list-group-item">
                             <a href="#" class="text-center card">
-                              <i class="fas fa-cogs"></i>Scorecard Settings
+                              <i class="fas fa-clipboard-list"></i>Scorecard
                             </a>
                           </div>
                           <div class="col-6 list-group-item">
                             <a href="#" class="text-center card">
-                              <i class="far fa-window-restore"></i>OKR Settings
+                              <i class="fas fa-bullseye"></i>OKR
                             </a>
                           </div>
                         </div>
@@ -3193,7 +3458,7 @@
                       <div class="panel-tab-content">
                         <div class="row">
                           <div class="col-md-12">
-                            <h4>Scorecard Settings</h4>
+                            <h4>Scorecard</h4>
                           </div>
                           <div class="col-12">
                             <span
@@ -3881,270 +4146,514 @@
                       <div class="panel-tab-content">
                         <div class="row">
                           <div class="col-md-12">
-                            <h4>OKR Settings</h4>
+                            <h4>OKR</h4>
                           </div>
-                          <div class="col-4 form-group">
-                            <label for="">Status Color Settings</label>
-                            <select
-                              class="form-control browser-default"
-                              id="color_type"
+                          <div class="col-12 mb-4" style="margin-top: -8px">
+                            <div
+                              id="custom-tab"
+                              class="btn-group custom-tab-control"
+                              role="group"
+                              aria-label="Custom Tab"
                             >
-                              <option value="none">Select Status Type</option>
-                              <option value="Color">Color</option>
-                              <option value="No Color">No Color</option>
-                            </select>
+                              <button
+                                type="button"
+                                class="btn btn-custom-secondary active"
+                                data-value="StatusC"
+                              >
+                                Status Color
+                              </button>
+                              <button
+                                type="button"
+                                class="btn btn-custom-secondary"
+                                data-value="Confidence"
+                              >
+                                Confidence Level
+                              </button>
+                              <button
+                                type="button"
+                                class="btn btn-custom-secondary"
+                                data-value="CustomF"
+                              >
+                                Custom Field
+                              </button>
+                              <button
+                                type="button"
+                                class="btn btn-custom-secondary"
+                                data-value="Whiteboard"
+                              >
+                                Whiteboard Custom Field
+                              </button>
+                              <button
+                                type="button"
+                                class="btn btn-custom-secondary"
+                                data-value="General"
+                              >
+                                General
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="customTabContent StatusC">
+                          <div class="row">
+                            <div class="col-12 form-group">
+                              <label for="">Status Color Settings</label>
+                            </div>
+                            <div class="col-4 mb-4">
+                              <select
+                                class="form-control browser-default"
+                                id="color_type"
+                              >
+                                <option value="none">Select Status Type</option>
+                                <option value="Color">Color</option>
+                                <option value="No Color">No Color</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div
+                            class="row color-option Color"
+                            style="display: none"
+                          >
+                            <div class="col-12">
+                              <span
+                                style="
+                                  font-size: 14px;
+                                  color: #444444;
+                                  font-weight: 600;
+                                "
+                                >Color Range</span
+                              >
+                            </div>
+                            <div
+                              class="col-6"
+                              style="height: 322px; overflow-x: auto"
+                            >
+                              <div class="color-ranges">
+                                <div class="color-box">
+                                  <span
+                                    style="background-color: #e84343"
+                                  ></span>
+                                </div>
+                                <div class="color-settings-content">
+                                  <p>When Score is</p>
+                                  <h4>Greater than 90</h4>
+                                </div>
+                                <div class="color-more">
+                                  <span
+                                    data-toggle="modal"
+                                    data-target="#color_edit"
+                                    class="pull-rght"
+                                  >
+                                    <i
+                                      class="fas fa-pen"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Update"
+                                    ></i>
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="color-ranges">
+                                <div class="color-box">
+                                  <span
+                                    style="background-color: #ffd500"
+                                  ></span>
+                                </div>
+                                <div class="color-settings-content">
+                                  <p>When Score is</p>
+                                  <h4>Greater than 90</h4>
+                                </div>
+                                <div class="color-more">
+                                  <span
+                                    data-toggle="modal"
+                                    data-target="#color_edit"
+                                    class="pull-rght"
+                                  >
+                                    <i
+                                      class="fas fa-pen"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Update"
+                                    ></i>
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="color-ranges">
+                                <div class="color-box">
+                                  <span
+                                    style="background-color: #e17a2d"
+                                  ></span>
+                                </div>
+                                <div class="color-settings-content">
+                                  <p>When Score is</p>
+                                  <h4>Greater than 90</h4>
+                                </div>
+                                <div class="color-more">
+                                  <span
+                                    data-toggle="modal"
+                                    data-target="#color_edit"
+                                    style="padding-right: 10px"
+                                  >
+                                    <i
+                                      class="fas fa-pen"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Update"
+                                    ></i>
+                                  </span>
+                                  <span>
+                                    <i
+                                      class="fas fa-trash"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Delete"
+                                    ></i>
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="color-ranges">
+                                <div class="color-box">
+                                  <span
+                                    style="background-color: #1aa243"
+                                  ></span>
+                                </div>
+                                <div class="color-settings-content">
+                                  <p>When Score is</p>
+                                  <h4>Greater than 90</h4>
+                                </div>
+                                <div class="color-more">
+                                  <span
+                                    data-toggle="modal"
+                                    data-target="#color_edit"
+                                    style="padding-right: 10px"
+                                  >
+                                    <i
+                                      class="fas fa-pen"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Update"
+                                    ></i>
+                                  </span>
+                                  <span>
+                                    <i
+                                      class="fas fa-trash"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Delete"
+                                    ></i>
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="color-ranges">
+                                <div class="color-box">
+                                  <span
+                                    style="background-color: #1e2dfc"
+                                  ></span>
+                                </div>
+                                <div class="color-settings-content">
+                                  <p>When Score is</p>
+                                  <h4>Greater than 90</h4>
+                                </div>
+                                <div class="color-more">
+                                  <span
+                                    data-toggle="modal"
+                                    data-target="#color_edit"
+                                    style="padding-right: 10px"
+                                  >
+                                    <i
+                                      class="fas fa-pen"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Update"
+                                    ></i>
+                                  </span>
+                                  <span>
+                                    <i
+                                      class="fas fa-trash"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Delete"
+                                    ></i>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col"></div>
+                            <div class="col-6 mb-3">
+                              <button
+                                class="btn btn-custom-secondary pull-right"
+                                data-toggle="modal"
+                                data-target="#color_add"
+                                style="height: 30px; width: 30px"
+                              >
+                                <i
+                                  class="fas fa-plus"
+                                  style="font-size: 12px"
+                                  data-toggle="tooltip"
+                                  data-placement="bottom"
+                                  title="Add"
+                                ></i>
+                              </button>
+                            </div>
                           </div>
                         </div>
                         <div
-                          class="row color-option Color"
+                          class="customTabContent Confidence"
                           style="display: none"
                         >
-                          <div class="col-6">
-                            <label for="">Color Range</label>
+                          <div class="row">
+                            <div class="col-12 form-group">
+                              <label for="">Confidence Level Settings</label>
+                            </div>
+                            <div class="col-12 form-group">
+                              <span
+                                style="
+                                  font-size: 14px;
+                                  color: #444444;
+                                  font-weight: 600;
+                                "
+                                >Confidence Scale</span
+                              >
+                            </div>
+                            <div class="col-6">
+                              <span
+                                style="
+                                  font-size: 14px;
+                                  color: #444444;
+                                  margin-right: 8px;
+                                "
+                                >From 0 to 1 with a 0.1 incremental value</span
+                              >
+                            </div>
+                            <div class="col-6">
+                              <label class="control-switch">
+                                <input type="checkbox" checked />
+                                <span class="control-slider round"></span>
+                              </label>
+                            </div>
+                            <div class="col-6">
+                              <span
+                                style="
+                                  font-size: 14px;
+                                  color: #444444;
+                                  margin-right: 8px;
+                                "
+                                >From 0 to 10 with a 1 incremental value</span
+                              >
+                            </div>
+                            <div class="col-6">
+                              <label class="control-switch">
+                                <input type="checkbox" />
+                                <span class="control-slider round"></span>
+                              </label>
+                            </div>
                           </div>
-                          <div class="col-6">
-                            <button
-                              class="btn btn-custom-secondary"
-                              data-toggle="modal"
-                              data-target="#color_add"
-                              style="height: 30px; width: 30px"
-                            >
-                              <i
-                                class="fas fa-plus"
-                                style="font-size: 12px"
-                                data-toggle="tooltip"
-                                data-placement="bottom"
-                                title="Add"
-                              ></i>
-                            </button>
+                          <div class="row">
+                            <div class="col-12 form-group mt-2">
+                              <span
+                                style="
+                                  font-size: 14px;
+                                  color: #444444;
+                                  font-weight: 600;
+                                "
+                                >Label Type</span
+                              >
+                            </div>
+                            <div class="col-4">
+                              <select
+                                class="form-control browser-default"
+                                id="confidence_color_type"
+                              >
+                                <option value="none">Select Label Type</option>
+                                <option value="Numeric">Numeric</option>
+                                <option value="Emoji">Emoji</option>
+                              </select>
+                            </div>
                           </div>
                           <div
-                            class="col-6"
-                            style="height: 322px; overflow-x: auto"
+                            class="row mt-4 confidence-color-option Numeric"
+                            style="display: none"
                           >
-                            <div class="color-ranges">
-                              <div class="color-box">
-                                <span style="background-color: #e84343"></span>
-                              </div>
-                              <div class="color-settings-content">
-                                <p>When Score is</p>
-                                <h4>Greater than 90</h4>
-                              </div>
-                              <div class="color-more">
-                                <span
-                                  data-toggle="modal"
-                                  data-target="#color_edit"
-                                  class="pull-rght"
-                                >
-                                  <i
-                                    class="fas fa-pen"
-                                    data-toggle="tooltip"
-                                    data-placement="bottom"
-                                    title="Update"
-                                  ></i>
-                                </span>
-                              </div>
-                            </div>
-                            <div class="color-ranges">
-                              <div class="color-box">
-                                <span style="background-color: #ffd500"></span>
-                              </div>
-                              <div class="color-settings-content">
-                                <p>When Score is</p>
-                                <h4>Greater than 90</h4>
-                              </div>
-                              <div class="color-more">
-                                <span
-                                  data-toggle="modal"
-                                  data-target="#color_edit"
-                                  class="pull-rght"
-                                >
-                                  <i
-                                    class="fas fa-pen"
-                                    data-toggle="tooltip"
-                                    data-placement="bottom"
-                                    title="Update"
-                                  ></i>
-                                </span>
-                              </div>
-                            </div>
-                            <div class="color-ranges">
-                              <div class="color-box">
-                                <span style="background-color: #e17a2d"></span>
-                              </div>
-                              <div class="color-settings-content">
-                                <p>When Score is</p>
-                                <h4>Greater than 90</h4>
-                              </div>
-                              <div class="color-more">
-                                <span
-                                  data-toggle="modal"
-                                  data-target="#color_edit"
-                                  style="padding-right: 10px"
-                                >
-                                  <i
-                                    class="fas fa-pen"
-                                    data-toggle="tooltip"
-                                    data-placement="bottom"
-                                    title="Update"
-                                  ></i>
-                                </span>
-                                <span>
-                                  <i
-                                    class="fas fa-trash"
-                                    data-toggle="tooltip"
-                                    data-placement="bottom"
-                                    title="Delete"
-                                  ></i>
-                                </span>
-                              </div>
-                            </div>
-                            <div class="color-ranges">
-                              <div class="color-box">
-                                <span style="background-color: #1aa243"></span>
-                              </div>
-                              <div class="color-settings-content">
-                                <p>When Score is</p>
-                                <h4>Greater than 90</h4>
-                              </div>
-                              <div class="color-more">
-                                <span
-                                  data-toggle="modal"
-                                  data-target="#color_edit"
-                                  style="padding-right: 10px"
-                                >
-                                  <i
-                                    class="fas fa-pen"
-                                    data-toggle="tooltip"
-                                    data-placement="bottom"
-                                    title="Update"
-                                  ></i>
-                                </span>
-                                <span>
-                                  <i
-                                    class="fas fa-trash"
-                                    data-toggle="tooltip"
-                                    data-placement="bottom"
-                                    title="Delete"
-                                  ></i>
-                                </span>
-                              </div>
-                            </div>
-                            <div class="color-ranges">
-                              <div class="color-box">
-                                <span style="background-color: #1e2dfc"></span>
-                              </div>
-                              <div class="color-settings-content">
-                                <p>When Score is</p>
-                                <h4>Greater than 90</h4>
-                              </div>
-                              <div class="color-more">
-                                <span
-                                  data-toggle="modal"
-                                  data-target="#color_edit"
-                                  style="padding-right: 10px"
-                                >
-                                  <i
-                                    class="fas fa-pen"
-                                    data-toggle="tooltip"
-                                    data-placement="bottom"
-                                    title="Update"
-                                  ></i>
-                                </span>
-                                <span>
-                                  <i
-                                    class="fas fa-trash"
-                                    data-toggle="tooltip"
-                                    data-placement="bottom"
-                                    title="Delete"
-                                  ></i>
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col"></div>
-                          <div class="col-6 mb-3">
-                            <div class="form-line right">
-                              <button
-                                type="button"
-                                class="btn-default1 btn"
-                                data-dismiss="modal"
-                                aria-label="Close"
+                            <div class="col-12">
+                              <span
+                                style="
+                                  font-size: 14px;
+                                  color: #444444;
+                                  font-weight: 600;
+                                "
+                                >Confidence Range</span
                               >
-                                Cancel
-                              </button>
-                              <button class="initative_save_btn" value="Save">
-                                Save
+                            </div>
+                            <div
+                              class="col-6"
+                              style="height: 322px; overflow-x: auto"
+                            >
+                              <div class="color-ranges">
+                                <div class="color-box">
+                                  <span
+                                    style="background-color: #e84343"
+                                  ></span>
+                                </div>
+                                <div class="color-settings-content">
+                                  <p>When Confidence is</p>
+                                  <h4>Less than or equal to 1</h4>
+                                </div>
+                                <div class="color-more">
+                                  <span
+                                    data-toggle="modal"
+                                    data-target="#color_edit"
+                                    class="pull-rght"
+                                  >
+                                    <i
+                                      class="fas fa-pen"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Update"
+                                    ></i>
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="color-ranges">
+                                <div class="color-box">
+                                  <span
+                                    style="background-color: #ffd500"
+                                  ></span>
+                                </div>
+                                <div class="color-settings-content">
+                                  <p>When Confidence is</p>
+                                  <h4>Less than or equal to 0.7</h4>
+                                </div>
+                                <div class="color-more">
+                                  <span
+                                    data-toggle="modal"
+                                    data-target="#color_edit"
+                                    class="pull-rght"
+                                  >
+                                    <i
+                                      class="fas fa-pen"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Update"
+                                    ></i>
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="color-ranges">
+                                <div class="color-box">
+                                  <span
+                                    style="background-color: #e17a2d"
+                                  ></span>
+                                </div>
+                                <div class="color-settings-content">
+                                  <p>When Confidence is</p>
+                                  <h4>equal to 0</h4>
+                                </div>
+                                <div class="color-more">
+                                  <span
+                                    data-toggle="modal"
+                                    data-target="#color_edit"
+                                    style="padding-right: 10px"
+                                  >
+                                    <i
+                                      class="fas fa-pen"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Update"
+                                    ></i>
+                                  </span>
+                                  <span>
+                                    <i
+                                      class="fas fa-trash"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Delete"
+                                    ></i>
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="color-ranges">
+                                <div class="color-box">
+                                  <span
+                                    style="background-color: #1aa243"
+                                  ></span>
+                                </div>
+                                <div class="color-settings-content">
+                                  <p>When Confidence is</p>
+                                  <h4>Less than or equal to 1</h4>
+                                </div>
+                                <div class="color-more">
+                                  <span
+                                    data-toggle="modal"
+                                    data-target="#color_edit"
+                                    style="padding-right: 10px"
+                                  >
+                                    <i
+                                      class="fas fa-pen"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Update"
+                                    ></i>
+                                  </span>
+                                  <span>
+                                    <i
+                                      class="fas fa-trash"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Delete"
+                                    ></i>
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="color-ranges">
+                                <div class="color-box">
+                                  <span
+                                    style="background-color: #1e2dfc"
+                                  ></span>
+                                </div>
+                                <div class="color-settings-content">
+                                  <p>When Confidence is</p>
+                                  <h4>Less than or equal to 0.7</h4>
+                                </div>
+                                <div class="color-more">
+                                  <span
+                                    data-toggle="modal"
+                                    data-target="#color_edit"
+                                    style="padding-right: 10px"
+                                  >
+                                    <i
+                                      class="fas fa-pen"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Update"
+                                    ></i>
+                                  </span>
+                                  <span>
+                                    <i
+                                      class="fas fa-trash"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Delete"
+                                    ></i>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col"></div>
+                            <div class="col-6 mb-3">
+                              <button
+                                class="btn btn-custom-secondary pull-right"
+                                data-toggle="modal"
+                                data-target="#confidence_add"
+                                style="height: 30px; width: 30px"
+                              >
+                                <i
+                                  class="fas fa-plus"
+                                  style="font-size: 12px"
+                                  data-toggle="tooltip"
+                                  data-placement="bottom"
+                                  title="Add"
+                                ></i>
                               </button>
                             </div>
-                          </div>
-                        </div>
-                        <hr style="margin-top: 0; margin-bottom: 16px" />
-                        <div class="row">
-                          <div class="col-12 form-group">
-                            <label for="">Confidence Level Settings</label>
-                          </div>
-                          <div class="col-12 form-group">
-                            <span
-                              style="
-                                font-size: 14px;
-                                color: #444444;
-                                font-weight: 600;
-                              "
-                              >Confidence Scale</span
-                            >
-                          </div>
-                          <div class="col-6">
-                            <span
-                              style="
-                                font-size: 14px;
-                                color: #444444;
-                                margin-right: 8px;
-                              "
-                              >From 0 to 1 with a 0.1 incremental value</span
-                            >
-                          </div>
-                          <div class="col-6">
-                            <label class="control-switch">
-                              <input type="checkbox" checked />
-                              <span class="control-slider round"></span>
-                            </label>
-                          </div>
-                          <div class="col-6">
-                            <span
-                              style="
-                                font-size: 14px;
-                                color: #444444;
-                                margin-right: 8px;
-                              "
-                              >From 0 to 10 with a 1 incremental value</span
-                            >
-                          </div>
-                          <div class="col-6">
-                            <label class="control-switch">
-                              <input type="checkbox" />
-                              <span class="control-slider round"></span>
-                            </label>
-                          </div>
-                          <div class="col-12 form-group mt-2">
-                            <span
-                              style="
-                                font-size: 14px;
-                                color: #444444;
-                                font-weight: 600;
-                              "
-                              >Label Type</span
-                            >
-                          </div>
-                          <div class="col-4">
-                            <select
-                              class="form-control browser-default"
-                              id="color_type"
-                            >
-                              <option value="none">Select Label Type</option>
-                              <option value="Numeric">Numeric</option>
-                              <option value="Emoji">Emoji</option>
-                            </select>
                           </div>
                         </div>
                       </div>
@@ -4313,6 +4822,20 @@
         },
       });
 
+      $("#custom-tab").on("click", "button", function (e) {
+        var CustomTabValue = this.dataset.value;
+        if (CustomTabValue) {
+          $(".customTabContent")
+            .not("." + CustomTabValue)
+            .hide();
+          $("." + CustomTabValue).show();
+        } else {
+          $(".customTabContent").hide();
+        }
+        $(this).parent().find("button").removeClass("active");
+        $(this).addClass("active");
+      });
+
       $(document).ready(function () {
         $("#color_type")
           .change(function () {
@@ -4326,31 +4849,40 @@
                     .hide();
                   $("." + optionValue).show();
                 } else {
-                  $(".widget").hide();
+                  $(".color-option").hide();
                 }
               });
           })
           .change();
       });
 
-      function blockSpecialChar(e) {
-        var k;
-        document.all ? (k = e.keyCode) : (k = e.which);
-        return (
-          (k > 64 && k < 91) ||
-          (k > 96 && k < 123) ||
-          k == 8 ||
-          k == 32 ||
-          (k >= 48 && k <= 57)
-        );
-      }
+      $(document).ready(function () {
+        $("#confidence_color_type")
+          .change(function () {
+            $(this)
+              .find("option:selected")
+              .each(function () {
+                var optionValue = $(this).attr("value");
+                if (optionValue) {
+                  $(".confidence-color-option")
+                    .not("." + optionValue)
+                    .hide();
+                  $("." + optionValue).show();
+                } else {
+                  $(".confidence-color-option").hide();
+                }
+              });
+          })
+          .change();
+      });
 
-      let prevDiv;
-
-      $(".color-container span").click(function () {
-        $(prevDiv).removeClass("selected-color");
+      // Status color selection
+      let prevDiv1;
+      $(".status-color-container span").click(function () {
+        $(prevDiv1).removeClass("selected-color");
         $(this).addClass("selected-color");
         $("#color-code-input").val("");
+        $("#live-color-holder").css("background-color", "#eeeeee");
         var colorID = this.id;
 
         if (colorID == "color1") {
@@ -4372,22 +4904,101 @@
         if (colorID == "color5") {
           $("#color-holder").css("background-color", "#1e2dfc");
         }
-        prevDiv = $(this);
+        prevDiv1 = $(this);
       });
 
       $("#color-code-input").click(function () {
-        $(".color-container span").removeClass("selected-color");
+        $(".status-color-container span").removeClass("selected-color");
       });
 
       $(document).ready(function () {
         $("#color_save").click(function () {
           var code = $("#color-code-input").val();
 
-          if ($(".color-container span").hasClass("selected-color")) {
+          if ($(".status-color-container span").hasClass("selected-color")) {
             console.log("YES");
           } else {
             $("#color-holder").css("background-color", "#" + code);
           }
+        });
+      });
+
+      $(function () {
+        $("#color-code-input").keyup(function () {
+          var liveColor = $(this).val();
+          $("#live-color-holder").css("background-color", liveColor);
+        });
+      });
+
+      // Confidence color selection
+      let prevDiv2;
+      $(".confidence-color-container span").click(function () {
+        $(prevDiv2).removeClass("selected-color");
+        $(this).addClass("selected-color");
+        $("#confidence-color-code-input").val("");
+        $("#live-color-holder2").css("background-color", "#eeeeee");
+        var colorID = this.id;
+
+        if (colorID == "color1") {
+          $("#confidence-color-holder").css("background-color", "#364fc7");
+        }
+
+        if (colorID == "color2") {
+          $("#confidence-color-holder").css("background-color", "#c92a2a");
+        }
+
+        if (colorID == "color3") {
+          $("#confidence-color-holder").css("background-color", "#495057");
+        }
+
+        if (colorID == "color4") {
+          $("#confidence-color-holder").css("background-color", "#e67700");
+        }
+
+        if (colorID == "color5") {
+          $("#confidence-color-holder").css("background-color", "#5c940d");
+        }
+
+        if (colorID == "color6") {
+          $("#confidence-color-holder").css("background-color", "#087f5b");
+        }
+
+        if (colorID == "color7") {
+          $("#confidence-color-holder").css("background-color", "#862e9c");
+        }
+
+        if (colorID == "color8") {
+          $("#confidence-color-holder").css("background-color", "#a61e4d");
+        }
+
+        if (colorID == "color9") {
+          $("#confidence-color-holder").css("background-color", "#339af0");
+        }
+        prevDiv2 = $(this);
+      });
+
+      $("#confidence-color-code-input").click(function () {
+        $(".confidence-color-container span").removeClass("selected-color");
+      });
+
+      $(document).ready(function () {
+        $("#confidence_color_save").click(function () {
+          var code = $("#confidence-color-code-input").val();
+
+          if (
+            $(".confidence-color-container span").hasClass("selected-color")
+          ) {
+            console.log("YES");
+          } else {
+            $("#confidence-color-holder").css("background-color", "#" + code);
+          }
+        });
+      });
+
+      $(function () {
+        $("#confidence-color-code-input").keyup(function () {
+          var liveColor = $(this).val();
+          $("#live-color-holder2").css("background-color", liveColor);
         });
       });
     </script>
