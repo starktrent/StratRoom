@@ -447,7 +447,7 @@
         height: 30px;
         width: 30px;
         border-radius: 50%;
-        margin-right: 18px;
+        margin-right: 6px;
         cursor: pointer;
       }
 
@@ -483,7 +483,7 @@
         height: 30px;
         width: 30px;
         border-radius: 50%;
-        margin-right: 18px;
+        margin-right: 6px;
         cursor: pointer;
       }
 
@@ -1222,7 +1222,7 @@
         class="modal-dialog modal-dialog-centered modal-lg"
         style="flex-flow: column-reverse; margin-top: 18%"
       >
-        <div class="modal-content" style="width: 580px">
+        <div class="modal-content" style="width: 400px">
           <div class="modal-header">
             <h4
               style="
@@ -1248,7 +1248,7 @@
                   <span id="color5"></span>
                 </div>
               </div>
-              <div class="col-7 form-group mb-4 input-group">
+              <div class="col-12 form-group mb-4 input-group">
                 <input
                   type="text"
                   class="form-control browser-default custom-input"
@@ -1303,7 +1303,7 @@
         class="modal-dialog modal-dialog-centered modal-lg"
         style="flex-flow: column-reverse; margin-top: 18%"
       >
-        <div class="modal-content" style="width: 580px">
+        <div class="modal-content" style="width: 400px">
           <div class="modal-header">
             <h4
               style="
@@ -1333,7 +1333,7 @@
                   <span id="color9"></span>
                 </div>
               </div>
-              <div class="col-7 form-group mb-4 input-group">
+              <div class="col-12 form-group mb-4 input-group">
                 <input
                   type="text"
                   class="form-control browser-default custom-input"
@@ -4160,7 +4160,7 @@
                                 class="btn btn-custom-secondary active"
                                 data-value="StatusC"
                               >
-                                Status Color
+                                Status
                               </button>
                               <button
                                 type="button"
@@ -4196,7 +4196,7 @@
                         <div class="customTabContent StatusC">
                           <div class="row">
                             <div class="col-12 form-group">
-                              <label for="">Status Color Settings</label>
+                              <label for="">Select your status type</label>
                             </div>
                             <div class="col-4 mb-4">
                               <select
@@ -4213,6 +4213,11 @@
                             class="row color-option Color"
                             style="display: none"
                           >
+                            <div class="col-12 form-group">
+                              <label for=""
+                                >Define your status for the progress</label
+                              >
+                            </div>
                             <div class="col-12">
                               <span
                                 style="
@@ -4234,7 +4239,7 @@
                                   ></span>
                                 </div>
                                 <div class="color-settings-content">
-                                  <p>When Score is</p>
+                                  <p>When Progress is</p>
                                   <h4>Greater than 90</h4>
                                 </div>
                                 <div class="color-more">
@@ -4259,8 +4264,8 @@
                                   ></span>
                                 </div>
                                 <div class="color-settings-content">
-                                  <p>When Score is</p>
-                                  <h4>Greater than 90</h4>
+                                  <p>When Progress is</p>
+                                  <h4>Less than 60</h4>
                                 </div>
                                 <div class="color-more">
                                   <span
@@ -4284,8 +4289,8 @@
                                   ></span>
                                 </div>
                                 <div class="color-settings-content">
-                                  <p>When Score is</p>
-                                  <h4>Greater than 90</h4>
+                                  <p>When Progress is</p>
+                                  <h4>Greater than or equal to 50</h4>
                                 </div>
                                 <div class="color-more">
                                   <span
@@ -4317,8 +4322,8 @@
                                   ></span>
                                 </div>
                                 <div class="color-settings-content">
-                                  <p>When Score is</p>
-                                  <h4>Greater than 90</h4>
+                                  <p>When Progress is</p>
+                                  <h4>Greater than 30</h4>
                                 </div>
                                 <div class="color-more">
                                   <span
@@ -4350,8 +4355,8 @@
                                   ></span>
                                 </div>
                                 <div class="color-settings-content">
-                                  <p>When Score is</p>
-                                  <h4>Greater than 90</h4>
+                                  <p>When Progress is</p>
+                                  <h4>Less than 50</h4>
                                 </div>
                                 <div class="color-more">
                                   <span
@@ -4608,6 +4613,203 @@
                                   <span
                                     style="background-color: #1e2dfc"
                                   ></span>
+                                </div>
+                                <div class="color-settings-content">
+                                  <p>When Confidence is</p>
+                                  <h4>Less than or equal to 0.7</h4>
+                                </div>
+                                <div class="color-more">
+                                  <span
+                                    data-toggle="modal"
+                                    data-target="#color_edit"
+                                    style="padding-right: 10px"
+                                  >
+                                    <i
+                                      class="fas fa-pen"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Update"
+                                    ></i>
+                                  </span>
+                                  <span>
+                                    <i
+                                      class="fas fa-trash"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Delete"
+                                    ></i>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col"></div>
+                            <div class="col-6 mb-3">
+                              <button
+                                class="btn btn-custom-secondary pull-right"
+                                data-toggle="modal"
+                                data-target="#confidence_add"
+                                style="height: 30px; width: 30px"
+                              >
+                                <i
+                                  class="fas fa-plus"
+                                  style="font-size: 12px"
+                                  data-toggle="tooltip"
+                                  data-placement="bottom"
+                                  title="Add"
+                                ></i>
+                              </button>
+                            </div>
+                          </div>
+
+                          <div
+                            class="row mt-4 confidence-color-option Emoji"
+                            style="display: none"
+                          >
+                            <div class="col-12">
+                              <span
+                                style="
+                                  font-size: 14px;
+                                  color: #444444;
+                                  font-weight: 600;
+                                "
+                                >Confidence Range</span
+                              >
+                            </div>
+                            <div
+                              class="col-6"
+                              style="height: 322px; overflow-x: auto"
+                            >
+                              <div class="color-ranges">
+                                <div class="color-box">
+                                  <span>
+                                    <img
+                                      src="../organisation/images/Emoji/love.png"
+                                      alt="Smile"
+                                  /></span>
+                                </div>
+                                <div class="color-settings-content">
+                                  <p>When Confidence is</p>
+                                  <h4>Less than or equal to 1</h4>
+                                </div>
+                                <div class="color-more">
+                                  <span
+                                    data-toggle="modal"
+                                    data-target="#color_edit"
+                                    class="pull-rght"
+                                  >
+                                    <i
+                                      class="fas fa-pen"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Update"
+                                    ></i>
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="color-ranges">
+                                <div class="color-box">
+                                  <span>
+                                    <img
+                                      src="../organisation/images/Emoji/smile.png"
+                                      alt="Smile"
+                                  /></span>
+                                </div>
+                                <div class="color-settings-content">
+                                  <p>When Confidence is</p>
+                                  <h4>Less than or equal to 0.7</h4>
+                                </div>
+                                <div class="color-more">
+                                  <span
+                                    data-toggle="modal"
+                                    data-target="#color_edit"
+                                    class="pull-rght"
+                                  >
+                                    <i
+                                      class="fas fa-pen"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Update"
+                                    ></i>
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="color-ranges">
+                                <div class="color-box">
+                                  <span>
+                                    <img
+                                      src="../organisation/images/Emoji/sad.png"
+                                      alt="Smile"
+                                  /></span>
+                                </div>
+                                <div class="color-settings-content">
+                                  <p>When Confidence is</p>
+                                  <h4>equal to 0</h4>
+                                </div>
+                                <div class="color-more">
+                                  <span
+                                    data-toggle="modal"
+                                    data-target="#color_edit"
+                                    style="padding-right: 10px"
+                                  >
+                                    <i
+                                      class="fas fa-pen"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Update"
+                                    ></i>
+                                  </span>
+                                  <span>
+                                    <i
+                                      class="fas fa-trash"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Delete"
+                                    ></i>
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="color-ranges">
+                                <div class="color-box">
+                                  <span>
+                                    <img
+                                      src="../organisation/images/Emoji/smiling.png"
+                                      alt="Smile"
+                                  /></span>
+                                </div>
+                                <div class="color-settings-content">
+                                  <p>When Confidence is</p>
+                                  <h4>Less than or equal to 1</h4>
+                                </div>
+                                <div class="color-more">
+                                  <span
+                                    data-toggle="modal"
+                                    data-target="#color_edit"
+                                    style="padding-right: 10px"
+                                  >
+                                    <i
+                                      class="fas fa-pen"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Update"
+                                    ></i>
+                                  </span>
+                                  <span>
+                                    <i
+                                      class="fas fa-trash"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Delete"
+                                    ></i>
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="color-ranges">
+                                <div class="color-box">
+                                  <span>
+                                    <img
+                                      src="../organisation/images/Emoji/in-love.png"
+                                      alt="Smile"
+                                  /></span>
                                 </div>
                                 <div class="color-settings-content">
                                   <p>When Confidence is</p>
