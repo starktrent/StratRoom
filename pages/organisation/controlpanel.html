@@ -25,6 +25,10 @@
       href="assets/daterangepicker/daterangepicker.min.css"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
 
     <link href="../../assets/js/file-upload/file-upload.css" rel="stylesheet" />
 
@@ -170,6 +174,47 @@
       .list-group-item i {
         font-size: 28px;
         padding-bottom: 8px;
+      }
+
+      .select2-container {
+        width: 100% !important;
+      }
+
+      .select2-container--default.select2-container--focus
+        .select2-selection--multiple:focus {
+        box-shadow: 0 0 3px #3191ff !important;
+        padding: 0 8px !important;
+        border: 1px solid #3191ff !important;
+      }
+
+      .select2-container--default.select2-container--focus
+        .select2-selection--multiple {
+        border: solid #ced4da 1px;
+        outline: 0;
+      }
+
+      .select2-container .select2-search--inline .select2-search__field {
+        box-sizing: border-box;
+        border: none;
+        font-size: 100%;
+        margin-top: -4px;
+        margin-left: 5px;
+        padding: 0;
+        margin-bottom: -10px;
+      }
+
+      .select2-container--default .select2-selection--multiple {
+        background-color: white;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        cursor: text;
+        padding-bottom: 5px;
+        padding-right: 5px;
+        height: 30px;
+      }
+
+      .select2-container .select2-selection--multiple {
+        min-height: 30px;
       }
 
       .panel-tab-content h4 {
@@ -525,6 +570,58 @@
 
       .confidence-color-container .selected-color {
         border: 3px solid #1e252d;
+      }
+
+      .custom-fields {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: row;
+        padding: 8px 0;
+        border-bottom: 1px solid #e9f0f9;
+        margin-bottom: 12px;
+        align-items: center;
+      }
+
+      .custom-fields .icon-section {
+        display: flex;
+        align-items: center;
+        width: 50px;
+      }
+
+      .custom-fields .icon-section i {
+        font-size: 14px;
+      }
+
+      .custom-fields .text-section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .custom-fields .text-section span {
+        font-size: 14px;
+      }
+
+      .custom-fields .custom-more {
+        display: flex;
+        align-items: center;
+        width: 30px;
+      }
+
+      .custom-fields .custom-more span {
+        cursor: pointer;
+      }
+
+      .custom-fields .custom-more span i {
+        color: #949494;
+      }
+
+      .selected-group {
+        background-color: #eeeeee;
+      }
+
+      .selected-group a:focus {
+        background-color: #eeeeee !important;
       }
     </style>
   </head>
@@ -1207,6 +1304,354 @@
       </div>
     </div>
     <!-- Add Confidence Range -->
+
+    <!-- Custom Field -->
+    <div
+      class="modal fade"
+      id="custom_field"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="width: 800px"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4
+              style="
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e252d;
+                margin-bottom: 18px;
+              "
+            >
+              Custom Field
+            </h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body" style="max-height: 620px; overflow-y: auto">
+            <div class="row">
+              <div class="col-4 form-group mb-4">
+                <label for="ID">ID</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  value=""
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Name">Name</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  value=""
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Description">Description</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <textarea
+                  class="form-control browser-default custom-textarea"
+                  cols="10"
+                  rows="3"
+                  placeholder="Enter description"
+                ></textarea>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Field Type">Field Type</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                  id="field_selectbox"
+                >
+                  <option value="none">Choose Field Type</option>
+                  <option value="Textbox">Textbox</option>
+                  <option value="Description">Description</option>
+                  <option value="Numeric">Numeric</option>
+                  <option value="Dropdown List">Dropdown List</option>
+                  <option value="Checkbox">Checkbox</option>
+                  <option value="Multi select List">Multi select List</option>
+                  <option value="Date Time Picker">Date Time Picker</option>
+                  <option value="Date Time Range Picker">
+                    Date Time Range Picker
+                  </option>
+                  <option value="Radio Button">Radio Button</option>
+                  <option value="Users">Users</option>
+                </select>
+              </div>
+
+              <div
+                class="col-4 form-group mb-4 option_field"
+                style="display: none"
+              >
+                <label for="Add values">Add values</label>
+              </div>
+
+              <div
+                class="col-8 form-group mb-4 option_field"
+                style="display: none"
+              >
+                <select
+                  class="field_options form-control browser-default custom-input-select"
+                  name="fields[]"
+                  multiple="multiple"
+                >
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                  <option value="Option 3">Option 3</option>
+                  <option value="Option 4">Option 4</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Assign field to">Assign field to</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="Objective">Objective</option>
+                  <option value="Key Result">Key Result</option>
+                  <option value="Task">Task</option>
+                  <option value="User">User</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Mandatory">Mandatory</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <div class="form-check" style="margin-top: -6px">
+                  <div class="form-check">
+                    <label
+                      class="form-check-label"
+                      style="font-size: 14px; font-weight: 500; color: #444444"
+                    >
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                      />
+                      <span class="form-check-sign">
+                        <span class="check"></span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Custom Field -->
+
+    <!-- Custom Field Edit -->
+    <div
+      class="modal fade"
+      id="custom_field_edit"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="width: 800px"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4
+              style="
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e252d;
+                margin-bottom: 18px;
+              "
+            >
+              Custom Field Edit
+            </h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body" style="max-height: 620px; overflow-y: auto">
+            <div class="row">
+              <div class="col-4 form-group mb-4">
+                <label for="ID">ID</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  value=""
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Name">Name</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  value=""
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Description">Description</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <textarea
+                  class="form-control browser-default custom-textarea"
+                  cols="10"
+                  rows="3"
+                  placeholder="Enter description"
+                ></textarea>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Field Type">Field Type</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                  id="field_selectbox_edit"
+                >
+                  <option value="none">Choose Field Type</option>
+                  <option value="Textbox">Textbox</option>
+                  <option value="Description">Description</option>
+                  <option value="Numeric">Numeric</option>
+                  <option value="Dropdown List">Dropdown List</option>
+                  <option value="Checkbox">Checkbox</option>
+                  <option value="Multi select List">Multi select List</option>
+                  <option value="Date Time Picker">Date Time Picker</option>
+                  <option value="Date Time Range Picker">
+                    Date Time Range Picker
+                  </option>
+                  <option value="Radio Button">Radio Button</option>
+                  <option value="Users">Users</option>
+                </select>
+              </div>
+
+              <div
+                class="col-4 form-group mb-4 option_field_edit"
+                style="display: none"
+              >
+                <label for="Add values">Add values</label>
+              </div>
+
+              <div
+                class="col-8 form-group mb-4 option_field_edit"
+                style="display: none"
+              >
+                <select
+                  class="field_options form-control browser-default custom-input-select"
+                  name="fields[]"
+                  multiple="multiple"
+                >
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                  <option value="Option 3">Option 3</option>
+                  <option value="Option 4">Option 4</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Assign field to">Assign field to</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="Objective">Objective</option>
+                  <option value="Key Result">Key Result</option>
+                  <option value="Task">Task</option>
+                  <option value="User">User</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Mandatory">Mandatory</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <div class="form-check" style="margin-top: -6px">
+                  <div class="form-check">
+                    <label
+                      class="form-check-label"
+                      style="font-size: 14px; font-weight: 500; color: #444444"
+                    >
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                      />
+                      <span class="form-check-sign">
+                        <span class="check"></span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Custom Field Edit -->
 
     <!-- Color Palette -->
     <div
@@ -4858,6 +5303,317 @@
                             </div>
                           </div>
                         </div>
+                        <div
+                          class="customTabContent CustomF"
+                          style="display: none"
+                        >
+                          <div class="row">
+                            <div class="col-12 form-group">
+                              <label for="">Custom Fields</label>
+                            </div>
+                            <div class="col-6 mb-3">
+                              <ul class="navbar-nav" style="display: contents">
+                                <button
+                                  class="btn btn-custom-secondary"
+                                  style="padding-top: 8px"
+                                >
+                                  <li class="nav-item dropdown">
+                                    <a
+                                      class="dropdown-toggle"
+                                      href="#"
+                                      id="navbarDropdownMenuLink"
+                                      data-toggle="dropdown"
+                                      aria-haspopup="true"
+                                      aria-expanded="false"
+                                      style="
+                                        font-size: 12px;
+                                        color: #2e2e2e !important;
+                                        font-weight: 500;
+                                      "
+                                    >
+                                      Filter:
+                                      <span id="displayText">Objectives</span>
+                                      <span style="top: 0"
+                                        ><i class="fas fa-sort-down"></i
+                                      ></span>
+                                    </a>
+
+                                    <ul
+                                      class="dropdown-menu groupby-dropdown"
+                                      aria-labelledby="navbarDropdownMenuLink"
+                                    >
+                                      <li>
+                                        <a
+                                          class="dropdown-item selected-group"
+                                          href="#"
+                                          >Objectives</a
+                                        >
+                                      </li>
+                                      <li>
+                                        <a class="dropdown-item" href="#"
+                                          >Key Result</a
+                                        >
+                                      </li>
+                                      <li>
+                                        <a class="dropdown-item" href="#"
+                                          >Task</a
+                                        >
+                                      </li>
+                                      <li>
+                                        <a class="dropdown-item" href="#"
+                                          >User</a
+                                        >
+                                      </li>
+                                    </ul>
+                                  </li>
+                                </button>
+
+                                <button
+                                  class="btn btn-custom-secondary pull-right"
+                                  data-toggle="modal"
+                                  data-target="#custom_field"
+                                  style="
+                                    height: 30px;
+                                    width: 30px;
+                                    margin-top: 4px;
+                                  "
+                                >
+                                  <i
+                                    class="fas fa-plus"
+                                    style="font-size: 12px"
+                                    data-toggle="tooltip"
+                                    data-placement="bottom"
+                                    title="Add"
+                                  ></i>
+                                </button>
+                              </ul>
+                            </div>
+                            <div class="col-auto"></div>
+                            <div
+                              class="col-6 form-group"
+                              style="height: 372px; overflow-x: auto"
+                            >
+                              <div class="custom-fields">
+                                <div class="icon-section">
+                                  <i class="fas fa-text-height"></i>
+                                </div>
+                                <div class="text-section">
+                                  <span>Name</span>
+                                </div>
+                                <div class="custom-more">
+                                  <span
+                                    data-toggle="modal"
+                                    data-target="#custom_field_edit"
+                                    style="padding-right: 10px"
+                                  >
+                                    <i
+                                      class="fas fa-pen"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Update"
+                                    ></i>
+                                  </span>
+                                  <span>
+                                    <i
+                                      class="fas fa-trash"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Delete"
+                                    ></i>
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="custom-fields">
+                                <div class="icon-section">
+                                  <i class="fas fa-text-height"></i>
+                                </div>
+                                <div class="text-section">
+                                  <span>Phone Number</span>
+                                </div>
+                                <div class="custom-more">
+                                  <span
+                                    data-toggle="modal"
+                                    data-target="#custom_field_edit"
+                                    style="padding-right: 10px"
+                                  >
+                                    <i
+                                      class="fas fa-pen"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Update"
+                                    ></i>
+                                  </span>
+                                  <span>
+                                    <i
+                                      class="fas fa-trash"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Delete"
+                                    ></i>
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="custom-fields">
+                                <div class="icon-section">
+                                  <i class="fas fa-text-height"></i>
+                                </div>
+                                <div class="text-section">
+                                  <span>Secondary Phone Number</span>
+                                </div>
+                                <div class="custom-more">
+                                  <span
+                                    data-toggle="modal"
+                                    data-target="#custom_field_edit"
+                                    style="padding-right: 10px"
+                                  >
+                                    <i
+                                      class="fas fa-pen"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Update"
+                                    ></i>
+                                  </span>
+                                  <span>
+                                    <i
+                                      class="fas fa-trash"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Delete"
+                                    ></i>
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="custom-fields">
+                                <div class="icon-section">
+                                  <i class="far fa-calendar-alt"></i>
+                                </div>
+                                <div class="text-section">
+                                  <span>Date of Birth</span>
+                                </div>
+                                <div class="custom-more">
+                                  <span
+                                    data-toggle="modal"
+                                    data-target="#custom_field_edit"
+                                    style="padding-right: 10px"
+                                  >
+                                    <i
+                                      class="fas fa-pen"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Update"
+                                    ></i>
+                                  </span>
+                                  <span>
+                                    <i
+                                      class="fas fa-trash"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Delete"
+                                    ></i>
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="custom-fields">
+                                <div class="icon-section">
+                                  <i class="fas fa-text-height"></i>
+                                </div>
+                                <div class="text-section">
+                                  <span>Company Name</span>
+                                </div>
+                                <div class="custom-more">
+                                  <span
+                                    data-toggle="modal"
+                                    data-target="#custom_field_edit"
+                                    style="padding-right: 10px"
+                                  >
+                                    <i
+                                      class="fas fa-pen"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Update"
+                                    ></i>
+                                  </span>
+                                  <span>
+                                    <i
+                                      class="fas fa-trash"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Delete"
+                                    ></i>
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="custom-fields">
+                                <div class="icon-section">
+                                  <i class="fas fa-link"></i>
+                                </div>
+                                <div class="text-section">
+                                  <span>Click Here</span>
+                                </div>
+                                <div class="custom-more">
+                                  <span
+                                    data-toggle="modal"
+                                    data-target="#custom_field_edit"
+                                    style="padding-right: 10px"
+                                  >
+                                    <i
+                                      class="fas fa-pen"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Update"
+                                    ></i>
+                                  </span>
+                                  <span>
+                                    <i
+                                      class="fas fa-trash"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Delete"
+                                    ></i>
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="custom-fields">
+                                <div class="icon-section">
+                                  <i class="fas fa-text-height"></i>
+                                </div>
+                                <div class="text-section">
+                                  <span>Postal Code</span>
+                                </div>
+                                <div class="custom-more">
+                                  <span
+                                    data-toggle="modal"
+                                    data-target="#custom_field_edit"
+                                    style="padding-right: 10px"
+                                  >
+                                    <i
+                                      class="fas fa-pen"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Update"
+                                    ></i>
+                                  </span>
+                                  <span>
+                                    <i
+                                      class="fas fa-trash"
+                                      data-toggle="tooltip"
+                                      data-placement="bottom"
+                                      title="Delete"
+                                    ></i>
+                                  </span>
+                                </div>
+                              </div>
+                              <!-- <div class="custom-fields">
+                                <div class="icon-section">
+                                  <i class="fas fa-text-height"></i>
+                                </div>
+                                <div class="text-section">
+                                  <span>Cosmos Email</span>
+                                </div>
+                              </div> -->
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -4907,6 +5663,10 @@
           $("div.panel-tab>div.panel-tab-content").removeClass("active");
           $("div.panel-tab>div.panel-tab-content").eq(index).addClass("active");
         });
+      });
+
+      $(document).ready(function () {
+        $(".field_options").select2();
       });
 
       $(document).ready(function () {
@@ -5202,6 +5962,68 @@
           var liveColor = $(this).val();
           $("#live-color-holder2").css("background-color", liveColor);
         });
+      });
+
+      $(".groupby-dropdown li a").click(function () {
+        $(".groupby-dropdown li a").removeClass("selected-group");
+        if ($(this).text() == "Objectives") {
+          $("#displayText").text("Objectives");
+          $(this).addClass("selected-group");
+        }
+        if ($(this).text() == "Key Result") {
+          $("#displayText").text("Key Result");
+          $(this).addClass("selected-group");
+        }
+        if ($(this).text() == "Task") {
+          $("#displayText").text("Task");
+          $(this).addClass("selected-group");
+        }
+        if ($(this).text() == "User") {
+          $("#displayText").text("User");
+          $(this).addClass("selected-group");
+        }
+      });
+
+      $(document).ready(function () {
+        $("#field_selectbox")
+          .change(function () {
+            var selected_field = $("#field_selectbox option")
+              .filter(":selected")
+              .text();
+            if (selected_field == "Dropdown List") {
+              $(".option_field").show();
+            } else if (selected_field == "Checkbox") {
+              $(".option_field").show();
+            } else if (selected_field == "Multi select List") {
+              $(".option_field").show();
+            } else if (selected_field == "Radio Button") {
+              $(".option_field").show();
+            } else {
+              $(".option_field").hide();
+            }
+          })
+          .change();
+      });
+
+      $(document).ready(function () {
+        $("#field_selectbox_edit")
+          .change(function () {
+            var selected_field = $("#field_selectbox_edit option")
+              .filter(":selected")
+              .text();
+            if (selected_field == "Dropdown List") {
+              $(".option_field_edit").show();
+            } else if (selected_field == "Checkbox") {
+              $(".option_field_edit").show();
+            } else if (selected_field == "Multi select List") {
+              $(".option_field_edit").show();
+            } else if (selected_field == "Radio Button") {
+              $(".option_field_edit").show();
+            } else {
+              $(".option_field_edit").hide();
+            }
+          })
+          .change();
       });
     </script>
   </body>
