@@ -1257,7 +1257,10 @@
                 >
               </div>
 
-              <div class="col-8 form-group share-with Yes" id="dept_section">
+              <div
+                class="col-8 form-group mb-4 share-with Yes"
+                id="dept_section"
+              >
                 <div class="input-group" style="margin-bottom: 0px">
                   <select
                     class="dept-contribution1 form-control browser-default custom-input-select"
@@ -1276,25 +1279,22 @@
                     style="width: 50% !important"
                     value=""
                   />
-                </div>
-              </div>
 
-              <div class="col-4 form-group mb-4 share-with Yes"></div>
-              <div class="col-8 form-group mb-4 share-with Yes">
-                <span
-                  id="add_dept"
-                  style="
-                    height: 26px;
-                    width: 26px;
-                    padding: 4px 7px;
-                    border: 1px solid #ced4da;
-                    border-radius: 4px;
-                    cursor: pointer;
-                    margin-left: 2px;
-                  "
-                >
-                  <i class="fas fa-plus"></i>
-                </span>
+                  <span
+                    id="add_dept"
+                    style="
+                      height: 26px;
+                      width: 26px;
+                      padding: 4px 7px;
+                      border: 1px solid #ced4da;
+                      border-radius: 4px;
+                      cursor: pointer;
+                      margin-left: 2px;
+                    "
+                  >
+                    <i class="fas fa-plus"></i>
+                  </span>
+                </div>
               </div>
 
               <div
@@ -1495,7 +1495,7 @@
               </div>
 
               <div
-                class="col-8 form-group share-with-edit-child yes"
+                class="col-8 form-group mb-4 share-with-edit-child yes"
                 id="dept_section_edit_child"
               >
                 <div class="input-group" style="margin-bottom: 0px">
@@ -1517,11 +1517,7 @@
                     value="10"
                   />
                 </div>
-              </div>
-              <div
-                class="col-4 form-group mb-4 share-with-edit-child yes"
-              ></div>
-              <div class="col-8 form-group mb-4 share-with-edit-child yes">
+
                 <span
                   id="edit_dept_child"
                   style="
@@ -1736,7 +1732,7 @@
               </div>
 
               <div
-                class="col-8 form-group share-with-edit Yess"
+                class="col-8 form-group mb-4 share-with-edit Yess"
                 id="dept_section_edit"
               >
                 <div class="input-group" style="margin-bottom: 0px">
@@ -1757,24 +1753,22 @@
                     style="width: 50% !important"
                     value="10"
                   />
+
+                  <span
+                    id="edit_dept"
+                    style="
+                      height: 26px;
+                      width: 26px;
+                      padding: 4px 7px;
+                      border: 1px solid #ced4da;
+                      border-radius: 4px;
+                      cursor: pointer;
+                      margin-left: 2px;
+                    "
+                  >
+                    <i class="fas fa-plus"></i>
+                  </span>
                 </div>
-              </div>
-              <div class="col-4 form-group mb-4 share-with-edit Yess"></div>
-              <div class="col-8 form-group mb-4 share-with-edit Yess">
-                <span
-                  id="edit_dept"
-                  style="
-                    height: 26px;
-                    width: 26px;
-                    padding: 4px 7px;
-                    border: 1px solid #ced4da;
-                    border-radius: 4px;
-                    cursor: pointer;
-                    margin-left: 2px;
-                  "
-                >
-                  <i class="fas fa-plus"></i>
-                </span>
               </div>
 
               <div
@@ -1952,7 +1946,7 @@
               </div>
 
               <div class="col-4 form-group mb-4">
-                <label for="Target Value">Target Value</label>
+                <label for="Initial">Initial</label>
               </div>
 
               <div class="col-8 form-group mb-4">
@@ -1965,7 +1959,7 @@
               </div>
 
               <div class="col-4 form-group mb-4">
-                <label for="Initial Value">Initial Value</label>
+                <label for="Baseline">Baseline</label>
               </div>
 
               <div class="col-8 form-group mb-4">
@@ -1978,7 +1972,20 @@
               </div>
 
               <div class="col-4 form-group mb-4">
-                <label for="Actual Value">Actual Value</label>
+                <label for="Actual">Actual</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  placeholder="0"
+                  value=""
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Target">Target</label>
               </div>
 
               <div class="col-8 form-group mb-4">
@@ -2037,6 +2044,39 @@
               </div>
 
               <div class="col-4 form-group mb-4">
+                <label for="Check In Frequency">Check In Frequency</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="Select Frequency">Select Frequency</option>
+                  <option value="Daily">Daily</option>
+                  <option value="Weekly">Weekly</option>
+                  <option value="Monthly">Monthly</option>
+                  <option value="Quarterly">Quarterly</option>
+                  <option value="Half Yearly">Half Yearly</option>
+                  <option value="Annually">Annually</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Check In Range">Check In Range</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control persp_date browser-default date_pickers datepicker-here custom-input"
+                  data-range="true"
+                  data-multiple-dates-separator=" - "
+                  data-language="en"
+                  id="air-date-sub-init"
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
                 <label for="Deadline">Deadline</label>
               </div>
 
@@ -2049,19 +2089,6 @@
                   id="kpi_start_end_date"
                   value=""
                 />
-              </div>
-
-              <div class="col-4 form-group mb-4">
-                <label for="Cascading">Cascading</label>
-              </div>
-
-              <div class="col-8 form-group mb-4">
-                <select
-                  class="form-control browser-default custom-input-select"
-                >
-                  <option value="Yes">Yes</option>
-                  <option value="No">No</option>
-                </select>
               </div>
 
               <div class="col-12">
@@ -2167,41 +2194,54 @@
               </div>
 
               <div class="col-4 form-group mb-4">
-                <label for="Target Value">Target Value</label>
+                <label for="Initial">Initial</label>
               </div>
 
               <div class="col-8 form-group mb-4">
                 <input
                   type="text"
                   class="form-control browser-default custom-input"
-                  placeholder="20"
-                  value=""
+                  placeholder="0"
+                  value="10"
                 />
               </div>
 
               <div class="col-4 form-group mb-4">
-                <label for="Initial Value">Initial Value</label>
+                <label for="Baseline">Baseline</label>
               </div>
 
               <div class="col-8 form-group mb-4">
                 <input
                   type="text"
                   class="form-control browser-default custom-input"
-                  placeholder="30"
-                  value=""
+                  placeholder="0"
+                  value="35"
                 />
               </div>
 
               <div class="col-4 form-group mb-4">
-                <label for="Actual Value">Actual Value</label>
+                <label for="Actual">Actual</label>
               </div>
 
               <div class="col-8 form-group mb-4">
                 <input
                   type="text"
                   class="form-control browser-default custom-input"
-                  placeholder="40"
-                  value=""
+                  placeholder="0"
+                  value="20"
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Target">Target</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  placeholder="0"
+                  value="30"
                 />
               </div>
 
@@ -2252,6 +2292,39 @@
               </div>
 
               <div class="col-4 form-group mb-4">
+                <label for="Check In Frequency">Check In Frequency</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="Select Frequency">Select Frequency</option>
+                  <option value="Daily">Daily</option>
+                  <option value="Weekly">Weekly</option>
+                  <option value="Monthly">Monthly</option>
+                  <option value="Quarterly">Quarterly</option>
+                  <option value="Half Yearly">Half Yearly</option>
+                  <option value="Annually">Annually</option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Check In Range">Check In Range</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control persp_date browser-default date_pickers datepicker-here custom-input"
+                  data-range="true"
+                  data-multiple-dates-separator=" - "
+                  data-language="en"
+                  id="air-date-sub-init"
+                />
+              </div>
+
+              <div class="col-4 form-group mb-4">
                 <label for="Deadline">Deadline</label>
               </div>
 
@@ -2264,19 +2337,6 @@
                   id="kpi_start_end_date"
                   value=""
                 />
-              </div>
-
-              <div class="col-4 form-group mb-4">
-                <label for="Cascading">Cascading</label>
-              </div>
-
-              <div class="col-8 form-group mb-4">
-                <select
-                  class="form-control browser-default custom-input-select"
-                >
-                  <option value="Yes">Yes</option>
-                  <option value="No">No</option>
-                </select>
               </div>
 
               <div class="col-12">
