@@ -314,8 +314,7 @@
         display: none;
       }
 
-      .som,
-      .config {
+      .custom-radio {
         display: block !important;
         position: relative !important;
         padding-left: 35px !important;
@@ -330,8 +329,7 @@
       }
 
       /* Hide the browser's default radio button */
-      .som input,
-      .config input {
+      .custom-radio input {
         position: absolute;
         opacity: 0;
         cursor: pointer;
@@ -349,14 +347,12 @@
       }
 
       /* On mouse-over, add a grey background color */
-      .som:hover input ~ .checkmark,
-      .config:hover input ~ .checkmark {
+      .custom-radio:hover input ~ .checkmark {
         background-color: #ccc;
       }
 
       /* When the radio button is checked, add a blue background */
-      .som input:checked ~ .checkmark,
-      .config input:checked ~ .checkmark {
+      .custom-radio input:checked ~ .checkmark {
         background-color: #1e252d;
       }
 
@@ -368,14 +364,12 @@
       }
 
       /* Show the indicator (dot/circle) when checked */
-      .som input:checked ~ .checkmark:after,
-      .config input:checked ~ .checkmark:after {
+      .custom-radio input:checked ~ .checkmark:after {
         display: block;
       }
 
       /* Style the indicator (dot/circle) */
-      .som .checkmark:after,
-      .config .checkmark:after {
+      .custom-radio .checkmark:after {
         top: 3.4px;
         left: 3.4px;
         width: 6px;
@@ -590,6 +584,10 @@
 
       .custom-fields .icon-section i {
         font-size: 14px;
+      }
+
+      .custom-fields .icon-section img {
+        width: 20px;
       }
 
       .custom-fields .text-section {
@@ -1049,11 +1047,13 @@
                   <option value="#">Select range</option>
                   <option value="Greater than">Greater than</option>
                   <option value="Less than">Less than</option>
-                  <option value="Equal to greater than">
-                    Equal to greater than
-                  </option>
-                  <option value="Equal to less than">Equal to less than</option>
                   <option value="Equal to">Equal to</option>
+                  <option value="Greater than or Equal to">
+                    Greater than or Equal to
+                  </option>
+                  <option value="Less than or Equal to">
+                    Less than or Equal to
+                  </option>
                 </select>
               </div>
 
@@ -1157,11 +1157,13 @@
                   <option value="#">Select range</option>
                   <option value="Greater than">Greater than</option>
                   <option value="Less than">Less than</option>
-                  <option value="Equal to greater than">
-                    Equal to greater than
-                  </option>
-                  <option value="Equal to less than">Equal to less than</option>
                   <option value="Equal to">Equal to</option>
+                  <option value="Greater than or Equal to">
+                    Greater than or Equal to
+                  </option>
+                  <option value="Less than or Equal to">
+                    Less than or Equal to
+                  </option>
                 </select>
               </div>
 
@@ -1265,11 +1267,13 @@
                   <option value="#">Select range</option>
                   <option value="Greater than">Greater than</option>
                   <option value="Less than">Less than</option>
-                  <option value="Equal to greater than">
-                    Equal to greater than
-                  </option>
-                  <option value="Equal to less than">Equal to less than</option>
                   <option value="Equal to">Equal to</option>
+                  <option value="Greater than or Equal to">
+                    Greater than or Equal to
+                  </option>
+                  <option value="Less than or Equal to">
+                    Less than or Equal to
+                  </option>
                 </select>
               </div>
 
@@ -1305,6 +1309,116 @@
     </div>
     <!-- Add Confidence Range -->
 
+    <!-- Edit Confidence Range -->
+    <div
+      class="modal fade"
+      id="confidence_edit"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="width: 600px"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4
+              style="
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e252d;
+                margin-bottom: 18px;
+              "
+            >
+              Edit Confidence Range
+            </h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-4 form-group mb-4">
+                <label for="color">Color</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <div class="input-group" style="margin-bottom: 0">
+                  <a
+                    href="#"
+                    id="color_trigger"
+                    data-toggle="modal"
+                    data-target="#confidence_color_palette"
+                  >
+                    <span
+                      class="input-group-text"
+                      id="confidence-color-holder"
+                      style="
+                        width: 90px;
+                        border-radius: 0px;
+                        height: 30px;
+                        background: #eeeeee;
+                      "
+                    ></span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="range">Range</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="#">Select range</option>
+                  <option value="Greater than">Greater than</option>
+                  <option value="Less than">Less than</option>
+                  <option value="Equal to">Equal to</option>
+                  <option value="Greater than or Equal to">
+                    Greater than or Equal to
+                  </option>
+                  <option value="Less than or Equal to">
+                    Less than or Equal to
+                  </option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="value">Value</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  value=""
+                />
+              </div>
+
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Edit Confidence Range -->
+
     <!-- Custom Field -->
     <div
       class="modal fade"
@@ -1315,7 +1429,7 @@
     >
       <div
         class="modal-dialog modal-dialog-centered modal-lg"
-        style="width: 800px"
+        style="width: 600px"
       >
         <div class="modal-content">
           <div class="modal-header">
@@ -1489,7 +1603,7 @@
     >
       <div
         class="modal-dialog modal-dialog-centered modal-lg"
-        style="width: 800px"
+        style="width: 600px"
       >
         <div class="modal-content">
           <div class="modal-header">
@@ -3327,7 +3441,7 @@
                                 />
                                 <span class="checkmark"></span>
                               </label> -->
-                              <label class="som"
+                              <label class="custom-radio"
                                 >SAML 2.0
                                 <input
                                   type="radio"
@@ -3337,7 +3451,7 @@
                                 />
                                 <span class="checkmark"></span>
                               </label>
-                              <label class="som"
+                              <label class="custom-radio"
                                 >OpenID Connect
                                 <input
                                   type="radio"
@@ -3388,7 +3502,7 @@
                                   class="col-4 form-group"
                                   style="padding-bottom: 8px"
                                 >
-                                  <label class="config"
+                                  <label class="custom-radio"
                                     >Metadata URL
                                     <input
                                       type="radio"
@@ -3404,7 +3518,7 @@
                                   class="col-4 form-group"
                                   style="padding-bottom: 8px"
                                 >
-                                  <label class="config"
+                                  <label class="custom-radio"
                                     >Metadata File
                                     <input
                                       type="radio"
@@ -3419,7 +3533,7 @@
                                   class="col-4 form-group"
                                   style="padding-bottom: 8px"
                                 >
-                                  <label class="config"
+                                  <label class="custom-radio"
                                     >Manual Settings
                                     <input
                                       type="radio"
@@ -4643,19 +4757,29 @@
                             <div class="col-12 form-group">
                               <label for="">Select your status type</label>
                             </div>
-                            <div class="col-4 mb-4">
-                              <select
-                                class="form-control browser-default"
-                                id="color_type"
-                              >
-                                <option value="none">Select Status Type</option>
-                                <option value="Color">Color</option>
-                                <option value="No Color">No Color</option>
-                              </select>
+                            <div class="col-6 mb-4 input-group">
+                              <label id="color_type" class="custom-radio mr-5"
+                                >Color
+                                <input
+                                  type="radio"
+                                  name="colortype"
+                                  value="color"
+                                />
+                                <span class="checkmark"></span>
+                              </label>
+                              <label id="color_type" class="custom-radio"
+                                >No Color
+                                <input
+                                  type="radio"
+                                  name="colortype"
+                                  value="nocolor"
+                                />
+                                <span class="checkmark"></span>
+                              </label>
                             </div>
                           </div>
                           <div
-                            class="row color-option Color"
+                            class="row color-option color"
                             style="display: none"
                           >
                             <div class="col-12 form-group">
@@ -4684,7 +4808,7 @@
                                   ></span>
                                 </div>
                                 <div class="color-settings-content">
-                                  <p>When Progress is</p>
+                                  <p>When progress is</p>
                                   <h4>Greater than 90</h4>
                                 </div>
                                 <div class="color-more">
@@ -4709,7 +4833,7 @@
                                   ></span>
                                 </div>
                                 <div class="color-settings-content">
-                                  <p>When Progress is</p>
+                                  <p>When progress is</p>
                                   <h4>Less than 60</h4>
                                 </div>
                                 <div class="color-more">
@@ -4734,7 +4858,7 @@
                                   ></span>
                                 </div>
                                 <div class="color-settings-content">
-                                  <p>When Progress is</p>
+                                  <p>When progress is</p>
                                   <h4>Greater than or equal to 50</h4>
                                 </div>
                                 <div class="color-more">
@@ -4767,7 +4891,7 @@
                                   ></span>
                                 </div>
                                 <div class="color-settings-content">
-                                  <p>When Progress is</p>
+                                  <p>When progress is</p>
                                   <h4>Greater than 30</h4>
                                 </div>
                                 <div class="color-more">
@@ -4800,7 +4924,7 @@
                                   ></span>
                                 </div>
                                 <div class="color-settings-content">
-                                  <p>When Progress is</p>
+                                  <p>When progress is</p>
                                   <h4>Less than 50</h4>
                                 </div>
                                 <div class="color-more">
@@ -4908,15 +5032,29 @@
                                 >Label Type</span
                               >
                             </div>
-                            <div class="col-4">
-                              <select
-                                class="form-control browser-default"
+                            <div class="col-6 mb-4 input-group">
+                              <label
                                 id="confidence_color_type"
-                              >
-                                <option value="none">Select Label Type</option>
-                                <option value="Numeric">Numeric</option>
-                                <option value="Emoji">Emoji</option>
-                              </select>
+                                class="custom-radio mr-5"
+                                >Numeric
+                                <input
+                                  type="radio"
+                                  name="confidencetype"
+                                  value="Numeric"
+                                />
+                                <span class="checkmark"></span>
+                              </label>
+                              <label
+                                id="confidence_color_type"
+                                class="custom-radio"
+                                >Emoji
+                                <input
+                                  type="radio"
+                                  name="confidencetype"
+                                  value="Emoji"
+                                />
+                                <span class="checkmark"></span>
+                              </label>
                             </div>
                           </div>
                           <div
@@ -4950,7 +5088,7 @@
                                 <div class="color-more">
                                   <span
                                     data-toggle="modal"
-                                    data-target="#color_edit"
+                                    data-target="#confidence_edit"
                                     class="pull-rght"
                                   >
                                     <i
@@ -4975,7 +5113,7 @@
                                 <div class="color-more">
                                   <span
                                     data-toggle="modal"
-                                    data-target="#color_edit"
+                                    data-target="#confidence_edit"
                                     class="pull-rght"
                                   >
                                     <i
@@ -5000,7 +5138,7 @@
                                 <div class="color-more">
                                   <span
                                     data-toggle="modal"
-                                    data-target="#color_edit"
+                                    data-target="#confidence_edit"
                                     style="padding-right: 10px"
                                   >
                                     <i
@@ -5033,7 +5171,7 @@
                                 <div class="color-more">
                                   <span
                                     data-toggle="modal"
-                                    data-target="#color_edit"
+                                    data-target="#confidence_edit"
                                     style="padding-right: 10px"
                                   >
                                     <i
@@ -5066,7 +5204,7 @@
                                 <div class="color-more">
                                   <span
                                     data-toggle="modal"
-                                    data-target="#color_edit"
+                                    data-target="#confidence_edit"
                                     style="padding-right: 10px"
                                   >
                                     <i
@@ -5395,7 +5533,10 @@
                             >
                               <div class="custom-fields">
                                 <div class="icon-section">
-                                  <i class="fas fa-text-height"></i>
+                                  <img
+                                    src="../organisation/images/icon/singleline.png"
+                                    alt="singleline"
+                                  />
                                 </div>
                                 <div class="text-section">
                                   <span>Name</span>
@@ -5425,7 +5566,10 @@
                               </div>
                               <div class="custom-fields">
                                 <div class="icon-section">
-                                  <i class="fas fa-text-height"></i>
+                                  <img
+                                    src="../organisation/images/icon/numbers.png"
+                                    alt="numbers"
+                                  />
                                 </div>
                                 <div class="text-section">
                                   <span>Phone Number</span>
@@ -5455,7 +5599,10 @@
                               </div>
                               <div class="custom-fields">
                                 <div class="icon-section">
-                                  <i class="fas fa-text-height"></i>
+                                  <img
+                                    src="../organisation/images/icon/numbers.png"
+                                    alt="numbers"
+                                  />
                                 </div>
                                 <div class="text-section">
                                   <span>Secondary Phone Number</span>
@@ -5485,7 +5632,10 @@
                               </div>
                               <div class="custom-fields">
                                 <div class="icon-section">
-                                  <i class="far fa-calendar-alt"></i>
+                                  <img
+                                    src="../organisation/images/icon/date.png"
+                                    alt="date"
+                                  />
                                 </div>
                                 <div class="text-section">
                                   <span>Date of Birth</span>
@@ -5515,7 +5665,10 @@
                               </div>
                               <div class="custom-fields">
                                 <div class="icon-section">
-                                  <i class="fas fa-text-height"></i>
+                                  <img
+                                    src="../organisation/images/icon/singleline.png"
+                                    alt="singleline"
+                                  />
                                 </div>
                                 <div class="text-section">
                                   <span>Company Name</span>
@@ -5545,7 +5698,10 @@
                               </div>
                               <div class="custom-fields">
                                 <div class="icon-section">
-                                  <i class="fas fa-link"></i>
+                                  <img
+                                    src="../organisation/images/icon/link.png"
+                                    alt="link"
+                                  />
                                 </div>
                                 <div class="text-section">
                                   <span>Click Here</span>
@@ -5575,7 +5731,10 @@
                               </div>
                               <div class="custom-fields">
                                 <div class="icon-section">
-                                  <i class="fas fa-text-height"></i>
+                                  <img
+                                    src="../organisation/images/icon/numbers.png"
+                                    alt="numbers"
+                                  />
                                 </div>
                                 <div class="text-section">
                                   <span>Postal Code</span>
@@ -5796,6 +5955,24 @@
         }
         $(this).parent().find("button").removeClass("active");
         $(this).addClass("active");
+      });
+
+      $(document).ready(function () {
+        $('input[name="colortype"]').click(function () {
+          var inputValue = $(this).attr("value");
+          var targetBox = $("." + inputValue);
+          $(".color-option").not(targetBox).hide();
+          $(targetBox).show();
+        });
+      });
+
+      $(document).ready(function () {
+        $('input[name="confidencetype"]').click(function () {
+          var inputValue = $(this).attr("value");
+          var targetBox = $("." + inputValue);
+          $(".confidence-color-option").not(targetBox).hide();
+          $(targetBox).show();
+        });
       });
 
       $(document).ready(function () {
