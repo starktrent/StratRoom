@@ -176,15 +176,33 @@
         padding-bottom: 8px;
       }
 
+      .select2-container--default
+        .select2-search--dropdown
+        .select2-search__field {
+        border: 1px solid #aaa;
+        height: 26px;
+        font-size: 12px;
+        margin-bottom: 4px;
+        margin-top: 4px;
+      }
+
+      .select2-container--open .select2-dropdown--below {
+        margin-top: -1px;
+      }
+
+      .select2-search--dropdown {
+        padding: 4px 6px 4px 4px;
+      }
+
       .select2-container {
         width: 100% !important;
       }
 
       .select2-container--default.select2-container--focus
         .select2-selection--multiple:focus {
-        box-shadow: 0 0 3px #3191ff !important;
+        box-shadow: 0 0 3px #1e252d !important;
         padding: 0 8px !important;
-        border: 1px solid #3191ff !important;
+        border: 1px solid #1e252d !important;
       }
 
       .select2-container--default.select2-container--focus
@@ -1492,7 +1510,7 @@
 
               <div class="col-8 form-group mb-4">
                 <select
-                  class="form-control browser-default custom-input-select"
+                  class="field-type form-control browser-default custom-input-select"
                   id="field_selectbox"
                 >
                   <option value="none">Choose Field Type</option>
@@ -1666,7 +1684,7 @@
 
               <div class="col-8 form-group mb-4">
                 <select
-                  class="form-control browser-default custom-input-select"
+                  class="field-type form-control browser-default custom-input-select"
                   id="field_selectbox_edit"
                 >
                   <option value="none">Choose Field Type</option>
@@ -1766,6 +1784,108 @@
       </div>
     </div>
     <!-- Custom Field Edit -->
+
+    <!-- Add Unit -->
+    <div
+      class="modal fade"
+      id="key_unit_add"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="width: 600px"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4
+              style="
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e252d;
+                margin-bottom: 18px;
+              "
+            >
+              Add Unit
+            </h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body" style="max-height: 620px; overflow-y: auto">
+            <div class="row">
+              <div class="col-4 form-group mb-4">
+                <label for="Unit">Unit</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  id="new_unit"
+                  value=""
+                />
+              </div>
+
+              <div class="col-12 mb-4 input-group">
+                <label id="unit_position" class="custom-radio mr-5"
+                  >Display after
+                  <input
+                    type="radio"
+                    name="unitPosition"
+                    value="after"
+                    checked
+                  />
+                  <span class="checkmark"></span>
+                </label>
+                <label id="unit_position" class="custom-radio"
+                  >Display before
+                  <input type="radio" name="unitPosition" value="before" />
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="Preview">Preview</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <span
+                  style="
+                    font-weight: 600;
+                    font-size: 15px;
+                    color: #414244;
+                    display: none;
+                  "
+                  class="live-unit before"
+                ></span>
+                <label style="font-weight: 600">1,000</label>
+                <span
+                  style="font-weight: 600; font-size: 15px; color: #414244"
+                  class="live-unit after"
+                ></span>
+              </div>
+
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Add Unit -->
 
     <!-- Color Palette -->
     <div
@@ -4979,14 +5099,7 @@
                               <label for="">Confidence Level Settings</label>
                             </div> -->
                             <div class="col-12 form-group">
-                              <span
-                                style="
-                                  font-size: 14px;
-                                  color: #444444;
-                                  font-weight: 600;
-                                "
-                                >Choose your confidence scale</span
-                              >
+                              <label>Choose your confidence scale</label>
                             </div>
                             <div class="col-6">
                               <span
@@ -5029,7 +5142,7 @@
                                   color: #444444;
                                   font-weight: 600;
                                 "
-                                >Choose your confidence labe</span
+                                >Choose your confidence label</span
                               >
                             </div>
                             <div class="col-6 mb-4 input-group">
@@ -5058,7 +5171,7 @@
                             </div>
                           </div>
                           <div
-                            class="row mt-4 confidence-color-option Numeric"
+                            class="row confidence-color-option Numeric"
                             style="display: none"
                           >
                             <div class="col-12">
@@ -5083,7 +5196,7 @@
                                 </div>
                                 <div class="color-settings-content">
                                   <p>When Confidence is</p>
-                                  <h4>Less than or equal to 1</h4>
+                                  <h4>Greater than 1</h4>
                                 </div>
                                 <div class="color-more">
                                   <span
@@ -5108,7 +5221,7 @@
                                 </div>
                                 <div class="color-settings-content">
                                   <p>When Confidence is</p>
-                                  <h4>Less than or equal to 0.7</h4>
+                                  <h4>Equal to 0.7</h4>
                                 </div>
                                 <div class="color-more">
                                   <span
@@ -5133,7 +5246,7 @@
                                 </div>
                                 <div class="color-settings-content">
                                   <p>When Confidence is</p>
-                                  <h4>equal to 0</h4>
+                                  <h4>Greater than or Equal to 10</h4>
                                 </div>
                                 <div class="color-more">
                                   <span
@@ -5166,7 +5279,7 @@
                                 </div>
                                 <div class="color-settings-content">
                                   <p>When Confidence is</p>
-                                  <h4>Less than or equal to 1</h4>
+                                  <h4>Less than 5</h4>
                                 </div>
                                 <div class="color-more">
                                   <span
@@ -5199,7 +5312,7 @@
                                 </div>
                                 <div class="color-settings-content">
                                   <p>When Confidence is</p>
-                                  <h4>Less than or equal to 0.7</h4>
+                                  <h4>Less than or equal to 17</h4>
                                 </div>
                                 <div class="color-more">
                                   <span
@@ -5272,7 +5385,7 @@
                                 </div>
                                 <div class="color-settings-content">
                                   <p>When Confidence is</p>
-                                  <h4>Less than or equal to 1</h4>
+                                  <h4>Greater than or Equal to 10</h4>
                                 </div>
                                 <div class="color-more">
                                   <span
@@ -5299,7 +5412,7 @@
                                 </div>
                                 <div class="color-settings-content">
                                   <p>When Confidence is</p>
-                                  <h4>Less than or equal to 0.7</h4>
+                                  <h4>Greater than 1</h4>
                                 </div>
                                 <div class="color-more">
                                   <span
@@ -5326,7 +5439,7 @@
                                 </div>
                                 <div class="color-settings-content">
                                   <p>When Confidence is</p>
-                                  <h4>equal to 0</h4>
+                                  <h4>Less than 5</h4>
                                 </div>
                                 <div class="color-more">
                                   <span
@@ -5361,7 +5474,7 @@
                                 </div>
                                 <div class="color-settings-content">
                                   <p>When Confidence is</p>
-                                  <h4>Less than or equal to 1</h4>
+                                  <h4>Equal to 0.7</h4>
                                 </div>
                                 <div class="color-more">
                                   <span
@@ -5396,7 +5509,7 @@
                                 </div>
                                 <div class="color-settings-content">
                                   <p>When Confidence is</p>
-                                  <h4>Less than or equal to 0.7</h4>
+                                  <h4>Less than 5</h4>
                                 </div>
                                 <div class="color-more">
                                   <span
@@ -5773,6 +5886,31 @@
                             </div>
                           </div>
                         </div>
+                        <div
+                          class="customTabContent General"
+                          style="display: none"
+                        >
+                          <div class="row">
+                            <!-- <div class="col-12 form-group">
+                            <label for="">Confidence Level Settings</label>
+                          </div> -->
+                            <div class="col-12 form-group">
+                              <label>Key Result Unit</label>
+                            </div>
+                            <div class="col-4 mb-4">
+                              <select
+                                class="form-control browser-default"
+                                id="key_result_unit"
+                              >
+                                <option value="none">No formatting</option>
+                                <option value="$">$</option>
+                                <option value="%">%</option>
+                                <option value="#">#</option>
+                                <option value="">+ Add</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -5826,6 +5964,7 @@
 
       $(document).ready(function () {
         $(".field_options").select2();
+        $(".field-type").select2();
       });
 
       $(document).ready(function () {
@@ -5976,43 +6115,12 @@
       });
 
       $(document).ready(function () {
-        $("#color_type")
-          .change(function () {
-            $(this)
-              .find("option:selected")
-              .each(function () {
-                var optionValue = $(this).attr("value");
-                if (optionValue) {
-                  $(".color-option")
-                    .not("." + optionValue)
-                    .hide();
-                  $("." + optionValue).show();
-                } else {
-                  $(".color-option").hide();
-                }
-              });
-          })
-          .change();
-      });
-
-      $(document).ready(function () {
-        $("#confidence_color_type")
-          .change(function () {
-            $(this)
-              .find("option:selected")
-              .each(function () {
-                var optionValue = $(this).attr("value");
-                if (optionValue) {
-                  $(".confidence-color-option")
-                    .not("." + optionValue)
-                    .hide();
-                  $("." + optionValue).show();
-                } else {
-                  $(".confidence-color-option").hide();
-                }
-              });
-          })
-          .change();
+        $('input[name="unitPosition"]').click(function () {
+          var inputValue = $(this).attr("value");
+          var targetBox = $("." + inputValue);
+          $(".live-unit").not(targetBox).hide();
+          $(targetBox).show();
+        });
       });
 
       // Status color selection
@@ -6067,6 +6175,10 @@
           var liveColor = $(this).val();
           $("#live-color-holder").css("background-color", liveColor);
         });
+      });
+
+      $("#new_unit").keyup(function () {
+        $(".live-unit").text($(this).val());
       });
 
       // Confidence color selection
@@ -6201,6 +6313,12 @@
             }
           })
           .change();
+      });
+
+      $("#key_result_unit").change(function () {
+        if ($(this).val() == "") {
+          $("#key_unit_add").modal();
+        }
       });
     </script>
   </body>
