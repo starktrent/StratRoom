@@ -584,6 +584,24 @@
         border: 3px solid #1e252d;
       }
 
+      .confidence-emoji-container {
+        display: flex !important;
+      }
+
+      .confidence-emoji-container span {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        margin-right: 18px;
+        cursor: pointer;
+      }
+
+      .confidence-emoji-container .selected-emoji {
+        border: 2px solid #9a9a9a;
+        border-radius: 0;
+        padding: 1px;
+      }
+
       .custom-fields {
         display: flex;
         align-items: flex-start;
@@ -1327,6 +1345,104 @@
     </div>
     <!-- Add Confidence Range -->
 
+    <!-- Add Confidence Range emoji -->
+    <div
+      class="modal fade"
+      id="confidence_add_emoji"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="width: 600px"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4
+              style="
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e252d;
+                margin-bottom: 18px;
+              "
+            >
+              Add Confidence Range
+            </h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-4 form-group mb-4">
+                <label for="emoji">Emoji</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <span data-toggle="modal" data-target="#confidence_emoji">
+                  <img
+                    src="../organisation/images/Emoji/love.png"
+                    id="emoji-holder"
+                    style="width: 24px"
+                    alt="Smile"
+                /></span>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="range">Range</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="#">Select range</option>
+                  <option value="Greater than">Greater than</option>
+                  <option value="Less than">Less than</option>
+                  <option value="Equal to">Equal to</option>
+                  <option value="Greater than or Equal to">
+                    Greater than or Equal to
+                  </option>
+                  <option value="Less than or Equal to">
+                    Less than or Equal to
+                  </option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="value">Value</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  value=""
+                />
+              </div>
+
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Add Confidence Range emoji -->
+
     <!-- Edit Confidence Range -->
     <div
       class="modal fade"
@@ -1437,6 +1553,104 @@
     </div>
     <!-- Edit Confidence Range -->
 
+    <!-- Edit Confidence Range emoji -->
+    <div
+      class="modal fade"
+      id="confidence_edit_emoji"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="width: 600px"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4
+              style="
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e252d;
+                margin-bottom: 18px;
+              "
+            >
+              Edit Confidence Range
+            </h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-4 form-group mb-4">
+                <label for="emoji">Emoji</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <span data-toggle="modal" data-target="#confidence_emoji">
+                  <img
+                    src="../organisation/images/Emoji/love.png"
+                    id="emoji-holder"
+                    style="width: 24px"
+                    alt="Smile"
+                /></span>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="range">Range</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <select
+                  class="form-control browser-default custom-input-select"
+                >
+                  <option value="#">Select range</option>
+                  <option value="Greater than">Greater than</option>
+                  <option value="Less than">Less than</option>
+                  <option value="Equal to">Equal to</option>
+                  <option value="Greater than or Equal to">
+                    Greater than or Equal to
+                  </option>
+                  <option value="Less than or Equal to">
+                    Less than or Equal to
+                  </option>
+                </select>
+              </div>
+
+              <div class="col-4 form-group mb-4">
+                <label for="value">Value</label>
+              </div>
+
+              <div class="col-8 form-group mb-4">
+                <input
+                  type="text"
+                  class="form-control browser-default custom-input"
+                  value=""
+                />
+              </div>
+
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button class="initative_save_btn" value="Save">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Edit Confidence Range emoji -->
+
     <!-- Custom Field -->
     <div
       class="modal fade"
@@ -1526,6 +1740,7 @@
                   </option>
                   <option value="Radio Button">Radio Button</option>
                   <option value="Users">Users</option>
+                  <option value="URL">URL</option>
                 </select>
               </div>
 
@@ -1536,20 +1751,18 @@
                 <label for="Add values">Add values</label>
               </div>
 
-              <div
-                class="col-8 form-group mb-4 option_field"
-                style="display: none"
-              >
+              <div class="col-8 form-group mb-4 option_field">
                 <select
-                  class="field_options form-control browser-default custom-input-select"
-                  name="fields[]"
-                  multiple="multiple"
+                  class="form-control browser-default custom-input-select mb-2"
                 >
-                  <option value="Option 1">Option 1</option>
-                  <option value="Option 2">Option 2</option>
-                  <option value="Option 3">Option 3</option>
-                  <option value="Option 4">Option 4</option>
+                  <option value="Multi-select list">Multi-select list</option>
                 </select>
+                <div id="addoptionsRow"></div>
+                <span
+                  style="font-size: 13px; color: #0088ff; cursor: pointer"
+                  id="addOption"
+                  ><i class="fas fa-plus"></i> Add values</span
+                >
               </div>
 
               <div class="col-4 form-group mb-4">
@@ -1700,6 +1913,7 @@
                   </option>
                   <option value="Radio Button">Radio Button</option>
                   <option value="Users">Users</option>
+                  <option value="URL">URL</option>
                 </select>
               </div>
 
@@ -1710,20 +1924,18 @@
                 <label for="Add values">Add values</label>
               </div>
 
-              <div
-                class="col-8 form-group mb-4 option_field_edit"
-                style="display: none"
-              >
+              <div class="col-8 form-group mb-4 option_field_edit">
                 <select
-                  class="field_options form-control browser-default custom-input-select"
-                  name="fields[]"
-                  multiple="multiple"
+                  class="form-control browser-default custom-input-select mb-2"
                 >
-                  <option value="Option 1">Option 1</option>
-                  <option value="Option 2">Option 2</option>
-                  <option value="Option 3">Option 3</option>
-                  <option value="Option 4">Option 4</option>
+                  <option value="Multi-select list">Multi-select list</option>
                 </select>
+                <div id="editoptionsRow"></div>
+                <span
+                  style="font-size: 13px; color: #0088ff; cursor: pointer"
+                  id="editOption"
+                  ><i class="fas fa-plus"></i> Add values</span
+                >
               </div>
 
               <div class="col-4 form-group mb-4">
@@ -1966,7 +2178,7 @@
         </div>
       </div>
     </div>
-    <!-- END Setting -->
+    <!-- END Color Palette -->
 
     <!-- Confidence Color Palette -->
     <div
@@ -2051,7 +2263,111 @@
         </div>
       </div>
     </div>
-    <!-- END Setting -->
+    <!-- END Confidence Color Palette -->
+
+    <!-- Confidence Emojis -->
+    <div
+      class="modal fade"
+      id="confidence_emoji"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+      style="padding-right: 0"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="flex-flow: column-reverse; margin-top: 18%"
+      >
+        <div class="modal-content" style="width: 400px">
+          <div class="modal-header">
+            <h4
+              style="
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e252d;
+                margin-bottom: 18px;
+              "
+            ></h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Emoji Container -->
+            <div class="row">
+              <div class="col-12" style="margin-bottom: 24px">
+                <div class="confidence-emoji-container">
+                  <span id="emoji1">
+                    <img
+                      src="../organisation/images/Emoji/smile.png"
+                      style="width: 28px"
+                      alt="smile"
+                    />
+                  </span>
+                  <span id="emoji2">
+                    <img
+                      src="../organisation/images/Emoji/smiling.png"
+                      style="width: 28px"
+                      alt="smiling"
+                    />
+                  </span>
+                  <span id="emoji3">
+                    <img
+                      src="../organisation/images/Emoji/love.png"
+                      style="width: 28px"
+                      alt="love"
+                    />
+                  </span>
+                  <span id="emoji4">
+                    <img
+                      src="../organisation/images/Emoji/sad.png"
+                      style="width: 28px"
+                      alt="sad"
+                    />
+                  </span>
+                  <span id="emoji5">
+                    <img
+                      src="../organisation/images/Emoji/in-love.png"
+                      style="width: 28px"
+                      alt="in-love"
+                    />
+                  </span>
+                  <span id="emoji6">
+                    <img
+                      src="../organisation/images/Emoji/cry.png"
+                      style="width: 28px"
+                      alt="cry"
+                    />
+                  </span>
+                  <span id="emoji7">
+                    <img
+                      src="../organisation/images/Emoji/grinning.png"
+                      style="width: 28px"
+                      alt="grinning"
+                    />
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="row" style="padding-bottom: 6px">
+              <div class="col-12">
+                <div class="form-line right" style="margin-top: 3%">
+                  <button
+                    class="initative_save_btn"
+                    data-dismiss="modal"
+                    value="Save"
+                  >
+                    Save
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Confidence Emojis -->
 
     <!-- Content Start -->
     <section class="content">
@@ -5390,7 +5706,7 @@
                                 <div class="color-more">
                                   <span
                                     data-toggle="modal"
-                                    data-target="#color_edit"
+                                    data-target="#confidence_edit_emoji"
                                     class="pull-rght"
                                   >
                                     <i
@@ -5417,7 +5733,7 @@
                                 <div class="color-more">
                                   <span
                                     data-toggle="modal"
-                                    data-target="#color_edit"
+                                    data-target="#confidence_edit_emoji"
                                     class="pull-rght"
                                   >
                                     <i
@@ -5444,7 +5760,7 @@
                                 <div class="color-more">
                                   <span
                                     data-toggle="modal"
-                                    data-target="#color_edit"
+                                    data-target="#confidence_edit_emoji"
                                     style="padding-right: 10px"
                                   >
                                     <i
@@ -5479,7 +5795,7 @@
                                 <div class="color-more">
                                   <span
                                     data-toggle="modal"
-                                    data-target="#color_edit"
+                                    data-target="#confidence_edit_emoji"
                                     style="padding-right: 10px"
                                   >
                                     <i
@@ -5514,7 +5830,7 @@
                                 <div class="color-more">
                                   <span
                                     data-toggle="modal"
-                                    data-target="#color_edit"
+                                    data-target="#confidence_edit_emoji"
                                     style="padding-right: 10px"
                                   >
                                     <i
@@ -5540,7 +5856,7 @@
                               <button
                                 class="btn btn-custom-secondary pull-right"
                                 data-toggle="modal"
-                                data-target="#confidence_add"
+                                data-target="#confidence_add_emoji"
                                 style="height: 30px; width: 30px"
                               >
                                 <i
@@ -5963,7 +6279,6 @@
       });
 
       $(document).ready(function () {
-        $(".field_options").select2();
         $(".field-type").select2();
       });
 
@@ -6253,6 +6568,64 @@
         });
       });
 
+      // Confidence emoji selection
+      let prevDiv3;
+      $(".confidence-emoji-container span").click(function () {
+        $(prevDiv3).removeClass("selected-emoji");
+        $(this).addClass("selected-emoji");
+        var emojiID = this.id;
+
+        if (emojiID == "emoji1") {
+          $("#emoji-holder").attr(
+            "src",
+            "../organisation/images/Emoji/smile.png"
+          );
+        }
+
+        if (emojiID == "emoji2") {
+          $("#emoji-holder").attr(
+            "src",
+            "../organisation/images/Emoji/smiling.png"
+          );
+        }
+
+        if (emojiID == "emoji3") {
+          $("#emoji-holder").attr(
+            "src",
+            "../organisation/images/Emoji/love.png"
+          );
+        }
+
+        if (emojiID == "emoji4") {
+          $("#emoji-holder").attr(
+            "src",
+            "../organisation/images/Emoji/sad.png"
+          );
+        }
+
+        if (emojiID == "emoji5") {
+          $("#emoji-holder").attr(
+            "src",
+            "../organisation/images/Emoji/in-love.png"
+          );
+        }
+
+        if (emojiID == "emoji6") {
+          $("#emoji-holder").attr(
+            "src",
+            "../organisation/images/Emoji/cry.png"
+          );
+        }
+
+        if (emojiID == "emoji7") {
+          $("#emoji-holder").attr(
+            "src",
+            "../organisation/images/Emoji/grinning.png"
+          );
+        }
+        prevDiv3 = $(this);
+      });
+
       $(".groupby-dropdown li a").click(function () {
         $(".groupby-dropdown li a").removeClass("selected-group");
         if ($(this).text() == "Objectives") {
@@ -6319,6 +6692,38 @@
         if ($(this).val() == "") {
           $("#key_unit_add").modal();
         }
+      });
+
+      var addoptionCount = 0;
+      $("#addOption").click(function () {
+        addoptionCount++;
+        var html =
+          '<div class="input-group mt-2 mb-2" id="optionsRow"> <input type="text" class="form-control browser-default custom-input" placeholder="option ' +
+          addoptionCount +
+          '" value="" /> <span id="removeOption" style=" height: 30px; width: 30px; padding: 6px 9px; border: 1px solid #ced4da; border-radius: 4px; cursor: pointer; margin-left: 2px; " > <i class="fas fa-trash"></i> </span></div>';
+        $("#addoptionsRow").append(html);
+      });
+
+      // remove row
+      $(document).on("click", "#removeOption", function () {
+        addoptionCount--;
+        $(this).closest("#optionsRow").remove();
+      });
+
+      var editoptionCount = 0;
+      $("#editOption").click(function () {
+        editoptionCount++;
+        var html =
+          '<div class="input-group mt-2 mb-2" id="optionsRow2"> <input type="text" class="form-control browser-default custom-input" placeholder="option ' +
+          editoptionCount +
+          '" value="" /> <span id="removeOption2" style=" height: 30px; width: 30px; padding: 6px 9px; border: 1px solid #ced4da; border-radius: 4px; cursor: pointer; margin-left: 2px; " > <i class="fas fa-trash"></i> </span></div>';
+        $("#editoptionsRow").append(html);
+      });
+
+      // remove row
+      $(document).on("click", "#removeOption2", function () {
+        editoptionCount--;
+        $(this).closest("#optionsRow2").remove();
       });
     </script>
   </body>
