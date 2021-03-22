@@ -229,36 +229,6 @@
       .select2-search--dropdown {
         padding: 4px 6px 4px 4px;
       }
-
-      .options-overlay {
-        position: absolute;
-        background: #fff;
-        margin-left: -45px;
-        height: 48px;
-        width: 170px;
-        padding: 10px 2px;
-        margin-top: -35px;
-        visibility: hidden;
-        display: flex !important;
-        -webkit-box-orient: horizontal !important;
-        -webkit-box-direction: normal !important;
-        flex-direction: row !important;
-        justify-content: space-evenly;
-        text-align: center;
-      }
-
-      .options-overlay .options-icon {
-        background-color: #dedede;
-        height: 28px;
-        width: 28px;
-        border-radius: 30px;
-        cursor: pointer;
-      }
-
-      .options-overlay .options-icon i {
-        color: #1f262d;
-        font-size: 12px;
-      }
     </style>
   </head>
 
@@ -1752,7 +1722,7 @@
                   </ul>
                 </div>
               </div>
-
+              
               <div class="col-4 form-group mb-4">
                 <label for="Check In Frequency">Check In Frequency</label>
               </div>
@@ -2488,13 +2458,15 @@
           <button
             class="btn btn-custom-secondary pull-right"
             style="margin-right: 4px"
+            data-toggle="modal"
+            data-target="#"
           >
             <i
               style="font-size: 14px"
-              class="fas fa-upload"
+              class="fas fa-filter"
               data-toggle="tooltip"
               data-placement="bottom"
-              title="Export"
+              title="Filter"
             ></i>
           </button>
 
@@ -2514,133 +2486,16 @@
           </button>
 
           <button
-            class="btn btn-custom-secondary pull-right dropdown-toggle"
+            class="btn btn-custom-secondary pull-right"
             style="margin-right: 4px"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="true"
           >
             <i
               style="font-size: 14px"
-              class="fas fa-filter"
+              class="fas fa-upload"
               data-toggle="tooltip"
               data-placement="bottom"
-              title="Filter"
+              title="Export"
             ></i>
-
-            <ul
-              class="dropdown-menu dropdown-hide multi-column pull-right"
-              x-placement="bottom-start"
-              style="
-                position: absolute;
-                will-change: transform;
-                width: 160px;
-                padding-top: 20px;
-                padding-bottom: 4px;
-                top: 74px !important;
-                right: 138px !important;
-                border-radius: 8px;
-                transform: translate3d(0px, 24px, 0px);
-              "
-            >
-              <div class="row">
-                <div class="col-sm-12" style="padding: 0px 4px">
-                  <ul class="multi-column-dropdown dropdown-hide">
-                    <li>
-                      <a href="#">
-                        <div class="form-check">
-                          <label class="form-check-label">
-                            <input
-                              class="form-check-input"
-                              type="checkbox"
-                              name="NotStarted"
-                              value="NotStarted"
-                            />
-                            Not Started
-                            <span class="form-check-sign" style="top: 4px">
-                              <span class="check"></span>
-                            </span>
-                          </label>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div class="form-check">
-                          <label class="form-check-label">
-                            <input
-                              class="form-check-input"
-                              type="checkbox"
-                              name="Track"
-                              value="Track"
-                            />
-                            On Track
-                            <span class="form-check-sign" style="top: 4px">
-                              <span class="check"></span>
-                            </span>
-                          </label>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div class="form-check">
-                          <label class="form-check-label">
-                            <input
-                              class="form-check-input"
-                              type="checkbox"
-                              name="Risk"
-                              value="Risk"
-                            />
-                            At Risk
-                            <span class="form-check-sign" style="top: 4px">
-                              <span class="check"></span>
-                            </span>
-                          </label>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div class="form-check">
-                          <label class="form-check-label">
-                            <input
-                              class="form-check-input"
-                              type="checkbox"
-                              name="Completed"
-                              value="Completed"
-                            />
-                            Completed
-                            <span class="form-check-sign" style="top: 4px">
-                              <span class="check"></span>
-                            </span>
-                          </label>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div class="form-check">
-                          <label class="form-check-label">
-                            <input
-                              class="form-check-input"
-                              type="checkbox"
-                              name="Postponded"
-                              value="Postponded"
-                            />
-                            Postponded
-                            <span class="form-check-sign" style="top: 4px">
-                              <span class="check"></span>
-                            </span>
-                          </label>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </ul>
           </button>
         </div>
       </div>
@@ -2671,15 +2526,19 @@
                       <thead>
                         <tr>
                           <th style="width: 40px">&nbsp;</th>
-                          <th style="width: 350px; text-align: left">Name</th>
+                          <th style="width: 80px">Status</th>
                           <th style="width: 100px">Owner</th>
-                          <th style="width: 100px">Score</th>
-                          <th style="width: 140px">Progress</th>
-                          <th style="width: 100px">Last Check In</th>
-                          <th style="width: 100px">Due Date</th>
-                          <th style="width: 100px; text-align: center">
+                          <th style="width: 346px; text-align: left">Name</th>
+                          <th style="width: 120px">Score</th>
+                          <th style="width: 120px"># Key Results</th>
+                          <th style="width: 80px">Initial</th>
+                          <th style="width: 80px">Actual</th>
+                          <th style="width: 80px">Target</th>
+                          <th style="width: 120px">Confidence Level</th>
+                          <th style="width: 120px; text-align: center">
                             # Comments
                           </th>
+                          <th style="width: 40px">&nbsp;</th>
                         </tr>
                       </thead>
 
@@ -2697,15 +2556,11 @@
                               ></i>
                             </button>
                           </td>
-                          <td>
-                            Improve employee productivity and career growth
-                            opportunities.
+                          <td style="color: #e84343">
+                            <i class="fas fa-flag"></i>
                           </td>
                           <td>
-                            <div
-                              class="d-flex flex-column"
-                              style="margin: auto; width: 70%"
-                            >
+                            <div class="d-flex flex-column">
                               <ul
                                 class="list-unstyled order-list d-flex"
                                 data-toggle="modal"
@@ -2762,31 +2617,16 @@
                               </ul>
                             </div>
                           </td>
-                          <td>40%</td>
                           <td>
-                            <div
-                              class="d-flex flex-row"
-                              style="margin-top: 8px"
-                            >
-                              <div class="progress-s progress">
-                                <div
-                                  class="progress-bar width-per-30 rounded-pill bar_height yellow_bar"
-                                  role="progressbar"
-                                  aria-valuenow="30"
-                                  aria-valuemin="30"
-                                  aria-valuemax="100"
-                                ></div>
-                              </div>
-                              <div
-                                class="progress_value"
-                                style="margin-left: 8px"
-                              >
-                                30%
-                              </div>
-                            </div>
+                            Improve employee productivity and career growth
+                            opportunities.
                           </td>
-                          <td>Jan 02, 2021</td>
-                          <td>Jan 02, 2021</td>
+                          <td>40%</td>
+                          <td>1</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
                           <td style="text-align: center">
                             <i
                               class="far fa-comment-dots"
@@ -2795,50 +2635,33 @@
                             <span class="badge badge-primary" id="lblCartCount">
                               1
                             </span>
-                            <span class="options-overlay">
-                              <button
-                                class="options-icon"
-                                data-toggle="modal"
-                                data-target="#edit_objective"
-                              >
-                                <i
-                                  class="fas fa-pen"
-                                  data-toggle="tooltip"
-                                  data-placement="bottom"
-                                  title="Edit"
-                                ></i>
-                              </button>
-                              <button class="options-icon">
-                                <i
-                                  class="fas fa-eye"
-                                  data-toggle="tooltip"
-                                  data-placement="bottom"
-                                  title="View"
-                                ></i>
-                              </button>
-                              <button
-                                class="options-icon dropdown-toggle"
-                                data-toggle="dropdown"
-                                role="button"
-                                aria-haspopup="true"
-                                aria-expanded="true"
-                              >
-                                <i
-                                  class="fas fa-ellipsis-h"
-                                  data-toggle="tooltip"
-                                  data-placement="bottom"
-                                  title="More options"
-                                ></i>
-
+                          </td>
+                          <td>
+                            <ul
+                              class="header-dropdown"
+                              style="margin-bottom: 0px"
+                            >
+                              <li class="dropdown">
+                                <a
+                                  href="#"
+                                  class="dropdown-toggle"
+                                  data-toggle="dropdown"
+                                  role="button"
+                                  aria-haspopup="true"
+                                  aria-expanded="true"
+                                  style="color: #1e252d !important"
+                                >
+                                  <i class="fas fa-ellipsis-v"></i>
+                                </a>
                                 <ul
                                   class="dropdown-menu pull-right"
+                                  id="project-options"
                                   x-placement="bottom-start"
                                   style="
                                     position: absolute;
                                     will-change: transform;
                                     top: 0px;
                                     left: 0px;
-                                    border-radius: 8px;
                                     transform: translate3d(0px, 24px, 0px);
                                   "
                                 >
@@ -2848,7 +2671,27 @@
                                       data-toggle="modal"
                                       data-target="#add_child_objective"
                                       onclick="return false;"
-                                      >Add</a
+                                      >Add Child Objective</a
+                                    >
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#add_key"
+                                      onclick="return false;"
+                                      >Add Key Result</a
+                                    >
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#edit_objective"
+                                      onclick="return false;"
+                                      >Edit</a
                                     >
                                   </li>
 
@@ -2872,50 +2715,8 @@
                                     >
                                   </li>
                                 </ul>
-                              </button>
-                              <button class="options-icon">
-                                <i
-                                  class="fas fa-share-alt"
-                                  data-toggle="tooltip"
-                                  data-placement="bottom"
-                                  title="Share"
-                                ></i>
-
-                                <ul
-                                  class="dropdown-menu pull-right"
-                                  x-placement="bottom-start"
-                                  style="
-                                    position: absolute;
-                                    will-change: transform;
-                                    top: 0px;
-                                    left: 0px;
-                                    border-radius: 8px;
-                                    transform: translate3d(0px, 24px, 0px);
-                                  "
-                                >
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#"
-                                      onclick="return false;"
-                                      ><i class="fas fa-link"></i> Copy Link</a
-                                    >
-                                  </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#"
-                                      onclick="return false;"
-                                      ><i class="fas fa-share"></i> Share
-                                      Dashboard Link</a
-                                    >
-                                  </li>
-                                </ul>
-                              </button>
-                            </span>
+                              </li>
+                            </ul>
                           </td>
                         </tr>
 
@@ -2925,17 +2726,12 @@
                               <table class="table table-striped">
                                 <tbody>
                                   <tr>
-                                    <td style="width: 52px">&nbsp;</td>
-                                    <td style="width: 370px">
-                                      % Completion of scorecard result within 2
-                                      weeks of period (except financial related
-                                      data)
+                                    <td style="width: 54px">&nbsp;</td>
+                                    <td style="color: #e84343; width: 80px">
+                                      <i class="fas fa-flag"></i>
                                     </td>
-                                    <td style="width: 80px">
-                                      <div
-                                        class="d-flex flex-column"
-                                        style="margin: auto; width: 75%"
-                                      >
+                                    <td style="width: 100px">
+                                      <div class="d-flex flex-column">
                                         <ul
                                           class="list-unstyled order-list d-flex"
                                           data-toggle="modal"
@@ -2995,33 +2791,19 @@
                                         </ul>
                                       </div>
                                     </td>
-                                    <td style="width: 100px">40%</td>
-                                    <td style="width: 140px">
-                                      <div
-                                        class="d-flex flex-row"
-                                        style="margin-top: 8px"
-                                      >
-                                        <div class="progress-s progress">
-                                          <div
-                                            class="progress-bar width-per-30 rounded-pill bar_height yellow_bar"
-                                            role="progressbar"
-                                            aria-valuenow="30"
-                                            aria-valuemin="30"
-                                            aria-valuemax="100"
-                                          ></div>
-                                        </div>
-                                        <div
-                                          class="progress_value"
-                                          style="margin-left: 8px"
-                                        >
-                                          30%
-                                        </div>
-                                      </div>
+                                    <td style="width: 354px">
+                                      % Completion of scorecard result within 2
+                                      weeks of period (except financial related
+                                      data)
                                     </td>
-                                    <td style="width: 100px">Jan 02, 2021</td>
-                                    <td style="width: 100px">Jan 02, 2021</td>
+                                    <td style="width: 120px">40%</td>
+                                    <td style="width: 120px">&nbsp;</td>
+                                    <td style="width: 80px">0</td>
+                                    <td style="width: 80px">4</td>
+                                    <td style="width: 80px">10</td>
+                                    <td style="width: 120px">7</td>
                                     <td
-                                      style="width: 100px; text-align: center"
+                                      style="width: 120px; text-align: center"
                                     >
                                       <i
                                         class="far fa-comment-dots"
@@ -3033,50 +2815,33 @@
                                       >
                                         1
                                       </span>
-                                      <span class="options-overlay">
-                                        <button
-                                          class="options-icon"
-                                          data-toggle="modal"
-                                          data-target="#edit_objective"
-                                        >
-                                          <i
-                                            class="fas fa-pen"
-                                            data-toggle="tooltip"
-                                            data-placement="bottom"
-                                            title="Edit"
-                                          ></i>
-                                        </button>
-                                        <button class="options-icon">
-                                          <i
-                                            class="fas fa-eye"
-                                            data-toggle="tooltip"
-                                            data-placement="bottom"
-                                            title="View"
-                                          ></i>
-                                        </button>
-                                        <button
-                                          class="options-icon dropdown-toggle"
-                                          data-toggle="dropdown"
-                                          role="button"
-                                          aria-haspopup="true"
-                                          aria-expanded="true"
-                                        >
-                                          <i
-                                            class="fas fa-ellipsis-h"
-                                            data-toggle="tooltip"
-                                            data-placement="bottom"
-                                            title="More options"
-                                          ></i>
-
+                                    </td>
+                                    <td style="width: 40px">
+                                      <ul
+                                        class="header-dropdown"
+                                        style="margin-bottom: 0px"
+                                      >
+                                        <li class="dropdown">
+                                          <a
+                                            href="#"
+                                            class="dropdown-toggle"
+                                            data-toggle="dropdown"
+                                            role="button"
+                                            aria-haspopup="true"
+                                            aria-expanded="true"
+                                            style="color: #1e252d !important"
+                                          >
+                                            <i class="fas fa-ellipsis-v"></i>
+                                          </a>
                                           <ul
                                             class="dropdown-menu pull-right"
+                                            id="project-options"
                                             x-placement="bottom-start"
                                             style="
                                               position: absolute;
                                               will-change: transform;
                                               top: 0px;
                                               left: 0px;
-                                              border-radius: 8px;
                                               transform: translate3d(
                                                 0px,
                                                 24px,
@@ -3088,19 +2853,9 @@
                                               <a
                                                 href="#"
                                                 data-toggle="modal"
-                                                data-target="#add_key"
+                                                data-target="#edit_key"
                                                 onclick="return false;"
-                                                >Add</a
-                                              >
-                                            </li>
-
-                                            <li>
-                                              <a
-                                                href="#"
-                                                data-toggle="modal"
-                                                data-target="#clone"
-                                                onclick="return false;"
-                                                >Clone</a
+                                                >Edit</a
                                               >
                                             </li>
 
@@ -3114,16 +2869,8 @@
                                               >
                                             </li>
                                           </ul>
-                                        </button>
-                                        <button class="options-icon">
-                                          <i
-                                            class="fas fa-share-alt"
-                                            data-toggle="tooltip"
-                                            data-placement="bottom"
-                                            title="Share"
-                                          ></i>
-                                        </button>
-                                      </span>
+                                        </li>
+                                      </ul>
                                     </td>
                                   </tr>
                                 </tbody>
@@ -3132,7 +2879,7 @@
                           </td>
                         </tr>
 
-                        <!-- <tr>
+                        <tr>
                           <td>&nbsp;</td>
                           <td style="color: #1aa243">
                             <i class="fas fa-flag"></i>
@@ -4758,7 +4505,7 @@
                               </table>
                             </div>
                           </td>
-                        </tr> -->
+                        </tr>
                       </tbody>
                     </table>
                   </div>
@@ -4825,21 +4572,6 @@
         $(".dept-select1").select2();
         $(".dept-select2").select2();
         $(".dept-select3").select2();
-      });
-
-      $(document).ready(function () {
-        $(".table-condensed tbody tr").hover(
-          function () {
-            $(this).find("td .options-overlay").css("visibility", "visible");
-          },
-          function () {
-            $("td .options-overlay").css("visibility", "hidden");
-          }
-        );
-      });
-
-      $(".dropdown-hide").on("click", function (e) {
-        e.stopPropagation();
       });
 
       $(document).ready(function () {
@@ -4931,16 +4663,6 @@
                 style="width: 50% !important;"
                 value=""
               />
-
-              <span
-                style="
-                  height: 26px;
-                  width: 26px;
-                  padding: 4px 7px;
-                  border-radius: 4px;
-                  margin-left: 2px;
-                "
-              ></span>
             </div>`
         );
         selectRefresh1();
@@ -4977,16 +4699,6 @@
                 style="width: 50% !important;"
                 value=""
               />
-
-              <span
-                style="
-                  height: 26px;
-                  width: 26px;
-                  padding: 4px 7px;
-                  border-radius: 4px;
-                  margin-left: 2px;
-                "
-              ></span>
             </div>`
         );
         selectRefresh2();
@@ -5023,16 +4735,6 @@
                 style="width: 50% !important;"
                 value=""
               />
-
-              <span
-                style="
-                  height: 26px;
-                  width: 26px;
-                  padding: 4px 7px;
-                  border-radius: 4px;
-                  margin-left: 2px;
-                "
-              ></span>
             </div>`
         );
         selectRefresh3();

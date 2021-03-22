@@ -623,7 +623,7 @@
       }
 
       .custom-fields .icon-section img {
-        width: 20px;
+        width: 24px;
       }
 
       .custom-fields .text-section {
@@ -1752,11 +1752,27 @@
               </div>
 
               <div class="col-8 form-group mb-4 option_field">
-                <select
-                  class="form-control browser-default custom-input-select mb-2"
-                >
-                  <option value="Multi-select list">Multi-select list</option>
-                </select>
+                <div class="input-group mb-2">
+                  <input
+                    type="text"
+                    class="form-control browser-default custom-input"
+                    placeholder="option 1"
+                    value=""
+                  />
+                  <span
+                    style="
+                      height: 30px;
+                      width: 30px;
+                      padding: 6px 9px;
+                      border: 1px solid #ced4da;
+                      border-radius: 4px;
+                      cursor: pointer;
+                      margin-left: 2px;
+                    "
+                  >
+                    <i class="fas fa-trash"></i>
+                  </span>
+                </div>
                 <div id="addoptionsRow"></div>
                 <span
                   style="font-size: 13px; color: #0088ff; cursor: pointer"
@@ -1925,11 +1941,27 @@
               </div>
 
               <div class="col-8 form-group mb-4 option_field_edit">
-                <select
-                  class="form-control browser-default custom-input-select mb-2"
-                >
-                  <option value="Multi-select list">Multi-select list</option>
-                </select>
+                <div class="input-group mb-2">
+                  <input
+                    type="text"
+                    class="form-control browser-default custom-input"
+                    placeholder="option 1"
+                    value=""
+                  />
+                  <span
+                    style="
+                      height: 30px;
+                      width: 30px;
+                      padding: 6px 9px;
+                      border: 1px solid #ced4da;
+                      border-radius: 4px;
+                      cursor: pointer;
+                      margin-left: 2px;
+                    "
+                  >
+                    <i class="fas fa-trash"></i>
+                  </span>
+                </div>
                 <div id="editoptionsRow"></div>
                 <span
                   style="font-size: 13px; color: #0088ff; cursor: pointer"
@@ -6694,7 +6726,7 @@
         }
       });
 
-      var addoptionCount = 0;
+      var addoptionCount = 1;
       $("#addOption").click(function () {
         addoptionCount++;
         var html =
@@ -6710,7 +6742,7 @@
         $(this).closest("#optionsRow").remove();
       });
 
-      var editoptionCount = 0;
+      var editoptionCount = 1;
       $("#editOption").click(function () {
         editoptionCount++;
         var html =
