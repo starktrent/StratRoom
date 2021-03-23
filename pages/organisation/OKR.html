@@ -1821,6 +1821,136 @@
     </div>
     <!-- Edit Key Result -->
 
+    <!-- Share Dashboard Link -->
+    <div
+      class="modal fade"
+      id="share_link"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4
+              style="
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e252d;
+                margin-bottom: 18px;
+              "
+            >
+              Share Dashboard Link
+            </h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row" id="createURL">
+              <div class="col-12" style="padding: 0 0 12px 0">
+                <p>
+                  This will create a link to a read-only version of this view
+                  that can be shared with other people inside or outside our
+                  organisation.
+                </p>
+              </div>
+              <div class="col-12">
+                <div class="form-line right">
+                  <button
+                    type="button"
+                    class="btn-default1 btn"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    class="initative_save_btn"
+                    id="createLink"
+                    value="Save"
+                  >
+                    Create link
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="row" id="generatedURL" style="display: none">
+              <div class="col-12" style="padding: 0 0 12px 0">
+                <h4 style="font-size: 16px; font-weight: 600; color: #1e252d">
+                  URL
+                  <span
+                    class="pull-right"
+                    style="
+                      font-size: 12px;
+                      font-weight: 500;
+                      color: green;
+                      cursor: pointer;
+                    "
+                    >Copy to clipboard</span
+                  >
+                </h4>
+                <a href="#" style="font-size: 14px">https://app.ly/abcdef</a>
+                <div class="form-check mt-3">
+                  <label class="form-check-label">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      name="showChart"
+                      value="showChart"
+                    />
+                    Show chart view by default
+                    <span class="form-check-sign">
+                      <span class="check"></span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div class="col-12 mb-3" style="padding: 0">
+                <div class="form-line right">
+                  <button
+                    class="initative_save_btn"
+                    id="URLdisable"
+                    value="Save"
+                    style="width: 100px"
+                  >
+                    Disable URL
+                  </button>
+                </div>
+              </div>
+              <div
+                class="col-12"
+                id="disableURL"
+                style="background-color: #f2675f; display: none"
+              >
+                <p style="color: #fff; margin: 0; padding: 8px 0">
+                  Disbling will revoke access.
+                  <span
+                    class="pull-right"
+                    id="urldisable_btn"
+                    style="text-decoration: underline; cursor: pointer"
+                    >Disable</span
+                  >
+                  <span
+                    class="pull-right"
+                    id="urldisablecancel_btn"
+                    style="
+                      text-decoration: underline;
+                      margin-right: 8px;
+                      cursor: pointer;
+                    "
+                    >Cancel</span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Share Dashboard Link -->
+
     <!-- Delete Popup -->
     <div
       class="modal fade"
@@ -2816,19 +2946,19 @@
                                   title="View"
                                 ></i>
                               </button>
-                              <button
-                                class="options-icon dropdown-toggle"
-                                data-toggle="dropdown"
-                                role="button"
-                                aria-haspopup="true"
-                                aria-expanded="true"
-                              >
-                                <i
-                                  class="fas fa-ellipsis-h"
-                                  data-toggle="tooltip"
-                                  data-placement="bottom"
-                                  title="More options"
-                                ></i>
+                              <button class="options-icon dropdown">
+                                <a
+                                  href="#"
+                                  class="dropdown-toggle"
+                                  data-toggle="dropdown"
+                                >
+                                  <i
+                                    class="fas fa-ellipsis-h"
+                                    data-toggle="tooltip"
+                                    data-placement="bottom"
+                                    title="More options"
+                                  ></i>
+                                </a>
 
                                 <ul
                                   class="dropdown-menu pull-right"
@@ -2873,13 +3003,19 @@
                                   </li>
                                 </ul>
                               </button>
-                              <button class="options-icon">
-                                <i
-                                  class="fas fa-share-alt"
-                                  data-toggle="tooltip"
-                                  data-placement="bottom"
-                                  title="Share"
-                                ></i>
+                              <button class="options-icon dropdown">
+                                <a
+                                  href="#"
+                                  class="dropdown-toggle"
+                                  data-toggle="dropdown"
+                                >
+                                  <i
+                                    class="fas fa-share-alt"
+                                    data-toggle="tooltip"
+                                    data-placement="bottom"
+                                    title="Share"
+                                  ></i>
+                                </a>
 
                                 <ul
                                   class="dropdown-menu pull-right"
@@ -2888,6 +3024,7 @@
                                     position: absolute;
                                     will-change: transform;
                                     top: 0px;
+                                    width: 200px;
                                     left: 0px;
                                     border-radius: 8px;
                                     transform: translate3d(0px, 24px, 0px);
@@ -2907,7 +3044,7 @@
                                     <a
                                       href="#"
                                       data-toggle="modal"
-                                      data-target="#"
+                                      data-target="#share_link"
                                       onclick="return false;"
                                       ><i class="fas fa-share"></i> Share
                                       Dashboard Link</a
@@ -3054,19 +3191,19 @@
                                             title="View"
                                           ></i>
                                         </button>
-                                        <button
-                                          class="options-icon dropdown-toggle"
-                                          data-toggle="dropdown"
-                                          role="button"
-                                          aria-haspopup="true"
-                                          aria-expanded="true"
-                                        >
-                                          <i
-                                            class="fas fa-ellipsis-h"
-                                            data-toggle="tooltip"
-                                            data-placement="bottom"
-                                            title="More options"
-                                          ></i>
+                                        <button class="options-icon dropdown">
+                                          <a
+                                            href="#"
+                                            class="dropdown-toggle"
+                                            data-toggle="dropdown"
+                                          >
+                                            <i
+                                              class="fas fa-ellipsis-h"
+                                              data-toggle="tooltip"
+                                              data-placement="bottom"
+                                              title="More options"
+                                            ></i>
+                                          </a>
 
                                           <ul
                                             class="dropdown-menu pull-right"
@@ -3115,13 +3252,59 @@
                                             </li>
                                           </ul>
                                         </button>
-                                        <button class="options-icon">
-                                          <i
-                                            class="fas fa-share-alt"
-                                            data-toggle="tooltip"
-                                            data-placement="bottom"
-                                            title="Share"
-                                          ></i>
+                                        <button class="options-icon dropdown">
+                                          <a
+                                            href="#"
+                                            class="dropdown-toggle"
+                                            data-toggle="dropdown"
+                                          >
+                                            <i
+                                              class="fas fa-share-alt"
+                                              data-toggle="tooltip"
+                                              data-placement="bottom"
+                                              title="Share"
+                                            ></i>
+                                          </a>
+
+                                          <ul
+                                            class="dropdown-menu pull-right"
+                                            x-placement="bottom-start"
+                                            style="
+                                              position: absolute;
+                                              will-change: transform;
+                                              top: 0px;
+                                              width: 200px;
+                                              left: 0px;
+                                              border-radius: 8px;
+                                              transform: translate3d(
+                                                0px,
+                                                24px,
+                                                0px
+                                              );
+                                            "
+                                          >
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#"
+                                                onclick="return false;"
+                                                ><i class="fas fa-link"></i>
+                                                Copy Link</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#share_link"
+                                                onclick="return false;"
+                                                ><i class="fas fa-share"></i>
+                                                Share Dashboard Link</a
+                                              >
+                                            </li>
+                                          </ul>
                                         </button>
                                       </span>
                                     </td>
@@ -5058,6 +5241,28 @@
       $("#close_search2").click(function () {
         $("#search2").show();
         $("#search_section2").hide();
+      });
+
+      $(document).ready(function () {
+        $("#createLink").click(function () {
+          $("#createURL").hide();
+          $("#generatedURL").show();
+        });
+
+        $("#URLdisable").click(function () {
+          $("#disableURL").show();
+        });
+
+        $("#urldisablecancel_btn").click(function () {
+          $("#disableURL").hide();
+        });
+
+        $("#urldisable_btn").click(function () {
+          $("#share_link").modal("toggle");
+          $("#disableURL").hide();
+          $("#createURL").show();
+          $("#generatedURL").hide();
+        });
       });
     </script>
   </body>
