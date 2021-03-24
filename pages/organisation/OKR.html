@@ -232,7 +232,7 @@
 
       .options-overlay {
         position: absolute;
-        background: #fff;
+        background: #ababab;
         margin-left: -45px;
         height: 48px;
         width: 170px;
@@ -248,7 +248,7 @@
       }
 
       .options-overlay .options-icon {
-        background-color: #dedede;
+        background-color: #fff;
         height: 28px;
         width: 28px;
         border-radius: 30px;
@@ -258,6 +258,10 @@
       .options-overlay .options-icon i {
         color: #1f262d;
         font-size: 12px;
+      }
+
+      .btn-custom-secondary .dropdown-menu.pull-right.show {
+        top: 74px !important;
       }
     </style>
   </head>
@@ -1882,16 +1886,21 @@
                   URL
                   <span
                     class="pull-right"
-                    style="
-                      font-size: 12px;
-                      font-weight: 500;
-                      color: green;
-                      cursor: pointer;
-                    "
-                    >Copy to clipboard</span
-                  >
+                    style="font-size: 14px; color: green; cursor: pointer"
+                    ><i class="fas fa-copy"></i
+                  ></span>
                 </h4>
                 <a href="#" style="font-size: 14px">https://app.ly/abcdef</a>
+                <div class="form-line right" style="margin-top: -6px">
+                  <button
+                    class="initative_save_btn"
+                    id="URLdisable"
+                    value="Save"
+                    style="width: 100px"
+                  >
+                    Disable URL
+                  </button>
+                </div>
                 <div class="form-check mt-3">
                   <label class="form-check-label">
                     <input
@@ -1905,18 +1914,6 @@
                       <span class="check"></span>
                     </span>
                   </label>
-                </div>
-              </div>
-              <div class="col-12 mb-3" style="padding: 0">
-                <div class="form-line right">
-                  <button
-                    class="initative_save_btn"
-                    id="URLdisable"
-                    value="Save"
-                    style="width: 100px"
-                  >
-                    Disable URL
-                  </button>
                 </div>
               </div>
               <div
@@ -2660,7 +2657,7 @@
             ></i>
 
             <ul
-              class="dropdown-menu dropdown-hide multi-column pull-right"
+              class="dropdown-menu dropdown-hide pull-right"
               x-placement="bottom-start"
               style="
                 position: absolute;
@@ -2668,7 +2665,6 @@
                 width: 160px;
                 padding-top: 20px;
                 padding-bottom: 4px;
-                top: 74px !important;
                 right: 138px !important;
                 border-radius: 8px;
                 transform: translate3d(0px, 24px, 0px);
@@ -3174,7 +3170,7 @@
                                         <button
                                           class="options-icon"
                                           data-toggle="modal"
-                                          data-target="#edit_objective"
+                                          data-target="#edit_key"
                                         >
                                           <i
                                             class="fas fa-pen"
