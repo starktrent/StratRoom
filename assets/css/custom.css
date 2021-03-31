@@ -2406,7 +2406,7 @@ label {
   position: relative;
   width: 100%;
   z-index: 1;
-  overflow: auto;
+  overflow: hidden auto;
   height: 570px;
 }
 

@@ -70,58 +70,6 @@
         margin-bottom: -10px;
       }
 
-      .access-control-table thead tr th {
-        font-size: 16px;
-        font-weight: 600;
-        z-index: 1;
-        border: 1px solid #ececec !important;
-        color: #333;
-        position: sticky;
-        top: 0;
-        border: 1px solid #ececec !important;
-        box-shadow: inset 1px 1px #ececec, 0 1px #ececec;
-        background-color: #f7f7f7;
-        padding: 12px 0px;
-        text-align: center;
-      }
-
-      .access-control-table tbody tr td {
-        font-size: 14px;
-        font-weight: 500 !important;
-        color: #555;
-        border: 1px solid #ececec !important;
-        box-shadow: inset 1px -1px #ececec;
-        text-align: left;
-        padding: 4px 0px 0px 16px;
-      }
-
-      .access-control-table tbody tr td ul {
-        margin-top: 8px;
-      }
-
-      .access-control-table tbody tr td h4 {
-        font-size: 15px;
-        font-weight: 600;
-      }
-
-      .access-control-table tbody tr td i {
-        font-size: 16px;
-      }
-
-      .access-control-table tbody tr td ul li {
-        font-size: 13px;
-      }
-
-      .access-control-table tbody tr td ul li .far {
-        font-size: 16px;
-        color: #17b978;
-      }
-
-      .access-control-table tbody tr td ul li .fas {
-        font-size: 16px;
-        color: #ff304f;
-      }
-
       .table-responsive {
         width: 100%;
         height: 560px;
@@ -230,6 +178,37 @@
         padding: 4px 6px 4px 4px;
       }
 
+      .table-condensed tbody tr td:first-child {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+
+      .table-condensed tbody tr td:last-child {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+
+      .table-condensed tbody tr td .branch-connect {
+        height: 10px;
+        width: 10px;
+        display: inline-flex;
+        border: 3.5px solid #3d5af1;
+        border-radius: 22px;
+        margin-right: 4px;
+      }
+
+      .table-condensed tbody tr td .branch-line {
+        height: 30px;
+        width: 22px;
+        top: 68px;
+        left: 83px;
+        border-width: 0 0px 2px 2px;
+        border-bottom-left-radius: 15px;
+        position: absolute;
+        border-style: solid;
+        border-color: #bbb;
+      }
+
       .options-overlay {
         position: absolute;
         background: #ababab;
@@ -262,6 +241,64 @@
 
       .btn-custom-secondary .dropdown-menu.pull-right.show {
         top: 74px !important;
+      }
+
+      .objective-view {
+        height: 684px;
+        width: 420px;
+        position: absolute;
+        background: #fff;
+        z-index: 2;
+        right: 0;
+        padding: 16px 0;
+        box-shadow: -8px 8px 16px rgb(145 145 145 / 15%);
+        visibility: hidden;
+      }
+
+      .objective-view .menu-action {
+        padding: 0 30px;
+      }
+
+      .objective-view .menu-action span {
+        font-size: 12px;
+        font-weight: 500;
+        color: #909090;
+        cursor: pointer;
+      }
+
+      .objective-view .objective-title {
+        padding: 10px 30px;
+      }
+
+      .objective-view .objective-title h4 {
+        font-size: 15px;
+        color: #1f262d;
+      }
+
+      .objective-view .objective-options {
+        padding: 0px 30px;
+        display: flex !important;
+        -webkit-box-orient: horizontal !important;
+        -webkit-box-direction: normal !important;
+        flex-direction: row !important;
+        justify-content: space-evenly;
+        text-align: center;
+      }
+
+      .objective-view .objective-options button {
+        font-size: 12px;
+        border-radius: 8px;
+      }
+
+      .objective-view .objective-options button i {
+        font-size: 12px !important;
+        margin-right: 4px;
+      }
+
+      .objective-view .objective-options button.checkin-active {
+        background-color: #13ce95;
+        color: #fff;
+        border: 1px solid #0ad195;
       }
     </style>
   </head>
@@ -2582,6 +2619,57 @@
 
     <!-- Content Start -->
     <section class="content">
+      <div class="objective-view">
+        <div class="row">
+          <div class="col-12 menu-action">
+            <span><i class="fas fa-times"></i> Close</span>
+            <span class="pull-right"
+              >Open full view <i class="fas fa-external-link-alt"></i
+            ></span>
+            <span class="pull-right" style="margin-right: 12px"
+              >Copy Link <i class="fas fa-link"></i
+            ></span>
+          </div>
+          <div class="col-12">
+            <hr />
+          </div>
+          <div class="col-12 objective-title">
+            <h4>Research and improve customer satisfaction</h4>
+          </div>
+          <div class="col-12 objective-options">
+            <button
+              class="btn btn-custom-secondary"
+              style="margin-right: 4px"
+              id="check-in"
+            >
+              <i class="fas fa-map-marker-alt"></i> Check-in
+            </button>
+            <button
+              class="btn btn-custom-secondary"
+              style="margin-right: 4px"
+              data-toggle="modal"
+              data-target="#add_objective"
+            >
+              <i class="far fa-comment"></i> Comment
+            </button>
+            <button
+              class="btn btn-custom-secondary"
+              style="margin-right: 4px"
+              data-toggle="modal"
+              data-target="#add_objective"
+            >
+              <i class="fas fa-share-alt"></i> Share
+            </button>
+            <button
+              class="btn btn-custom-secondary"
+              data-toggle="modal"
+              data-target="#add_objective"
+            >
+              <i class="fas fa-ellipsis-h"></i> More
+            </button>
+          </div>
+        </div>
+      </div>
       <!-- Page Header -->
       <div class="page-header row no-gutters py-2 m-t--70">
         <div class="col-lg-6 col-md-6 text-center text-sm-left pt-2 mb-0 ml-4">
@@ -2788,7 +2876,7 @@
             >
               <div class="row">
                 <div class="col-md-12">
-                  <!-- Access Control -->
+                  <!-- OKR -->
                   <div class="okr-table">
                     <table
                       class="table table-condensed"
@@ -2817,13 +2905,11 @@
                             class="accordion-toggle"
                           >
                             <button class="btn btn-xs">
-                              <i
-                                class="far fa-minus-square"
-                                id="icon-change"
-                              ></i>
+                              <i class="fas fa-sort-down" id="icon-change"></i>
                             </button>
                           </td>
                           <td>
+                            <div class="branch-connect"></div>
                             Improve employee productivity and career growth
                             opportunities.
                           </td>
@@ -3055,11 +3141,15 @@
                         <tr class="child-row">
                           <td colspan="12" class="hiddenRow">
                             <div class="accordian-body show" id="demo1">
+                              <div class="branch-line"></div>
                               <table class="table table-striped">
                                 <tbody>
                                   <tr>
                                     <td style="width: 52px">&nbsp;</td>
-                                    <td style="width: 370px">
+                                    <td
+                                      style="width: 370px; padding-left: 40px"
+                                    >
+                                      <div class="branch-connect"></div>
                                       % Completion of scorecard result within 2
                                       weeks of period (except financial related
                                       data)
@@ -4987,7 +5077,7 @@
       });
 
       $(".accordion-toggle").click(function () {
-        $("#icon-change", this).toggleClass("fa-minus-square fa-plus-square");
+        $("#icon-change", this).toggleClass("fa-sort-up fa-sort-down");
       });
 
       $("#open_search").click(function () {
@@ -5259,6 +5349,10 @@
           $("#createURL").show();
           $("#generatedURL").hide();
         });
+      });
+
+      $("#check-in").click(function () {
+        $(this).toggleClass("checkin-active");
       });
     </script>
   </body>
