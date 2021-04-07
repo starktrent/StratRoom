@@ -198,9 +198,7 @@
       }
 
       .table-condensed tbody tr td .branch-line {
-        height: 30px;
         width: 22px;
-        top: 68px;
         left: 83px;
         border-width: 0 0px 2px 2px;
         border-bottom-left-radius: 15px;
@@ -212,11 +210,12 @@
       .options-overlay {
         position: absolute;
         background: #ababab;
-        margin-left: -45px;
-        height: 48px;
-        width: 170px;
+        margin-left: -16px;
+        height: 46px;
+        width: 140px;
         padding: 10px 2px;
         margin-top: -35px;
+        border-radius: 10px;
         visibility: hidden;
         display: flex !important;
         -webkit-box-orient: horizontal !important;
@@ -228,15 +227,15 @@
 
       .options-overlay .options-icon {
         background-color: #fff;
-        height: 28px;
-        width: 28px;
+        height: 26px;
+        width: 26px;
         border-radius: 30px;
         cursor: pointer;
       }
 
       .options-overlay .options-icon i {
         color: #1f262d;
-        font-size: 12px;
+        font-size: 10px;
       }
 
       .btn-custom-secondary .dropdown-menu.pull-right.show {
@@ -244,14 +243,15 @@
       }
 
       .objective-view {
-        height: 684px;
-        width: 420px;
+        height: 674px;
+        width: 430px;
         position: absolute;
         background: #fff;
         z-index: 2;
         right: 0;
         padding: 16px 0;
         box-shadow: -8px 8px 16px rgb(145 145 145 / 15%);
+        overflow: hidden auto;
         visibility: hidden;
       }
 
@@ -299,6 +299,25 @@
         background-color: #13ce95;
         color: #fff;
         border: 1px solid #0ad195;
+      }
+
+      .btn-group > .btn.active {
+        background-color: #1f262d;
+        color: #fff;
+      }
+
+      .objective-view .objective-overview {
+        padding: 10px 30px;
+      }
+
+      .objective-view .objective-overview h4 {
+        font-size: 14px;
+        color: #1f262d;
+      }
+
+      .objective-view .objective-overview p {
+        font-size: 12px;
+        color: #7a7a7a;
       }
     </style>
   </head>
@@ -1921,14 +1940,24 @@
               <div class="col-12" style="padding: 0 0 12px 0">
                 <h4 style="font-size: 16px; font-weight: 600; color: #1e252d">
                   URL
-                  <span
+                  <div class="form-line right">
+                    <button
+                      class="initative_save_btn"
+                      id=""
+                      value=""
+                      style="width: 100px; padding: 0"
+                    >
+                      Copy URL
+                    </button>
+                  </div>
+                  <!-- <span
                     class="pull-right"
                     style="font-size: 14px; color: green; cursor: pointer"
                     ><i class="fas fa-copy"></i
-                  ></span>
+                  ></span> -->
                 </h4>
                 <a href="#" style="font-size: 14px">https://app.ly/abcdef</a>
-                <div class="form-line right" style="margin-top: -6px">
+                <div class="form-line right" style="margin-top: 6px">
                   <button
                     class="initative_save_btn"
                     id="URLdisable"
@@ -2620,9 +2649,11 @@
     <!-- Content Start -->
     <section class="content">
       <div class="objective-view">
-        <div class="row">
+        <div class="row" style="margin-right: 0">
           <div class="col-12 menu-action">
-            <span><i class="fas fa-times"></i> Close</span>
+            <span id="closeObjectiveView"
+              ><i class="fas fa-times"></i> Close</span
+            >
             <span class="pull-right"
               >Open full view <i class="fas fa-external-link-alt"></i
             ></span>
@@ -2648,7 +2679,7 @@
               class="btn btn-custom-secondary"
               style="margin-right: 4px"
               data-toggle="modal"
-              data-target="#add_objective"
+              data-target="#"
             >
               <i class="far fa-comment"></i> Comment
             </button>
@@ -2656,18 +2687,122 @@
               class="btn btn-custom-secondary"
               style="margin-right: 4px"
               data-toggle="modal"
-              data-target="#add_objective"
+              data-target="#"
             >
               <i class="fas fa-share-alt"></i> Share
             </button>
             <button
               class="btn btn-custom-secondary"
               data-toggle="modal"
-              data-target="#add_objective"
+              data-target="#"
             >
               <i class="fas fa-ellipsis-h"></i> More
             </button>
           </div>
+          <div class="col-12 mt-4" style="padding: 8px 34px">
+            <div
+              id="custom-tab"
+              class="btn-group custom-tab-control"
+              role="group"
+              aria-label="Custom Tab"
+            >
+              <button
+                type="button"
+                class="btn btn-custom-secondary active"
+                data-value="Overview"
+              >
+                Overview
+              </button>
+              <button
+                type="button"
+                class="btn btn-custom-secondary"
+                data-value="Key-results"
+              >
+                Key results
+              </button>
+              <button
+                type="button"
+                class="btn btn-custom-secondary"
+                data-value="Activity"
+              >
+                Activity
+              </button>
+            </div>
+          </div>
+          <div class="col-12 objective-overview customTabContent Overview">
+            <h4>Progress</h4>
+            <div class="row">
+              <div class="col-12">
+                <div id="LineChart" style="width: 400px"></div>
+              </div>
+              <div class="col-6 objective-overview">
+                <h4>Owner</h4>
+                <div class="owner">
+                  <ul
+                    class="list-unstyled order-list"
+                    data-toggle="modal"
+                    data-target="#user_edit_popup"
+                    style="cursor: pointer"
+                  >
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user7.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li class="avatar avatar-sm">
+                      <img
+                        class="rounded-circle"
+                        src="../../assets/images/user/user8.jpg"
+                        alt="user"
+                      />
+                    </li>
+                    <li _ngcontent-hhc-c5="" class="avatar avatar-sm">
+                      <span _ngcontent-hhc-c5="" class="badge">+2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-6 objective-overview">
+                <h4>Type</h4>
+                <p>Organization</p>
+              </div>
+              <div class="col-6 objective-overview">
+                <h4>When</h4>
+                <p>Q1 2021 (Jan 1 - Mar 31)</p>
+              </div>
+              <div class="col-6 objective-overview">
+                <h4>Last Updated</h4>
+                <p>No updates</p>
+              </div>
+            </div>
+
+            <div class="col-12 form-group">
+              <textarea
+                class="form-control browser-default custom-textarea"
+                cols="10"
+                rows="3"
+                placeholder="Add a description"
+              ></textarea>
+            </div>
+            <div class="col-12 form-group">
+              <input
+                type="text"
+                class="form-control browser-default custom-input"
+                placeholder="Add a tag"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="col-12 objective-overview customTabContent Key-results"
+            style="display: none"
+          ></div>
+          <div
+            class="col-12 objective-overview customTabContent Activity"
+            style="display: none"
+          ></div>
         </div>
       </div>
       <!-- Page Header -->
@@ -2870,7 +3005,7 @@
                 padding: 6px 16px;
                 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
                 border-radius: 14px !important;
-                height: 590px;
+                height: 580px;
                 border: 0;
               "
             >
@@ -2885,7 +3020,7 @@
                       <thead>
                         <tr>
                           <th style="width: 40px">&nbsp;</th>
-                          <th style="width: 350px; text-align: left">Name</th>
+                          <th style="width: 360px; text-align: left">Name</th>
                           <th style="width: 100px">Owner</th>
                           <th style="width: 100px">Score</th>
                           <th style="width: 140px">Progress</th>
@@ -2910,8 +3045,7 @@
                           </td>
                           <td>
                             <div class="branch-connect"></div>
-                            Improve employee productivity and career growth
-                            opportunities.
+                            Make our customer love our product
                           </td>
                           <td>
                             <div
@@ -3020,7 +3154,10 @@
                                   title="Edit"
                                 ></i>
                               </button>
-                              <button class="options-icon">
+                              <button
+                                class="options-icon"
+                                id="openObjectiveView"
+                              >
                                 <i
                                   class="fas fa-eye"
                                   data-toggle="tooltip"
@@ -3141,7 +3278,10 @@
                         <tr class="child-row">
                           <td colspan="12" class="hiddenRow">
                             <div class="accordian-body show" id="demo1">
-                              <div class="branch-line"></div>
+                              <div
+                                class="branch-line"
+                                style="height: 38px; top: 68px"
+                              ></div>
                               <table class="table table-striped">
                                 <tbody>
                                   <tr>
@@ -3150,9 +3290,7 @@
                                       style="width: 370px; padding-left: 40px"
                                     >
                                       <div class="branch-connect"></div>
-                                      % Completion of scorecard result within 2
-                                      weeks of period (except financial related
-                                      data)
+                                      Increase daily active users by 3%
                                     </td>
                                     <td style="width: 80px">
                                       <div
@@ -3269,7 +3407,1859 @@
                                             title="Edit"
                                           ></i>
                                         </button>
-                                        <button class="options-icon">
+                                        <button
+                                          class="options-icon"
+                                          id="openObjectiveView"
+                                        >
+                                          <i
+                                            class="fas fa-eye"
+                                            data-toggle="tooltip"
+                                            data-placement="bottom"
+                                            title="View"
+                                          ></i>
+                                        </button>
+                                        <button class="options-icon dropdown">
+                                          <a
+                                            href="#"
+                                            class="dropdown-toggle"
+                                            data-toggle="dropdown"
+                                          >
+                                            <i
+                                              class="fas fa-ellipsis-h"
+                                              data-toggle="tooltip"
+                                              data-placement="bottom"
+                                              title="More options"
+                                            ></i>
+                                          </a>
+
+                                          <ul
+                                            class="dropdown-menu pull-right"
+                                            x-placement="bottom-start"
+                                            style="
+                                              position: absolute;
+                                              will-change: transform;
+                                              top: 0px;
+                                              left: 0px;
+                                              border-radius: 8px;
+                                              transform: translate3d(
+                                                0px,
+                                                24px,
+                                                0px
+                                              );
+                                            "
+                                          >
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#add_key"
+                                                onclick="return false;"
+                                                >Add</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#clone"
+                                                onclick="return false;"
+                                                >Clone</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                onclick="return false;"
+                                                data-toggle="modal"
+                                                data-target="#delete_popup"
+                                                >Delete</a
+                                              >
+                                            </li>
+                                          </ul>
+                                        </button>
+                                        <button class="options-icon dropdown">
+                                          <a
+                                            href="#"
+                                            class="dropdown-toggle"
+                                            data-toggle="dropdown"
+                                          >
+                                            <i
+                                              class="fas fa-share-alt"
+                                              data-toggle="tooltip"
+                                              data-placement="bottom"
+                                              title="Share"
+                                            ></i>
+                                          </a>
+
+                                          <ul
+                                            class="dropdown-menu pull-right"
+                                            x-placement="bottom-start"
+                                            style="
+                                              position: absolute;
+                                              will-change: transform;
+                                              top: 0px;
+                                              width: 200px;
+                                              left: 0px;
+                                              border-radius: 8px;
+                                              transform: translate3d(
+                                                0px,
+                                                24px,
+                                                0px
+                                              );
+                                            "
+                                          >
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#"
+                                                onclick="return false;"
+                                                ><i class="fas fa-link"></i>
+                                                Copy Link</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#share_link"
+                                                onclick="return false;"
+                                                ><i class="fas fa-share"></i>
+                                                Share Dashboard Link</a
+                                              >
+                                            </li>
+                                          </ul>
+                                        </button>
+                                      </span>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr class="child-row">
+                          <td colspan="12" class="hiddenRow">
+                            <div class="accordian-body show" id="demo1">
+                              <div
+                                class="branch-line"
+                                style="height: 82px; top: 68px"
+                              ></div>
+                              <table class="table table-striped">
+                                <tbody>
+                                  <tr>
+                                    <td style="width: 52px">&nbsp;</td>
+                                    <td
+                                      style="width: 370px; padding-left: 40px"
+                                    >
+                                      <div class="branch-connect"></div>
+                                      Increase weekly active users by 5%
+                                    </td>
+                                    <td style="width: 80px">
+                                      <div
+                                        class="d-flex flex-column"
+                                        style="margin: auto; width: 75%"
+                                      >
+                                        <ul
+                                          class="list-unstyled order-list d-flex"
+                                          data-toggle="modal"
+                                          data-target="#user_edit_popup"
+                                          style="cursor: pointer"
+                                        >
+                                          <li class="avatar avatar-sm">
+                                            <img
+                                              class="rounded-circle sub_init_img"
+                                              src="../../assets/images/user/user9.jpg"
+                                              alt="user"
+                                              width="50"
+                                            />
+                                          </li>
+                                          <li
+                                            class="avatar avatar-sm"
+                                            style="margin-left: -18px"
+                                          >
+                                            <img
+                                              class="rounded-circle sub_init_img"
+                                              src="../../assets/images/user/user6.jpg"
+                                              alt="user"
+                                              width="50"
+                                            />
+                                          </li>
+                                          <li
+                                            class="avatar avatar-sm"
+                                            style="margin-left: -18px"
+                                          >
+                                            <img
+                                              class="rounded-circle sub_init_img"
+                                              src="../../assets/images/user/user3.jpg"
+                                              alt="user"
+                                              width="50"
+                                            />
+                                          </li>
+
+                                          <li
+                                            class="avatar avatar-sm"
+                                            style="
+                                              margin-left: -18px;
+                                              margin-top: 2px;
+                                            "
+                                          >
+                                            <span
+                                              _ngcontent-hhc-c5=""
+                                              class="badge"
+                                              style="
+                                                height: 20px;
+                                                width: 24px;
+                                                padding-left: 3px;
+                                                border-radius: 3px;
+                                              "
+                                              >+2</span
+                                            >
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </td>
+                                    <td style="width: 100px">40%</td>
+                                    <td style="width: 140px">
+                                      <div
+                                        class="d-flex flex-row"
+                                        style="margin-top: 8px"
+                                      >
+                                        <div class="progress-s progress">
+                                          <div
+                                            class="progress-bar width-per-30 rounded-pill bar_height yellow_bar"
+                                            role="progressbar"
+                                            aria-valuenow="30"
+                                            aria-valuemin="30"
+                                            aria-valuemax="100"
+                                          ></div>
+                                        </div>
+                                        <div
+                                          class="progress_value"
+                                          style="margin-left: 8px"
+                                        >
+                                          30%
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td style="width: 100px">Jan 02, 2021</td>
+                                    <td style="width: 100px">Jan 02, 2021</td>
+                                    <td
+                                      style="width: 100px; text-align: center"
+                                    >
+                                      <i
+                                        class="far fa-comment-dots"
+                                        style="font-size: 20px"
+                                      ></i>
+                                      <span
+                                        class="badge badge-primary"
+                                        id="lblCartCount"
+                                      >
+                                        1
+                                      </span>
+                                      <span class="options-overlay">
+                                        <button
+                                          class="options-icon"
+                                          data-toggle="modal"
+                                          data-target="#edit_key"
+                                        >
+                                          <i
+                                            class="fas fa-pen"
+                                            data-toggle="tooltip"
+                                            data-placement="bottom"
+                                            title="Edit"
+                                          ></i>
+                                        </button>
+                                        <button
+                                          class="options-icon"
+                                          id="openObjectiveView"
+                                        >
+                                          <i
+                                            class="fas fa-eye"
+                                            data-toggle="tooltip"
+                                            data-placement="bottom"
+                                            title="View"
+                                          ></i>
+                                        </button>
+                                        <button class="options-icon dropdown">
+                                          <a
+                                            href="#"
+                                            class="dropdown-toggle"
+                                            data-toggle="dropdown"
+                                          >
+                                            <i
+                                              class="fas fa-ellipsis-h"
+                                              data-toggle="tooltip"
+                                              data-placement="bottom"
+                                              title="More options"
+                                            ></i>
+                                          </a>
+
+                                          <ul
+                                            class="dropdown-menu pull-right"
+                                            x-placement="bottom-start"
+                                            style="
+                                              position: absolute;
+                                              will-change: transform;
+                                              top: 0px;
+                                              left: 0px;
+                                              border-radius: 8px;
+                                              transform: translate3d(
+                                                0px,
+                                                24px,
+                                                0px
+                                              );
+                                            "
+                                          >
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#add_key"
+                                                onclick="return false;"
+                                                >Add</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#clone"
+                                                onclick="return false;"
+                                                >Clone</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                onclick="return false;"
+                                                data-toggle="modal"
+                                                data-target="#delete_popup"
+                                                >Delete</a
+                                              >
+                                            </li>
+                                          </ul>
+                                        </button>
+                                        <button class="options-icon dropdown">
+                                          <a
+                                            href="#"
+                                            class="dropdown-toggle"
+                                            data-toggle="dropdown"
+                                          >
+                                            <i
+                                              class="fas fa-share-alt"
+                                              data-toggle="tooltip"
+                                              data-placement="bottom"
+                                              title="Share"
+                                            ></i>
+                                          </a>
+
+                                          <ul
+                                            class="dropdown-menu pull-right"
+                                            x-placement="bottom-start"
+                                            style="
+                                              position: absolute;
+                                              will-change: transform;
+                                              top: 0px;
+                                              width: 200px;
+                                              left: 0px;
+                                              border-radius: 8px;
+                                              transform: translate3d(
+                                                0px,
+                                                24px,
+                                                0px
+                                              );
+                                            "
+                                          >
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#"
+                                                onclick="return false;"
+                                                ><i class="fas fa-link"></i>
+                                                Copy Link</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#share_link"
+                                                onclick="return false;"
+                                                ><i class="fas fa-share"></i>
+                                                Share Dashboard Link</a
+                                              >
+                                            </li>
+                                          </ul>
+                                        </button>
+                                      </span>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr class="child-row">
+                          <td colspan="12" class="hiddenRow">
+                            <div class="accordian-body show" id="demo1">
+                              <div
+                                class="branch-line"
+                                style="height: 128px; top: 68px"
+                              ></div>
+                              <table class="table table-striped">
+                                <tbody>
+                                  <tr>
+                                    <td style="width: 52px">&nbsp;</td>
+                                    <td
+                                      style="width: 370px; padding-left: 40px"
+                                    >
+                                      <div class="branch-connect"></div>
+                                      Increase monthly active users by 15%
+                                    </td>
+                                    <td style="width: 80px">
+                                      <div
+                                        class="d-flex flex-column"
+                                        style="margin: auto; width: 75%"
+                                      >
+                                        <ul
+                                          class="list-unstyled order-list d-flex"
+                                          data-toggle="modal"
+                                          data-target="#user_edit_popup"
+                                          style="cursor: pointer"
+                                        >
+                                          <li class="avatar avatar-sm">
+                                            <img
+                                              class="rounded-circle sub_init_img"
+                                              src="../../assets/images/user/user9.jpg"
+                                              alt="user"
+                                              width="50"
+                                            />
+                                          </li>
+                                          <li
+                                            class="avatar avatar-sm"
+                                            style="margin-left: -18px"
+                                          >
+                                            <img
+                                              class="rounded-circle sub_init_img"
+                                              src="../../assets/images/user/user6.jpg"
+                                              alt="user"
+                                              width="50"
+                                            />
+                                          </li>
+                                          <li
+                                            class="avatar avatar-sm"
+                                            style="margin-left: -18px"
+                                          >
+                                            <img
+                                              class="rounded-circle sub_init_img"
+                                              src="../../assets/images/user/user3.jpg"
+                                              alt="user"
+                                              width="50"
+                                            />
+                                          </li>
+
+                                          <li
+                                            class="avatar avatar-sm"
+                                            style="
+                                              margin-left: -18px;
+                                              margin-top: 2px;
+                                            "
+                                          >
+                                            <span
+                                              _ngcontent-hhc-c5=""
+                                              class="badge"
+                                              style="
+                                                height: 20px;
+                                                width: 24px;
+                                                padding-left: 3px;
+                                                border-radius: 3px;
+                                              "
+                                              >+2</span
+                                            >
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </td>
+                                    <td style="width: 100px">40%</td>
+                                    <td style="width: 140px">
+                                      <div
+                                        class="d-flex flex-row"
+                                        style="margin-top: 8px"
+                                      >
+                                        <div class="progress-s progress">
+                                          <div
+                                            class="progress-bar width-per-30 rounded-pill bar_height yellow_bar"
+                                            role="progressbar"
+                                            aria-valuenow="30"
+                                            aria-valuemin="30"
+                                            aria-valuemax="100"
+                                          ></div>
+                                        </div>
+                                        <div
+                                          class="progress_value"
+                                          style="margin-left: 8px"
+                                        >
+                                          30%
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td style="width: 100px">Jan 02, 2021</td>
+                                    <td style="width: 100px">Jan 02, 2021</td>
+                                    <td
+                                      style="width: 100px; text-align: center"
+                                    >
+                                      <i
+                                        class="far fa-comment-dots"
+                                        style="font-size: 20px"
+                                      ></i>
+                                      <span
+                                        class="badge badge-primary"
+                                        id="lblCartCount"
+                                      >
+                                        1
+                                      </span>
+                                      <span class="options-overlay">
+                                        <button
+                                          class="options-icon"
+                                          data-toggle="modal"
+                                          data-target="#edit_key"
+                                        >
+                                          <i
+                                            class="fas fa-pen"
+                                            data-toggle="tooltip"
+                                            data-placement="bottom"
+                                            title="Edit"
+                                          ></i>
+                                        </button>
+                                        <button
+                                          class="options-icon"
+                                          id="openObjectiveView"
+                                        >
+                                          <i
+                                            class="fas fa-eye"
+                                            data-toggle="tooltip"
+                                            data-placement="bottom"
+                                            title="View"
+                                          ></i>
+                                        </button>
+                                        <button class="options-icon dropdown">
+                                          <a
+                                            href="#"
+                                            class="dropdown-toggle"
+                                            data-toggle="dropdown"
+                                          >
+                                            <i
+                                              class="fas fa-ellipsis-h"
+                                              data-toggle="tooltip"
+                                              data-placement="bottom"
+                                              title="More options"
+                                            ></i>
+                                          </a>
+
+                                          <ul
+                                            class="dropdown-menu pull-right"
+                                            x-placement="bottom-start"
+                                            style="
+                                              position: absolute;
+                                              will-change: transform;
+                                              top: 0px;
+                                              left: 0px;
+                                              border-radius: 8px;
+                                              transform: translate3d(
+                                                0px,
+                                                24px,
+                                                0px
+                                              );
+                                            "
+                                          >
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#add_key"
+                                                onclick="return false;"
+                                                >Add</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#clone"
+                                                onclick="return false;"
+                                                >Clone</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                onclick="return false;"
+                                                data-toggle="modal"
+                                                data-target="#delete_popup"
+                                                >Delete</a
+                                              >
+                                            </li>
+                                          </ul>
+                                        </button>
+                                        <button class="options-icon dropdown">
+                                          <a
+                                            href="#"
+                                            class="dropdown-toggle"
+                                            data-toggle="dropdown"
+                                          >
+                                            <i
+                                              class="fas fa-share-alt"
+                                              data-toggle="tooltip"
+                                              data-placement="bottom"
+                                              title="Share"
+                                            ></i>
+                                          </a>
+
+                                          <ul
+                                            class="dropdown-menu pull-right"
+                                            x-placement="bottom-start"
+                                            style="
+                                              position: absolute;
+                                              will-change: transform;
+                                              top: 0px;
+                                              width: 200px;
+                                              left: 0px;
+                                              border-radius: 8px;
+                                              transform: translate3d(
+                                                0px,
+                                                24px,
+                                                0px
+                                              );
+                                            "
+                                          >
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#"
+                                                onclick="return false;"
+                                                ><i class="fas fa-link"></i>
+                                                Copy Link</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#share_link"
+                                                onclick="return false;"
+                                                ><i class="fas fa-share"></i>
+                                                Share Dashboard Link</a
+                                              >
+                                            </li>
+                                          </ul>
+                                        </button>
+                                      </span>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr class="child-row">
+                          <td colspan="12" class="hiddenRow">
+                            <div class="accordian-body show" id="demo1">
+                              <div
+                                class="branch-line"
+                                style="height: 172px; top: 68px"
+                              ></div>
+                              <table class="table table-striped">
+                                <tbody>
+                                  <tr>
+                                    <td style="width: 52px">&nbsp;</td>
+                                    <td
+                                      style="width: 370px; padding-left: 40px"
+                                    >
+                                      <div class="branch-connect"></div>
+                                      Ship top 5 customer requests by March 20
+                                    </td>
+                                    <td style="width: 80px">
+                                      <div
+                                        class="d-flex flex-column"
+                                        style="margin: auto; width: 75%"
+                                      >
+                                        <ul
+                                          class="list-unstyled order-list d-flex"
+                                          data-toggle="modal"
+                                          data-target="#user_edit_popup"
+                                          style="cursor: pointer"
+                                        >
+                                          <li class="avatar avatar-sm">
+                                            <img
+                                              class="rounded-circle sub_init_img"
+                                              src="../../assets/images/user/user9.jpg"
+                                              alt="user"
+                                              width="50"
+                                            />
+                                          </li>
+                                          <li
+                                            class="avatar avatar-sm"
+                                            style="margin-left: -18px"
+                                          >
+                                            <img
+                                              class="rounded-circle sub_init_img"
+                                              src="../../assets/images/user/user6.jpg"
+                                              alt="user"
+                                              width="50"
+                                            />
+                                          </li>
+                                          <li
+                                            class="avatar avatar-sm"
+                                            style="margin-left: -18px"
+                                          >
+                                            <img
+                                              class="rounded-circle sub_init_img"
+                                              src="../../assets/images/user/user3.jpg"
+                                              alt="user"
+                                              width="50"
+                                            />
+                                          </li>
+
+                                          <li
+                                            class="avatar avatar-sm"
+                                            style="
+                                              margin-left: -18px;
+                                              margin-top: 2px;
+                                            "
+                                          >
+                                            <span
+                                              _ngcontent-hhc-c5=""
+                                              class="badge"
+                                              style="
+                                                height: 20px;
+                                                width: 24px;
+                                                padding-left: 3px;
+                                                border-radius: 3px;
+                                              "
+                                              >+2</span
+                                            >
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </td>
+                                    <td style="width: 100px">40%</td>
+                                    <td style="width: 140px">
+                                      <div
+                                        class="d-flex flex-row"
+                                        style="margin-top: 8px"
+                                      >
+                                        <div class="progress-s progress">
+                                          <div
+                                            class="progress-bar width-per-30 rounded-pill bar_height yellow_bar"
+                                            role="progressbar"
+                                            aria-valuenow="30"
+                                            aria-valuemin="30"
+                                            aria-valuemax="100"
+                                          ></div>
+                                        </div>
+                                        <div
+                                          class="progress_value"
+                                          style="margin-left: 8px"
+                                        >
+                                          30%
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td style="width: 100px">Jan 02, 2021</td>
+                                    <td style="width: 100px">Jan 02, 2021</td>
+                                    <td
+                                      style="width: 100px; text-align: center"
+                                    >
+                                      <i
+                                        class="far fa-comment-dots"
+                                        style="font-size: 20px"
+                                      ></i>
+                                      <span
+                                        class="badge badge-primary"
+                                        id="lblCartCount"
+                                      >
+                                        1
+                                      </span>
+                                      <span class="options-overlay">
+                                        <button
+                                          class="options-icon"
+                                          data-toggle="modal"
+                                          data-target="#edit_key"
+                                        >
+                                          <i
+                                            class="fas fa-pen"
+                                            data-toggle="tooltip"
+                                            data-placement="bottom"
+                                            title="Edit"
+                                          ></i>
+                                        </button>
+                                        <button
+                                          class="options-icon"
+                                          id="openObjectiveView"
+                                        >
+                                          <i
+                                            class="fas fa-eye"
+                                            data-toggle="tooltip"
+                                            data-placement="bottom"
+                                            title="View"
+                                          ></i>
+                                        </button>
+                                        <button class="options-icon dropdown">
+                                          <a
+                                            href="#"
+                                            class="dropdown-toggle"
+                                            data-toggle="dropdown"
+                                          >
+                                            <i
+                                              class="fas fa-ellipsis-h"
+                                              data-toggle="tooltip"
+                                              data-placement="bottom"
+                                              title="More options"
+                                            ></i>
+                                          </a>
+
+                                          <ul
+                                            class="dropdown-menu pull-right"
+                                            x-placement="bottom-start"
+                                            style="
+                                              position: absolute;
+                                              will-change: transform;
+                                              top: 0px;
+                                              left: 0px;
+                                              border-radius: 8px;
+                                              transform: translate3d(
+                                                0px,
+                                                24px,
+                                                0px
+                                              );
+                                            "
+                                          >
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#add_key"
+                                                onclick="return false;"
+                                                >Add</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#clone"
+                                                onclick="return false;"
+                                                >Clone</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                onclick="return false;"
+                                                data-toggle="modal"
+                                                data-target="#delete_popup"
+                                                >Delete</a
+                                              >
+                                            </li>
+                                          </ul>
+                                        </button>
+                                        <button class="options-icon dropdown">
+                                          <a
+                                            href="#"
+                                            class="dropdown-toggle"
+                                            data-toggle="dropdown"
+                                          >
+                                            <i
+                                              class="fas fa-share-alt"
+                                              data-toggle="tooltip"
+                                              data-placement="bottom"
+                                              title="Share"
+                                            ></i>
+                                          </a>
+
+                                          <ul
+                                            class="dropdown-menu pull-right"
+                                            x-placement="bottom-start"
+                                            style="
+                                              position: absolute;
+                                              will-change: transform;
+                                              top: 0px;
+                                              width: 200px;
+                                              left: 0px;
+                                              border-radius: 8px;
+                                              transform: translate3d(
+                                                0px,
+                                                24px,
+                                                0px
+                                              );
+                                            "
+                                          >
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#"
+                                                onclick="return false;"
+                                                ><i class="fas fa-link"></i>
+                                                Copy Link</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#share_link"
+                                                onclick="return false;"
+                                                ><i class="fas fa-share"></i>
+                                                Share Dashboard Link</a
+                                              >
+                                            </li>
+                                          </ul>
+                                        </button>
+                                      </span>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td
+                            data-toggle="collapse"
+                            data-target="#demo2"
+                            class="accordion-toggle"
+                          >
+                            <button class="btn btn-xs">
+                              <i class="fas fa-sort-down" id="icon-change"></i>
+                            </button>
+                          </td>
+                          <td>
+                            <div class="branch-connect"></div>
+                            Ensure our long term success through improvised
+                            planning
+                          </td>
+                          <td>
+                            <div
+                              class="d-flex flex-column"
+                              style="margin: auto; width: 70%"
+                            >
+                              <ul
+                                class="list-unstyled order-list d-flex"
+                                data-toggle="modal"
+                                data-target="#user_edit_popup"
+                                style="cursor: pointer"
+                              >
+                                <li class="avatar avatar-sm">
+                                  <img
+                                    class="rounded-circle sub_init_img"
+                                    src="../../assets/images/user/user1.jpg"
+                                    alt="user"
+                                    width="50"
+                                  />
+                                </li>
+                                <li
+                                  class="avatar avatar-sm"
+                                  style="margin-left: -18px"
+                                >
+                                  <img
+                                    class="rounded-circle sub_init_img"
+                                    src="../../assets/images/user/user2.jpg"
+                                    alt="user"
+                                    width="50"
+                                  />
+                                </li>
+                                <li
+                                  class="avatar avatar-sm"
+                                  style="margin-left: -18px"
+                                >
+                                  <img
+                                    class="rounded-circle sub_init_img"
+                                    src="../../assets/images/user/user3.jpg"
+                                    alt="user"
+                                    width="50"
+                                  />
+                                </li>
+
+                                <li
+                                  class="avatar avatar-sm"
+                                  style="margin-left: -18px; margin-top: 2px"
+                                >
+                                  <span
+                                    _ngcontent-hhc-c5=""
+                                    class="badge"
+                                    style="
+                                      height: 20px;
+                                      width: 24px;
+                                      padding-left: 3px;
+                                      border-radius: 3px;
+                                    "
+                                    >+5</span
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                          </td>
+                          <td>40%</td>
+                          <td>
+                            <div
+                              class="d-flex flex-row"
+                              style="margin-top: 8px"
+                            >
+                              <div class="progress-s progress">
+                                <div
+                                  class="progress-bar width-per-30 rounded-pill bar_height yellow_bar"
+                                  role="progressbar"
+                                  aria-valuenow="30"
+                                  aria-valuemin="30"
+                                  aria-valuemax="100"
+                                ></div>
+                              </div>
+                              <div
+                                class="progress_value"
+                                style="margin-left: 8px"
+                              >
+                                30%
+                              </div>
+                            </div>
+                          </td>
+                          <td>Jan 02, 2021</td>
+                          <td>Jan 02, 2021</td>
+                          <td style="text-align: center">
+                            <i
+                              class="far fa-comment-dots"
+                              style="font-size: 20px"
+                            ></i>
+                            <span class="badge badge-primary" id="lblCartCount">
+                              1
+                            </span>
+                            <span class="options-overlay">
+                              <button
+                                class="options-icon"
+                                data-toggle="modal"
+                                data-target="#edit_objective"
+                              >
+                                <i
+                                  class="fas fa-pen"
+                                  data-toggle="tooltip"
+                                  data-placement="bottom"
+                                  title="Edit"
+                                ></i>
+                              </button>
+                              <button
+                                class="options-icon"
+                                id="openObjectiveView"
+                              >
+                                <i
+                                  class="fas fa-eye"
+                                  data-toggle="tooltip"
+                                  data-placement="bottom"
+                                  title="View"
+                                ></i>
+                              </button>
+                              <button class="options-icon dropdown">
+                                <a
+                                  href="#"
+                                  class="dropdown-toggle"
+                                  data-toggle="dropdown"
+                                >
+                                  <i
+                                    class="fas fa-ellipsis-h"
+                                    data-toggle="tooltip"
+                                    data-placement="bottom"
+                                    title="More options"
+                                  ></i>
+                                </a>
+
+                                <ul
+                                  class="dropdown-menu pull-right"
+                                  x-placement="bottom-start"
+                                  style="
+                                    position: absolute;
+                                    will-change: transform;
+                                    top: 0px;
+                                    left: 0px;
+                                    border-radius: 8px;
+                                    transform: translate3d(0px, 24px, 0px);
+                                  "
+                                >
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#add_child_objective"
+                                      onclick="return false;"
+                                      >Add</a
+                                    >
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#clone"
+                                      onclick="return false;"
+                                      >Clone</a
+                                    >
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      onclick="return false;"
+                                      data-toggle="modal"
+                                      data-target="#delete_popup"
+                                      >Delete</a
+                                    >
+                                  </li>
+                                </ul>
+                              </button>
+                              <button class="options-icon dropdown">
+                                <a
+                                  href="#"
+                                  class="dropdown-toggle"
+                                  data-toggle="dropdown"
+                                >
+                                  <i
+                                    class="fas fa-share-alt"
+                                    data-toggle="tooltip"
+                                    data-placement="bottom"
+                                    title="Share"
+                                  ></i>
+                                </a>
+
+                                <ul
+                                  class="dropdown-menu pull-right"
+                                  x-placement="bottom-start"
+                                  style="
+                                    position: absolute;
+                                    will-change: transform;
+                                    top: 0px;
+                                    width: 200px;
+                                    left: 0px;
+                                    border-radius: 8px;
+                                    transform: translate3d(0px, 24px, 0px);
+                                  "
+                                >
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#"
+                                      onclick="return false;"
+                                      ><i class="fas fa-link"></i> Copy Link</a
+                                    >
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      data-toggle="modal"
+                                      data-target="#share_link"
+                                      onclick="return false;"
+                                      ><i class="fas fa-share"></i> Share
+                                      Dashboard Link</a
+                                    >
+                                  </li>
+                                </ul>
+                              </button>
+                            </span>
+                          </td>
+                        </tr>
+
+                        <tr class="child-row">
+                          <td colspan="12" class="hiddenRow">
+                            <div class="accordian-body show" id="demo2">
+                              <div
+                                class="branch-line"
+                                style="height: 38px; top: 294px"
+                              ></div>
+                              <table class="table table-striped">
+                                <tbody>
+                                  <tr>
+                                    <td style="width: 52px">&nbsp;</td>
+                                    <td
+                                      style="width: 370px; padding-left: 40px"
+                                    >
+                                      <div class="branch-connect"></div>
+                                      Create a use-case messaging document with
+                                      Marketing by Nov 5.
+                                    </td>
+                                    <td style="width: 80px">
+                                      <div
+                                        class="d-flex flex-column"
+                                        style="margin: auto; width: 75%"
+                                      >
+                                        <ul
+                                          class="list-unstyled order-list d-flex"
+                                          data-toggle="modal"
+                                          data-target="#user_edit_popup"
+                                          style="cursor: pointer"
+                                        >
+                                          <li class="avatar avatar-sm">
+                                            <img
+                                              class="rounded-circle sub_init_img"
+                                              src="../../assets/images/user/user9.jpg"
+                                              alt="user"
+                                              width="50"
+                                            />
+                                          </li>
+                                          <li
+                                            class="avatar avatar-sm"
+                                            style="margin-left: -18px"
+                                          >
+                                            <img
+                                              class="rounded-circle sub_init_img"
+                                              src="../../assets/images/user/user6.jpg"
+                                              alt="user"
+                                              width="50"
+                                            />
+                                          </li>
+                                          <li
+                                            class="avatar avatar-sm"
+                                            style="margin-left: -18px"
+                                          >
+                                            <img
+                                              class="rounded-circle sub_init_img"
+                                              src="../../assets/images/user/user3.jpg"
+                                              alt="user"
+                                              width="50"
+                                            />
+                                          </li>
+
+                                          <li
+                                            class="avatar avatar-sm"
+                                            style="
+                                              margin-left: -18px;
+                                              margin-top: 2px;
+                                            "
+                                          >
+                                            <span
+                                              _ngcontent-hhc-c5=""
+                                              class="badge"
+                                              style="
+                                                height: 20px;
+                                                width: 24px;
+                                                padding-left: 3px;
+                                                border-radius: 3px;
+                                              "
+                                              >+2</span
+                                            >
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </td>
+                                    <td style="width: 100px">40%</td>
+                                    <td style="width: 140px">
+                                      <div
+                                        class="d-flex flex-row"
+                                        style="margin-top: 8px"
+                                      >
+                                        <div class="progress-s progress">
+                                          <div
+                                            class="progress-bar width-per-30 rounded-pill bar_height yellow_bar"
+                                            role="progressbar"
+                                            aria-valuenow="30"
+                                            aria-valuemin="30"
+                                            aria-valuemax="100"
+                                          ></div>
+                                        </div>
+                                        <div
+                                          class="progress_value"
+                                          style="margin-left: 8px"
+                                        >
+                                          30%
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td style="width: 100px">Jan 02, 2021</td>
+                                    <td style="width: 100px">Jan 02, 2021</td>
+                                    <td
+                                      style="width: 100px; text-align: center"
+                                    >
+                                      <i
+                                        class="far fa-comment-dots"
+                                        style="font-size: 20px"
+                                      ></i>
+                                      <span
+                                        class="badge badge-primary"
+                                        id="lblCartCount"
+                                      >
+                                        1
+                                      </span>
+                                      <span class="options-overlay">
+                                        <button
+                                          class="options-icon"
+                                          data-toggle="modal"
+                                          data-target="#edit_key"
+                                        >
+                                          <i
+                                            class="fas fa-pen"
+                                            data-toggle="tooltip"
+                                            data-placement="bottom"
+                                            title="Edit"
+                                          ></i>
+                                        </button>
+                                        <button
+                                          class="options-icon"
+                                          id="openObjectiveView"
+                                        >
+                                          <i
+                                            class="fas fa-eye"
+                                            data-toggle="tooltip"
+                                            data-placement="bottom"
+                                            title="View"
+                                          ></i>
+                                        </button>
+                                        <button class="options-icon dropdown">
+                                          <a
+                                            href="#"
+                                            class="dropdown-toggle"
+                                            data-toggle="dropdown"
+                                          >
+                                            <i
+                                              class="fas fa-ellipsis-h"
+                                              data-toggle="tooltip"
+                                              data-placement="bottom"
+                                              title="More options"
+                                            ></i>
+                                          </a>
+
+                                          <ul
+                                            class="dropdown-menu pull-right"
+                                            x-placement="bottom-start"
+                                            style="
+                                              position: absolute;
+                                              will-change: transform;
+                                              top: 0px;
+                                              left: 0px;
+                                              border-radius: 8px;
+                                              transform: translate3d(
+                                                0px,
+                                                24px,
+                                                0px
+                                              );
+                                            "
+                                          >
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#add_key"
+                                                onclick="return false;"
+                                                >Add</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#clone"
+                                                onclick="return false;"
+                                                >Clone</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                onclick="return false;"
+                                                data-toggle="modal"
+                                                data-target="#delete_popup"
+                                                >Delete</a
+                                              >
+                                            </li>
+                                          </ul>
+                                        </button>
+                                        <button class="options-icon dropdown">
+                                          <a
+                                            href="#"
+                                            class="dropdown-toggle"
+                                            data-toggle="dropdown"
+                                          >
+                                            <i
+                                              class="fas fa-share-alt"
+                                              data-toggle="tooltip"
+                                              data-placement="bottom"
+                                              title="Share"
+                                            ></i>
+                                          </a>
+
+                                          <ul
+                                            class="dropdown-menu pull-right"
+                                            x-placement="bottom-start"
+                                            style="
+                                              position: absolute;
+                                              will-change: transform;
+                                              top: 0px;
+                                              width: 200px;
+                                              left: 0px;
+                                              border-radius: 8px;
+                                              transform: translate3d(
+                                                0px,
+                                                24px,
+                                                0px
+                                              );
+                                            "
+                                          >
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#"
+                                                onclick="return false;"
+                                                ><i class="fas fa-link"></i>
+                                                Copy Link</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#share_link"
+                                                onclick="return false;"
+                                                ><i class="fas fa-share"></i>
+                                                Share Dashboard Link</a
+                                              >
+                                            </li>
+                                          </ul>
+                                        </button>
+                                      </span>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr class="child-row">
+                          <td colspan="12" class="hiddenRow">
+                            <div class="accordian-body show" id="demo2">
+                              <div
+                                class="branch-line"
+                                style="height: 82px; top: 294px"
+                              ></div>
+                              <table class="table table-striped">
+                                <tbody>
+                                  <tr>
+                                    <td style="width: 52px">&nbsp;</td>
+                                    <td
+                                      style="width: 370px; padding-left: 40px"
+                                    >
+                                      <div class="branch-connect"></div>
+                                      Present refreshed vision and roadmap to
+                                      executive team by Nov 20
+                                    </td>
+                                    <td style="width: 80px">
+                                      <div
+                                        class="d-flex flex-column"
+                                        style="margin: auto; width: 75%"
+                                      >
+                                        <ul
+                                          class="list-unstyled order-list d-flex"
+                                          data-toggle="modal"
+                                          data-target="#user_edit_popup"
+                                          style="cursor: pointer"
+                                        >
+                                          <li class="avatar avatar-sm">
+                                            <img
+                                              class="rounded-circle sub_init_img"
+                                              src="../../assets/images/user/user9.jpg"
+                                              alt="user"
+                                              width="50"
+                                            />
+                                          </li>
+                                          <li
+                                            class="avatar avatar-sm"
+                                            style="margin-left: -18px"
+                                          >
+                                            <img
+                                              class="rounded-circle sub_init_img"
+                                              src="../../assets/images/user/user6.jpg"
+                                              alt="user"
+                                              width="50"
+                                            />
+                                          </li>
+                                          <li
+                                            class="avatar avatar-sm"
+                                            style="margin-left: -18px"
+                                          >
+                                            <img
+                                              class="rounded-circle sub_init_img"
+                                              src="../../assets/images/user/user3.jpg"
+                                              alt="user"
+                                              width="50"
+                                            />
+                                          </li>
+
+                                          <li
+                                            class="avatar avatar-sm"
+                                            style="
+                                              margin-left: -18px;
+                                              margin-top: 2px;
+                                            "
+                                          >
+                                            <span
+                                              _ngcontent-hhc-c5=""
+                                              class="badge"
+                                              style="
+                                                height: 20px;
+                                                width: 24px;
+                                                padding-left: 3px;
+                                                border-radius: 3px;
+                                              "
+                                              >+2</span
+                                            >
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </td>
+                                    <td style="width: 100px">40%</td>
+                                    <td style="width: 140px">
+                                      <div
+                                        class="d-flex flex-row"
+                                        style="margin-top: 8px"
+                                      >
+                                        <div class="progress-s progress">
+                                          <div
+                                            class="progress-bar width-per-30 rounded-pill bar_height yellow_bar"
+                                            role="progressbar"
+                                            aria-valuenow="30"
+                                            aria-valuemin="30"
+                                            aria-valuemax="100"
+                                          ></div>
+                                        </div>
+                                        <div
+                                          class="progress_value"
+                                          style="margin-left: 8px"
+                                        >
+                                          30%
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td style="width: 100px">Jan 02, 2021</td>
+                                    <td style="width: 100px">Jan 02, 2021</td>
+                                    <td
+                                      style="width: 100px; text-align: center"
+                                    >
+                                      <i
+                                        class="far fa-comment-dots"
+                                        style="font-size: 20px"
+                                      ></i>
+                                      <span
+                                        class="badge badge-primary"
+                                        id="lblCartCount"
+                                      >
+                                        1
+                                      </span>
+                                      <span class="options-overlay">
+                                        <button
+                                          class="options-icon"
+                                          data-toggle="modal"
+                                          data-target="#edit_key"
+                                        >
+                                          <i
+                                            class="fas fa-pen"
+                                            data-toggle="tooltip"
+                                            data-placement="bottom"
+                                            title="Edit"
+                                          ></i>
+                                        </button>
+                                        <button
+                                          class="options-icon"
+                                          id="openObjectiveView"
+                                        >
+                                          <i
+                                            class="fas fa-eye"
+                                            data-toggle="tooltip"
+                                            data-placement="bottom"
+                                            title="View"
+                                          ></i>
+                                        </button>
+                                        <button class="options-icon dropdown">
+                                          <a
+                                            href="#"
+                                            class="dropdown-toggle"
+                                            data-toggle="dropdown"
+                                          >
+                                            <i
+                                              class="fas fa-ellipsis-h"
+                                              data-toggle="tooltip"
+                                              data-placement="bottom"
+                                              title="More options"
+                                            ></i>
+                                          </a>
+
+                                          <ul
+                                            class="dropdown-menu pull-right"
+                                            x-placement="bottom-start"
+                                            style="
+                                              position: absolute;
+                                              will-change: transform;
+                                              top: 0px;
+                                              left: 0px;
+                                              border-radius: 8px;
+                                              transform: translate3d(
+                                                0px,
+                                                24px,
+                                                0px
+                                              );
+                                            "
+                                          >
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#add_key"
+                                                onclick="return false;"
+                                                >Add</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#clone"
+                                                onclick="return false;"
+                                                >Clone</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                onclick="return false;"
+                                                data-toggle="modal"
+                                                data-target="#delete_popup"
+                                                >Delete</a
+                                              >
+                                            </li>
+                                          </ul>
+                                        </button>
+                                        <button class="options-icon dropdown">
+                                          <a
+                                            href="#"
+                                            class="dropdown-toggle"
+                                            data-toggle="dropdown"
+                                          >
+                                            <i
+                                              class="fas fa-share-alt"
+                                              data-toggle="tooltip"
+                                              data-placement="bottom"
+                                              title="Share"
+                                            ></i>
+                                          </a>
+
+                                          <ul
+                                            class="dropdown-menu pull-right"
+                                            x-placement="bottom-start"
+                                            style="
+                                              position: absolute;
+                                              will-change: transform;
+                                              top: 0px;
+                                              width: 200px;
+                                              left: 0px;
+                                              border-radius: 8px;
+                                              transform: translate3d(
+                                                0px,
+                                                24px,
+                                                0px
+                                              );
+                                            "
+                                          >
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#"
+                                                onclick="return false;"
+                                                ><i class="fas fa-link"></i>
+                                                Copy Link</a
+                                              >
+                                            </li>
+
+                                            <li>
+                                              <a
+                                                href="#"
+                                                data-toggle="modal"
+                                                data-target="#share_link"
+                                                onclick="return false;"
+                                                ><i class="fas fa-share"></i>
+                                                Share Dashboard Link</a
+                                              >
+                                            </li>
+                                          </ul>
+                                        </button>
+                                      </span>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr class="child-row">
+                          <td colspan="12" class="hiddenRow">
+                            <div class="accordian-body show" id="demo2">
+                              <div
+                                class="branch-line"
+                                style="height: 120px; top: 294px"
+                              ></div>
+                              <table class="table table-striped">
+                                <tbody>
+                                  <tr>
+                                    <td style="width: 52px">&nbsp;</td>
+                                    <td
+                                      style="width: 370px; padding-left: 40px"
+                                    >
+                                      <div class="branch-connect"></div>
+                                      Implement new prioritization and new
+                                      feature process for all Q4 products by end
+                                      of Q4.
+                                    </td>
+                                    <td style="width: 80px">
+                                      <div
+                                        class="d-flex flex-column"
+                                        style="margin: auto; width: 75%"
+                                      >
+                                        <ul
+                                          class="list-unstyled order-list d-flex"
+                                          data-toggle="modal"
+                                          data-target="#user_edit_popup"
+                                          style="cursor: pointer"
+                                        >
+                                          <li class="avatar avatar-sm">
+                                            <img
+                                              class="rounded-circle sub_init_img"
+                                              src="../../assets/images/user/user9.jpg"
+                                              alt="user"
+                                              width="50"
+                                            />
+                                          </li>
+                                          <li
+                                            class="avatar avatar-sm"
+                                            style="margin-left: -18px"
+                                          >
+                                            <img
+                                              class="rounded-circle sub_init_img"
+                                              src="../../assets/images/user/user6.jpg"
+                                              alt="user"
+                                              width="50"
+                                            />
+                                          </li>
+                                          <li
+                                            class="avatar avatar-sm"
+                                            style="margin-left: -18px"
+                                          >
+                                            <img
+                                              class="rounded-circle sub_init_img"
+                                              src="../../assets/images/user/user3.jpg"
+                                              alt="user"
+                                              width="50"
+                                            />
+                                          </li>
+
+                                          <li
+                                            class="avatar avatar-sm"
+                                            style="
+                                              margin-left: -18px;
+                                              margin-top: 2px;
+                                            "
+                                          >
+                                            <span
+                                              _ngcontent-hhc-c5=""
+                                              class="badge"
+                                              style="
+                                                height: 20px;
+                                                width: 24px;
+                                                padding-left: 3px;
+                                                border-radius: 3px;
+                                              "
+                                              >+2</span
+                                            >
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </td>
+                                    <td style="width: 100px">40%</td>
+                                    <td style="width: 140px">
+                                      <div
+                                        class="d-flex flex-row"
+                                        style="margin-top: 8px"
+                                      >
+                                        <div class="progress-s progress">
+                                          <div
+                                            class="progress-bar width-per-30 rounded-pill bar_height yellow_bar"
+                                            role="progressbar"
+                                            aria-valuenow="30"
+                                            aria-valuemin="30"
+                                            aria-valuemax="100"
+                                          ></div>
+                                        </div>
+                                        <div
+                                          class="progress_value"
+                                          style="margin-left: 8px"
+                                        >
+                                          30%
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td style="width: 100px">Jan 02, 2021</td>
+                                    <td style="width: 100px">Jan 02, 2021</td>
+                                    <td
+                                      style="width: 100px; text-align: center"
+                                    >
+                                      <i
+                                        class="far fa-comment-dots"
+                                        style="font-size: 20px"
+                                      ></i>
+                                      <span
+                                        class="badge badge-primary"
+                                        id="lblCartCount"
+                                      >
+                                        1
+                                      </span>
+                                      <span class="options-overlay">
+                                        <button
+                                          class="options-icon"
+                                          data-toggle="modal"
+                                          data-target="#edit_key"
+                                        >
+                                          <i
+                                            class="fas fa-pen"
+                                            data-toggle="tooltip"
+                                            data-placement="bottom"
+                                            title="Edit"
+                                          ></i>
+                                        </button>
+                                        <button
+                                          class="options-icon"
+                                          id="openObjectiveView"
+                                        >
                                           <i
                                             class="fas fa-eye"
                                             data-toggle="tooltip"
@@ -5066,6 +7056,7 @@
     <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
     <script src="assets/daterangepicker/daterangepicker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
     <script>
       $(".daterangepicker-field").daterangepicker({
@@ -5353,6 +7344,72 @@
 
       $("#check-in").click(function () {
         $(this).toggleClass("checkin-active");
+      });
+
+      $("#custom-tab").on("click", "button", function (e) {
+        var CustomTabValue = this.dataset.value;
+        if (CustomTabValue) {
+          $(".customTabContent")
+            .not("." + CustomTabValue)
+            .hide();
+          $("." + CustomTabValue).show();
+        } else {
+          $(".customTabContent").hide();
+        }
+        $(this).parent().find("button").removeClass("active");
+        $(this).addClass("active");
+      });
+
+      var options = {
+        series: [
+          {
+            name: "Desktops",
+            data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
+          },
+        ],
+        chart: {
+          height: 220,
+          type: "line",
+          zoom: {
+            enabled: false,
+          },
+        },
+        dataLabels: {
+          enabled: false,
+        },
+        stroke: {
+          curve: "straight",
+        },
+        grid: {
+          row: {
+            colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on columns
+            opacity: 0.5,
+          },
+        },
+        xaxis: {
+          categories: [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+          ],
+        },
+      };
+
+      var chart = new ApexCharts(document.querySelector("#LineChart"), options);
+      chart.render();
+
+      $("#openObjectiveView").click(function () {
+        $(".objective-view").css("visibility", "visible");
+      });
+
+      $("#closeObjectiveView").click(function () {
+        $(".objective-view").css("visibility", "hidden");
       });
     </script>
   </body>
