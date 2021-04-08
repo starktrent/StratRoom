@@ -868,13 +868,31 @@
               </div>
 
               <div class="col-8 form-group mb-4">
-                <select
-                  class="form-control browser-default custom-input-select"
-                >
-                  <option value="Select">Select</option>
-                  <option value="Objective 1">Objective 1</option>
-                  <option value="Objective 2">Objective 2</option>
-                </select>
+                <div class="input-group" style="margin-bottom: 0px">
+                  <select
+                    class="form-control browser-default custom-input-select"
+                  >
+                    <option value="Select">Select</option>
+                    <option value="Objective 1">Objective 1</option>
+                    <option value="Objective 2">Objective 2</option>
+                  </select>
+
+                  <span
+                    data-toggle="modal"
+                    data-target="#align_okr"
+                    style="
+                      height: 26px;
+                      width: 26px;
+                      padding: 4px 7px;
+                      border: 1px solid #ced4da;
+                      border-radius: 4px;
+                      cursor: pointer;
+                      margin-left: 2px;
+                    "
+                  >
+                    <i class="fas fa-plus"></i>
+                  </span>
+                </div>
               </div>
 
               <div class="col-4 form-group mb-4">
@@ -1880,6 +1898,267 @@
       </div>
     </div>
     <!-- Edit Key Result -->
+
+    <!-- Align OKR -->
+    <div
+      class="modal fade"
+      id="align_okr"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel_1"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg"
+        style="width: 600px"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4
+              style="
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e252d;
+                margin-bottom: 18px;
+              "
+            >
+              Which OKRs do you want to align with?
+            </h4>
+            <button type="button" class="close pull-right" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body" style="max-height: 620px; overflow-y: auto">
+            <div class="row">
+              <div class="col-12 form-group mb-4">
+                <div
+                  id="alignOKRTab"
+                  class="btn-group custom-tab-control"
+                  role="group"
+                  aria-label="Align OKR Tab"
+                >
+                  <button
+                    type="button"
+                    class="btn btn-custom-secondary active"
+                    data-value="CompanyOKR"
+                  >
+                    Company OKR
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-custom-secondary"
+                    data-value="DepartmentOKR"
+                  >
+                    Department OKR
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-custom-secondary"
+                    data-value="MyOKR"
+                  >
+                    My OKR
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-12 form-group OKRAlignment CompanyOKR">
+                <div class="form-check mt-4">
+                  <div class="form-check">
+                    <label
+                      class="form-check-label"
+                      style="font-size: 14px; font-weight: 500; color: #444444"
+                    >
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                      />
+                      Improve employee productivity and career growth
+                      opportunities.
+                      <span class="form-check-sign">
+                        <span class="check"></span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check mt-4">
+                  <div class="form-check">
+                    <label
+                      class="form-check-label"
+                      style="font-size: 14px; font-weight: 500; color: #444444"
+                    >
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                      />
+                      Improve performance review and evaluation process
+                      <span class="form-check-sign">
+                        <span class="check"></span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check mt-4">
+                  <div class="form-check">
+                    <label
+                      class="form-check-label"
+                      style="font-size: 14px; font-weight: 500; color: #444444"
+                    >
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                      />
+                      Make our customer love our product
+                      <span class="form-check-sign">
+                        <span class="check"></span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="col-12 form-group OKRAlignment DepartmentOKR"
+                style="display: none"
+              >
+                <div class="form-check mt-4">
+                  <div class="form-check">
+                    <label
+                      class="form-check-label"
+                      style="font-size: 14px; font-weight: 500; color: #444444"
+                    >
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                      />
+                      Make our customer love our product
+                      <span class="form-check-sign">
+                        <span class="check"></span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check mt-4">
+                  <div class="form-check">
+                    <label
+                      class="form-check-label"
+                      style="font-size: 14px; font-weight: 500; color: #444444"
+                    >
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                      />
+                      Ensure our long term success through improvised planning
+                      <span class="form-check-sign">
+                        <span class="check"></span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check mt-4">
+                  <div class="form-check">
+                    <label
+                      class="form-check-label"
+                      style="font-size: 14px; font-weight: 500; color: #444444"
+                    >
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                      />
+                      Improve performance review and evaluation process
+                      <span class="form-check-sign">
+                        <span class="check"></span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="col-12 form-group OKRAlignment MyOKR"
+                style="display: none"
+              >
+                <div class="form-check mt-4">
+                  <div class="form-check">
+                    <label
+                      class="form-check-label"
+                      style="font-size: 14px; font-weight: 500; color: #444444"
+                    >
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                      />
+                      % Completion of scorecard result within 2 weeks of period.
+                      <span class="form-check-sign">
+                        <span class="check"></span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check mt-4">
+                  <div class="form-check">
+                    <label
+                      class="form-check-label"
+                      style="font-size: 14px; font-weight: 500; color: #444444"
+                    >
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                      />
+                      Improve performance review and evaluation process
+                      <span class="form-check-sign">
+                        <span class="check"></span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check mt-4">
+                  <div class="form-check">
+                    <label
+                      class="form-check-label"
+                      style="font-size: 14px; font-weight: 500; color: #444444"
+                    >
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                      />
+                      Ensure our long term success through improvised planning
+                      <span class="form-check-sign">
+                        <span class="check"></span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-line right">
+                  <!-- <button
+                      type="button"
+                      class="btn-default1 btn"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      Cancel
+                    </button> -->
+                  <button class="initative_save_btn" value="Update">
+                    Update
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Align OKR -->
 
     <!-- Share Dashboard Link -->
     <div
@@ -5390,1634 +5669,6 @@
                             </div>
                           </td>
                         </tr>
-
-                        <!-- <tr>
-                          <td>&nbsp;</td>
-                          <td style="color: #1aa243">
-                            <i class="fas fa-flag"></i>
-                          </td>
-                          <td>
-                            <div class="d-flex flex-column">
-                              <ul
-                                class="list-unstyled order-list d-flex"
-                                data-toggle="modal"
-                                data-target="#user_edit_popup"
-                                style="cursor: pointer"
-                              >
-                                <li class="avatar avatar-sm">
-                                  <img
-                                    class="rounded-circle sub_init_img"
-                                    src="../../assets/images/user/user2.jpg"
-                                    alt="user"
-                                    width="50"
-                                  />
-                                </li>
-                                <li
-                                  class="avatar avatar-sm"
-                                  style="margin-left: -18px"
-                                >
-                                  <img
-                                    class="rounded-circle sub_init_img"
-                                    src="../../assets/images/user/user8.jpg"
-                                    alt="user"
-                                    width="50"
-                                  />
-                                </li>
-                                <li
-                                  class="avatar avatar-sm"
-                                  style="margin-left: -18px"
-                                >
-                                  <img
-                                    class="rounded-circle sub_init_img"
-                                    src="../../assets/images/user/user4.jpg"
-                                    alt="user"
-                                    width="50"
-                                  />
-                                </li>
-
-                                <li
-                                  class="avatar avatar-sm"
-                                  style="margin-left: -18px; margin-top: 2px"
-                                >
-                                  <span
-                                    _ngcontent-hhc-c5=""
-                                    class="badge"
-                                    style="
-                                      height: 20px;
-                                      width: 24px;
-                                      padding-left: 3px;
-                                      border-radius: 3px;
-                                    "
-                                    >+4</span
-                                  >
-                                </li>
-                              </ul>
-                            </div>
-                          </td>
-                          <td>
-                            Improve performance review and evaluation process
-                          </td>
-                          <td>0%</td>
-                          <td>0</td>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                          <td style="text-align: center">
-                            <i
-                              class="far fa-comment-dots"
-                              style="font-size: 20px"
-                            ></i>
-                            <span class="badge badge-primary" id="lblCartCount">
-                              1
-                            </span>
-                          </td>
-                          <td>
-                            <ul
-                              class="header-dropdown"
-                              style="margin-bottom: 0px"
-                            >
-                              <li class="dropdown">
-                                <a
-                                  href="#"
-                                  class="dropdown-toggle"
-                                  data-toggle="dropdown"
-                                  role="button"
-                                  aria-haspopup="true"
-                                  aria-expanded="true"
-                                  style="color: #1e252d !important"
-                                >
-                                  <i class="fas fa-ellipsis-v"></i>
-                                </a>
-                                <ul
-                                  class="dropdown-menu pull-right"
-                                  id="project-options"
-                                  x-placement="bottom-start"
-                                  style="
-                                    position: absolute;
-                                    will-change: transform;
-                                    top: 0px;
-                                    left: 0px;
-                                    transform: translate3d(0px, 24px, 0px);
-                                  "
-                                >
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#add_child_objective"
-                                      onclick="return false;"
-                                      >Add Child Objective</a
-                                    >
-                                  </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#add_key"
-                                      onclick="return false;"
-                                      >Add Key Result</a
-                                    >
-                                  </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#edit_objective"
-                                      onclick="return false;"
-                                      >Edit</a
-                                    >
-                                  </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#clone"
-                                      onclick="return false;"
-                                      >Clone</a
-                                    >
-                                  </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      onclick="return false;"
-                                      data-toggle="modal"
-                                      data-target="#delete_popup"
-                                      >Delete</a
-                                    >
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td
-                            data-toggle="collapse"
-                            data-target="#demo2"
-                            class="accordion-toggle"
-                          >
-                            <button class="btn btn-xs">
-                              <i
-                                class="far fa-minus-square"
-                                id="icon-change"
-                              ></i>
-                            </button>
-                          </td>
-                          <td style="color: #1aa243">
-                            <i class="fas fa-flag"></i>
-                          </td>
-                          <td>
-                            <div class="d-flex flex-column">
-                              <ul
-                                class="list-unstyled order-list d-flex"
-                                data-toggle="modal"
-                                data-target="#user_edit_popup"
-                                style="cursor: pointer"
-                              >
-                                <li class="avatar avatar-sm">
-                                  <img
-                                    class="rounded-circle sub_init_img"
-                                    src="../../assets/images/user/user9.jpg"
-                                    alt="user"
-                                    width="50"
-                                  />
-                                </li>
-                                <li
-                                  class="avatar avatar-sm"
-                                  style="margin-left: -18px"
-                                >
-                                  <img
-                                    class="rounded-circle sub_init_img"
-                                    src="../../assets/images/user/user6.jpg"
-                                    alt="user"
-                                    width="50"
-                                  />
-                                </li>
-                                <li
-                                  class="avatar avatar-sm"
-                                  style="margin-left: -18px"
-                                >
-                                  <img
-                                    class="rounded-circle sub_init_img"
-                                    src="../../assets/images/user/user1.jpg"
-                                    alt="user"
-                                    width="50"
-                                  />
-                                </li>
-
-                                <li
-                                  class="avatar avatar-sm"
-                                  style="margin-left: -18px; margin-top: 2px"
-                                >
-                                  <span
-                                    _ngcontent-hhc-c5=""
-                                    class="badge"
-                                    style="
-                                      height: 20px;
-                                      width: 24px;
-                                      padding-left: 3px;
-                                      border-radius: 3px;
-                                    "
-                                    >+1</span
-                                  >
-                                </li>
-                              </ul>
-                            </div>
-                          </td>
-                          <td>Objective 3</td>
-                          <td>0%</td>
-                          <td>2</td>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                          <td style="text-align: center">
-                            <i
-                              class="far fa-comment-dots"
-                              style="font-size: 20px"
-                            ></i>
-                            <span class="badge badge-primary" id="lblCartCount">
-                              1
-                            </span>
-                          </td>
-                          <td>
-                            <ul
-                              class="header-dropdown"
-                              style="margin-bottom: 0px"
-                            >
-                              <li class="dropdown">
-                                <a
-                                  href="#"
-                                  class="dropdown-toggle"
-                                  data-toggle="dropdown"
-                                  role="button"
-                                  aria-haspopup="true"
-                                  aria-expanded="true"
-                                  style="color: #1e252d !important"
-                                >
-                                  <i class="fas fa-ellipsis-v"></i>
-                                </a>
-                                <ul
-                                  class="dropdown-menu pull-right"
-                                  id="project-options"
-                                  x-placement="bottom-start"
-                                  style="
-                                    position: absolute;
-                                    will-change: transform;
-                                    top: 0px;
-                                    left: 0px;
-                                    transform: translate3d(0px, 24px, 0px);
-                                  "
-                                >
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#add_child_objective"
-                                      onclick="return false;"
-                                      >Add Child Objective</a
-                                    >
-                                  </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#add_key"
-                                      onclick="return false;"
-                                      >Add Key Result</a
-                                    >
-                                  </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#edit_objective"
-                                      onclick="return false;"
-                                      >Edit</a
-                                    >
-                                  </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#clone"
-                                      onclick="return false;"
-                                      >Clone</a
-                                    >
-                                  </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      onclick="return false;"
-                                      data-toggle="modal"
-                                      data-target="#delete_popup"
-                                      >Delete</a
-                                    >
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </td>
-                        </tr>
-
-                        <tr class="child-row">
-                          <td colspan="12" class="hiddenRow">
-                            <div class="accordian-body show" id="demo2">
-                              <table class="table table-striped">
-                                <tbody>
-                                  <tr>
-                                    <td style="width: 54px">&nbsp;</td>
-                                    <td style="color: #1aa243; width: 80px">
-                                      <i class="fas fa-flag"></i>
-                                    </td>
-                                    <td style="width: 100px">
-                                      <div class="d-flex flex-column">
-                                        <ul
-                                          class="list-unstyled order-list d-flex"
-                                          data-toggle="modal"
-                                          data-target="#user_edit_popup"
-                                          style="cursor: pointer"
-                                        >
-                                          <li class="avatar avatar-sm">
-                                            <img
-                                              class="rounded-circle sub_init_img"
-                                              src="../../assets/images/user/user9.jpg"
-                                              alt="user"
-                                              width="50"
-                                            />
-                                          </li>
-                                          <li
-                                            class="avatar avatar-sm"
-                                            style="margin-left: -18px"
-                                          >
-                                            <img
-                                              class="rounded-circle sub_init_img"
-                                              src="../../assets/images/user/user7.jpg"
-                                              alt="user"
-                                              width="50"
-                                            />
-                                          </li>
-                                          <li
-                                            class="avatar avatar-sm"
-                                            style="margin-left: -18px"
-                                          >
-                                            <img
-                                              class="rounded-circle sub_init_img"
-                                              src="../../assets/images/user/user2.jpg"
-                                              alt="user"
-                                              width="50"
-                                            />
-                                          </li>
-
-                                          <li
-                                            class="avatar avatar-sm"
-                                            style="
-                                              margin-left: -18px;
-                                              margin-top: 2px;
-                                            "
-                                          >
-                                            <span
-                                              _ngcontent-hhc-c5=""
-                                              class="badge"
-                                              style="
-                                                height: 20px;
-                                                width: 24px;
-                                                padding-left: 3px;
-                                                border-radius: 3px;
-                                              "
-                                              >+5</span
-                                            >
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </td>
-                                    <td style="width: 354px">
-                                      # Time to sign off agreed departmental
-                                      KPIs for the financial year (days)
-                                    </td>
-                                    <td style="width: 120px">40%</td>
-                                    <td style="width: 120px">&nbsp;</td>
-                                    <td style="width: 80px">0</td>
-                                    <td style="width: 80px">4</td>
-                                    <td style="width: 80px">10</td>
-                                    <td style="width: 120px">7</td>
-                                    <td
-                                      style="width: 120px; text-align: center"
-                                    >
-                                      <i
-                                        class="far fa-comment-dots"
-                                        style="font-size: 20px"
-                                      ></i>
-                                      <span
-                                        class="badge badge-primary"
-                                        id="lblCartCount"
-                                      >
-                                        1
-                                      </span>
-                                    </td>
-                                    <td style="width: 40px">
-                                      <ul
-                                        class="header-dropdown"
-                                        style="margin-bottom: 0px"
-                                      >
-                                        <li class="dropdown">
-                                          <a
-                                            href="#"
-                                            class="dropdown-toggle"
-                                            data-toggle="dropdown"
-                                            role="button"
-                                            aria-haspopup="true"
-                                            aria-expanded="true"
-                                            style="color: #1e252d !important"
-                                          >
-                                            <i class="fas fa-ellipsis-v"></i>
-                                          </a>
-                                          <ul
-                                            class="dropdown-menu pull-right"
-                                            id="project-options"
-                                            x-placement="bottom-start"
-                                            style="
-                                              position: absolute;
-                                              will-change: transform;
-                                              top: 0px;
-                                              left: 0px;
-                                              transform: translate3d(
-                                                0px,
-                                                24px,
-                                                0px
-                                              );
-                                            "
-                                          >
-                                            <li>
-                                              <a
-                                                href="#"
-                                                data-toggle="modal"
-                                                data-target="#edit_key"
-                                                onclick="return false;"
-                                                >Edit</a
-                                              >
-                                            </li>
-
-                                            <li>
-                                              <a
-                                                href="#"
-                                                onclick="return false;"
-                                                data-toggle="modal"
-                                                data-target="#delete_popup"
-                                                >Delete</a
-                                              >
-                                            </li>
-                                          </ul>
-                                        </li>
-                                      </ul>
-                                    </td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                            </div>
-                          </td>
-                        </tr>
-
-                        <tr class="child-row">
-                          <td colspan="12" class="hiddenRow">
-                            <div class="accordian-body show" id="demo2">
-                              <table class="table table-striped">
-                                <tbody>
-                                  <tr>
-                                    <td style="width: 54px">&nbsp;</td>
-                                    <td style="color: #e84343; width: 80px">
-                                      <i class="fas fa-flag"></i>
-                                    </td>
-                                    <td style="width: 100px">
-                                      <div class="d-flex flex-column">
-                                        <ul
-                                          class="list-unstyled order-list d-flex"
-                                          data-toggle="modal"
-                                          data-target="#user_edit_popup"
-                                          style="cursor: pointer"
-                                        >
-                                          <li class="avatar avatar-sm">
-                                            <img
-                                              class="rounded-circle sub_init_img"
-                                              src="../../assets/images/user/user8.jpg"
-                                              alt="user"
-                                              width="50"
-                                            />
-                                          </li>
-                                          <li
-                                            class="avatar avatar-sm"
-                                            style="margin-left: -18px"
-                                          >
-                                            <img
-                                              class="rounded-circle sub_init_img"
-                                              src="../../assets/images/user/user7.jpg"
-                                              alt="user"
-                                              width="50"
-                                            />
-                                          </li>
-                                          <li
-                                            class="avatar avatar-sm"
-                                            style="margin-left: -18px"
-                                          >
-                                            <img
-                                              class="rounded-circle sub_init_img"
-                                              src="../../assets/images/user/user2.jpg"
-                                              alt="user"
-                                              width="50"
-                                            />
-                                          </li>
-
-                                          <li
-                                            class="avatar avatar-sm"
-                                            style="
-                                              margin-left: -18px;
-                                              margin-top: 2px;
-                                            "
-                                          >
-                                            <span
-                                              _ngcontent-hhc-c5=""
-                                              class="badge"
-                                              style="
-                                                height: 20px;
-                                                width: 24px;
-                                                padding-left: 3px;
-                                                border-radius: 3px;
-                                              "
-                                              >+4</span
-                                            >
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </td>
-                                    <td style="width: 354px">Key Result 2</td>
-                                    <td style="width: 120px">40%</td>
-                                    <td style="width: 120px">&nbsp;</td>
-                                    <td style="width: 80px">0</td>
-                                    <td style="width: 80px">4</td>
-                                    <td style="width: 80px">10</td>
-                                    <td style="width: 120px">7</td>
-                                    <td
-                                      style="width: 120px; text-align: center"
-                                    >
-                                      <i
-                                        class="far fa-comment-dots"
-                                        style="font-size: 20px"
-                                      ></i>
-                                      <span
-                                        class="badge badge-primary"
-                                        id="lblCartCount"
-                                      >
-                                        1
-                                      </span>
-                                    </td>
-                                    <td style="width: 40px">
-                                      <ul
-                                        class="header-dropdown"
-                                        style="margin-bottom: 0px"
-                                      >
-                                        <li class="dropdown">
-                                          <a
-                                            href="#"
-                                            class="dropdown-toggle"
-                                            data-toggle="dropdown"
-                                            role="button"
-                                            aria-haspopup="true"
-                                            aria-expanded="true"
-                                            style="color: #1e252d !important"
-                                          >
-                                            <i class="fas fa-ellipsis-v"></i>
-                                          </a>
-                                          <ul
-                                            class="dropdown-menu pull-right"
-                                            id="project-options"
-                                            x-placement="bottom-start"
-                                            style="
-                                              position: absolute;
-                                              will-change: transform;
-                                              top: 0px;
-                                              left: 0px;
-                                              transform: translate3d(
-                                                0px,
-                                                24px,
-                                                0px
-                                              );
-                                            "
-                                          >
-                                            <li>
-                                              <a
-                                                href="#"
-                                                data-toggle="modal"
-                                                data-target="#edit_key"
-                                                onclick="return false;"
-                                                >Edit</a
-                                              >
-                                            </li>
-
-                                            <li>
-                                              <a
-                                                href="#"
-                                                onclick="return false;"
-                                                data-toggle="modal"
-                                                data-target="#delete_popup"
-                                                >Delete</a
-                                              >
-                                            </li>
-                                          </ul>
-                                        </li>
-                                      </ul>
-                                    </td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                            </div>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td>&nbsp;</td>
-                          <td style="color: #1aa243">
-                            <i class="fas fa-flag"></i>
-                          </td>
-                          <td>
-                            <div class="d-flex flex-column">
-                              <ul
-                                class="list-unstyled order-list d-flex"
-                                data-toggle="modal"
-                                data-target="#user_edit_popup"
-                                style="cursor: pointer"
-                              >
-                                <li class="avatar avatar-sm">
-                                  <img
-                                    class="rounded-circle sub_init_img"
-                                    src="../../assets/images/user/user2.jpg"
-                                    alt="user"
-                                    width="50"
-                                  />
-                                </li>
-                                <li
-                                  class="avatar avatar-sm"
-                                  style="margin-left: -18px"
-                                >
-                                  <img
-                                    class="rounded-circle sub_init_img"
-                                    src="../../assets/images/user/user8.jpg"
-                                    alt="user"
-                                    width="50"
-                                  />
-                                </li>
-                                <li
-                                  class="avatar avatar-sm"
-                                  style="margin-left: -18px"
-                                >
-                                  <img
-                                    class="rounded-circle sub_init_img"
-                                    src="../../assets/images/user/user5.jpg"
-                                    alt="user"
-                                    width="50"
-                                  />
-                                </li>
-
-                                <li
-                                  class="avatar avatar-sm"
-                                  style="margin-left: -18px; margin-top: 2px"
-                                >
-                                  <span
-                                    _ngcontent-hhc-c5=""
-                                    class="badge"
-                                    style="
-                                      height: 20px;
-                                      width: 24px;
-                                      padding-left: 3px;
-                                      border-radius: 3px;
-                                    "
-                                    >+1</span
-                                  >
-                                </li>
-                              </ul>
-                            </div>
-                          </td>
-                          <td>Objective 4</td>
-                          <td>0%</td>
-                          <td>0</td>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                          <td style="text-align: center">
-                            <i
-                              class="far fa-comment-dots"
-                              style="font-size: 20px"
-                            ></i>
-                            <span class="badge badge-primary" id="lblCartCount">
-                              1
-                            </span>
-                          </td>
-                          <td>
-                            <ul
-                              class="header-dropdown"
-                              style="margin-bottom: 0px"
-                            >
-                              <li class="dropdown">
-                                <a
-                                  href="#"
-                                  class="dropdown-toggle"
-                                  data-toggle="dropdown"
-                                  role="button"
-                                  aria-haspopup="true"
-                                  aria-expanded="true"
-                                  style="color: #1e252d !important"
-                                >
-                                  <i class="fas fa-ellipsis-v"></i>
-                                </a>
-                                <ul
-                                  class="dropdown-menu pull-right"
-                                  id="project-options"
-                                  x-placement="bottom-start"
-                                  style="
-                                    position: absolute;
-                                    will-change: transform;
-                                    top: 0px;
-                                    left: 0px;
-                                    transform: translate3d(0px, 24px, 0px);
-                                  "
-                                >
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#add_child_objective"
-                                      onclick="return false;"
-                                      >Add Child Objective</a
-                                    >
-                                  </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#add_key"
-                                      onclick="return false;"
-                                      >Add Key Result</a
-                                    >
-                                  </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#edit_objective"
-                                      onclick="return false;"
-                                      >Edit</a
-                                    >
-                                  </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#clone"
-                                      onclick="return false;"
-                                      >Clone</a
-                                    >
-                                  </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      onclick="return false;"
-                                      data-toggle="modal"
-                                      data-target="#delete_popup"
-                                      >Delete</a
-                                    >
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td
-                            data-toggle="collapse"
-                            data-target="#demo3"
-                            class="accordion-toggle"
-                          >
-                            <button class="btn btn-xs">
-                              <i
-                                class="far fa-minus-square"
-                                id="icon-change"
-                              ></i>
-                            </button>
-                          </td>
-                          <td style="color: #1aa243">
-                            <i class="fas fa-flag"></i>
-                          </td>
-                          <td>
-                            <div class="d-flex flex-column">
-                              <ul
-                                class="list-unstyled order-list d-flex"
-                                data-toggle="modal"
-                                data-target="#user_edit_popup"
-                                style="cursor: pointer"
-                              >
-                                <li class="avatar avatar-sm">
-                                  <img
-                                    class="rounded-circle sub_init_img"
-                                    src="../../assets/images/user/user2.jpg"
-                                    alt="user"
-                                    width="50"
-                                  />
-                                </li>
-                                <li
-                                  class="avatar avatar-sm"
-                                  style="margin-left: -18px"
-                                >
-                                  <img
-                                    class="rounded-circle sub_init_img"
-                                    src="../../assets/images/user/user6.jpg"
-                                    alt="user"
-                                    width="50"
-                                  />
-                                </li>
-                                <li
-                                  class="avatar avatar-sm"
-                                  style="margin-left: -18px"
-                                >
-                                  <img
-                                    class="rounded-circle sub_init_img"
-                                    src="../../assets/images/user/user7.jpg"
-                                    alt="user"
-                                    width="50"
-                                  />
-                                </li>
-
-                                <li
-                                  class="avatar avatar-sm"
-                                  style="margin-left: -18px; margin-top: 2px"
-                                >
-                                  <span
-                                    _ngcontent-hhc-c5=""
-                                    class="badge"
-                                    style="
-                                      height: 20px;
-                                      width: 24px;
-                                      padding-left: 3px;
-                                      border-radius: 3px;
-                                    "
-                                    >+3</span
-                                  >
-                                </li>
-                              </ul>
-                            </div>
-                          </td>
-                          <td>Objective 5</td>
-                          <td>0%</td>
-                          <td>1</td>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                          <td style="text-align: center">
-                            <i
-                              class="far fa-comment-dots"
-                              style="font-size: 20px"
-                            ></i>
-                            <span class="badge badge-primary" id="lblCartCount">
-                              1
-                            </span>
-                          </td>
-                          <td>
-                            <ul
-                              class="header-dropdown"
-                              style="margin-bottom: 0px"
-                            >
-                              <li class="dropdown">
-                                <a
-                                  href="#"
-                                  class="dropdown-toggle"
-                                  data-toggle="dropdown"
-                                  role="button"
-                                  aria-haspopup="true"
-                                  aria-expanded="true"
-                                  style="color: #1e252d !important"
-                                >
-                                  <i class="fas fa-ellipsis-v"></i>
-                                </a>
-                                <ul
-                                  class="dropdown-menu pull-right"
-                                  id="project-options"
-                                  x-placement="bottom-start"
-                                  style="
-                                    position: absolute;
-                                    will-change: transform;
-                                    top: 0px;
-                                    left: 0px;
-                                    transform: translate3d(0px, 24px, 0px);
-                                  "
-                                >
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#add_child_objective"
-                                      onclick="return false;"
-                                      >Add Child Objective</a
-                                    >
-                                  </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#add_key"
-                                      onclick="return false;"
-                                      >Add Key Result</a
-                                    >
-                                  </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#edit_objective"
-                                      onclick="return false;"
-                                      >Edit</a
-                                    >
-                                  </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#clone"
-                                      onclick="return false;"
-                                      >Clone</a
-                                    >
-                                  </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      onclick="return false;"
-                                      data-toggle="modal"
-                                      data-target="#delete_popup"
-                                      >Delete</a
-                                    >
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </td>
-                        </tr>
-
-                        <tr class="child-row">
-                          <td colspan="12" class="hiddenRow">
-                            <div class="accordian-body show" id="demo3">
-                              <table class="table table-striped">
-                                <tbody>
-                                  <tr>
-                                    <td style="width: 54px">&nbsp;</td>
-                                    <td style="color: #1aa243; width: 80px">
-                                      <i class="fas fa-flag"></i>
-                                    </td>
-                                    <td style="width: 100px">
-                                      <div class="d-flex flex-column">
-                                        <ul
-                                          class="list-unstyled order-list d-flex"
-                                          data-toggle="modal"
-                                          data-target="#user_edit_popup"
-                                          style="cursor: pointer"
-                                        >
-                                          <li class="avatar avatar-sm">
-                                            <img
-                                              class="rounded-circle sub_init_img"
-                                              src="../../assets/images/user/user6.jpg"
-                                              alt="user"
-                                              width="50"
-                                            />
-                                          </li>
-                                          <li
-                                            class="avatar avatar-sm"
-                                            style="margin-left: -18px"
-                                          >
-                                            <img
-                                              class="rounded-circle sub_init_img"
-                                              src="../../assets/images/user/user5.jpg"
-                                              alt="user"
-                                              width="50"
-                                            />
-                                          </li>
-                                          <li
-                                            class="avatar avatar-sm"
-                                            style="margin-left: -18px"
-                                          >
-                                            <img
-                                              class="rounded-circle sub_init_img"
-                                              src="../../assets/images/user/user4.jpg"
-                                              alt="user"
-                                              width="50"
-                                            />
-                                          </li>
-
-                                          <li
-                                            class="avatar avatar-sm"
-                                            style="
-                                              margin-left: -18px;
-                                              margin-top: 2px;
-                                            "
-                                          >
-                                            <span
-                                              _ngcontent-hhc-c5=""
-                                              class="badge"
-                                              style="
-                                                height: 20px;
-                                                width: 24px;
-                                                padding-left: 3px;
-                                                border-radius: 3px;
-                                              "
-                                              >+5</span
-                                            >
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </td>
-                                    <td style="width: 354px">Key Result 1</td>
-                                    <td style="width: 120px">40%</td>
-                                    <td style="width: 120px">&nbsp;</td>
-                                    <td style="width: 80px">0</td>
-                                    <td style="width: 80px">4</td>
-                                    <td style="width: 80px">10</td>
-                                    <td style="width: 120px">7</td>
-                                    <td
-                                      style="width: 120px; text-align: center"
-                                    >
-                                      <i
-                                        class="far fa-comment-dots"
-                                        style="font-size: 20px"
-                                      ></i>
-                                      <span
-                                        class="badge badge-primary"
-                                        id="lblCartCount"
-                                      >
-                                        1
-                                      </span>
-                                    </td>
-                                    <td style="width: 40px">
-                                      <ul
-                                        class="header-dropdown"
-                                        style="margin-bottom: 0px"
-                                      >
-                                        <li class="dropdown">
-                                          <a
-                                            href="#"
-                                            class="dropdown-toggle"
-                                            data-toggle="dropdown"
-                                            role="button"
-                                            aria-haspopup="true"
-                                            aria-expanded="true"
-                                            style="color: #1e252d !important"
-                                          >
-                                            <i class="fas fa-ellipsis-v"></i>
-                                          </a>
-                                          <ul
-                                            class="dropdown-menu pull-right"
-                                            id="project-options"
-                                            x-placement="bottom-start"
-                                            style="
-                                              position: absolute;
-                                              will-change: transform;
-                                              top: 0px;
-                                              left: 0px;
-                                              transform: translate3d(
-                                                0px,
-                                                24px,
-                                                0px
-                                              );
-                                            "
-                                          >
-                                            <li>
-                                              <a
-                                                href="#"
-                                                data-toggle="modal"
-                                                data-target="#edit_key"
-                                                onclick="return false;"
-                                                >Edit</a
-                                              >
-                                            </li>
-
-                                            <li>
-                                              <a
-                                                href="#"
-                                                onclick="return false;"
-                                                data-toggle="modal"
-                                                data-target="#delete_popup"
-                                                >Delete</a
-                                              >
-                                            </li>
-                                          </ul>
-                                        </li>
-                                      </ul>
-                                    </td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                            </div>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td
-                            data-toggle="collapse"
-                            data-target="#demo4"
-                            class="accordion-toggle"
-                          >
-                            <button class="btn btn-xs">
-                              <i
-                                class="far fa-minus-square"
-                                id="icon-change"
-                              ></i>
-                            </button>
-                          </td>
-                          <td style="color: #1aa243">
-                            <i class="fas fa-flag"></i>
-                          </td>
-                          <td>
-                            <div class="d-flex flex-column">
-                              <ul
-                                class="list-unstyled order-list d-flex"
-                                data-toggle="modal"
-                                data-target="#user_edit_popup"
-                                style="cursor: pointer"
-                              >
-                                <li class="avatar avatar-sm">
-                                  <img
-                                    class="rounded-circle sub_init_img"
-                                    src="../../assets/images/user/user9.jpg"
-                                    alt="user"
-                                    width="50"
-                                  />
-                                </li>
-                                <li
-                                  class="avatar avatar-sm"
-                                  style="margin-left: -18px"
-                                >
-                                  <img
-                                    class="rounded-circle sub_init_img"
-                                    src="../../assets/images/user/user8.jpg"
-                                    alt="user"
-                                    width="50"
-                                  />
-                                </li>
-                                <li
-                                  class="avatar avatar-sm"
-                                  style="margin-left: -18px"
-                                >
-                                  <img
-                                    class="rounded-circle sub_init_img"
-                                    src="../../assets/images/user/user7.jpg"
-                                    alt="user"
-                                    width="50"
-                                  />
-                                </li>
-
-                                <li
-                                  class="avatar avatar-sm"
-                                  style="margin-left: -18px; margin-top: 2px"
-                                >
-                                  <span
-                                    _ngcontent-hhc-c5=""
-                                    class="badge"
-                                    style="
-                                      height: 20px;
-                                      width: 24px;
-                                      padding-left: 3px;
-                                      border-radius: 3px;
-                                    "
-                                    >+2</span
-                                  >
-                                </li>
-                              </ul>
-                            </div>
-                          </td>
-                          <td>Objective 6</td>
-                          <td>0%</td>
-                          <td>1</td>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                          <td style="text-align: center">
-                            <i
-                              class="far fa-comment-dots"
-                              style="font-size: 20px"
-                            ></i>
-                            <span class="badge badge-primary" id="lblCartCount">
-                              1
-                            </span>
-                          </td>
-                          <td>
-                            <ul
-                              class="header-dropdown"
-                              style="margin-bottom: 0px"
-                            >
-                              <li class="dropdown">
-                                <a
-                                  href="#"
-                                  class="dropdown-toggle"
-                                  data-toggle="dropdown"
-                                  role="button"
-                                  aria-haspopup="true"
-                                  aria-expanded="true"
-                                  style="color: #1e252d !important"
-                                >
-                                  <i class="fas fa-ellipsis-v"></i>
-                                </a>
-                                <ul
-                                  class="dropdown-menu pull-right"
-                                  id="project-options"
-                                  x-placement="bottom-start"
-                                  style="
-                                    position: absolute;
-                                    will-change: transform;
-                                    top: 0px;
-                                    left: 0px;
-                                    transform: translate3d(0px, 24px, 0px);
-                                  "
-                                >
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#add_child_objective"
-                                      onclick="return false;"
-                                      >Add Child Objective</a
-                                    >
-                                  </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#add_key"
-                                      onclick="return false;"
-                                      >Add Key Result</a
-                                    >
-                                  </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#edit_objective"
-                                      onclick="return false;"
-                                      >Edit</a
-                                    >
-                                  </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      data-toggle="modal"
-                                      data-target="#clone"
-                                      onclick="return false;"
-                                      >Clone</a
-                                    >
-                                  </li>
-
-                                  <li>
-                                    <a
-                                      href="#"
-                                      onclick="return false;"
-                                      data-toggle="modal"
-                                      data-target="#delete_popup"
-                                      >Delete</a
-                                    >
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </td>
-                        </tr>
-
-                        <tr class="child-row">
-                          <td colspan="12" class="hiddenRow">
-                            <div class="accordian-body show" id="demo4">
-                              <table class="table table-striped">
-                                <tbody>
-                                  <tr>
-                                    <td style="width: 54px">&nbsp;</td>
-                                    <td style="color: #1aa243; width: 80px">
-                                      <i class="fas fa-flag"></i>
-                                    </td>
-                                    <td style="width: 100px">
-                                      <div class="d-flex flex-column">
-                                        <ul
-                                          class="list-unstyled order-list d-flex"
-                                          data-toggle="modal"
-                                          data-target="#user_edit_popup"
-                                          style="cursor: pointer"
-                                        >
-                                          <li class="avatar avatar-sm">
-                                            <img
-                                              class="rounded-circle sub_init_img"
-                                              src="../../assets/images/user/user3.jpg"
-                                              alt="user"
-                                              width="50"
-                                            />
-                                          </li>
-                                          <li
-                                            class="avatar avatar-sm"
-                                            style="margin-left: -18px"
-                                          >
-                                            <img
-                                              class="rounded-circle sub_init_img"
-                                              src="../../assets/images/user/user2.jpg"
-                                              alt="user"
-                                              width="50"
-                                            />
-                                          </li>
-                                          <li
-                                            class="avatar avatar-sm"
-                                            style="margin-left: -18px"
-                                          >
-                                            <img
-                                              class="rounded-circle sub_init_img"
-                                              src="../../assets/images/user/user1.jpg"
-                                              alt="user"
-                                              width="50"
-                                            />
-                                          </li>
-
-                                          <li
-                                            class="avatar avatar-sm"
-                                            style="
-                                              margin-left: -18px;
-                                              margin-top: 2px;
-                                            "
-                                          >
-                                            <span
-                                              _ngcontent-hhc-c5=""
-                                              class="badge"
-                                              style="
-                                                height: 20px;
-                                                width: 24px;
-                                                padding-left: 3px;
-                                                border-radius: 3px;
-                                              "
-                                              >+3</span
-                                            >
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </td>
-                                    <td style="width: 354px">Key Result 1</td>
-                                    <td style="width: 120px">40%</td>
-                                    <td style="width: 120px">&nbsp;</td>
-                                    <td style="width: 80px">0</td>
-                                    <td style="width: 80px">4</td>
-                                    <td style="width: 80px">10</td>
-                                    <td style="width: 120px">7</td>
-                                    <td
-                                      style="width: 120px; text-align: center"
-                                    >
-                                      <i
-                                        class="far fa-comment-dots"
-                                        style="font-size: 20px"
-                                      ></i>
-                                      <span
-                                        class="badge badge-primary"
-                                        id="lblCartCount"
-                                      >
-                                        1
-                                      </span>
-                                    </td>
-                                    <td style="width: 40px">
-                                      <ul
-                                        class="header-dropdown"
-                                        style="margin-bottom: 0px"
-                                      >
-                                        <li class="dropdown">
-                                          <a
-                                            href="#"
-                                            class="dropdown-toggle"
-                                            data-toggle="dropdown"
-                                            role="button"
-                                            aria-haspopup="true"
-                                            aria-expanded="true"
-                                            style="color: #1e252d !important"
-                                          >
-                                            <i class="fas fa-ellipsis-v"></i>
-                                          </a>
-                                          <ul
-                                            class="dropdown-menu pull-right"
-                                            id="project-options"
-                                            x-placement="bottom-start"
-                                            style="
-                                              position: absolute;
-                                              will-change: transform;
-                                              top: 0px;
-                                              left: 0px;
-                                              transform: translate3d(
-                                                0px,
-                                                24px,
-                                                0px
-                                              );
-                                            "
-                                          >
-                                            <li>
-                                              <a
-                                                href="#"
-                                                data-toggle="modal"
-                                                data-target="#edit_key"
-                                                onclick="return false;"
-                                                >Edit</a
-                                              >
-                                            </li>
-
-                                            <li>
-                                              <a
-                                                href="#"
-                                                onclick="return false;"
-                                                data-toggle="modal"
-                                                data-target="#delete_popup"
-                                                >Delete</a
-                                              >
-                                            </li>
-                                          </ul>
-                                        </li>
-                                      </ul>
-                                    </td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                            </div>
-                          </td>
-                        </tr>
-
-                        <tr class="child-row">
-                          <td colspan="12" class="hiddenRow">
-                            <div class="accordian-body show" id="demo4">
-                              <table class="table table-striped">
-                                <tbody>
-                                  <tr>
-                                    <td style="width: 54px">&nbsp;</td>
-                                    <td style="color: #1aa243; width: 80px">
-                                      <i class="fas fa-flag"></i>
-                                    </td>
-                                    <td style="width: 100px">
-                                      <div class="d-flex flex-column">
-                                        <ul
-                                          class="list-unstyled order-list d-flex"
-                                          data-toggle="modal"
-                                          data-target="#user_edit_popup"
-                                          style="cursor: pointer"
-                                        >
-                                          <li class="avatar avatar-sm">
-                                            <img
-                                              class="rounded-circle sub_init_img"
-                                              src="../../assets/images/user/user4.jpg"
-                                              alt="user"
-                                              width="50"
-                                            />
-                                          </li>
-                                          <li
-                                            class="avatar avatar-sm"
-                                            style="margin-left: -18px"
-                                          >
-                                            <img
-                                              class="rounded-circle sub_init_img"
-                                              src="../../assets/images/user/user5.jpg"
-                                              alt="user"
-                                              width="50"
-                                            />
-                                          </li>
-                                          <li
-                                            class="avatar avatar-sm"
-                                            style="margin-left: -18px"
-                                          >
-                                            <img
-                                              class="rounded-circle sub_init_img"
-                                              src="../../assets/images/user/user2.jpg"
-                                              alt="user"
-                                              width="50"
-                                            />
-                                          </li>
-
-                                          <li
-                                            class="avatar avatar-sm"
-                                            style="
-                                              margin-left: -18px;
-                                              margin-top: 2px;
-                                            "
-                                          >
-                                            <span
-                                              _ngcontent-hhc-c5=""
-                                              class="badge"
-                                              style="
-                                                height: 20px;
-                                                width: 24px;
-                                                padding-left: 3px;
-                                                border-radius: 3px;
-                                              "
-                                              >+5</span
-                                            >
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </td>
-                                    <td style="width: 354px">Key Result 2</td>
-                                    <td style="width: 120px">40%</td>
-                                    <td style="width: 120px">&nbsp;</td>
-                                    <td style="width: 80px">0</td>
-                                    <td style="width: 80px">4</td>
-                                    <td style="width: 80px">10</td>
-                                    <td style="width: 120px">7</td>
-                                    <td
-                                      style="width: 120px; text-align: center"
-                                    >
-                                      <i
-                                        class="far fa-comment-dots"
-                                        style="font-size: 20px"
-                                      ></i>
-                                      <span
-                                        class="badge badge-primary"
-                                        id="lblCartCount"
-                                      >
-                                        1
-                                      </span>
-                                    </td>
-                                    <td style="width: 40px">
-                                      <ul
-                                        class="header-dropdown"
-                                        style="margin-bottom: 0px"
-                                      >
-                                        <li class="dropdown">
-                                          <a
-                                            href="#"
-                                            class="dropdown-toggle"
-                                            data-toggle="dropdown"
-                                            role="button"
-                                            aria-haspopup="true"
-                                            aria-expanded="true"
-                                            style="color: #1e252d !important"
-                                          >
-                                            <i class="fas fa-ellipsis-v"></i>
-                                          </a>
-                                          <ul
-                                            class="dropdown-menu pull-right"
-                                            id="project-options"
-                                            x-placement="bottom-start"
-                                            style="
-                                              position: absolute;
-                                              will-change: transform;
-                                              top: 0px;
-                                              left: 0px;
-                                              transform: translate3d(
-                                                0px,
-                                                24px,
-                                                0px
-                                              );
-                                            "
-                                          >
-                                            <li>
-                                              <a
-                                                href="#"
-                                                data-toggle="modal"
-                                                data-target="#edit_key"
-                                                onclick="return false;"
-                                                >Edit</a
-                                              >
-                                            </li>
-
-                                            <li>
-                                              <a
-                                                href="#"
-                                                onclick="return false;"
-                                                data-toggle="modal"
-                                                data-target="#delete_popup"
-                                                >Delete</a
-                                              >
-                                            </li>
-                                          </ul>
-                                        </li>
-                                      </ul>
-                                    </td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                            </div>
-                          </td>
-                        </tr> -->
                       </tbody>
                     </table>
                   </div>
@@ -7355,6 +6006,20 @@
           $("." + CustomTabValue).show();
         } else {
           $(".customTabContent").hide();
+        }
+        $(this).parent().find("button").removeClass("active");
+        $(this).addClass("active");
+      });
+
+      $("#alignOKRTab").on("click", "button", function (e) {
+        var CustomTabValue = this.dataset.value;
+        if (CustomTabValue) {
+          $(".OKRAlignment")
+            .not("." + CustomTabValue)
+            .hide();
+          $("." + CustomTabValue).show();
+        } else {
+          $(".OKRAlignment").hide();
         }
         $(this).parent().find("button").removeClass("active");
         $(this).addClass("active");
