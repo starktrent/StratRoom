@@ -530,11 +530,11 @@ div.edit1 {
   left: 56%;
 }
 
-.btn:hover,
+/* .btn:hover,
 .btn-large:hover,
 .btn-small:hover {
   background-color: initial !important;
-}
+} */
 /* 
 .btn {
   box-shadow: none !important;

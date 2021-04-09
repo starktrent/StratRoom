@@ -496,6 +496,16 @@
         color: #fff;
       }
 
+      .btn-group > .btn.active:hover {
+        background-color: #1f262d !important;
+        color: #fff;
+      }
+
+      .btn-group:hover {
+        background-color: #fff !important;
+        color: #1f262d;
+      }
+
       .status-color-container {
         display: flex !important;
       }
@@ -3595,8 +3605,8 @@
                             </select>
                           </div>
                           <div
-                            class="form-group col-md-6"
-                            style="padding-bottom: 10px"
+                            class="form-group col-md-6 implementation-option BSC"
+                            style="padding-bottom: 10px; display: none"
                           >
                             <label for="">Implementation Type</label>
                             <select
